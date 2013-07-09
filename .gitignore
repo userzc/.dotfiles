@@ -13,3 +13,6 @@ emacs.d/image-dired
 
 # archivos temporales
 \#*\#
+
+# Weird file
+*.plstore
