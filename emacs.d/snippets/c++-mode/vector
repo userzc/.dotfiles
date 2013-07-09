@@ -1,0 +1,4 @@
+# name: vector<...>
+# key: vect
+# --
+vector< ${1:Template} > $0

@@ -1,0 +1,5 @@
+# -*- mode: snippet -*-
+# name: map<...>
+# key: map
+# --
+map< ${1:Key}, ${2:Data}${3:, ${4:Compare}}${5:, ${6:Alloc}} > $0

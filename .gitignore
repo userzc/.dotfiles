@@ -1,0 +1,15 @@
+# archivos de emacs.d
+emacs.d/elpa
+emacs.d/backups
+emacs.d/auto-save-list
+emacs.d/tramp
+emacs.d/image-dired
+
+# archivos byte-compiled
+*.elc
+
+# archivos de respaldo
+*~
+
+# archivos temporales
+\#*\#

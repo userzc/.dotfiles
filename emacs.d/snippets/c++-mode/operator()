@@ -1,0 +1,5 @@
+# -*- mode: snippet -*-
+# name: operator()
+# key: opp
+# --
+${1:friend }bool operator()(const ${2:Type}& ${3:Object1}, const $2& ${5:Object2})

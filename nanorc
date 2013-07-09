@@ -1,0 +1,19 @@
+## Closing brackets
+set brackets ""')>]}"
+
+set matchbrackets "(<[{)>]}"
+
+## Mouse support
+set mouse
+
+## Allow multiple buffers
+set multibuffer
+
+## Do extended regular expression searches by default.
+set regexp
+
+## The spelling checker
+set speller "aspell -x -c"
+
+## Enable the new (experimental) generic undo code, not just for line cuts
+set undo

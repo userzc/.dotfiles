@@ -1,0 +1,6 @@
+# -*- mode: snippet -*-
+# name: operator<
+# key: opl
+# binding: direct-keybinding
+# --
+bool operator<(const ${1:Type}& ${2:otro}) const;

@@ -1,0 +1,8 @@
+# Se definen tipos propios
+--type-set
+octave=.m
+--type-set
+maxima=.mac
+
+# Para el color de los emparejamientos
+--color-match=bold yellow

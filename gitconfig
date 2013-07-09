@@ -1,0 +1,10 @@
+[user]
+	name = René Zurita Corro
+	email = zc.rene@gmail.com
+[core]
+	editor = emacsclient
+[color]
+	branch = auto
+	diff = auto
+	interactive = auto
+	status = auto

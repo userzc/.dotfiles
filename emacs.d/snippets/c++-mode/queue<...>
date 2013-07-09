@@ -1,0 +1,5 @@
+# -*- mode: snippet -*-
+# name: queue<...>
+# key: queue
+# --
+queue< ${1:Template} > $0

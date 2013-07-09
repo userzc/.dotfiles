@@ -1,0 +1,5 @@
+# -*- mode: snippet -*-
+# name: operator<<
+# key: opll
+# --
+${1:friend }ostream& operator<<(ostream& flujo, const ${2:Template} Objeto)${3:;}
