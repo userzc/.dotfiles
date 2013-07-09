@@ -16,3 +16,6 @@ emacs.d/image-dired
 
 # Weird file
 *.plstore
+
+# web-vcs-log.org
+web-vcs-log.org
