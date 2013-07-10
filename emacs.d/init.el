@@ -271,7 +271,10 @@ re-downloaded in order to locate PACKAGE."
 
 ;; julia-mode
 (add-to-list 'load-path "~/julia_test/julia/contrib/")
-(require 'julia-mode)
+(condition-case nil
+    (require 'julia-mode)
+  (error
+   (message "Didn't find Julia Mode'")))
 
 
 ;; Al parecer las siguientes lineas hacen que cualquier subdirectorio
@@ -566,7 +569,10 @@ resolver"
 
 ;; ;; font
 ;; (set-default-font "Inconsolata-12")
-(set-default-font "Ubuntu Mono-11")
+(condition-case nil
+    (set-default-font "Ubuntu Mono-11")
+  (error
+   (set-default-font "Inconsolata-11")))
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;

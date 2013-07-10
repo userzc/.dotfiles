@@ -1,6 +1,8 @@
 [user]
 	name = René Zurita Corro
 	email = zc.rene@gmail.com
+[github]
+	user=userzc
 [core]
 	editor = emacsclient
 [color]
