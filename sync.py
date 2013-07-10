@@ -9,7 +9,6 @@ https://github.com/rmm5t/dotfiles/blob/master/install.rb
 import platform
 from os import listdir, symlink, remove
 from os.path import join, dirname, abspath, expanduser
-# from subprocess import call
 from argparse import ArgumentParser
 
 PARSER = ArgumentParser()
@@ -32,27 +31,6 @@ IGNORED_ITEMS = [
     'list_dir.py',
 ]
 
-# # TODO: consider what to do in case there already is a file in that location
-# if platform.system() == 'Linux':
-#     if not ARGS.remove:
-#         LINKER = 'ln'
-#         OPTION1 = '-n'
-#         OPTION2 = '-s'
-#     else:
-#         LINKER = 'rm'
-#         OPTION1 = ''
-#         OPTION2 = ''
-#     # TODO: consider what options are equivalent in Windows to the Linux.
-# elif platform.system() == 'Windows':
-#     if not ARGS.remove:
-#         LINKER = 'MKLINK'
-#         OPTION1 = '-n'
-#         OPTION2 = '-s'
-#     else:
-#         LINKER = 'rm'
-#         OPTION1 = ''
-#         OPTION2 = ''
-
 def listing_function(from_here, to_here):
     """This is the function used to list the possible files to install.
 
@@ -72,11 +50,6 @@ def installing_function(from_here, to_here):
     global LINKER
     global OPTION1
     global OPTION2
-    # if OPTION1 == '' or OPTION2 == '':
-    #     arg_comando = [LINKER, OPTION1, OPTION2, from_here, to_here].remove('')
-    # else:
-    #     arg_comando = [LINKER, OPTION1, OPTION2, from_here, to_here]
-    # call(arg_comando)
     try:
         print 'Installing:', from_here, '=>', to_here
         symlink(from_here, to_here)
@@ -93,16 +66,8 @@ def removing_function(from_here, to_here):
     global LINKER
     global OPTION1
     global OPTION2
-    # if OPTION1 == '' or OPTION2 == '':
-    #     # print "Antes de remocion:", [LINKER, OPTION1, OPTION2, to_here]
-    #     arg_comando = [LINKER, to_here]
-    #     # print "Después de remocion:", [LINKER, OPTION1, OPTION2, to_here].remove('')
-    # else:
-    #     arg_comando = [LINKER, OPTION1, OPTION2, to_here]
     try:
         print "A remover:", to_here
-        # print "argumentos: ", arg_comando
-        # call(arg_comando)
         remove(to_here)
     except:
         print 'Error removing ', to_here

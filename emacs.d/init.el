@@ -55,6 +55,9 @@
 ;; Intentando nueva forma para descargar paquetes, basado en
 ;; https://github.com/purcell/emacs.d y
 ;; https://github.com/magnars/.emacs.d/blob/master/setup-package.el
+(unless (file-exists-p "~/.emacs.d/elpa/archives/melpa")
+  (package-refresh-contents))
+
 (defun packages-install (packages)
   "Función para determinar si todos los paquetes de la lista de
 paquetes están instalados en la máquina actual."
