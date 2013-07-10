@@ -62,7 +62,7 @@
   "Función para determinar si todos los paquetes de la lista de
 paquetes están instalados en la máquina actual."
   (loop for p in packages
-        when (not (package-installed-p p)) do (return nil)
+        when (not (package-installed-p p)) do (package-install p)
         finally (return t)))
 
 ;; On-demand installation of packages
@@ -549,14 +549,14 @@ resolver"
 ;;  "~/.emacs.d/elpa/color-theme-wombat+-0.0.2/color-theme-wombat+.el")
 ;; (color-theme-wombat+)
 ;; (load-theme 'wombat+ t)
-;; (load-theme 'tangotango t)
+(load-theme 'tangotango t)
 ;; (load-theme 'wombat t)
 ;; (load-theme 'tango-2 t)
 ;; (load-theme 'cyberpunk t)  ; no funciona con multi-term
 ;; (load-theme 'tron t)
 ;; (load-theme 'github t)
 ;; (load-theme 'moe-light t)
-(load-theme 'monokai t)
+;; (load-theme 'monokai t)
 ;; (load-theme 'default-black t)
 ;; (custom-set-faces '(default ((t (:background "nil")))))
 ;; (load-theme 'zenburn t)
