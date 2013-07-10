@@ -1,5 +1,6 @@
 ;; Se inicia de nuevo con emacs 24
-
+;; tested on emacs-version "24.3.1"
+;; not working on emacs-version "24.3.50.1"
 ;; Para deshabilitar tool-bar
 (if (fboundp 'tool-bar-mode) (tool-bar-mode -1))
 
@@ -48,20 +49,41 @@
 ;; (loop for p in lista-paquetes-instalados
 ;;       when (package-installed-p p) do
 ;;       (print p))
-(defun custom-setup-packages-p ()
+
+(require 'cl)
+
+;; Intentando nueva forma para descargar paquetes, basado en
+;; https://github.com/purcell/emacs.d y
+;; https://github.com/magnars/.emacs.d/blob/master/setup-package.el
+(defun packages-install (packages)
   "Función para determinar si todos los paquetes de la lista de
 paquetes están instalados en la máquina actual."
-  (loop for p in lista-paquetes-instalados
+  (loop for p in packages
         when (not (package-installed-p p)) do (return nil)
         finally (return t)))
 
-(unless (custom-setup-packages-p)
-  (message "%s" "Actualizando base de datos de paquetes ...")
-  (package-refresh-contents)
-  (message "%s" "Hecho.")
-  (dolist (p lista-paquetes-instalados)
-    (when (not (package-installed-p p))
-      (package-install p))))
+;; On-demand installation of packages
+(defun require-package (package &optional min-version no-refresh)
+  "Install given PACKAGE, optionally requiring MIN-VERSION.
+If NO-REFRESH is non-nil, the available package lists will not be
+re-downloaded in order to locate PACKAGE."
+  (if (package-installed-p package min-version)
+      t
+    (if (or (assoc package package-archive-contents) no-refresh)
+        (package-install package)
+      (progn
+        (package-refresh-contents)
+        (require-package package min-version t)))))
+
+(defun init--install-packages ()
+  (packages-install
+   lista-paquetes-instalados))
+
+(condition-case nil
+    (init--install-packages)
+  (error
+   (package-refresh-contents)
+   (init--install-packages)))
 
 ;; ;; Para los números de línea
 ;; (global-linum-mode 1)
@@ -157,7 +179,7 @@ paquetes están instalados en la máquina actual."
 ;; https://github.com/rejeep/wrap-region
 ;; Al parecer tengo que utilizar el paquete "cl" para que funcione
 ;; de manera correcta
-(require 'cl )
+;; (require 'cl)
 (wrap-region-global-mode t)
 (wrap-region-add-wrapper "*" "*" nil 'org-mode)
 (wrap-region-add-wrapper "/" "/" nil 'org-mode)
@@ -528,10 +550,10 @@ resolver"
 ;; (load-theme 'wombat t)
 ;; (load-theme 'tango-2 t)
 ;; (load-theme 'cyberpunk t)  ; no funciona con multi-term
-(load-theme 'tron t)
+;; (load-theme 'tron t)
 ;; (load-theme 'github t)
 ;; (load-theme 'moe-light t)
-;; (load-theme 'monokai t)
+(load-theme 'monokai t)
 ;; (load-theme 'default-black t)
 ;; (custom-set-faces '(default ((t (:background "nil")))))
 ;; (load-theme 'zenburn t)
