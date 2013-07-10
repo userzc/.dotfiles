@@ -77,8 +77,11 @@ def installing_function(from_here, to_here):
     # else:
     #     arg_comando = [LINKER, OPTION1, OPTION2, from_here, to_here]
     # call(arg_comando)
-    print 'Installing:', from_here, '=>', to_here
-    symlink(from_here, to_here)
+    try:
+        print 'Installing:', from_here, '=>', to_here
+        symlink(from_here, to_here)
+    except:
+        print 'Error installing', from_here, ' to ', to_here
 
 def removing_function(from_here, to_here):
     """This is the function used to install the files.
@@ -96,10 +99,13 @@ def removing_function(from_here, to_here):
     #     # print "Después de remocion:", [LINKER, OPTION1, OPTION2, to_here].remove('')
     # else:
     #     arg_comando = [LINKER, OPTION1, OPTION2, to_here]
-    print "A remover:", to_here
-    print "argumentos: ", arg_comando
-    # call(arg_comando)
-    remove(to_here)
+    try:
+        print "A remover:", to_here
+        # print "argumentos: ", arg_comando
+        # call(arg_comando)
+        remove(to_here)
+    except:
+        print 'Error removing ', to_here
 
 if ARGS.list:
     MESSEGE_STRING = "--- Listing: ---"
