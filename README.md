@@ -3,11 +3,23 @@
 This is the first attempt to create a repository for `dotfiles` and an
 install script to make all the necesary changes.
 
+## Instalation
+
+To clone this reposiroty, from prompt use:
+
+    git clone https://github.com/userzc/.dotfiles.git
+
+To install the files in this repository use:
+
+    python ~/.dotfiles/sync -i
+
+On Windows the script must be run as administrator.
+
 ## Requirements
 
-python
-git
-quickswitch-i3
+- python (On Windows, >= 3.2)
+- git
+- quickswitch-i3
 
 ## Features
 

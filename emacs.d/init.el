@@ -28,21 +28,19 @@
 
 (defvar lista-paquetes-instalados
   '(ac-math ace-jump-mode ack-and-a-half auctex auto-complete
-            bookmark+ c-eldoc cl-lib color-theme
-            color-theme-gruber-darker
-            color-theme-sanityinc-tomorrow color-theme-solarized
-            color-theme-tangotango color-theme-wombat+
-            cyberpunk-theme dash deferred dired+ dired-details
-            dired-details+ ein enclose expand-region
-            git-commit-mode gitconfig-mode github-theme
-            gitignore-mode google-c-style google-contacts icicles
-            icomplete+ ido-better-flex magit mark-more-like-this
-            markdown-mode melpa moe-theme monokai-theme
-            multi-term multiple-cursors nose oauth2 popup
-            purty-mode python qsimpleq-theme rainbow-delimiters
-            rainbow-mode request smart-mode-line smart-tab
-            tango-2-theme textile-mode websocket wgrep windsize
-            wrap-region yasnippet zenburn-theme zencoding-mode)
+	    bookmark+ c-eldoc cl-lib color-theme
+	    color-theme-gruber-darker color-theme-sanityinc-tomorrow
+	    color-theme-solarized color-theme-wombat+ cyberpunk-theme
+	    dash deferred dired+ dired-details dired-details+ ein
+	    enclose expand-region git-commit-mode gitconfig-mode
+	    github-theme gitignore-mode google-c-style google-contacts
+	    icicles icomplete+ ido-better-flex magit
+	    mark-more-like-this markdown-mode melpa monokai-theme
+	    multi-term multiple-cursors nose oauth2 popup purty-mode
+	    python qsimpleq-theme rainbow-delimiters rainbow-mode
+	    request smart-mode-line smart-tab tango-2-theme
+	    tangotango-theme textile-mode websocket wgrep windsize
+	    wrap-region yasnippet zenburn-theme zencoding-mode)
   "Lista de paquetes instalados actualmente en mi configuración.")
 
 ;; ;; esta parte es para comprobar que paquetes están installados
@@ -572,7 +570,9 @@ resolver"
 (condition-case nil
     (set-default-font "Ubuntu Mono-11")
   (error
-   (set-default-font "Inconsolata-11")))
+   (set-default-font "Inconsolata-11"))
+  (error
+   (message "Using default font")))
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
