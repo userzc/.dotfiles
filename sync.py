@@ -6,10 +6,13 @@ https://github.com/rmm5t/dotfiles/blob/master/install.rb
 
 """
 
+from __future__ import print_function
 import platform
 from os import listdir, symlink, remove
 from os.path import join, dirname, abspath, expanduser
 from argparse import ArgumentParser
+
+
 
 PARSER = ArgumentParser()
 GROUP = PARSER.add_mutually_exclusive_group()
@@ -38,7 +41,7 @@ def listing_function(from_here, to_here):
     - `from_here`:
     - `to_here`:
     """
-    print 'origin:', from_here, '=>', to_here
+    print('origin:', from_here, '=>', to_here)
 
 def installing_function(from_here, to_here):
     """This is the function used to install the files.
@@ -51,10 +54,10 @@ def installing_function(from_here, to_here):
     global OPTION1
     global OPTION2
     try:
-        print 'Installing:', from_here, '=>', to_here
+        print('Installing:', from_here, '=>', to_here)
         symlink(from_here, to_here)
     except:
-        print 'Error installing', from_here, ' to ', to_here
+        print('Error installing', from_here, ' to ', to_here)
 
 def removing_function(from_here, to_here):
     """This is the function used to install the files.
@@ -67,10 +70,10 @@ def removing_function(from_here, to_here):
     global OPTION1
     global OPTION2
     try:
-        print "A remover:", to_here
+        print("A remover: ", to_here)
         remove(to_here)
     except:
-        print 'Error removing ', to_here
+        print('Error removing ', to_here)
 
 if ARGS.list:
     MESSEGE_STRING = "--- Listing: ---"
@@ -82,11 +85,11 @@ elif ARGS.remove:
     MESSEGE_STRING = "--- Removing: ---"
     EXEC_FUNCTION = removing_function
 
-print "ARGS.install", ARGS.install
-print "ARGS.list", ARGS.list
-print "ARGS.remove", ARGS.remove
+print("ARGS.install: ", ARGS.install)
+print("ARGS.list: ", ARGS.list)
+print("ARGS.remove: ", ARGS.remove)
 
-print MESSEGE_STRING
+print(MESSEGE_STRING)
 for element in ARCHIVOS_DIR_ACTUAL:
     if not element in IGNORED_ITEMS and element[0] != '.':
         target = join(USER_HOME,"." + element)

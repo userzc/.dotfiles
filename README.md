@@ -3,11 +3,11 @@
 This is the first attempt to create a repository for `dotfiles` and an
 install script to make all the necesary changes.
 
-## Instalation
-
 To clone this reposiroty, from prompt use:
 
     git clone https://github.com/userzc/.dotfiles.git
+
+## Instalation
 
 To install the files in this repository use:
 
