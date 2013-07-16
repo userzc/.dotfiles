@@ -7,11 +7,10 @@ https://github.com/rmm5t/dotfiles/blob/master/install.rb
 """
 
 from __future__ import print_function
-import platform
+from platform import system
 from os import listdir, symlink, remove
 from os.path import join, dirname, abspath, expanduser
 from argparse import ArgumentParser
-
 
 
 PARSER = ArgumentParser()
@@ -38,8 +37,8 @@ def listing_function(from_here, to_here):
     """This is the function used to list the possible files to install.
 
     Arguments:
-    - `from_here`:
-    - `to_here`:
+    - `from_here`: Source path of file.
+    - `to_here`: Target path for the link.
     """
     print('origin:', from_here, '=>', to_here)
 
@@ -47,12 +46,9 @@ def installing_function(from_here, to_here):
     """This is the function used to install the files.
 
     Arguments:
-    - `from_here`:
-    - `to_here`:
+    - `from_here`: Source path of file.
+    - `to_here`: Target path for the link.
     """
-    global LINKER
-    global OPTION1
-    global OPTION2
     try:
         print('Installing:', from_here, '=>', to_here)
         symlink(from_here, to_here)
@@ -63,17 +59,14 @@ def removing_function(from_here, to_here):
     """This is the function used to install the files.
 
     Arguments:
-    - `from_here`:
-    - `to_here`:
+    - `from_here`: Source path of file.
+    - `to_here`: Target path for the link.
     """
-    global LINKER
-    global OPTION1
-    global OPTION2
     try:
         print("A remover: ", to_here)
         remove(to_here)
     except:
-        print('Error removing ', to_here)
+        print('Error removing ', to_here, ' to update link: ', from_here)
 
 if ARGS.list:
     MESSEGE_STRING = "--- Listing: ---"
@@ -96,7 +89,7 @@ for element in ARCHIVOS_DIR_ACTUAL:
         origin = join(DIR_ACTUAL, element)
         EXEC_FUNCTION(origin, target)
 
-if platform.system() == 'Linux':
+if system() == 'Linux':
     for element in listdir(join(DIR_ACTUAL,'config')):
         if not element in IGNORED_ITEMS and element[0] != '.':
             target = join(USER_HOME, ".config", element)

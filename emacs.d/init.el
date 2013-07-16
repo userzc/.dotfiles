@@ -28,7 +28,7 @@
 
 (defvar lista-paquetes-instalados
   '(ac-math ace-jump-mode ack-and-a-half auctex auto-complete
-	    bookmark+ c-eldoc cl-lib color-theme
+	    bookmark+ c-eldoc cl-lib clues-theme color-theme
 	    color-theme-gruber-darker color-theme-sanityinc-tomorrow
 	    color-theme-solarized color-theme-wombat+ cyberpunk-theme
 	    dash deferred dired+ dired-details dired-details+ ein
@@ -40,7 +40,8 @@
 	    python qsimpleq-theme rainbow-delimiters rainbow-mode
 	    request smart-mode-line smart-tab tango-2-theme
 	    tangotango-theme textile-mode websocket wgrep windsize
-	    wrap-region yasnippet zenburn-theme zencoding-mode)
+	    wrap-region yasnippet zenburn-theme zencoding-mode
+	    powerline)
   "Lista de paquetes instalados actualmente en mi configuración.")
 
 ;; ;; esta parte es para comprobar que paquetes están installados
@@ -202,15 +203,17 @@ re-downloaded in order to locate PACKAGE."
         (goto-line (read-number "Goto line: ")))
     (linum-mode -1)))
 
+;; Para zshrc respaldado
+(setq auto-mode-alist
+       (cons (cons "zshrc" 'sh-mode) auto-mode-alist))
+
 ;; Para cargar programas Prolog
 (setq auto-mode-alist
-      (cons (cons "\\.pl" 'prolog-mode)
-            auto-mode-alist))
+      (cons (cons "\\.pl" 'prolog-mode) auto-mode-alist))
 
 ;; Para cargar programas Octave
 (setq auto-mode-alist
-      (cons (cons "\\.m" 'octave-mode)
-            auto-mode-alist))
+      (cons (cons "\\.m" 'octave-mode) auto-mode-alist))
 
 (eval-after-load "octave-inf"
   '(progn
@@ -222,8 +225,7 @@ re-downloaded in order to locate PACKAGE."
 
 ;; Para cargar programas en Maxima
 (setq auto-mode-alist
-      (cons '("\\.mac" . maxima-mode)
-            auto-mode-alist))
+      (cons '("\\.mac" . maxima-mode) auto-mode-alist))
 
 ;; Para cargar google c style:
 
@@ -474,15 +476,22 @@ resolver"
             (local-set-key "\C-cp." 'nosetests-pdb-one)))
 
 
-;; ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-;; ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-;; ;; powerline, ver: https://github.com/jonathanchu/emacs-powerline
-;; ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-;; ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-;; ;; version previously installed:
-;; ;; https://github.com/milkypostman/powerline
-;; ;; (powerline-default)
-;; ;; (powerline-default-center)
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;; powerline, ver: https://github.com/jonathanchu/emacs-powerline
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
+;; version previously installed:
+;; https://github.com/milkypostman/powerline
+
+(setq powerline-default-separator 'wave)
+
+(powerline-default-theme)
+;; (powerline-center-theme)
+;; (powerline-vim-theme)
+;; (powerline-nano-theme)
+
 ;; ;;--------------------------------------------------------------------
 ;; ;; Another version: installed
 ;; ;; https://github.com/jonathanchu/emacs-powerline
@@ -536,12 +545,20 @@ resolver"
              "~/.emacs.d/lisp/emacs-tron-theme/")
 (add-to-list 'custom-theme-load-path
              "~/.emacs.d/elpa/tangotango-theme-20121014.1916/")
+
+;; Something is wrong with this, but what?
+;; (add-to-list 'custom-theme-load-path
+;;              (car (directory-files
+;; 		   (concat user-emacs-directory "elpa" )
+;; 		   nil "tangotango-theme*")))
+
 (add-to-list 'custom-theme-load-path
              "~/.emacs.d/elpa/github-theme-0.0.3/")
 (add-to-list 'custom-theme-load-path
              "~/.emacs.d/lisp/default-black-theme/")
 (add-to-list 'custom-theme-load-path
              "~/.emacs.d/elpa/moe-theme-20130625.1427/")
+
 
 ;; (require 'moe-theme-switcher)
 ;; (require 'color-theme )
@@ -558,21 +575,28 @@ resolver"
 ;; (load-theme 'github t)
 ;; (load-theme 'moe-light t)
 ;; (load-theme 'monokai t)
+;; (load-theme 'clues t)
+;; (load-theme 'assemblage t)
 ;; (load-theme 'default-black t)
 ;; (custom-set-faces '(default ((t (:background "nil")))))
 ;; (load-theme 'zenburn t)
-;; (load-theme 'sanityinc-tomorrow-day t)
+;; (load-theme 'sanityinc-tomorrow-day t)l
 ;; (load-theme 'solarized-light t)
 ;; (load-theme 'qsimpleq t)
 
 ;; ;; font
 ;; (set-default-font "Inconsolata-12")
-(condition-case nil
-    (set-default-font "Ubuntu Mono-11")
-  (error
-   (set-default-font "Inconsolata-11"))
-  (error
-   (message "Using default font")))
+(if (equal system-type 'gnu/linux)
+    (condition-case nil
+	(set-default-font "Ubuntu Mono-11")
+      (error
+       (set-default-font "Inconsolata-11")))
+  (condition-case nil
+      (set-default-font "Inconsolata-11")
+    (error
+     (set-default-font "DejaVu Sans Mono-10"))))
+
+
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;

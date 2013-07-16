@@ -3,6 +3,7 @@
 
 (setq mc/cmds-to-run-for-all
       '(
+	TeX-insert-backslash
 	backward-to-word
 	backward-up-list
 	beginning-of-buffer
@@ -16,6 +17,7 @@
 	comint-delchar-or-eof-or-kill-buffer
 	comint-delchar-or-maybe-eof
 	comment-dwim
+	copy-to-register
 	delete-horizontal-space
 	delete-indentation
 	delete-pair
@@ -32,6 +34,7 @@
 	icicle-yank-maybe-completing
 	icicle-zap-to-char
 	indent-new-comment-line
+	insert-register
 	keyboard-quit
 	kill-region
 	kill-sexp
@@ -72,6 +75,7 @@
 
 (setq mc/cmds-to-run-once
       '(
+	TeX-insert-sub-or-superscript
 	ace-jump-mode
 	ace-jump-move
 	count-words-region
@@ -89,6 +93,7 @@
 	orgtbl-ctrl-c-ctrl-c
 	pylint
 	repeat
+	scroll-other-window
 	tags-loop-continue
 	tmm-menubar
 	toggle-input-method
