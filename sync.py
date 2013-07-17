@@ -69,16 +69,16 @@ def removing_function(from_here, to_here):
         print('Error removing ', to_here, ' to update link: ', from_here)
 
 if ARGS.install:
-    MESSEGE_STRING = "--- Installing: ---"
+    MESSAGE_STRING = "--- Installing: ---"
     EXEC_FUNCTION = installing_function
 elif ARGS.remove:
-    MESSEGE_STRING = "--- Removing: ---"
+    MESSAGE_STRING = "--- Removing: ---"
     EXEC_FUNCTION = removing_function
 else:
-    MESSEGE_STRING = "--- Listing: ---"
+    MESSAGE_STRING = "--- Listing: ---"
     EXEC_FUNCTION = listing_function
 
-print(MESSEGE_STRING)
+print(MESSAGE_STRING)
 for element in ARCHIVOS_DIR_ACTUAL:
     if not element in IGNORED_ITEMS and element[0] != '.':
         target = join(USER_HOME,"." + element)
