@@ -1,7 +1,7 @@
 #!/usr/bin/python
 # -*- encoding: utf-8 -*-
 """Se intenta hacer un script para realizar una instalación de
-archivos en github de manera automática, similar a
+archivos desde github de manera automática, similar a
 https://github.com/rmm5t/dotfiles/blob/master/install.rb
 
 """
@@ -13,10 +13,10 @@ from os.path import join, dirname, abspath, expanduser
 from argparse import ArgumentParser
 
 
-PARSER = ArgumentParser()
+PARSER = ArgumentParser(description="Tool to install repository dotfiles.")
 GROUP = PARSER.add_mutually_exclusive_group()
 GROUP.add_argument("-l", "--list", action="store_true",
-                   help="List the files to syncronize.")
+                   help="List the files to syncronize. [default]")
 GROUP.add_argument("-i", "--install", action="store_true",
                    help="Install the files to syncronize.")
 GROUP.add_argument("-r", "--remove", action="store_true",
@@ -40,7 +40,7 @@ def listing_function(from_here, to_here):
     - `from_here`: Source path of file.
     - `to_here`: Target path for the link.
     """
-    print('origin:', from_here, '=>', to_here)
+    print('To move:', from_here, '=>', to_here)
 
 def installing_function(from_here, to_here):
     """This is the function used to install the files.
@@ -50,8 +50,8 @@ def installing_function(from_here, to_here):
     - `to_here`: Target path for the link.
     """
     try:
-        print('Installing:', from_here, '=>', to_here)
         symlink(from_here, to_here)
+        print('Installed:', from_here, '=>', to_here)
     except:
         print('Error installing', from_here, ' to ', to_here)
 
@@ -63,24 +63,20 @@ def removing_function(from_here, to_here):
     - `to_here`: Target path for the link.
     """
     try:
-        print("A remover: ", to_here)
         remove(to_here)
+        print("Removed: ", to_here)
     except:
         print('Error removing ', to_here, ' to update link: ', from_here)
 
-if ARGS.list:
-    MESSEGE_STRING = "--- Listing: ---"
-    EXEC_FUNCTION = listing_function
-elif ARGS.install:
+if ARGS.install:
     MESSEGE_STRING = "--- Installing: ---"
     EXEC_FUNCTION = installing_function
 elif ARGS.remove:
     MESSEGE_STRING = "--- Removing: ---"
     EXEC_FUNCTION = removing_function
-
-print("ARGS.install: ", ARGS.install)
-print("ARGS.list: ", ARGS.list)
-print("ARGS.remove: ", ARGS.remove)
+else:
+    MESSEGE_STRING = "--- Listing: ---"
+    EXEC_FUNCTION = listing_function
 
 print(MESSEGE_STRING)
 for element in ARCHIVOS_DIR_ACTUAL:
