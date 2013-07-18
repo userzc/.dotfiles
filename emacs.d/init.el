@@ -580,7 +580,7 @@ resolver"
 ;; (load-theme 'default-black t)
 ;; (custom-set-faces '(default ((t (:background "nil")))))
 ;; (load-theme 'zenburn t)
-;; (load-theme 'sanityinc-tomorrow-day t)l
+;; (load-theme 'sanityinc-tomorrow-day t)
 ;; (load-theme 'solarized-light t)
 ;; (load-theme 'qsimpleq t)
 
@@ -1209,6 +1209,9 @@ Including indent-buffer, which should not be called automatically on save."
 ;; para utilizar google-chrome en los enlaces
 (setq browse-url-browser-function 'browse-url-generic
       browse-url-generic-program "google-chrome")
+
+;; make org-table ready for action!
+(require 'org-table)
 
 ;; ;; active babel languages
 ;; (org-babel-do-load-languages

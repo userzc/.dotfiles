@@ -27,7 +27,7 @@ On Windows the script must be run as administrator.
 <tbody>
 <tr><td class="left">Inconsolata Font</td><td class="left">any</td><td class="left">any</td></tr>
 <tr><td class="left">python</td><td class="left">&gt;= 3.2</td><td class="left">&gt;= 2.7</td></tr>
-<tr><td class="left">git</td><td class="left">---</td><td class="left">---</td></tr>
+<tr><td class="left">git</td><td class="left">any</td><td class="left">any</td></tr>
 <tr><td class="left">quickswitch-i3</td><td class="left">---</td><td class="left">any</td></tr>
 </tbody>
 </table>
@@ -57,3 +57,6 @@ files through python, so it should also be portable to windows.
 
 It should be possible to create a way to syncronize and install `git`
 repositories such as `.oh-my-zsh/`.
+<!-- Local Variables: -->
+<!-- eval: (orgtbl-mode t) -->
+<!-- End: -->
