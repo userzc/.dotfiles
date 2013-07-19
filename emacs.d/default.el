@@ -85,6 +85,11 @@
 
 (package-initialize)
 
+;; Para cargar archivos en `~/.emacs.d'
+(add-to-list 'load-path user-emacs-directory)
+
+(require 'automodes-conf)
+
 (require 'cl)
 (require 'ace-jump-mode)
 ;; (define-key global-map (kbd "C-ø") 'ace-jump-mode)

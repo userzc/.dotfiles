@@ -102,6 +102,13 @@ re-downloaded in order to locate PACKAGE."
 ;; (setq vem-activate-command "workon %s")
 ;; (setq vem-create-commad "mkvirtualenv %s")
 
+;; Para cargar archivos en `~/.emacs.d'
+(add-to-list 'load-path user-emacs-directory)
+
+
+;; Configuración para diferentes archivos
+(require 'automodes-conf)
+
 ;; ibuffer > list-buffer
 (global-set-key (kbd "C-x C-b") 'ibuffer-list-buffers)
 

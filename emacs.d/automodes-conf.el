@@ -1,0 +1,34 @@
+;; Para zshrc respaldado
+(add-to-list 'auto-mode-alist '("zshrc" . sh-mode))
+
+;; Para cargar programas Prolog
+(add-to-list 'auto-mode-alist '("\\.pl" . prolog-mode))
+
+;; Para cargar programas Octave
+(add-to-list 'auto-mode-alist '("\\.m"  . octave-mode))
+
+;; Para cargar programas en Maxima
+(add-to-list 'auto-mode-alist '("\\.mac" . maxima-mode))
+
+;; markdown-mode
+(require 'markdown-mode)
+(add-to-list 'auto-mode-alist '("\\.md\\'" . gfm-mode))
+(add-to-list 'auto-mode-alist '("\\.markdown\\'" . markdown-mode))
+
+;; textile-mode
+(require 'textile-mode)
+(add-to-list 'auto-mode-alist '("\\.textile\\'" . textile-mode))
+
+;; shell-script-mode for zsh-theme
+(add-to-list 'auto-mode-alist '("\\.zsh-theme\\'" . shell-script-mode))
+
+;; El archivo anterior modifica algunos modos por default que no me
+;; son útiles ni respetan las configuraciones propuestas en emacsrocks
+;; propuestas por Magnar Svens. Se puede intentar con
+;; html-mumamo-mode en lugar de  html-mode.
+(add-to-list 'auto-mode-alist '("\\.html?\\'"     . html-mode))
+
+;; Lista de funciones de multiple mode
+(add-to-list 'auto-mode-alist '(".mc-lists.el" . emacs-lisp-mode))
+
+(provide 'automodes-conf)
