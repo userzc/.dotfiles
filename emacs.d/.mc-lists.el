@@ -88,6 +88,7 @@
 	end-of-buffer
 	goto-line
 	icicle-buffer
+	info
 	mouse-minor-mode-menu
 	multi-term-dedicated-toggle
 	orgtbl-ctrl-c-ctrl-c

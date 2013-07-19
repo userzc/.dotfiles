@@ -7,6 +7,7 @@ ZSH=$HOME/.oh-my-zsh
 alias e="emacsclient"
 alias enw="emacsclient -nw"
 alias enwq="emacs -nw -q"
+alias enwd="emacs -nw -Q -l ~/.emacs.d/default.el"
 
 # Set to this to use case-sensitive completion
 # CASE_SENSITIVE="true"
