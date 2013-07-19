@@ -210,18 +210,6 @@ re-downloaded in order to locate PACKAGE."
         (goto-line (read-number "Goto line: ")))
     (linum-mode -1)))
 
-;; Para zshrc respaldado
-(setq auto-mode-alist
-       (cons (cons "zshrc" 'sh-mode) auto-mode-alist))
-
-;; Para cargar programas Prolog
-(setq auto-mode-alist
-      (cons (cons "\\.pl" 'prolog-mode) auto-mode-alist))
-
-;; Para cargar programas Octave
-(setq auto-mode-alist
-      (cons (cons "\\.m" 'octave-mode) auto-mode-alist))
-
 (eval-after-load "octave-inf"
   '(progn
      (define-key inferior-octave-mode-map [C-d] nil)
@@ -229,10 +217,6 @@ re-downloaded in order to locate PACKAGE."
      (define-key inferior-octave-mode-map [C-right] nil)
      (define-key inferior-octave-mode-map [C-left] nil)))
 
-
-;; Para cargar programas en Maxima
-(setq auto-mode-alist
-      (cons '("\\.mac" . maxima-mode) auto-mode-alist))
 
 ;; Para cargar google c style:
 
@@ -359,6 +343,7 @@ re-downloaded in order to locate PACKAGE."
 
 
 ;; ;; Ido backup settings
+(ido-mode -1)
 ;; (setq ido-enable-flex-mathching t)
 ;; (setq ido-everywhere t)
 ;; (ido-better-flex/enable)
@@ -385,6 +370,9 @@ re-downloaded in order to locate PACKAGE."
 
 ;; para utilizar desktop y se guarden los ultimos buffers que se editaban
 (desktop-save-mode 1)
+(add-to-list 'desktop-minor-mode-table '(icicle-mode nil))
+(add-to-list 'desktop-minor-mode-handlers  '(icicle-mode . nil))
+;; (add-to-list 'desktop-minor-mode-table (icy-mode nil))
 
 ;; para utilizar icomplete+
 (icomplete-mode t)
@@ -428,15 +416,6 @@ resolver"
 
 (global-set-key (kbd "C-c C-n") 'acm-problem)
 
-;; markdown-mode
-(require 'markdown-mode)
-(add-to-list 'auto-mode-alist '("\\.md\\'" . gfm-mode))
-(add-to-list 'auto-mode-alist '("\\.markdown\\'" . markdown-mode))
-
-;; textile-mode
-(require 'textile-mode)
-(add-to-list 'auto-mode-alist '("\\.textile\\'" . textile-mode))
-
 ;; zencoding-mode
 (require 'zencoding-mode)
 ;; Auto-start on any markup modes
@@ -466,9 +445,6 @@ resolver"
 
 (require 'magit)
 (define-key magit-status-mode-map (kbd "q") 'magit-quit-session)
-
-;; shell-script-mode for zsh-theme
-(add-to-list 'auto-mode-alist '("\\.zsh-theme\\'" . shell-script-mode))
 
 
 ;; nose-mode
@@ -720,24 +696,12 @@ Including indent-buffer, which should not be called automatically on save."
 (setq debug-on-error nil)
 (setq mumamo-background-colors nil)
 
-;; El archivo anterior modifica algunos modos por default que no me
-;; son útiles ni respetan las configuraciones propuestas en emacsrocks
-;; propuestas por Magnar Svens. Se puede intentar con
-;; html-mumamo-mode en lugar de  html-mode.
-(add-to-list 'auto-mode-alist '("\\.html?\\'"     . html-mode))
-
 ;; Esta parte en particular no la he podido hechar a andar para
 ;; probarla con ein-mode para IPython Notebook, hace falta checar que
 ;; se puede hacer con la siguiente línea de código.
 ;; ::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
 ;; Para activar nXhtml, en particular para utilizar MuMaMo,
 ;; (require 'nxhtml-autostart)
-
-;; ;; django settings
-;; (setq auto-mode-alist
-;;       (append '(("\\.html?$" . django-html-mumamo-mode)) auto-mode-alist))
-;; (add-to-list 'auto-mode-alist '("\\.html$" . django-html-mumamo-mode))
-;; ::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
 
 ;; Como alternativa se puede utilizar un archivo `.dir-locals.el' para
 ;; definir variables locales con el siguiente código:
@@ -1165,8 +1129,6 @@ Including indent-buffer, which should not be called automatically on save."
 (global-set-key (kbd "M-→") 'mc/insert-numbers)                 ;AltGr-i = →
 (global-set-key (kbd "M-¶") 'mc/reverse-regions)                ;AltGr-r = ¶
 (global-set-key (kbd "M-ß") 'mc/sort-regions)                   ;AltGr-s = ß
-
-(add-to-list 'auto-mode-alist '(".mc-lists.el" . emacs-lisp-mode))
 
 ;; ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;; ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
