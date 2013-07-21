@@ -4,6 +4,7 @@
 (setq mc/cmds-to-run-for-all
       '(
 	TeX-insert-backslash
+	TeX-newline
 	backward-to-word
 	backward-up-list
 	beginning-of-buffer
@@ -39,6 +40,7 @@
 	kill-region
 	kill-sexp
 	magit-stage-item
+	mark-paragraph
 	mark-sexp
 	markdown-exdent-or-delete
 	maxima-send-full-line-and-goto-next-form
@@ -75,9 +77,15 @@
 
 (setq mc/cmds-to-run-once
       '(
+	LaTeX-babel-insert-hyphen
+	LaTeX-fill-environment
 	TeX-insert-sub-or-superscript
+	TeX-next-error
+	TeX-recenter-output-buffer
+	TeX-view
 	ace-jump-mode
 	ace-jump-move
+	cleanup-buffer
 	count-words-region
 	describe-key
 	diredp-relsymlink-this-file
@@ -89,6 +97,7 @@
 	goto-line
 	icicle-buffer
 	info
+	magit-status
 	mouse-minor-mode-menu
 	multi-term-dedicated-toggle
 	orgtbl-ctrl-c-ctrl-c

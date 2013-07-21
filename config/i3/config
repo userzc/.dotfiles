@@ -59,6 +59,8 @@ bindsym $mod+Tab exec quickswitch.py -nb $color_nb -nf $color_nf -sb $color_sb -
 
 bindsym $mod+Shift+Tab exec quickswitch.py -m -nb $color_nb -nf $color_nf -sb $color_sb -sf $color_sf
 
+bindsym $mod+Control+Tab exec "i3-nagbar -t warning -m 'Test For the scratchpad'"
+
 # kill focused window
 bindsym $mod+Shift+q kill
 

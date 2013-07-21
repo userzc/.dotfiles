@@ -1,6 +1,6 @@
 ;; Se inicia de nuevo con emacs 24
 ;; tested on emacs-version "24.3.1"
-;; not working on emacs-version "24.3.50.1"
+;; semi-fuctional on emacs-version "24.3.50.1"
 ;; Para deshabilitar tool-bar
 (if (fboundp 'tool-bar-mode) (tool-bar-mode -1))
 
@@ -550,7 +550,7 @@ resolver"
 ;;  "~/.emacs.d/elpa/color-theme-wombat+-0.0.2/color-theme-wombat+.el")
 ;; (color-theme-wombat+)
 ;; (load-theme 'wombat+ t)
-(load-theme 'tangotango t)
+;; (load-theme 'tangotango t)
 ;; (load-theme 'wombat t)
 ;; (load-theme 'tango-2 t)
 ;; (load-theme 'cyberpunk t)  ; no funciona con multi-term
@@ -560,7 +560,7 @@ resolver"
 ;; (load-theme 'monokai t)
 ;; (load-theme 'clues t)
 ;; (load-theme 'assemblage t)
-;; (load-theme 'default-black t)
+(load-theme 'default-black t)
 ;; (custom-set-faces '(default ((t (:background "nil")))))
 ;; (load-theme 'zenburn t)
 ;; (load-theme 'sanityinc-tomorrow-day t)

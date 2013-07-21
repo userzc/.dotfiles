@@ -1,9 +1,6 @@
 ;; loaded with options:
-;; -nw -q -l default.el
+;; -nw -q -l fast-conf.el
 
-;; Se inicia de nuevo con emacs 24
-;; tested on emacs-version "24.3.1"
-;; not working on emacs-version "24.3.50.1"
 ;; Para deshabilitar tool-bar
 (if (fboundp 'tool-bar-mode) (tool-bar-mode -1))
 
