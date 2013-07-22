@@ -11,13 +11,15 @@
 (add-to-list 'auto-mode-alist '("\\.mac" . maxima-mode))
 
 ;; markdown-mode
-(require 'markdown-mode)
-(add-to-list 'auto-mode-alist '("\\.md\\'" . gfm-mode))
-(add-to-list 'auto-mode-alist '("\\.markdown\\'" . markdown-mode))
+(if (fboundp 'markdown-mode)
+    (progn
+      (add-to-list 'auto-mode-alist '("\\.md\\'" . gfm-mode))
+      (add-to-list 'auto-mode-alist '("\\.markdown\\'" . markdown-mode))))
 
 ;; textile-mode
-(require 'textile-mode)
-(add-to-list 'auto-mode-alist '("\\.textile\\'" . textile-mode))
+(if (fboundp 'textile-mode)
+    (progn
+      (add-to-list 'auto-mode-alist '("\\.textile\\'" . textile-mode))))
 
 ;; shell-script-mode for zsh-theme
 (add-to-list 'auto-mode-alist '("\\.zsh-theme\\'" . shell-script-mode))
