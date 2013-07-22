@@ -87,6 +87,8 @@
 
 (require 'automodes-conf)
 
+(require 'default-conf)
+
 (require 'cl)
 (require 'misc)
 (require 'ace-jump-mode)
@@ -94,7 +96,8 @@
 (require 'expand-region)
 (require 'magit)
 (require 'markdown-mode)
-(require 'textile-mode) 
+(require 'textile-mode)
+(require 'windsize)
 
 ;; Ido backup settings
 (setq ido-enable-flex-mathching t)

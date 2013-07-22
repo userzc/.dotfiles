@@ -15,17 +15,6 @@
              '("melpa" . "http://melpa.milkbox.net/packages/") t)
 (package-initialize)
 
-;; (setq custom-file "~/.emacs.d/emacs-custom.el")
-;; (load custom-file)
-
-;; ;; Write backup files to own directory
-;; (setq backup-directory-alist
-;;       `(("." . ,(expand-file-name
-;;                  (concat user-emacs-directory "backups")))))
-
-;; ;; Make backups of files, even when they're in version control
-;; (setq vc-make-backend-files t)
-
 (defvar lista-paquetes-instalados
   '(ac-math ace-jump-mode ack-and-a-half auctex auto-complete
 	    bookmark+ c-eldoc cl-lib clues-theme color-theme
@@ -87,27 +76,14 @@ re-downloaded in order to locate PACKAGE."
    (package-refresh-contents)
    (init--install-packages)))
 
-;; ;; Para los números de línea
-;; (global-linum-mode 1)
-;; (setq linum-format "%d ")
-
-;; ;; smart-modeline-mode
-;; (sml/setup)
-
-;; ;; abl-mode, no parece funcionar para nada
-;; (load-file "~/.emacs.d/elpa/abl-mode-20120718.1655/abl-mode.el")
-;; (require 'abl)
-;; (add-hook 'python-mode-hook 'abl-mode-hook)
-;; (setq nose-command "nosetest -s %s")
-;; (setq vem-activate-command "workon %s")
-;; (setq vem-create-commad "mkvirtualenv %s")
-
 ;; Para cargar archivos en `~/.emacs.d'
 (add-to-list 'load-path user-emacs-directory)
 
-
 ;; Configuración para diferentes archivos
 (require 'automodes-conf)
+
+;; Configuraciones personales por default
+(require 'default-conf)
 
 ;; Required libraries
 (require 'misc)
@@ -123,15 +99,6 @@ re-downloaded in order to locate PACKAGE."
 (require 'markdown-mode)
 (require 'textile-mode)
 (require 'dired+)
-
-;; ;; No cargar el default
-;; (setq inhibit-default-init t)
-
-;; ;; Para quitar el cursor del mouse cuando estorba
-;; (mouse-avoidance-mode 'banish)
-
-;; ;; Para los números de columna
-;; (column-number-mode 1)
 
 ;; Para utilizar enclose-mode en todos los buffers
 ;; https://github.com/rejeep/enclose
@@ -197,8 +164,6 @@ re-downloaded in order to locate PACKAGE."
 (add-to-list 'wrap-region-except-modes 'ibuffer-mode)
 (add-to-list 'wrap-region-except-modes 'term-mode)
 
-;; (global-set-key [remap goto-line] 'goto-line-with-feedback)
-
 (defun goto-line-with-feedback ()
   "Show line numbers temporarily, while prompting for the line number input"
   (interactive)
@@ -238,33 +203,12 @@ re-downloaded in order to locate PACKAGE."
 (add-hook 'c-mode-hook 'c-turn-on-eldoc-mode)
 (add-hook 'c++-mode-hook 'c-turn-on-eldoc-mode)
 
-;; ;; Uniquify
-;; (require 'uniquify )
-;; (setq uniquify-buffer-name-style 'post-forward)
-
-
-;; ;; Para contestar "y-or-n" en lugar de  "yes-or-no"
-;; (fset 'yes-or-no-p 'y-or-n-p)
-
-;; ;; Para indicar lineas vacias
-;; (set-default 'indicate-empty-lines t)
-
-;; ;; Para recuperar 'shell-command-on-region'
-;; (global-set-key (kbd "M-¬") 'shell-command-on-region)
-
-;; ;; Fringes pequeñas
-;; (set-fringe-mode '(1 . 1))
-
-;; ;; Real emacs knights don't use shift to mark things
-;; (setq shift-select-mode nil)
-
 ;; julia-mode
 (add-to-list 'load-path "~/julia_test/julia/contrib/")
 (condition-case nil
     (require 'julia-mode)
   (error
    (message "Didn't find Julia Mode'")))
-
 
 ;; Al parecer las siguientes lineas hacen que cualquier subdirectorio
 ;; de la carpeta "~/.emacs.d/lisp/" sea cargada al load-path, lo cual
@@ -282,9 +226,6 @@ re-downloaded in order to locate PACKAGE."
 ;; en particular en ipython y en octave
 (server-start)
 
-;; Para utilizar el paquete dired+
-;; (require 'dired+)
-
 ;; Se añade la librería "dired-x", extensiones necesarias por ejemplo
 ;; para abrir varios archivos marcados en dired mode, etc.
 ;; Se puede investigar cómo hacer algo similar con icicles
@@ -294,10 +235,6 @@ re-downloaded in order to locate PACKAGE."
 ;; dired-details+
 (require 'dired-details+)
 (setq-default dired-details-hidden-string "--- " )
-
-;; ;; Para utilizar el modo "Delete Selection Mode"
-;; ;; que borra la region seleccionada cuando se presiona una tecla
-;; (delete-selection-mode t)
 
 ;; Para utilizar icicles, es recomendable cargarlo después de cargar
 ;; delete-selection-mode
@@ -332,16 +269,12 @@ re-downloaded in order to locate PACKAGE."
 ;; (setq icicle-buffers-ido-like-flag t)
 (icy-mode 1)
 
-
 ;; ;; Ido backup settings
 (ido-mode -1)
 ;; (setq ido-enable-flex-mathching t)
 ;; (setq ido-everywhere t)
 ;; (ido-better-flex/enable)
 ;; (ido-mode 1)
-
-;; ;; para ver paréntesis en pares
-;; (show-paren-mode t)
 
 ;; para utilizar yasnippet
 (require 'yasnippet)
@@ -358,12 +291,6 @@ re-downloaded in order to locate PACKAGE."
 ;; para utilizar icomplete+
 (icomplete-mode t)
 (eval-after-load "icomplete" '(progn (require 'icomplete+)))
-
-;; ;; para que el diccionario por default de aspell sea castellano8
-;; (setq ispell-dictionary "castellano8")
-
-;; ;; para utilizar sólo espacios
-;; (setq indent-tabs-mode nil)
 
 ;; Ack-and-a-half
 (defalias 'ack 'ack-and-a-half)
@@ -932,7 +859,6 @@ Including indent-buffer, which should not be called automatically on save."
 (add-hook 'LaTeX-mode-hook 'TeX-source-correlate-mode)
 (setq TeX-source-correlate-start-server t)
 
-
 ;; ;; Para utilizar cleveref con RefTex
 ;; ;; (add-to-list 'reftex-ref-style-alist
 ;; ;;           '("Cleveref" "cleveref"
@@ -1121,14 +1047,4 @@ enabled and the `synctex' binary is available."
 
 (global-smart-tab-mode 1)
 
-
-;; (require 'windsize)
-;; (setq windsize-cols 2)
-;; (setq windsize-rows 1)
-;; (windsize-default-keybindings)
-
 (require 'keybinds-conf)
-(require 'default-conf)
-
-;; (put 'upcase-region 'disabled nil)
-;; (put 'downcase-region 'disabled nil)
