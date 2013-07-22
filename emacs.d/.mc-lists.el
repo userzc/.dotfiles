@@ -29,6 +29,7 @@
 	eval-print-last-sexp
 	fill-paragraph
 	forward-sentence
+	forward-sexp
 	icicle-exchange-point-and-mark
 	icicle-execute-extended-command
 	icicle-goto-marker-or-set-mark-command

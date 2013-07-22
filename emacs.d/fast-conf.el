@@ -92,6 +92,8 @@
 (require 'ace-jump-mode)
 (require 'smart-tab)
 (require 'expand-region)
+(require 'magit)
+(require 'windsize)
 
 ;; Ido backup settings
 (setq ido-enable-flex-mathching t)
@@ -99,6 +101,7 @@
 (ido-better-flex/enable)
 (ido-mode 1)
 
+;; To change in future version
 (put 'upcase-region 'disabled nil)
 (put 'downcase-region 'disabled nil)
 

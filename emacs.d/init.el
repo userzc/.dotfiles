@@ -119,6 +119,7 @@ re-downloaded in order to locate PACKAGE."
 (require 'multiple-cursors)
 (require 'python)
 (require 'smart-tab)
+(require 'windsize)
 
 ;; Para quitar el cursor del mouse cuando estorba
 (mouse-avoidance-mode 'banish)
@@ -485,10 +486,10 @@ resolver"
 ;; (load-theme 'dorsey t)
 ;; (load-theme 'fogus t)
 ;; (load-theme 'graham t);bad powerline compatibility
-;; (load-theme 'hickey t)
+(load-theme 'hickey t)
 ;; (load-theme 'mccarthy t);bad powerline compatibility
 ;; (load-theme 'odersky t)
-(load-theme 'wilson t)
+;; (load-theme 'wilson t)
 
 ;; ;; font
 ;; (set-default-font "Inconsolata-12")

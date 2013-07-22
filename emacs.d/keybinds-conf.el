@@ -91,6 +91,12 @@
 ;; para moverse atravez de los "windows":, e.g.: c-left  =  windmove-left
 (windmove-default-keybindings 'control)
 
+;; Para seguir la configuración de i3-wm
+(eval-after-load "windmove"
+  '(progn  (global-set-key (kbd "M-J") 'windmove-left)
+	   (global-set-key (kbd "M-Ñ") 'windmove-right)
+	   (global-set-key (kbd "M-L") 'windmove-up)
+	   (global-set-key (kbd "M-K") 'windmove-down)))
 
 (global-set-key (kbd "C-c C-n") 'acm-problem)
 
@@ -381,8 +387,13 @@
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
 (eval-after-load "windsize"
-    '(progn (setq windsize-cols 2)
-	    (setq windsize-rows 1)
-	    (windsize-default-keybindings)))
+  '(progn (setq windsize-cols 2)
+	  (setq windsize-rows 1)
+	  (windsize-default-keybindings)
+	  ;; Resemblance to windmove and i3-wm on left hand
+	  (global-set-key (kbd "M-Q") 'windsize-left)
+	  (global-set-key (kbd "M-R") 'windsize-right)
+	  (global-set-key (kbd "M-W") 'windsize-up)
+	  (global-set-key (kbd "M-E") 'windsize-down)))
 
 (provide 'keybinds-conf)
