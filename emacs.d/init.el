@@ -109,19 +109,16 @@ re-downloaded in order to locate PACKAGE."
 ;; Configuración para diferentes archivos
 (require 'automodes-conf)
 
-;; ibuffer > list-buffer
-(global-set-key (kbd "C-x C-b") 'ibuffer-list-buffers)
-
-;; zap-up-to-char
+;; Required libraries
 (require 'misc)
-(global-set-key (kbd "M-Z") 'zap-up-to-char)
-
-;; easier navigation, assumes `misc.el'
-(global-set-key (kbd "M-F") 'forward-to-word)
-(global-set-key (kbd "M-B") 'backward-to-word)
-
-;; delete-pairs
-(global-set-key (kbd "C-c d") 'delete-pair)
+(require 'bookmark+)
+(require 'expand-region)
+(require 'zencoding-mode)
+(require 'magit)
+(require 'ace-jump-mode)
+(require 'multiple-cursors)
+(require 'python)
+(require 'smart-tab)
 
 ;; Para quitar el cursor del mouse cuando estorba
 (mouse-avoidance-mode 'banish)
@@ -169,12 +166,6 @@ re-downloaded in order to locate PACKAGE."
   (forward-line -1)
   (indent-for-tab-command))
 
-(global-set-key (kbd "<C-return>") 'open-line-below)
-(global-set-key (kbd "<C-S-return>") 'open-line-above)
-
-;; Para ayudar a copiar una línea completa
-(global-set-key (kbd "C-c k") 'kill-whole-line)
-
 ;; Para reindentar el buffer después de borrar un "tag"
 (defadvice sgml-delete-tag (after reindent-buffer activate)
   "Reindenta el buffer después de eliminar un 'tag'"
@@ -199,7 +190,7 @@ re-downloaded in order to locate PACKAGE."
 (add-to-list 'wrap-region-except-modes 'ibuffer-mode)
 (add-to-list 'wrap-region-except-modes 'term-mode)
 
-(global-set-key [remap goto-line] 'goto-line-with-feedback)
+;; (global-set-key [remap goto-line] 'goto-line-with-feedback)
 
 (defun goto-line-with-feedback ()
   "Show line numbers temporarily, while prompting for the line number input"
@@ -251,8 +242,8 @@ re-downloaded in order to locate PACKAGE."
 ;; Para indicar lineas vacias
 (set-default 'indicate-empty-lines t)
 
-;; Para recuperar 'shell-command-on-region'
-(global-set-key (kbd "M-¬") 'shell-command-on-region)
+;; ;; Para recuperar 'shell-command-on-region'
+;; (global-set-key (kbd "M-¬") 'shell-command-on-region)
 
 ;; Fringes pequeñas
 (set-fringe-mode '(1 . 1))
@@ -283,13 +274,6 @@ re-downloaded in order to locate PACKAGE."
 ;; La siguiente opción se añade para poder utilizar emacs como servidor
 ;; en particular en ipython y en octave
 (server-start)
-
-
-;; Las siguientes lineas son para probar el paquete Bookmark+
-(require 'bookmark+)
-(global-set-key "\C-cb" bookmark-map)
-(global-set-key "\C-cbc" bmkp-set-map)
-(global-unset-key "\C-xp")
 
 ;; Para utilizar el paquete dired+
 (require 'dired+)
@@ -349,24 +333,14 @@ re-downloaded in order to locate PACKAGE."
 ;; (ido-better-flex/enable)
 ;; (ido-mode 1)
 
-;; para utilizar "expand-region" similar a como viene en emacsrocks.com/e09.html
-;; con un key-bind que no viene recomendado en la página de github
-(require 'expand-region)
-(global-set-key (kbd "M-_") 'er/expand-region)
-(global-set-key (kbd "C-M-_") 'er/contract-region)
-
 ;; para ver paréntesis en pares
 (show-paren-mode t)
-
-;; para moverse atravez de los "windows":, e.g.: c-left  =  windmove-left
-(windmove-default-keybindings 'control)
 
 ;; para utilizar yasnippet
 (require 'yasnippet)
 ;; hay que chacar como se utiliza el directorio ~/.emacs.d/snippets
 ;; (setq yas/snippet-dirs '("~/.emacs.d/snippets" "~/.emacs.d/extras/imported"))
 (yas/global-mode 1)
-
 
 ;; para utilizar desktop y se guarden los ultimos buffers que se editaban
 (desktop-save-mode 1)
@@ -414,23 +388,6 @@ resolver"
         (find-file (concat nuevo-dir-problem "/" id_problem "output.txt"))
         (find-file (concat nuevo-dir-problem "/" id_problem  "input.txt"))))))
 
-(global-set-key (kbd "C-c C-n") 'acm-problem)
-
-;; zencoding-mode
-(require 'zencoding-mode)
-;; Auto-start on any markup modes
-(add-hook 'sgml-mode-hook 'zencoding-mode)
-(define-key zencoding-mode-keymap (kbd "C-c C-j") 'zencoding-expand-line)
-(define-key zencoding-mode-keymap (kbd "C-j") 'nil)
-(define-key zencoding-mode-keymap (kbd "<C-return>") 'nil)
-
-;; Webjump let's you quickly search google, wikipedia, emacs wiki
-(global-set-key (kbd "C-x g") 'webjump)
-(global-set-key (kbd "C-x M-g") 'browse-url-at-point)
-
-;; magit-mode
-(global-set-key (kbd "C-c M-m") 'magit-status)
-
 ;; full screen magit-status, http://whattheemacsd.com/setup-magit.el-01.htmln
 (defadvice magit-status (around magit-fullscreen activate)
   (window-configuration-to-register :magit-fullscreen)
@@ -442,10 +399,6 @@ resolver"
   (interactive)
   (kill-buffer)
   (jump-to-register :magit-fullscreen))
-
-(require 'magit)
-(define-key magit-status-mode-map (kbd "q") 'magit-quit-session)
-
 
 ;; nose-mode
 (require 'nose)
@@ -474,43 +427,6 @@ resolver"
 ;; (powerline-center-theme)
 ;; (powerline-vim-theme)
 ;; (powerline-nano-theme)
-
-;; ;;--------------------------------------------------------------------
-;; ;; Another version: installed
-;; ;; https://github.com/jonathanchu/emacs-powerline
-;; ;;--------------------------------------------------------------------
-;; ;; La configuración debe depender del color-theme, lo cual crea
-;; ;; icompatibilidades, quizá después tenga la intensión de configurarlo
-;; ;; adecuadamente
-;; (require 'powerline)
-;; (setq powerline-arrow-shape 'arrow)   ;; give your mode-line curves1
-;; (defun powerline-settings ()
-;;   "Personal settings for powerline"
-;;   (interactive)
-;;   (progn
-;;     ;; (setq powerline-arrow-shape 'arrow)   ;; the default
-;;     ;; (setq powerline-arrow-shape 'curve)   ;; give your mode-line curves1
-;;     ;; (setq powerline-arrow-shape 'arrow14) ;; best for small fonts
-;;     ;; (setq powerline-color1 "grey22")
-;;     ;; (setq powerline-color2 "grey40")
-;;     ;; (setq powerline-color1 "MediumPurple1")
-;;     ;; (setq powerline-color2 "purple1")
-;;     (setq powerline-color1 "#657b83")
-;;     (setq powerline-color2 "#839496")
-;;     (set-face-attribute 'mode-line nil
-;;                         :foreground "#fdf6e3"
-;;                         :background "orchid4"
-;;                         :box nil)
-;;     (set-face-attribute 'mode-line-inactive nil
-;;                         :box nil)))
-
-;; (defadvice color-theme-wombat+ (after wombat+-powerline-reload activate)
-;;   "Reload powerline settings"
-;;   (powerline-settings))
-
-;; (defadvice load-theme (after load-theme-powerline-reload activate)
-;;   "Reload powerline settings"
-;;   (powerline-settings))
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
@@ -560,12 +476,19 @@ resolver"
 ;; (load-theme 'monokai t)
 ;; (load-theme 'clues t)
 ;; (load-theme 'assemblage t)
-(load-theme 'default-black t)
+;; (load-theme 'default-black t)
 ;; (custom-set-faces '(default ((t (:background "nil")))))
 ;; (load-theme 'zenburn t)
 ;; (load-theme 'sanityinc-tomorrow-day t)
 ;; (load-theme 'solarized-light t)
 ;; (load-theme 'qsimpleq t)
+;; (load-theme 'dorsey t)
+;; (load-theme 'fogus t)
+;; (load-theme 'graham t);bad powerline compatibility
+;; (load-theme 'hickey t)
+;; (load-theme 'mccarthy t);bad powerline compatibility
+;; (load-theme 'odersky t)
+(load-theme 'wilson t)
 
 ;; ;; font
 ;; (set-default-font "Inconsolata-12")
@@ -647,15 +570,6 @@ resolver"
           (select-window first-win)
           (if this-win-2nd (other-window 1))))))
 
-
-
-;; Window rotations and toggle, from:
-;; https://github.com/magnars/.emacs.d/blob/master/key-bindings.el
-(global-set-key (kbd "C-x -") 'rotate-windows)
-(global-set-key (kbd "C-x C--") 'toggle-window-split)
-(global-unset-key (kbd "C-x C-+")) ;; don't zoom like this
-
-
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;; Cleanup buffer application for every-day use
@@ -676,11 +590,6 @@ Including indent-buffer, which should not be called automatically on save."
   (untabify (point-min) (point-max))
   (cleanup-buffer-safe)
   (indent-region (point-min) (point-max)))
-
-(global-set-key (kbd "C-c n") 'cleanup-buffer)
-;; Se necesita encontrar un nuevo key-bind para esta función y poder
-;; intentar `abl-mode' con sus default key-binds.
-(global-set-key (kbd "C-c w") 'cleanup-buffer-safe)
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
@@ -715,17 +624,6 @@ Including indent-buffer, which should not be called automatically on save."
       (kill-buffer)
     (comint-delchar-or-maybe-eof arg)))
 
-(add-hook 'shell-mode-hook
-          (lambda ()
-            (define-key shell-mode-map
-              (kbd "C-d") 'comint-delchar-or-eof-or-kill-buffer)))
-
-;; Make it work in inferior processes: octave-inferior, imaxima, etc.
-(add-hook 'comint-mode-hook
-          (lambda ()
-            (define-key comint-mode-map
-              (kbd "C-d") 'comint-delchar-or-eof-or-kill-buffer)))
-
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;; multi-term
@@ -745,25 +643,12 @@ Including indent-buffer, which should not be called automatically on save."
 ;; otra ventana
 (setq multi-term-dedicated-skip-other-window-p t)
 
-;; (global-set-key (kbd "C-c t") 'multi-term-next)
-;; hay que buscar otro `key-bind' que sí funcione en `python-mode'
-(global-set-key (kbd "C-c c m") 'multi-term-dedicated-toggle)
-(global-set-key (kbd "C-c c M") 'multi-term) ;; create a new one
-
 (defadvice multi-term-dedicated-open
   (after do-select-dedicated-window )
   "Seleciona buffer `*MULTI-TERM-DEDICATED*' al utilizar el
   `multi-term-dedicated-open', útil al usar
   `multi-term-dedicated-toggle'."
   (multi-term-dedicated-select))
-
-;; Para evitar que "yasnippet" interfiera con la completación mediante
-;; TAB en "zsh"
-(add-hook 'term-mode-hook
-          '(lambda ()
-             ;; To change from `char-mode' to `line-mode'
-             (define-key term-raw-map (kbd "C-c C-j") 'term-line-mode)
-             (setq yas/minor-mode nil)))
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
@@ -824,98 +709,17 @@ Including indent-buffer, which should not be called automatically on save."
 ;; auto-complete: t
 ;;
 
-;;--------------------------------------------------------------------
-;; http://cx4a.org/software/auto-complete/manual.html#Enable_auto-complete-mode_automatically_for_specific_modes
-;;--------------------------------------------------------------------
-;; Ver las configuraciones hechas en "load-ropemacs" para más detalles.
-
-;;--------------------------------------------------------------------
-;; El siguiente código fué tomado de
-;; http://www.enigmacurry.com/2009/01/21/autocompleteel-python-code-completion-in-emacs/
-;; con la finalidad de integrar auto-complete-mode con rope, sin
-;; embargo parece no ser tan necesario, de culaquier forma se deja
-;; para futuras referencias
-;;--------------------------------------------------------------------
-
-;; (defun prefix-list-elements (list prefix)
-;;   (let (value)
-;;     (nreverse
-;;      (dolist (element list value)
-;;        (setq value (cons (format "%s%s" prefix element) value))))))
-;; (defvar ac-source-rope
-;;   '((candidates
-;;      . (lambda ()
-;;          (prefix-list-elements (rope-completions) ac-target))))
-;;   "Source for Rope")
-;; (defun ac-python-find ()
-;;   "Python `ac-find-function'."
-;;   (require 'thingatpt)
-;;   (let ((symbol (car-safe (bounds-of-thing-at-point 'symbol))))
-;;     (if (null symbol)
-;;         (if (string= "." (buffer-substring (- (point) 1) (point)))
-;;             (point)
-;;           nil)
-;;       symbol)))
-;; (defun ac-python-candidate ()
-;;   "Python `ac-candidates-function'"
-;;   (let (candidates)
-;;     (dolist (source ac-sources)
-;;       (if (symbolp source)
-;;           (setq source (symbol-value source)))
-;;       (let* ((ac-limit (or (cdr-safe (assq 'limit source)) ac-limit))
-;;              (requires (cdr-safe (assq 'requires source)))
-;;              cand)
-;;         (if (or (null requires)
-;;                 (>= (length ac-target) requires))
-;;             (setq cand
-;;                   (delq nil
-;;                         (mapcar (lambda (candidate)
-;;                                   (propertize candidate 'source source))
-;;                                 (funcall (cdr (assq 'candidates source)))))))
-;;         (if (and (> ac-limit 1)
-;;                  (> (length cand) ac-limit))
-;;             (setcdr (nthcdr (1- ac-limit) cand) nil))
-;;         (setq candidates (append candidates cand))))
-;;     (delete-dups candidates)))
-;; (add-hook 'python-mode-hook
-;;           (lambda ()
-;;          (auto-complete-mode 1)
-;;          (set (make-local-variable 'ac-sources)
-;;               (append ac-sources '(ac-source-rope) '(ac-source-yasnippet)))
-;;          (set (make-local-variable 'ac-find-function) 'ac-python-find)
-;;          (set (make-local-variable 'ac-candidate-function) 'ac-python-candidate)
-;;          (set (make-local-variable 'ac-auto-start) nil)))
-
-
-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-;; emaxima-mode
-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-;; para utilizar c-ret en emaxima-mode-map
-(eval-after-load "emaxima"
-  '(define-key emaxima-mode-map [C-return] 'emaxima-update-single-cell))
-
-(add-hook 'maxima-mode-hook
-          '(lambda ()
-             (define-key maxima-mode-map
-               (kbd "M-;") 'comment-dwim)
-             (define-key maxima-mode-map
-               (kbd "C-c ;") 'maxima-insert-short-comment)))
-
-;; (define-key maxima-mode-map (kbd "M-;") 'comment-dwim)
-;; (define-key maxima-mode-map (kbd "C-c ;") 'maxima-insert-short-comment)
-
-;; para utilizar las fuentes de euler-math
-;; (eval-after-load "imaxima"
-;;   '(setq imaxima-latex-preamble "\\usepackage{euler}"))
+;; ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;; ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;; ;; emaxima-mode
+;; ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;; ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 (autoload 'maxima-mode "maxima" "maxima mode" t)
 (autoload 'imaxima "imaxima" "frontend for maxima with image support" t)
 (autoload 'maxima "maxima" "maxima interaction" t)
 (autoload 'imath-mode "imath" "imath mode for math formula input" t)
 (setq imaxima-latex-preamble "\\usepackage{euler}")
 (setq imaxima-use-maxima-mode-flag t)
-
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
@@ -936,7 +740,7 @@ Including indent-buffer, which should not be called automatically on save."
 ;; cambio, debe de quedar pendiente en la lista de python
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-(require 'python)
+;; (require 'python)
 (setq
  python-shell-interpreter "ipython"
  python-shell-interpreter-args "console --colors=linux --existing"
@@ -953,29 +757,6 @@ Including indent-buffer, which should not be called automatically on save."
  ;; "';'.join(get_ipython().complete('''%s''')[1])\n"
  )
 ;; "';'.join(get_ipython().complete('''%s''')[1])\n")
-
-;; para utilizar completación de historial como en terminal
-(define-key inferior-python-mode-map [(meta p)]
-  'comint-previous-matching-input-from-input)
-(define-key inferior-python-mode-map [(meta n)]
-  'comint-next-matching-input-from-input)
-(define-key inferior-python-mode-map [(control meta n)]
-  'comint-next-input)
-(define-key inferior-python-mode-map [(control meta p)]
-  'comint-previous-input)
-(define-key inferior-python-mode-map (kbd "C-c C-z") 'quit-window)
-
-;; ;; imenu for fgallina's python
-;; (add-hook 'python-mode-hook
-;;   (lambda ()
-;;     (setq imenu-create-index-function 'python-imenu-create-index)))
-
-;; las siguientes líneas impiden que el movimiento entre windows se
-;; modifique por los keybinds de comint
-(define-key comint-mode-map [C-down] nil)
-(define-key comint-mode-map [C-up] nil)
-(define-key comint-mode-map [C-right] nil)
-(define-key comint-mode-map [C-left] nil)
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;; nueva funcionalidad experimental para cargar rope y pymacs sólo ;;
@@ -1094,80 +875,6 @@ Including indent-buffer, which should not be called automatically on save."
      (eval-after-load 'desktop
        '(push "\\*ein:.*\\*" desktop-clear-preserve-buffers))
      ))
-
-
-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-;; multiple-cursors, emacs rocks: http://emacsrocks.com/e13.html
-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-;; -------------------------------------------------------------------
-;; Quizás sea conveniente revisar los demás keybinds de magnars, están
-;; en la página: https://github.com/magnars/.emacs.d/blob/master/key-bindings.el
-
-(require 'multiple-cursors)
-(global-set-key (kbd "C-<") 'mc/mark-previous-like-this)
-(global-set-key (kbd "C->") 'mc/mark-next-like-this)
-(global-set-key (kbd "C-M-<") 'mc/mark-previous-symbol-like-this)
-(global-set-key (kbd "C-M->") 'mc/mark-next-symbol-like-this)
-;; like the other two, but takes an argument (negative is previous)
-;; (global-set-key (kbd "C-M-m") 'mc/mark-more-like-this)
-(global-set-key (kbd "C-*") 'mc/mark-all-like-this)
-(global-set-key (kbd "C-M-*") 'mc/mark-all-symbols-like-this)
-(global-set-key (kbd "C-S-c C-S-c") 'mc/edit-lines)
-(global-set-key (kbd "C-S-c C-e") 'mc/edit-ends-of-lines)
-(global-set-key (kbd "C-S-c C-a") 'mc/edit-beginnings-of-lines)
-(global-set-key (kbd "C-S-p") 'mc/mark-pop)
-(global-set-key (kbd "C-c C-r") 'rename-sgml-tag)
-;; No he podido identificar la tecla Hyper, así que estoy probando
-;; diferentes opciones, investigar más respecto a ns-function-modifier
-;; (setq ns-function-modifier 'hyper )
-;; (global-set-key (kbd "H-SPC") 'set-rectangular-region-anchor)
-;;Hay que optimizar:
-(global-set-key (kbd "C-S-SPC") 'set-rectangular-region-anchor)
-(global-set-key (kbd "M-æ") 'mc/mark-all-like-this-dwim)        ;AltGr-a = æ
-(global-set-key (kbd "M-→") 'mc/insert-numbers)                 ;AltGr-i = →
-(global-set-key (kbd "M-¶") 'mc/reverse-regions)                ;AltGr-r = ¶
-(global-set-key (kbd "M-ß") 'mc/sort-regions)                   ;AltGr-s = ß
-
-;; ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-;; ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-;; ;; mark multiple, emacs rocks: http://emacsrocks.com/e08.html
-;; ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-;; ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-;; ;; -------------------------------------------------------------------
-;; ;; Se necesita probar las funcionalidades del paquete de multiple
-;; ;; cursors, así que se debe de comentar esta línea para ver de que se
-;; ;; trata todo el alboroto
-;; (require 'inline-string-rectangle)
-;; (global-set-key (kbd "C-x r t") 'inline-string-rectangle)
-
-;; (require 'mark-more-like-this)
-;; (global-set-key (kbd "C-<") 'mark-previous-like-this)
-;; (global-set-key (kbd "C->") 'mark-next-like-this)
-;; like the other two, but takes an argument (negative is previous)
-;; (global-set-key (kbd "C-M-m") 'mark-more-like-this)
-;; (global-set-key (kbd "C-*") 'mark-all-like-this)
-
-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-;; acejump, http://emacsrocks.com/e10.html
-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-;; los keybinds son los sugeridos por emacs rocks
-
-(require 'ace-jump-mode)
-;; (define-key global-map (kbd "C-ø") 'ace-jump-mode)
-;; (define-key global-map (kbd "M-ø") 'ace-jump-mode) ; to access in terminal
-(define-key global-map (kbd "M-ñ") 'ace-jump-mode) ; to access in terminal
-(autoload
-  'ace-jump-mode-pop-mark
-  "ace-jump-mode"
-  "Ace jump back:-)"
-  t)
-(eval-after-load "ace-jump-mode"
-  '(ace-jump-mode-enable-mark-sync))
-(define-key global-map (kbd "C-c SPC") 'ace-jump-mode-pop-mark)
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
@@ -1357,9 +1064,6 @@ enabled and the `synctex' binary is available."
 ;; tal como se ve en:
 ;; https://github.com/rmm5t/dotfiles/blob/master/emacs.d/rmm5t/tabs.el
 ;; y funciona como en http://www.youtube.com/watch?v=a-jrn_ba41w
-
-(require 'smart-tab)
-
 (setq smart-tab-completion-functions-alist
       '((text-mode       . dabbrev-completion)))
 
@@ -1410,23 +1114,13 @@ enabled and the `synctex' binary is available."
 
 (global-smart-tab-mode 1)
 
-(global-set-key (kbd "TAB") 'smart-tab)
 
+;; (require 'windsize)
+;; (setq windsize-cols 2)
+;; (setq windsize-rows 1)
+;; (windsize-default-keybindings)
 
-;; se utiliza un nuevo método para modificar tamaños de ventanas en
-;; lugar del codigo que se tiene en la seccion
-
-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-;;         window resize
-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-
-(require 'windsize)
-(setq windsize-cols 2)
-(setq windsize-rows 1)
-(windsize-default-keybindings)
-
+(require 'keybinds-conf)
 
 (put 'upcase-region 'disabled nil)
 (put 'downcase-region 'disabled nil)

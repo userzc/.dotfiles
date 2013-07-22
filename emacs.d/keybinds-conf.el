@@ -2,12 +2,13 @@
 (global-set-key (kbd "C-x C-b") 'ibuffer-list-buffers)
 
 ;; zap-up-to-char
-(require 'misc)
-(global-set-key (kbd "M-Z") 'zap-up-to-char)
+(eval-after-load "misc"
+    '(progn    (global-set-key (kbd "M-Z") 'zap-up-to-char)
+	      ;; easier navigation, assumes `misc.el'
+	      (global-set-key (kbd "M-F") 'forward-to-word)
+	      (global-set-key (kbd "M-B") 'backward-to-word)))
 
-;; easier navigation, assumes `misc.el'
-(global-set-key (kbd "M-F") 'forward-to-word)
-(global-set-key (kbd "M-B") 'backward-to-word)
+
 
 
 ;; delete-pairs
@@ -49,10 +50,10 @@
 
 
 ;; Las siguientes lineas son para probar el paquete Bookmark+
-(require 'bookmark+)
-(global-set-key "\C-cb" bookmark-map)
-(global-set-key "\C-cbc" bmkp-set-map)
-(global-unset-key "\C-xp")
+(eval-after-load "bookmark+"
+    '(progn (global-set-key "\C-cb" bookmark-map)
+	   (global-set-key "\C-cbc" bmkp-set-map)
+	   (global-unset-key "\C-xp")))
 
 
 ;; ;; Para utilizar icicles, es recomendable cargarlo después de cargar
@@ -82,9 +83,9 @@
 
 ;; para utilizar "expand-region" similar a como viene en emacsrocks.com/e09.html
 ;; con un key-bind que no viene recomendado en la página de github
-(require 'expand-region)
-(global-set-key (kbd "M-_") 'er/expand-region)
-(global-set-key (kbd "C-M-_") 'er/contract-region)
+(eval-after-load "expand-region"
+    '(progn (global-set-key (kbd "M-_") 'er/expand-region)
+	   (global-set-key (kbd "C-M-_") 'er/contract-region)))
 
 
 ;; para moverse atravez de los "windows":, e.g.: c-left  =  windmove-left
@@ -95,12 +96,13 @@
 
 
 ;; zencoding-mode
-(require 'zencoding-mode)
-;; Auto-start on any markup modes
-(add-hook 'sgml-mode-hook 'zencoding-mode)
-(define-key zencoding-mode-keymap (kbd "C-c C-j") 'zencoding-expand-line)
-(define-key zencoding-mode-keymap (kbd "C-j") 'nil)
-(define-key zencoding-mode-keymap (kbd "<C-return>") 'nil)
+(eval-after-load "zencoding-mode"
+  ;; Auto-start on any markup modes
+  '(progn (add-hook 'sgml-mode-hook 'zencoding-mode)
+	  (define-key zencoding-mode-keymap (kbd "C-c C-j")
+	    'zencoding-expand-line)
+	  (define-key zencoding-mode-keymap (kbd "C-j") 'nil)
+	  (define-key zencoding-mode-keymap (kbd "<C-return>") 'nil)))
 
 
 ;; Webjump let's you quickly search google, wikipedia, emacs wiki
@@ -109,12 +111,13 @@
 
 
 ;; magit-mode
-(global-set-key (kbd "C-c M-m") 'magit-status)
 
 
-(require 'magit)
-(define-key magit-status-mode-map (kbd "q") 'magit-quit-session)
 
+(eval-after-load "magit"
+    '(progn
+      (define-key magit-status-mode-map (kbd "q") 'magit-quit-session)
+      (global-set-key (kbd "C-c M-m") 'magit-status)))
 
 ;; ;; nose-mode
 ;; (require 'nose)
@@ -148,17 +151,19 @@
 
 
 ;; Make it work in inferior processes: octave-inferior, imaxima, etc.
+
 (add-hook 'comint-mode-hook
-          (lambda ()
-            (define-key comint-mode-map
-              (kbd "C-d") 'comint-delchar-or-eof-or-kill-buffer)))
+	  (lambda ()
+	    (define-key comint-mode-map
+	      (kbd "C-d") 'comint-delchar-or-eof-or-kill-buffer)))
 
 
 ;; (global-set-key (kbd "C-c t") 'multi-term-next)
 ;; hay que buscar otro `key-bind' que sí funcione en `python-mode'
-(global-set-key (kbd "C-c c m") 'multi-term-dedicated-toggle)
-(global-set-key (kbd "C-c c M") 'multi-term) ;; create a new one
-
+(if (fboundp 'multi-term)
+    (progn (global-set-key (kbd "C-c c m") 'multi-term-dedicated-toggle)
+	   ;; create a new one
+	   (global-set-key (kbd "C-c c M") 'multi-term)))
 
 ;; Para evitar que "yasnippet" interfiera con la completación mediante
 ;; TAB en "zsh"
@@ -211,23 +216,27 @@
 
 
 ;; para utilizar completación de historial como en terminal
-(define-key inferior-python-mode-map [(meta p)]
-  'comint-previous-matching-input-from-input)
-(define-key inferior-python-mode-map [(meta n)]
-  'comint-next-matching-input-from-input)
-(define-key inferior-python-mode-map [(control meta n)]
-  'comint-next-input)
-(define-key inferior-python-mode-map [(control meta p)]
-  'comint-previous-input)
-(define-key inferior-python-mode-map (kbd "C-c C-z") 'quit-window)
 
+(eval-after-load "python"
+    '(progn    (define-key inferior-python-mode-map [(meta p)]
+		'comint-previous-matching-input-from-input)
+	      (define-key inferior-python-mode-map [(meta n)]
+		'comint-next-matching-input-from-input)
+	      (define-key inferior-python-mode-map [(control meta n)]
+		'comint-next-input)
+	      (define-key inferior-python-mode-map [(control meta p)]
+		'comint-previous-input)
+	      (define-key inferior-python-mode-map
+		(kbd "C-c C-z") 'quit-window)))
 
 ;; las siguientes líneas impiden que el movimiento entre windows se
 ;; modifique por los keybinds de comint
-(define-key comint-mode-map [C-down] nil)
-(define-key comint-mode-map [C-up] nil)
-(define-key comint-mode-map [C-right] nil)
-(define-key comint-mode-map [C-left] nil)
+(add-hook  'comint-mode-hook
+	   '(lambda ()
+	      (define-key comint-mode-map [C-down] nil)
+	      (define-key comint-mode-map [C-up] nil)
+	      (define-key comint-mode-map [C-right] nil)
+	      (define-key comint-mode-map [C-left] nil)))
 
 
 ;; (defun load-ropemacs ()
@@ -291,73 +300,89 @@
 ;;        'ein:shared-output-pop-to-buffer)
 
 
-(require 'multiple-cursors)
-(global-set-key (kbd "C-<") 'mc/mark-previous-like-this)
-(global-set-key (kbd "C->") 'mc/mark-next-like-this)
-(global-set-key (kbd "C-M-<") 'mc/mark-previous-symbol-like-this)
-(global-set-key (kbd "C-M->") 'mc/mark-next-symbol-like-this)
-;; like the other two, but takes an argument (negative is previous)
-;; (global-set-key (kbd "C-M-m") 'mc/mark-more-like-this)
-(global-set-key (kbd "C-*") 'mc/mark-all-like-this)
-(global-set-key (kbd "C-M-*") 'mc/mark-all-symbols-like-this)
-(global-set-key (kbd "C-S-c C-S-c") 'mc/edit-lines)
-(global-set-key (kbd "C-S-c C-e") 'mc/edit-ends-of-lines)
-(global-set-key (kbd "C-S-c C-a") 'mc/edit-beginnings-of-lines)
-(global-set-key (kbd "C-S-p") 'mc/mark-pop)
-(global-set-key (kbd "C-c C-r") 'rename-sgml-tag)
-;; No he podido identificar la tecla Hyper, así que estoy probando
-;; diferentes opciones, investigar más respecto a ns-function-modifier
-;; (setq ns-function-modifier 'hyper )
-;; (global-set-key (kbd "H-SPC") 'set-rectangular-region-anchor)
-;;Hay que optimizar:
-(global-set-key (kbd "C-S-SPC") 'set-rectangular-region-anchor)
-(global-set-key (kbd "M-æ") 'mc/mark-all-like-this-dwim)        ;AltGr-a = æ
-(global-set-key (kbd "M-→") 'mc/insert-numbers)                 ;AltGr-i = →
-(global-set-key (kbd "M-¶") 'mc/reverse-regions)                ;AltGr-r = ¶
-(global-set-key (kbd "M-ß") 'mc/sort-regions)                   ;AltGr-s = ß
 
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;; multiple-cursors, emacs rocks: http://emacsrocks.com/e13.html
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;; -------------------------------------------------------------------
+;; Quizás sea conveniente revisar los demás keybinds de magnars, están
+;; en la página: https://github.com/magnars/.emacs.d/blob/master/key-bindings.el
 
-;; ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-;; ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-;; ;; mark multiple, emacs rocks: http://emacsrocks.com/e08.html
-;; ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-;; ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-;; ;; -------------------------------------------------------------------
-;; ;; Se necesita probar las funcionalidades del paquete de multiple
-;; ;; cursors, así que se debe de comentar esta línea para ver de que se
-;; ;; trata todo el alboroto
-;; (require 'inline-string-rectangle)
-;; (global-set-key (kbd "C-x r t") 'inline-string-rectangle)
+(eval-after-load "multiple-cursors"
+    '(progn (global-set-key (kbd "C-<") 'mc/mark-previous-like-this)
+	    (global-set-key (kbd "C->") 'mc/mark-next-like-this)
+	    (global-set-key (kbd "C-M-<") 'mc/mark-previous-symbol-like-this)
+	    (global-set-key (kbd "C-M->") 'mc/mark-next-symbol-like-this)
+	    ;; like the other two, but takes an argument (negative is previous)
+	    ;; (global-set-key (kbd "C-M-m") 'mc/mark-more-like-this)
+	    (global-set-key (kbd "C-*") 'mc/mark-all-like-this)
+	    (global-set-key (kbd "C-M-*") 'mc/mark-all-symbols-like-this)
+	    (global-set-key (kbd "C-S-c C-S-c") 'mc/edit-lines)
+	    (global-set-key (kbd "C-S-c C-e") 'mc/edit-ends-of-lines)
+	    (global-set-key (kbd "C-S-c C-a") 'mc/edit-beginnings-of-lines)
+	    (global-set-key (kbd "C-S-p") 'mc/mark-pop)
+	    (global-set-key (kbd "C-c C-r") 'rename-sgml-tag)
+	    ;; No he podido identificar la tecla Hyper, así que estoy probando
+	    ;; diferentes opciones, investigar más respecto a ns-function-modifier
+	    ;; (setq ns-function-modifier 'hyper )
+	    ;; (global-set-key (kbd "H-SPC") 'set-rectangular-region-anchor)
+	    ;;Hay que optimizar:
+	    (global-set-key (kbd "C-S-SPC") 'set-rectangular-region-anchor)
+	    ;; AltGr-a = æ
+	    (global-set-key (kbd "M-æ") 'mc/mark-all-like-this-dwim)
+	    ;; AltGr-i = →
+	    (global-set-key (kbd "M-→") 'mc/insert-numbers)
+	    ;; AltGr-r = ¶
+	    (global-set-key (kbd "M-¶") 'mc/reverse-regions)
+	    ;; AltGr-s = ß
+	    (global-set-key (kbd "M-ß") 'mc/sort-regions)))
 
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;; acejump, http://emacsrocks.com/e10.html
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;; los keybinds son los sugeridos por emacs rocks
 
-;; (require 'mark-more-like-this)
-;; (global-set-key (kbd "C-<") 'mark-previous-like-this)
-;; (global-set-key (kbd "C->") 'mark-next-like-this)
-;; like the other two, but takes an argument (negative is previous)
-;; (global-set-key (kbd "C-M-m") 'mark-more-like-this)
-;; (global-set-key (kbd "C-*") 'mark-all-like-this)
-
-
-(require 'ace-jump-mode)
-;; (define-key global-map (kbd "C-ø") 'ace-jump-mode)
-;; (define-key global-map (kbd "M-ø") 'ace-jump-mode) ; to access in terminal
-(define-key global-map (kbd "M-ñ") 'ace-jump-mode) ; to access in terminal
-(autoload
-  'ace-jump-mode-pop-mark
-  "ace-jump-mode"
-  "Ace jump back:-)"
-  t)
 (eval-after-load "ace-jump-mode"
-  '(ace-jump-mode-enable-mark-sync))
-(define-key global-map (kbd "C-c SPC") 'ace-jump-mode-pop-mark)
+    ';; (define-key global-map (kbd "C-ø") 'ace-jump-mode)
+    ;; (define-key global-map (kbd "M-ø") 'ace-jump-mode) ; to access in terminal
+    (progn
+       (define-key global-map (kbd "M-ñ") 'ace-jump-mode) ; to access in terminal
+       (autoload
+	 'ace-jump-mode-pop-mark
+	 "ace-jump-mode"
+	 "Ace jump back:-)"
+	 t)
+       (eval-after-load "ace-jump-mode"
+	 '(ace-jump-mode-enable-mark-sync))
+       (define-key global-map (kbd "C-c SPC") 'ace-jump-mode-pop-mark)))
 
 
-(global-set-key (kbd "TAB") 'smart-tab)
 
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;; "smart tab" y "hippie expand"
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;; tal como se ve en:
+;; https://github.com/rmm5t/dotfiles/blob/master/emacs.d/rmm5t/tabs.el
+;; y funciona como en http://www.youtube.com/watch?v=a-jrn_ba41w
 
-(require 'windsize)
-(setq windsize-cols 2)
-(setq windsize-rows 1)
-(windsize-default-keybindings)
+(eval-after-load "smart-tab"
+    '(global-set-key (kbd "TAB") 'smart-tab))
 
-(privide 'keybinds-conf)
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;;         window resize
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
+(eval-after-load "windsize"
+    '(progn (setq windsize-cols 2)
+	    (setq windsize-rows 1)
+	    (windsize-default-keybindings)))
+
+(provide 'keybinds-conf)

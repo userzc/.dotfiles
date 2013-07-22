@@ -88,22 +88,18 @@
 (require 'automodes-conf)
 
 (require 'cl)
+(require 'misc)
 (require 'ace-jump-mode)
-;; (define-key global-map (kbd "C-ø") 'ace-jump-mode)
-;; (define-key global-map (kbd "M-ø") 'ace-jump-mode) ; to access in terminal
-(define-key global-map (kbd "M-ñ") 'ace-jump-mode) ; to access in terminal
-(autoload
-  'ace-jump-mode-pop-mark
-  "ace-jump-mode"
-  "Ace jump back:-)"
-  t)
-(eval-after-load "ace-jump-mode"
-  '(ace-jump-mode-enable-mark-sync))
-(define-key global-map (kbd "C-c SPC") 'ace-jump-mode-pop-mark)
-
+(require 'smart-tab)
+(require 'expand-region)
 
 ;; Ido backup settings
 (setq ido-enable-flex-mathching t)
 (setq ido-everywhere t)
 (ido-better-flex/enable)
 (ido-mode 1)
+
+(put 'upcase-region 'disabled nil)
+(put 'downcase-region 'disabled nil)
+
+(require 'keybinds-conf)
