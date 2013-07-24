@@ -1,0 +1,47 @@
+* Getting Started
+
+  This is the first attempt to create a repository for =dotfiles= and an
+  install script to make all the necesary changes.
+
+  To clone this repository, from prompt use:
+
+#+BEGIN_SRC sh
+  git clone https://github.com/userzc/.dotfiles.git
+#+END_SRC
+
+** Instalation
+
+   To install the files in this repository use:
+
+#+BEGIN_SRC sh
+python ~/.dotfiles/sync -i
+#+END_SRC
+
+   On Windows the script must be run as administrator.
+
+** Requirements
+
+   | Software         | Windows Version | Unix Version |
+   |------------------+-----------------+--------------|
+   | Inconsolata Font | any             | any          |
+   | python           | >= 3.2          | >= 2.7       |
+   | git              | any             | any          |
+   | quickswitch-i3   | ---             | any          |
+
+** Features
+
+   So far this script is able to =symlink= files and folders under some
+   specific lists and special cases (=.config/= folder).
+
+   This script accepts options for install (=-i=, =--install=), listing
+   the posible files to modify (=-l=, =--list=) and for removal of the
+   existing links or files (=-r=, =--remove=). The script is installing
+   files through python, so it should also be portable to windows.
+
+** Wishlist
+
+   It should be possible to create a way to syncronize and install =git=
+   repositories such as =.oh-my-zsh/=.
+   # Local Variables:
+   # eval: (orgtbl-mode t)
+   # End:

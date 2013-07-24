@@ -85,9 +85,14 @@
 ;; Para cargar archivos en `~/.emacs.d'
 (add-to-list 'load-path user-emacs-directory)
 
+;; Configuración para diferentes archivos
 (require 'automodes-conf)
 
+;; Configuraciones personales por default
 (require 'default-conf)
+
+;; Funciones para edición
+(require 'defuns)
 
 (require 'cl)
 (require 'misc)
@@ -104,9 +109,5 @@
 (setq ido-everywhere t)
 (ido-better-flex/enable)
 (ido-mode 1)
-
-;; To change in future version
-(put 'upcase-region 'disabled nil)
-(put 'downcase-region 'disabled nil)
 
 (require 'keybinds-conf)

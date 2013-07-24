@@ -8,98 +8,46 @@
 	      (global-set-key (kbd "M-F") 'forward-to-word)
 	      (global-set-key (kbd "M-B") 'backward-to-word)))
 
-
-
-
 ;; delete-pairs
 (global-set-key (kbd "C-c d") 'delete-pair)
 
-
+;; open lines faster from anywhere in the current line
 (global-set-key (kbd "<C-return>") 'open-line-below)
 (global-set-key (kbd "<C-S-return>") 'open-line-above)
-
 
 ;; Para ayudar a copiar una línea completa
 (global-set-key (kbd "C-c k") 'kill-whole-line)
 
-
+;; more information on `goto-line'
 (global-set-key [remap goto-line] 'goto-line-with-feedback)
 
-
-;; (eval-after-load "octave-inf"
-;;   '(progn
-;;      (define-key inferior-octave-mode-map [C-d] nil)
-;;      (define-key inferior-octave-mode-map [C-up] nil)
-;;      (define-key inferior-octave-mode-map [C-right] nil)
-;;      (define-key inferior-octave-mode-map [C-left] nil)))
-
-
-;; ;; Al parecer es en c++-mode-map que se deben de añadir las cosas, en
-;; ;; caso de que empiece a hacer considerablemente grande la lista de
-;; ;; configuraciones para los modos relacionados con C, es preferible
-;; ;; definir una función con un nombre particular en lugar de usar la
-;; ;; función "lambda"
-;; (add-hook 'c-initialization-hook
-;;           '(lambda ()
-;;              (define-key c++-mode-map (kbd "C-c C-c") 'compile)
-;;              (define-key c++-mode-map (kbd "C-c C-r") 'recompile)))
-
-
-;; Para recuperar 'shell-command-on-region'
+;; Para recuperar 'shell-command-on-region' en  `unity'
 (global-set-key (kbd "M-¬") 'shell-command-on-region)
 
-
-;; Las siguientes lineas son para probar el paquete Bookmark+
+;; Las siguientes lineas son para probar el paquete `bookmark+'
 (eval-after-load "bookmark+"
     '(progn (global-set-key "\C-cb" bookmark-map)
 	   (global-set-key "\C-cbc" bmkp-set-map)
 	   (global-unset-key "\C-xp")))
 
-
-;; ;; Para utilizar icicles, es recomendable cargarlo después de cargar
-;; ;; delete-selection-mode
-;; ;; Es IMPORTANTE NO BORRAR de manera contínua icicles, se están
-;; ;; generando demasiados errores de manera frecuente con cada
-;; ;; actualización
-;; (add-hook 'icicle-mode-hook 'bind-my-icicles-keys)
-;; (add-hook 'icicle-mode-hook 'bind-my-icicles-top-keys)
-;; (defun bind-my-icicles-keys ()
-;;   "Replace some default Icicles minibuffer bindings with others."
-;;   (dolist (map (append (list minibuffer-local-completion-map
-;;                              minibuffer-local-must-match-map)
-;;                        (and (fboundp 'minibuffer-local-filename-completion-map)
-;;                             (list minibuffer-local-filename-completion-map))))
-;;     (when icicle-mode
-;;       (define-key map (icicle-kbd "M-¬")
-;;         'icicle-all-candidates-list-alt-action))))
-
-
-;; (require 'icicles)
-;; (defun bind-my-icicles-top-keys ()
-;;   "Set some Icicles bindings for `icicle-mode'"
-;;   (when icicle-mode
-;;     (define-key icicle-mode-map (icicle-kbd "C-c l") 'icicle-locate)))
-
-
-;; para utilizar "expand-region" similar a como viene en emacsrocks.com/e09.html
+;; para utilizar `expand-region' similar a como viene en emacsrocks.com/e09.html
 ;; con un key-bind que no viene recomendado en la página de github
 (eval-after-load "expand-region"
     '(progn (global-set-key (kbd "M-_") 'er/expand-region)
 	   (global-set-key (kbd "C-M-_") 'er/contract-region)))
 
-
 ;; para moverse atravez de los "windows":, e.g.: c-left  =  windmove-left
 (windmove-default-keybindings 'control)
 
-;; Para seguir la configuración de i3-wm
+;; Siguiendo la configuración de i3-wm
 (eval-after-load "windmove"
   '(progn  (global-set-key (kbd "M-J") 'windmove-left)
 	   (global-set-key (kbd "M-Ñ") 'windmove-right)
 	   (global-set-key (kbd "M-L") 'windmove-up)
 	   (global-set-key (kbd "M-K") 'windmove-down)))
 
+;; Trabajar rápido en un problema de ACM
 (global-set-key (kbd "C-c C-n") 'acm-problem)
-
 
 ;; zencoding-mode
 (eval-after-load "zencoding-mode"
@@ -110,31 +58,27 @@
 	  (define-key zencoding-mode-keymap (kbd "C-j") 'nil)
 	  (define-key zencoding-mode-keymap (kbd "<C-return>") 'nil)))
 
-
 ;; Webjump let's you quickly search google, wikipedia, emacs wiki
 (global-set-key (kbd "C-x g") 'webjump)
 (global-set-key (kbd "C-x M-g") 'browse-url-at-point)
 
-
 ;; magit-mode
-
-
-
 (eval-after-load "magit"
     '(progn
       (define-key magit-status-mode-map (kbd "q") 'magit-quit-session)
       (global-set-key (kbd "C-c M-m") 'magit-status)))
 
-;; ;; nose-mode
-;; (require 'nose)
-;; (add-hook 'python-mode-hook
-;;           (lambda ()
-;;             (local-set-key "\C-ca" 'nosetests-all)
-;;             (local-set-key "\C-cmo" 'nosetests-module)
-;;             (local-set-key "\C-c." 'nosetests-one)
-;;             (local-set-key "\C-cpa" 'nosetests-pdb-all)
-;;             (local-set-key "\C-cpm" 'nosetests-pdb-module)
-;;             (local-set-key "\C-cp." 'nosetests-pdb-one)))
+;; nose-mode
+(eval-after-load "nose"
+  '(progn
+     (add-hook 'python-mode-hook
+	       (lambda ()
+		 (local-set-key "\C-ca" 'nosetests-all)
+		 (local-set-key "\C-cmo" 'nosetests-module)
+		 (local-set-key "\C-c." 'nosetests-one)
+		 (local-set-key "\C-cpa" 'nosetests-pdb-all)
+		 (local-set-key "\C-cpm" 'nosetests-pdb-module)
+		 (local-set-key "\C-cp." 'nosetests-pdb-one)))))
 
 
 ;; Window rotations and toggle, from:
@@ -216,24 +160,19 @@
              (define-key maxima-mode-map
                (kbd "C-c ;") 'maxima-insert-short-comment)))
 
-
-;; (define-key maxima-mode-map (kbd "M-;") 'comment-dwim)
-;; (define-key maxima-mode-map (kbd "C-c ;") 'maxima-insert-short-comment)
-
-
 ;; para utilizar completación de historial como en terminal
-
 (eval-after-load "python"
-    '(progn    (define-key inferior-python-mode-map [(meta p)]
-		'comint-previous-matching-input-from-input)
-	      (define-key inferior-python-mode-map [(meta n)]
-		'comint-next-matching-input-from-input)
-	      (define-key inferior-python-mode-map [(control meta n)]
-		'comint-next-input)
-	      (define-key inferior-python-mode-map [(control meta p)]
-		'comint-previous-input)
-	      (define-key inferior-python-mode-map
-		(kbd "C-c C-z") 'quit-window)))
+  '(progn
+     (define-key inferior-python-mode-map [(meta p)]
+       'comint-previous-matching-input-from-input)
+     (define-key inferior-python-mode-map [(meta n)]
+       'comint-next-matching-input-from-input)
+     (define-key inferior-python-mode-map [(control meta n)]
+       'comint-next-input)
+     (define-key inferior-python-mode-map [(control meta p)]
+       'comint-previous-input)
+     (define-key inferior-python-mode-map
+       (kbd "C-c C-z") 'quit-window)))
 
 ;; las siguientes líneas impiden que el movimiento entre windows se
 ;; modifique por los keybinds de comint

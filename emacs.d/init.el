@@ -85,6 +85,9 @@ re-downloaded in order to locate PACKAGE."
 ;; Configuraciones personales por default
 (require 'default-conf)
 
+;; Funciones para edición
+(require 'defuns)
+
 ;; Required libraries
 (require 'misc)
 (require 'bookmark+)
@@ -99,6 +102,8 @@ re-downloaded in order to locate PACKAGE."
 (require 'markdown-mode)
 (require 'textile-mode)
 (require 'dired+)
+(require 'nose)
+
 
 ;; Para utilizar enclose-mode en todos los buffers
 ;; https://github.com/rejeep/enclose
@@ -114,36 +119,6 @@ re-downloaded in order to locate PACKAGE."
   "Indenta la línea actual, sólo en los 'major-mode' apropiados"
   (if (member (buffer-local-value 'major-mode (current-buffer)) '(c++-mode))
       (indent-for-tab-command)))
-
-;; ;; Parece ser que este `advice' no es necesario debido a las funciones
-;; ;; que se definen en la parte de abajo
-(defadvice open-line (after open-line-reindent-line activate)
-  "Indenta la nueva línea, sólo en los 'major-mode' apropiados"
-  (if (member (buffer-local-value 'major-mode (current-buffer))
-              '(c++-mode))
-      (save-excursion
-        (next-line)
-        (indent-for-tab-command))))
-
-;; Opening new lines can be finicky.
-;; http://whattheemacsd.com/editing-defuns.el-01.html
-(defun open-line-below ()
-  (interactive)
-  (end-of-line)
-  (newline)
-  (indent-for-tab-command))
-
-(defun open-line-above ()
-  (interactive)
-  (beginning-of-line)
-  (newline)
-  (forward-line -1)
-  (indent-for-tab-command))
-
-;; Para reindentar el buffer después de borrar un "tag"
-(defadvice sgml-delete-tag (after reindent-buffer activate)
-  "Reindenta el buffer después de eliminar un 'tag'"
-  (cleanup-buffer))
 
 ;; Hay que revisar con cuidado el paquete `smart-parens'.
 ;; Similar a `paredit'.
@@ -164,15 +139,7 @@ re-downloaded in order to locate PACKAGE."
 (add-to-list 'wrap-region-except-modes 'ibuffer-mode)
 (add-to-list 'wrap-region-except-modes 'term-mode)
 
-(defun goto-line-with-feedback ()
-  "Show line numbers temporarily, while prompting for the line number input"
-  (interactive)
-  (unwind-protect
-      (progn
-        (linum-mode 1)
-        (goto-line (read-number "Goto line: ")))
-    (linum-mode -1)))
-
+;; Conf para octave, al parecer
 (eval-after-load "octave-inf"
   '(progn
      (define-key inferior-octave-mode-map [C-d] nil)
@@ -208,7 +175,7 @@ re-downloaded in order to locate PACKAGE."
 (condition-case nil
     (require 'julia-mode)
   (error
-   (message "Didn't find Julia Mode'")))
+   (message "Didn't find Julia Mode")))
 
 ;; Al parecer las siguientes lineas hacen que cualquier subdirectorio
 ;; de la carpeta "~/.emacs.d/lisp/" sea cargada al load-path, lo cual
@@ -219,8 +186,8 @@ re-downloaded in order to locate PACKAGE."
 (let ((default-directory "~/.emacs.d/lisp/"))
   (normal-top-level-add-subdirs-to-load-path))
 
-;; Borrar los espacios en blanco innecesarios al final de las lineas
-(add-hook 'before-save-hook 'cleanup-buffer-safe)
+;; ;; Borrar los espacios en blanco innecesarios al final de las lineas
+;; (add-hook 'before-save-hook 'cleanup-buffer-safe)
 
 ;; La siguiente opción se añade para poder utilizar emacs como servidor
 ;; en particular en ipython y en octave
@@ -300,29 +267,7 @@ re-downloaded in order to locate PACKAGE."
 ;; always ask for directory in which to run ack
 (setq ack-and-a-half-prompt-for-directory t)
 
-;; funciones para el juez uva online acm icpc
-(defun acm-problem (id_problem)
-  "esta función abre o genera una carpeta con sus respectivos
-archivos en base al nombre del problema de la uva que se intenta
-resolver"
-  (interactive "sUVA Problem Id:")
-  (let (nuevo-dir-problem)
-    (setq nuevo-dir-problem (concat "~/Documents/ACM-ICPC/Tried/" id_problem))
-    (message nuevo-dir-problem)
-    (if (file-directory-p nuevo-dir-problem)
-        (progn
-          (message  (concat "Ya existe: " id_problem))
-          (find-file (concat nuevo-dir-problem "/" id_problem "output.txt"))
-          (find-file (concat nuevo-dir-problem "/" id_problem  "input.txt"))
-          (find-file (concat nuevo-dir-problem "/" id_problem ".cpp")))
-      (progn
-        (message (concat "Se crea: " id_problem))
-        (dired-create-directory nuevo-dir-problem)
-        (find-file (concat nuevo-dir-problem "/" id_problem ".cpp"))
-        (find-file (concat nuevo-dir-problem "/" id_problem "output.txt"))
-        (find-file (concat nuevo-dir-problem "/" id_problem  "input.txt"))))))
-
-;; full screen magit-status, http://whattheemacsd.com/setup-magit.el-01.htmln
+;; full screen magit-status, http://whattheemacsd.com/setup-magit.el-01.html
 (defadvice magit-status (around magit-fullscreen activate)
   (window-configuration-to-register :magit-fullscreen)
   ad-do-it
@@ -334,26 +279,11 @@ resolver"
   (kill-buffer)
   (jump-to-register :magit-fullscreen))
 
-;; nose-mode
-(require 'nose)
-(add-hook 'python-mode-hook
-          (lambda ()
-            (local-set-key "\C-ca" 'nosetests-all)
-            (local-set-key "\C-cmo" 'nosetests-module)
-            (local-set-key "\C-c." 'nosetests-one)
-            (local-set-key "\C-cpa" 'nosetests-pdb-all)
-            (local-set-key "\C-cpm" 'nosetests-pdb-module)
-            (local-set-key "\C-cp." 'nosetests-pdb-one)))
-
-
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-;; powerline, ver: https://github.com/jonathanchu/emacs-powerline
+;; powerline, ver: https://github.com/milkypostman/powerline
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-
-;; version previously installed:
-;; https://github.com/milkypostman/powerline
 
 (setq powerline-default-separator 'wave)
 
@@ -409,7 +339,7 @@ resolver"
 ;; (load-theme 'moe-light t)
 ;; (load-theme 'monokai t)
 ;; (load-theme 'clues t)
-;; (load-theme 'assemblage t)
+(load-theme 'assemblage t)
 ;; (load-theme 'default-black t)
 ;; (custom-set-faces '(default ((t (:background "nil")))))
 ;; (load-theme 'zenburn t)
@@ -419,7 +349,7 @@ resolver"
 ;; (load-theme 'dorsey t)
 ;; (load-theme 'fogus t)
 ;; (load-theme 'graham t);bad powerline compatibility
-(load-theme 'hickey t)
+;; (load-theme 'hickey t)
 ;; (load-theme 'mccarthy t);bad powerline compatibility
 ;; (load-theme 'odersky t)
 ;; (load-theme 'wilson t)
@@ -435,95 +365,6 @@ resolver"
       (set-default-font "Inconsolata-11")
     (error
      (set-default-font "DejaVu Sans Mono-10"))))
-
-
-
-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-;; rotate-windows, ver: http://whattheemacsd.com/
-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-;; This snippet flips a two-window fame, so that left is right, or up
-;; is down. It's sanity preserving if you've got a sliver of OCD.
-;;
-;; In the case of multiple windows, the snippeet shifts the order of
-;; the window, like the next invariant permutation.
-(defun rotate-windows ()
-  "Rotate your windows"
-  (interactive)
-  (cond ((not (> (count-windows)1))
-         (message "You can't rotate a single window!"))
-        (t
-         (setq i 1)
-         (setq numWindows (count-windows))
-         (while  (< i numWindows)
-           (let* (
-                  (w1 (elt (window-list) i))
-                  (w2 (elt (window-list) (+ (% i numWindows) 1)))
-
-                  (b1 (window-buffer w1))
-                  (b2 (window-buffer w2))
-
-                  (s1 (window-start w1))
-                  (s2 (window-start w2))
-                  )
-             (set-window-buffer w1  b2)
-             (set-window-buffer w2 b1)
-             (set-window-start w1 s2)
-             (set-window-start w2 s1)
-             (setq i (1+ i)))))))
-
-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-;; toggle-window-splilt, ver: http://whattheemacsd.com/
-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-;; Annoyed when Emacs opens the window below instead at the side?
-(defun toggle-window-split ()
-  (interactive)
-  (if (= (count-windows) 2)
-      (let* ((this-win-buffer (window-buffer))
-             (next-win-buffer (window-buffer (next-window)))
-             (this-win-edges (window-edges (selected-window)))
-             (next-win-edges (window-edges (next-window)))
-             (this-win-2nd (not (and (<= (car this-win-edges)
-                                         (car next-win-edges))
-                                     (<= (cadr this-win-edges)
-                                         (cadr next-win-edges)))))
-             (splitter
-              (if (= (car this-win-edges)
-                     (car (window-edges (next-window))))
-                  'split-window-horizontally
-                'split-window-vertically)))
-        (delete-other-windows)
-        (let ((first-win (selected-window)))
-          (funcall splitter)
-          (if this-win-2nd (other-window 1))
-          (set-window-buffer (selected-window) this-win-buffer)
-          (set-window-buffer (next-window) next-win-buffer)
-          (select-window first-win)
-          (if this-win-2nd (other-window 1))))))
-
-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-;; Cleanup buffer application for every-day use
-;; as seen on emacsrocks: http://emacsrocks.com/e12.html
-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-(defun cleanup-buffer-safe ()
-  "Perform a bunch of safe operations on the whitespace content of a buffer.
-Does not indent buffer, because it is used for a before-save-hook, and that
-might be bad."
-  (interactive)
-  (delete-trailing-whitespace))
-
-(defun cleanup-buffer ()
-  "Perform a bunch of operations on the whitespace content of a buffer.
-Including indent-buffer, which should not be called automatically on save."
-  (interactive)
-  (untabify (point-min) (point-max))
-  (cleanup-buffer-safe)
-  (indent-region (point-min) (point-max)))
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
@@ -550,13 +391,13 @@ Including indent-buffer, which should not be called automatically on save."
 ;; definir variables locales con el siguiente código:
 ;; ((html-mode . ((eval . (django-html-mumamo-mode)))))
 
-;; `C-d' to terminate process and kill buffer in shell buffers,
-;; ver: http://whattheemacsd.com/setup-shell.el-01.html
-(defun comint-delchar-or-eof-or-kill-buffer (arg)
-  (interactive "p")
-  (if (null (get-buffer-process (current-buffer)))
-      (kill-buffer)
-    (comint-delchar-or-maybe-eof arg)))
+;; ;; `C-d' to terminate process and kill buffer in shell buffers,
+;; ;; ver: http://whattheemacsd.com/setup-shell.el-01.html
+;; (defun comint-delchar-or-eof-or-kill-buffer (arg)
+;;   (interactive "p")
+;;   (if (null (get-buffer-process (current-buffer)))
+;;       (kill-buffer)
+;;     (comint-delchar-or-maybe-eof arg)))
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
