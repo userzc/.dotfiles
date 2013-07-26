@@ -8,8 +8,9 @@ https://github.com/rmm5t/dotfiles/blob/master/install.rb
 
 from __future__ import print_function
 from platform import system
+from shutil import rmtree
 from os import listdir, symlink, remove
-from os.path import join, dirname, abspath, expanduser
+from os.path import join, dirname, abspath, expanduser, isdir
 from argparse import ArgumentParser
 
 
@@ -29,8 +30,10 @@ USER_HOME = expanduser("~")
 IGNORED_ITEMS = [
     'config', # TODO: consider using tuples indicating depth for directories
     'README.md',
+    'README.org',
+    'readme_var.md',
+    'readme_var.org',
     'sync.py',
-    'list_dir.py',
 ]
 
 def listing_function(from_here, to_here):
@@ -63,7 +66,10 @@ def removing_function(from_here, to_here):
     - `to_here`: Target path for the link.
     """
     try:
-        remove(to_here)
+        if isdir(to_here):
+            rmtree(to_here)
+        else:
+            remove(to_here)
         print("Removed: ", to_here)
     except:
         print('Error removing ', to_here, ' to update link: ', from_here)

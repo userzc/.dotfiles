@@ -1,5 +1,5 @@
 ;; loaded with options:
-;; -nw -q -l fast-conf.el
+;; -nw -q -l default.el
 
 ;; Para deshabilitar tool-bar
 (if (fboundp 'tool-bar-mode) (tool-bar-mode -1))
@@ -23,7 +23,7 @@
 			  (auctex nil)
 			  (auto-complete nil)
 			  (bookmark+ t)
-			  (c-eldoc nil)
+			  (c-eldoc t)
 			  (cl-lib t)
 			  (clues-theme nil)
 			  (color-theme nil)
@@ -94,20 +94,19 @@
 ;; Funciones para edición
 (require 'defuns)
 
+;; Librerias requeridas
 (require 'cl)
 (require 'misc)
 (require 'ace-jump-mode)
 (require 'smart-tab)
 (require 'expand-region)
-(require 'magit)
 (require 'markdown-mode)
 (require 'textile-mode)
 (require 'windsize)
 
-;; Ido backup settings
-(setq ido-enable-flex-mathching t)
-(setq ido-everywhere t)
-(ido-better-flex/enable)
-(ido-mode 1)
+;; configuraicones de librerias
+(require 'enclose-conf)
+(require 'wrap-region-conf)
+(require 'ido-conf)
 
 (require 'keybinds-conf)

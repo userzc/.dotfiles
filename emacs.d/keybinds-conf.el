@@ -183,69 +183,6 @@
 	      (define-key comint-mode-map [C-right] nil)
 	      (define-key comint-mode-map [C-left] nil)))
 
-
-;; (defun load-ropemacs ()
-;;   "load pymacs and ropemacs, special configurations made by René Zurita Corro."
-;;   ;; initialize pymacs
-;;   (interactive)
-;;   (autoload 'pymacs-apply "pymacs")
-;;   (autoload 'pymacs-call "pymacs")
-;;   (autoload 'pymacs-eval "pymacs" nil t)
-;;   (autoload 'pymacs-exec "pymacs" nil t)
-;;   (autoload 'pymacs-load "pymacs" nil t)
-;;   (autoload 'pymacs-autoload "pymacs")
-;;   ;; module "desktop" savagely kills `*pymacs*' in some circumstances.
-;;   ;; let's avoid such damage.
-;;   (eval-after-load 'desktop
-;;     '(push "\\*pymacs\\*" desktop-clear-preserve-buffers))
-;;   ;; initialize rope
-;;   ;; (setq ropemacs-enable-shortcuts t)
-;;   ;; (setq ropemacs-local-prefix "C-c c-p")  ;esta línea es innecesaria,
-;;   ;;                                         ;parece que los prefijos
-;;   ;;                                         ;locales no interfieren con
-;;   ;;                                         ;nada, en caso contrario, hay
-;;   ;;                                         ;que un prefijo diferente al
-;;   ;;                                         ;que está por default
-;;   (setq ropemacs-global-prefix "C-c p")
-;;   ;; (require 'pymacs)    ;al parecer no es necesaria esta línea ya que
-;;   ;;                      ;pymacs fué cargado con anterioridad, quizá
-;;   ;;                      ;sea conveniente identificar una nueva forma
-;;   ;;                      ;de cargar rope sólo cuando es necesario
-;;   (pymacs-load "ropemacs" "rope-")
-;;   (setq ropemacs-enable-autoimport t)
-;;   ;; automatically save project python buffers before refactorings
-;;   (setq ropemacs-confirm-saving 'nil)
-;;   (ropemacs-mode)
-;;   (ac-ropemacs-initialize)
-;;   (add-to-list 'ac-sources
-;;                'ac-source-ropemacs))
-;; (global-set-key "\C-cpl" 'load-ropemacs)
-
-
-;; ;; Se intenta con esta nueva opción
-;; (add-hook 'ein:shared-output-mode-hook
-;;           '(lambda ()
-;;              (define-key ein:shared-output-mode-map (kbd "q") 'quit-window)))
-
-
-;; (eval-after-load "ein-notebook"
-;;   '(progn
-;;      ;; se desaactivan movimientos entre celdas para que no interfiera con
-;;      ;; el movimiento entre windows de emacs, hay que modificar el key-map
-;;      ;; ein:notebook-mode-map
-;;      (define-key ein:notebook-mode-map [C-down] nil)
-;;      (define-key ein:notebook-mode-map [C-up] nil)
-
-
-;;      ;; estos movimientos son remapeados a la tecla shift para no perder
-;;      ;; esta funcionalidad
-;;      (define-key ein:notebook-mode-map [S-down] 'ein:worksheet-goto-next-input)
-;;      (define-key ein:notebook-mode-map [S-up] 'ein:worksheet-goto-prev-input)
-;;      (define-key ein:notebook-mode-map (kbd "C-;")
-;;        'ein:shared-output-pop-to-buffer)
-
-
-
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;; multiple-cursors, emacs rocks: http://emacsrocks.com/e13.html

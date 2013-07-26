@@ -5,9 +5,11 @@
       '(
 	TeX-insert-backslash
 	TeX-newline
+	backward-sexp
 	backward-to-word
 	backward-up-list
 	beginning-of-buffer
+	beginning-of-defun
 	browse-url-of-buffer
 	c-electric-colon
 	c-electric-delete-forward
@@ -25,6 +27,7 @@
 	diredp-capitalize-this-file
 	ein:worksheet-split-cell-at-point
 	enclose-remove
+	end-of-defun
 	eval-last-sexp
 	eval-print-last-sexp
 	fill-paragraph

@@ -1,8 +1,3 @@
-;; Default custom file
-(setq custom-file "~/.emacs.d/emacs-custom.el")
-(load custom-file)
-
-
 ;; Write backup files to own directory
 (setq backup-directory-alist
       `(("." . ,(expand-file-name
