@@ -66,10 +66,7 @@ def removing_function(from_here, to_here):
     - `to_here`: Target path for the link.
     """
     try:
-        if isdir(to_here):
-            rmtree(to_here)
-        else:
-            remove(to_here)
+        rmtree(to_here) if isdir(to_here) else remove(to_here)
         print("Removed: ", to_here)
     except:
         print('Error removing ', to_here, ' to update link: ', from_here)
