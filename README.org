@@ -6,7 +6,7 @@
   To clone this repository, from prompt use:
 
 #+BEGIN_SRC sh
-  git clone https://github.com/userzc/.dotfiles.git
+git clone https://github.com/userzc/.dotfiles.git
 #+END_SRC
 
 ** Instalation
