@@ -16,7 +16,8 @@
 ;;
 ;;; Commentary:
 ;;
-;; This is for use with idxsearch.el
+;; Support in `idxsearch' for indexing search engines that you can ask
+;; though SQL.
 ;;
 ;; The index of some search engines can be accessed through SQL queries.
 ;; This file provide generic and specific implementation for such access.
@@ -25,7 +26,7 @@
 ;; SQL-querying and send backs the result to Emacs.
 ;;
 ;; At the moment there are support for these search engines:
-;; - Windows Desktop Search
+;; - Windows Desktop Search, see `idxwds-search'.
 ;;
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;;
@@ -54,11 +55,20 @@
 ;;; Code:
 
 ;;;###autoload
-(defun idxwds-search (search-patt file-patt root)
+(defun idxwds-search (search-patt file-patts root)
+  (idxsql-search search-patt file-patts root))
+
+(defun idxsql-search (search-patt file-patts root)
   (let* ((search-patts (idxsearch-ggl-split search-patt))
-         (options (list "--root" root
-                        "--filepatt" file-patt
-                        "--query" (mapconcat 'identity search-patts ",")))
+         (file-patt (mapconcat (lambda (fp) (replace-regexp-in-string "*" "%" fp t t))
+                               file-patts
+                               ","))
+         (options (let ((opts (list "--root" root
+                                    "--filepatt" file-patt
+                                    "--query" (mapconcat 'identity search-patts ","))))
+                    (when idxsearch-show-details       (setq opts (cons "--details" opts)))
+                    (when idxsearch-grep-in-text-files (setq opts (cons "--greptext" opts)))
+                    opts))
          (cmds (idxsearch-make-command options))
          (cmd (car cmds))
          (script-type (cadr cmds))
@@ -77,6 +87,7 @@
       (setq cmd (mapconcat 'identity cmd " ")))
     (message "cmd=%S" cmd)
     (with-current-buffer (compilation-start cmd 'idxsearch-mode)
+      ;;(run-with-idle-timer 3 nil 'idxsearch-insert-search-info-header root search-patt (mapconcat 'identity file-patts "; "))
       (visual-line-mode 1)
       (setq wrap-prefix "           ")
       (orgstruct-mode)

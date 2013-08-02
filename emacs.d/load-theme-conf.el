@@ -29,7 +29,7 @@
 ;;  "~/.emacs.d/elpa/color-theme-wombat+-0.0.2/color-theme-wombat+.el")
 ;; (color-theme-wombat+)
 ;; (load-theme 'wombat+ t)
-;; (load-theme 'tangotango t)
+(load-theme 'tangotango t)
 ;; (load-theme 'wombat t)
 ;; (load-theme 'tango-2 t)
 ;; (load-theme 'cyberpunk t)  ; no funciona con multi-term
@@ -41,7 +41,7 @@
 ;; (load-theme 'assemblage t)
 ;; (load-theme 'default-black t)
 ;; (custom-set-faces '(default ((t (:background "nil")))))
-(load-theme 'zenburn t)
+;; (load-theme 'zenburn t)
 ;; (load-theme 'sanityinc-tomorrow-day t)
 ;; (load-theme 'solarized-light t)
 ;; (load-theme 'qsimpleq t)

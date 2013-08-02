@@ -56,6 +56,10 @@
 
 (eval-when-compile (require 'compile))
 (eval-when-compile (require 'cl))
+(eval-when-compile (require 'idxgds))
+(eval-when-compile (require 'idxsql))
+(eval-when-compile (require 'idxdoc))
+(require 'grep)
 (require 'org)
 (require 'nxhtml-base)
 
@@ -80,28 +84,75 @@
 ;;
 ;;(setq idxsearch-search-script (expand-file-name "etc/wds/idxsearch.ps1" nxhtml-install-dir))
 
-;;(setq idxsearch-engine 'gds)
-;;(setq idxsearch-engine 'wds)
-;;(setq idxsearch-engine 'docindexer)
+(defgroup idxsearch nil
+  "Customization group for `idxsearch'."
+  :group 'matching)
+
+(defvar idxsearch-engines
+  '((idxdoc-search "DocIndexer")
+    (idxgds-search "Google Desktop Search")
+    (idxwds-search "Windows Desktop Search"))
+  "Search engines.")
+
+
+;; (idxsearch-funp idxsearch-engine)
+(defun idxsearch-funp (fun)
+  (assoc fun idxsearch-engines))
+
+(define-widget 'idxsearch-function 'function
+  "A index search function known by `idxsearch."
+  :complete-function (lambda ()
+                       (interactive)
+                       (lisp-complete-symbol 'idxsearch-funp))
+  :prompt-match 'idxsearch-funp
+  :prompt-history 'widget-function-prompt-value-history
+  :match-alternatives '(idxsearch-funp)
+  :validate (lambda (widget)
+              (unless (idxsearch-funp (widget-value widget))
+                (widget-put widget :error (format "Unknown index search function: %S"
+                                                  (widget-value widget)))
+                widget))
+  :value 'fundamental-mode
+  :tag "Index search specific function")
+
+;;(setq idxsearch-engine 'idxgds-search)
+;;(setq idxsearch-engine 'idxwds-search)
+;;(setq idxsearch-engine 'idxdoc-search)
 (defcustom idxsearch-engine (cond
-                             ((idxgds-query-url-p) 'gds)
+                             ((idxgds-query-url-p) 'idxgds-search)
                              (t (if (eq system-type 'windows-nt)
-                                    'wds
-                                  'docindexer)))
-  "Desktop search engine.
-This is used by the command `idxsearch'.  The parameters to that
-command are handled a little, little bit differently for
-different search engines since they have different capabilities.
+                                    'idxwds-search
+                                  'idxdoc-search)))
+  "Desktop search engine for `idxsearch' to use.
+The currently supported search engines are:
+
+* DocIndexer, see `idxdoc-search'.
+* Google Desktop Search
+  You need to set `idxgds-query-url' to use it.
+* Windows Desktop Search
 "
-  :type '(choice :tag "Select search engine:"
-                 (const :tag "Google Desktop Search" gds)
-                 (const :tag "Windows Desktop Search" wds)
-                 (const :tag "DocIndexer" docindexer)
-                 )
+  :type 'idxsearch-function
+  :group 'idxsearch)
+
+(defcustom idxsearch-dflt-file-pattern "*.org, *.pdf"
+  "Default file pattern for `idxsearch'.
+Comma-separated list.  Each part corresponds to the end of a file
+name.  '*' may be used as a wildcard."
+  :type 'string
+  :group 'idxsearch)
+
+(defcustom idxsearch-show-details nil
+  "Show details in search result if they are available."
+  :type 'boolean
+  :group 'idxsearch)
+
+(defcustom idxsearch-grep-in-text-files nil
+  "If the hit file is a text file grep inside it."
+  :type 'boolean
   :group 'idxsearch)
 
 ;;;###autoload
-(defun idxsearch (search-patt file-patt root params)
+(defun idxsearch (search-patt file-patt root)
   "Search using an indexed search engine on your pc.
 This searches all the content you have indexed there.
 
@@ -112,31 +163,23 @@ file to match.
 If the file is a text file it will be searched for all words and
 phrases so you get direct links into it.
 
-----
+FILE-PATT is a comma-separated list of filenames with '*' as a
+wildcard.  It defaults to `idxsearch-dflt-file-pattern'.
 
-When called from elisp SEARCH-PATTS and FILE-PATTS should be list
-of strings.  In this case the strings are given as they are to
-the SQL statements for searching Windows Search.
+ROOT is the root directory containing files to search.
 
-The strings in SEARCH-PATT should just be strings to match.  If
-they contain spaces they are considered to be a sequence of
-words, otherwise just single words.  All strings must match a
-file for a match in that file.
 
-The strings in FILE-PATTS are matched with the SQL keyword
-'like'.  A '%' char is appended to each strings.  Any of this
-strings should match.  This way you can easily search in
-different root locations at once.
-"
+To do the search an indexed search engine is used.  You choose
+which one by customizing `idxsearch-engine'."
   (interactive
    ;; Fix-me: Different search engines have different pattern
    ;; styles. Use different hist vars? Different prompts?
    (let* ((def-str (grep-tag-default))
           (str (read-string "Search pattern: " def-str 'idxsearch-search-patt-hist))
-          (def-fil "")
+          (def-fil idxsearch-dflt-file-pattern)
           (fil (read-string "File name pattern: " def-fil 'idxsearch-file-patt-hist))
           (dir (read-directory-name "Indexed search in directory tree: ")))
-     (list str fil dir nil)))
+     (list str fil dir)))
   (let ((item-patt (rx (or (and "\""
                                 (submatch (* (not (any "\""))))
                                 "\"")
@@ -144,24 +187,38 @@ different root locations at once.
                                           (+ (not space))
                                           word-end)))))
         (start 0)
-        strs)
+        strs
+        (file-patts (split-string file-patt (rx (* whitespace) "," (* whitespace))))
+        (outbuf (get-buffer-create "*idxsearch*")))
     (while (setq start (string-match item-patt search-patt start))
       (let ((y (or (match-string 1 search-patt)
                    (match-string 2 search-patt))))
         (setq start (+ start (length y)))
         (setq strs (cons y strs))))
-    (case idxsearch-engine
-      (gds (idxgds-search search-patt file-patt root))
-      (wds (idxwds-search search-patt file-patt root))
-            ;; (list
-            ;;  "--root"   root
-            ;;  ;; "--files"  file-patt
-            ;;  ;; "--locate" "grep"
-            ;;  "--query"  (mapconcat 'identity strs ","))
-            ;;))
-      (docindexer (idxdocindex-search search-patt file-patt root))
-      (t (error "Ops!")))))
+    (display-buffer outbuf)
+    (with-current-buffer outbuf
+      (let ((inhibit-read-only t))
+        (erase-buffer)
+        (unless (derived-mode-p 'idxsearch-mode) (idxsearch-mode))
+        (unless orgstruct-mode (orgstruct-mode))
+        (visual-line-mode 1)
+        (setq wrap-prefix "           ")
+        (idxsearch-insert-search-info-header root search-patt file-patt)
+        (setq default-directory root)
+        (funcall idxsearch-engine search-patt file-patts root)))))
 
+(defun idxsearch-insert-search-info-header (root search-patt file-patt)
+  (let ((here (point-marker))
+        (engine-name (nth 1 (assoc idxsearch-engine idxsearch-engines))))
+    (set-marker-insertion-type here t)
+    (goto-char (point-min))
+    (if (looking-at "-\*- mode: ")
+        (goto-char (point-at-eol))
+      (insert "-*- mode: idxsearch; default-directory: \"" root "\" -*-\n"))
+    (insert "Using " engine-name "\n")
+    (insert "    Search: " search-patt "\n")
+    (insert "  In files: " file-patt "\n")
+    (goto-char here)))
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;;; Pattern building helpers

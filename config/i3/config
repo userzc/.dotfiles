@@ -186,6 +186,8 @@ exec gnome-settings-daemon
 exec gnome-keyring-daemon --start &
 # First attempt to get NetworkManager in i3bar
 exec --no-startup-id nm-applet
+exec --no-startup-id bluetooth-applet
+exec --no-startup-id gnome-sound-applet
 # gnome poweroff menu including suspend, etc.
 bindsym $mod+Shift+x exec gnome-session-quit --power-off
 

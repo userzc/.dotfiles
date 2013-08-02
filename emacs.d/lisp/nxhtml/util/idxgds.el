@@ -16,10 +16,13 @@
 ;;
 ;;; Commentary:
 ;;
-;; This is for use with idxsearch.el
+;; Support for Google Desktop Search in `idxsearch'.
 ;;
-;; For the Google Desktop Search API see
+;; For info about Google Desktop Search API see
 ;; http://code.google.com/apis/desktop/docs/queryapi.html
+;;
+;; To index any text file you can use the indexing plugin "Larry's Any
+;; Text File Indexer" to Google Desktop Search.
 ;;
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;;
@@ -49,6 +52,10 @@
 
 (require 'mm-url)
 
+(defgroup idxgds nil
+  "Customization group for `idxgds'."
+  :group 'idxsearch)
+
 (defcustom idxgds-query-url ""
   "Stored query URL.
 See URL `http://code.google.com/apis/desktop/docs/queryapi.html'
@@ -71,20 +78,21 @@ START is 0-based."
          (buffer (generate-new-buffer "idxgds-url"))
          num-hits hits
          (debug nil))
+    ;;(message "QUERY url=%S" url)
     (with-current-buffer buffer (url-insert-file-contents url))
     (when debug (display-buffer buffer))
-    (message "url=%s" url)
+    ;;(message "url=%s" url)
     (with-current-buffer buffer
       (mm-enable-multibyte) ;; Fix-me: How should this be done, the data is utf8, xml.
       (goto-char (point-min))
-      (message "buffer.size=%d" (buffer-size buffer))
+      ;;(message "buffer.size=%d" (buffer-size buffer))
       (re-search-forward "^<results count=\"\\([0-9]+\\)\">$")
-      (message "buffer.point 1=%s" (point))
+      ;;(message "buffer.point 1=%s" (point))
       (setq num-hits (string-to-number (match-string 1)))
       ;; (rx anything)
       (backward-char)
       (while (re-search-forward (concat "^<result>" (rx (submatch (*? anything))) "</result>$") nil t)
-        (message "buffer.point 2=%s" (point))
+        ;;(message "buffer.point 2=%s" (point))
         (let ((rec (match-string 1))
               orig-url orig-snippet hit (m t))
           (dolist (what '("category" "url" "snippet" "title" "icon"))
@@ -98,10 +106,11 @@ START is 0-based."
                  ((string= "snippet" what)
                   (setq orig-snippet str))
                  ((string= "url" what)
-                  (message "url str=%s" str)
+                  ;;(message "url str=%s, file-patt=%S" str file-patt)
                   (if (not (or (= 0 (length file-patt))
                                (string-match file-patt str)))
                       (setq m nil)
+                    ;;(message "file-patt=%S matched" file-patt)
                     (setq orig-url str)
                     (and (< 0 (length root))
                          (let ((rel (file-relative-name str root)))
@@ -150,7 +159,7 @@ START is 0-based."
 
 ;; (idxgds-search "cullberg" nil "c:/")
 ;;;###autoload
-(defun idxgds-search (search-patt file-patt root)
+(defun idxgds-search (search-patt file-patts root)
   (let* ((words-or-phrases (idxsearch-ggl-split search-patt))
          (or+and (idxsearch-mk-and-grep words-or-phrases))
          (grep-or-patt   (nth 0 or+and))
@@ -160,70 +169,65 @@ START is 0-based."
                                     (concat "\"" w-or-p "\"")
                                   w-or-p))
                               words-or-phrases))
-         (index-patt (mapconcat 'identity index-patts " ")))
+         (index-patt (mapconcat 'identity index-patts " "))
+         (file-patt (mapconcat (lambda (fp)
+                                 ;; . => \\.
+                                 (let ((fp2 (replace-regexp-in-string "\\." "\\." fp t t)))
+                                   (replace-regexp-in-string "*" ".*" fp2 t t)))
+                               file-patts
+                               "\\|")))
     (idxgds-search-adv index-patt grep-or-patt grep-and-patts file-patt root)))
 
 ;;;###autoload
 (defun idxgds-search-adv (index-patt grep-or-patt grep-and-patts file-patt root)
   ;; (when (eq system-type 'windows-nt) (setq root (downcase root)))
-  (let* (
-         (query (replace-regexp-in-string " " "+"
+  (let* ((query (replace-regexp-in-string " " "+"
                                           (browse-url-url-encode-chars index-patt "[)$]")))
          (query (browse-url-encode-url index-patt))
          (more t)
          (num 50)
          (start 0)
-         (buffer-name "*idxsearch gds*")
+         (buffer-name "*idxsearch*")
          (buffer (get-buffer buffer-name))
          (cnt-hits 0)
          win
          maxw)
-    ;;(setq query (replace-regexp-in-string "\"" "" query))
-    (when buffer (kill-buffer buffer))
-    (setq buffer (get-buffer-create buffer-name))
-    (setq win (display-buffer buffer))
+    (setq win (get-buffer-window buffer))
     (setq maxw (window-width win))
     (with-current-buffer buffer
-      (idxsearch-mode)
-      (setq default-directory root)
-      (visual-line-mode 1)
-      (setq wrap-prefix "           ")
-      (orgstruct-mode)
-      (let ((inhibit-read-only t))
-        (insert "-*- mode: idxsearch; default-directory: \"" root "\" -*-\n")
-        (insert (format " idx:  %s\ngrep:  %s %S\nfile:  %s\n\n"
-                        index-patt grep-or-patt grep-and-patts file-patt))
-        (insert "Search started at " (format-time-string "%Y-%m-%d %T\n\n"))
-        (while (and more
-                    (setq more (idxgds-raw-query query file-patt root num start)))
-          ;;(message "more=%S" more)
-          (setq start (+ num start))
-          (let ((num-hits (car more))
-                (hits (cadr more)))
-            (setq cnt-hits (+ cnt-hits (length hits)))
-            (dolist (hit hits)
-              (let ((category (nth 0 hit))
-                    (url      (nth 1 hit))
-                    (snippet  (nth 2 hit))
-                    (title    (nth 3 hit))
-                    (icon     (nth 4 hit)))
-                ;;(setq url (file-relative-name url root))
-                (unless url
-                  (message "error hit=%S" hit)
-                  (error "%S" hit))
-                (insert "* File " url " matches\n")
+      (insert "Search started at " (format-time-string "%Y-%m-%d %T\n\n"))
+      (while (and more
+                  (setq more (idxgds-raw-query query file-patt root num start)))
+        ;;(message "more=%S" more)
+        (setq start (+ num start))
+        (let ((num-hits (car more))
+              (hits (cadr more)))
+          (setq cnt-hits (+ cnt-hits (length hits)))
+          (dolist (hit hits)
+            (let ((category (nth 0 hit))
+                  (url      (nth 1 hit))
+                  (snippet  (nth 2 hit))
+                  (title    (nth 3 hit))
+                  (icon     (nth 4 hit)))
+              ;;(setq url (file-relative-name url root))
+              (unless url
+                (message "error hit=%S" hit)
+                (error "%S" hit))
+              (insert "* File " url " matches\n")
+              (when idxsearch-show-details
                 (when title   (insert "  Title:   " title "\n"))
-                (when snippet (insert "  Snippet: " snippet "\n"))
-                (when (idxsearch-text-p url)
-                  (idxsearch-grep url grep-or-patt grep-and-patts maxw))
-                (sit-for 0)
-                ))
-            (when (> start num-hits) (setq more nil))
-            ))
-        (insert (format "\nMatched %d files.\n" cnt-hits))
-        (insert "Search finished at " (format-time-string "%Y-%m-%d %T"))
-        (message "Search finished at %s" (format-time-string "%Y-%m-%d %T"))
-        ))))
+                (when snippet (insert "  Snippet: " snippet "\n")))
+              (when (and idxsearch-grep-in-text-files
+                         (idxsearch-text-p url))
+                (idxsearch-grep url grep-or-patt grep-and-patts maxw))
+              (sit-for 0)
+              ))
+          (when (> start num-hits) (setq more nil))
+          ))
+      (insert (format "\nMatched %d files.\n" cnt-hits))
+      (insert "Search finished at " (format-time-string "%Y-%m-%d %T"))
+      (message "Search finished at %s" (format-time-string "%Y-%m-%d %T"))
+      )))
 
 (provide 'idxgds)
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;

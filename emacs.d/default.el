@@ -85,6 +85,10 @@
 ;; Para cargar archivos en `~/.emacs.d'
 (add-to-list 'load-path user-emacs-directory)
 
+;; Default custom file
+(setq custom-file "~/.emacs.d/emacs-custom.el")
+(load custom-file)
+
 ;; Configuración para diferentes archivos
 (require 'automodes-conf)
 
@@ -103,6 +107,7 @@
 (require 'markdown-mode)
 (require 'textile-mode)
 (require 'windsize)
+(require 'multiple-cursors)
 
 ;; configuraicones de librerias
 (require 'enclose-conf)

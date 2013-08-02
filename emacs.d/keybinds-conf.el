@@ -80,7 +80,6 @@
 		 (local-set-key "\C-cpm" 'nosetests-pdb-module)
 		 (local-set-key "\C-cp." 'nosetests-pdb-one)))))
 
-
 ;; Window rotations and toggle, from:
 ;; https://github.com/magnars/.emacs.d/blob/master/key-bindings.el
 (global-set-key (kbd "C-x -") 'rotate-windows)
@@ -193,33 +192,35 @@
 ;; en la página: https://github.com/magnars/.emacs.d/blob/master/key-bindings.el
 
 (eval-after-load "multiple-cursors"
-    '(progn (global-set-key (kbd "C-<") 'mc/mark-previous-like-this)
-	    (global-set-key (kbd "C->") 'mc/mark-next-like-this)
-	    (global-set-key (kbd "C-M-<") 'mc/mark-previous-symbol-like-this)
-	    (global-set-key (kbd "C-M->") 'mc/mark-next-symbol-like-this)
-	    ;; like the other two, but takes an argument (negative is previous)
-	    ;; (global-set-key (kbd "C-M-m") 'mc/mark-more-like-this)
-	    (global-set-key (kbd "C-*") 'mc/mark-all-like-this)
-	    (global-set-key (kbd "C-M-*") 'mc/mark-all-symbols-like-this)
-	    (global-set-key (kbd "C-S-c C-S-c") 'mc/edit-lines)
-	    (global-set-key (kbd "C-S-c C-e") 'mc/edit-ends-of-lines)
-	    (global-set-key (kbd "C-S-c C-a") 'mc/edit-beginnings-of-lines)
-	    (global-set-key (kbd "C-S-p") 'mc/mark-pop)
-	    (global-set-key (kbd "C-c C-r") 'rename-sgml-tag)
-	    ;; No he podido identificar la tecla Hyper, así que estoy probando
-	    ;; diferentes opciones, investigar más respecto a ns-function-modifier
-	    ;; (setq ns-function-modifier 'hyper )
-	    ;; (global-set-key (kbd "H-SPC") 'set-rectangular-region-anchor)
-	    ;;Hay que optimizar:
-	    (global-set-key (kbd "C-S-SPC") 'set-rectangular-region-anchor)
-	    ;; AltGr-a = æ
-	    (global-set-key (kbd "M-æ") 'mc/mark-all-like-this-dwim)
-	    ;; AltGr-i = →
-	    (global-set-key (kbd "M-→") 'mc/insert-numbers)
-	    ;; AltGr-r = ¶
-	    (global-set-key (kbd "M-¶") 'mc/reverse-regions)
-	    ;; AltGr-s = ß
-	    (global-set-key (kbd "M-ß") 'mc/sort-regions)))
+  '(progn
+     ;; Experimentando con region-bindings-mode, parece tener sus peculiaridades
+     (global-set-key (kbd "M-p") 'mc/mark-previous-like-this)
+     (global-set-key (kbd "M-n") 'mc/mark-next-like-this)
+     (global-set-key (kbd "M-s M-p") 'mc/mark-previous-symbol-like-this)
+     (global-set-key (kbd "M-s M-n") 'mc/mark-next-symbol-like-this)
+
+     ;; like the other two, but takes an argument (negative is previous)
+     ;; (global-set-key ;; (kbd "C-M-m") 'mc/mark-more-like-this)
+     (global-set-key (kbd "C-c *") 'mc/mark-all-like-this)
+     (global-set-key (kbd "C-c M-*") 'mc/mark-all-symbols-like-this)
+     (global-set-key (kbd "C-c e") 'mc/edit-lines)
+     (global-set-key (kbd "C-c M-e") 'mc/edit-ends-of-lines)
+     (global-set-key (kbd "C-c M-a") 'mc/edit-beginnings-of-lines)
+
+     ;;Hay que optimizar:
+     (global-set-key (kbd "M-æ") 'mc/mark-all-like-this-dwim)	;; AltGr-a = æ
+     (global-set-key (kbd "M-→") 'mc/insert-numbers)		;; AltGr-i = →
+     (global-set-key (kbd "M-¶") 'mc/reverse-regions)		;; AltGr-r = ¶
+     (global-set-key (kbd "M-ß") 'mc/sort-regions)		;; AltGr-s = ß
+     (global-set-key (kbd "M-S-SPC") 'set-rectangular-region-anchor)
+     (global-set-key (kbd "M-S-p") 'mc/mark-pop)
+     (global-set-key (kbd "C-c C-r") 'rename-sgml-tag)
+     (global-set-key (kbd "C-c C-e") 'mc/mark-more-like-this-extended)
+     ;; No he podido identificar la tecla Hyper, así que estoy probando
+     ;; diferentes opciones, investigar más respecto a ns-function-modifier
+     ;; (setq ns-function-modifier 'hyper )
+     ;; (global-set-key (kbd "H-SPC") 'set-rectangular-region-anchor)
+     ))
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
@@ -241,8 +242,6 @@
        (eval-after-load "ace-jump-mode"
 	 '(ace-jump-mode-enable-mark-sync))
        (define-key global-map (kbd "C-c SPC") 'ace-jump-mode-pop-mark)))
-
-
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;

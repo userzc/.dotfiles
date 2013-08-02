@@ -24,11 +24,17 @@
 ;; shell-script-mode for zsh-theme
 (add-to-list 'auto-mode-alist '("\\.zsh-theme\\'" . shell-script-mode))
 
-;; El archivo anterior modifica algunos modos por default que no me
-;; son útiles ni respetan las configuraciones propuestas en emacsrocks
-;; propuestas por Magnar Svens. Se puede intentar con
-;; html-mumamo-mode en lugar de  html-mode.
-(add-to-list 'auto-mode-alist '("\\.html?\\'"     . html-mode))
+;; El archivo "autostart.el" modifica algunos modos por default que no
+;; me son útiles ni respetan las configuraciones propuestas en
+;; emacsrocks propuestas por Magnar Svens. Se puede intentar con
+;; html-mumamo-mode en lugar de html-mode.
+
+(eval-after-load "autostart.el"
+  '(progn
+     ;; (setcdr (assoc "\\.html\\'" auto-mode-alist) 'html-mode)
+     ;; (setcdr (assoc "\\.htm\\'" auto-mode-alist) 'html-mode)
+     (add-to-list 'auto-mode-alist '("\\.html?\\'" . html-mode))
+     ))
 
 ;; Lista de funciones de multiple mode
 (add-to-list 'auto-mode-alist '(".mc-lists.el" . emacs-lisp-mode))

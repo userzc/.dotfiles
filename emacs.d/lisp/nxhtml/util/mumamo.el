@@ -4,7 +4,7 @@
 ;; Maintainer:
 ;; Created: Fri Mar 09 2007
 (defconst mumamo:version "0.91") ;;Version:
-;; Last-Updated: 2009-10-19 Mon
+;; Last-Updated: 2011-11-03T00:18:05+0100
 ;; URL: http://OurComments.org/Emacs/Emacs.html
 ;; Keywords:
 ;; Compatibility:
@@ -491,7 +491,9 @@ See also `mumamo-chunk-value-set-min'."
          (major   (mumamo-chunk-major-mode chunk)))
     ;;(msgtrc "keyboard-major-mode cmin=%s pos=%s cmax=%s" cmin pos cmax)
     (unless (and (<= cmin pos)
-                 (< pos cmax))
+                 ;; Fix-me: patch for bug 885465. Test!
+                 ;;(< pos cmax))
+                 (<= pos cmax))
       (setq major 'mumamo-border-mode))
     major))
 
@@ -3149,19 +3151,23 @@ The main reasons for doing it this way is:
   ;; (info "(elisp) Other Font Lock Variables")
   ;; (info "(elisp) Syntactic Font Lock)
   ;;(msgtrc "fetch-major 1: font-lock-keywords-only =%s" font-lock-keywords-only)
-  (let ((func-sym (intern (concat "mumamo-eval-in-" (symbol-name major))))
-        (func-def-sym (intern (concat "mumamo-def-eval-in-" (symbol-name major))))
-        (func-kw-sym (intern (concat "mumamo-kw-eval-in-" (symbol-name major))))
-        ;;(add-keywords-hook (mumamo-font-lock-keyword-hook-symbol major))
-        byte-compiled-fun
-        (fetch-func-definition `(lambda  (body))) ;;`(defun ,func-sym (body)))
-        temp-buf-name
-        temp-buf)
+  (let* ((major-name (symbol-name major))
+         (func-sym (intern (concat "mumamo-eval-in-" major-name)))
+	 (func-def-sym (intern (concat "mumamo-def-eval-in-" major-name)))
+	 (func-kw-sym (intern (concat "mumamo-kw-eval-in-" major-name)))
+	 ;;(add-keywords-hook (mumamo-font-lock-keyword-hook-symbol major))
+	 byte-compiled-fun
+	 ;; (fetch-fun-name (intern (concat "mumamo-fetching-" (symbol-name major))))
+	 (fetch-func-definition `(lambda  (body))) ;;`(defun ,func-sym (body)))
+	 ;; (fetch-func-definition `(defun ,fetch-fun-name  (body))) ;;`(defun ,func-sym (body)))
+         (syntax-tables nil)
+	 temp-buf-name
+	 temp-buf)
     ;; font-lock-mode can't be turned on in buffers whose names start
     ;; with a char with white space syntax.  Temp buffer names are
     ;; such and it is not possible to change name of a temp buffer.
     (setq temp-buf-name (generate-new-buffer-name
-                         (concat "mumamo-fetch-major-mode-setup-" (symbol-name major))))
+                         (concat "mumamo-fetch-major-mode-setup-" major-name)))
     (setq temp-buf (get-buffer temp-buf-name))
     (when temp-buf (kill-buffer temp-buf))
     (setq temp-buf (get-buffer-create temp-buf-name))
@@ -3327,6 +3333,26 @@ The main reasons for doing it this way is:
         (dolist (fetched fetch-func-definition-let)
           (let ((fvar (car fetched)))
             (setq relevant-buffer-locals (assq-delete-all fvar relevant-buffer-locals))))
+        ;; Handle syntax tables separately since they are so big:
+        ;; fix-me
+        (let ((new-rbl nil))
+          (dolist (bl relevant-buffer-locals)
+            (let* ((var (car bl))
+                   (sym-name (symbol-name var)))
+              (if (string-match-p "-syntax-table$" sym-name)
+                  (let* ((syn-tbl-name (concat "mumamo-" sym-name "-" sym-name))
+                         (syn-tbl-sym (intern syn-tbl-name))
+                         (val (cadadr bl))
+                         (new-bl (list var syn-tbl-sym)))
+                    ;; Make the syntax tables global with these names
+                    ;; and test if this works reasonably well:
+                    (when val
+                      (set syn-tbl-sym (copy-syntax-table val))
+                      ;;(setq syntax-tables (cons bl syntax-tables))
+                      (setq nre-rbl (cons new-bl new-rbl)))
+                    )
+                (setq new-rbl (cons bl new-rbl)))))
+          (setq relevant-buffer-locals new-rbl))
         (setq fetch-func-definition
               (append fetch-func-definition
                       `(
@@ -3351,7 +3377,9 @@ The main reasons for doing it this way is:
                         )))
 
         (setq byte-compiled-fun (let ((major-syntax-table))
-                                  (byte-compile fetch-func-definition)))
+                                  (byte-compile fetch-func-definition)
+				  ;; (symbol-function fetch-fun-name)
+				  ))
         (assert (functionp byte-compiled-fun))
         (unless (boundp func-sym)
           (eval `(defvar ,func-sym nil))
@@ -3551,6 +3579,8 @@ fontification and speeds up fontification significantly."
     (setq fun-var-sym (nth 0 fun-list))
     (setq fun-var-def-sym (nth 1 fun-list))
     (setq fun-var-kw-sym (nth 2 fun-list))
+    (unless (functionp (symbol-value fun-var-sym))
+      (error "fun-var-sym=%S, use-major-entry=%S" fun-var-sym use-major-entry))
     (assert (functionp (symbol-value fun-var-sym)) t)
     (assert (eq 'lambda (car (symbol-value fun-var-def-sym))) t)
     (assert (boundp fun-var-kw-sym) t)
@@ -4019,9 +4049,17 @@ CHUNK-END-FUN should return the end of the chunk.
       (setq chunk-major  (nth 1 start-rec))
       (setq parseable-by (nth 2 start-rec))
       (goto-char start)
+      (when borders-fun
+        (let ((start-border (when start (unless (and (= 1 start)
+                                                     (not chunk-major))
+                                          start))))
+          ;;(msgtrc "poss-fw: %s %s %s %s" borders-fun start-border end-border chunk-major)
+          (setq borders (funcall borders-fun start-border nil chunk-major))
+          (goto-char (nth 0 borders))
+          ))
       ;; Fix-me: There should mabye be a check here, calling
       ;; mumamo-end-in-code, but that is a bit of job.
-      (setq end (when (< start max) (funcall chunk-end-fun start max)))
+      (setq end (when (< (point) max) (funcall chunk-end-fun (point) max)))
       (when borders-fun
         (let ((start-border (when start (unless (and (= 1 start)
                                                      (not chunk-major))

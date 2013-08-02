@@ -1157,6 +1157,28 @@ display it."
 ;;;; Misc.
 
 ;;;###autoload
+(defun ourcomments-browse-bug (emacs-bug)
+  "Display emacs bug number EMACS-BUG in browser."
+  (interactive "nEmacs bug number: ")
+  (browse-url (format "http://debbugs.gnu.org/cgi/bugreport.cgi?bug=%d" emacs-bug)))
+
+;; (ourcomments-tr "i öa ä e å" "åäö" "aa")
+;;;###autoload
+(defun ourcomments-tr (str from to)
+  "Replace all characters in STR listed in FROM
+with characters listed in TO. If1 FROM is longer
+than TO, then the excess characters are deleted.
+
+\(tr \"abcdefg\" \"abcd\" \"ABC\"\) => \"ABCefg\""
+  (dotimes (i (length from))
+    (let* ((c1 (char-to-string (aref from i)))
+	   (c2 (if (< i (length to))
+                   (char-to-string (aref to i))
+                 "")))
+      (setq str (replace-regexp-in-string c1 c2 str t t))))
+  str)
+
+;;;###autoload
 (defun ourcomments-is-obsolete (symbol)
   "Return non-nil if SYMBOL is obsolete in current Emacs."
   )
@@ -2147,28 +2169,27 @@ This calls the function `emacs' with added arguments ARGS."
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;;;; Searching
 
+(defun grep-grepped-file (pt)
+  "Return grepped file at PT in a `grep-mode' buffer.
+The returned file name is relative."
+  (let* ((msg (get-text-property (point) 'compilation-message))
+         (loc (when msg (compilation--message->loc msg)))
+         (file (when loc (caar (compilation--loc->file-struct loc)))))
+    file))
+
 (defun grep-get-buffer-files ()
   "Return list of files in a `grep-mode' buffer."
   (or (and (compilation-buffer-p (current-buffer))
            (derived-mode-p 'grep-mode))
       (error "Not in a grep buffer"))
   (let ((here (point))
-        files
-        loc)
+        files)
     (font-lock-fontify-buffer)
     (goto-char (point-min))
-    (while (setq loc
-                 (condition-case err
-                     (compilation-next-error 1)
-                   (error
-                    ;; This should be the end, but give a message for
-                    ;; easier debugging.
-                    (message "%s" err)
-                         nil)))
-      ;;(message "here =%s, loc=%s" (point) loc)
-      (let ((file (caar (nth 2 (car loc)))))
-        (setq file (expand-file-name file))
-        (add-to-list 'files file)))
+    (while (not (eobp))
+      (let ((file (grep-grepped-file (point))))
+        (when file (add-to-list 'files file)))
+      (forward-line))
     (goto-char here)
     ;;(message "files=%s" files)
     files))
@@ -2184,18 +2205,22 @@ no default value.")
   "Do `query-replace-regexp' of FROM with TO, on all files in *grep*.
 Third arg DELIMITED (prefix arg) means replace only word-delimited matches.
 If you exit (\\[keyboard-quit], RET or q), you can resume the query replace
-with the command \\[tags-loop-continue]."
+with the command \\[tags-loop-continue].
+
+Must be called from a `grep-mode' buffer."
   (interactive
    (let ((common
           ;; Use the regexps that have been used in grep
           (let ((query-replace-from-history-variable 'grep-regexp-history)
                 (query-replace-defaults (or grep-query-replace-defaults
                                             query-replace-defaults)))
+            (unless (derived-mode-p 'grep-mode) (error "This command must be used in a grep output buffer"))
             (query-replace-read-args
-             "Query replace regexp in files in *grep*" t t))))
+             "Query replace regexp in grepped files" t t))))
      (setq grep-query-replace-defaults (cons (nth 0 common)
                                              (nth 1 common)))
      (list (nth 0 common) (nth 1 common) (nth 2 common))))
+  (unless (derived-mode-p 'grep-mode) (error "This command must be used in a grep output buffer"))
   (dolist (file (grep-get-buffer-files))
     (let ((buffer (get-file-buffer file)))
       (if (and buffer (with-current-buffer buffer
@@ -2555,7 +2580,19 @@ This function is used for `end-of-defun-function'."
 ;;       html-link)))
 
 (defconst ourcomments-org-paste-html-link-regexp
-  "\\`\\(?:<a [^>]*?href=\"\\(.*?\\)\"[^>]*?>\\([^<]*\\)</a>\\)\\'")
+;;  "\\`\\(?:<a\\(?:[[:space:]]\\|$\\)+[^>]*?href=\"\\(.*?\\)\"[^>]*?>\\([^<]*\\)</a>\\)\\'")
+  (rx (and "<a"
+           (or whitespace
+               line-end)
+           (*? anything)
+           "href=\""
+           (submatch (* (not (any "\""))))
+           "\""
+           (* (not (any ">")))
+           ">"
+           (submatch (* (not (any "<"))))
+           "</a>"
+           )))
 
 ;;(string-match-p ourcomments-org-paste-html-link-regexp "<a href=\"link\">text</a>")
 
@@ -2620,9 +2657,12 @@ variant of such blocks then leave the link as it is."
               )
             ;; Check if the URL is to a local file and absolute. And we
             ;; have a buffer.
-            (when (and (buffer-file-name)
-                       (> (length url) 5)
-                       (string= (substring url 0 6) "file:/"))
+            (if (not (and (buffer-file-name)
+                          (> (length url) 5)
+                          (string= (substring url 0 6) "file:/")))
+                (save-match-data
+                  (require 'browse-url)
+                  (setq url (browse-url-url-encode-chars url "[\]\[]")))
               (let ((abs-file-url
                      (if (not (memq system-type '(windows-nt ms-dos)))
                          (substring url 8)
@@ -2903,7 +2943,7 @@ This minor mode therefore instead defines them in a minor mode."
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;;;; Freemind
 
-(eval-when-compile (require 'nxhtml-base))
+(eval-when-compile (require 'nxhtml-base nil t))
 
 ;;;###autoload
 (defun org-freemind-copy-new-marktree.js (output-dir)
