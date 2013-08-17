@@ -41,6 +41,7 @@
 			  (enclose t)
 			  (expand-region t)
 			  (git-commit-mode t)
+			  (git-rebase-mode t)
 			  (gitconfig-mode t)
 			  (github-theme nil)
 			  (gitignore-mode t)
@@ -67,6 +68,7 @@
 			  (request t)
 			  (smart-mode-line nil)
 			  (smart-tab t)
+			  (smartparens t)
 			  (tango-2-theme nil)
 			  (tangotango-theme nil)
 			  (textile-mode t)
@@ -110,8 +112,9 @@
 (require 'multiple-cursors)
 
 ;; configuraicones de librerias
-(require 'enclose-conf)
-(require 'wrap-region-conf)
+;; (require 'enclose-conf)
+;; (require 'wrap-region-conf)
+(require 'smartparens-conf)
 (require 'ido-conf)
 
 (require 'keybinds-conf)

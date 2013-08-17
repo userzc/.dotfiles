@@ -1,0 +1,6 @@
+# -*- mode: snippet -*-
+# name: encoding utf8
+# key: utf8
+# --
+`(insert
+(concat comment-start comment-padding "-*- encoding: utf-8 -*-" comment-padding comment-end "\n"))`

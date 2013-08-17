@@ -33,6 +33,7 @@
 	fill-paragraph
 	forward-sentence
 	forward-sexp
+	forward-to-word
 	icicle-exchange-point-and-mark
 	icicle-execute-extended-command
 	icicle-goto-marker-or-set-mark-command
@@ -69,6 +70,11 @@
 	reindent-then-newline-and-indent
 	sh-assignment
 	smart-tab
+	sp--self-insert-command
+	sp-forward-sexp
+	sp-kill-sexp
+	sp-next-sexp
+	sp-previous-sexp
 	string-rectangle
 	tab-to-tab-stop
 	transpose-words
@@ -113,4 +119,5 @@
 	toggle-input-method
 	windsize-down
 	windsize-up
+	yank-rectangle
 	))

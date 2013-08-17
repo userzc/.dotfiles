@@ -9,7 +9,10 @@
 (wrap-region-add-wrapper "/" "/" nil 'org-mode)
 (wrap-region-add-wrapper "_" "_" nil 'org-mode)
 (wrap-region-add-wrapper "`" "`" nil '(gfm-mode markdown-mode emacs-lisp-mode))
-(wrap-region-add-wrapper "$" "$" nil '(python-mode markdown-mode))
+(wrap-region-add-wrapper "$" "$" nil '(python-mode markdown-mode latex-mode))
+
+;; TODO: hay un problema con smartparens-mode en latex-mode, algo parece
+;; interferir con la generación del par "\[\]"
 
 (add-to-list 'wrap-region-except-modes 'ibuffer-mode)
 (add-to-list 'wrap-region-except-modes 'term-mode)

@@ -8,6 +8,12 @@
 	      (global-set-key (kbd "M-F") 'forward-to-word)
 	      (global-set-key (kbd "M-B") 'backward-to-word)))
 
+;; change help-map to C-c h, tomado de:
+;; https://github.com/magnars/.emacs.d/blob/master/key-bindings.el
+(global-set-key (kbd "C-c h") (lookup-key global-map (kbd "C-h")))
+(define-key key-translation-map [?\C-h] [?\C-?])
+(global-set-key (kbd "C-h") 'backward-delete-char)
+
 ;; delete-pairs
 (global-set-key (kbd "C-c d") 'delete-pair)
 
@@ -215,7 +221,8 @@
      (global-set-key (kbd "M-S-SPC") 'set-rectangular-region-anchor)
      (global-set-key (kbd "M-S-p") 'mc/mark-pop)
      (global-set-key (kbd "C-c C-r") 'rename-sgml-tag)
-     (global-set-key (kbd "C-c C-e") 'mc/mark-more-like-this-extended)
+     ;; Probando keybind alterno, evitar conflicto con: AUCTeX
+     (global-set-key (kbd "C-c M-x") 'mc/mark-more-like-this-extended)
      ;; No he podido identificar la tecla Hyper, así que estoy probando
      ;; diferentes opciones, investigar más respecto a ns-function-modifier
      ;; (setq ns-function-modifier 'hyper )

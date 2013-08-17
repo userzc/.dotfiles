@@ -19,20 +19,19 @@
 (package-initialize)
 
 (defvar lista-paquetes-instalados
-  '(ac-math ace-jump-mode ack-and-a-half auctex auto-complete
-	 bookmark+ c-eldoc cl-lib clues-theme color-theme
-	 color-theme-gruber-darker color-theme-sanityinc-tomorrow
-	 color-theme-solarized color-theme-wombat+ cyberpunk-theme
-	 dash deferred dired+ dired-details dired-details+ ein enclose
-	 expand-region git-commit-mode gitconfig-mode github-theme
-	 gitignore-mode google-c-style google-contacts icicles
-	 icomplete+ ido-better-flex magit mark-more-like-this
-	 markdown-mode melpa monokai-theme multi-term multiple-cursors
-	 nose oauth2 popup powerline purty-mode python qsimpleq-theme
-	 rainbow-delimiters rainbow-mode request smart-mode-line
-	 smart-tab sublime-themes tango-2-theme tangotango-theme
-	 textile-mode websocket wgrep windsize wrap-region yasnippet
-	 zenburn-theme zencoding-mode)
+  '(ac-math ace-jump-mode ack-and-a-half auctex auto-complete bookmark+
+	    c-eldoc cl-lib clues-theme color-theme color-theme-gruber-darker
+	    color-theme-sanityinc-tomorrow color-theme-solarized
+	    color-theme-wombat+ cyberpunk-theme dash deferred dired+
+	    dired-details dired-details+ ein enclose expand-region
+	    git-commit-mode gitconfig-mode github-theme gitignore-mode
+	    google-c-style google-contacts icicles icomplete+ ido-better-flex
+	    magit mark-more-like-this markdown-mode melpa monokai-theme
+	    multi-term multiple-cursors nose oauth2 popup powerline purty-mode
+	    python qsimpleq-theme rainbow-delimiters rainbow-mode request
+	    smart-mode-line smart-tab smartparens sublime-themes tango-2-theme
+	    tangotango-theme textile-mode websocket wgrep windsize wrap-region
+	    yasnippet zenburn-theme zencoding-mode)
   "Lista de paquetes instalados actualmente en mi configuración.")
 
 ;; ;; esta parte es para comprobar que paquetes están installados
@@ -85,7 +84,7 @@ re-downloaded in order to locate PACKAGE."
 ;; Para cargar archivos en `~/.emacs.d'
 (add-to-list 'load-path user-emacs-directory)
 
-;; Configuración para diferentes archivos
+;; Configuración para diferentes tipos de archivos
 (require 'automodes-conf)
 
 ;; Configuraciones personales por default
@@ -93,32 +92,6 @@ re-downloaded in order to locate PACKAGE."
 
 ;; Funciones para edición
 (require 'defuns)
-
-;; Required libraries
-(require 'misc)
-(require 'bookmark+)
-(require 'expand-region)
-(require 'zencoding-mode)
-(require 'magit)
-(require 'ace-jump-mode)
-(require 'multiple-cursors)
-(require 'python)
-(require 'smart-tab)
-(require 'windsize)
-(require 'markdown-mode)
-(require 'textile-mode)
-(require 'dired+)
-(require 'nose)
-(require 'yasnippet)
-
-;; Hay que revisar con cuidado el paquete `smart-parens'.
-;; Similar a `paredit'.
-;; https://github.com/Fuco1/smartparens
-
-;; configuraciones de las librerías anteriores
-(require 'enclose-conf)
-(require 'wrap-region-conf)
-(require 'c-conf)
 
 ;; julia-mode
 (add-to-list 'load-path "~/julia_test/julia/contrib/")
@@ -140,6 +113,29 @@ re-downloaded in order to locate PACKAGE."
 ;; en particular en ipython y en octave
 (server-start)
 
+;; Required libraries
+(require 'misc)
+(require 'bookmark+)
+(require 'expand-region)
+(require 'zencoding-mode)
+(require 'magit)
+(require 'ace-jump-mode)
+(require 'multiple-cursors)
+(require 'python)
+(require 'smart-tab)
+(require 'windsize)
+(require 'markdown-mode)
+(require 'textile-mode)
+(require 'dired+)
+(require 'nose)
+(require 'yasnippet)
+
+;; Configuraciones de las librerías anteriores
+
+(require 'smartparens-conf)
+;; (require 'enclose-conf)
+;; (require 'wrap-region-conf)
+(require 'c-conf)
 (require 'dired-conf)
 (require 'icicles-conf)
 (require 'yasnippet-conf)

@@ -24,6 +24,22 @@
 (add-hook 'LaTeX-mode-hook 'TeX-source-correlate-mode)
 (setq TeX-source-correlate-start-server t)
 
+;; (add-to-list 'LaTeX-verbatim-environments-local "comment")
+(add-hook 'LaTeX-mode-hook
+	  (lambda ()
+	    (TeX-add-style-hook
+	     "listings"
+	     (lambda ()
+	       (add-to-list 'LaTeX-verbatim-environments-local "comment")))
+	    ))
+
+;; ;; Para añadir ambiente comment a la lista verbatim
+;; (TeX-add-style-hook
+;;  "listings"
+;;  (lambda ()
+;;    (add-to-list 'LaTeX-verbatim-environments-local "comment")))
+
+
 ;; ;; Para utilizar cleveref con RefTex
 ;; ;; (add-to-list 'reftex-ref-style-alist
 ;; ;;           '("Cleveref" "cleveref"
