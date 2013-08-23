@@ -3,10 +3,10 @@
 
 ;; zap-up-to-char
 (eval-after-load "misc"
-    '(progn    (global-set-key (kbd "M-Z") 'zap-up-to-char)
-	      ;; easier navigation, assumes `misc.el'
-	      (global-set-key (kbd "M-F") 'forward-to-word)
-	      (global-set-key (kbd "M-B") 'backward-to-word)))
+  '(progn    (global-set-key (kbd "M-Z") 'zap-up-to-char)
+             ;; easier navigation, assumes `misc.el'
+             (global-set-key (kbd "M-F") 'forward-to-word)
+             (global-set-key (kbd "M-B") 'backward-to-word)))
 
 ;; change help-map to C-c h, tomado de:
 ;; https://github.com/magnars/.emacs.d/blob/master/key-bindings.el
@@ -32,15 +32,15 @@
 
 ;; Las siguientes lineas son para probar el paquete `bookmark+'
 (eval-after-load "bookmark+"
-    '(progn (global-set-key "\C-cb" bookmark-map)
-	   (global-set-key "\C-cbc" bmkp-set-map)
-	   (global-unset-key "\C-xp")))
+  '(progn (global-set-key "\C-cb" bookmark-map)
+          (global-set-key "\C-cbc" bmkp-set-map)
+          (global-unset-key "\C-xp")))
 
 ;; para utilizar `expand-region' similar a como viene en emacsrocks.com/e09.html
 ;; con un key-bind que no viene recomendado en la página de github
 (eval-after-load "expand-region"
-    '(progn (global-set-key (kbd "M-_") 'er/expand-region)
-	   (global-set-key (kbd "C-M-_") 'er/contract-region)))
+  '(progn (global-set-key (kbd "M-_") 'er/expand-region)
+          (global-set-key (kbd "C-M-_") 'er/contract-region)))
 
 ;; para moverse atravez de los "windows":, e.g.: c-left  =  windmove-left
 (windmove-default-keybindings 'control)
@@ -48,9 +48,9 @@
 ;; Siguiendo la configuración de i3-wm
 (eval-after-load "windmove"
   '(progn  (global-set-key (kbd "M-J") 'windmove-left)
-	   (global-set-key (kbd "M-Ñ") 'windmove-right)
-	   (global-set-key (kbd "M-L") 'windmove-up)
-	   (global-set-key (kbd "M-K") 'windmove-down)))
+           (global-set-key (kbd "M-Ñ") 'windmove-right)
+           (global-set-key (kbd "M-L") 'windmove-up)
+           (global-set-key (kbd "M-K") 'windmove-down)))
 
 ;; Trabajar rápido en un problema de ACM
 (global-set-key (kbd "C-c C-n") 'acm-problem)
@@ -59,10 +59,10 @@
 (eval-after-load "zencoding-mode"
   ;; Auto-start on any markup modes
   '(progn (add-hook 'sgml-mode-hook 'zencoding-mode)
-	  (define-key zencoding-mode-keymap (kbd "C-c C-j")
-	    'zencoding-expand-line)
-	  (define-key zencoding-mode-keymap (kbd "C-j") 'nil)
-	  (define-key zencoding-mode-keymap (kbd "<C-return>") 'nil)))
+          (define-key zencoding-mode-keymap (kbd "C-c C-j")
+            'zencoding-expand-line)
+          (define-key zencoding-mode-keymap (kbd "C-j") 'nil)
+          (define-key zencoding-mode-keymap (kbd "<C-return>") 'nil)))
 
 ;; Webjump let's you quickly search google, wikipedia, emacs wiki
 (global-set-key (kbd "C-x g") 'webjump)
@@ -70,21 +70,21 @@
 
 ;; magit-mode
 (eval-after-load "magit"
-    '(progn
-      (define-key magit-status-mode-map (kbd "q") 'magit-quit-session)
-      (global-set-key (kbd "C-c M-m") 'magit-status)))
+  '(progn
+     (define-key magit-status-mode-map (kbd "q") 'magit-quit-session)
+     (global-set-key (kbd "C-c M-m") 'magit-status)))
 
 ;; nose-mode
 (eval-after-load "nose"
   '(progn
      (add-hook 'python-mode-hook
-	       (lambda ()
-		 (local-set-key "\C-ca" 'nosetests-all)
-		 (local-set-key "\C-cmo" 'nosetests-module)
-		 (local-set-key "\C-c." 'nosetests-one)
-		 (local-set-key "\C-cpa" 'nosetests-pdb-all)
-		 (local-set-key "\C-cpm" 'nosetests-pdb-module)
-		 (local-set-key "\C-cp." 'nosetests-pdb-one)))))
+               (lambda ()
+                 (local-set-key "\C-ca" 'nosetests-all)
+                 (local-set-key "\C-cmo" 'nosetests-module)
+                 (local-set-key "\C-c." 'nosetests-one)
+                 (local-set-key "\C-cpa" 'nosetests-pdb-all)
+                 (local-set-key "\C-cpm" 'nosetests-pdb-module)
+                 (local-set-key "\C-cp." 'nosetests-pdb-one)))))
 
 ;; Window rotations and toggle, from:
 ;; https://github.com/magnars/.emacs.d/blob/master/key-bindings.el
@@ -108,17 +108,17 @@
 ;; Make it work in inferior processes: octave-inferior, imaxima, etc.
 
 (add-hook 'comint-mode-hook
-	  (lambda ()
-	    (define-key comint-mode-map
-	      (kbd "C-d") 'comint-delchar-or-eof-or-kill-buffer)))
+          (lambda ()
+            (define-key comint-mode-map
+              (kbd "C-d") 'comint-delchar-or-eof-or-kill-buffer)))
 
 
 ;; (global-set-key (kbd "C-c t") 'multi-term-next)
 ;; hay que buscar otro `key-bind' que sí funcione en `python-mode'
 (if (fboundp 'multi-term)
     (progn (global-set-key (kbd "C-c c m") 'multi-term-dedicated-toggle)
-	   ;; create a new one
-	   (global-set-key (kbd "C-c c M") 'multi-term)))
+           ;; create a new one
+           (global-set-key (kbd "C-c c M") 'multi-term)))
 
 ;; Para evitar que "yasnippet" interfiera con la completación mediante
 ;; TAB en "zsh"
@@ -182,11 +182,11 @@
 ;; las siguientes líneas impiden que el movimiento entre windows se
 ;; modifique por los keybinds de comint
 (add-hook  'comint-mode-hook
-	   '(lambda ()
-	      (define-key comint-mode-map [C-down] nil)
-	      (define-key comint-mode-map [C-up] nil)
-	      (define-key comint-mode-map [C-right] nil)
-	      (define-key comint-mode-map [C-left] nil)))
+           '(lambda ()
+              (define-key comint-mode-map [C-down] nil)
+              (define-key comint-mode-map [C-up] nil)
+              (define-key comint-mode-map [C-right] nil)
+              (define-key comint-mode-map [C-left] nil)))
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
@@ -214,10 +214,10 @@
      (global-set-key (kbd "C-c M-a") 'mc/edit-beginnings-of-lines)
 
      ;;Hay que optimizar:
-     (global-set-key (kbd "M-æ") 'mc/mark-all-like-this-dwim)	;; AltGr-a = æ
-     (global-set-key (kbd "M-→") 'mc/insert-numbers)		;; AltGr-i = →
-     (global-set-key (kbd "M-¶") 'mc/reverse-regions)		;; AltGr-r = ¶
-     (global-set-key (kbd "M-ß") 'mc/sort-regions)		;; AltGr-s = ß
+     (global-set-key (kbd "M-æ") 'mc/mark-all-like-this-dwim)   ;; AltGr-a = æ
+     (global-set-key (kbd "M-→") 'mc/insert-numbers)            ;; AltGr-i = →
+     (global-set-key (kbd "M-¶") 'mc/reverse-regions)           ;; AltGr-r = ¶
+     (global-set-key (kbd "M-ß") 'mc/sort-regions)              ;; AltGr-s = ß
      (global-set-key (kbd "M-S-SPC") 'set-rectangular-region-anchor)
      (global-set-key (kbd "M-S-p") 'mc/mark-pop)
      (global-set-key (kbd "C-c C-r") 'rename-sgml-tag)
@@ -237,18 +237,18 @@
 ;; los keybinds son los sugeridos por emacs rocks
 
 (eval-after-load "ace-jump-mode"
-    ';; (define-key global-map (kbd "C-ø") 'ace-jump-mode)
-    ;; (define-key global-map (kbd "M-ø") 'ace-jump-mode) ; to access in terminal
-    (progn
-       (define-key global-map (kbd "M-ñ") 'ace-jump-mode) ; to access in terminal
-       (autoload
-	 'ace-jump-mode-pop-mark
-	 "ace-jump-mode"
-	 "Ace jump back:-)"
-	 t)
-       (eval-after-load "ace-jump-mode"
-	 '(ace-jump-mode-enable-mark-sync))
-       (define-key global-map (kbd "C-c SPC") 'ace-jump-mode-pop-mark)))
+  ';; (define-key global-map (kbd "C-ø") 'ace-jump-mode)
+  ;; (define-key global-map (kbd "M-ø") 'ace-jump-mode) ; to access in terminal
+  (progn
+    (define-key global-map (kbd "M-ñ") 'ace-jump-mode) ; to access in terminal
+    (autoload
+      'ace-jump-mode-pop-mark
+      "ace-jump-mode"
+      "Ace jump back:-)"
+      t)
+    (eval-after-load "ace-jump-mode"
+      '(ace-jump-mode-enable-mark-sync))
+    (define-key global-map (kbd "C-c SPC") 'ace-jump-mode-pop-mark)))
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
@@ -260,7 +260,7 @@
 ;; y funciona como en http://www.youtube.com/watch?v=a-jrn_ba41w
 
 (eval-after-load "smart-tab"
-    '(global-set-key (kbd "TAB") 'smart-tab))
+  '(global-set-key (kbd "TAB") 'smart-tab))
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
@@ -270,12 +270,47 @@
 
 (eval-after-load "windsize"
   '(progn (setq windsize-cols 2)
-	  (setq windsize-rows 1)
-	  (windsize-default-keybindings)
-	  ;; Resemblance to windmove and i3-wm on left hand
-	  (global-set-key (kbd "M-Q") 'windsize-left)
-	  (global-set-key (kbd "M-R") 'windsize-right)
-	  (global-set-key (kbd "M-W") 'windsize-up)
-	  (global-set-key (kbd "M-E") 'windsize-down)))
+          (setq windsize-rows 1)
+          (windsize-default-keybindings)
+          ;; Resemblance to windmove and i3-wm on left hand
+          (global-set-key (kbd "M-Q") 'windsize-left)
+          (global-set-key (kbd "M-R") 'windsize-right)
+          (global-set-key (kbd "M-W") 'windsize-up)
+          (global-set-key (kbd "M-E") 'windsize-down)))
+
+(eval-after-load "smartparens"
+  '(progn
+     (setq sp-smartparens-bindings
+           '(("C-M-f" . sp-forward-sexp)
+             ("C-M-b" . sp-backward-sexp)
+             ("C-M-d" . sp-down-sexp)
+             ("C-M-a" . sp-backward-down-sexp)
+             ("C-S-d" . sp-beginning-of-sexp)
+             ("C-S-a" . sp-end-of-sexp)
+             ("C-M-e" . sp-up-sexp)
+             ("C-M-u" . sp-backward-up-sexp)
+             ("C-M-n" . sp-next-sexp)
+             ("C-M-p" . sp-previous-sexp)
+             ("C-M-k" . kill-sexp)
+             ("C-M-S-K" . sp-kill-sexp)
+             ("C-M-w" . sp-copy-sexp)
+             ;; ("M-<delete>" . sp-unwrap-sexp)
+             ("C-c d" . sp-unwrap-sexp)
+             ;; ("M-<backspace>" . sp-backward-unwrap-sexp)
+             ("C-c <delete>" . sp-backward-unwrap-sexp)
+             ("C-<right>" . sp-forward-slurp-sexp)
+             ("C-<left>" . sp-forward-barf-sexp)
+             ("C-M-<left>" . sp-backward-slurp-sexp)
+             ("C-M-<right>" . sp-backward-barf-sexp)
+             ("M-D" . sp-splice-sexp)
+             ("C-M-<delete>" . sp-splice-sexp-killing-forward)
+             ("C-M-<backspace>" . sp-splice-sexp-killing-backward)
+             ("C-S-<backspace>" . sp-splice-sexp-killing-around)
+             ("C-]" . sp-select-next-thing-exchange)
+             ("C-M-]" . sp-select-next-thing)
+             ;; ("M-F" . sp-forward-symbol)
+             ;; ("M-B" . sp-backward-symbol)
+             ))
+     (sp-use-smartparens-bindings)))
 
 (provide 'keybinds-conf)

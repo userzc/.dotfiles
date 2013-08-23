@@ -21,8 +21,6 @@
 (add-to-list 'custom-theme-load-path
              "~/.emacs.d/elpa/moe-theme-20130625.1427/")
 
-
-;; (require 'moe-theme-switcher)
 ;; (require 'color-theme )
 ;; (setq color-theme-load-all-themes nil)
 ;; (load-file
@@ -35,14 +33,13 @@
 ;; (load-theme 'cyberpunk t)
 ;; (load-theme 'tron t)
 ;; (load-theme 'github t)
-;; (load-theme 'moe-light t)
 ;; (load-theme 'monokai t)
-;; (load-theme 'clues t)
+(load-theme 'clues t)
 ;; (load-theme 'assemblage t)
 ;; (load-theme 'default-black t)
 ;; (custom-set-faces '(default ((t (:background "nil")))))
 ;; (load-theme 'zenburn t)
-(load-theme 'sanityinc-tomorrow-day t)
+;; (load-theme 'sanityinc-tomorrow-day t)
 ;; (load-theme 'solarized-light t)
 ;; (load-theme 'qsimpleq t)
 ;; (load-theme 'dorsey t)

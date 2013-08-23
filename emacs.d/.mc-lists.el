@@ -71,6 +71,7 @@
 	sh-assignment
 	smart-tab
 	sp--self-insert-command
+	sp-down-sexp
 	sp-forward-sexp
 	sp-kill-sexp
 	sp-next-sexp
