@@ -71,11 +71,17 @@
 	sh-assignment
 	smart-tab
 	sp--self-insert-command
+	sp-backward-down-sexp
+	sp-backward-up-sexp
 	sp-down-sexp
+	sp-forward-barf-sexp
 	sp-forward-sexp
+	sp-forward-slurp-sexp
 	sp-kill-sexp
 	sp-next-sexp
 	sp-previous-sexp
+	sp-unwrap-sexp
+	sp-up-sexp
 	string-rectangle
 	tab-to-tab-stop
 	transpose-words
@@ -107,6 +113,7 @@
 	end-of-buffer
 	goto-line
 	icicle-buffer
+	icicle-pp-eval-expression
 	info
 	magit-status
 	mouse-minor-mode-menu
