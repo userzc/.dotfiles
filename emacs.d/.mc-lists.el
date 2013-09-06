@@ -64,6 +64,7 @@
 	orgtbl-self-insert-command
 	python-indent-dedent-line-backspace
 	python-indent-electric-colon
+	python-indent-shift-right
 	python-nav-forward-block
 	query-replace
 	recompile
@@ -120,6 +121,7 @@
 	multi-term-dedicated-toggle
 	orgtbl-ctrl-c-ctrl-c
 	pylint
+	python-shell-send-defun
 	repeat
 	scroll-other-window
 	tags-loop-continue

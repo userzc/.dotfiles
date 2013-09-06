@@ -54,7 +54,7 @@
 (eval-after-load "ein-notebook"
   '(progn
      ;; se desaactivan movimientos entre celdas para que no interfiera con
-     ;; el movimiento entre windows de emacs, hay que modificar el key-map
+     ;; el movimiento entre `windows' de emacs, hay que modificar el key-map
      ;; ein:notebook-mode-map
      (define-key ein:notebook-mode-map [C-down] nil)
      (define-key ein:notebook-mode-map [C-up] nil)
@@ -65,6 +65,15 @@
      (define-key ein:notebook-mode-map [S-up] 'ein:worksheet-goto-prev-input)
      (define-key ein:notebook-mode-map (kbd "C-;")
        'ein:shared-output-pop-to-buffer)
+
+     ;; Se deactivan keybinds en conflicto con `multiple-cursors'
+     (define-key ein:notebook-mode-map (kbd "M-n") nil)
+     (define-key ein:notebook-mode-map (kbd "M-p") nil)
+     ;; Modificaciones para acceder a funcionalidades del historial
+     (define-key ein:notebook-mode-map (kbd "C-c M-n")
+     'ein:worksheet-next-input-history)
+     (define-key ein:notebook-mode-map (kbd "C-c M-p")
+     'ein:worksheet-previous-input-history)
 
      ;; Para evitar que 'desktop' destruya buffers relacionados con 'ein'.
      (eval-after-load 'desktop

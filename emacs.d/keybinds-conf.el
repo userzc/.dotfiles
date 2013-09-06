@@ -177,7 +177,11 @@
      (define-key inferior-python-mode-map [(control meta p)]
        'comint-previous-input)
      (define-key inferior-python-mode-map
-       (kbd "C-c C-z") 'quit-window)))
+       (kbd "C-c C-z") 'quit-window)
+     (define-key python-mode-map (kbd "C-c C-M-a")
+       'beginning-of-defun)
+     (define-key python-mode-map (kbd "C-c C-M-e")
+       'end-of-defun)))
 
 ;; las siguientes líneas impiden que el movimiento entre windows se
 ;; modifique por los keybinds de comint
@@ -312,5 +316,9 @@
              ;; ("M-B" . sp-backward-symbol)
              ))
      (sp-use-smartparens-bindings)))
+
+(eval-after-load "python-django"
+  '(progn
+     (global-set-key (kbd "C-c M-d") 'python-django-open-project)))
 
 (provide 'keybinds-conf)

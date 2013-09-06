@@ -19,19 +19,20 @@
 
 
 (defvar lista-paquetes-instalados
-  '(ac-math ace-jump-mode ack-and-a-half auctex auto-complete bookmark+
-	    c-eldoc cl-lib clues-theme color-theme color-theme-gruber-darker
-	    color-theme-sanityinc-tomorrow color-theme-solarized
-	    color-theme-wombat+ cyberpunk-theme dash deferred dired+
-	    dired-details dired-details+ ein enclose expand-region
-	    git-commit-mode gitconfig-mode github-theme gitignore-mode
-	    google-c-style google-contacts icicles icomplete+ ido-better-flex
-	    magit mark-more-like-this markdown-mode melpa monokai-theme
-	    multi-term multiple-cursors nose oauth2 popup powerline purty-mode
-	    python qsimpleq-theme rainbow-delimiters rainbow-mode request
-	    smart-mode-line smart-tab smartparens sublime-themes tango-2-theme
-	    tangotango-theme textile-mode websocket wgrep windsize wrap-region
-	    yasnippet zenburn-theme zencoding-mode)
+  '(ac-math ace-jump-mode ack-and-a-half auctex auto-complete
+	    bookmark+ c-eldoc cl-lib clues-theme color-theme
+	    color-theme-gruber-darker color-theme-sanityinc-tomorrow
+	    color-theme-solarized color-theme-wombat+ cyberpunk-theme dash
+	    deferred dired+ dired-details dired-details+ ein enclose
+	    expand-region git-commit-mode gitconfig-mode github-theme
+	    gitignore-mode google-c-style google-contacts icicles icomplete+
+	    ido-better-flex magit mark-more-like-this markdown-mode melpa
+	    monokai-theme multi-term multiple-cursors nose oauth2 popup
+	    powerline purty-mode python python-django qsimpleq-theme
+	    rainbow-delimiters rainbow-mode request smart-mode-line smart-tab
+	    smartparens sublime-themes tango-2-theme tangotango-theme
+	    textile-mode websocket wgrep windsize wrap-region yasnippet
+	    zenburn-theme zencoding-mode)
   "Lista de paquetes instalados actualmente en mi configuración.")
 
 ;; ;; esta parte es para comprobar que paquetes están installados
@@ -166,6 +167,7 @@ re-downloaded in order to locate PACKAGE."
 (require 'dired+)
 (require 'nose)
 (require 'yasnippet)
+(require 'python-django)
 
 ;; Configuraciones de las librerías anteriores
 
