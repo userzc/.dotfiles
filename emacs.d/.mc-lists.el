@@ -43,6 +43,7 @@
 	insert-register
 	keyboard-quit
 	kill-region
+	kill-sentence
 	kill-sexp
 	magit-stage-item
 	mark-paragraph
@@ -119,7 +120,9 @@
 	magit-status
 	mouse-minor-mode-menu
 	multi-term-dedicated-toggle
+	next-error
 	orgtbl-ctrl-c-ctrl-c
+	previous-error
 	pylint
 	python-shell-send-defun
 	repeat

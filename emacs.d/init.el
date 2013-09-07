@@ -168,6 +168,8 @@ re-downloaded in order to locate PACKAGE."
 (require 'nose)
 (require 'yasnippet)
 (require 'python-django)
+(require 'powerline)
+
 
 ;; Configuraciones de las librerías anteriores
 
@@ -193,7 +195,7 @@ re-downloaded in order to locate PACKAGE."
 (require 'auctex-conf)
 (require 'smart-hippie-conf)
 (require 'load-theme-conf)
-(require 'powerline-conf)
+;; (require 'powerline-conf)
 
 ;; font
 (if (equal system-type 'gnu/linux)

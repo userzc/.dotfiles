@@ -1,0 +1,7 @@
+# -*- mode: snippet -*-
+# name: title numpy doc
+# key: tnd
+# --
+${1:Examples}
+${1:$(make-string (string-width yas-text) ?\-)}
+`(indent-according-to-mode)`$0
