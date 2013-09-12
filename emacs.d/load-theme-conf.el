@@ -6,7 +6,7 @@
 ;; Se define la siguiente variable para compatibilidad de los temas
 ;; solarized en terminal, sin embargo no son tan buenos como uno
 ;; esperaría
-;; (setq solarized-termcolors 256)
+(setq solarized-termcolors 256)
 
 ;; Añadiendo caminos a `custom-theme-load-path'
 (add-to-list 'custom-theme-load-path

@@ -177,11 +177,7 @@
      (define-key inferior-python-mode-map [(control meta p)]
        'comint-previous-input)
      (define-key inferior-python-mode-map
-       (kbd "C-c C-z") 'quit-window)
-     (define-key python-mode-map (kbd "C-c C-M-a")
-       'beginning-of-defun)
-     (define-key python-mode-map (kbd "C-c C-M-e")
-       'end-of-defun)))
+       (kbd "C-c C-z") 'quit-window)))
 
 ;; las siguientes líneas impiden que el movimiento entre windows se
 ;; modifique por los keybinds de comint
@@ -223,7 +219,7 @@
      (global-set-key (kbd "M-¶") 'mc/reverse-regions)           ;; AltGr-r = ¶
      (global-set-key (kbd "M-ß") 'mc/sort-regions)              ;; AltGr-s = ß
      (global-set-key (kbd "M-S-SPC") 'set-rectangular-region-anchor)
-     (global-set-key (kbd "M-S-p") 'mc/mark-pop)
+     (global-set-key (kbd "M-P") 'mc/mark-pop)
      (global-set-key (kbd "C-c C-r") 'rename-sgml-tag)
      ;; Probando keybind alterno, evitar conflicto con: AUCTeX
      (global-set-key (kbd "C-c M-x") 'mc/mark-more-like-this-extended)
@@ -315,6 +311,10 @@
              ;; ("M-F" . sp-forward-symbol)
              ;; ("M-B" . sp-backward-symbol)
              ))
+     (global-set-key (kbd "C-c C-M-a")
+       'beginning-of-defun)
+     (global-set-key (kbd "C-c C-M-e")
+       'end-of-defun)
      (sp-use-smartparens-bindings)))
 
 (eval-after-load "python-django"

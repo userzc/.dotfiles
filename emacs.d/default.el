@@ -110,11 +110,15 @@
 (require 'textile-mode)
 (require 'windsize)
 (require 'multiple-cursors)
+;; (require 'yasnippet)
+
 
 ;; configuraicones de librerias
 ;; (require 'enclose-conf)
 ;; (require 'wrap-region-conf)
 (require 'smartparens-conf)
 (require 'ido-conf)
+;; (require 'yasnippet-conf)
+
 
 (require 'keybinds-conf)

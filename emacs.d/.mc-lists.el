@@ -41,6 +41,7 @@
 	icicle-zap-to-char
 	indent-new-comment-line
 	insert-register
+	keyboard-escape-quit
 	keyboard-quit
 	kill-region
 	kill-sentence
@@ -67,6 +68,7 @@
 	python-indent-electric-colon
 	python-indent-shift-right
 	python-nav-forward-block
+	python-shell-send-region
 	query-replace
 	recompile
 	reindent-then-newline-and-indent
@@ -74,6 +76,7 @@
 	smart-tab
 	sp--self-insert-command
 	sp-backward-down-sexp
+	sp-backward-sexp
 	sp-backward-up-sexp
 	sp-down-sexp
 	sp-forward-barf-sexp
@@ -125,6 +128,7 @@
 	previous-error
 	pylint
 	python-shell-send-defun
+	python-shell-switch-to-shell
 	repeat
 	scroll-other-window
 	tags-loop-continue

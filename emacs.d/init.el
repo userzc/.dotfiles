@@ -29,10 +29,10 @@
 	    ido-better-flex magit mark-more-like-this markdown-mode melpa
 	    monokai-theme multi-term multiple-cursors nose oauth2 popup
 	    powerline purty-mode python python-django qsimpleq-theme
-	    rainbow-delimiters rainbow-mode request smart-mode-line smart-tab
-	    smartparens sublime-themes tango-2-theme tangotango-theme
-	    textile-mode websocket wgrep windsize wrap-region yasnippet
-	    zenburn-theme zencoding-mode)
+	    rainbow-delimiters rainbow-mode request smart-mode-line
+	    smart-tab smartparens sublime-themes tango-2-theme
+	    tangotango-theme textile-mode websocket wgrep windsize
+	    wrap-region yasnippet zenburn-theme zencoding-mode zone-matrix)
   "Lista de paquetes instalados actualmente en mi configuración.")
 
 ;; ;; esta parte es para comprobar que paquetes están installados
@@ -169,7 +169,8 @@ re-downloaded in order to locate PACKAGE."
 (require 'yasnippet)
 (require 'python-django)
 (require 'powerline)
-
+(require 'smart-mode-line)
+(require 'zone-matrix)
 
 ;; Configuraciones de las librerías anteriores
 
@@ -194,8 +195,10 @@ re-downloaded in order to locate PACKAGE."
 (require 'org-conf)
 (require 'auctex-conf)
 (require 'smart-hippie-conf)
+(require 'zone-matrix-conf)
 (require 'load-theme-conf)
 ;; (require 'powerline-conf)
+(require 'smart-mode-line-conf)
 
 ;; font
 (if (equal system-type 'gnu/linux)
