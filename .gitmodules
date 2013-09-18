@@ -1,0 +1,3 @@
+[submodule "lisp/auctex"]
+	path = lisp/auctex
+	url = git://git.sv.gnu.org/auctex.git

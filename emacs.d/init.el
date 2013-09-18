@@ -110,9 +110,6 @@ re-downloaded in order to locate PACKAGE."
   (packages-install
    lista-paquetes-instalados))
 
-;; hasta que se arregle la versión 11.87
-(add-to-list 'package-load-list '(auctex "11.86.1"))
-
 (package-initialize)
 
 (condition-case nil
