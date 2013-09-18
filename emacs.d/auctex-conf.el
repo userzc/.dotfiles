@@ -4,6 +4,14 @@
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
+;; ;; to use with auctex 11.87 compiled from cvs:
+;; ;; ./autogen.sh
+;; ;; ./configure
+;; ;; make
+;; ;; makeinstall
+;; (load "auctex.el" nil t t)
+;; (load "preview-latex.el" nil t t)
+
 ;; Para utilizar AUCTeX con documentos multi-arichivos, archivos de estilo
 (setq TeX-auto-save t)
 (setq TeX-parse-self t)
@@ -22,16 +30,16 @@
 
 ;; Para habilitar correlación de manera automática
 (add-hook 'LaTeX-mode-hook 'TeX-source-correlate-mode)
-(setq TeX-source-correlate-start-server t)
+;; (setq TeX-source-correlate-start-server t)
 
-;; (add-to-list 'LaTeX-verbatim-environments-local "comment")
-(add-hook 'LaTeX-mode-hook
-	  (lambda ()
-	    (TeX-add-style-hook
-	     "listings"
-	     (lambda ()
-	       (add-to-list 'LaTeX-verbatim-environments-local "comment")))
-	    ))
+;; ;; (add-to-list 'LaTeX-verbatim-environments-local "comment")
+;; (add-hook 'LaTeX-mode-hook
+;; 	  (lambda ()
+;; 	    (TeX-add-style-hook
+;; 	     "listings"
+;; 	     (lambda ()
+;; 	       (add-to-list 'LaTeX-verbatim-environments-local "comment")))
+;; 	    ))
 
 ;; ;; Para añadir ambiente comment a la lista verbatim
 ;; (TeX-add-style-hook
@@ -40,15 +48,15 @@
 ;;    (add-to-list 'LaTeX-verbatim-environments-local "comment")))
 
 
-;; ;; Para utilizar cleveref con RefTex
-;; ;; (add-to-list 'reftex-ref-style-alist
-;; ;;           '("Cleveref" "cleveref"
-;; ;;             (("\\cref" ?c) ("\\Cref" ?b)))) ; TODO crefrange
-;; ;; (setq reftex-ref-style-default-list '("Default" "Cleveref"))
+;; Para utilizar cleveref con RefTex
+;; (add-to-list 'reftex-ref-style-alist
+;;           '("Cleveref" "cleveref"
+;;             (("\\cref" ?c) ("\\Cref" ?b)))) ; TODO crefrange
+;; (setq reftex-ref-style-default-list '("Default" "Cleveref"))
 
-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
 ;; Configuraciones originales para Synctex y Evince
-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
 
 ;; Para intentar evitar que se cuelgue con synctex
 (require 'tex)
