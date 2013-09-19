@@ -23,6 +23,3 @@ web-vcs-log.org
 
 # cookies
 cookies
-
-# mantener registro de aucex-11.86.1
-!emacs.d/elpa/auctex-11.86.1/*
