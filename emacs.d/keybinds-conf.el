@@ -75,6 +75,8 @@
      (global-set-key (kbd "C-c M-m") 'magit-status)))
 
 ;; nose-mode
+;; TODO: modificar keybinds en python-debugger para hacer espacio para
+;; projectile
 (eval-after-load "nose"
   '(progn
      (add-hook 'python-mode-hook
