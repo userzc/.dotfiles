@@ -7,7 +7,7 @@
 
 ;;;### (autoloads (html-chklnk) "../../../../../.emacs.d/lisp/nxhtml/nxhtml/html-chklnk"
 ;;;;;;  "../../../../.emacs.d/lisp/nxhtml/nxhtml/html-chklnk.el"
-;;;;;;  (20986 37023 0 0))
+;;;;;;  (21055 58635))
 ;;; Generated autoloads from ../../../../.emacs.d/lisp/nxhtml/nxhtml/html-chklnk.el
 (web-autoload-require 'html-chklnk 'lp '(nxhtml-download-root-url nil) "../../../../.emacs.d/lisp/nxhtml/nxhtml/html-chklnk" nxhtml-install-dir 'nxhtml-byte-compile-file)
 
@@ -19,7 +19,7 @@
 ;;;### (autoloads (html-pagetoc-rebuild-toc html-pagetoc-insert-toc
 ;;;;;;  html-pagetoc) "../../../../../.emacs.d/lisp/nxhtml/nxhtml/html-pagetoc"
 ;;;;;;  "../../../../.emacs.d/lisp/nxhtml/nxhtml/html-pagetoc.el"
-;;;;;;  (20986 37023 0 0))
+;;;;;;  (21055 58635))
 ;;; Generated autoloads from ../../../../.emacs.d/lisp/nxhtml/nxhtml/html-pagetoc.el
 (web-autoload-require 'html-pagetoc 'lp '(nxhtml-download-root-url nil) "../../../../.emacs.d/lisp/nxhtml/nxhtml/html-pagetoc" nxhtml-install-dir 'nxhtml-byte-compile-file)
 
@@ -46,8 +46,8 @@ Update the table of contents inserted by `html-pagetoc-insert-toc'.
 ;;;### (autoloads (html-site-query-replace html-site-rgrep html-site-find-file
 ;;;;;;  html-site-dired-current html-site-set-site html-site-buffer-or-dired-file-name
 ;;;;;;  html-site-edit-sites html-site) "../../../../../.emacs.d/lisp/nxhtml/nxhtml/html-site"
-;;;;;;  "../../../../.emacs.d/lisp/nxhtml/nxhtml/html-site.el" (20986
-;;;;;;  37023 0 0))
+;;;;;;  "../../../../.emacs.d/lisp/nxhtml/nxhtml/html-site.el" (21055
+;;;;;;  58635))
 ;;; Generated autoloads from ../../../../.emacs.d/lisp/nxhtml/nxhtml/html-site.el
 (web-autoload-require 'html-site 'lp '(nxhtml-download-root-url nil) "../../../../.emacs.d/lisp/nxhtml/nxhtml/html-site" nxhtml-install-dir 'nxhtml-byte-compile-file)
 
@@ -94,8 +94,8 @@ Query replace in current site's files.
 ;;;***
 
 ;;;### (autoloads (html-toc) "../../../../../.emacs.d/lisp/nxhtml/nxhtml/html-toc"
-;;;;;;  "../../../../.emacs.d/lisp/nxhtml/nxhtml/html-toc.el" (20986
-;;;;;;  37023 0 0))
+;;;;;;  "../../../../.emacs.d/lisp/nxhtml/nxhtml/html-toc.el" (21055
+;;;;;;  58635))
 ;;; Generated autoloads from ../../../../.emacs.d/lisp/nxhtml/nxhtml/html-toc.el
 (web-autoload-require 'html-toc 'lp '(nxhtml-download-root-url nil) "../../../../.emacs.d/lisp/nxhtml/nxhtml/html-toc" nxhtml-install-dir 'nxhtml-byte-compile-file)
 
@@ -110,7 +110,7 @@ Query replace in current site's files.
 ;;;;;;  html-upl-edit-remote-file html-upl-upload-file html-upl-remote-dired
 ;;;;;;  html-upl-upload-site html-upl-upload-site-with-toc html-upl)
 ;;;;;;  "../../../../../.emacs.d/lisp/nxhtml/nxhtml/html-upl" "../../../../.emacs.d/lisp/nxhtml/nxhtml/html-upl.el"
-;;;;;;  (20986 37023 0 0))
+;;;;;;  (21055 58635))
 ;;; Generated autoloads from ../../../../.emacs.d/lisp/nxhtml/nxhtml/html-upl.el
 (web-autoload-require 'html-upl 'lp '(nxhtml-download-root-url nil) "../../../../.emacs.d/lisp/nxhtml/nxhtml/html-upl" nxhtml-install-dir 'nxhtml-byte-compile-file)
 
@@ -157,8 +157,8 @@ FILENAME could be either the remote or the local file.
 ;;;***
 
 ;;;### (autoloads (html-wtoc) "../../../../../.emacs.d/lisp/nxhtml/nxhtml/html-wtoc"
-;;;;;;  "../../../../.emacs.d/lisp/nxhtml/nxhtml/html-wtoc.el" (20986
-;;;;;;  37023 0 0))
+;;;;;;  "../../../../.emacs.d/lisp/nxhtml/nxhtml/html-wtoc.el" (21055
+;;;;;;  58635))
 ;;; Generated autoloads from ../../../../.emacs.d/lisp/nxhtml/nxhtml/html-wtoc.el
 (web-autoload-require 'html-wtoc 'lp '(nxhtml-download-root-url nil) "../../../../.emacs.d/lisp/nxhtml/nxhtml/html-wtoc" nxhtml-install-dir 'nxhtml-byte-compile-file)
 
@@ -169,7 +169,7 @@ FILENAME could be either the remote or the local file.
 
 ;;;### (autoloads (nxhtml-features-check nxhtml-customize nxhtml)
 ;;;;;;  "../../../../../.emacs.d/lisp/nxhtml/nxhtml/nxhtml" "../../../../.emacs.d/lisp/nxhtml/nxhtml/nxhtml.el"
-;;;;;;  (20986 37023 0 0))
+;;;;;;  (21055 58635))
 ;;; Generated autoloads from ../../../../.emacs.d/lisp/nxhtml/nxhtml/nxhtml.el
 (web-autoload-require 'nxhtml 'lp '(nxhtml-download-root-url nil) "../../../../.emacs.d/lisp/nxhtml/nxhtml/nxhtml" nxhtml-install-dir 'nxhtml-byte-compile-file)
 
@@ -189,8 +189,8 @@ Check if external modules used by nXhtml are found.
 ;;;***
 
 ;;;### (autoloads (nxhtml-report-bug) "../../../../../.emacs.d/lisp/nxhtml/nxhtml/nxhtml-bug"
-;;;;;;  "../../../../.emacs.d/lisp/nxhtml/nxhtml/nxhtml-bug.el" (20986
-;;;;;;  37023 0 0))
+;;;;;;  "../../../../.emacs.d/lisp/nxhtml/nxhtml/nxhtml-bug.el" (21055
+;;;;;;  58635))
 ;;; Generated autoloads from ../../../../.emacs.d/lisp/nxhtml/nxhtml/nxhtml-bug.el
 (web-autoload-require 'nxhtml-bug 'lp '(nxhtml-download-root-url nil) "../../../../.emacs.d/lisp/nxhtml/nxhtml/nxhtml-bug" nxhtml-install-dir 'nxhtml-byte-compile-file)
 
@@ -206,7 +206,7 @@ Report a bug in nXhtml.
 ;;;;;;  nxhtml-browse-file nxhtml-edit-with-gimp mumamo-switch-to-other-html)
 ;;;;;;  "../../../../../.emacs.d/lisp/nxhtml/nxhtml/nxhtml-menu"
 ;;;;;;  "../../../../.emacs.d/lisp/nxhtml/nxhtml/nxhtml-menu.el"
-;;;;;;  (20986 37023 0 0))
+;;;;;;  (21055 58635))
 ;;; Generated autoloads from ../../../../.emacs.d/lisp/nxhtml/nxhtml/nxhtml-menu.el
 (web-autoload-require 'nxhtml-menu 'lp '(nxhtml-download-root-url nil) "../../../../.emacs.d/lisp/nxhtml/nxhtml/nxhtml-menu" nxhtml-install-dir 'nxhtml-byte-compile-file)
 
@@ -270,7 +270,7 @@ Show a HTML page with an overview of nXhtml.
 ;;;### (autoloads (nxhtml-validation-header-mode nxhtml-short-tag-help
 ;;;;;;  nxhtml-mode) "../../../../../.emacs.d/lisp/nxhtml/nxhtml/nxhtml-mode"
 ;;;;;;  "../../../../.emacs.d/lisp/nxhtml/nxhtml/nxhtml-mode.el"
-;;;;;;  (20986 37023 0 0))
+;;;;;;  (21055 58635))
 ;;; Generated autoloads from ../../../../.emacs.d/lisp/nxhtml/nxhtml/nxhtml-mode.el
 (web-autoload-require 'nxhtml-mode 'lp '(nxhtml-download-root-url nil) "../../../../.emacs.d/lisp/nxhtml/nxhtml/nxhtml-mode" nxhtml-install-dir 'nxhtml-byte-compile-file)
 
@@ -349,7 +349,7 @@ This mode may be turned on automatically in two ways:
 ;;;;;;  mason-nxhtml-mumamo-mode django-nxhtml-mumamo-mode embperl-nxhtml-mumamo-mode
 ;;;;;;  nxhtml-mumamo-mode) "../../../../../.emacs.d/lisp/nxhtml/nxhtml/nxhtml-mumamo"
 ;;;;;;  "../../../../.emacs.d/lisp/nxhtml/nxhtml/nxhtml-mumamo.el"
-;;;;;;  (20986 37023 0 0))
+;;;;;;  (21055 58635))
 ;;; Generated autoloads from ../../../../.emacs.d/lisp/nxhtml/nxhtml/nxhtml-mumamo.el
 (web-autoload-require 'nxhtml-mumamo 'lp '(nxhtml-download-root-url nil) "../../../../.emacs.d/lisp/nxhtml/nxhtml/nxhtml-mumamo" nxhtml-install-dir 'nxhtml-byte-compile-file)
 
@@ -408,7 +408,7 @@ This also covers inlined style and javascript." t)
 
 ;;;### (autoloads (nxml-where-global-mode nxml-where-mode nxml-where)
 ;;;;;;  "../../../../../.emacs.d/lisp/nxhtml/nxhtml/nxml-where" "../../../../.emacs.d/lisp/nxhtml/nxhtml/nxml-where.el"
-;;;;;;  (20986 37023 0 0))
+;;;;;;  (21055 58635))
 ;;; Generated autoloads from ../../../../.emacs.d/lisp/nxhtml/nxhtml/nxml-where.el
 (web-autoload-require 'nxml-where 'lp '(nxhtml-download-root-url nil) "../../../../.emacs.d/lisp/nxhtml/nxhtml/nxml-where" nxhtml-install-dir 'nxhtml-byte-compile-file)
 
@@ -444,8 +444,8 @@ See `nxml-where-mode' for more information on Nxml-Where mode.
 ;;;***
 
 ;;;### (autoloads (rncdl-update-html5) "../../../../../.emacs.d/lisp/nxhtml/nxhtml/rncdl"
-;;;;;;  "../../../../.emacs.d/lisp/nxhtml/nxhtml/rncdl.el" (20986
-;;;;;;  37023 0 0))
+;;;;;;  "../../../../.emacs.d/lisp/nxhtml/nxhtml/rncdl.el" (21055
+;;;;;;  58635))
 ;;; Generated autoloads from ../../../../.emacs.d/lisp/nxhtml/nxhtml/rncdl.el
 (web-autoload-require 'rncdl 'lp '(nxhtml-download-root-url nil) "../../../../.emacs.d/lisp/nxhtml/nxhtml/rncdl" nxhtml-install-dir 'nxhtml-byte-compile-file)
 
@@ -464,8 +464,8 @@ The schemas will be enabled based on file name extensions
 ;;;***
 
 ;;;### (autoloads (rngalt-set-validation-header) "../../../../../.emacs.d/lisp/nxhtml/nxhtml/rngalt"
-;;;;;;  "../../../../.emacs.d/lisp/nxhtml/nxhtml/rngalt.el" (20986
-;;;;;;  37023 0 0))
+;;;;;;  "../../../../.emacs.d/lisp/nxhtml/nxhtml/rngalt.el" (21055
+;;;;;;  58635))
 ;;; Generated autoloads from ../../../../.emacs.d/lisp/nxhtml/nxhtml/rngalt.el
 (web-autoload-require 'rngalt 'lp '(nxhtml-download-root-url nil) "../../../../.emacs.d/lisp/nxhtml/nxhtml/rngalt" nxhtml-install-dir 'nxhtml-byte-compile-file)
 
@@ -478,8 +478,8 @@ The schemas will be enabled based on file name extensions
 ;;;***
 
 ;;;### (autoloads (tidy-build-menu tidy) "../../../../../.emacs.d/lisp/nxhtml/nxhtml/tidy-xhtml"
-;;;;;;  "../../../../.emacs.d/lisp/nxhtml/nxhtml/tidy-xhtml.el" (20986
-;;;;;;  37023 0 0))
+;;;;;;  "../../../../.emacs.d/lisp/nxhtml/nxhtml/tidy-xhtml.el" (21055
+;;;;;;  58635))
 ;;; Generated autoloads from ../../../../.emacs.d/lisp/nxhtml/nxhtml/tidy-xhtml.el
 (web-autoload-require 'tidy-xhtml 'lp '(nxhtml-download-root-url nil) "../../../../.emacs.d/lisp/nxhtml/nxhtml/tidy-xhtml" nxhtml-install-dir 'nxhtml-byte-compile-file)
 
@@ -496,8 +496,8 @@ Used to set up a Tidy menu in your favourite mode.
 
 ;;;### (autoloads (xhtml-help xhtml-help-show-tag-ref xhtml-help-tag-at-point
 ;;;;;;  xhtml-help-show-css-ref) "../../../../../.emacs.d/lisp/nxhtml/nxhtml/xhtml-help"
-;;;;;;  "../../../../.emacs.d/lisp/nxhtml/nxhtml/xhtml-help.el" (20986
-;;;;;;  37023 0 0))
+;;;;;;  "../../../../.emacs.d/lisp/nxhtml/nxhtml/xhtml-help.el" (21055
+;;;;;;  58635))
 ;;; Generated autoloads from ../../../../.emacs.d/lisp/nxhtml/nxhtml/xhtml-help.el
 (web-autoload-require 'xhtml-help 'lp '(nxhtml-download-root-url nil) "../../../../.emacs.d/lisp/nxhtml/nxhtml/xhtml-help" nxhtml-install-dir 'nxhtml-byte-compile-file)
 
@@ -523,8 +523,8 @@ Show xhtml reference for tag name at or before point.
 
 ;;;### (autoloads (nxhtmlmaint-byte-uncompile-all nxhtmlmaint-byte-recompile
 ;;;;;;  nxhtmlmaint-start-byte-compilation) "../../../../../.emacs.d/lisp/nxhtml/nxhtmlmaint"
-;;;;;;  "../../../../.emacs.d/lisp/nxhtml/nxhtmlmaint.el" (20986
-;;;;;;  37023 0 0))
+;;;;;;  "../../../../.emacs.d/lisp/nxhtml/nxhtmlmaint.el" (21055
+;;;;;;  58635))
 ;;; Generated autoloads from ../../../../.emacs.d/lisp/nxhtml/nxhtmlmaint.el
 (web-autoload-require 'nxhtmlmaint 'lp '(nxhtml-download-root-url nil) "../../../../.emacs.d/lisp/nxhtml/nxhtmlmaint" nxhtml-install-dir 'nxhtml-byte-compile-file)
 
@@ -563,8 +563,8 @@ See `nxhtmlmaint-start-byte-compilation' for byte compiling.
 ;;;***
 
 ;;;### (autoloads (amrita-mode) "../../../../../.emacs.d/lisp/nxhtml/related/amrita"
-;;;;;;  "../../../../.emacs.d/lisp/nxhtml/related/amrita.el" (20986
-;;;;;;  37023 0 0))
+;;;;;;  "../../../../.emacs.d/lisp/nxhtml/related/amrita.el" (21055
+;;;;;;  58635))
 ;;; Generated autoloads from ../../../../.emacs.d/lisp/nxhtml/related/amrita.el
 (web-autoload-require 'amrita 'lp '(nxhtml-download-root-url nil) "../../../../.emacs.d/lisp/nxhtml/related/amrita" nxhtml-install-dir 'nxhtml-byte-compile-file)
 
@@ -578,7 +578,7 @@ A major mode for editing Amrita files.
 
 ;;;### (autoloads (csharp-mode csharp-mode-hook) "../../../../../.emacs.d/lisp/nxhtml/related/csharp-mode"
 ;;;;;;  "../../../../.emacs.d/lisp/nxhtml/related/csharp-mode.el"
-;;;;;;  (20986 37023 0 0))
+;;;;;;  (21055 58635))
 ;;; Generated autoloads from ../../../../.emacs.d/lisp/nxhtml/related/csharp-mode.el
 (web-autoload-require 'csharp-mode 'lp '(nxhtml-download-root-url nil) "../../../../.emacs.d/lisp/nxhtml/related/csharp-mode" nxhtml-install-dir 'nxhtml-byte-compile-file)
 
@@ -609,8 +609,8 @@ Key bindings:
 ;;;***
 
 ;;;### (autoloads (django-variable-mode django-mode) "../../../../../.emacs.d/lisp/nxhtml/related/django"
-;;;;;;  "../../../../.emacs.d/lisp/nxhtml/related/django.el" (20986
-;;;;;;  37023 0 0))
+;;;;;;  "../../../../.emacs.d/lisp/nxhtml/related/django.el" (21055
+;;;;;;  58635))
 ;;; Generated autoloads from ../../../../.emacs.d/lisp/nxhtml/related/django.el
 (web-autoload-require 'django 'lp '(nxhtml-download-root-url nil) "../../../../.emacs.d/lisp/nxhtml/related/django" nxhtml-install-dir 'nxhtml-byte-compile-file)
 
@@ -630,7 +630,7 @@ For django comment blocks.
 
 ;;;### (autoloads (flymake-global-mode) "../../../../../.emacs.d/lisp/nxhtml/related/flymake-files"
 ;;;;;;  "../../../../.emacs.d/lisp/nxhtml/related/flymake-files.el"
-;;;;;;  (20986 37023 0 0))
+;;;;;;  (21055 58635))
 ;;; Generated autoloads from ../../../../.emacs.d/lisp/nxhtml/related/flymake-files.el
 (web-autoload-require 'flymake-files 'lp '(nxhtml-download-root-url nil) "../../../../.emacs.d/lisp/nxhtml/related/flymake-files" nxhtml-install-dir 'nxhtml-byte-compile-file)
 
@@ -660,7 +660,7 @@ See `flymake-mode' for more information on Flymake mode.
 
 ;;;### (autoloads (flymake-for-js) "../../../../../.emacs.d/lisp/nxhtml/related/flymake-for-js"
 ;;;;;;  "../../../../.emacs.d/lisp/nxhtml/related/flymake-for-js.el"
-;;;;;;  (20986 37023 0 0))
+;;;;;;  (21055 58635))
 ;;; Generated autoloads from ../../../../.emacs.d/lisp/nxhtml/related/flymake-for-js.el
 (web-autoload-require 'flymake-for-js 'lp '(nxhtml-download-root-url nil) "../../../../.emacs.d/lisp/nxhtml/related/flymake-for-js" nxhtml-install-dir 'nxhtml-byte-compile-file)
 
@@ -670,8 +670,8 @@ See `flymake-mode' for more information on Flymake mode.
 ;;;***
 
 ;;;### (autoloads (iss-mode) "../../../../../.emacs.d/lisp/nxhtml/related/iss-mode"
-;;;;;;  "../../../../.emacs.d/lisp/nxhtml/related/iss-mode.el" (20986
-;;;;;;  37023 0 0))
+;;;;;;  "../../../../.emacs.d/lisp/nxhtml/related/iss-mode.el" (21055
+;;;;;;  58635))
 ;;; Generated autoloads from ../../../../.emacs.d/lisp/nxhtml/related/iss-mode.el
 (web-autoload-require 'iss-mode 'lp '(nxhtml-download-root-url nil) "../../../../.emacs.d/lisp/nxhtml/related/iss-mode" nxhtml-install-dir 'nxhtml-byte-compile-file)
 
@@ -685,7 +685,7 @@ Major mode for editing InnoSetup script files. Upon startup iss-mode-hook is run
 
 ;;;### (autoloads (iss-mumamo-mode) "../../../../../.emacs.d/lisp/nxhtml/related/iss-mumamo"
 ;;;;;;  "../../../../.emacs.d/lisp/nxhtml/related/iss-mumamo.el"
-;;;;;;  (20986 37023 0 0))
+;;;;;;  (21055 58635))
 ;;; Generated autoloads from ../../../../.emacs.d/lisp/nxhtml/related/iss-mumamo.el
 (web-autoload-require 'iss-mumamo 'lp '(nxhtml-download-root-url nil) "../../../../.emacs.d/lisp/nxhtml/related/iss-mumamo" nxhtml-install-dir 'nxhtml-byte-compile-file)
 
@@ -699,8 +699,8 @@ The [code] section, if any, will be in `pascal-mode'." t)
 
 ;;;### (autoloads (inferior-moz-start-process inferior-moz-stop-process
 ;;;;;;  inferior-moz-mode moz-minor-mode) "../../../../../.emacs.d/lisp/nxhtml/related/moz"
-;;;;;;  "../../../../.emacs.d/lisp/nxhtml/related/moz.el" (20986
-;;;;;;  37023 0 0))
+;;;;;;  "../../../../.emacs.d/lisp/nxhtml/related/moz.el" (21055
+;;;;;;  58635))
 ;;; Generated autoloads from ../../../../.emacs.d/lisp/nxhtml/related/moz.el
 (web-autoload-require 'moz 'lp '(nxhtml-download-root-url nil) "../../../../.emacs.d/lisp/nxhtml/related/moz" nxhtml-install-dir 'nxhtml-byte-compile-file)
 
@@ -747,8 +747,8 @@ Note that you have to start the MozRepl server from Firefox.
 
 ;;;### (autoloads (mozadd-mirror-mode global-mozadd-refresh-edited-on-save-mode
 ;;;;;;  mozadd-refresh-edited-on-save-mode) "../../../../../.emacs.d/lisp/nxhtml/related/mozadd"
-;;;;;;  "../../../../.emacs.d/lisp/nxhtml/related/mozadd.el" (20986
-;;;;;;  37023 0 0))
+;;;;;;  "../../../../.emacs.d/lisp/nxhtml/related/mozadd.el" (21055
+;;;;;;  58635))
 ;;; Generated autoloads from ../../../../.emacs.d/lisp/nxhtml/related/mozadd.el
 (web-autoload-require 'mozadd 'lp '(nxhtml-download-root-url nil) "../../../../.emacs.d/lisp/nxhtml/related/mozadd" nxhtml-install-dir 'nxhtml-byte-compile-file)
 
@@ -827,8 +827,8 @@ update Firefox when you save the CSS file.
 ;;;***
 
 ;;;### (autoloads (php-mode php-file-patterns php) "../../../../../.emacs.d/lisp/nxhtml/related/php-mode"
-;;;;;;  "../../../../.emacs.d/lisp/nxhtml/related/php-mode.el" (20986
-;;;;;;  37023 0 0))
+;;;;;;  "../../../../.emacs.d/lisp/nxhtml/related/php-mode.el" (21055
+;;;;;;  58635))
 ;;; Generated autoloads from ../../../../.emacs.d/lisp/nxhtml/related/php-mode.el
 (web-autoload-require 'php-mode 'lp '(nxhtml-download-root-url nil) "../../../../.emacs.d/lisp/nxhtml/related/php-mode" nxhtml-install-dir 'nxhtml-byte-compile-file)
 
@@ -851,7 +851,7 @@ Major mode for editing PHP code.
 
 ;;;### (autoloads (smarty-mode smarty) "../../../../../.emacs.d/lisp/nxhtml/related/smarty-mode"
 ;;;;;;  "../../../../.emacs.d/lisp/nxhtml/related/smarty-mode.el"
-;;;;;;  (20986 37023 0 0))
+;;;;;;  (21055 58635))
 ;;; Generated autoloads from ../../../../.emacs.d/lisp/nxhtml/related/smarty-mode.el
 (web-autoload-require 'smarty-mode 'lp '(nxhtml-download-root-url nil) "../../../../.emacs.d/lisp/nxhtml/related/smarty-mode" nxhtml-install-dir 'nxhtml-byte-compile-file)
 
@@ -1338,8 +1338,8 @@ For Smarty functions, see PDF or HTML documentation.
 ;;;***
 
 ;;;### (autoloads (tt-mode) "../../../../../.emacs.d/lisp/nxhtml/related/tt-mode"
-;;;;;;  "../../../../.emacs.d/lisp/nxhtml/related/tt-mode.el" (20986
-;;;;;;  37023 0 0))
+;;;;;;  "../../../../.emacs.d/lisp/nxhtml/related/tt-mode.el" (21055
+;;;;;;  58635))
 ;;; Generated autoloads from ../../../../.emacs.d/lisp/nxhtml/related/tt-mode.el
 (web-autoload-require 'tt-mode 'lp '(nxhtml-download-root-url nil) "../../../../.emacs.d/lisp/nxhtml/related/tt-mode" nxhtml-install-dir 'nxhtml-byte-compile-file)
 
@@ -1353,7 +1353,7 @@ Major mode for editing Template Toolkit files.
 
 ;;;### (autoloads (visual-basic-mode) "../../../../../.emacs.d/lisp/nxhtml/related/visual-basic-mode"
 ;;;;;;  "../../../../.emacs.d/lisp/nxhtml/related/visual-basic-mode.el"
-;;;;;;  (20986 37023 0 0))
+;;;;;;  (21055 58635))
 ;;; Generated autoloads from ../../../../.emacs.d/lisp/nxhtml/related/visual-basic-mode.el
 (web-autoload-require 'visual-basic-mode 'lp '(nxhtml-download-root-url nil) "../../../../.emacs.d/lisp/nxhtml/related/visual-basic-mode" nxhtml-install-dir 'nxhtml-byte-compile-file)
 
@@ -1370,8 +1370,7 @@ Commands:
 ;;;***
 
 ;;;### (autoloads (ertn-run-tests-interactively ertn-deftest) "../../../../../.emacs.d/lisp/nxhtml/tests/ertn"
-;;;;;;  "../../../../.emacs.d/lisp/nxhtml/tests/ertn.el" (20986 37023
-;;;;;;  0 0))
+;;;;;;  "../../../../.emacs.d/lisp/nxhtml/tests/ertn.el" (21055 58635))
 ;;; Generated autoloads from ../../../../.emacs.d/lisp/nxhtml/tests/ertn.el
 (web-autoload-require 'ertn 'lp '(nxhtml-download-root-url nil) "../../../../.emacs.d/lisp/nxhtml/tests/ertn" nxhtml-install-dir 'nxhtml-byte-compile-file)
 
@@ -1380,6 +1379,8 @@ Commands:
 Define NAME (a symbol) as a test.
 
 \(fn NAME () [:documentation DOCSTRING] [:expected-result TYPE] BODY...)" nil (quote macro))
+
+(put 'ertn-deftest 'lisp-indent-function '2)
 
 (nxhtml-autoload 'ertn-run-tests-interactively `(lp '(nxhtml-download-root-url nil) "../../../../.emacs.d/lisp/nxhtml/tests/ertn" nxhtml-install-dir) "\
 Run the tests specified by SELECTOR and display the results in a buffer.
@@ -1390,7 +1391,7 @@ Run the tests specified by SELECTOR and display the results in a buffer.
 
 ;;;### (autoloads (nxhtmltest-run-Q) "../../../../../.emacs.d/lisp/nxhtml/tests/nxhtmltest-Q"
 ;;;;;;  "../../../../.emacs.d/lisp/nxhtml/tests/nxhtmltest-Q.el"
-;;;;;;  (20986 37023 0 0))
+;;;;;;  (21055 58635))
 ;;; Generated autoloads from ../../../../.emacs.d/lisp/nxhtml/tests/nxhtmltest-Q.el
 (web-autoload-require 'nxhtmltest-Q 'lp '(nxhtml-download-root-url nil) "../../../../.emacs.d/lisp/nxhtml/tests/nxhtmltest-Q" nxhtml-install-dir 'nxhtml-byte-compile-file)
 
@@ -1405,7 +1406,7 @@ See `nxhtmltest-run' for more information about the tests.
 
 ;;;### (autoloads (nxhtmltest-run nxhtmltest-run-indent) "../../../../../.emacs.d/lisp/nxhtml/tests/nxhtmltest-suites"
 ;;;;;;  "../../../../.emacs.d/lisp/nxhtml/tests/nxhtmltest-suites.el"
-;;;;;;  (20986 37023 0 0))
+;;;;;;  (21055 58635))
 ;;; Generated autoloads from ../../../../.emacs.d/lisp/nxhtml/tests/nxhtmltest-suites.el
 (web-autoload-require 'nxhtmltest-suites 'lp '(nxhtml-download-root-url nil) "../../../../.emacs.d/lisp/nxhtml/tests/nxhtmltest-suites" nxhtml-install-dir 'nxhtml-byte-compile-file)
 
@@ -1432,7 +1433,7 @@ fail (they corresponds to known errors in nXhtml/Emacs):
 ;;;### (autoloads (cancel-secondary-selection set-secondary-selection
 ;;;;;;  anchored-transpose) "../../../../../.emacs.d/lisp/nxhtml/util/anchored-transpose"
 ;;;;;;  "../../../../.emacs.d/lisp/nxhtml/util/anchored-transpose.el"
-;;;;;;  (20986 37023 0 0))
+;;;;;;  (21055 58635))
 ;;; Generated autoloads from ../../../../.emacs.d/lisp/nxhtml/util/anchored-transpose.el
 (web-autoload-require 'anchored-transpose 'lp '(nxhtml-download-root-url nil) "../../../../.emacs.d/lisp/nxhtml/util/anchored-transpose" nxhtml-install-dir 'nxhtml-byte-compile-file)
 
@@ -1492,8 +1493,8 @@ This must be bound to a mouse drag event.
 ;;;***
 
 ;;;### (autoloads (appmenu-mode appmenu-add appmenu) "../../../../../.emacs.d/lisp/nxhtml/util/appmenu"
-;;;;;;  "../../../../.emacs.d/lisp/nxhtml/util/appmenu.el" (20986
-;;;;;;  37023 0 0))
+;;;;;;  "../../../../.emacs.d/lisp/nxhtml/util/appmenu.el" (21055
+;;;;;;  58635))
 ;;; Generated autoloads from ../../../../.emacs.d/lisp/nxhtml/util/appmenu.el
 (web-autoload-require 'appmenu 'lp '(nxhtml-download-root-url nil) "../../../../.emacs.d/lisp/nxhtml/util/appmenu" nxhtml-install-dir 'nxhtml-byte-compile-file)
 
@@ -1548,8 +1549,8 @@ much about computation time as for entries in the menu bar.
 ;;;### (autoloads (as-external-mode as-external-for-wiki as-external-for-el-files
 ;;;;;;  as-external-check-contents as-external-for-mail-mode as-external-for-xhtml
 ;;;;;;  as-external) "../../../../../.emacs.d/lisp/nxhtml/util/as-external"
-;;;;;;  "../../../../.emacs.d/lisp/nxhtml/util/as-external.el" (20986
-;;;;;;  37023 0 0))
+;;;;;;  "../../../../.emacs.d/lisp/nxhtml/util/as-external.el" (21055
+;;;;;;  58635))
 ;;; Generated autoloads from ../../../../.emacs.d/lisp/nxhtml/util/as-external.el
 (web-autoload-require 'as-external 'lp '(nxhtml-download-root-url nil) "../../../../.emacs.d/lisp/nxhtml/util/as-external" nxhtml-install-dir 'nxhtml-byte-compile-file)
 
@@ -1630,8 +1631,8 @@ See `as-external-alist' for more information.
 
 ;;;### (autoloads (bibhlp-scopus-by-doi bibhlp-copy-link-title-at-point
 ;;;;;;  bibhlp-goto-citeulike bibhlp) "../../../../../.emacs.d/lisp/nxhtml/util/bibhlp"
-;;;;;;  "../../../../.emacs.d/lisp/nxhtml/util/bibhlp.el" (20986
-;;;;;;  37023 0 0))
+;;;;;;  "../../../../.emacs.d/lisp/nxhtml/util/bibhlp.el" (21055
+;;;;;;  58635))
 ;;; Generated autoloads from ../../../../.emacs.d/lisp/nxhtml/util/bibhlp.el
 (web-autoload-require 'bibhlp 'lp '(nxhtml-download-root-url nil) "../../../../.emacs.d/lisp/nxhtml/util/bibhlp" nxhtml-install-dir 'nxhtml-byte-compile-file)
 
@@ -1690,8 +1691,8 @@ Copy `org-mode' link at point title to clipboard.
 ;;;***
 
 ;;;### (autoloads (buffer-bg-set-color) "../../../../../.emacs.d/lisp/nxhtml/util/buffer-bg"
-;;;;;;  "../../../../.emacs.d/lisp/nxhtml/util/buffer-bg.el" (20986
-;;;;;;  37023 0 0))
+;;;;;;  "../../../../.emacs.d/lisp/nxhtml/util/buffer-bg.el" (21055
+;;;;;;  58635))
 ;;; Generated autoloads from ../../../../.emacs.d/lisp/nxhtml/util/buffer-bg.el
 (web-autoload-require 'buffer-bg 'lp '(nxhtml-download-root-url nil) "../../../../.emacs.d/lisp/nxhtml/util/buffer-bg" nxhtml-install-dir 'nxhtml-byte-compile-file)
 
@@ -1705,8 +1706,8 @@ If COLOR is nil remove previously added overlay.
 ;;;***
 
 ;;;### (autoloads (chartg-make-chart chartg-complete) "../../../../../.emacs.d/lisp/nxhtml/util/chartg"
-;;;;;;  "../../../../.emacs.d/lisp/nxhtml/util/chartg.el" (20986
-;;;;;;  37023 0 0))
+;;;;;;  "../../../../.emacs.d/lisp/nxhtml/util/chartg.el" (21055
+;;;;;;  58635))
 ;;; Generated autoloads from ../../../../.emacs.d/lisp/nxhtml/util/chartg.el
 (web-autoload-require 'chartg 'lp '(nxhtml-download-root-url nil) "../../../../.emacs.d/lisp/nxhtml/util/chartg" nxhtml-install-dir 'nxhtml-byte-compile-file)
 
@@ -1810,8 +1811,8 @@ Below are some examples.  To test them mark an example and do
 
 ;;;### (autoloads (css-color-test css-color-global-mode css-color-mode
 ;;;;;;  css-color) "../../../../../.emacs.d/lisp/nxhtml/util/css-color"
-;;;;;;  "../../../../.emacs.d/lisp/nxhtml/util/css-color.el" (20986
-;;;;;;  37023 0 0))
+;;;;;;  "../../../../.emacs.d/lisp/nxhtml/util/css-color.el" (21055
+;;;;;;  58635))
 ;;; Generated autoloads from ../../../../.emacs.d/lisp/nxhtml/util/css-color.el
 (web-autoload-require 'css-color 'lp '(nxhtml-download-root-url nil) "../../../../.emacs.d/lisp/nxhtml/util/css-color" nxhtml-install-dir 'nxhtml-byte-compile-file)
 
@@ -1869,7 +1870,7 @@ colors as any viable css color.  Example:
 
 ;;;### (autoloads (css-palette-global-mode css-palette css-palette-mode)
 ;;;;;;  "../../../../../.emacs.d/lisp/nxhtml/util/css-palette" "../../../../.emacs.d/lisp/nxhtml/util/css-palette.el"
-;;;;;;  (20986 37023 0 0))
+;;;;;;  (21055 58635))
 ;;; Generated autoloads from ../../../../.emacs.d/lisp/nxhtml/util/css-palette.el
 (web-autoload-require 'css-palette 'lp '(nxhtml-download-root-url nil) "../../../../.emacs.d/lisp/nxhtml/util/css-palette" nxhtml-install-dir 'nxhtml-byte-compile-file)
 
@@ -1969,7 +1970,7 @@ See `css-palette-mode' for more information on Css-Palette mode.
 
 ;;;### (autoloads (cusnu-export-my-skin-options customize-for-new-user)
 ;;;;;;  "../../../../../.emacs.d/lisp/nxhtml/util/cus-new-user" "../../../../.emacs.d/lisp/nxhtml/util/cus-new-user.el"
-;;;;;;  (20986 37023 0 0))
+;;;;;;  (21055 58635))
 ;;; Generated autoloads from ../../../../.emacs.d/lisp/nxhtml/util/cus-new-user.el
 (web-autoload-require 'cus-new-user 'lp '(nxhtml-download-root-url nil) "../../../../.emacs.d/lisp/nxhtml/util/cus-new-user" nxhtml-install-dir 'nxhtml-byte-compile-file)
 
@@ -1991,8 +1992,8 @@ For more information about this see `cusnu-export-cust-group'.
 ;;;***
 
 ;;;### (autoloads (ediff-url) "../../../../../.emacs.d/lisp/nxhtml/util/ediff-url"
-;;;;;;  "../../../../.emacs.d/lisp/nxhtml/util/ediff-url.el" (20986
-;;;;;;  37023 0 0))
+;;;;;;  "../../../../.emacs.d/lisp/nxhtml/util/ediff-url.el" (21055
+;;;;;;  58635))
 ;;; Generated autoloads from ../../../../.emacs.d/lisp/nxhtml/util/ediff-url.el
 (web-autoload-require 'ediff-url 'lp '(nxhtml-download-root-url nil) "../../../../.emacs.d/lisp/nxhtml/util/ediff-url" nxhtml-install-dir 'nxhtml-byte-compile-file)
 
@@ -2013,8 +2014,8 @@ If not the user is asked for the URL.
 ;;;***
 
 ;;;### (autoloads (google-chrome-server-mode) "../../../../../.emacs.d/lisp/nxhtml/util/edit-server"
-;;;;;;  "../../../../.emacs.d/lisp/nxhtml/util/edit-server.el" (20986
-;;;;;;  37023 0 0))
+;;;;;;  "../../../../.emacs.d/lisp/nxhtml/util/edit-server.el" (21055
+;;;;;;  58635))
 ;;; Generated autoloads from ../../../../.emacs.d/lisp/nxhtml/util/edit-server.el
 (web-autoload-require 'edit-server 'lp '(nxhtml-download-root-url nil) "../../../../.emacs.d/lisp/nxhtml/util/edit-server" nxhtml-install-dir 'nxhtml-byte-compile-file)
 
@@ -2037,7 +2038,7 @@ Accept editing requests from Google Chrome.
 
 ;;;### (autoloads (ffip-find-file-in-dirtree ffip-set-current-project)
 ;;;;;;  "../../../../../.emacs.d/lisp/nxhtml/util/ffip" "../../../../.emacs.d/lisp/nxhtml/util/ffip.el"
-;;;;;;  (20986 37023 0 0))
+;;;;;;  (21055 58635))
 ;;; Generated autoloads from ../../../../.emacs.d/lisp/nxhtml/util/ffip.el
 (web-autoload-require 'ffip 'lp '(nxhtml-download-root-url nil) "../../../../.emacs.d/lisp/nxhtml/util/ffip" nxhtml-install-dir 'nxhtml-byte-compile-file)
 
@@ -2062,8 +2063,8 @@ Find files in directory tree ROOT.
 ;;;### (autoloads (fold-dwim-turn-on-outline-and-hide-all fold-dwim-turn-on-hs-and-hide
 ;;;;;;  fold-dwim-unhide-hs-and-outline fold-dwim-mode fold-dwim-toggle
 ;;;;;;  fold-dwim) "../../../../../.emacs.d/lisp/nxhtml/util/fold-dwim"
-;;;;;;  "../../../../.emacs.d/lisp/nxhtml/util/fold-dwim.el" (20986
-;;;;;;  37023 0 0))
+;;;;;;  "../../../../.emacs.d/lisp/nxhtml/util/fold-dwim.el" (21055
+;;;;;;  58635))
 ;;; Generated autoloads from ../../../../.emacs.d/lisp/nxhtml/util/fold-dwim.el
 (web-autoload-require 'fold-dwim 'lp '(nxhtml-download-root-url nil) "../../../../.emacs.d/lisp/nxhtml/util/fold-dwim" nxhtml-install-dir 'nxhtml-byte-compile-file)
 
@@ -2132,8 +2133,8 @@ Turn on `outline-minor-mode' and call `hide-body'.
 ;;;***
 
 ;;;### (autoloads (foldit-global-mode foldit-mode foldit) "../../../../../.emacs.d/lisp/nxhtml/util/foldit"
-;;;;;;  "../../../../.emacs.d/lisp/nxhtml/util/foldit.el" (20986
-;;;;;;  37023 0 0))
+;;;;;;  "../../../../.emacs.d/lisp/nxhtml/util/foldit.el" (21055
+;;;;;;  58635))
 ;;; Generated autoloads from ../../../../.emacs.d/lisp/nxhtml/util/foldit.el
 (web-autoload-require 'foldit 'lp '(nxhtml-download-root-url nil) "../../../../.emacs.d/lisp/nxhtml/util/foldit" nxhtml-install-dir 'nxhtml-byte-compile-file)
 
@@ -2174,8 +2175,8 @@ See `foldit-mode' for more information on Foldit mode.
 
 ;;;### (autoloads (gimpedit-can-edit gimpedit-edit-buffer gimpedit-edit-file
 ;;;;;;  gimpedit) "../../../../../.emacs.d/lisp/nxhtml/util/gimpedit"
-;;;;;;  "../../../../.emacs.d/lisp/nxhtml/util/gimpedit.el" (20986
-;;;;;;  37023 0 0))
+;;;;;;  "../../../../.emacs.d/lisp/nxhtml/util/gimpedit.el" (21055
+;;;;;;  58635))
 ;;; Generated autoloads from ../../../../.emacs.d/lisp/nxhtml/util/gimpedit.el
 (web-autoload-require 'gimpedit 'lp '(nxhtml-download-root-url nil) "../../../../.emacs.d/lisp/nxhtml/util/gimpedit" nxhtml-install-dir 'nxhtml-byte-compile-file)
 
@@ -2208,8 +2209,7 @@ possibilities. See
 ;;;***
 
 ;;;### (autoloads (gpl-mode) "../../../../../.emacs.d/lisp/nxhtml/util/gpl"
-;;;;;;  "../../../../.emacs.d/lisp/nxhtml/util/gpl.el" (20986 37023
-;;;;;;  0 0))
+;;;;;;  "../../../../.emacs.d/lisp/nxhtml/util/gpl.el" (21055 58635))
 ;;; Generated autoloads from ../../../../.emacs.d/lisp/nxhtml/util/gpl.el
 (web-autoload-require 'gpl 'lp '(nxhtml-download-root-url nil) "../../../../.emacs.d/lisp/nxhtml/util/gpl" nxhtml-install-dir 'nxhtml-byte-compile-file)
 
@@ -2231,8 +2231,8 @@ such palette into a css-file as hexadecimal color palette.
 
 ;;;### (autoloads (hfyview-frame hfyview-window hfyview-region hfyview-buffer
 ;;;;;;  hfyview-quick-print-in-files-menu) "../../../../../.emacs.d/lisp/nxhtml/util/hfyview"
-;;;;;;  "../../../../.emacs.d/lisp/nxhtml/util/hfyview.el" (20986
-;;;;;;  37023 0 0))
+;;;;;;  "../../../../.emacs.d/lisp/nxhtml/util/hfyview.el" (21055
+;;;;;;  58635))
 ;;; Generated autoloads from ../../../../.emacs.d/lisp/nxhtml/util/hfyview.el
 (web-autoload-require 'hfyview 'lp '(nxhtml-download-root-url nil) "../../../../.emacs.d/lisp/nxhtml/util/hfyview" nxhtml-install-dir 'nxhtml-byte-compile-file)
 
@@ -2282,8 +2282,8 @@ With command prefix also show html source in other window.
 ;;;***
 
 ;;;### (autoloads (hl-needed-mode hl-needed) "../../../../../.emacs.d/lisp/nxhtml/util/hl-needed"
-;;;;;;  "../../../../.emacs.d/lisp/nxhtml/util/hl-needed.el" (20986
-;;;;;;  37023 0 0))
+;;;;;;  "../../../../.emacs.d/lisp/nxhtml/util/hl-needed.el" (21055
+;;;;;;  58635))
 ;;; Generated autoloads from ../../../../.emacs.d/lisp/nxhtml/util/hl-needed.el
 (web-autoload-require 'hl-needed 'lp '(nxhtml-download-root-url nil) "../../../../.emacs.d/lisp/nxhtml/util/hl-needed" nxhtml-install-dir 'nxhtml-byte-compile-file)
 
@@ -2338,8 +2338,8 @@ highlighting here.
 ;;;***
 
 ;;;### (autoloads (html-write-mode html-write) "../../../../../.emacs.d/lisp/nxhtml/util/html-write"
-;;;;;;  "../../../../.emacs.d/lisp/nxhtml/util/html-write.el" (20986
-;;;;;;  37023 0 0))
+;;;;;;  "../../../../.emacs.d/lisp/nxhtml/util/html-write.el" (21055
+;;;;;;  58635))
 ;;; Generated autoloads from ../../../../.emacs.d/lisp/nxhtml/util/html-write.el
 (web-autoload-require 'html-write 'lp '(nxhtml-download-root-url nil) "../../../../.emacs.d/lisp/nxhtml/util/html-write" nxhtml-install-dir 'nxhtml-byte-compile-file)
 
@@ -2379,7 +2379,7 @@ a web file.
 
 ;;;### (autoloads (http-post-simple-multipart http-post-simple) "../../../../../.emacs.d/lisp/nxhtml/util/http-post-simple"
 ;;;;;;  "../../../../.emacs.d/lisp/nxhtml/util/http-post-simple.el"
-;;;;;;  (20986 37023 0 0))
+;;;;;;  (21055 58635))
 ;;; Generated autoloads from ../../../../.emacs.d/lisp/nxhtml/util/http-post-simple.el
 (web-autoload-require 'http-post-simple 'lp '(nxhtml-download-root-url nil) "../../../../.emacs.d/lisp/nxhtml/util/http-post-simple" nxhtml-install-dir 'nxhtml-byte-compile-file)
 
@@ -2404,8 +2404,8 @@ FIELDS is an alist, as for `http-post-simple', FILES is an a list of
 ;;;***
 
 ;;;### (autoloads (idxdoc-search idxdoc-index-files) "../../../../../.emacs.d/lisp/nxhtml/util/idxdoc"
-;;;;;;  "../../../../.emacs.d/lisp/nxhtml/util/idxdoc.el" (20986
-;;;;;;  37023 0 0))
+;;;;;;  "../../../../.emacs.d/lisp/nxhtml/util/idxdoc.el" (21055
+;;;;;;  58635))
 ;;; Generated autoloads from ../../../../.emacs.d/lisp/nxhtml/util/idxdoc.el
 (web-autoload-require 'idxdoc 'lp '(nxhtml-download-root-url nil) "../../../../.emacs.d/lisp/nxhtml/util/idxdoc" nxhtml-install-dir 'nxhtml-byte-compile-file)
 
@@ -2434,8 +2434,8 @@ There is a customization group you can access with:
 ;;;***
 
 ;;;### (autoloads (idxdocindex-search) "../../../../../.emacs.d/lisp/nxhtml/util/idxdocindex"
-;;;;;;  "../../../../.emacs.d/lisp/nxhtml/util/idxdocindex.el" (20986
-;;;;;;  37023 0 0))
+;;;;;;  "../../../../.emacs.d/lisp/nxhtml/util/idxdocindex.el" (21055
+;;;;;;  58635))
 ;;; Generated autoloads from ../../../../.emacs.d/lisp/nxhtml/util/idxdocindex.el
 (web-autoload-require 'idxdocindex 'lp '(nxhtml-download-root-url nil) "../../../../.emacs.d/lisp/nxhtml/util/idxdocindex" nxhtml-install-dir 'nxhtml-byte-compile-file)
 
@@ -2449,7 +2449,7 @@ There is a customization group you can access with:
 
 ;;;### (autoloads (idxgds-search-adv idxgds-search idxgds-query-url-p)
 ;;;;;;  "../../../../../.emacs.d/lisp/nxhtml/util/idxgds" "../../../../.emacs.d/lisp/nxhtml/util/idxgds.el"
-;;;;;;  (20986 37023 0 0))
+;;;;;;  (21055 58635))
 ;;; Generated autoloads from ../../../../.emacs.d/lisp/nxhtml/util/idxgds.el
 (web-autoload-require 'idxgds 'lp '(nxhtml-download-root-url nil) "../../../../.emacs.d/lisp/nxhtml/util/idxgds" nxhtml-install-dir 'nxhtml-byte-compile-file)
 
@@ -2472,8 +2472,8 @@ There is a customization group you can access with:
 ;;;***
 
 ;;;### (autoloads (idxsearch) "../../../../../.emacs.d/lisp/nxhtml/util/idxsearch"
-;;;;;;  "../../../../.emacs.d/lisp/nxhtml/util/idxsearch.el" (20986
-;;;;;;  37023 0 0))
+;;;;;;  "../../../../.emacs.d/lisp/nxhtml/util/idxsearch.el" (21055
+;;;;;;  58635))
 ;;; Generated autoloads from ../../../../.emacs.d/lisp/nxhtml/util/idxsearch.el
 (web-autoload-require 'idxsearch 'lp '(nxhtml-download-root-url nil) "../../../../.emacs.d/lisp/nxhtml/util/idxsearch" nxhtml-install-dir 'nxhtml-byte-compile-file)
 
@@ -2503,8 +2503,8 @@ which one by customizing `idxsearch-engine'.
 ;;;***
 
 ;;;### (autoloads (idxwds-search) "../../../../../.emacs.d/lisp/nxhtml/util/idxsql"
-;;;;;;  "../../../../.emacs.d/lisp/nxhtml/util/idxsql.el" (20986
-;;;;;;  37023 0 0))
+;;;;;;  "../../../../.emacs.d/lisp/nxhtml/util/idxsql.el" (21055
+;;;;;;  58635))
 ;;; Generated autoloads from ../../../../.emacs.d/lisp/nxhtml/util/idxsql.el
 (web-autoload-require 'idxsql 'lp '(nxhtml-download-root-url nil) "../../../../.emacs.d/lisp/nxhtml/util/idxsql" nxhtml-install-dir 'nxhtml-byte-compile-file)
 
@@ -2518,8 +2518,8 @@ which one by customizing `idxsearch-engine'.
 
 ;;;### (autoloads (inlimg-toggle-slicing inlimg-toggle-display inlimg-global-mode
 ;;;;;;  inlimg-mode inlimg) "../../../../../.emacs.d/lisp/nxhtml/util/inlimg"
-;;;;;;  "../../../../.emacs.d/lisp/nxhtml/util/inlimg.el" (20986
-;;;;;;  37023 0 0))
+;;;;;;  "../../../../.emacs.d/lisp/nxhtml/util/inlimg.el" (21055
+;;;;;;  58635))
 ;;; Generated autoloads from ../../../../.emacs.d/lisp/nxhtml/util/inlimg.el
 (web-autoload-require 'inlimg 'lp '(nxhtml-download-root-url nil) "../../../../.emacs.d/lisp/nxhtml/util/inlimg" nxhtml-install-dir 'nxhtml-byte-compile-file)
 
@@ -2583,8 +2583,8 @@ See also the command `inlimg-mode'.
 ;;;;;;  jsut-jquery-create-bookmarklet-file jsut-jquery-include-it
 ;;;;;;  jsut-bookmarkletify jsut-plovr-compile jsut-plovr-edit-conf
 ;;;;;;  jsut-plovr-dev-info) "../../../../../.emacs.d/lisp/nxhtml/util/js-utils"
-;;;;;;  "../../../../.emacs.d/lisp/nxhtml/util/js-utils.el" (20986
-;;;;;;  37023 0 0))
+;;;;;;  "../../../../.emacs.d/lisp/nxhtml/util/js-utils.el" (21055
+;;;;;;  58635))
 ;;; Generated autoloads from ../../../../.emacs.d/lisp/nxhtml/util/js-utils.el
 (web-autoload-require 'js-utils 'lp '(nxhtml-download-root-url nil) "../../../../.emacs.d/lisp/nxhtml/util/js-utils" nxhtml-install-dir 'nxhtml-byte-compile-file)
 
@@ -2657,8 +2657,8 @@ Finally display js code.
 ;;;***
 
 ;;;### (autoloads (key-cat-help) "../../../../../.emacs.d/lisp/nxhtml/util/key-cat"
-;;;;;;  "../../../../.emacs.d/lisp/nxhtml/util/key-cat.el" (20986
-;;;;;;  37023 0 0))
+;;;;;;  "../../../../.emacs.d/lisp/nxhtml/util/key-cat.el" (21055
+;;;;;;  58635))
 ;;; Generated autoloads from ../../../../.emacs.d/lisp/nxhtml/util/key-cat.el
 (web-autoload-require 'key-cat 'lp '(nxhtml-download-root-url nil) "../../../../.emacs.d/lisp/nxhtml/util/key-cat" nxhtml-install-dir 'nxhtml-byte-compile-file)
 
@@ -2673,8 +2673,8 @@ See also `key-cat-cmd-list'.
 
 ;;;### (autoloads (majmodpri majmodpri-apply-priorities majmodpri-apply
 ;;;;;;  majmodpri-sort-lists) "../../../../../.emacs.d/lisp/nxhtml/util/majmodpri"
-;;;;;;  "../../../../.emacs.d/lisp/nxhtml/util/majmodpri.el" (20986
-;;;;;;  37023 0 0))
+;;;;;;  "../../../../.emacs.d/lisp/nxhtml/util/majmodpri.el" (21055
+;;;;;;  58635))
 ;;; Generated autoloads from ../../../../.emacs.d/lisp/nxhtml/util/majmodpri.el
 (web-autoload-require 'majmodpri 'lp '(nxhtml-download-root-url nil) "../../../../.emacs.d/lisp/nxhtml/util/majmodpri" nxhtml-install-dir 'nxhtml-byte-compile-file)
 
@@ -2714,7 +2714,7 @@ before applying.
 
 ;;;### (autoloads (markchars-global-mode markchars-mode markchars)
 ;;;;;;  "../../../../../.emacs.d/lisp/nxhtml/util/markchars" "../../../../.emacs.d/lisp/nxhtml/util/markchars.el"
-;;;;;;  (20986 37023 0 0))
+;;;;;;  (21055 58635))
 ;;; Generated autoloads from ../../../../.emacs.d/lisp/nxhtml/util/markchars.el
 (web-autoload-require 'markchars 'lp '(nxhtml-download-root-url nil) "../../../../.emacs.d/lisp/nxhtml/util/markchars" nxhtml-install-dir 'nxhtml-byte-compile-file)
 
@@ -2759,8 +2759,8 @@ See `markchars-mode' for more information on Markchars mode.
 ;;;***
 
 ;;;### (autoloads (mlinks-global-mode mlinks-mode mlinks) "../../../../../.emacs.d/lisp/nxhtml/util/mlinks"
-;;;;;;  "../../../../.emacs.d/lisp/nxhtml/util/mlinks.el" (20986
-;;;;;;  37023 0 0))
+;;;;;;  "../../../../.emacs.d/lisp/nxhtml/util/mlinks.el" (21055
+;;;;;;  58635))
 ;;; Generated autoloads from ../../../../.emacs.d/lisp/nxhtml/util/mlinks.el
 (web-autoload-require 'mlinks 'lp '(nxhtml-download-root-url nil) "../../../../.emacs.d/lisp/nxhtml/util/mlinks" nxhtml-install-dir 'nxhtml-byte-compile-file)
 
@@ -2823,8 +2823,8 @@ See `mlinks-mode' for more information on Mlinks mode.
 ;;;;;;  mumamo-list-defined-multi-major-modes mumamo-mark-for-refontification
 ;;;;;;  mumamo-hi-lock-faces mumamo mumamo-add-to-defined-multi-major-modes
 ;;;;;;  define-mumamo-multi-major-mode) "../../../../../.emacs.d/lisp/nxhtml/util/mumamo"
-;;;;;;  "../../../../.emacs.d/lisp/nxhtml/util/mumamo.el" (20986
-;;;;;;  37023 0 0))
+;;;;;;  "../../../../.emacs.d/lisp/nxhtml/util/mumamo.el" (21055
+;;;;;;  58635))
 ;;; Generated autoloads from ../../../../.emacs.d/lisp/nxhtml/util/mumamo.el
 (web-autoload-require 'mumamo 'lp '(nxhtml-download-root-url nil) "../../../../.emacs.d/lisp/nxhtml/util/mumamo" nxhtml-install-dir 'nxhtml-byte-compile-file)
 
@@ -2929,7 +2929,7 @@ the functions for testing chunks in the file
 
    `nxhtml/tests/mumamo-test.el'
 
-\(fn FUN-SYM SPEC-DOC CHUNKS)" nil t)
+\(fn FUN-SYM SPEC-DOC CHUNKS)" nil (quote macro))
 
 (nxhtml-autoload 'mumamo-add-to-defined-multi-major-modes `(lp '(nxhtml-download-root-url nil) "../../../../.emacs.d/lisp/nxhtml/util/mumamo" nxhtml-install-dir) "\
 
@@ -2982,7 +2982,7 @@ Return t if VALUE is a multi major mode function.
 ;;;### (autoloads (mumamo-noweb2 mumamo-define-html-file-wide-keys)
 ;;;;;;  "../../../../../.emacs.d/lisp/nxhtml/util/mumamo-chunks"
 ;;;;;;  "../../../../.emacs.d/lisp/nxhtml/util/mumamo-chunks.el"
-;;;;;;  (20986 37023 0 0))
+;;;;;;  (21055 58635))
 ;;; Generated autoloads from ../../../../.emacs.d/lisp/nxhtml/util/mumamo-chunks.el
 (web-autoload-require 'mumamo-chunks 'lp '(nxhtml-download-root-url nil) "../../../../.emacs.d/lisp/nxhtml/util/mumamo-chunks" nxhtml-install-dir 'nxhtml-byte-compile-file)
 
@@ -2997,8 +2997,8 @@ Define keys in multi major mode keymap for html files.
 ;;;***
 
 ;;;### (autoloads (mumamo-cmirr-get-mirror) "../../../../../.emacs.d/lisp/nxhtml/util/mumamo-cmirr"
-;;;;;;  "../../../../.emacs.d/lisp/nxhtml/util/mumamo-cmirr.el" (20986
-;;;;;;  37023 0 0))
+;;;;;;  "../../../../.emacs.d/lisp/nxhtml/util/mumamo-cmirr.el" (21055
+;;;;;;  58635))
 ;;; Generated autoloads from ../../../../.emacs.d/lisp/nxhtml/util/mumamo-cmirr.el
 (web-autoload-require 'mumamo-cmirr 'lp '(nxhtml-download-root-url nil) "../../../../.emacs.d/lisp/nxhtml/util/mumamo-cmirr" nxhtml-install-dir 'nxhtml-byte-compile-file)
 
@@ -3022,8 +3022,8 @@ Get the mirror rec.
 ;;;;;;  mjt-html-mumamo-mode genshi-html-mumamo-mode django-html-mumamo-mode
 ;;;;;;  embperl-html-mumamo-mode mason-html-mumamo-mode nxml-mumamo-mode
 ;;;;;;  html-mumamo-mode) "../../../../../.emacs.d/lisp/nxhtml/util/mumamo-fun"
-;;;;;;  "../../../../.emacs.d/lisp/nxhtml/util/mumamo-fun.el" (20986
-;;;;;;  37023 0 0))
+;;;;;;  "../../../../.emacs.d/lisp/nxhtml/util/mumamo-fun.el" (21055
+;;;;;;  58635))
 ;;; Generated autoloads from ../../../../.emacs.d/lisp/nxhtml/util/mumamo-fun.el
 (web-autoload-require 'mumamo-fun 'lp '(nxhtml-download-root-url nil) "../../../../.emacs.d/lisp/nxhtml/util/mumamo-fun" nxhtml-install-dir 'nxhtml-byte-compile-file)
 
@@ -3190,7 +3190,7 @@ Fix-me: This does not yet take care of inner chunks." t)
 ;;;### (autoloads (mumamo-add-region-from-string mumamo-add-region)
 ;;;;;;  "../../../../../.emacs.d/lisp/nxhtml/util/mumamo-regions"
 ;;;;;;  "../../../../.emacs.d/lisp/nxhtml/util/mumamo-regions.el"
-;;;;;;  (20986 37023 0 0))
+;;;;;;  (21055 58635))
 ;;; Generated autoloads from ../../../../.emacs.d/lisp/nxhtml/util/mumamo-regions.el
 (web-autoload-require 'mumamo-regions 'lp '(nxhtml-download-root-url nil) "../../../../.emacs.d/lisp/nxhtml/util/mumamo-regions" nxhtml-install-dir 'nxhtml-byte-compile-file)
 
@@ -3222,8 +3222,8 @@ Buffer must be fontified.
 ;;;***
 
 ;;;### (autoloads (n-back-game n-back) "../../../../../.emacs.d/lisp/nxhtml/util/n-back"
-;;;;;;  "../../../../.emacs.d/lisp/nxhtml/util/n-back.el" (20986
-;;;;;;  37023 0 0))
+;;;;;;  "../../../../.emacs.d/lisp/nxhtml/util/n-back.el" (21055
+;;;;;;  58635))
 ;;; Generated autoloads from ../../../../.emacs.d/lisp/nxhtml/util/n-back.el
 (web-autoload-require 'n-back 'lp '(nxhtml-download-root-url nil) "../../../../.emacs.d/lisp/nxhtml/util/n-back" nxhtml-install-dir 'nxhtml-byte-compile-file)
 
@@ -3274,7 +3274,7 @@ new are maybe ... - and you have it available here in Emacs.
 ;;;### (autoloads (rng-find-schema-file-other-window rng-find-schema-file-other-frame
 ;;;;;;  rng-find-schema-file) "../../../../../.emacs.d/lisp/nxhtml/util/nxml-mode-os-additions"
 ;;;;;;  "../../../../.emacs.d/lisp/nxhtml/util/nxml-mode-os-additions.el"
-;;;;;;  (20986 37023 0 0))
+;;;;;;  (21055 58635))
 ;;; Generated autoloads from ../../../../.emacs.d/lisp/nxhtml/util/nxml-mode-os-additions.el
 (web-autoload-require 'nxml-mode-os-additions 'lp '(nxhtml-download-root-url nil) "../../../../.emacs.d/lisp/nxhtml/util/nxml-mode-os-additions" nxhtml-install-dir 'nxhtml-byte-compile-file)
 
@@ -3297,8 +3297,8 @@ Edit the current schema in another window.
 ;;;***
 
 ;;;### (autoloads (ocr-user-mode) "../../../../../.emacs.d/lisp/nxhtml/util/ocr-user"
-;;;;;;  "../../../../.emacs.d/lisp/nxhtml/util/ocr-user.el" (20986
-;;;;;;  37023 0 0))
+;;;;;;  "../../../../.emacs.d/lisp/nxhtml/util/ocr-user.el" (21055
+;;;;;;  58635))
 ;;; Generated autoloads from ../../../../.emacs.d/lisp/nxhtml/util/ocr-user.el
 (web-autoload-require 'ocr-user 'lp '(nxhtml-download-root-url nil) "../../../../.emacs.d/lisp/nxhtml/util/ocr-user" nxhtml-install-dir 'nxhtml-byte-compile-file)
 
@@ -3313,7 +3313,7 @@ Color up digits three by three.
 ;;;### (autoloads (orgfl-find-links-in-org-files orgfl-find-links-in-org-buffers)
 ;;;;;;  "../../../../../.emacs.d/lisp/nxhtml/util/org-find-links"
 ;;;;;;  "../../../../.emacs.d/lisp/nxhtml/util/org-find-links.el"
-;;;;;;  (20986 37023 0 0))
+;;;;;;  (21055 58635))
 ;;; Generated autoloads from ../../../../.emacs.d/lisp/nxhtml/util/org-find-links.el
 (web-autoload-require 'org-find-links 'lp '(nxhtml-download-root-url nil) "../../../../.emacs.d/lisp/nxhtml/util/org-find-links" nxhtml-install-dir 'nxhtml-byte-compile-file)
 
@@ -3357,7 +3357,7 @@ Search subdirs if RECURSE is 'yes, don't if it is 'no.
 ;;;;;;  unfill-region unfill-paragraph define-toggle-old define-toggle
 ;;;;;;  popup-menu-at-point ourcomments-indirect-fun) "../../../../../.emacs.d/lisp/nxhtml/util/ourcomments-util"
 ;;;;;;  "../../../../.emacs.d/lisp/nxhtml/util/ourcomments-util.el"
-;;;;;;  (20986 37023 0 0))
+;;;;;;  (21055 58635))
 ;;; Generated autoloads from ../../../../.emacs.d/lisp/nxhtml/util/ourcomments-util.el
 (web-autoload-require 'ourcomments-util 'lp '(nxhtml-download-root-url nil) "../../../../.emacs.d/lisp/nxhtml/util/ourcomments-util" nxhtml-install-dir 'nxhtml-byte-compile-file)
 
@@ -3399,14 +3399,14 @@ To create a menu item something similar to this can be used:
             'SYMBOL-toggle
             :button '(:toggle . SYMBOL)))
 
-\(fn SYMBOL VALUE DOC &rest ARGS)" nil t)
+\(fn SYMBOL VALUE DOC &rest ARGS)" nil (quote macro))
 
 (put 'define-toggle 'doc-string-elt '3)
 
 (nxhtml-autoload 'define-toggle-old `(lp '(nxhtml-download-root-url nil) "../../../../.emacs.d/lisp/nxhtml/util/ourcomments-util" nxhtml-install-dir) "\
 
 
-\(fn SYMBOL VALUE DOC &rest ARGS)" nil t)
+\(fn SYMBOL VALUE DOC &rest ARGS)" nil (quote macro))
 
 (put 'define-toggle-old 'doc-string-elt '3)
 
@@ -3854,7 +3854,7 @@ an export there to html/javascript format.
 
 ;;;### (autoloads nil "../../../../../.emacs.d/lisp/nxhtml/util/ourcomments-widgets"
 ;;;;;;  "../../../../.emacs.d/lisp/nxhtml/util/ourcomments-widgets.el"
-;;;;;;  (20986 37023 0 0))
+;;;;;;  (21055 58635))
 ;;; Generated autoloads from ../../../../.emacs.d/lisp/nxhtml/util/ourcomments-widgets.el
 (web-autoload-require 'ourcomments-widgets 'lp '(nxhtml-download-root-url nil) "../../../../.emacs.d/lisp/nxhtml/util/ourcomments-widgets" nxhtml-install-dir 'nxhtml-byte-compile-file)
 
@@ -3865,8 +3865,7 @@ A major mode lisp function." :complete-function (lambda nil (interactive) (lisp-
 ;;;***
 
 ;;;### (autoloads (pause-start-in-new-emacs pause-mode pause) "../../../../../.emacs.d/lisp/nxhtml/util/pause"
-;;;;;;  "../../../../.emacs.d/lisp/nxhtml/util/pause.el" (20986 37023
-;;;;;;  0 0))
+;;;;;;  "../../../../.emacs.d/lisp/nxhtml/util/pause.el" (21055 58635))
 ;;; Generated autoloads from ../../../../.emacs.d/lisp/nxhtml/util/pause.el
 (web-autoload-require 'pause 'lp '(nxhtml-download-root-url nil) "../../../../.emacs.d/lisp/nxhtml/util/pause" nxhtml-install-dir 'nxhtml-byte-compile-file)
 
@@ -3917,8 +3916,8 @@ See `pause-start' for more info.
 ;;;***
 
 ;;;### (autoloads (global-pointback-mode pointback-mode) "../../../../../.emacs.d/lisp/nxhtml/util/pointback"
-;;;;;;  "../../../../.emacs.d/lisp/nxhtml/util/pointback.el" (20986
-;;;;;;  37023 0 0))
+;;;;;;  "../../../../.emacs.d/lisp/nxhtml/util/pointback.el" (21055
+;;;;;;  58635))
 ;;; Generated autoloads from ../../../../.emacs.d/lisp/nxhtml/util/pointback.el
 (web-autoload-require 'pointback 'lp '(nxhtml-download-root-url nil) "../../../../.emacs.d/lisp/nxhtml/util/pointback" nxhtml-install-dir 'nxhtml-byte-compile-file)
 
@@ -3953,8 +3952,8 @@ See `pointback-mode' for more information on Pointback mode.
 
 ;;;### (autoloads (popcmp-completing-read popcmp-completion-style
 ;;;;;;  popcmp) "../../../../../.emacs.d/lisp/nxhtml/util/popcmp"
-;;;;;;  "../../../../.emacs.d/lisp/nxhtml/util/popcmp.el" (20986
-;;;;;;  37023 0 0))
+;;;;;;  "../../../../.emacs.d/lisp/nxhtml/util/popcmp.el" (21055
+;;;;;;  58635))
 ;;; Generated autoloads from ../../../../.emacs.d/lisp/nxhtml/util/popcmp.el
 (web-autoload-require 'popcmp 'lp '(nxhtml-download-root-url nil) "../../../../.emacs.d/lisp/nxhtml/util/popcmp" nxhtml-install-dir 'nxhtml-byte-compile-file)
 
@@ -4013,8 +4012,8 @@ this group.
 ;;;***
 
 ;;;### (autoloads (rebind-keys-mode rebind) "../../../../../.emacs.d/lisp/nxhtml/util/rebind"
-;;;;;;  "../../../../.emacs.d/lisp/nxhtml/util/rebind.el" (20986
-;;;;;;  37023 0 0))
+;;;;;;  "../../../../.emacs.d/lisp/nxhtml/util/rebind.el" (21055
+;;;;;;  58635))
 ;;; Generated autoloads from ../../../../.emacs.d/lisp/nxhtml/util/rebind.el
 (web-autoload-require 'rebind 'lp '(nxhtml-download-root-url nil) "../../../../.emacs.d/lisp/nxhtml/util/rebind" nxhtml-install-dir 'nxhtml-byte-compile-file)
 
@@ -4044,8 +4043,8 @@ field). There are some predifined keybindings for this.
 ;;;***
 
 ;;;### (autoloads (rnc-mode) "../../../../../.emacs.d/lisp/nxhtml/util/rnc-mode"
-;;;;;;  "../../../../.emacs.d/lisp/nxhtml/util/rnc-mode.el" (20986
-;;;;;;  37023 0 0))
+;;;;;;  "../../../../.emacs.d/lisp/nxhtml/util/rnc-mode.el" (21055
+;;;;;;  58635))
 ;;; Generated autoloads from ../../../../.emacs.d/lisp/nxhtml/util/rnc-mode.el
 (web-autoload-require 'rnc-mode 'lp '(nxhtml-download-root-url nil) "../../../../.emacs.d/lisp/nxhtml/util/rnc-mode" nxhtml-install-dir 'nxhtml-byte-compile-file)
 
@@ -4060,7 +4059,7 @@ Major mode for editing RELAX NG Compact Syntax schemas.
 
 ;;;### (autoloads (rtmpdump-from-file rtmpdump-from-buffer rtmpdump-from-url)
 ;;;;;;  "../../../../../.emacs.d/lisp/nxhtml/util/rtmpdump" "../../../../.emacs.d/lisp/nxhtml/util/rtmpdump.el"
-;;;;;;  (20986 37023 0 0))
+;;;;;;  (21055 58635))
 ;;; Generated autoloads from ../../../../.emacs.d/lisp/nxhtml/util/rtmpdump.el
 (web-autoload-require 'rtmpdump 'lp '(nxhtml-download-root-url nil) "../../../../.emacs.d/lisp/nxhtml/util/rtmpdump" nxhtml-install-dir 'nxhtml-byte-compile-file)
 
@@ -4084,7 +4083,7 @@ Major mode for editing RELAX NG Compact Syntax schemas.
 
 ;;;### (autoloads (rxx-parse rxx-simplify-result rxx-parse-string)
 ;;;;;;  "../../../../../.emacs.d/lisp/nxhtml/util/rxx" "../../../../.emacs.d/lisp/nxhtml/util/rxx.el"
-;;;;;;  (20986 37023 0 0))
+;;;;;;  (21055 58635))
 ;;; Generated autoloads from ../../../../.emacs.d/lisp/nxhtml/util/rxx.el
 (web-autoload-require 'rxx 'lp '(nxhtml-download-root-url nil) "../../../../.emacs.d/lisp/nxhtml/util/rxx" nxhtml-install-dir 'nxhtml-byte-compile-file)
 
@@ -4125,8 +4124,8 @@ like \\n are recognized.
 ;;;***
 
 ;;;### (autoloads (search-form) "../../../../../.emacs.d/lisp/nxhtml/util/search-form"
-;;;;;;  "../../../../.emacs.d/lisp/nxhtml/util/search-form.el" (20986
-;;;;;;  37023 0 0))
+;;;;;;  "../../../../.emacs.d/lisp/nxhtml/util/search-form.el" (21055
+;;;;;;  58635))
 ;;; Generated autoloads from ../../../../.emacs.d/lisp/nxhtml/util/search-form.el
 (web-autoload-require 'search-form 'lp '(nxhtml-download-root-url nil) "../../../../.emacs.d/lisp/nxhtml/util/search-form" nxhtml-install-dir 'nxhtml-byte-compile-file)
 
@@ -4139,8 +4138,8 @@ Display a form for search and replace.
 ;;;***
 
 ;;;### (autoloads (search-net search-net-dwim) "../../../../../.emacs.d/lisp/nxhtml/util/search-net"
-;;;;;;  "../../../../.emacs.d/lisp/nxhtml/util/search-net.el" (20986
-;;;;;;  37023 0 0))
+;;;;;;  "../../../../.emacs.d/lisp/nxhtml/util/search-net.el" (21055
+;;;;;;  58635))
 ;;; Generated autoloads from ../../../../.emacs.d/lisp/nxhtml/util/search-net.el
 (web-autoload-require 'search-net 'lp '(nxhtml-download-root-url nil) "../../../../.emacs.d/lisp/nxhtml/util/search-net" nxhtml-install-dir 'nxhtml-byte-compile-file)
 
@@ -4166,8 +4165,8 @@ ENGINE must be key in `search-net-search-setup-alist'.
 ;;;***
 
 ;;;### (autoloads (sex-mode sex) "../../../../../.emacs.d/lisp/nxhtml/util/sex-mode"
-;;;;;;  "../../../../.emacs.d/lisp/nxhtml/util/sex-mode.el" (20986
-;;;;;;  37023 0 0))
+;;;;;;  "../../../../.emacs.d/lisp/nxhtml/util/sex-mode.el" (21055
+;;;;;;  58635))
 ;;; Generated autoloads from ../../../../.emacs.d/lisp/nxhtml/util/sex-mode.el
 (web-autoload-require 'sex-mode 'lp '(nxhtml-download-root-url nil) "../../../../.emacs.d/lisp/nxhtml/util/sex-mode" nxhtml-install-dir 'nxhtml-byte-compile-file)
 
@@ -4208,8 +4207,8 @@ handled is governed by `sex-keep-dummy-buffer'.
 ;;;***
 
 ;;;### (autoloads (sml-modeline-mode sml-modeline) "../../../../../.emacs.d/lisp/nxhtml/util/sml-modeline"
-;;;;;;  "../../../../.emacs.d/lisp/nxhtml/util/sml-modeline.el" (20986
-;;;;;;  37023 0 0))
+;;;;;;  "../../../../.emacs.d/lisp/nxhtml/util/sml-modeline.el" (21055
+;;;;;;  58635))
 ;;; Generated autoloads from ../../../../.emacs.d/lisp/nxhtml/util/sml-modeline.el
 (web-autoload-require 'sml-modeline 'lp '(nxhtml-download-root-url nil) "../../../../.emacs.d/lisp/nxhtml/util/sml-modeline" nxhtml-install-dir 'nxhtml-byte-compile-file)
 
@@ -4238,7 +4237,7 @@ option `scroll-bar-mode'.
 
 ;;;### (autoloads (tabkey2-emma-without-tabkey2 tabkey2-mode tabkey2)
 ;;;;;;  "../../../../../.emacs.d/lisp/nxhtml/util/tabkey2" "../../../../.emacs.d/lisp/nxhtml/util/tabkey2.el"
-;;;;;;  (20986 37023 0 0))
+;;;;;;  (21055 58635))
 ;;; Generated autoloads from ../../../../.emacs.d/lisp/nxhtml/util/tabkey2.el
 (web-autoload-require 'tabkey2 'lp '(nxhtml-download-root-url nil) "../../../../.emacs.d/lisp/nxhtml/util/tabkey2" nxhtml-install-dir 'nxhtml-byte-compile-file)
 
@@ -4298,8 +4297,7 @@ first in tabkey2-mode.
 ;;;***
 
 ;;;### (autoloads (udev-call-first-step) "../../../../../.emacs.d/lisp/nxhtml/util/udev"
-;;;;;;  "../../../../.emacs.d/lisp/nxhtml/util/udev.el" (20986 37023
-;;;;;;  0 0))
+;;;;;;  "../../../../.emacs.d/lisp/nxhtml/util/udev.el" (21055 58635))
 ;;; Generated autoloads from ../../../../.emacs.d/lisp/nxhtml/util/udev.el
 (web-autoload-require 'udev 'lp '(nxhtml-download-root-url nil) "../../../../.emacs.d/lisp/nxhtml/util/udev" nxhtml-install-dir 'nxhtml-byte-compile-file)
 
@@ -4322,8 +4320,8 @@ after last step with LOG-BUFFER as parameter.
 ;;;***
 
 ;;;### (autoloads (udev-ecb-customize-startup udev-ecb-update) "../../../../../.emacs.d/lisp/nxhtml/util/udev-ecb"
-;;;;;;  "../../../../.emacs.d/lisp/nxhtml/util/udev-ecb.el" (20986
-;;;;;;  37023 0 0))
+;;;;;;  "../../../../.emacs.d/lisp/nxhtml/util/udev-ecb.el" (21055
+;;;;;;  58635))
 ;;; Generated autoloads from ../../../../.emacs.d/lisp/nxhtml/util/udev-ecb.el
 (web-autoload-require 'udev-ecb 'lp '(nxhtml-download-root-url nil) "../../../../.emacs.d/lisp/nxhtml/util/udev-ecb" nxhtml-install-dir 'nxhtml-byte-compile-file)
 
@@ -4343,8 +4341,8 @@ Customize ECB dev nXhtml startup group.
 ;;;***
 
 ;;;### (autoloads (udev-rinari-update) "../../../../../.emacs.d/lisp/nxhtml/util/udev-rinari"
-;;;;;;  "../../../../.emacs.d/lisp/nxhtml/util/udev-rinari.el" (20986
-;;;;;;  37023 0 0))
+;;;;;;  "../../../../.emacs.d/lisp/nxhtml/util/udev-rinari.el" (21055
+;;;;;;  58635))
 ;;; Generated autoloads from ../../../../.emacs.d/lisp/nxhtml/util/udev-rinari.el
 (web-autoload-require 'udev-rinari 'lp '(nxhtml-download-root-url nil) "../../../../.emacs.d/lisp/nxhtml/util/udev-rinari" nxhtml-install-dir 'nxhtml-byte-compile-file)
 
@@ -4359,8 +4357,8 @@ see `udev-rinari-dir' and `udev-rinari-load-rinari'.
 ;;;***
 
 ;;;### (autoloads (viper-tutorial) "../../../../../.emacs.d/lisp/nxhtml/util/viper-tut"
-;;;;;;  "../../../../.emacs.d/lisp/nxhtml/util/viper-tut.el" (20986
-;;;;;;  37023 0 0))
+;;;;;;  "../../../../.emacs.d/lisp/nxhtml/util/viper-tut.el" (21055
+;;;;;;  58635))
 ;;; Generated autoloads from ../../../../.emacs.d/lisp/nxhtml/util/viper-tut.el
 (web-autoload-require 'viper-tut 'lp '(nxhtml-download-root-url nil) "../../../../.emacs.d/lisp/nxhtml/util/viper-tut" nxhtml-install-dir 'nxhtml-byte-compile-file)
 
@@ -4387,8 +4385,7 @@ between you will be notified about that too.
 ;;;***
 
 ;;;### (autoloads (vline-global-mode vline-mode) "../../../../../.emacs.d/lisp/nxhtml/util/vline"
-;;;;;;  "../../../../.emacs.d/lisp/nxhtml/util/vline.el" (20986 37023
-;;;;;;  0 0))
+;;;;;;  "../../../../.emacs.d/lisp/nxhtml/util/vline.el" (21055 58635))
 ;;; Generated autoloads from ../../../../.emacs.d/lisp/nxhtml/util/vline.el
 (web-autoload-require 'vline 'lp '(nxhtml-download-root-url nil) "../../../../.emacs.d/lisp/nxhtml/util/vline" nxhtml-install-dir 'nxhtml-byte-compile-file)
 
@@ -4416,7 +4413,7 @@ Display vertical line mode as globally.
 
 ;;;### (autoloads (web-vcs-linkpatt-mode) "../../../../../.emacs.d/lisp/nxhtml/util/web-vcs-linkpatt"
 ;;;;;;  "../../../../.emacs.d/lisp/nxhtml/util/web-vcs-linkpatt.el"
-;;;;;;  (20986 37023 0 0))
+;;;;;;  (21055 58635))
 ;;; Generated autoloads from ../../../../.emacs.d/lisp/nxhtml/util/web-vcs-linkpatt.el
 (web-autoload-require 'web-vcs-linkpatt 'lp '(nxhtml-download-root-url nil) "../../../../.emacs.d/lisp/nxhtml/util/web-vcs-linkpatt" nxhtml-install-dir 'nxhtml-byte-compile-file)
 
@@ -4429,8 +4426,7 @@ Minor mode helping finding link patt for web-vcs.
 ;;;***
 
 ;;;### (autoloads (whelp) "../../../../../.emacs.d/lisp/nxhtml/util/whelp"
-;;;;;;  "../../../../.emacs.d/lisp/nxhtml/util/whelp.el" (20986 37023
-;;;;;;  0 0))
+;;;;;;  "../../../../.emacs.d/lisp/nxhtml/util/whelp.el" (21055 58635))
 ;;; Generated autoloads from ../../../../.emacs.d/lisp/nxhtml/util/whelp.el
 (web-autoload-require 'whelp 'lp '(nxhtml-download-root-url nil) "../../../../.emacs.d/lisp/nxhtml/util/whelp" nxhtml-install-dir 'nxhtml-byte-compile-file)
 
@@ -4441,8 +4437,8 @@ Minor mode helping finding link patt for web-vcs.
 
 ;;;### (autoloads (winsav-switch-config winsav-save-full-config winsav-save-mode
 ;;;;;;  winsav winsav-put-window-tree) "../../../../../.emacs.d/lisp/nxhtml/util/winsav"
-;;;;;;  "../../../../.emacs.d/lisp/nxhtml/util/winsav.el" (20986
-;;;;;;  37023 0 0))
+;;;;;;  "../../../../.emacs.d/lisp/nxhtml/util/winsav.el" (21055
+;;;;;;  58635))
 ;;; Generated autoloads from ../../../../.emacs.d/lisp/nxhtml/util/winsav.el
 (web-autoload-require 'winsav 'lp '(nxhtml-download-root-url nil) "../../../../.emacs.d/lisp/nxhtml/util/winsav" nxhtml-install-dir 'nxhtml-byte-compile-file)
 
@@ -4532,8 +4528,8 @@ See also option `winsav-save-mode' and command
 ;;;;;;  winsize-max-frame-height winsize-fit-windows-to-desired-widths
 ;;;;;;  winsize-fit-window-to-buffer winsize-fit-window-to-desired-width
 ;;;;;;  resize-windows) "../../../../../.emacs.d/lisp/nxhtml/util/winsize"
-;;;;;;  "../../../../.emacs.d/lisp/nxhtml/util/winsize.el" (20986
-;;;;;;  37023 0 0))
+;;;;;;  "../../../../.emacs.d/lisp/nxhtml/util/winsize.el" (21055
+;;;;;;  58635))
 ;;; Generated autoloads from ../../../../.emacs.d/lisp/nxhtml/util/winsize.el
 (web-autoload-require 'winsize 'lp '(nxhtml-download-root-url nil) "../../../../.emacs.d/lisp/nxhtml/util/winsize" nxhtml-install-dir 'nxhtml-byte-compile-file)
 
@@ -4821,8 +4817,8 @@ quarter clockwise (or counter clockwise with prefix).
 
 ;;;### (autoloads (wrap-to-fill-column-mode wrap-to-fill-left-marg-modes
 ;;;;;;  wrap-to-fill-left-marg wrap-to-fill) "../../../../../.emacs.d/lisp/nxhtml/util/wrap-to-fill"
-;;;;;;  "../../../../.emacs.d/lisp/nxhtml/util/wrap-to-fill.el" (20986
-;;;;;;  37023 0 0))
+;;;;;;  "../../../../.emacs.d/lisp/nxhtml/util/wrap-to-fill.el" (21055
+;;;;;;  58635))
 ;;; Generated autoloads from ../../../../.emacs.d/lisp/nxhtml/util/wrap-to-fill.el
 (web-autoload-require 'wrap-to-fill 'lp '(nxhtml-download-root-url nil) "../../../../.emacs.d/lisp/nxhtml/util/wrap-to-fill" nxhtml-install-dir 'nxhtml-byte-compile-file)
 
@@ -4863,7 +4859,7 @@ Key bindings added by this minor mode:
 ;;;### (autoloads (zencoding-preview zencoding-expand-yas zencoding-mode
 ;;;;;;  zencoding-expand-line zencoding) "../../../../../.emacs.d/lisp/nxhtml/util/zencoding-mode"
 ;;;;;;  "../../../../.emacs.d/lisp/nxhtml/util/zencoding-mode.el"
-;;;;;;  (20986 37023 0 0))
+;;;;;;  (21055 58635))
 ;;; Generated autoloads from ../../../../.emacs.d/lisp/nxhtml/util/zencoding-mode.el
 (web-autoload-require 'zencoding-mode 'lp '(nxhtml-download-root-url nil) "../../../../.emacs.d/lisp/nxhtml/util/zencoding-mode" nxhtml-install-dir 'nxhtml-byte-compile-file)
 
@@ -4922,7 +4918,7 @@ accept it or skip it.
 ;;;;;;  web-vcs-url-retrieve-synch web-vcs-byte-compile-file web-vcs-message-with-face
 ;;;;;;  web-vcs-get-files-from-root web-vcs-log-edit web-vcs-default-download-directory)
 ;;;;;;  "../../../../../.emacs.d/lisp/nxhtml/web-vcs" "../../../../.emacs.d/lisp/nxhtml/web-vcs.el"
-;;;;;;  (20986 37023 0 0))
+;;;;;;  (21055 58635))
 ;;; Generated autoloads from ../../../../.emacs.d/lisp/nxhtml/web-vcs.el
 (web-autoload-require 'web-vcs 'lp '(nxhtml-download-root-url nil) "../../../../.emacs.d/lisp/nxhtml/web-vcs" nxhtml-install-dir 'nxhtml-byte-compile-file)
 
@@ -5023,16 +5019,16 @@ A prefix arg makes KEEP-TIME non-nil.
 ;;;;;;  "../../../../.emacs.d/lisp/nxhtml/util/pipm.el" "../../../../.emacs.d/lisp/nxhtml/util/powershell-mode.el"
 ;;;;;;  "../../../../.emacs.d/lisp/nxhtml/util/rxi.el" "../../../../.emacs.d/lisp/nxhtml/util/tipframe.el"
 ;;;;;;  "../../../../.emacs.d/lisp/nxhtml/util/umbrain.el" "../../../../.emacs.d/lisp/nxhtml/util/win-alg.el"
-;;;;;;  "../../../../.emacs.d/lisp/nxhtml/web-autoload.el") (20988
-;;;;;;  28638 918048 454000))
+;;;;;;  "../../../../.emacs.d/lisp/nxhtml/web-autoload.el") (21056
+;;;;;;  26900 525710))
 
 ;;;***
 
 ;;;### (autoloads (nxhtml-byte-recompile-file nxhtml-byte-compile-file
 ;;;;;;  nxhtml-get-missing-files nxhtml-update-existing-files nxhtml-setup-download-all
 ;;;;;;  nxhtml-setup-auto-download nxhtml-setup-install) "../../../../../.emacs.d/lisp/nxhtml/nxhtml-web-vcs"
-;;;;;;  "../../../../.emacs.d/lisp/nxhtml/nxhtml-web-vcs.el" (20986
-;;;;;;  37023 0 0))
+;;;;;;  "../../../../.emacs.d/lisp/nxhtml/nxhtml-web-vcs.el" (21055
+;;;;;;  58635))
 ;;; Generated autoloads from ../../../../.emacs.d/lisp/nxhtml/nxhtml-web-vcs.el
 (web-autoload-require 'nxhtml-web-vcs 'lp '(nxhtml-download-root-url nil) "../../../../.emacs.d/lisp/nxhtml/nxhtml-web-vcs" nxhtml-install-dir 'nxhtml-byte-compile-file)
 

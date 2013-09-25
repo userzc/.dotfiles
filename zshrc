@@ -21,8 +21,8 @@ alias enwd="emacs -nw -Q -l ~/.emacs.d/default.el"
 # Uncomment following line if you want to disable autosetting terminal title.
 # DISABLE_AUTO_TITLE="true"
 
-# Uncomment following line if you want red dots to be displayed while waiting for completion
-# COMPLETION_WAITING_DOTS="true"
+# Uncomment following line if you want red dots to be displayed while
+# waiting for completion COMPLETION_WAITING_DOTS="true"
 
 # Inicialization of the editor en linea
 bindkey -e
@@ -31,6 +31,11 @@ bindkey -e
 # En las pruebas está hecho parece estar funcionando de manera adecuada
 
 export EDITOR="emacsclient"
+
+# to define a browser in case non is defined
+if [[ $BROWSER == '' ]] then;
+    export BROWSER=google-chrome
+    fi
 
 # An attempt to get TRAMP working inside Emacs, seems to be working
 # just fine, so posible scripts based on this will be created in the
@@ -83,12 +88,7 @@ export PATH=$PATH:"/usr/bin"
 export PATH=$PATH:"/sbin"
 export PATH=$PATH:"/bin"
 export PATH=$PATH:"/usr/games"
-export PATH=$PATH:"/opt/Matlab/bin"
-export PATH=$PATH:""
-export PATH=$PATH:"/opt/Matlab/"
 export PATH=$PATH:"julia_test/julia/"
-
-# export PYTHONPATH="/home/rene/Documents:/home/rene/Documents/Semestre 3/PDE/Proyecto/SegundoReporte/BurgersComputedSolutions/FLIC_Boost:/home/rene/Documents/Semestre 4/PruebaGeneral2D/BoostCode/:/home/rene/Documents/Semestre 4/PruebaGeneral2D/PythonCode/"
 
 export PYTHONPATH="/home/rene/Documents"
 export PYTHONPATH=$PYTHONPATH:"/home/rene/Documents/Semestre 3/PDE/Proyecto/SegundoReporte/BurgersComputedSolutions/FLIC_Boost"
