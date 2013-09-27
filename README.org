@@ -7,6 +7,8 @@
 
 #+BEGIN_SRC sh
 git clone https://github.com/userzc/.dotfiles.git
+git submodule sync
+git submodule update --init --recursive
 #+END_SRC
 
 ** Instalation
@@ -21,12 +23,16 @@ python ~/.dotfiles/sync -i
 
 ** Requirements
 
-   | Software         | Windows Version | Unix Version |
-   |------------------+-----------------+--------------|
-   | Inconsolata Font | any             | any          |
-   | python           | >= 3.2          | >= 2.7       |
-   | git              | any             | any          |
-   | quickswitch-i3   | ---             | any          |
+   | Software         | Windows Version | Unix Version | Preferred Source |
+   |------------------+-----------------+--------------+------------------|
+   | Inconsolata Font | any             | any          | any              |
+   | python           | >= 3.2          | >= 2.7       | any              |
+   | git              | any             | any          | any              |
+   | quickswitch-i3   | ---             | any          | pip (PyPI)       |
+   | rope             | 0.9.4           | 0.9.4        | pip (PyPI)       |
+   | ropemacs         | 0.7             | 0.7          | pip (PyPI)       |
+   | ropemode         | 0.2             | 0.2          | pip (PyPI)       |
+   | texlive          | ---             | 2012         | any              |
 
 ** Features
 

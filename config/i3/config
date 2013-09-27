@@ -29,6 +29,7 @@ floating_modifier $mod
 bindsym $mod+Return exec i3-sensible-terminal
 bindsym $mod+Control+1 exec nautilus --no-desktop
 bindsym $mod+Control+2 exec "$BROWSER"
+# bindsym $mod+Control+2 exec "google-chrome"
 bindsym $mod+Control+3 exec emacs
 
 # Opciones a considearar para cambiar colores
@@ -57,7 +58,7 @@ set $color_sb '#171A0B'
 # bindsym $mod+Tab exec quickswitch.py
 bindsym $mod+Tab exec quickswitch.py -d "dmenu -i -b -l 20 -nb $color_nb -nf $color_nf -sb $color_sb -sf $color_sf"
 
-bindsym $mod+Shift+Tab exec quickswitch.py -d "dmenu -m -b -l 20 -i -nb $color_nb -nf $color_nf -sb $color_sb -sf $color_sf"
+bindsym $mod+Shift+Tab exec quickswitch.py -m -d "dmenu -b -l 20 -i -nb $color_nb -nf $color_nf -sb $color_sb -sf $color_sf"
 
 bindsym $mod+Control+Tab exec "i3-nagbar -t warning -m 'Test For the scratchpad'"
 
@@ -182,8 +183,8 @@ bindsym $mod+r mode "resize"
 
 # auto-start,
 # from https://github.com/utkukaratas/dotfiles/blob/master/i3/config
+exec gnome-keyring-daemon --start
 exec gnome-settings-daemon
-exec gnome-keyring-daemon --start &
 # First attempt to get NetworkManager in i3bar
 exec --no-startup-id nm-applet
 exec --no-startup-id bluetooth-applet

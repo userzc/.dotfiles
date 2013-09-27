@@ -88,7 +88,6 @@ export PATH=$PATH:"/usr/bin"
 export PATH=$PATH:"/sbin"
 export PATH=$PATH:"/bin"
 export PATH=$PATH:"/usr/games"
-export PATH=$PATH:"julia_test/julia/"
 
 export PYTHONPATH="/home/rene/Documents"
 export PYTHONPATH=$PYTHONPATH:"/home/rene/Documents/Semestre 3/PDE/Proyecto/SegundoReporte/BurgersComputedSolutions/FLIC_Boost"
@@ -96,5 +95,14 @@ export PYTHONPATH=$PYTHONPATH:"/home/rene/Documents/Semestre 4/PruebaGeneral2D/B
 export PYTHONPATH=$PYTHONPATH:"/home/rene/Documents/Semestre 4/PruebaGeneral2D/PythonCode/"
 export PYTHONPATH=$PYTHONPATH:"/home/rene/Documents/FORCE_md/"
 
-export WORKON_HOME="$HOME/.virtualenvs"
-source /usr/local/bin/virtualenvwrapper.sh
+if [[ -d $HOME/.virtualenvs ]]; then
+    export WORKON_HOME="$HOME/.virtualenvs"
+else
+    echo "\033[0;31m"'virtualenv not active'"\033[0;31m"
+fi
+
+if [[ -e /usr/local/bin/virtualenvwrapper.sh ]]; then
+    source /usr/local/bin/virtualenvwrapper.sh
+else
+    echo "\033[0;31m"'virtualenvwrapper not active'"\033[0;31m"
+fi
