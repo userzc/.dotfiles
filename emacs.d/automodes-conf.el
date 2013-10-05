@@ -1,6 +1,9 @@
 ;; Para zshrc respaldado
 (add-to-list 'auto-mode-alist '("zshrc" . sh-mode))
 
+;; Para archivos .zsh
+(add-to-list 'auto-mode-alist '("\\.zsh" . sh-mode))
+
 ;; Para cargar programas Prolog
 (add-to-list 'auto-mode-alist '("\\.pl" . prolog-mode))
 
