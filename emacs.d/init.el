@@ -197,8 +197,8 @@ re-downloaded in order to locate PACKAGE."
 (require 'zone-matrix-conf)
 (require 'load-theme-conf)
 (require 'projectile-conf)
-;; (require 'powerline-conf)
-(require 'smart-mode-line-conf)
+(require 'powerline-conf)
+;; (require 'smart-mode-line-conf)
 
 ;; font
 (if (equal system-type 'gnu/linux)

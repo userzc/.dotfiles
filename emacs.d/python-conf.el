@@ -54,8 +54,8 @@
 (setq
  python-shell-interpreter "ipython"
  python-shell-interpreter-args "console --colors=linux --existing"
- python-shell-prompt-regexp "in \\[[0-9]+\\]: "
- python-shell-prompt-output-regexp "out\\[[0-9]+\\]: "
+ python-shell-prompt-regexp "In \\[[0-9]+\\]: "
+ python-shell-prompt-output-regexp "Out\\[[0-9]+\\]: "
  python-shell-completion-setup-code
  "from IPython.core.completerlib import module_completion"
  python-shell-completion-module-string-code

@@ -15,7 +15,7 @@
 (global-set-key (kbd "C-h") 'backward-delete-char)
 
 ;; delete-pairs
-(global-set-key (kbd "C-c d") 'delete-pair)
+(global-set-key (kbd "C-c C-d") 'delete-pair)
 
 ;; open lines faster from anywhere in the current line
 (global-set-key (kbd "<C-return>") 'open-line-below)
@@ -297,7 +297,7 @@
              ("C-M-S-K" . sp-kill-sexp)
              ("C-M-w" . sp-copy-sexp)
              ;; ("M-<delete>" . sp-unwrap-sexp)
-             ("C-c d" . sp-unwrap-sexp)
+             ("C-c C-d" . sp-unwrap-sexp)
              ;; ("M-<backspace>" . sp-backward-unwrap-sexp)
              ("C-c <delete>" . sp-backward-unwrap-sexp)
              ("C-<right>" . sp-forward-slurp-sexp)
