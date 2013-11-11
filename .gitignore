@@ -5,6 +5,7 @@ emacs.d/auto-save-list
 emacs.d/tramp
 emacs.d/image-dired
 emacs.d/url/cache
+emacs.d/eshell/history
 
 # archivos byte-compiled
 *.elc
