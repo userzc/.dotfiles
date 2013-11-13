@@ -66,15 +66,6 @@
      (define-key ein:notebook-mode-map (kbd "C-;")
        'ein:shared-output-pop-to-buffer)
 
-     ;; Se deactivan keybinds en conflicto con `multiple-cursors'
-     (define-key ein:notebook-mode-map (kbd "M-n") nil)
-     (define-key ein:notebook-mode-map (kbd "M-p") nil)
-     ;; Modificaciones para acceder a funcionalidades del historial
-     (define-key ein:notebook-mode-map (kbd "C-c M-n")
-     'ein:worksheet-next-input-history)
-     (define-key ein:notebook-mode-map (kbd "C-c M-p")
-     'ein:worksheet-previous-input-history)
-
      ;; Para evitar que 'desktop' destruya buffers relacionados con 'ein'.
      (eval-after-load 'desktop
        '(push "\\*ein:.*\\*" desktop-clear-preserve-buffers))

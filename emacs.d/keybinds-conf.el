@@ -202,8 +202,8 @@
 (eval-after-load "multiple-cursors"
   '(progn
      ;; Experimentando con region-bindings-mode, parece tener sus peculiaridades
-     (global-set-key (kbd "M-p") 'mc/mark-previous-like-this)
-     (global-set-key (kbd "M-n") 'mc/mark-next-like-this)
+     (global-set-key (kbd "M-P") 'mc/mark-previous-like-this)
+     (global-set-key (kbd "M-N") 'mc/mark-next-like-this)
      (global-set-key (kbd "M-s M-p") 'mc/mark-previous-symbol-like-this)
      (global-set-key (kbd "M-s M-n") 'mc/mark-next-symbol-like-this)
 
@@ -218,11 +218,12 @@
      ;;Hay que optimizar:
      (global-set-key (kbd "M-æ") 'mc/mark-all-like-this-dwim)   ;; AltGr-a = æ
      (global-set-key (kbd "M-→") 'mc/insert-numbers)            ;; AltGr-i = →
-     (global-set-key (kbd "M-¶") 'mc/reverse-regions)           ;; AltGr-r = ¶
-     (global-set-key (kbd "M-ß") 'mc/sort-regions)              ;; AltGr-s = ß
+     (global-set-key (kbd "M-¶") 'mc/reverse-regions)		;; AltGr-r = ¶
+     (global-set-key (kbd "M-ß") 'mc/sort-regions)		;; AltGr-s = ß
      (global-set-key (kbd "M-S-SPC") 'set-rectangular-region-anchor)
-     (global-set-key (kbd "M-P") 'mc/mark-pop)
-     (global-set-key (kbd "C-c C-r") 'rename-sgml-tag)
+     (global-set-key (kbd "M-þ") 'mc/mark-pop)			;; AltGr-p = þ
+     (global-set-key (kbd "M-ŧ") 'mc/mark-sgml-tag-pair)	;; AltGr-t = ŧ
+     ;; (global-set-key (kbd "C-c C-r") 'rename-sgml-tag)
      ;; Probando keybind alterno, evitar conflicto con: AUCTeX
      (global-set-key (kbd "C-c M-x") 'mc/mark-more-like-this-extended)
      ;; No he podido identificar la tecla Hyper, así que estoy probando
@@ -322,5 +323,13 @@
 (eval-after-load "python-django"
   '(progn
      (global-set-key (kbd "C-c M-d") 'python-django-open-project)))
+
+;; Enable contacts completion from the message menu
+(add-hook 'message-mode-hook
+	  (lambda ()
+	    ;; ;; Disable this is a little more complicated
+ 	    ;; (define-key message-mode-map (kbd "M-K") 'nil)
+	    (define-key message-mode-map (kbd "<C-tab>")
+	      'completion-at-point)))
 
 (provide 'keybinds-conf)

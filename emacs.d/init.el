@@ -171,6 +171,7 @@ re-downloaded in order to locate PACKAGE."
 (require 'yasnippet)
 (require 'python-django)
 (require 'powerline)
+(require 'projectile)
 (require 'smart-mode-line)
 (require 'zone-matrix)
 
