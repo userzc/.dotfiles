@@ -46,7 +46,7 @@
 			  (github-theme nil)
 			  (gitignore-mode t)
 			  (google-c-style t)
-			  (google-contacts nil)
+			  (google-contacts t)
 			  (icicles nil)
 			  (icomplete+ t)
 			  (ido-better-flex t)
@@ -79,8 +79,7 @@
 			  (yasnippet t)
 			  (zenburn-theme nil)
 			  (zencoding-mode t)
-			  (powerline nil)
-			  ))
+			  (powerline nil)))
 
 (package-initialize)
 
@@ -118,6 +117,7 @@
 ;; (require 'wrap-region-conf)
 (require 'smartparens-conf)
 (require 'ido-conf)
+(require 'mail-conf)
 ;; (require 'yasnippet-conf)
 
 

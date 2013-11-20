@@ -25,7 +25,14 @@
   ;;                                         ;nada, en caso contrario, hay
   ;;                                         ;que un prefijo diferente al
   ;;                                         ;que está por default
-  (setq ropemacs-global-prefix "C-c p")
+  ;; (setq ropemacs-global-prefix "C-x p") ;esta línea interfiere con los
+  ;; 					   ;keybinds de `projetile', por
+  ;; 					   ;lo que se comenta para
+  ;; 					   ;restaurar su valor original
+  ;; 					   ;`C-xp', se deja como
+  ;; 					   ;referencia en caso de
+  ;; 					   ;posibles confilctos
+  ;; 					   ;posteriores
   ;; (require 'pymacs)    ;al parecer no es necesaria esta línea ya que
   ;;                      ;pymacs fué cargado con anterioridad, quizá
   ;;                      ;sea conveniente identificar una nueva forma
@@ -38,7 +45,8 @@
   (ac-ropemacs-initialize)
   (add-to-list 'ac-sources
                'ac-source-ropemacs))
-(global-set-key "\C-cpl" 'load-ropemacs)
+;; (global-set-key "\C-cpl" 'load-ropemacs)
+(global-set-key "\C-xpl" 'load-ropemacs)
 
 ;;(require 'pymacs)
 ;;(pymacs-load "ropemacs" "rope-")

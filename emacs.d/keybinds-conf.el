@@ -299,8 +299,9 @@
              ("C-M-w" . sp-copy-sexp)
              ;; ("M-<delete>" . sp-unwrap-sexp)
              ("C-c C-d" . sp-unwrap-sexp)
-             ;; ("M-<backspace>" . sp-backward-unwrap-sexp)
-             ("C-c <delete>" . sp-backward-unwrap-sexp)
+             ("M-<backspace>" . sp-backward-unwrap-sexp)
+             ;; ("C-c <delete>" . sp-backward-unwrap-sexp)
+             ;; ("C-c C-h" . sp-backward-unwrap-sexp)
              ("C-<right>" . sp-forward-slurp-sexp)
              ("C-<left>" . sp-forward-barf-sexp)
              ("C-M-<left>" . sp-backward-slurp-sexp)
@@ -324,12 +325,34 @@
   '(progn
      (global-set-key (kbd "C-c M-d") 'python-django-open-project)))
 
-;; Enable contacts completion from the message menu
-(add-hook 'message-mode-hook
-	  (lambda ()
-	    ;; ;; Disable this is a little more complicated
- 	    ;; (define-key message-mode-map (kbd "M-K") 'nil)
-	    (define-key message-mode-map (kbd "<C-tab>")
-	      'completion-at-point)))
+;; ;; Enable completion-at-point in terminal, for some reason the first
+;; ;; attempt doesn't work. There can be problems with icicles.
+;; (global-set-key (kbd "<M-S-iso-lefttab>") 'completion-at-point)
+(global-set-key (kbd "<backtab>") 'completion-at-point)
+
+;; Existe la opción de intentar hacer un remap de las funciones
+;; asociadas a este keybind, pero aún no me queda claro la forma de
+;; hacerlo. No parece funcionar, hay que considerar además alguna otra
+;; forma para hacerlo. Hasta el momento se han intentado las
+;; siguientes opciones con algunas otras variantes sin resultado
+;; favorable.
+
+;; (eval-after-load "gnus-group"
+;;   '(progn
+;;      (define-key gnus-agent-group-mode-map [remap
+;;      gnus-group-edit-global-kill] 'windmove-down)
+;;      ;; (define-key gnus-agent-group-mode-map "\eK" nil)
+;; ))
+
+;; (add-hook 'gnus-group-mode-hook
+;; 	  (lambda ()
+;; 	    ;; Disable this is a little more complicated
+;;  	    (define-key gnus-group-group-map (kbd "M-K") nil)))
+
+;; (add-hook 'gnus-group-mode-hook
+;; 	  (lambda ()
+;; 	    ;; Disable this is a little more complicated
+;;  	    (define-key gnus-group-group-map
+;; 	      [remap gnus-group-edit-global-kill] 'windmove-down)))
 
 (provide 'keybinds-conf)
