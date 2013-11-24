@@ -46,7 +46,7 @@
   (add-to-list 'ac-sources
                'ac-source-ropemacs))
 ;; (global-set-key "\C-cpl" 'load-ropemacs)
-(global-set-key "\C-xpl" 'load-ropemacs)
+;; (global-set-key "\C-xpl" 'load-ropemacs)
 
 ;;(require 'pymacs)
 ;;(pymacs-load "ropemacs" "rope-")

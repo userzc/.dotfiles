@@ -179,7 +179,9 @@
      (define-key inferior-python-mode-map [(control meta p)]
        'comint-previous-input)
      (define-key inferior-python-mode-map
-       (kbd "C-c C-z") 'quit-window)))
+       (kbd "C-c C-z") 'quit-window)
+     (define-key python-mode-map
+       (kbd "C-x p l") 'load-ropemacs)))
 
 ;; las siguientes líneas impiden que el movimiento entre windows se
 ;; modifique por los keybinds de comint
