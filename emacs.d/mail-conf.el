@@ -26,9 +26,5 @@
 
 ;; Integración para complementar nombres en los mensajes
 (require 'google-contacts-message)
-;; Esta parte requiere hacer unos ajustes con "smart-tab" para que no
-;; se bloquee la función de complementación, pero eso requiere un poco
-;; de pruebas con más calma, de momento si se desactiva "smart-tab" en
-;; el modo de mensajes
 
 (provide 'mail-conf)

@@ -4,7 +4,7 @@
 ;; antes de que se ejecute la siguiente instrucción, de lo contrario
 ;; habría que hacer un remap con todas las funciones de `projectile'
 ;; en un `eval-after-load'.
-(setq-default projectile-keymap-prefix (kbd "C-c f"))
+;; (setq-default projectile-keymap-prefix (kbd "C-c f"))
 
 (add-hook 'python-mode-hook 'projectile-on)
 

@@ -6,8 +6,11 @@ ZSH=$HOME/.oh-my-zsh
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 alias e="emacsclient"
 alias enw="emacsclient -nw"
-alias enwq="emacs -nw -q"
-alias enwd="emacs -nw -Q -l ~/.emacs.d/default-nw.el"
+alias enwq="emacs -nw -Q"
+alias enwd="emacs -nw -q --no-splash -l ~/.emacs.d/default-nw.el"
+
+# NOTA: Se esta probando la sugerencia de poner las cosas en scripts,
+# de momento
 
 # Set to this to use case-sensitive completion
 # CASE_SENSITIVE="true"
@@ -30,7 +33,18 @@ bindkey -e
 # Esta parte es añadida para conseguir que Emacs sea el editor por default
 # En las pruebas está hecho parece estar funcionando de manera adecuada
 
-export EDITOR="emacsclient"
+export EDITOR="enwd"
+export ALTERNATE_EDITOR="enwq"
+export VISUAL="emacsclient"
+# export EDITOR="emacsclient -nw -a emacs -nw -q -l ~/.emacs.d/default-nw.el"
+# Sin embargo hay que considerar casos en los que no se tiene una
+# sesión de servidor emacs iniciada, por lo que se debe investigar
+# alternativas como la propuesta en
+# http://unix.stackexchange.com/questions/52471/how-to-add-system-alias
+
+# Sin embargo, al parecer tengo que poner un script en algún lugar que
+# no parece ser universar, tengo que investigar como modificar el
+# $PATH para diferentes shells.
 
 # to define a browser in case non is defined
 if [[ $BROWSER == '' ]] then;
@@ -88,6 +102,7 @@ export PATH=$PATH:"/usr/bin"
 export PATH=$PATH:"/sbin"
 export PATH=$PATH:"/bin"
 export PATH=$PATH:"/usr/games"
+export PATH=$PATH:"$HOME/bin"
 
 export PYTHONPATH="/home/rene/Documents"
 export PYTHONPATH=$PYTHONPATH:"/home/rene/Documents/Semestre 3/PDE/Proyecto/SegundoReporte/BurgersComputedSolutions/FLIC_Boost"

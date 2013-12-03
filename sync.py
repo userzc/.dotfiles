@@ -36,6 +36,10 @@ IGNORED_ITEMS = [
     'sync.py',
 ]
 
+# TODO: Al parecer es una buena idea tener el directorio "~/bin", por
+# lo que se debe de considerar generar un enlace a dicho directorio,
+# tal vez utilizando tuples o listas para poder especificar el destino.
+
 def listing_function(from_here, to_here):
     """This is the function used to list the possible files to install.
 
