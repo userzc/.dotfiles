@@ -4,20 +4,13 @@
 ;; semi-fuctional on emacs-version "24.3.50.1" ;;
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
-;; Para deshabilitar tool-bar
-(if (fboundp 'tool-bar-mode) (tool-bar-mode -1))
+(add-to-list 'load-path user-emacs-directory) ;Cargar archivos en `~/.emacs.d'
 
-;; Emacs gurus don't need no stinking scroll bars
-(if (fboundp 'scroll-bar-mode) (scroll-bar-mode -1))
-
-;; Considerar instalar:
-
+;;;;;;;;;;;;;;;;;;;;;;;;;;
+;; Considerar instalar: ;;
+;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;; - cedit: https://github.com/zk-phi/cedit, al
 ;; parecer funciona de manera adecuada con paredit
-
-;; - ag: https://github.com/Wilfred/ag.el, al parecer funciona de
-;; manera muy similar a como funciona `ack-and-a-half', pero para el
-;; buscador `ag'.
 
 (defvar lista-paquetes-instalados
   '(ac-math ace-jump-mode ack-and-a-half ag auctex auto-complete
@@ -36,29 +29,14 @@
 	    zenburn-theme zencoding-mode zone-matrix)
   "Lista de paquetes instalados actualmente en mi configuración.")
 
-;; ;; esta parte es para comprobar que paquetes están installados
-;; (loop for p in lista-paquetes-instalados
-;;       when (package-installed-p p) do
-;;       (print p))
-
 ;; Default custom file
 (setq custom-file "~/.emacs.d/emacs-custom.el")
 (load custom-file)
 
-;; Para cargar archivos en `~/.emacs.d'
-(add-to-list 'load-path user-emacs-directory)
-
-;; Configuración para paquetes
-(require 'package-conf)
-
-;; Configuración para diferentes tipos de archivos
-(require 'automodes-conf)
-
-;; Configuraciones personales por default
-(require 'default-conf)
-
-;; Funciones para edición
-(require 'defuns)
+(require 'default-conf) ;Configuraciones personales por default
+(require 'package-conf) ;Configuración para paquetes
+(require 'automodes-conf) ;Configuración para diferentes tipos de archivos
+(require 'defuns) ;Funciones para edición
 
 ;; Al parecer las siguientes lineas hacen que cualquier subdirectorio
 ;; de la carpeta "~/.emacs.d/lisp/" sea cargada al load-path, lo cual
@@ -71,7 +49,8 @@
 
 ;; La siguiente opción se añade para poder utilizar emacs como servidor
 ;; en particular en ipython y en octave
-(server-start)
+(require 'server)
+(unless (server-running-p) (server-start))
 
 ;; Required libraries
 (require 'misc)
@@ -96,10 +75,6 @@
 (require 'zone-matrix)
 
 ;; Configuraciones de las librerías anteriores
-
-;; Al perecer la configuración de `smartparens' genera conflictos con
-;; algunos de los keybinds de `icicles'. El problema proviene de
-;; habilitar `smartparens' en global-mode.
 (require 'smartparens-conf)
 ;; (require 'enclose-conf)
 ;; (require 'wrap-region-conf)

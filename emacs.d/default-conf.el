@@ -1,3 +1,9 @@
+;; Para deshabilitar tool-bar
+(if (fboundp 'tool-bar-mode) (tool-bar-mode -1))
+
+;; Emacs gurus don't need no stinking scroll bars
+(if (fboundp 'scroll-bar-mode) (scroll-bar-mode -1))
+
 ;; Write backup files to own directory
 (setq backup-directory-alist
       `(("." . ,(expand-file-name

@@ -1,11 +1,11 @@
 ;; loaded with options:
 ;; -nw -q -l default.el
 
-;; Para deshabilitar tool-bar
-(if (fboundp 'tool-bar-mode) (tool-bar-mode -1))
+;; Para cargar archivos en `~/.emacs.d'
+(add-to-list 'load-path user-emacs-directory)
 
-;; Emacs gurus don't need no stinking scroll bars
-(if (fboundp 'scroll-bar-mode) (scroll-bar-mode -1))
+;; Configuraciones personales por default
+(require 'default-conf)
 
 (require 'package)
 (add-to-list 'package-archives
@@ -83,18 +83,12 @@
 
 (package-initialize)
 
-;; Para cargar archivos en `~/.emacs.d'
-(add-to-list 'load-path user-emacs-directory)
-
 ;; Default custom file
 (setq custom-file "~/.emacs.d/emacs-custom.el")
 (load custom-file)
 
 ;; Configuración para diferentes archivos
 (require 'automodes-conf)
-
-;; Configuraciones personales por default
-(require 'default-conf)
 
 ;; Funciones para edición
 (require 'defuns)
