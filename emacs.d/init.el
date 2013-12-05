@@ -10,14 +10,6 @@
 ;; Emacs gurus don't need no stinking scroll bars
 (if (fboundp 'scroll-bar-mode) (scroll-bar-mode -1))
 
-(require 'package)
-(add-to-list 'package-archives
-             '("marmalade" .
-               "http://marmalade-repo.org/packages/") t)
-(add-to-list 'package-archives
-             '("melpa" . "http://melpa.milkbox.net/packages/") t)
-
-
 ;; Considerar instalar:
 
 ;; - cedit: https://github.com/zk-phi/cedit, al
@@ -53,83 +45,11 @@
 (setq custom-file "~/.emacs.d/emacs-custom.el")
 (load custom-file)
 
-(require 'cl)
-
-;; Intentando nueva forma para descargar paquetes, basado en
-;; https://github.com/purcell/emacs.d y
-;; https://github.com/magnars/.emacs.d/blob/master/setup-package.el
-(unless (file-exists-p "~/.emacs.d/elpa/archives/melpa")
-  (package-refresh-contents))
-
-
-;; workaround to get package archive's update in emacs-snapshot taken
-;; from:
-;; https://github.com/LiaoPengyu/emacs.d/blob/fc7a6fedb5c496c613d6d19a4fcdab18b36a8d87/init-elpa.el
-(defvar package-filter-function nil
-  "Optional predicate function used to internally filter packages
-  used by package.el.
-
-The function is called with the arguments PACKAGE VERSION ARCHIVE
-where PACKAGE is a symbol, VERSION is a vector as produced by
-`version-to-list', and ARCHIVE is the string name of the package
-archive.")
-
-(defadvice package--add-to-archive-contents
-  (around filter-packages (package archive) activate)
-  "Add filtering of available packages using
-`package-filter-function', if non-nil."
-  (when (or (null package-filter-function)
-	    (funcall package-filter-function
-		     (car package)
-		     (funcall (if (fboundp 'package-desc-version)
-				  'package--ac-desc-version
-				'package-desc-vers)
-			      (cdr package))
-		     archive))
-    ad-do-it))
-
-(setq package-filter-function
-      (lambda (package version archive)
-	(and
-	 (not (memq package '(eieio)))
-	 (or (not (string-equal archive "melpa"))
-	     (not (memq package '(slime)))))))
-
-(defun packages-install (packages)
-  "Función para determinar si todos los paquetes de la lista de
-paquetes están instalados en la máquina actual."
-  (loop for p in packages
-        when (not (package-installed-p p)) do (package-install p)
-        finally (return t)))
-
-;; On-demand installation of packages
-(defun require-package (package &optional min-version no-refresh)
-  "Install given PACKAGE, optionally requiring MIN-VERSION.
-If NO-REFRESH is non-nil, the available package lists will not be
-re-downloaded in order to locate PACKAGE."
-  (if (package-installed-p package min-version)
-      t
-    (if (or (assoc package package-archive-contents) no-refresh)
-        (package-install package)
-      (progn
-        (package-refresh-contents)
-        (require-package package min-version t)))))
-
-(defun init--install-packages ()
-  (packages-install
-   lista-paquetes-instalados))
-
-(package-initialize)
-
-(condition-case nil
-    (init--install-packages)
-  (error
-   (package-refresh-contents)
-   (init--install-packages)))
-
-
 ;; Para cargar archivos en `~/.emacs.d'
 (add-to-list 'load-path user-emacs-directory)
+
+;; Configuración para paquetes
+(require 'package-conf)
 
 ;; Configuración para diferentes tipos de archivos
 (require 'automodes-conf)
@@ -139,13 +59,6 @@ re-downloaded in order to locate PACKAGE."
 
 ;; Funciones para edición
 (require 'defuns)
-
-;; julia-mode
-(add-to-list 'load-path "~/julia_test/julia/contrib/")
-(condition-case nil
-    (require 'julia-mode)
-  (error
-   (message "Didn't find Julia Mode")))
 
 ;; Al parecer las siguientes lineas hacen que cualquier subdirectorio
 ;; de la carpeta "~/.emacs.d/lisp/" sea cargada al load-path, lo cual
@@ -183,6 +96,10 @@ re-downloaded in order to locate PACKAGE."
 (require 'zone-matrix)
 
 ;; Configuraciones de las librerías anteriores
+
+;; Al perecer la configuración de `smartparens' genera conflictos con
+;; algunos de los keybinds de `icicles'. El problema proviene de
+;; habilitar `smartparens' en global-mode.
 (require 'smartparens-conf)
 ;; (require 'enclose-conf)
 ;; (require 'wrap-region-conf)
