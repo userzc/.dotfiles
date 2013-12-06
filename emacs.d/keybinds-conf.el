@@ -329,6 +329,24 @@
        'end-of-defun)
      (sp-use-smartparens-bindings)))
 
+;; Evitar tapado de opciones de icicles debido a smartparens en el
+;; minibuffer, se añadiran más conforme se descubran
+(add-hook 'minibuffer-setup-hook
+	  '(lambda ()
+	     (define-key smartparens-mode-map
+	       (kbd "C-S-a") nil)))
+
+(add-hook 'minibuffer-exit-hook
+	  '(lambda ()
+	     (define-key smartparens-mode-map
+	       (kbd "C-S-a") 'sp-end-of-sexp)))
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;;         python-django
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
 (eval-after-load "python-django"
   '(progn
      (global-set-key (kbd "C-c M-d") 'python-django-open-project)))

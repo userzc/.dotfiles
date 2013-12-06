@@ -75,8 +75,10 @@
 	sh-assignment
 	smart-tab
 	sp--self-insert-command
+	sp-backward-barf-sexp
 	sp-backward-down-sexp
 	sp-backward-sexp
+	sp-backward-slurp-sexp
 	sp-backward-up-sexp
 	sp-down-sexp
 	sp-forward-barf-sexp
