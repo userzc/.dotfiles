@@ -50,4 +50,15 @@
 ;; (load-theme 'odersky t)
 ;; (load-theme 'wilson t)
 
+;; font
+(if (equal system-type 'gnu/linux)
+    (condition-case nil
+	(set-default-font "Ubuntu Mono-11")
+      (error
+       (set-default-font "Inconsolata-11")))
+  (condition-case nil
+      (set-default-font "Inconsolata-11")
+    (error
+     (set-default-font "DejaVu Sans Mono-10"))))
+
 (provide 'load-theme-conf)

@@ -11,6 +11,9 @@
 ;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;; - cedit: https://github.com/zk-phi/cedit, al
 ;; parecer funciona de manera adecuada con paredit
+;; - emmet: https://github.com/smihica/emmet-mode, al parecer debe de
+;; sustiruir `zencoding-mode' pues zencoding cambió de nombre a emmet,
+;; se añaden nuevas funcionalidades
 
 (defvar lista-paquetes-instalados
   '(ac-math ace-jump-mode ack-and-a-half ag auctex auto-complete
@@ -101,16 +104,5 @@
 (require 'projectile-conf)
 (require 'powerline-conf)
 ;; (require 'smart-mode-line-conf)
-
-;; font
-(if (equal system-type 'gnu/linux)
-    (condition-case nil
-	(set-default-font "Ubuntu Mono-11")
-      (error
-       (set-default-font "Inconsolata-11")))
-  (condition-case nil
-      (set-default-font "Inconsolata-11")
-    (error
-     (set-default-font "DejaVu Sans Mono-10"))))
 
 (require 'keybinds-conf)
