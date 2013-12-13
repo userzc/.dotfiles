@@ -136,6 +136,7 @@
 	tags-loop-continue
 	tmm-menubar
 	toggle-input-method
+	wdired-previous-line
 	windsize-down
 	windsize-up
 	yank-rectangle
