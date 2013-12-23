@@ -8,8 +8,10 @@
 ;; ./configure
 ;; make
 ;; makeinstall
-(load "auctex.el" nil t t)
-(load "preview-latex.el" nil t t)
+(condition-case nil (load "auctex.el" nil t t)
+  (error (message "auctex.el not found")))
+(condition-case nil (load "preview-latex.el" nil t t)
+  (error (message "preview-latex.el not found")))
 
 ;; Para utilizar AUCTeX con documentos multi-arichivos, archivos de estilo
 (setq TeX-auto-save t)

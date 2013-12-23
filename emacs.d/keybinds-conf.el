@@ -165,7 +165,11 @@
              (define-key maxima-mode-map
                (kbd "M-;") 'comment-dwim)
              (define-key maxima-mode-map
-               (kbd "C-c ;") 'maxima-insert-short-comment)))
+               (kbd "C-c ;") 'maxima-insert-short-comment)
+	     (define-key maxima-mode-map
+               (kbd "C-c *") nil)
+	     (define-key maxima-mode-map
+               (kbd "C-c M-;") 'maxima-insert-long-comment)))
 
 ;; para utilizar completación de historial como en terminal
 (eval-after-load "python"

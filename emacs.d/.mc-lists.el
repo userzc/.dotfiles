@@ -34,6 +34,7 @@
 	forward-sentence
 	forward-sexp
 	forward-to-word
+	ibuffer-mark-for-delete
 	icicle-exchange-point-and-mark
 	icicle-execute-extended-command
 	icicle-goto-marker-or-set-mark-command
@@ -119,6 +120,8 @@
 	ein:worksheet-goto-prev-input
 	end-of-buffer
 	goto-line
+	ibuffer-do-kill-on-deletion-marks
+	ibuffer-update
 	icicle-buffer
 	icicle-pp-eval-expression
 	info

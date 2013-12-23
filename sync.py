@@ -101,3 +101,7 @@ if system() == 'Linux':
             target = join(USER_HOME, ".config", element)
             origin = join(DIR_ACTUAL, "config", element)
             EXEC_FUNCTION(origin, target)
+
+# TODO: considerar implementar las opciones para submodulos:
+# - git submodule sync
+# - git submodule update --init --recursive
