@@ -224,6 +224,8 @@
      ;;Hay que optimizar:
      (global-set-key (kbd "M-æ") 'mc/mark-all-like-this-dwim)   ;; AltGr-a = æ
      (global-set-key (kbd "M-→") 'mc/insert-numbers)            ;; AltGr-i = →
+     ;; keybind alternativo, el anterior no parece seguir funcionando
+     (global-set-key (kbd "M-€") 'mc/insert-numbers)		;; AltGr-e = €
      (global-set-key (kbd "M-¶") 'mc/reverse-regions)		;; AltGr-r = ¶
      (global-set-key (kbd "M-ß") 'mc/sort-regions)		;; AltGr-s = ß
      (global-set-key (kbd "M-S-SPC") 'set-rectangular-region-anchor)

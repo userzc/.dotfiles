@@ -14,22 +14,27 @@
 ;; - emmet: https://github.com/smihica/emmet-mode, al parecer debe de
 ;; sustiruir `zencoding-mode' pues zencoding cambió de nombre a emmet,
 ;; se añaden nuevas funcionalidades
+;; - readline-complete:
+;; https://github.com/emacsmirror/readline-complete/blob/master/readline-complete.el
+;; parece que es una alternativa para generar opciones para
+;; complementar con `zsh' y `multi-term'
 
 (defvar lista-paquetes-instalados
   '(ac-math ace-jump-mode ack-and-a-half ag auctex auto-complete
-	    bookmark+ c-eldoc cl-lib clues-theme color-theme
-	    color-theme-gruber-darker color-theme-sanityinc-tomorrow
-	    color-theme-solarized color-theme-wombat+ cyberpunk-theme dash
-	    deferred dired+ dired-details dired-details+ ein enclose
-	    expand-region git-commit-mode gitconfig-mode github-theme
-	    gitignore-mode google-c-style google-contacts icicles icomplete+
-	    ido-better-flex magit mark-more-like-this markdown-mode melpa
-	    monokai-theme multi-term multiple-cursors nose oauth2 popup
-	    powerline projectile purty-mode python-django qsimpleq-theme
-	    rainbow-delimiters rainbow-mode request smart-mode-line smart-tab
-	    smartparens sublime-themes tango-2-theme tangotango-theme
-	    textile-mode websocket wgrep windsize wrap-region yasnippet
-	    zenburn-theme zencoding-mode zone-matrix)
+	 bookmark+ c-eldoc cl-lib clues-theme color-theme
+	 color-theme-gruber-darker color-theme-sanityinc-tomorrow
+	 color-theme-solarized color-theme-wombat+ cyberpunk-theme dash
+	 deferred dired+ dired-details dired-details+ ein enclose
+	 expand-region git-commit-mode gitconfig-mode github-theme
+	 gitignore-mode google-c-style google-contacts gruvbox-theme
+	 icicles icomplete+ ido-better-flex magit mark-more-like-this
+	 markdown-mode melpa monokai-theme multi-term multiple-cursors
+	 nose oauth2 popup powerline projectile purty-mode python-django
+	 qsimpleq-theme rainbow-delimiters rainbow-mode request
+	 smart-mode-line smart-tab smartparens sublime-themes
+	 tango-2-theme tangotango-theme textile-mode websocket wgrep
+	 windsize wrap-region yasnippet zenburn-theme zencoding-mode
+	 zone-matrix)
   "Lista de paquetes instalados actualmente en mi configuración.")
 
 ;; Default custom file
@@ -102,7 +107,7 @@
 (require 'zone-matrix-conf)
 (require 'load-theme-conf)
 (require 'projectile-conf)
-(require 'powerline-conf)
-;; (require 'smart-mode-line-conf)
+;; (require 'powerline-conf)
+(require 'smart-mode-line-conf)
 
 (require 'keybinds-conf)

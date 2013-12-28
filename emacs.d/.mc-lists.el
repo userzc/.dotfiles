@@ -67,6 +67,7 @@
 	orgtbl-self-insert-command
 	python-indent-dedent-line-backspace
 	python-indent-electric-colon
+	python-indent-shift-left
 	python-indent-shift-right
 	python-nav-forward-block
 	python-shell-send-region
