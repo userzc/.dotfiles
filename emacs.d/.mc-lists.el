@@ -130,6 +130,7 @@
 	mouse-minor-mode-menu
 	multi-term-dedicated-toggle
 	next-error
+	nosetests-one
 	orgtbl-ctrl-c-ctrl-c
 	previous-error
 	pylint

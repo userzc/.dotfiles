@@ -1,3 +1,6 @@
+;; Para pylintrc respaldado
+(add-to-list 'auto-mode-alist '("pylintrc" . conf-mode))
+
 ;; Para zshrc respaldado
 (add-to-list 'auto-mode-alist '("zshrc" . sh-mode))
 
