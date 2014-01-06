@@ -40,7 +40,7 @@
 ;; (custom-set-faces '(default ((t (:background "nil")))))
 ;; (load-theme 'zenburn t)
 ;; (load-theme 'sanityinc-tomorrow-day t)
-;; (load-theme 'solarized-light t)
+(load-theme 'solarized-light t)
 ;; (load-theme 'qsimpleq t)
 ;; (load-theme 'dorsey t)
 ;; (load-theme 'fogus t)
@@ -49,7 +49,7 @@
 ;; (load-theme 'mccarthy t);bad powerline compatibility
 ;; (load-theme 'odersky t)
 ;; (load-theme 'wilson t)
-(load-theme 'gruvbox t)
+;; (load-theme 'gruvbox t)
 
 ;; font
 (if (equal system-type 'gnu/linux)

@@ -9,12 +9,12 @@
 ;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;; Considerar instalar: ;;
 ;;;;;;;;;;;;;;;;;;;;;;;;;;
-;; - cedit: https://github.com/zk-phi/cedit, al
+;; - `cedit': https://github.com/zk-phi/cedit, al
 ;; parecer funciona de manera adecuada con paredit
-;; - emmet: https://github.com/smihica/emmet-mode, al parecer debe de
+;; - `emmet': https://github.com/smihica/emmet-mode, al parecer debe de
 ;; sustiruir `zencoding-mode' pues zencoding cambió de nombre a emmet,
 ;; se añaden nuevas funcionalidades
-;; - readline-complete:
+;; - `readline-complete':
 ;; https://github.com/emacsmirror/readline-complete/blob/master/readline-complete.el
 ;; parece que es una alternativa para generar opciones para
 ;; complementar con `zsh' y `multi-term'

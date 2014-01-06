@@ -127,6 +127,7 @@
 	icicle-pp-eval-expression
 	info
 	magit-status
+	mouse-drag-mode-line
 	mouse-minor-mode-menu
 	multi-term-dedicated-toggle
 	next-error
@@ -138,6 +139,7 @@
 	python-shell-switch-to-shell
 	repeat
 	scroll-other-window
+	sml/toggle-shorten-modes
 	tags-loop-continue
 	tmm-menubar
 	toggle-input-method

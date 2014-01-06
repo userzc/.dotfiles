@@ -14,6 +14,9 @@
 (define-key key-translation-map [?\C-h] [?\C-?])
 (global-set-key (kbd "C-h") 'backward-delete-char)
 
+;; change the spelling dictionary
+(global-set-key (kbd "C-c s") 'ispell-change-dictionary)
+
 ;; delete-pairs
 (global-set-key (kbd "C-c C-d") 'delete-pair)
 
@@ -185,7 +188,10 @@
      (define-key inferior-python-mode-map
        (kbd "C-c C-z") 'quit-window)
      (define-key python-mode-map
-       (kbd "C-x p l") 'load-ropemacs)))
+       (kbd "C-x p l") 'load-ropemacs)
+     (define-key python-mode-map (kbd "C-c j")
+       'rope-jump-to-global)
+     ))
 
 ;; las siguientes líneas impiden que el movimiento entre windows se
 ;; modifique por los keybinds de comint
@@ -248,9 +254,9 @@
 ;; los keybinds son los sugeridos por emacs rocks
 
 (eval-after-load "ace-jump-mode"
-  ';; (define-key global-map (kbd "C-ø") 'ace-jump-mode)
+  ;; (define-key global-map (kbd "C-ø") 'ace-jump-mode)
   ;; (define-key global-map (kbd "M-ø") 'ace-jump-mode) ; to access in terminal
-  (progn
+  '(progn
     (define-key global-map (kbd "M-ñ") 'ace-jump-mode) ; to access in terminal
     (autoload
       'ace-jump-mode-pop-mark
