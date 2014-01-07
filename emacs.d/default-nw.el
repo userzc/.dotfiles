@@ -53,7 +53,6 @@
 			  (magit t)
 			  (mark-more-like-this nil)
 			  (markdown-mode t)
-			  (melpa t)
 			  (monokai-theme nil)
 			  (multi-term t)
 			  (multiple-cursors t)
