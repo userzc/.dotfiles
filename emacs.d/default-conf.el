@@ -4,6 +4,16 @@
 ;; Emacs gurus don't need no stinking scroll bars
 (if (fboundp 'scroll-bar-mode) (scroll-bar-mode -1))
 
+;; Do something about ringin bell on windows and snapshot
+;; (setq ring-bell-function 'ignore)
+(setq visible-bell nil)
+(setq ring-bell-function
+      (lambda ()
+	"Using Scroll Lock led as alarm"
+	(progn
+	  (call-process-shell-command "xset led named 'Scroll Lock'")
+	  (call-process-shell-command "xset -led named 'Scroll Lock'"))))
+
 ;; Write backup files to own directory
 (setq backup-directory-alist
       `(("." . ,(expand-file-name
