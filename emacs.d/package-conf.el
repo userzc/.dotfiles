@@ -4,10 +4,22 @@
 
 (require 'cl)
 
+;; TODO: Considerar definir de manera global el directorio
+;; `package-user-dir' para que en `windows-nt' no se tenga que estar
+;; descargando constantemente los paquetes, así en caso de una
+;; actualización se pueden reutilizar los paquetes descargados
+;; anteriormente, además rederinir cualquier referencia al directorio
+;; `~/.emacs.d/elpa/'
+(if (eq system-type 'windows-nt)
+    (setq package-user-dir "~\\.elpa")
+  (setq package-user-dir "~/.emacs.d/elpa"))
+
 ;; Intentando nueva forma para descargar paquetes, basado en
 ;; https://github.com/purcell/emacs.d y
 ;; https://github.com/magnars/.emacs.d/blob/master/setup-package.el
-(unless (file-exists-p "~/.emacs.d/elpa/archives/melpa")
+(unless
+    (file-exists-p
+     (concat package-user-dir "/archives/melpa"))
   (package-refresh-contents))
 
 (require 'package)

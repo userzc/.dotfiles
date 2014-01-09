@@ -5,8 +5,7 @@
 (if (fboundp 'scroll-bar-mode) (scroll-bar-mode -1))
 
 ;; Do something about ringin bell on windows and snapshot
-;; (setq ring-bell-function 'ignore)
-(setq visible-bell nil)
+(setq visible-bell t)
 (setq ring-bell-function
       (lambda ()
 	"Using Scroll Lock led as alarm"
