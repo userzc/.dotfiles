@@ -16,9 +16,17 @@
 (setq ein:notebook-modes
       '(ein:notebook-mumamo-mode ein:notebook-multilang-mode))
 
-;; (eval-after-load "ein:notebooklist"
-;;   '(progn
-;;      (hl-line-mode 1)))
+;; setting up `ein:console-security-dir' and `ein:console-args',
+;; doesn't seem to work with `virtualenv' properly, maybe in future
+;; releases.
+(setq ein:console-security-dir '((8888 . "~/notebooks_dir/")))
+(setq ein:console-args '("--existing"))
+
+;; Investigation to set this variable is needes, perhaps multiple
+;; directories can be used, one per virtualenv, trying to use
+;; `$WORKON_HOME'
+;; (shell-command-to-string ". ~/.zshrc; echo -n $WORKON_HOME")
+;; (setq ein:console-executable '((8888 . "~")) )
 
 ;; hilight current line in ein:notebooklist-mode
 (add-hook 'ein:notebooklist-mode-hook
@@ -53,16 +61,6 @@
 
 (eval-after-load "ein-notebook"
   '(progn
-     ;; se desaactivan movimientos entre celdas para que no interfiera con
-     ;; el movimiento entre `windows' de emacs, hay que modificar el key-map
-     ;; ein:notebook-mode-map
-     (define-key ein:notebook-mode-map [C-down] nil)
-     (define-key ein:notebook-mode-map [C-up] nil)
-
-     ;; estos movimientos son remapeados a la tecla shift para no perder
-     ;; esta funcionalidad
-     (define-key ein:notebook-mode-map [S-down] 'ein:worksheet-goto-next-input)
-     (define-key ein:notebook-mode-map [S-up] 'ein:worksheet-goto-prev-input)
      (define-key ein:notebook-mode-map (kbd "C-;")
        'ein:shared-output-pop-to-buffer)
 

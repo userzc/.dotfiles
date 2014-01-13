@@ -23,7 +23,7 @@
   '(ac-math ace-jump-mode ack-and-a-half ag auctex auto-complete
 	    bookmark+ c-eldoc cl-lib clues-theme color-theme
 	    color-theme-gruber-darker color-theme-sanityinc-tomorrow
-	    color-theme-solarized color-theme-wombat+ cyberpunk-theme dash
+	    solarized-theme color-theme-wombat+ cyberpunk-theme dash
 	    deferred dired+ dired-details dired-details+ ein enclose
 	    expand-region git-commit-mode gitconfig-mode github-theme
 	    gitignore-mode google-c-style google-contacts gruvbox-theme
@@ -40,6 +40,13 @@
 ;; Default custom file
 (setq custom-file "~/.emacs.d/emacs-custom.el")
 (load custom-file)
+
+;; TODO: for windows system there seems to a file read from the
+;; varialbes:
+;; `HKEY_LOCAL_MACHINE\Software\Microsoft\Command Processor\AutoRun'
+;; `HKEY_CURRENT_USER\Software\Microsoft\Command Processor\AutoRun'
+;; Matbe that is the place to add some paths to `git' and other
+;; programs thet don't seem to be working properly
 
 (require 'default-conf) ;Configuraciones personales por default
 (require 'package-conf) ;Configuración para paquetes
@@ -107,7 +114,7 @@
 (require 'zone-matrix-conf)
 (require 'load-theme-conf)
 (require 'projectile-conf)
-;; (require 'powerline-conf)
-(require 'smart-mode-line-conf)
+(require 'powerline-conf)
+;; (require 'smart-mode-line-conf)
 
 (require 'keybinds-conf)

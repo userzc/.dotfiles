@@ -3,10 +3,13 @@
 ;; load-theme & color-theme
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-;; Se define la siguiente variable para compatibilidad de los temas
+;; se define la siguiente variable para compatibilidad de los temas
 ;; solarized en terminal, sin embargo no son tan buenos como uno
 ;; esperaría
 (setq solarized-termcolors 256)
+
+(setq solarized-distinct-fringe-background t)
+(setq solarized-high-contrast-mode-line t)
 
 ;; Añadiendo caminos a `custom-theme-load-path'
 (add-to-list 'custom-theme-load-path

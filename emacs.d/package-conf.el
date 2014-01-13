@@ -4,12 +4,9 @@
 
 (require 'cl)
 
-;; TODO: Considerar definir de manera global el directorio
-;; `package-user-dir' para que en `windows-nt' no se tenga que estar
-;; descargando constantemente los paquetes, así en caso de una
-;; actualización se pueden reutilizar los paquetes descargados
-;; anteriormente, además rederinir cualquier referencia al directorio
-;; `~/.emacs.d/elpa/'
+;; Se establece de manera adecuada `package-user-dir' para que en
+;; windows no sea necesario descargar todos los paquetes en cada
+;; sincronización de repositorio
 (if (eq system-type 'windows-nt)
     (setq package-user-dir "~\\.elpa")
   (setq package-user-dir "~/.emacs.d/elpa"))
