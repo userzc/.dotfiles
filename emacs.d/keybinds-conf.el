@@ -18,7 +18,7 @@
 (global-set-key (kbd "C-c s") 'ispell-change-dictionary)
 
 ;; delete-pairs
-(global-set-key (kbd "C-c C-d") 'delete-pair)
+(global-set-key (kbd "C-c d") 'delete-pair)
 
 ;; open lines faster from anywhere in the current line
 (global-set-key (kbd "<C-return>") 'open-line-below)
@@ -293,7 +293,7 @@
           (global-set-key (kbd "M-Q") 'windsize-left)
           (global-set-key (kbd "M-R") 'windsize-right)
           (global-set-key (kbd "M-W") 'windsize-up)
-          (global-set-key (kbd "M-E") 'windsize-down)))
+          (global-set-key (kbd "M-E") 'windsize-down))
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
@@ -301,7 +301,7 @@
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
-(eval-after-load "smartparens"
+eval-after-load "smartparens"
   '(progn
      (setq sp-smartparens-bindings
            '(("C-M-f" . sp-forward-sexp)
@@ -317,16 +317,15 @@
              ("C-M-k" . kill-sexp)
              ("C-M-S-K" . sp-kill-sexp)
              ("C-M-w" . sp-copy-sexp)
-             ;; ("M-<delete>" . sp-unwrap-sexp)
              ("C-c C-d" . sp-unwrap-sexp)
              ("M-<backspace>" . sp-backward-unwrap-sexp)
-             ;; ("C-c <delete>" . sp-backward-unwrap-sexp)
-             ;; ("C-c C-h" . sp-backward-unwrap-sexp)
              ("C-<right>" . sp-forward-slurp-sexp)
              ("C-<left>" . sp-forward-barf-sexp)
              ("C-M-<left>" . sp-backward-slurp-sexp)
              ("C-M-<right>" . sp-backward-barf-sexp)
              ("M-D" . sp-splice-sexp)
+             ("M-S" . sp-split-sexp)
+	     ("C-c j" . sp-join-sexp)
              ("C-M-<delete>" . sp-splice-sexp-killing-forward)
              ("C-M-<backspace>" . sp-splice-sexp-killing-backward)
              ("C-S-<backspace>" . sp-splice-sexp-killing-around)

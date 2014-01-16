@@ -11,39 +11,26 @@
 (setq solarized-distinct-fringe-background t)
 (setq solarized-high-contrast-mode-line t)
 
-;; Añadiendo caminos a `custom-theme-load-path'
-(add-to-list 'custom-theme-load-path
-             "~/.emacs.d/lisp/emacs-tron-theme/")
-(add-to-list 'custom-theme-load-path
-             "~/.emacs.d/elpa/tangotango-theme-20121014.1916/")
-
-(add-to-list 'custom-theme-load-path
-             "~/.emacs.d/elpa/github-theme-0.0.3/")
 (add-to-list 'custom-theme-load-path
              "~/.emacs.d/lisp/default-black-theme/")
-(add-to-list 'custom-theme-load-path
-             "~/.emacs.d/elpa/moe-theme-20130625.1427/")
 
-;; (require 'color-theme )
-;; (setq color-theme-load-all-themes nil)
-;; (load-file
-;;  "~/.emacs.d/elpa/color-theme-wombat+-0.0.2/color-theme-wombat+.el")
 ;; (color-theme-wombat+)
-;; (load-theme 'wombat+ t)
 ;; (load-theme 'tangotango t)
+;; (load-theme 'moe-light t)
+;; (load-theme 'moe-dark t)
 ;; (load-theme 'wombat t)
 ;; (load-theme 'tango-2 t)
 ;; (load-theme 'cyberpunk t)
 ;; (load-theme 'tron t)
 ;; (load-theme 'github t)
-;; (load-theme 'monokai t)
+(load-theme 'monokai t)
 ;; (load-theme 'clues t)
 ;; (load-theme 'assemblage t)
 ;; (load-theme 'default-black t)
 ;; (custom-set-faces '(default ((t (:background "nil")))))
 ;; (load-theme 'zenburn t)
 ;; (load-theme 'sanityinc-tomorrow-day t)
-(load-theme 'solarized-light t)
+;; (load-theme 'solarized-light t)
 ;; (load-theme 'qsimpleq t)
 ;; (load-theme 'dorsey t)
 ;; (load-theme 'fogus t)
