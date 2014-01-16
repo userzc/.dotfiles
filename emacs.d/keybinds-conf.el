@@ -293,7 +293,7 @@
           (global-set-key (kbd "M-Q") 'windsize-left)
           (global-set-key (kbd "M-R") 'windsize-right)
           (global-set-key (kbd "M-W") 'windsize-up)
-          (global-set-key (kbd "M-E") 'windsize-down))
+          (global-set-key (kbd "M-E") 'windsize-down)))
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
@@ -301,7 +301,7 @@
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
-eval-after-load "smartparens"
+(eval-after-load "smartparens"
   '(progn
      (setq sp-smartparens-bindings
            '(("C-M-f" . sp-forward-sexp)
@@ -334,6 +334,7 @@ eval-after-load "smartparens"
              ;; ("M-F" . sp-forward-symbol)
              ;; ("M-B" . sp-backward-symbol)
              ))
+
      (global-set-key (kbd "C-c C-M-a")
        'beginning-of-defun)
      (global-set-key (kbd "C-c C-M-e")
