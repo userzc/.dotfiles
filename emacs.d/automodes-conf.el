@@ -16,6 +16,10 @@
 ;; Para cargar programas en Maxima
 (add-to-list 'auto-mode-alist '("\\.mac" . maxima-mode))
 
+;; Para cargar programas en SCons
+(add-to-list 'auto-mode-alist '("SConstruct" . python-mode))
+(add-to-list 'auto-mode-alist '("SConscript" . python-mode))
+
 ;; markdown-mode
 (if (fboundp 'markdown-mode)
     (progn
