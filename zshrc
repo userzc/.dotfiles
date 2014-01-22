@@ -49,13 +49,13 @@ export VISUAL="emacsclient"
 # to define a browser in case non is defined
 if [[ $BROWSER == '' ]] then;
     export BROWSER=google-chrome
-    fi
+fi
 
 # An attempt to get TRAMP working inside Emacs, seems to be working
 # just fine, so posible scripts based on this will be created in the
 # future
 # prompts
-if [[ $TERM == "dumb" ]]; then	# in emacs
+if [[ $TERM == "dumb" ]]; then  # in emacs
     PS1='%(?..[%?])%!:%~%# '
     # for tramp to not hang, need the following. cf:
     # http://www.emacswiki.org/emacs/TrampMode
@@ -103,6 +103,13 @@ export PATH=$PATH:"/sbin"
 export PATH=$PATH:"/bin"
 export PATH=$PATH:"/usr/games"
 export PATH=$PATH:"$HOME/bin"
+export PATH=$PATH:"/home/rene/.local/bin"
+
+if [[ -e "/home/rene/powerline/powerline/bindings/tmux/powerline.conf" ]]; then
+    export TMUX_PL="/home/rene/powerline/powerline/bindings/tmux/powerline.conf"
+else
+    echo "\033[0;31m"'powerline tmux not active'"\033[0;31m"
+fi
 
 export PYTHONPATH="/home/rene/Documents"
 export PYTHONPATH=$PYTHONPATH:"/home/rene/Documents/Semestre 3/PDE/Proyecto/SegundoReporte/BurgersComputedSolutions/FLIC_Boost"
