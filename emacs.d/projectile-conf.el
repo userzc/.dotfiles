@@ -13,5 +13,6 @@
 (add-hook 'python-mode-hook 'projectile-on)
 (add-hook 'LaTeX-mode-hook 'projectile-on)
 (add-hook 'rst-mode-hook 'projectile-on)
+(add-hook 'c++-mode-hook 'projectile-on)
 
 (provide 'projectile-conf)

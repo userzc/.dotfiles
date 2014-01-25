@@ -12,6 +12,8 @@
                        (and (fboundp 'minibuffer-local-filename-completion-map)
                             (list minibuffer-local-filename-completion-map))))
     (when icicle-mode
+      (define-key map (icicle-kbd "M-O")
+        'icicle-insert-history-element)
       (define-key map (icicle-kbd "M-¬")
         'icicle-all-candidates-list-alt-action))))
 

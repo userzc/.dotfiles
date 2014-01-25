@@ -1,4 +1,3 @@
-
 ;; Para cargar google c style:
 
 (require 'google-c-style)
@@ -18,7 +17,44 @@
              (define-key c++-mode-map (kbd "C-c C-r") 'recompile)))
 
 ;; c-eldoc
+;; considerar incluir en `c-eldoc-includes' las librerías mediante `setq':
+;; g++ -o gaussian.os -c -fPIC -I/usr/include/python2.7 -I/usr/lib/python2.7/dist-packages/numpy/core/include gaussian.cpp
+;; g++ -o gaussian.so -shared gaussian.os -lboost_python -lpython2.7 -lz -lpthread -ldl -lutil -lboost_numpy
+
+;; (setq c-eldoc-includes
+;;       "`boost_python python2.7 pthead util boost_numpy --cflags` -I/usr/include/python2.7 -I/usr/lib/python2.7/dist-packages/numpy/core/include")
+
+(setq c-eldoc-includes
+      "`boost_python python2.7 boost_numpy` -I/usr/include/python2.7 -I/usr/lib/python2.7/dist-packages/numpy/core/include")
+
 (add-hook 'c-mode-hook 'c-turn-on-eldoc-mode)
 (add-hook 'c++-mode-hook 'c-turn-on-eldoc-mode)
+
+;; Se determina de manera automática el comando de compilación
+;; dependiendo de los archivos que hay:
+;; Basado en: http://www.emacswiki.org/emacs/CompileCommand
+(add-hook
+ 'c-mode-common-hook
+ (lambda ()
+   (cond
+    ((file-exists-p "SConstruct")
+     (progn (set (make-local-variable 'compile-command)
+                 "scons -k")))
+    ((or (file-exists-p "Makefile") (file-exists-p "makefile"))
+     (progn (set (make-local-variable 'compile-command)
+                 "make -k")))
+    (t (progn
+         (set (make-local-variable 'compile-command)
+	      ;; emulate make's .c.o implicit pattern rule, but with
+	      ;; different defaults for the CC, CPPFLAGS, and CFLAGS
+	      ;; variables:
+	      ;; $(CC) -c -o $@ $(CPPFLAGS) $(CFLAGS) $<
+	      (let ((file (file-name-nondirectory buffer-file-name)))
+		(format "%s -c -o %s.o %s %s %s"
+			(or (getenv "CC") "gcc")
+			(file-name-sans-extension file)
+			(or (getenv "CPPFLAGS") "-DDEBUG=9")
+			(or (getenv "CFLAGS") "-ansi -pedantic -Wall -g")
+			file))))))))
 
 (provide 'c-conf)
