@@ -89,6 +89,8 @@
 	sp-kill-sexp
 	sp-next-sexp
 	sp-previous-sexp
+	sp-splice-sexp
+	sp-split-sexp
 	sp-unwrap-sexp
 	sp-up-sexp
 	string-rectangle

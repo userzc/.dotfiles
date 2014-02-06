@@ -8,9 +8,10 @@ alias e="emacsclient"
 alias enw="emacsclient -nw"
 alias enwq="emacs -nw -Q"
 alias enwd="emacs -nw -q --no-splash -l ~/.emacs.d/default-nw.el"
+alias lsd="ls -d *(/)"
 
 # NOTA: Se esta probando la sugerencia de poner las cosas en scripts,
-# de momento
+# dichos scripts se encuentran en `~/bin`
 
 # Set to this to use case-sensitive completion
 # CASE_SENSITIVE="true"
@@ -47,8 +48,13 @@ export VISUAL="emacsclient"
 # $PATH para diferentes shells.
 
 # to define a browser in case non is defined
-if [[ $BROWSER == '' ]] then;
-    export BROWSER=google-chrome
+if [[ $BROWSER == '' ]] ; then
+    if (( $+commands[google-chrome] )); then
+	export BROWSER=google-chrome
+    else
+	echo "google-chrome doesn't exist";
+	export BROWSER=chromium
+    fi
 fi
 
 # An attempt to get TRAMP working inside Emacs, seems to be working
@@ -89,7 +95,7 @@ export TERM="xterm-256color"
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Interesting themes: themes, pip
-plugins=(git git-extras history pip themes virtualenv theme)
+plugins=(git git-extras history pip themes virtualenv theme common-aliases)
 
 source $ZSH/oh-my-zsh.sh
 

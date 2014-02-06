@@ -63,7 +63,8 @@
   '(progn
      (define-key ein:notebook-mode-map (kbd "C-;")
        'ein:shared-output-pop-to-buffer)
-
+     (define-key ein:notebook-mode-map (kbd "C-W")
+       'ein:pytools-whos)
      ;; Para evitar que 'desktop' destruya buffers relacionados con 'ein'.
      (eval-after-load 'desktop
        '(push "\\*ein:.*\\*" desktop-clear-preserve-buffers))
