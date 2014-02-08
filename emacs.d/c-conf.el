@@ -27,8 +27,8 @@
 (setq c-eldoc-includes
       "`boost_python python2.7 boost_numpy` -I/usr/include/python2.7 -I/usr/lib/python2.7/dist-packages/numpy/core/include")
 
-(add-hook 'c-mode-hook 'c-turn-on-eldoc-mode)
-(add-hook 'c++-mode-hook 'c-turn-on-eldoc-mode)
+;; (add-hook 'c-mode-hook 'c-turn-on-eldoc-mode)
+;; (add-hook 'c++-mode-hook 'c-turn-on-eldoc-mode)
 
 ;; Se determina de manera automática el comando de compilación
 ;; dependiendo de los archivos que hay:

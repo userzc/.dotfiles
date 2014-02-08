@@ -114,7 +114,7 @@
 (require 'zone-matrix-conf)
 (require 'load-theme-conf)
 (require 'projectile-conf)
-;; (require 'powerline-conf)
+(require 'powerline-conf)
 ;; (require 'smart-mode-line-conf)
 
 (require 'keybinds-conf)
