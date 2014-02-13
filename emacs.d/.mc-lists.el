@@ -128,6 +128,7 @@
 	icicle-buffer
 	icicle-pp-eval-expression
 	info
+	magit-goto-previous-section
 	magit-status
 	mouse-drag-mode-line
 	mouse-minor-mode-menu

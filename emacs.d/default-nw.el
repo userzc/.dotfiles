@@ -77,7 +77,7 @@
 			  (wrap-region t)
 			  (yasnippet t)
 			  (zenburn-theme nil)
-			  (zencoding-mode t)
+			  (emmet-mode t)
 			  (powerline nil)))
 
 (package-initialize)

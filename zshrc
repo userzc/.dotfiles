@@ -95,7 +95,7 @@ export TERM="xterm-256color"
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Interesting themes: themes, pip
-plugins=(git git-extras history pip themes virtualenv theme common-aliases)
+plugins=(git git-extras history pip themes virtualenv theme common-aliases django)
 
 source $ZSH/oh-my-zsh.sh
 

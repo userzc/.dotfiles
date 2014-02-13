@@ -58,14 +58,14 @@
 ;; Trabajar rápido en un problema de ACM
 (global-set-key (kbd "C-c C-n") 'acm-problem)
 
-;; zencoding-mode
-(eval-after-load "zencoding-mode"
+;; emmet-mode
+(eval-after-load "emmet-mode"
   ;; Auto-start on any markup modes
-  '(progn (add-hook 'sgml-mode-hook 'zencoding-mode)
-          (define-key zencoding-mode-keymap (kbd "C-c C-j")
-            'zencoding-expand-line)
-          (define-key zencoding-mode-keymap (kbd "C-j") 'nil)
-          (define-key zencoding-mode-keymap (kbd "<C-return>") 'nil)))
+  '(progn (add-hook 'sgml-mode-hook 'emmet-mode)
+          (define-key emmet-mode-keymap (kbd "C-c C-j")
+            'emmet-expand-line)
+          (define-key emmet-mode-keymap (kbd "C-j") 'nil)
+          (define-key emmet-mode-keymap (kbd "<C-return>") 'nil)))
 
 ;; Webjump let's you quickly search google, wikipedia, emacs wiki
 (global-set-key (kbd "C-x g") 'webjump)
