@@ -57,9 +57,11 @@
 	org-beginning-of-line
 	org-delete-char
 	org-end-of-line
+	org-force-self-insert
 	org-kill-line
 	org-metaleft
 	org-metaright
+	org-return
 	org-return-indent
 	org-self-insert-command
 	org-yank
