@@ -11,14 +11,14 @@
 ;; make org-table ready for action!
 (require 'org-table)
 
-;; ;; active babel languages
-;; (org-babel-do-load-languages
-;; org  'org-babel-load-languages
-;;  '((sh . t)
-;;    (octave . t)
-;;    ;; (maxima . t)
-;;    (python . t)
-;;    ;; (cpp . t)
-;;    ))
+;; active babel languages
+(org-babel-do-load-languages
+ 'org-babel-load-languages
+ '((sh . t)
+   (octave . t)
+   ;; (maxima . t)
+   (python . t)
+   ;; (cpp . t)
+   ))
 
 (provide 'org-conf)
