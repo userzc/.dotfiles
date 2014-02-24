@@ -134,3 +134,16 @@ if [[ -e /usr/local/bin/virtualenvwrapper.sh ]]; then
 else
     echo "\033[0;31m"'virtualenvwrapper not active'"\033[0;31m"
 fi
+
+# JAVA_HOME, ver
+# http://stackoverflow.com/questions/6477415/how-to-set-java-home-in-ubuntu,
+# también ahí se encuentra una referencia para hacer la variable
+# disponible de manera global
+if [[ ( -e /usr/bin/java) && ( -d /usr/lib/jvm/java-7-oracle) ]]; then
+    export JAVA_HOME=/usr/lib/jvm/java-7-oracle
+else
+    echo "\033[0;31m"'java oracle not active'"\033[0;31m"
+fi
+
+#THIS MUST BE AT THE END OF THE FILE FOR GVM TO WORK!!!
+[[ -s "/home/rene/.gvm/bin/gvm-init.sh" ]] && source "/home/rene/.gvm/bin/gvm-init.sh"
