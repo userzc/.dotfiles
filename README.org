@@ -23,23 +23,29 @@ python ~/.dotfiles/sync -i
 
 ** Requirements
 
-   | Software         | Windows Version | Prefered Source [W] | Unix Version | Prefered Source [U] |
-   |------------------+-----------------+---------------------+--------------+---------------------|
-   | Emacs            | >= 24           | chocolatey          |        >= 24 | ---                 |
-   | Inconsolata Font | ---             | ---                 |          --- | ---                 |
-   | python           | >= 3.2          | chocolatey          |       >= 2.7 | ---                 |
-   | git              | ---             | chocolatey          |          --- | ---                 |
-   | quickswitch-i3   | ---             | ---                 |          2.0 | pip (PyPI)          |
-   | rope             | 0.9.4           | pip (PyPI)          |        0.9.4 | pip (PyPI)          |
-   | ropemacs         | 0.7             | pip (PyPI)          |          0.7 | pip (PyPI)          |
-   | ropemode         | 0.2             | pip (PyPI)          |          0.2 | pip (PyPI)          |
-   | texlive          | ---             | ---                 |         2012 | ---                 |
+   | Software         | Windows Version | Prefered Source [W] | Unix Version   | Prefered Source [U] |
+   |------------------+-----------------+---------------------+----------------+---------------------|
+   | Emacs            | >= 24           | chocolatey          | >= 24          | ---                 |
+   | Inconsolata Font | ---             | ---                 | ---            | ---                 |
+   | python           | >= 3.2          | chocolatey          | >= 2.7         | ---                 |
+   | git              | ---             | chocolatey          | ---            | ---                 |
+   | quickswitch-i3   | ---             | ---                 | 2.0            | pip (PyPI)          |
+   | rope             | 0.9.4           | pip (PyPI)          | 0.9.4          | pip (PyPI)          |
+   | ropemacs         | 0.7             | pip (PyPI)          | 0.7            | pip (PyPI)          |
+   | ropemode         | 0.2             | pip (PyPI)          | 0.2            | pip (PyPI)          |
+   | texlive          | ---             | ---                 | 2012           | ---                 |
+   | eclim            | NA              | NA                  | current stable | [[http://eclim.org][eclim]]               |
+   | eclipse          | Kepler          | chocolatey          | Kepler         | [[http://eclipse.org][eclipse]]             |
+   | java             | 1.7 Oracle      | chocolatey          | 1.7 Oracle     | [[https://launchpad.net/~webupd8team/+archive/java][weupd8 ppa]]          |
+   | groovy           | NA              | NA                  | 2.2.1          | [[http://gvmtool.net/][gvm]]                 |
+
+   # falta añadir las dependencias de eclim, eclipse, java, groovy(mediante gvm) que funcionen en windows.
 
 *** Note on Windows
 
     It is recommended that most windows packages are installed through
-    [[http://chocolatey.org][=chocolatey=]] since this facilitates the
-    process, in particular install packages.
+    [[http://chocolatey.org][chocolatey]] since this facilitates the process, in particular
+    install packages.
 
 ** Features
 

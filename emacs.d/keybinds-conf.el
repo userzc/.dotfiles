@@ -61,7 +61,8 @@
 ;; emmet-mode
 (eval-after-load "emmet-mode"
   ;; Auto-start on any markup modes
-  '(progn (add-hook 'sgml-mode-hook 'emmet-mode)
+  '(progn (add-hook 'nxml-mode-hook 'emmet-mode)
+	  (add-hook 'sgml-mode-hook 'emmet-mode)
           (define-key emmet-mode-keymap (kbd "C-c C-j")
             'emmet-expand-line)
           (define-key emmet-mode-keymap (kbd "C-j") 'nil)

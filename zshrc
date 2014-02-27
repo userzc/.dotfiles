@@ -95,9 +95,23 @@ export TERM="xterm-256color"
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Interesting themes: themes, pip
-plugins=(git git-extras history pip themes virtualenv theme common-aliases django)
+
+plugins=(git
+    git-extras
+    history
+    pip
+    themes
+    virtualenv
+    theme
+    common-aliases
+    # django
+    mvn)
 
 source $ZSH/oh-my-zsh.sh
+
+# # suggestion from file ~/.oh-my-zsh/plugins/mvn/mvn.plugin.zsh, but
+# # doesn't seem to be working, more tests are required
+# alias mvn="mvn-color"
 
 # Customize to your needs...
 export PATH=/usr/lib/lightdm/lightdm

@@ -63,4 +63,14 @@
 (put 'downcase-region 'disabled nil)
 (put 'narrow-to-region 'disabled nil)
 
+;; UTF-8 please
+;; ver https://github.com/magnars/.emacs.d/blob/master/sane-defaults.el
+
+(setq locale-coding-system 'utf-8)
+(set-terminal-coding-system 'utf-8)
+(set-keyboard-coding-system 'utf-8)
+(set-selection-coding-system 'utf-8)
+(prefer-coding-system 'utf-8)
+
+
 (provide 'default-conf)

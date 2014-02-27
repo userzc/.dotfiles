@@ -42,7 +42,7 @@
 ;; varialbes:
 ;; `HKEY_LOCAL_MACHINE\Software\Microsoft\Command Processor\AutoRun'
 ;; `HKEY_CURRENT_USER\Software\Microsoft\Command Processor\AutoRun'
-;; Matbe that is the place to add some paths to `git' and other
+;; Maybe that is the place to add some paths to `git' and other
 ;; programs thet don't seem to be working properly
 
 (require 'default-conf) ;Configuraciones personales por default
@@ -112,9 +112,9 @@
 (require 'zone-matrix-conf)
 (require 'load-theme-conf)
 (require 'projectile-conf)
-(require 'powerline-conf)
-;; (require 'smart-mode-line-conf)
 (require 'eclim-conf)
 (require 'groovy-conf)
+;; (require 'powerline-conf)
+;; (require 'smart-mode-line-conf)
 
 (require 'keybinds-conf)

@@ -59,7 +59,10 @@ bindsym $mod+Tab exec quickswitch.py -d "dmenu -i -b -l 20 -nb $color_nb -nf $co
 
 bindsym $mod+Shift+Tab exec quickswitch.py -m -d "dmenu -b -l 20 -i -nb $color_nb -nf $color_nf -sb $color_sb -sf $color_sf"
 
-bindsym $mod+Control+Tab exec "i3-nagbar -t warning -m 'Test For the scratchpad'"
+# Scratchpad configuration
+# http://i3wm.org/docs/userguide.html#_scratchpad
+bindsym $mod+Shift+minus move scratchpad
+bindsym $mod+minus scratchpad show
 
 # kill focused window
 bindsym $mod+Shift+q kill
@@ -117,6 +120,25 @@ bindsym $mod+Shift+space floating toggle
 # change focus between tiling / floating windows
 bindsym $mod+space focus mode_toggle
 
+# flaoting point moving mode
+# https://faq.i3wm.org/question/2787/move-floating-window-with-arrows/
+mode "move-floating" {
+     # Using Arrows
+     bindsym Up move up 10px
+     bindsym Left move left 10px
+     bindsym Down move down 10px
+     bindsym Right move right 10px
+
+     # Using home row
+     bindsym j move left
+     bindsym k move down
+     bindsym l move up
+     bindsym ntilde move right
+
+     bindsym Mod4+m mode "default"
+}
+bindsym Mod4+m focus floating; mode "move-floating"
+
 # focus the parent container
 bindsym $mod+a focus parent
 
@@ -135,6 +157,9 @@ bindsym $mod+7 workspace 7
 bindsym $mod+8 workspace 8
 bindsym $mod+9 workspace 9
 bindsym $mod+0 workspace 10
+
+# enable back_and_forth
+workspace_auto_back_and_forth yes
 
 # move focused container to workspace
 bindsym $mod+Shift+1 move container to workspace 1

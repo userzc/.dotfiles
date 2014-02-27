@@ -1,17 +1,17 @@
 ;; Para pylintrc respaldado
-(add-to-list 'auto-mode-alist '("pylintrc" . conf-mode))
+(add-to-list 'auto-mode-alist '("pylintrc$" . conf-mode))
 
 ;; Para zshrc respaldado
-(add-to-list 'auto-mode-alist '("zshrc" . sh-mode))
+(add-to-list 'auto-mode-alist '("zshrc$" . sh-mode))
 
 ;; Para archivos .zsh
-(add-to-list 'auto-mode-alist '("\\.zsh" . sh-mode))
+(add-to-list 'auto-mode-alist '("\\.zsh$" . sh-mode))
 
 ;; Para cargar programas Prolog
-(add-to-list 'auto-mode-alist '("\\.pl" . prolog-mode))
+(add-to-list 'auto-mode-alist '("\\.pl$" . prolog-mode))
 
 ;; Para cargar programas Octave
-(add-to-list 'auto-mode-alist '("\\.m"  . octave-mode))
+(add-to-list 'auto-mode-alist '("\\.m$"  . octave-mode))
 
 ;; Para cargar programas en Maxima
 (add-to-list 'auto-mode-alist '("\\.mac" . maxima-mode))
