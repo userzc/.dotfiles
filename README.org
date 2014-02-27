@@ -36,7 +36,7 @@ python ~/.dotfiles/sync -i
    | texlive          | ---             | ---                 | 2012           | ---                 |
    | eclim            | NA              | NA                  | current stable | [[http://eclim.org][eclim]]               |
    | eclipse          | Kepler          | chocolatey          | Kepler         | [[http://eclipse.org][eclipse]]             |
-   | java             | 1.7 Oracle      | chocolatey          | 1.7 Oracle     | [[https://launchpad.net/~webupd8team/+archive/java][weupd8 ppa]]          |
+   | java             | 1.7 Oracle      | chocolatey          | 1.7 Oracle     | [[https://launchpad.net/~webupd8team/+archive/java][webupd8 ppa]]         |
    | groovy           | NA              | NA                  | 2.2.1          | [[http://gvmtool.net/][gvm]]                 |
 
    # falta añadir las dependencias de eclim, eclipse, java, groovy(mediante gvm) que funcionen en windows.
