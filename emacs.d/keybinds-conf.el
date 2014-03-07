@@ -98,6 +98,37 @@
 (global-set-key (kbd "C-x C--") 'toggle-window-split)
 (global-unset-key (kbd "C-x C-+")) ;; don't zoom like this
 
+;; cedit mode
+;; https://github.com/zk-phi/cedit
+
+;; cedit-forward-char
+;; cedit-backward-char
+;; cedit-beginning-of-statement
+;; cedit-end-of-statement
+
+;; cedit-down-block
+;; cedit-up-block-forward
+;; cedit-up-block-backward
+
+;; cedit-slurp C-M-S-right
+;; cedit-wrap-brace C-M-{
+;; cedit-barf C-M-S-left
+;; cedit-splice-killing-backward C-M-ĸ
+;; cedit-raise C-M-¶
+
+;; Probando las funciones que se utilizan
+(global-set-key  (kbd "C-M-S-<right>") 'cedit-slurp)
+(global-set-key  (kbd "C-M-{") 'cedit-wrap-brace)
+(global-set-key  (kbd "C-M-S-<left>") 'cedit-barf)
+(global-set-key  (kbd "C-M-ĸ") 'cedit-splice-killing-backward) ; AltGr-k = ĸ
+(global-set-key  (kbd "C-M-¶") 'cedit-raise)		       ; AltGr-r = ¶
+
+
+;; projectile-mode
+;; https://github.com/bbatsov/projectile
+;; Es útil acceder de manera global a project-file sin tener que
+;; activar el minor-mdoe
+(global-set-key (kbd "C-c p s") 'projectile-switch-project)
 
 (global-set-key (kbd "C-c n") 'cleanup-buffer)
 ;; Se necesita encontrar un nuevo key-bind para esta función y poder

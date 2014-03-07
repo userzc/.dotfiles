@@ -47,6 +47,16 @@ python ~/.dotfiles/sync -i
     [[http://chocolatey.org][chocolatey]] since this facilitates the process, in particular
     install packages.
 
+*** Note on Java related software
+
+    Most java software on ubuntu was installed manually:
+
+    - eclipse was installed using the turorial [[http://akovid.blogspot.mx/2012/08/installing-eclipse-juno-42-in-ubuntu.html][installing eclipse on Ubuntu]].
+    - eclim was installed following the [[http://eclim.org/install.html][installation instructions]] from
+      the official webpage.
+    - groovy was also installed using the [[http://gvmtool.net/][installation instructions]]
+      from the official webpage.
+
 ** Features
 
    So far this script is able to =symlink= files and folders under some

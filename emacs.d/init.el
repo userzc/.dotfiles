@@ -9,12 +9,18 @@
 ;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;; Considerar instalar: ;;
 ;;;;;;;;;;;;;;;;;;;;;;;;;;
+;; - `monky' : https://github.com/ananthakumaran/monky
+;; parece ser el equivalente de `magit' para `mercurial', vale la pena
+;; considerar en caso de no poder usar `git'.
 ;; - `cedit': https://github.com/zk-phi/cedit, al
 ;; parecer funciona de manera adecuada con paredit
 ;; - `readline-complete':
 ;; https://github.com/emacsmirror/readline-complete/blob/master/readline-complete.el
 ;; parece que es una alternativa para generar opciones para
 ;; complementar con `zsh' y `multi-term'
+;; - `command-log-mode': https://github.com/lewang/command-log-mode
+;; parece ser una utilidad interesante para mostrar que teclas se
+;; presionan junto con los comandos que les corresponden
 
 (defvar lista-paquetes-instalados
   '(ac-math ace-jump-mode ack-and-a-half ag auctex auto-complete
@@ -85,7 +91,8 @@
 (require 'projectile)
 (require 'smart-mode-line)
 (require 'zone-matrix)
-(require 'eclim)
+;; (require 'eclim)
+(require 'malabar-mode)
 
 ;; Configuraciones de las librerías anteriores
 (require 'smartparens-conf)
@@ -112,9 +119,10 @@
 (require 'zone-matrix-conf)
 (require 'load-theme-conf)
 (require 'projectile-conf)
-(require 'eclim-conf)
 (require 'groovy-conf)
-;; (require 'powerline-conf)
+;; (require 'eclim-conf)
+(require 'malabar-conf )
+(require 'powerline-conf)
 ;; (require 'smart-mode-line-conf)
 
 (require 'keybinds-conf)

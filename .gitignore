@@ -26,3 +26,7 @@ web-vcs-log.org
 
 # cookies
 cookies
+
+# Malabar mode files (from semantic)
+/emacs.d/semanticdb/
+/emacs.d/srecode-map.el

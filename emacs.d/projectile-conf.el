@@ -14,5 +14,7 @@
 (add-hook 'LaTeX-mode-hook 'projectile-on)
 (add-hook 'rst-mode-hook 'projectile-on)
 (add-hook 'c++-mode-hook 'projectile-on)
+(add-hook 'java-mode-hook 'projectile-on)
+(add-hook 'nxml-mode-hook 'projectile-on)
 
 (provide 'projectile-conf)

@@ -1,0 +1,5 @@
+# -*- mode: snippet; require-final-newline: nil -*-
+# name: xml
+# key: xml
+# --
+<?xml version="1.0" encoding="UTF-8" standalone="yes" ?>

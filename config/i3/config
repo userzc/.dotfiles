@@ -135,9 +135,9 @@ mode "move-floating" {
      bindsym l move up
      bindsym ntilde move right
 
-     bindsym Mod4+m mode "default"
+     bindsym $mod+m mode "default"
 }
-bindsym Mod4+m focus floating; mode "move-floating"
+bindsym $mod+m focus floating; mode "move-floating"
 
 # focus the parent container
 bindsym $mod+a focus parent
@@ -191,8 +191,8 @@ bindsym $mod+Shift+e exec "i3-nagbar -t warning -m 'You pressed the exit shortcu
 # Start skype
 assign [class="^Skype$" instance="^skype$"] → 5: Communications
 
-# Start emacs
-assign [class="^Emacs24" instance="^emacs$"] → 1
+# # Start emacs
+# assign [class="^Emacs24" instance="^emacs$"] → 1
 
 # resize window (you can also use the mouse for that)
 mode "resize" {

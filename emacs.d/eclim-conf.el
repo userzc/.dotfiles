@@ -1,7 +1,7 @@
 (setq eclim-executable "/opt/eclipse/eclim")
 ;; (setq eclim-default-workspace "~/workspace" )
 (setq eclimd-executable "/opt/eclipse/eclimd")
-(setq eclimd-default-workspace "~/workspace" )
+(setq eclimd-default-workspace "~/workspace/" )
 ;; (setq eclimd-wait-for-process nil)	; wait for eclim to start
 
 

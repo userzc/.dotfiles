@@ -25,6 +25,7 @@
 	delete-indentation
 	delete-pair
 	diredp-capitalize-this-file
+	downcase-region
 	ein:worksheet-split-cell-at-point
 	enclose-remove
 	end-of-defun
@@ -137,6 +138,7 @@
 	multi-term-dedicated-toggle
 	next-error
 	nosetests-one
+	org-ctrl-c-ctrl-c
 	orgtbl-ctrl-c-ctrl-c
 	previous-error
 	pylint

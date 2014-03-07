@@ -16,6 +16,7 @@
  'org-babel-load-languages
  '((sh . t)
    (octave . t)
+   (latex . t)
    ;; (maxima . t)
    (python . t)
    ;; (cpp . t)

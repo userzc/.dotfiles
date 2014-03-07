@@ -72,5 +72,8 @@
 (set-selection-coding-system 'utf-8)
 (prefer-coding-system 'utf-8)
 
-
+;; truncate lines
+(set-default 'truncate-lines nil)
+(setq truncate-lines nil)
+;; (set-default 'truncate-lines t)
 (provide 'default-conf)
