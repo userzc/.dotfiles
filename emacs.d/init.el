@@ -94,7 +94,6 @@
 ;; (require 'eclim)
 (require 'malabar-mode)
 (require 'drools-mode)
-(require 's)
 
 ;; Configuraciones de las librerías anteriores
 (require 'smartparens-conf)
