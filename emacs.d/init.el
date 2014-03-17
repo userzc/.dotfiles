@@ -93,6 +93,8 @@
 (require 'zone-matrix)
 ;; (require 'eclim)
 (require 'malabar-mode)
+(require 'drools-mode)
+(require 's)
 
 ;; Configuraciones de las librerías anteriores
 (require 'smartparens-conf)
@@ -122,7 +124,8 @@
 (require 'groovy-conf)
 ;; (require 'eclim-conf)
 (require 'malabar-conf )
-(require 'powerline-conf)
+;; (require 'powerline-conf)
 ;; (require 'smart-mode-line-conf)
+(require 'drools-conf)
 
 (require 'keybinds-conf)

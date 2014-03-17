@@ -4,3 +4,6 @@
 [submodule "emacs.d/lisp/Pymacs"]
 	path = emacs.d/lisp/Pymacs
 	url = https://github.com/pinard/Pymacs.git
+[submodule "emacs.d/lisp/rules-editing-mode"]
+	path = emacs.d/lisp/rules-editing-mode
+	url = https://github.com/userzc/rules-editing-mode

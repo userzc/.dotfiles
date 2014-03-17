@@ -74,7 +74,9 @@ bindsym $mod+d exec dmenu_run -nb $color_nb -nf $color_nf -sb $color_sb -sf $col
 # There also is the (new) i3-dmenu-desktop which only displays applications
 # shipping a .desktop file. It is a wrapper around dmenu, so you need that
 # installed.
-# bindsym $mod+d exec --no-startup-id i3-dmenu-desktop
+# NOTE: there is also a reference to a program that is supposedly faster: j4-dmenu-desktop
+# https://github.com/enkore/j4-dmenu-desktop
+bindsym $mod+Shift+d exec --no-startup-id i3-dmenu-desktop
 
 # change focus
 bindsym $mod+j focus left
@@ -136,6 +138,7 @@ mode "move-floating" {
      bindsym ntilde move right
 
      bindsym $mod+m mode "default"
+     bindsym Escape mode "default"
 }
 bindsym $mod+m focus floating; mode "move-floating"
 

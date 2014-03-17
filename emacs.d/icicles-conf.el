@@ -25,6 +25,7 @@
 
 (setq icicle-top-level-when-sole-completion-delay 0.1)
 (setq icicle-zap-to-char-candidates 'icicle-ucs-names)
+
 ;; En el caso de archivos, el número de candidatos puede crecer
 ;; demasiado, por lo que no conviene mostrar los candidatos en ese
 ;; caso

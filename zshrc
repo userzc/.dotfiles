@@ -159,5 +159,13 @@ else
     echo "\033[0;31m"'java oracle not active'"\033[0;31m"
 fi
 
+if (( $+commands[mvn] )); then
+    # Suponiendo que maven 3 fué instalado por del repositorio de ubuntu
+    export M2_HOME=/usr/share/maven
+else
+    echo "mvn doesn't exist";
+fi
+
+
 #THIS MUST BE AT THE END OF THE FILE FOR GVM TO WORK!!!
 [[ -s "/home/rene/.gvm/bin/gvm-init.sh" ]] && source "/home/rene/.gvm/bin/gvm-init.sh"

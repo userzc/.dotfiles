@@ -3,7 +3,7 @@
 (defadvice open-line (after open-line-reindent-line activate)
   "Indenta la nueva línea, sólo en los 'major-mode' apropiados"
   (if (member (buffer-local-value 'major-mode (current-buffer))
-              '(c++-mode nxml-mode))
+              '(c++-mode nxml-mode malabar-mode))
       (save-excursion
         ;; (next-line) ;this is for interactive use
         (forward-line)
@@ -157,5 +157,20 @@ Including indent-buffer, which should not be called automatically on save."
   (if (null (get-buffer-process (current-buffer)))
       (kill-buffer)
     (comint-delchar-or-maybe-eof arg)))
+
+;; Replace region, in order to user s-lower-camel-case
+;; https://github.com/magnars/.emacs.d/blob/051101a4564255b3b4931a30ed9ec6d849a3c923/defuns/editing-defuns.el
+(defun replace-region-by (fn)
+  (let* ((beg (region-beginning))
+         (end (region-end))
+         (contents (buffer-substring beg end)))
+    (delete-region beg end)
+    (insert (funcall fn contents))))
+
+;; TODO
+
+;; Perhaps there's a way to make a switch to *Malabar Groovy* mode
+;; similar to iptyhon switch to console
+
 
 (provide 'defuns)

@@ -17,6 +17,7 @@
 	c-electric-semi&comma
 	c-electric-slash
 	c-electric-star
+	c-fill-paragraph
 	comint-delchar-or-eof-or-kill-buffer
 	comint-delchar-or-maybe-eof
 	comment-dwim
@@ -117,8 +118,10 @@
 	ace-jump-mode
 	ace-jump-move
 	cleanup-buffer
+	comint-send-input
 	count-words-region
 	describe-key
+	diredp-next-line
 	diredp-relsymlink-this-file
 	ein:notebook-complete-dot
 	ein:notebook-save-notebook-command

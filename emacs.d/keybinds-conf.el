@@ -33,6 +33,25 @@
 ;; Para recuperar 'shell-command-on-region' en  `unity'
 (global-set-key (kbd "M-¬") 'shell-command-on-region)
 
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;; magnars' keybinding ripoff ;;
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;; shorthand for interactive lambdas
+(defmacro λ (&rest body)
+  `(lambda ()
+     (interactive)
+     ,@body))
+
+(eval-after-load "s"
+  '(progn
+     ;; Change word separators
+     (global-unset-key (kbd "C-x +")) ;; used to be balance-windows
+     (global-set-key (kbd "C-x + -") (λ (replace-region-by 's-dashed-words)))
+     (global-set-key (kbd "C-x + _") (λ (replace-region-by 's-snake-case)))
+     (global-set-key (kbd "C-x + c") (λ (replace-region-by 's-lower-camel-case)))
+     (global-set-key (kbd "C-x + C") (λ (replace-region-by 's-upper-camel-case)))))
+
+
 ;; Las siguientes lineas son para probar el paquete `bookmark+'
 (eval-after-load "bookmark+"
   '(progn (global-set-key "\C-cb" bookmark-map)
@@ -106,15 +125,9 @@
 ;; cedit-beginning-of-statement
 ;; cedit-end-of-statement
 
-;; cedit-down-block
-;; cedit-up-block-forward
-;; cedit-up-block-backward
-
-;; cedit-slurp C-M-S-right
-;; cedit-wrap-brace C-M-{
-;; cedit-barf C-M-S-left
-;; cedit-splice-killing-backward C-M-ĸ
-;; cedit-raise C-M-¶
+(global-set-key (kbd "C-M-S-d") 'cedit-down-block)
+(global-set-key (kbd "C-M-S-e") 'cedit-up-block-forward)
+(global-set-key (kbd "C-M-S-u") 'cedit-up-block-backward)
 
 ;; Probando las funciones que se utilizan
 (global-set-key  (kbd "C-M-S-<right>") 'cedit-slurp)
@@ -232,7 +245,10 @@
               (define-key comint-mode-map [C-down] nil)
               (define-key comint-mode-map [C-up] nil)
               (define-key comint-mode-map [C-right] nil)
-              (define-key comint-mode-map [C-left] nil)))
+              (define-key comint-mode-map [C-left] nil)
+	      ;; redefine the old funtion so as to not lose functionality
+	      (define-key comint-mode-map (kbd "C-c z") 'comint-stop-subjob)
+	      (define-key comint-mode-map (kbd "C-c C-z") 'quit-window)))
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
@@ -424,5 +440,20 @@
 ;; 	    ;; Disable this is a little more complicated
 ;;  	    (define-key gnus-group-group-map
 ;; 	      [remap gnus-group-edit-global-kill] 'windmove-down)))
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;;         malabar-mode
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
+(eval-after-load "malabar-mode"
+  '(progn
+     (define-key malabar-mode-map (kbd "C-c C-v m") 'malabar-run-maven-command)
+     ;; imitando el comportamiento de python
+     (define-key malabar-mode-map (kbd "C-c C-z") 'malabar-groovy-start)
+     (define-key malabar-mode-map (kbd "C-c C-v g") 'malabar-groovy-start)
+     (define-key malabar-mode-map (kbd "C-c C-v s") 'malabar-groovy-stop)
+     (define-key malabar-mode-map (kbd "C-c C-v C-s") 'malabar-groovy-stop)))
 
 (provide 'keybinds-conf)
