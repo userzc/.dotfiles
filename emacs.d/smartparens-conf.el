@@ -2,7 +2,7 @@
 (smartparens-global-mode t)
 
 (setq sp-ignore-modes-list
-      '(ein:notebooklist-mode))
+      '(ein:notebooklist-mode speedbar-mode))
 
 (sp-local-tag 'emacs-lisp-mode "`" "`" "'" :actions '(wrap))
 (require 'smartparens-config)

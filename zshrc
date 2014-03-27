@@ -166,6 +166,21 @@ else
     echo "mvn doesn't exist";
 fi
 
+# Notes on jython installation:
+# The installation procedure is taken from:
+# http://stackoverflow.com/questions/5836570/installing-jython-on-ubuntu
+# but it failed to create a new virtualenv, so a local installation is
+# used:
+# installation path: ~/jython2.7b1/
+export PATH=$PATH:"$HOME/jython2.7b1/"
+# The jython installation is complete, but cannot create a virtualenv
+# with it, something about not having a pip package, so far no
+# solution has been found, further investigation is requried.
+
+# So far, the get-pip.py already downloaded doesn't work, so perhaps a
+# newly downloaded get-pip script or the procedure described in the
+# django tutorial movie 2 may work, need confirmation
+
 
 #THIS MUST BE AT THE END OF THE FILE FOR GVM TO WORK!!!
 [[ -s "/home/rene/.gvm/bin/gvm-init.sh" ]] && source "/home/rene/.gvm/bin/gvm-init.sh"

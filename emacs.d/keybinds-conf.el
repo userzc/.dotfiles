@@ -33,9 +33,12 @@
 ;; Para recuperar 'shell-command-on-region' en  `unity'
 (global-set-key (kbd "M-¬") 'shell-command-on-region)
 
-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-;; magnars' keybinding ripoff ;;
-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;; sr-speedbar
+(global-set-key (kbd "C-c M-s") 'sr-speedbar-toggle)
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;; magnars' keybinding rip-off ;;
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;; shorthand for interactive lambdas
 (defmacro λ (&rest body)
   `(lambda ()
