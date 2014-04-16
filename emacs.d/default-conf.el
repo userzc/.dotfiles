@@ -18,6 +18,13 @@
       `(("." . ,(expand-file-name
                  (concat user-emacs-directory "backups")))))
 
+;; Make emacs recognize alias, see
+;; http://stackoverflow.com/questions/12224909/is-there-a-way-to-get-my-emacs-to-recognize-my-bash-aliases-and-custom-functions
+;; (setq shell-file-name "zsh")
+;; (setq shell-command-switch "-ic")
+(setq shell-file-name "sh")		;this seems to be faster
+
+
 ;; Make backups of files, even when they're in version control
 (setq vc-make-backend-files t)
 

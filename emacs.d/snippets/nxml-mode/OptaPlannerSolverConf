@@ -1,0 +1,29 @@
+# -*- mode: snippet; require-final-newline: nil -*-
+# name: OptaPlannerSolverConf
+# key: sc
+# --
+<?xml version="1.0" encoding="UTF-8"?>
+<solver>
+  <environmentMode>${1:REPRODUCIBLE}</environmentMode>
+  <solutionClass>${2:SolClass}</solutionClass>
+  <planningEntityClass>${3:EntClass}</planningEntityClass>
+
+  <scoreDirectorFactory>
+    <scoreDefinitionType>SIMPLE</scoreDefinitionType>
+    <!-- relative to resources -->
+    <scoreDrl>/SolutionScoreRules.drl</scoreDrl>
+  </scoreDirectorFactory>
+
+  <constructionHeuristic>
+    <constructionHeuristicType>FIRST_FIT</constructionHeuristicType>
+  </constructionHeuristic>
+  <localSearch>
+    <acceptor>
+      <solutionTabuSize>1000</solutionTabuSize>
+    </acceptor>
+    <forager>
+      <pickEarlyType>NEVER</pickEarlyType>
+    </forager>
+  </localSearch>
+</solver>
+$0

@@ -3,7 +3,7 @@
 # contributor: Orestis Markou
 # contributor: Yasser González Fernández <yglez@uh.cu>
 # contributor: René Zurita Corro <zc.rene@gmail.com>
-# key: ndef
+# key: nf
 # --
 def ${1:name}($2):
     """$3

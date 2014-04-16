@@ -66,6 +66,7 @@
 	org-return
 	org-return-indent
 	org-self-insert-command
+	org-table-blank-field
 	org-yank
 	orgtbl-hijacker-command-102
 	orgtbl-self-insert-command
@@ -136,6 +137,7 @@
 	info
 	magit-goto-previous-section
 	magit-status
+	malabar-run-maven-command
 	mouse-drag-mode-line
 	mouse-minor-mode-menu
 	multi-term-dedicated-toggle

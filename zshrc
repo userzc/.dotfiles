@@ -149,18 +149,21 @@ else
     echo "\033[0;31m"'virtualenvwrapper not active'"\033[0;31m"
 fi
 
-# JAVA_HOME, ver
-# http://stackoverflow.com/questions/6477415/how-to-set-java-home-in-ubuntu,
-# también ahí se encuentra una referencia para hacer la variable
-# disponible de manera global
-if [[ ( -e /usr/bin/java) && ( -d /usr/lib/jvm/java-7-oracle) ]]; then
-    export JAVA_HOME=/usr/lib/jvm/java-7-oracle
-else
-    echo "\033[0;31m"'java oracle not active'"\033[0;31m"
-fi
+# This part seems to be taken care of by installing the
+# oracle-java7-set-default package
+
+# # JAVA_HOME, ver
+# # http://stackoverflow.com/questions/6477415/how-to-set-java-home-in-ubuntu,
+# # también ahí se encuentra una referencia para hacer la variable
+# # disponible de manera global
+# if [[ ( -e /usr/bin/java) && ( -d /usr/lib/jvm/java-7-oracle) ]]; then
+#     export JAVA_HOME=/usr/lib/jvm/java-7-oracle
+# else
+#     echo "\033[0;31m"'java oracle not active'"\033[0;31m"
+# fi
 
 if (( $+commands[mvn] )); then
-    # Suponiendo que maven 3 fué instalado por del repositorio de ubuntu
+    # Suponiendo que maven 3 fué instalado del repositorio de ubuntu
     export M2_HOME=/usr/share/maven
 else
     echo "mvn doesn't exist";
