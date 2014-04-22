@@ -22,7 +22,8 @@
       <solutionTabuSize>1000</solutionTabuSize>
     </acceptor>
     <forager>
-      <pickEarlyType>NEVER</pickEarlyType>
+      <acceptedCountLimit>10</acceptedCountLimit>
+      <!-- <pickEarlyType>NEVER</pickEarlyType> -->
     </forager>
   </localSearch>
 </solver>

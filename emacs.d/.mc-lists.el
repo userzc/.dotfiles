@@ -43,6 +43,7 @@
 	icicle-yank-maybe-completing
 	icicle-zap-to-char
 	indent-new-comment-line
+	insert-parentheses
 	insert-register
 	keyboard-escape-quit
 	keyboard-quit
@@ -118,6 +119,7 @@
 	TeX-view
 	ace-jump-mode
 	ace-jump-move
+	c-end-of-statement
 	cleanup-buffer
 	comint-send-input
 	count-words-region
