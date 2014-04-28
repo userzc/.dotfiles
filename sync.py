@@ -9,7 +9,7 @@ https://github.com/rmm5t/dotfiles/blob/master/install.rb
 from __future__ import print_function
 from platform import system
 from shutil import rmtree
-from os import listdir, symlink, remove, unlink
+from os import listdir, link, remove, unlink
 from os.path import join, dirname, abspath, expanduser, isdir, islink
 from argparse import ArgumentParser
 
@@ -57,7 +57,7 @@ def installing_function(from_here, to_here):
     - `to_here`: Target path for the link.
     """
     try:
-        symlink(from_here, to_here)
+        link(from_here, to_here)
         print('Installed:', from_here, '=>', to_here)
     except:
         print('Error installing', from_here, ' to ', to_here)

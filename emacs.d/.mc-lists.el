@@ -133,6 +133,7 @@
 	end-of-buffer
 	goto-line
 	ibuffer-do-kill-on-deletion-marks
+	ibuffer-list-buffers
 	ibuffer-update
 	icicle-buffer
 	icicle-pp-eval-expression
