@@ -96,7 +96,13 @@
 (require 'zone-matrix)
 (require 'speedbar)
 ;; (require 'eclim)
-(require 'malabar-mode)
+
+;; Considerar utilizar `condition-case' para poder hacer que se pueda
+;; utilizar recien después de clonar
+(condition-case nil (require 'malabar-mode)
+  (error
+   (message "Malabar mode not found")))
+
 (require 'drools-mode)
 
 ;; Configuraciones de las librerías anteriores
@@ -126,7 +132,7 @@
 (require 'projectile-conf)
 (require 'groovy-conf)
 ;; (require 'eclim-conf)
-(require 'malabar-conf )
+;; (require 'malabar-conf )
 (require 'powerline-conf)
 ;; (require 'smart-mode-line-conf)
 (require 'drools-conf)

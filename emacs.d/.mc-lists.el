@@ -133,6 +133,7 @@
 	end-of-buffer
 	goto-line
 	ibuffer-do-kill-on-deletion-marks
+	ibuffer-forward-line
 	ibuffer-list-buffers
 	ibuffer-update
 	icicle-buffer
