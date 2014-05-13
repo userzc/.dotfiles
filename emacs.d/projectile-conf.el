@@ -19,4 +19,8 @@
 (add-hook 'drools-mode-hook 'projectile-on)
 (add-hook 'malabar-groovy-mode-hook 'projectile-on)
 
+;; Ya se tiene bien configurado git en Windows, se puede confiar en
+;; este método de indexado
+(setq projectile-indexing-method 'alien)
+
 (provide 'projectile-conf)

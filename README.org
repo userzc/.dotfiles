@@ -46,6 +46,10 @@ python ~/.dotfiles/sync -i
     [[http://chocolatey.org][chocolatey]] since this facilitates the process, in particular
     install packages.
 
+    So far the installation of *maven* facilitates the use of *malabar*
+    mode in Windows, however work still needs to be done to
+    get *eclimd* working properly.
+
 *** Note on Java related software
 
     Most java software on ubuntu was installed manually:
