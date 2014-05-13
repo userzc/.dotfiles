@@ -101,18 +101,12 @@
      (global-set-key (kbd "C-c M-m") 'magit-status)))
 
 ;; nose-mode
+;; The previous keybinds are included in the new nose-mode, so they were removed
 ;; TODO: modificar keybinds en python-debugger para hacer espacio para
 ;; projectile
 (eval-after-load "nose"
-  '(progn
-     (add-hook 'python-mode-hook
-               (lambda ()
-                 (local-set-key "\C-ca" 'nosetests-all)
-                 (local-set-key "\C-cmo" 'nosetests-module)
-                 (local-set-key "\C-c." 'nosetests-one)
-                 (local-set-key "\C-cpa" 'nosetests-pdb-all)
-                 (local-set-key "\C-cpm" 'nosetests-pdb-module)
-                 (local-set-key "\C-cp." 'nosetests-pdb-one)))))
+    '(add-hook 'python-mode-hook '(lambda () (nose-mode t))))
+
 
 ;; Window rotations and toggle, from:
 ;; https://github.com/magnars/.emacs.d/blob/master/key-bindings.el

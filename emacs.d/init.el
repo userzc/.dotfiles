@@ -87,7 +87,7 @@
 (require 'markdown-mode)
 (require 'textile-mode)
 (require 'dired+)
-(require 'nose)
+;; (require 'nose)
 (require 'yasnippet)
 (require 'python-django)
 (require 'powerline)

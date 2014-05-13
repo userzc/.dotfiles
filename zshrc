@@ -184,6 +184,14 @@ export PATH=$PATH:"$HOME/jython2.7b1/"
 # newly downloaded get-pip script or the procedure described in the
 # django tutorial movie 2 may work, need confirmation
 
+# Workaround to get gvm working under tmux, taken from:
+# https://github.com/gvmtool/gvm/issues/155
+if [[ -n $TMUX ]]
+then
+    unset GVM_INIT
+fi
+
+
 
 #THIS MUST BE AT THE END OF THE FILE FOR GVM TO WORK!!!
 [[ -s "/home/rene/.gvm/bin/gvm-init.sh" ]] && source "/home/rene/.gvm/bin/gvm-init.sh"
