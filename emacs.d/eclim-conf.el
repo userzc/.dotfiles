@@ -1,8 +1,17 @@
-(setq eclim-executable "/opt/eclipse/eclim")
-;; (setq eclim-default-workspace "~/workspace/" )
-(setq eclimd-executable "/opt/eclipse/eclimd")
-(setq eclimd-default-workspace "~/workspace/" )
-;; (setq eclimd-wait-for-process nil)	; wait for eclim to start
+;; This is to make things work in Windows
+(cond
+ ((equal system-type 'windows-nt)
+  (setq eclim-executable "C:\\eclipse-kepler-4.3.1\\eclim.bat")
+  (setq eclimd-executable "C:\\eclipse-kepler-4.3.1\\eclimd.bat")
+  (setq eclimd-default-workspace "~/workspace/" ))
+ ((equal system-type 'gnu/linux)
+
+  (setq eclim-executable "/opt/eclipse/eclim")
+  ;; (setq eclim-default-workspace "~/workspace/" )
+  (setq eclimd-executable "/opt/eclipse/eclimd")
+  (setq eclimd-default-workspace "~/workspace/" )
+  ;; (setq eclimd-wait-for-process nil)   ; wait for eclim to start
+  ))
 
 ;; (global-eclim-mode)
 (require 'eclimd)
@@ -13,7 +22,7 @@
 
 (eval-after-load "auto-complete-conf.el"
   '(progn
-    (require 'ac-emacs-eclim-source)
-    (ac-emacs-eclim-config)))
+     (require 'ac-emacs-eclim-source)
+     (ac-emacs-eclim-config)))
 
 (provide 'eclim-conf)

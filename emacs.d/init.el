@@ -1,6 +1,6 @@
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-;; Se inicia de nuevo con emacs 24	       ;;
-;; tested on emacs-version "24.3.1"	       ;;
+;; Se inicia de nuevo con emacs 24             ;;
+;; tested on emacs-version "24.3.1"            ;;
 ;; semi-fuctional on emacs-version "24.3.50.1" ;;
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
@@ -24,23 +24,23 @@
 
 (defvar lista-paquetes-instalados
   '(ac-math ace-jump-mode ack-and-a-half ag auctex auto-complete
-	 bookmark+ c-eldoc cl-lib clues-theme color-theme
-	 color-theme-gruber-darker color-theme-sanityinc-tomorrow
-	 color-theme-wombat+ cyberpunk-theme dash deferred dired+
-	 dired-details dired-details+ ein emacs-eclim emmet-mode
-	 enclose expand-region git-commit-mode gitconfig-mode
-	 github-theme gitignore-mode google-c-style
-	 google-contacts groovy-mode gruvbox-theme icicles
-	 icomplete+ ido-better-flex java-snippets litable magit
-	 mark-more-like-this markdown-mode moe-theme
-	 monokai-theme multi-term multiple-cursors niflheim-theme
-	 nose oauth2 popup powerline projectile purty-mode
-	 python-django qsimpleq-theme rainbow-delimiters
-	 rainbow-mode request smart-mode-line smart-tab
-	 smartparens solarized-theme sr-speedbar sublime-themes
-	 tango-2-theme tangotango-theme textile-mode websocket
-	 wgrep windsize wrap-region yasnippet zenburn-theme
-	 zone-matrix )
+	    bookmark+ c-eldoc cl-lib clues-theme color-theme
+	    color-theme-gruber-darker color-theme-sanityinc-tomorrow
+	    color-theme-wombat+ cyberpunk-theme dash deferred dired+
+	    dired-details dired-details+ ein emacs-eclim emmet-mode
+	    enclose expand-region git-commit-mode gitconfig-mode
+	    github-theme gitignore-mode google-c-style
+	    google-contacts groovy-mode gruvbox-theme icicles
+	    icomplete+ ido-better-flex java-snippets litable magit
+	    mark-more-like-this markdown-mode moe-theme
+	    monokai-theme multi-term multiple-cursors niflheim-theme
+	    nose oauth2 popup powerline projectile purty-mode
+	    python-django qsimpleq-theme rainbow-delimiters
+	    rainbow-mode request smart-mode-line smart-tab
+	    smartparens solarized-theme sr-speedbar sublime-themes
+	    tango-2-theme tangotango-theme textile-mode websocket
+	    wgrep windsize wrap-region yasnippet zenburn-theme
+	    zone-matrix )
   "Lista de paquetes instalados actualmente en mi configuración.")
 
 ;; Default custom file
@@ -103,7 +103,11 @@
   (error
    (message "Malabar mode not found")))
 
-(require 'drools-mode)
+(condition-case nil
+    (require 'drools-mode)
+  (error
+   "Something wrong"
+   (message "-- Cannot load Drools Mode")))
 
 ;; Configuraciones de las librerías anteriores
 (require 'smartparens-conf)
@@ -132,7 +136,7 @@
 (require 'projectile-conf)
 (require 'groovy-conf)
 ;; (require 'eclim-conf)
-;; (require 'malabar-conf )
+(require 'malabar-conf )
 (require 'powerline-conf)
 ;; (require 'smart-mode-line-conf)
 (require 'drools-conf)

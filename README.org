@@ -23,23 +23,22 @@ python ~/.dotfiles/sync -i
 
 ** Requirements
 
-   | Software         | Windows Version | Prefered Source [W] | Unix Version   | Prefered Source [U] |
-   |------------------+-----------------+---------------------+----------------+---------------------|
-   | Emacs            | >= 24           | chocolatey          | >= 24          | ---                 |
-   | Inconsolata Font | ---             | ---                 | ---            | ---                 |
-   | python           | >= 3.2          | chocolatey          | >= 2.7         | ---                 |
-   | git              | ---             | chocolatey          | ---            | ---                 |
-   | quickswitch-i3   | ---             | ---                 | 2.0            | pip (PyPI)          |
-   | rope             | 0.9.4           | pip (PyPI)          | 0.9.4          | pip (PyPI)          |
-   | ropemacs         | 0.7             | pip (PyPI)          | 0.7            | pip (PyPI)          |
-   | ropemode         | 0.2             | pip (PyPI)          | 0.2            | pip (PyPI)          |
-   | texlive          | ---             | ---                 | 2012           | ---                 |
-   | eclim            | NA              | NA                  | current stable | [[http://eclim.org][eclim]]               |
-   | eclipse          | Kepler          | chocolatey          | Kepler         | [[http://eclipse.org][eclipse]]             |
-   | java             | 1.7 Oracle      | chocolatey          | 1.7 Oracle     | [[https://launchpad.net/~webupd8team/+archive/java][webupd8 ppa]]         |
-   | groovy           | NA              | NA                  | 2.2.1          | [[http://gvmtool.net/][gvm]]                 |
-
-   # falta añadir las dependencias de eclim, eclipse, java, groovy(mediante gvm) que funcionen en windows.
+   | Software         | Windows Version | Prefered Source [W] | Unix Version | Prefered Source [U] |
+   |------------------+-----------------+---------------------+--------------+---------------------|
+   | Emacs            | >= 24           | chocolatey          |        >= 24 | standard repo       |
+   | Inconsolata Font | ---             | ---                 |    001.010-4 | standard repo       |
+   | python           | >= 3.2          | chocolatey          |       >= 2.7 | standard repo       |
+   | git              | ---             | chocolatey          |      1.8.3.2 | standard repo       |
+   | quickswitch-i3   | ---             | ---                 |          2.0 | pip (PyPI)          |
+   | rope             | 0.9.4           | pip (PyPI)          |        0.9.4 | pip (PyPI)          |
+   | ropemacs         | 0.7             | pip (PyPI)          |          0.7 | pip (PyPI)          |
+   | ropemode         | 0.2             | pip (PyPI)          |          0.2 | pip (PyPI)          |
+   | texlive          | ---             | ---                 |         2012 | standard repo       |
+   | eclim            | 2.3.4           | [[http://eclim.org][eclim]]               |        2.3.2 | [[http://eclim.org][eclim]]               |
+   | eclipse          | Kepler          | [[http://eclipse.org][eclipse]]             |       Kepler | [[http://eclipse.org][eclipse]]             |
+   | java             | 1.7 Oracle      | chocolatey          |   1.7 Oracle | [[https://launchpad.net/~webupd8team/+archive/java][webupd8 ppa]]         |
+   | groovy           | NA              | NA                  |        2.2.1 | [[http://gvmtool.net/][gvm]]                 |
+   | maven            | 3.0.5           | chocolatey          |        3.0.4 | standard repo       |
 
 *** Note on Windows
 
