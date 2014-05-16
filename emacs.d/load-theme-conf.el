@@ -8,8 +8,8 @@
 ;; esperaría
 (setq solarized-termcolors 256)
 
-(setq solarized-distinct-fringe-background t)
-(setq solarized-high-contrast-mode-line t)
+;; (setq solarized-distinct-fringe-background t)
+;; (setq solarized-high-contrast-mode-line t)
 
 (add-to-list 'custom-theme-load-path
              "~/.emacs.d/lisp/default-black-theme/")
@@ -25,14 +25,14 @@
 ;; (load-theme 'tron t)
 ;; (load-theme 'github t)
 ;; (load-theme 'monokai t)
-(load-theme 'niflheim t)
+;; (load-theme 'niflheim t)
 ;; (load-theme 'clues t)
 ;; (load-theme 'assemblage t)
 ;; (load-theme 'default-black t)
 ;; (custom-set-faces '(default ((t (:background "nil")))))
 ;; (load-theme 'zenburn t)
 ;; (load-theme 'sanityinc-tomorrow-day t)
-;; (load-theme 'solarized-dark t)
+(load-theme 'solarized-dark t)
 ;; (load-theme 'qsimpleq t)
 ;; (load-theme 'dorsey t)
 ;; (load-theme 'fogus t)

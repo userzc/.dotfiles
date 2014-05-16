@@ -285,6 +285,8 @@
      ;; (global-set-key (kbd "C-c C-r") 'rename-sgml-tag)
      ;; Probando keybind alterno, evitar conflicto con: AUCTeX
      (global-set-key (kbd "C-c M-x") 'mc/mark-more-like-this-extended)
+     ;; Parece ser útil tener multiple-cursors en regiones
+     (global-set-key (kbd "M-®") 'mc/mark-all-in-region)
      ;; No he podido identificar la tecla Hyper, así que estoy probando
      ;; diferentes opciones, investigar más respecto a ns-function-modifier
      ;; (setq ns-function-modifier 'hyper )

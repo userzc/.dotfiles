@@ -117,6 +117,7 @@
 	TeX-next-error
 	TeX-recenter-output-buffer
 	TeX-view
+	abbrev-prefix-mark
 	ace-jump-mode
 	ace-jump-move
 	c-end-of-statement

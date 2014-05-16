@@ -87,7 +87,6 @@
 (require 'markdown-mode)
 (require 'textile-mode)
 (require 'dired+)
-;; (require 'nose)
 (require 'yasnippet)
 (require 'python-django)
 (require 'powerline)
@@ -97,8 +96,6 @@
 (require 'speedbar)
 ;; (require 'eclim)
 
-;; Considerar utilizar `condition-case' para poder hacer que se pueda
-;; utilizar recien después de clonar
 (condition-case nil (require 'malabar-mode)
   (error
    (message "Malabar mode not found")))

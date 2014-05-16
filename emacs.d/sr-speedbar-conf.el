@@ -10,5 +10,6 @@
 
 (speedbar-add-supported-extension ".drl")
 (speedbar-add-supported-extension ".xml")
+(speedbar-add-supported-extension ".groovy")
 
 (provide 'sr-speedbar-conf)
