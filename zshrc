@@ -105,6 +105,7 @@ plugins=(git
     theme
     common-aliases
     # django
+    vagrant
     mvn)
 
 source $ZSH/oh-my-zsh.sh

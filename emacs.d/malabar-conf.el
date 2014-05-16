@@ -20,10 +20,4 @@
 ;; que se use esta configuración
 (add-to-list 'auto-mode-alist '("\\.java\\'" . malabar-mode))
 
-;; (setq malabar-groovy-lib-dir
-;;       "~/.emacs.d/lisp/malabar-mode-jar/")
-
-;; (setq malabar-groovy-lib-dir
-;;       "~/.gvm/groovy/current/lib")
-
 (provide 'malabar-conf)
