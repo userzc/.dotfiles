@@ -4,6 +4,9 @@
 ;; Para zshrc respaldado
 (add-to-list 'auto-mode-alist '("zshrc$" . sh-mode))
 
+;; Para los alias
+(add-to-list 'auto-mode-alist '("aliases$" . sh-mode))
+
 ;; Para archivos .zsh
 (add-to-list 'auto-mode-alist '("\\.zsh$" . sh-mode))
 

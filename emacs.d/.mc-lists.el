@@ -92,6 +92,7 @@
 	sp-forward-barf-sexp
 	sp-forward-sexp
 	sp-forward-slurp-sexp
+	sp-join-sexp
 	sp-kill-sexp
 	sp-next-sexp
 	sp-previous-sexp

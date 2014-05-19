@@ -1,0 +1,4 @@
+# It should be possible for this aliases to be used in various shells
+
+# batch mode archetype generate
+alias mvnagb="mvn archetype:generate -B"

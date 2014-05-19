@@ -10,6 +10,9 @@ alias enwq="emacs -nw -Q"
 alias enwd="emacs -nw -q --no-splash -l ~/.emacs.d/default-nw.el"
 alias lsd="ls -d *(/)"
 
+# source the alias file
+source $HOME/.aliases
+
 # NOTA: Se esta probando la sugerencia de poner las cosas en scripts,
 # dichos scripts se encuentran en `~/bin`
 
