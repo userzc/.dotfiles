@@ -1,0 +1,9 @@
+# -*- mode: snippet; require-final-newline: nil -*-
+# name: maven_plugin
+# key: plugin
+# --
+<plugin>
+<groupId>${1:groupId}</groupId>
+<artifactId>${2:artifactId}</artifactId>
+<version>${3:version}</version>
+</plugin>

@@ -1,4 +1,34 @@
 # It should be possible for this aliases to be used in various shells
 
-# batch mode archetype generate
-alias mvnagb="mvn archetype:generate -B"
+# batch mode archetype generate, the main example is:
+# mvn archetype:generate -B \
+#     -DarchetypeGroupId=org.apache.maven.archetypes \
+#     -DarchetypeArtifactId=maven-archetype-quickstart \
+#     -DarchetypeVersion=1.0 \
+#     -DgroupId=com.company \
+#     -DartifactId=project \
+#     -Dversion=1.0 -Dpackage=1.5
+
+alias mvnagb="mvn archetype:generate -B\
+ -DarchetypeGroupId=org.apache.maven.archetypes\
+ -DarchetypeArtifactId=maven-archetype-quickstart\
+ -DarchetypeVersion=1.0"
+
+# Gmaven groovy archtype version = 1.0
+# compiles out of the box
+alias mvnaggbv="mvn archetype:generate -B\
+ -DarchetypeGroupId=org.codehaus.groovy.maven.archetypes\
+ -DarchetypeArtifactId=gmaven-archetype-basic\
+ -DarchetypeVersion=1.0\
+ -DgroupId=com.veureka"
+
+# Gmaven groovy archtype open version
+# version: 1.5, compile needs modifications, tests run out of the box
+# version: 1.4, compile needs modifications, tests run out of the box
+# version: 1.3, compile [OUT OF THE BOX], tests run [OUT OF THE BOX]
+# version: 1.2, compile [OUT OF THE BOX], tests needs modifications
+# version: 1.1, compile [OUT OF THE BOX], tests needs modifications
+alias mvnaggbvv="mvn archetype:generate -B\
+ -DarchetypeGroupId=org.codehaus.gmaven.archetypes\
+ -DarchetypeArtifactId=gmaven-archetype-basic\
+ -DgroupId=com.veureka "

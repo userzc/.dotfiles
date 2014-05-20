@@ -1,0 +1,9 @@
+# -*- mode: snippet; require-final-newline: nil -*-
+# name: mvn_dependency
+# key: dep
+# --
+<dependency>
+<groupId>${1:groupId}</groupId>
+<artifactId>${2:artifactId}</artifactId>
+<version>${3:version}</version>
+</dependency>
