@@ -71,6 +71,7 @@
 	org-yank
 	orgtbl-hijacker-command-102
 	orgtbl-self-insert-command
+	package-menu-mark-unmark
 	python-indent-dedent-line-backspace
 	python-indent-electric-colon
 	python-indent-shift-left
