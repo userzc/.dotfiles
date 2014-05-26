@@ -84,7 +84,7 @@
 (eval-after-load "emmet-mode"
   ;; Auto-start on any markup modes
   '(progn (add-hook 'nxml-mode-hook 'emmet-mode)
-	  (add-hook 'sgml-mode-hook 'emmet-mode)
+          (add-hook 'sgml-mode-hook 'emmet-mode)
           (define-key emmet-mode-keymap (kbd "C-c C-j")
             'emmet-expand-line)
           (define-key emmet-mode-keymap (kbd "C-j") 'nil)
@@ -105,7 +105,7 @@
 ;; TODO: modificar keybinds en python-debugger para hacer espacio para
 ;; projectile
 (eval-after-load "nose"
-    '(add-hook 'python-mode-hook '(lambda () (nose-mode t))))
+  '(add-hook 'python-mode-hook '(lambda () (nose-mode t))))
 
 
 ;; Window rotations and toggle, from:
@@ -131,7 +131,7 @@
 (global-set-key  (kbd "C-M-{") 'cedit-wrap-brace)
 (global-set-key  (kbd "C-M-S-<left>") 'cedit-barf)
 (global-set-key  (kbd "C-M-ĸ") 'cedit-splice-killing-backward) ; AltGr-k = ĸ
-(global-set-key  (kbd "C-M-¶") 'cedit-raise)		       ; AltGr-r = ¶
+(global-set-key  (kbd "C-M-¶") 'cedit-raise)                   ; AltGr-r = ¶
 
 
 ;; projectile-mode
@@ -211,9 +211,9 @@
                (kbd "M-;") 'comment-dwim)
              (define-key maxima-mode-map
                (kbd "C-c ;") 'maxima-insert-short-comment)
-	     (define-key maxima-mode-map
+             (define-key maxima-mode-map
                (kbd "C-c *") nil)
-	     (define-key maxima-mode-map
+             (define-key maxima-mode-map
                (kbd "C-c M-;") 'maxima-insert-long-comment)))
 
 ;; para utilizar completación de historial como en terminal
@@ -243,9 +243,9 @@
               (define-key comint-mode-map [C-up] nil)
               (define-key comint-mode-map [C-right] nil)
               (define-key comint-mode-map [C-left] nil)
-	      ;; redefine the old funtion so as to not lose functionality
-	      (define-key comint-mode-map (kbd "C-c z") 'comint-stop-subjob)
-	      (define-key comint-mode-map (kbd "C-c C-z") 'quit-window)))
+              ;; redefine the old funtion so as to not lose functionality
+              (define-key comint-mode-map (kbd "C-c z") 'comint-stop-subjob)
+              (define-key comint-mode-map (kbd "C-c C-z") 'quit-window)))
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
@@ -276,12 +276,12 @@
      (global-set-key (kbd "M-æ") 'mc/mark-all-like-this-dwim)   ;; AltGr-a = æ
      (global-set-key (kbd "M-→") 'mc/insert-numbers)            ;; AltGr-i = →
      ;; keybind alternativo, el anterior no parece seguir funcionando
-     (global-set-key (kbd "M-€") 'mc/insert-numbers)		;; AltGr-e = €
-     (global-set-key (kbd "M-¶") 'mc/reverse-regions)		;; AltGr-r = ¶
-     (global-set-key (kbd "M-ß") 'mc/sort-regions)		;; AltGr-s = ß
+     (global-set-key (kbd "M-€") 'mc/insert-numbers)            ;; AltGr-e = €
+     (global-set-key (kbd "M-¶") 'mc/reverse-regions)           ;; AltGr-r = ¶
+     (global-set-key (kbd "M-ß") 'mc/sort-regions)              ;; AltGr-s = ß
      (global-set-key (kbd "M-S-SPC") 'set-rectangular-region-anchor)
-     (global-set-key (kbd "M-þ") 'mc/mark-pop)			;; AltGr-p = þ
-     (global-set-key (kbd "M-ŧ") 'mc/mark-sgml-tag-pair)	;; AltGr-t = ŧ
+     (global-set-key (kbd "M-þ") 'mc/mark-pop)                  ;; AltGr-p = þ
+     (global-set-key (kbd "M-ŧ") 'mc/mark-sgml-tag-pair)        ;; AltGr-t = ŧ
      ;; (global-set-key (kbd "C-c C-r") 'rename-sgml-tag)
      ;; Probando keybind alterno, evitar conflicto con: AUCTeX
      (global-set-key (kbd "C-c M-x") 'mc/mark-more-like-this-extended)
@@ -304,15 +304,15 @@
   ;; (define-key global-map (kbd "C-ø") 'ace-jump-mode)
   ;; (define-key global-map (kbd "M-ø") 'ace-jump-mode) ; to access in terminal
   '(progn
-    (define-key global-map (kbd "M-ñ") 'ace-jump-mode) ; to access in terminal
-    (autoload
-      'ace-jump-mode-pop-mark
-      "ace-jump-mode"
-      "Ace jump back:-)"
-      t)
-    (eval-after-load "ace-jump-mode"
-      '(ace-jump-mode-enable-mark-sync))
-    (define-key global-map (kbd "C-c SPC") 'ace-jump-mode-pop-mark)))
+     (define-key global-map (kbd "M-ñ") 'ace-jump-mode) ; to access in terminal
+     (autoload
+       'ace-jump-mode-pop-mark
+       "ace-jump-mode"
+       "Ace jump back:-)"
+       t)
+     (eval-after-load "ace-jump-mode"
+       '(ace-jump-mode-enable-mark-sync))
+     (define-key global-map (kbd "C-c SPC") 'ace-jump-mode-pop-mark)))
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
@@ -372,7 +372,7 @@
              ("C-M-<right>" . sp-backward-barf-sexp)
              ("M-D" . sp-splice-sexp)
              ("M-S" . sp-split-sexp)
-	     ("C-c J" . sp-join-sexp)
+             ("C-c J" . sp-join-sexp)
              ("C-M-<delete>" . sp-splice-sexp-killing-forward)
              ("C-M-<backspace>" . sp-splice-sexp-killing-backward)
              ("C-S-<backspace>" . sp-splice-sexp-killing-around)
@@ -383,22 +383,22 @@
              ))
 
      (global-set-key (kbd "C-c C-M-a")
-       'beginning-of-defun)
+		     'beginning-of-defun)
      (global-set-key (kbd "C-c C-M-e")
-       'end-of-defun)
+		     'end-of-defun)
      (sp-use-smartparens-bindings)))
 
 ;; Evitar tapado de opciones de icicles debido a smartparens en el
 ;; minibuffer, se añadiran más conforme se descubran
 (add-hook 'minibuffer-setup-hook
-	  '(lambda ()
-	     (define-key smartparens-mode-map
-	       (kbd "C-S-a") nil)))
+          '(lambda ()
+             (define-key smartparens-mode-map
+               (kbd "C-S-a") nil)))
 
 (add-hook 'minibuffer-exit-hook
-	  '(lambda ()
-	     (define-key smartparens-mode-map
-	       (kbd "C-S-a") 'sp-end-of-sexp)))
+          '(lambda ()
+             (define-key smartparens-mode-map
+               (kbd "C-S-a") 'sp-end-of-sexp)))
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
@@ -430,15 +430,15 @@
 ;; ))
 
 ;; (add-hook 'gnus-group-mode-hook
-;; 	  (lambda ()
-;; 	    ;; Disable this is a little more complicated
-;;  	    (define-key gnus-group-group-map (kbd "M-K") nil)))
+;;        (lambda ()
+;;          ;; Disable this is a little more complicated
+;;          (define-key gnus-group-group-map (kbd "M-K") nil)))
 
 ;; (add-hook 'gnus-group-mode-hook
-;; 	  (lambda ()
-;; 	    ;; Disable this is a little more complicated
-;;  	    (define-key gnus-group-group-map
-;; 	      [remap gnus-group-edit-global-kill] 'windmove-down)))
+;;        (lambda ()
+;;          ;; Disable this is a little more complicated
+;;          (define-key gnus-group-group-map
+;;            [remap gnus-group-edit-global-kill] 'windmove-down)))
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
@@ -453,6 +453,7 @@
      (define-key malabar-mode-map (kbd "C-c C-z") 'malabar-groovy-start)
      (define-key malabar-mode-map (kbd "C-c C-v g") 'malabar-groovy-start)
      (define-key malabar-mode-map (kbd "C-c C-v s") 'malabar-groovy-stop)
-     (define-key malabar-mode-map (kbd "C-c C-v C-s") 'malabar-groovy-stop)))
+     (define-key malabar-mode-map (kbd "C-c C-v C-s") 'malabar-groovy-stop)
+     (define-key malabar-mode-map (kbd "C-c C-v r") 'malabar-groovy-restart)))
 
 (provide 'keybinds-conf)
