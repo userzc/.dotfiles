@@ -53,10 +53,10 @@ export VISUAL="emacsclient"
 # to define a browser in case non is defined
 if [[ $BROWSER == '' ]] ; then
     if (( $+commands[google-chrome] )); then
-	export BROWSER=google-chrome
+        export BROWSER=google-chrome
     else
-	echo "google-chrome doesn't exist";
-	export BROWSER=chromium
+        echo "google-chrome doesn't exist";
+        export BROWSER=chromium
     fi
 fi
 
@@ -99,7 +99,8 @@ export TERM="xterm-256color"
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Interesting themes: themes, pip
 
-plugins=(git
+plugins=(
+    git
     git-extras
     history
     pip
@@ -109,6 +110,7 @@ plugins=(git
     common-aliases
     # django
     vagrant
+    mercurial
     mvn)
 
 source $ZSH/oh-my-zsh.sh
