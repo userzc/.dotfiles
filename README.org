@@ -40,6 +40,11 @@ python ~/.dotfiles/sync -i
    | groovy           | NA              | NA                  |        2.2.1 | [[http://gvmtool.net/][gvm]]                 |
    | maven            | 3.0.5           | chocolatey          |        3.0.4 | standard repo       |
 
+*** Note on Ubuntu
+
+    *pip* was globally installed as in the instructions in it's [[https://pip.pypa.io/en/latest/installing.html#install-pip][Documentation]],
+    and used to install *virtualenv* and *virtualenvwrapper* globally.
+
 *** Note on Windows
 
     It is recommended that most windows packages are installed through

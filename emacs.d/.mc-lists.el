@@ -142,6 +142,7 @@
 	icicle-buffer
 	icicle-pp-eval-expression
 	info
+	magit-goto-next-section
 	magit-goto-previous-section
 	magit-status
 	malabar-run-maven-command

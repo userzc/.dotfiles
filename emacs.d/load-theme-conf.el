@@ -31,7 +31,7 @@
 ;; (load-theme 'default-black t)
 ;; (custom-set-faces '(default ((t (:background "nil")))))
 ;; (load-theme 'zenburn t)
-;; (load-theme 'sanityinc-tomorrow-day t)
+;; (load-theme 'sanityinc-tomorrow-bright t)
 ;; (load-theme 'solarized-dark t)
 ;; (load-theme 'qsimpleq t)
 ;; (load-theme 'dorsey t)

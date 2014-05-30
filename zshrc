@@ -66,7 +66,7 @@ fi
 # prompts
 if [[ $TERM == "dumb" ]]; then  # in emacs
     PS1='%(?..[%?])%!:%~%# '
-    # for tramp to not hang, need the following. cf:
+    # for tramp not to hang, need the following. cf:
     # http://www.emacswiki.org/emacs/TrampMode
     unsetopt zle
     unsetopt prompt_cr
@@ -105,13 +105,11 @@ plugins=(
     history
     pip
     themes
-    virtualenv
     theme
     common-aliases
     # django
     vagrant
-    mercurial
-    mvn)
+    mercurial)
 
 source $ZSH/oh-my-zsh.sh
 
@@ -145,6 +143,7 @@ export PYTHONPATH=$PYTHONPATH:"/home/rene/Documents/FORCE_md/"
 
 if [[ -d $HOME/.virtualenvs ]]; then
     export WORKON_HOME="$HOME/.virtualenvs"
+    plugins+=(virtualenv)
 else
     echo "\033[0;31m"'virtualenv not active'"\033[0;31m"
 fi
@@ -171,6 +170,7 @@ fi
 if (( $+commands[mvn] )); then
     # Suponiendo que maven 3 fué instalado del repositorio de ubuntu
     export M2_HOME=/usr/share/maven
+    plugins+=(mvn)
 else
     echo "mvn doesn't exist";
 fi
