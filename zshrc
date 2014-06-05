@@ -94,10 +94,11 @@ fi
 # No parece estar funcionando en lo absoluto
 export TERM="xterm-256color"
 
-# Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
+# Which plugins would you like to load?
+# (plugins can be found in ~/.oh-my-zsh/plugins/*)
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
-# Interesting themes: themes, pip
+# Interesting plugins: themes, pip
 
 plugins=(
     git
@@ -105,13 +106,10 @@ plugins=(
     history
     pip
     themes
-    theme
     common-aliases
     # django
     vagrant
     mercurial)
-
-source $ZSH/oh-my-zsh.sh
 
 # # suggestion from file ~/.oh-my-zsh/plugins/mvn/mvn.plugin.zsh, but
 # # doesn't seem to be working, more tests are required
@@ -197,7 +195,8 @@ then
     unset GVM_INIT
 fi
 
-
+# This sourcing must happend after all plugins have been declared
+source $ZSH/oh-my-zsh.sh
 
 #THIS MUST BE AT THE END OF THE FILE FOR GVM TO WORK!!!
 [[ -s "/home/rene/.gvm/bin/gvm-init.sh" ]] && source "/home/rene/.gvm/bin/gvm-init.sh"

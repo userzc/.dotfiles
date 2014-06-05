@@ -67,15 +67,15 @@
   '(progn (global-set-key (kbd "M-_") 'er/expand-region)
           (global-set-key (kbd "C-M-_") 'er/contract-region)))
 
-;; para moverse atravez de los "windows":, e.g.: c-left  =  windmove-left
-(windmove-default-keybindings 'control)
+;; ;; para moverse atravez de los "windows":, e.g.: c-left  =  windmove-left
+;; (windmove-default-keybindings 'control)
 
 ;; Siguiendo la configuración de i3-wm
 (eval-after-load "windmove"
   '(progn  (global-set-key (kbd "M-J") 'windmove-left)
-           (global-set-key (kbd "M-Ñ") 'windmove-right)
-           (global-set-key (kbd "M-L") 'windmove-up)
-           (global-set-key (kbd "M-K") 'windmove-down)))
+	   (global-set-key (kbd "M-Ñ") 'windmove-right)
+	   (global-set-key (kbd "M-L") 'windmove-up)
+	   (global-set-key (kbd "M-K") 'windmove-down)))
 
 ;; Trabajar rápido en un problema de ACM
 (global-set-key (kbd "C-c C-n") 'acm-problem)

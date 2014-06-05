@@ -82,6 +82,7 @@
 (require 'ace-jump-mode)
 (require 'multiple-cursors)
 (require 'python)
+(require 'nose)
 (require 'smart-tab)
 (require 'windsize)
 (require 'markdown-mode)
