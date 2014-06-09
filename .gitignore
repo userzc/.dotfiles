@@ -30,3 +30,4 @@ cookies
 # Malabar mode files (from semantic)
 /emacs.d/semanticdb/
 /emacs.d/srecode-map.el
+/emacs.d/projectile.cache
