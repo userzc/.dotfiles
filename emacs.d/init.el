@@ -24,23 +24,23 @@
 
 (defvar lista-paquetes-instalados
   '(ac-math ace-jump-mode ack-and-a-half ag auctex auto-complete
-	    bookmark+ c-eldoc cl-lib clues-theme color-theme
-	    color-theme-gruber-darker color-theme-sanityinc-tomorrow
-	    color-theme-wombat+ cyberpunk-theme dash deferred dired+
-	    dired-details dired-details+ ein emacs-eclim emmet-mode
-	    enclose expand-region git-commit-mode gitconfig-mode
-	    github-theme gitignore-mode google-c-style
-	    google-contacts groovy-mode gruvbox-theme icicles
-	    icomplete+ ido-better-flex java-snippets litable magit
-	    mark-more-like-this markdown-mode moe-theme
-	    monokai-theme multi-term multiple-cursors niflheim-theme
-	    nose oauth2 popup powerline projectile purty-mode
-	    python-django qsimpleq-theme rainbow-delimiters
-	    rainbow-mode request smart-mode-line smart-tab
-	    smartparens solarized-theme sr-speedbar sublime-themes
-	    tango-2-theme tangotango-theme textile-mode websocket
-	    wgrep windsize wrap-region yasnippet zenburn-theme
-	    zone-matrix )
+	 bookmark+ c-eldoc cl-lib clues-theme color-theme
+	 color-theme-gruber-darker color-theme-sanityinc-tomorrow
+	 color-theme-wombat+ cyberpunk-theme dash deferred dired+
+	 dired-details dired-details+ ein emacs-eclim emmet-mode
+	 enclose expand-region git-commit-mode gitconfig-mode
+	 github-theme gitignore-mode google-c-style
+	 google-contacts groovy-mode gruvbox-theme icicles
+	 icomplete+ ido-better-flex java-snippets litable magit
+	 mark-more-like-this markdown-mode moe-theme monky
+	 monokai-theme multi-term multiple-cursors niflheim-theme
+	 nose oauth2 popup powerline projectile purty-mode
+	 python-django qsimpleq-theme rainbow-delimiters
+	 rainbow-mode request smart-mode-line smart-tab
+	 smartparens solarized-theme sr-speedbar sublime-themes
+	 tango-2-theme tangotango-theme textile-mode websocket
+	 wgrep windsize wrap-region yasnippet zenburn-theme
+	 zone-matrix)
   "Lista de paquetes instalados actualmente en mi configuración.")
 
 ;; Default custom file
@@ -79,6 +79,7 @@
 (require 'expand-region)
 (require 'emmet-mode)
 (require 'magit)
+(require 'monky)
 (require 'ace-jump-mode)
 (require 'multiple-cursors)
 (require 'python)

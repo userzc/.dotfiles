@@ -100,6 +100,12 @@
      (define-key magit-status-mode-map (kbd "q") 'magit-quit-session)
      (global-set-key (kbd "C-c M-m") 'magit-status)))
 
+;; monky-mode
+(eval-after-load "monky"
+  '(progn
+     ;; (define-key magit-status-mode-map (kbd "q") 'magit-quit-session)
+     (global-set-key (kbd "C-c M-M") 'monky-status)))
+
 ;; nose-mode
 ;; The previous keybinds are included in the new nose-mode, so they were removed
 ;; TODO: modificar keybinds en python-debugger para hacer espacio para
