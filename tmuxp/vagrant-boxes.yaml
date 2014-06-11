@@ -1,0 +1,12 @@
+session_name: boxes
+start-directory: "~"
+windows:
+  - window_name: fedora-box
+    panes:
+    - cd ~/vagrant_test/fedora_box/
+  - window_name: debian-box
+    panes:
+    - cd ~/vagrant_test/debian_box/
+  - window_name: trusty-box
+    panes:
+    - cd ~/vagrant_test/trusty_box/
