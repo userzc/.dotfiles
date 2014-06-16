@@ -7,10 +7,12 @@ https://github.com/rmm5t/dotfiles/blob/master/install.rb
 """
 
 from __future__ import print_function
+import sys
+import os
 from platform import system
 from shutil import rmtree
-from os import listdir, symlink, remove, unlink
-from os.path import join, dirname, abspath, expanduser, isdir, islink
+from os import listdir, symlink, remove, unlink, makedirs
+from os.path import join, dirname, abspath, expanduser, isdir, islink, lexists
 from argparse import ArgumentParser
 
 
@@ -29,11 +31,16 @@ ARCHIVOS_DIR_ACTUAL = listdir(DIR_ACTUAL)
 USER_HOME = expanduser("~")
 IGNORED_ITEMS = [
     'config', # TODO: consider using tuples indicating depth for directories
+    'lib',
     'README.md',
     'README.org',
     'readme_var.md',
     'readme_var.org',
     'sync.py',
+]
+SPECIFIC_INSTALL_DIRS = [
+    ('config', '.config'),
+    ('lib', 'lib'),
 ]
 
 # TODO: Al parecer es una buena idea tener el directorio "~/bin", por
@@ -48,6 +55,11 @@ def listing_function(from_here, to_here):
     - `to_here`: Target path for the link.
     """
     print('To move:', from_here, '=>', to_here)
+
+    # print('-----')
+    # print(to_here + ' exists'
+    #       if os.path.lexists(to_here)
+    #       else to_here + ' DOES NOT exists')
 
 def installing_function(from_here, to_here):
     """This is the function used to install the files.
@@ -96,11 +108,19 @@ for element in ARCHIVOS_DIR_ACTUAL:
         EXEC_FUNCTION(origin, target)
 
 if system() == 'Linux':
-    for element in listdir(join(DIR_ACTUAL,'config')):
-        if not element in IGNORED_ITEMS and element[0] != '.':
-            target = join(USER_HOME, ".config", element)
-            origin = join(DIR_ACTUAL, "config", element)
-            EXEC_FUNCTION(origin, target)
+    for specific_dir in SPECIFIC_INSTALL_DIRS:
+        for element in listdir(join(DIR_ACTUAL, specific_dir[0])):
+            if not element in IGNORED_ITEMS and element[0] != '.':
+                target = join(USER_HOME, specific_dir[1], element)
+                origin = join(DIR_ACTUAL, specific_dir[0], element)
+                EXEC_FUNCTION(origin, target)
+
+# if system() == 'Linux':
+#     for element in listdir(join(DIR_ACTUAL,'config')):
+#         if not element in IGNORED_ITEMS and element[0] != '.':
+#             target = join(USER_HOME, ".config", element)
+#             origin = join(DIR_ACTUAL, "config", element)
+#             EXEC_FUNCTION(origin, target)
 
 # TODO: considerar implementar las opciones para submodulos:
 # - git submodule sync

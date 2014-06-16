@@ -7,6 +7,7 @@
 
 #+BEGIN_SRC sh
 git clone https://github.com/userzc/.dotfiles.git
+cd .dotfiles
 git submodule sync
 git submodule update --init --recursive
 #+END_SRC
