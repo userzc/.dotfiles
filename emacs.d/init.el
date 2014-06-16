@@ -22,16 +22,18 @@
 ;; parece ser una utilidad interesante para mostrar que teclas se
 ;; presionan junto con los comandos que les corresponden
 
+;; Considerar quitar `color-theme-wombat+' y `groovy-mode',
+;; interfieren con una instalación límpia en sistemas nuevos
 (defvar lista-paquetes-instalados
   '(ac-math ace-jump-mode ack-and-a-half ag auctex auto-complete
 	 bookmark+ c-eldoc cl-lib clues-theme color-theme
 	 color-theme-gruber-darker color-theme-sanityinc-tomorrow
-	 color-theme-wombat+ cyberpunk-theme dash deferred dired+
-	 dired-details dired-details+ ein emacs-eclim emmet-mode
-	 enclose expand-region git-commit-mode gitconfig-mode
+	 cyberpunk-theme dash deferred dired+ dired-details
+	 dired-details+ ein emacs-eclim emmet-mode enclose
+	 expand-region git-commit-mode gitconfig-mode
 	 github-theme gitignore-mode google-c-style
-	 google-contacts groovy-mode gruvbox-theme icicles
-	 icomplete+ ido-better-flex java-snippets litable magit
+	 google-contacts gruvbox-theme icicles icomplete+
+	 ido-better-flex java-snippets litable magit
 	 mark-more-like-this markdown-mode moe-theme monky
 	 monokai-theme multi-term multiple-cursors niflheim-theme
 	 nose oauth2 popup powerline projectile purty-mode
