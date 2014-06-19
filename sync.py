@@ -69,6 +69,8 @@ def installing_function(from_here, to_here):
     - `to_here`: Target path for the link.
     """
     try:
+        if not lexists(dirname(to_here)):
+            makedirs(dirname(to_here))
         symlink(from_here, to_here)
         print('Installed:', from_here, '=>', to_here)
     except:
