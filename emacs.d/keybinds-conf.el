@@ -65,17 +65,28 @@
 ;; con un key-bind que no viene recomendado en la página de github
 (eval-after-load "expand-region"
   '(progn (global-set-key (kbd "M-_") 'er/expand-region)
-          (global-set-key (kbd "C-M-_") 'er/contract-region)))
+          (global-set-key (kbd "C-M-_") 'er/contract-region)
+          (global-set-key (kbd "C->") 'er/expand-region)
+          (global-set-key (kbd "C-<") 'er/contract-region)))
 
 ;; ;; para moverse atravez de los "windows":, e.g.: c-left  =  windmove-left
 ;; (windmove-default-keybindings 'control)
 
 ;; Siguiendo la configuración de i3-wm
 (eval-after-load "windmove"
-  '(progn  (global-set-key (kbd "M-J") 'windmove-left)
-	   (global-set-key (kbd "M-Ñ") 'windmove-right)
-	   (global-set-key (kbd "M-L") 'windmove-up)
-	   (global-set-key (kbd "M-K") 'windmove-down)))
+  '(progn
+     ;; Movement for en_US keyboard layout
+     (global-set-key (kbd "M-H") 'windmove-left)
+     (global-set-key (kbd "M-L") 'windmove-right)
+     (global-set-key (kbd "M-K") 'windmove-up)
+     (global-set-key (kbd "M-J") 'windmove-down)
+
+     ;; ;; Movement for es_MX keyboard layout
+     ;; (global-set-key (kbd "M-J") 'windmove-left)
+     ;; (global-set-key (kbd "M-Ñ") 'windmove-right)
+     ;; (global-set-key (kbd "M-L") 'windmove-up)
+     ;; (global-set-key (kbd "M-K") 'windmove-down)
+     ))
 
 ;; Trabajar rápido en un problema de ACM
 (global-set-key (kbd "C-c C-n") 'acm-problem)
@@ -311,6 +322,7 @@
   ;; (define-key global-map (kbd "M-ø") 'ace-jump-mode) ; to access in terminal
   '(progn
      (define-key global-map (kbd "M-ñ") 'ace-jump-mode) ; to access in terminal
+     (define-key global-map (kbd "C-;") 'ace-jump-mode) ; to access in terminal
      (autoload
        'ace-jump-mode-pop-mark
        "ace-jump-mode"
@@ -389,9 +401,9 @@
              ))
 
      (global-set-key (kbd "C-c C-M-a")
-		     'beginning-of-defun)
+                     'beginning-of-defun)
      (global-set-key (kbd "C-c C-M-e")
-		     'end-of-defun)
+                     'end-of-defun)
      (sp-use-smartparens-bindings)))
 
 ;; Evitar tapado de opciones de icicles debido a smartparens en el
