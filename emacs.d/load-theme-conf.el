@@ -1,4 +1,4 @@
-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;; load-theme & color-theme
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
@@ -24,13 +24,13 @@
 ;; (load-theme 'cyberpunk t)
 ;; (load-theme 'tron t)
 ;; (load-theme 'github t)
-;; (load-theme 'monokai t)
+(load-theme 'monokai t)
 ;; (load-theme 'niflheim t)
 ;; (load-theme 'clues t)
 ;; (load-theme 'assemblage t)
 ;; (load-theme 'default-black t)
 ;; (custom-set-faces '(default ((t (:background "nil")))))
-(load-theme 'zenburn t)
+;; (load-theme 'zenburn t)
 ;; (load-theme 'sanityinc-tomorrow-day t)
 ;; (load-theme 'solarized-dark t)
 ;; (load-theme 'qsimpleq t)

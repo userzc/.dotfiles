@@ -291,19 +291,28 @@
 
      ;;Hay que optimizar:
      (global-set-key (kbd "M-æ") 'mc/mark-all-like-this-dwim)   ;; AltGr-a = æ
+     (global-set-key (kbd "M-á") 'mc/mark-all-like-this-dwim)   ;; AltGr-a = á
      (global-set-key (kbd "M-→") 'mc/insert-numbers)            ;; AltGr-i = →
+     (global-set-key (kbd "M-í") 'mc/insert-numbers)            ;; AltGr-i = í
      ;; keybind alternativo, el anterior no parece seguir funcionando
      (global-set-key (kbd "M-€") 'mc/insert-numbers)            ;; AltGr-e = €
+     (global-set-key (kbd "M-é") 'mc/insert-numbers)            ;; AltGr-e = é
      (global-set-key (kbd "M-¶") 'mc/reverse-regions)           ;; AltGr-r = ¶
+     (global-set-key (kbd "M-®") 'mc/reverse-regions)           ;; AltGr-r = ®
      (global-set-key (kbd "M-ß") 'mc/sort-regions)              ;; AltGr-s = ß
      (global-set-key (kbd "M-S-SPC") 'set-rectangular-region-anchor)
      (global-set-key (kbd "M-þ") 'mc/mark-pop)                  ;; AltGr-p = þ
+     (global-set-key (kbd "M-ö") 'mc/mark-pop)                  ;; AltGr-p = ö
+     ;; Este acorde no tiene equivalente apropiado en distribución en_US
      (global-set-key (kbd "M-ŧ") 'mc/mark-sgml-tag-pair)        ;; AltGr-t = ŧ
      ;; (global-set-key (kbd "C-c C-r") 'rename-sgml-tag)
      ;; Probando keybind alterno, evitar conflicto con: AUCTeX
      (global-set-key (kbd "C-c M-x") 'mc/mark-more-like-this-extended)
      ;; Parece ser útil tener multiple-cursors en regiones
      (global-set-key (kbd "M-®") 'mc/mark-all-in-region)
+     ;; ;; Se podria cambiar por:
+     ;; (global-set-key (kbd "M-Æ") 'mc/mark-all-in-region)
+     (global-set-key (kbd "M-Á") 'mc/mark-all-in-region) ;AltGr-Shift-A = Á
      ;; No he podido identificar la tecla Hyper, así que estoy probando
      ;; diferentes opciones, investigar más respecto a ns-function-modifier
      ;; (setq ns-function-modifier 'hyper )
