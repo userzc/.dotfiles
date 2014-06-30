@@ -309,9 +309,9 @@
      ;; Probando keybind alterno, evitar conflicto con: AUCTeX
      (global-set-key (kbd "C-c M-x") 'mc/mark-more-like-this-extended)
      ;; Parece ser útil tener multiple-cursors en regiones
-     (global-set-key (kbd "M-®") 'mc/mark-all-in-region)
+     ;; (global-set-key (kbd "M-®") 'mc/mark-all-in-region)
      ;; ;; Se podria cambiar por:
-     ;; (global-set-key (kbd "M-Æ") 'mc/mark-all-in-region)
+     (global-set-key (kbd "M-Æ") 'mc/mark-all-in-region)
      (global-set-key (kbd "M-Á") 'mc/mark-all-in-region) ;AltGr-Shift-A = Á
      ;; No he podido identificar la tecla Hyper, así que estoy probando
      ;; diferentes opciones, investigar más respecto a ns-function-modifier
