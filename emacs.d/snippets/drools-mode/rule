@@ -1,0 +1,12 @@
+# -*- mode: snippet -*-
+# name: rule
+# contributor: René Zurita Corro <zc.rene@gmail.com>
+# key: r
+# --
+rule ${1:"Rule Name"}
+dialect ${2:java}
+when
+	${3:}
+then
+	${4:}
+end

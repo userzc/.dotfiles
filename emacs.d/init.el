@@ -9,9 +9,6 @@
 ;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;; Considerar instalar: ;;
 ;;;;;;;;;;;;;;;;;;;;;;;;;;
-;; - `monky' : https://github.com/ananthakumaran/monky
-;; parece ser el equivalente de `magit' para `mercurial', vale la pena
-;; considerar en caso de no poder usar `git'.
 ;; - `cedit': https://github.com/zk-phi/cedit, al
 ;; parecer funciona de manera adecuada con paredit
 ;; - `readline-complete':
