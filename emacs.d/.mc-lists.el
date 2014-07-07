@@ -107,6 +107,7 @@
 	universal-argument-minus
 	upcase-region
 	wdired-downcase-word
+	wdired-upcase-word
 	yas-expand
 	zap-up-to-char
 	))
@@ -140,6 +141,7 @@
 	ibuffer-list-buffers
 	ibuffer-update
 	icicle-buffer
+	icicle-buffer-other-window
 	icicle-pp-eval-expression
 	info
 	magit-goto-next-section
