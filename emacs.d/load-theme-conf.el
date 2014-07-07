@@ -1,4 +1,3 @@
-
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;; load-theme & color-theme
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
@@ -24,8 +23,8 @@
 ;; (load-theme 'cyberpunk t)
 ;; (load-theme 'tron t)
 ;; (load-theme 'github t)
-(load-theme 'monokai t)
-;; (load-theme 'niflheim t)
+;; (load-theme 'monokai t)
+(load-theme 'niflheim t)
 ;; (load-theme 'clues t)
 ;; (load-theme 'assemblage t)
 ;; (load-theme 'default-black t)
@@ -46,6 +45,7 @@
 ;; font
 (if (equal system-type 'gnu/linux)
     (condition-case nil
+        ;; (set-default-font "Meslo LG S for Powerline-11")
 	(set-default-font "Ubuntu Mono-11")
       (error
        (set-default-font "Inconsolata-11")))

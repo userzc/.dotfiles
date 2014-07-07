@@ -36,6 +36,16 @@
 ;; sr-speedbar
 (global-set-key (kbd "C-c M-s") 'sr-speedbar-toggle)
 
+;;;;;;;;;;;;;;
+;; org-mode ;;
+;;;;;;;;;;;;;;
+(eval-after-load "org"
+  '(progn
+     ;; Change word separators
+     (global-set-key (kbd "C-c C") 'org-capture)
+     (global-set-key (kbd "C-c L") 'org-store-link)
+     (global-set-key (kbd "C-c a") 'org-agenda)))
+
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;; magnars' keybinding rip-off ;;
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
