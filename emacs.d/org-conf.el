@@ -11,6 +11,8 @@
 ;; make org-table ready for action!
 (require 'org-table)
 
+(setq org-default-notes-file "~/Dropbox/org/notes.org" )
+
 ;; active babel languages
 (org-babel-do-load-languages
  'org-babel-load-languages
