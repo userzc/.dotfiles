@@ -1,0 +1,12 @@
+session_name: Tesis
+start-directory: '~'
+windows:
+  - window_name: Codigo Tesis
+    panes:
+      - cd ~/Documents/CodigoTesis/
+  - window_name: Documento Tesis
+    panes:
+      - cd ~/Documents/Semestre\ 4/DocumentoTesis
+  - window_name: ipython
+    panes:
+      - ipython console
