@@ -48,7 +48,8 @@
 (if (equal system-type 'gnu/linux)
     (condition-case nil
         ;; (set-default-font "Meslo LG S for Powerline-11")
-	(set-default-font "Ubuntu Mono-11")
+        (set-default-font "Inconsolata-dz for Powerline-10")
+	;; (set-default-font "Ubuntu Mono-11")
       (error
        (set-default-font "Inconsolata-11")))
   (condition-case nil

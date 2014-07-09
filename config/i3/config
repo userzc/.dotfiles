@@ -76,7 +76,8 @@ bindsym $mod+d exec dmenu_run -nb $color_nb -nf $color_nf -sb $color_sb -sf $col
 # installed.
 # NOTE: there is also a reference to a program that is supposedly faster: j4-dmenu-desktop
 # https://github.com/enkore/j4-dmenu-desktop
-bindsym $mod+Shift+d exec --no-startup-id i3-dmenu-desktop
+# bindsym $mod+Shift+d exec --no-startup-id i3-dmenu-desktop
+bindsym $mod+Shift+d exec --no-startup-id j4-dmenu-desktop
 
 # change focus
 bindsym $mod+j focus left

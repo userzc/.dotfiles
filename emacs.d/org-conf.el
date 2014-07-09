@@ -11,7 +11,10 @@
 ;; make org-table ready for action!
 (require 'org-table)
 
-(setq org-default-notes-file "~/Dropbox/org/notes.org" )
+(setq org-directory "~/Dropbox/org/")
+(setq org-default-notes-file "~/Dropbox/org/notes.org")
+(setq org-mobile-directory "~/Dropbox/MobileOrg/")
+(setq org-mobile-inbox-for-pull "~/Dropbox/org/flagged.org")
 
 ;; active babel languages
 (org-babel-do-load-languages
