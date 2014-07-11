@@ -30,7 +30,7 @@ bindsym $mod+Return exec i3-sensible-terminal
 bindsym $mod+Control+1 exec nautilus --no-desktop
 # bindsym $mod+Control+2 exec "$BROWSER"
 bindsym $mod+Control+2 exec "google-chrome"
-bindsym $mod+Control+3 exec emacs
+bindsym $mod+Control+3 exec XMODIFIERS="" emacs
 
 # Opciones a considearar para cambiar colores
 
