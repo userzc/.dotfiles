@@ -31,6 +31,7 @@ bindsym $mod+1 exec nautilus --no-desktop
 # bindsym $mod+2 exec "$BROWSER"
 bindsym $mod+2 exec "google-chrome"
 bindsym $mod+3 exec XMODIFIERS="" emacs
+bindsym $mod+4 exec rhythmbox
 
 # Opciones a considearar para cambiar colores
 
