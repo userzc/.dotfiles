@@ -19,8 +19,6 @@
 ;; parece ser una utilidad interesante para mostrar que teclas se
 ;; presionan junto con los comandos que les corresponden
 
-;; Considerar quitar `color-theme-wombat+' y `groovy-mode',
-;; interfieren con una instalación límpia en sistemas nuevos
 (defvar lista-paquetes-instalados
   '(ac-math ace-jump-mode ack-and-a-half ag ample-zen-theme auctex
 	    auto-complete base16-theme bookmark+ c-eldoc cl-lib
