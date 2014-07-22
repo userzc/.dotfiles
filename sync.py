@@ -41,6 +41,7 @@ IGNORED_ITEMS = [
 SPECIFIC_INSTALL_DIRS = [
     ('config', '.config'),
     ('lib', 'lib'),
+    ('bin', 'bin'),
 ]
 
 # TODO: Al parecer es una buena idea tener el directorio "~/bin", por

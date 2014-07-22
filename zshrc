@@ -4,10 +4,12 @@ ZSH=$HOME/.oh-my-zsh
 # Example aliases
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
-alias e="emacsclient"
-alias enw="emacsclient -nw"
-alias enwq="emacs -nw -Q"
-alias enwd="emacs -nw -q --no-splash -l ~/.emacs.d/default-nw.el"
+
+# alias e="emacsclient"
+# alias enw="emacsclient -nw"
+# alias enwq="emacs -nw -Q"
+# alias enwd="emacs -nw -q --no-splash -l ~/.emacs.d/default-nw.el"
+
 alias lsd="ls -d *(/)"
 
 # source the alias file

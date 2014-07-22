@@ -165,6 +165,7 @@
 	tags-loop-continue
 	tmm-menubar
 	toggle-input-method
+	wdired-finish-edit
 	wdired-previous-line
 	windsize-down
 	windsize-up
