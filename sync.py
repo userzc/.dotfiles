@@ -30,7 +30,7 @@ DIR_ACTUAL = dirname(abspath(__file__))
 ARCHIVOS_DIR_ACTUAL = listdir(DIR_ACTUAL)
 USER_HOME = expanduser("~")
 IGNORED_ITEMS = [
-    'config', # TODO: consider using tuples indicating depth for directories
+    'config',
     'lib',
     'README.md',
     'README.org',
@@ -44,10 +44,6 @@ SPECIFIC_INSTALL_DIRS = [
     ('bin', 'bin'),
 ]
 
-# TODO: Al parecer es una buena idea tener el directorio "~/bin", por
-# lo que se debe de considerar generar un enlace a dicho directorio,
-# tal vez utilizando tuples o listas para poder especificar el destino.
-
 def listing_function(from_here, to_here):
     """This is the function used to list the possible files to install.
 
@@ -56,11 +52,6 @@ def listing_function(from_here, to_here):
     - `to_here`: Target path for the link.
     """
     print('To move:', from_here, '=>', to_here)
-
-    # print('-----')
-    # print(to_here + ' exists'
-    #       if os.path.lexists(to_here)
-    #       else to_here + ' DOES NOT exists')
 
 def installing_function(from_here, to_here):
     """This is the function used to install the files.
@@ -117,13 +108,6 @@ if system() == 'Linux':
                 target = join(USER_HOME, specific_dir[1], element)
                 origin = join(DIR_ACTUAL, specific_dir[0], element)
                 EXEC_FUNCTION(origin, target)
-
-# if system() == 'Linux':
-#     for element in listdir(join(DIR_ACTUAL,'config')):
-#         if not element in IGNORED_ITEMS and element[0] != '.':
-#             target = join(USER_HOME, ".config", element)
-#             origin = join(DIR_ACTUAL, "config", element)
-#             EXEC_FUNCTION(origin, target)
 
 # TODO: considerar implementar las opciones para submodulos:
 # - git submodule sync
