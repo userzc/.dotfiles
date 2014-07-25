@@ -167,10 +167,32 @@ Including indent-buffer, which should not be called automatically on save."
     (delete-region beg end)
     (insert (funcall fn contents))))
 
-;; TODO
+;; (shell-command COMMAND &optional OUTPUT-BUFFER ERROR-BUFFER)
 
-;; Perhaps there's a way to make a switch to *Malabar Groovy* mode
-;; similar to iptyhon switch to console
+;; (org-html-export-to-html &optional ASYNC SUBTREEP VISIBLE-ONLY
+;; BODY-ONLY EXT-PLIST)
 
+(defun org-html-export-to-docx (&optional OUTPUT-BUFFER
+                                          ERROR-BUFFER ASYNC
+                                          SUBTREEP VISIBLE-ONLY
+                                          BODY-ONLY EXT-PLIST)
+  "Esta función tiene el objetivo de facilitar la exportación de
+notas tomadas con emacs en org mode para depués ser formateadas
+en Word 2013 según los estándares de la FVP."
+  (interactive "P")
+  (org-html-export-to-html ASYNC SUBTREEP VISIBLE-ONLY BODY-ONLY
+                           EXT-PLIST)
+  (let ((aux-html-file
+         (concat (car (split-string (buffer-name) "\\.")) ".html"))
+	(docx-file
+         (concat (car (split-string (buffer-name) "\\.")) ".docx")))
+    (shell-command
+     (concat
+      "pandoc -s "
+      aux-html-file
+      " -o "
+      docx-file ))
+
+    (delete-file aux-html-file)))
 
 (provide 'defuns)

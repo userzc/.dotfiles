@@ -23,6 +23,9 @@
 (add-to-list 'auto-mode-alist '("SConstruct" . python-mode))
 (add-to-list 'auto-mode-alist '("SConscript" . python-mode))
 
+;; Para cargar el archivo gitconfig
+(add-to-list 'auto-mode-alist '("gitconfig" . python-mode))
+
 ;; markdown-mode
 (if (fboundp 'markdown-mode)
     (progn
