@@ -36,6 +36,9 @@
 ;; sr-speedbar
 (global-set-key (kbd "C-c M-s") 'sr-speedbar-toggle)
 
+;; join-line(aka delete-indentation)
+(global-set-key (kbd "M-j") 'join-line)
+
 ;;;;;;;;;;;;;;
 ;; org-mode ;;
 ;;;;;;;;;;;;;;

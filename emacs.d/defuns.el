@@ -182,17 +182,13 @@ en Word 2013 según los estándares de la FVP."
   (interactive "P")
   (org-html-export-to-html ASYNC SUBTREEP VISIBLE-ONLY BODY-ONLY
                            EXT-PLIST)
-  (let ((aux-html-file
-         (concat (car (split-string (buffer-name) "\\.")) ".html"))
-	(docx-file
-         (concat (car (split-string (buffer-name) "\\.")) ".docx")))
+  (let
+      ((aux-html-file
+	(concat (car (split-string (buffer-name) "\\.")) ".html"))
+       (docx-file
+	(concat (car (split-string (buffer-name) "\\.")) ".docx")))
     (shell-command
-     (concat
-      "pandoc -s "
-      aux-html-file
-      " -o "
-      docx-file ))
-
+     (concat "pandoc -s " aux-html-file " -o " docx-file ))
     (delete-file aux-html-file)))
 
 (provide 'defuns)
