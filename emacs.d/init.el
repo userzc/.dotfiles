@@ -94,6 +94,7 @@
 (require 'smart-mode-line)
 (require 'zone-matrix)
 (require 'speedbar)
+;; (require 'org)
 ;; (require 'eclim)
 
 (condition-case nil (require 'malabar-mode)
