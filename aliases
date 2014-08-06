@@ -1,5 +1,12 @@
 # It should be possible for this aliases to be used in various shells
 
+# alias for Ag similar to the alias for grep
+alias -g A='| ag'
+
+# Cambio frecuente de red
+alias ca='nmcli connection up id AlphaCentauri'
+alias ce='nmcli connection up id Epsilon'
+
 # batch mode archetype generate, the main example is:
 # mvn archetype:generate -B \
 #     -DarchetypeGroupId=org.apache.maven.archetypes \

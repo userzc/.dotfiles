@@ -15,30 +15,29 @@
 ;; https://github.com/emacsmirror/readline-complete/blob/master/readline-complete.el
 ;; parece que es una alternativa para generar opciones para
 ;; complementar con `zsh' y `multi-term'
-;; - `command-log-mode': https://github.com/lewang/command-log-mode
-;; parece ser una utilidad interesante para mostrar que teclas se
-;; presionan junto con los comandos que les corresponden
 
 (defvar lista-paquetes-instalados
-  '(ac-math ace-jump-mode ack-and-a-half ag ample-zen-theme auctex
-	    auto-complete base16-theme bookmark+ c-eldoc cl-lib
-	    clues-theme color-theme color-theme-gruber-darker
-	    color-theme-sanityinc-tomorrow cyberpunk-theme dash
-	    deferred dired+ dired-details dired-details+ ein
-	    emacs-eclim emmet-mode enclose expand-region
-	    git-commit-mode gitconfig-mode github-theme
-	    gitignore-mode google-c-style google-contacts
-	    gruvbox-theme icicles icomplete+ ido-better-flex
-	    java-snippets litable magit mark-more-like-this
-	    markdown-mode moe-theme monky monokai-theme multi-term
+  '(ac-math ace-jump-mode ack-and-a-half ag ample-zen-theme
+	    auctex auto-complete base16-theme bookmark+
+	    c-eldoc cl-lib clues-theme color-theme
+	    color-theme-gruber-darker
+	    color-theme-sanityinc-tomorrow command-log-mode
+	    cyberpunk-theme dash deferred dired+
+	    dired-details dired-details+ ein emacs-eclim
+	    emmet-mode enclose expand-region git-commit-mode
+	    gitconfig-mode github-theme gitignore-mode
+	    google-c-style google-contacts gruvbox-theme
+	    icicles icomplete+ ido-better-flex java-snippets
+	    litable magit mark-more-like-this markdown-mode
+	    moe-theme monky monokai-theme multi-term
 	    multiple-cursors niflheim-theme nose oauth2 popup
 	    powerline projectile purty-mode python-django
-	    qsimpleq-theme rainbow-delimiters rainbow-mode request
-	    smart-mode-line smart-tab smartparens solarized-theme
-	    spacegray-theme sr-speedbar sublime-themes tango-2-theme
-	    tangotango-theme textile-mode websocket wgrep windsize
-	    wrap-region yaml-mode yasnippet zenburn-theme
-	    zone-matrix)
+	    qsimpleq-theme rainbow-delimiters rainbow-mode
+	    request smart-mode-line smart-tab smartparens
+	    solarized-theme spacegray-theme sr-speedbar
+	    sublime-themes tango-2-theme tangotango-theme
+	    textile-mode websocket wgrep windsize wrap-region
+	    yaml-mode yasnippet zenburn-theme zone-matrix)
   "Lista de paquetes instalados actualmente en mi configuración.")
 
 ;; Default custom file
@@ -76,6 +75,7 @@
 (require 'bookmark+)
 (require 'expand-region)
 (require 'emmet-mode)
+(require 'moe-theme)
 (require 'magit)
 (require 'monky)
 (require 'ace-jump-mode)
