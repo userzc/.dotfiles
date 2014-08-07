@@ -250,6 +250,13 @@ bindsym $mod+Shift+x exec gnome-session-quit --power-off
 # Use dropbox instead, u1 went down
 exec dropbox start
 
+# Use command line tool to change network conections.  Consider using
+# command `nmcli dev wifi` para listar las conecciones disponibles:
+# http://www.linux-commands-examples.com/nmcli
+
+# bindsym $mod+n exec "nmcli c | dmenu -l 10 -i -nb $color_nb -nf $color_nf -sb $color_sb -sf $color_sf | awk '{print $1}' | xargs nmcli connection up id"
+bindsym $mod+n exec "nmcli dev wifi | dmenu -l 10 -i -nb $color_nb -nf $color_nf -sb $color_sb -sf $color_sf | awk '{print $1}' | xargs nmcli connection up id"
+
 # Start i3bar to display a workspace bar (plus the system information i3status
 # finds out, if available)
 bar {
