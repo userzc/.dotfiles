@@ -14,7 +14,8 @@
 (add-hook 'c-initialization-hook
           '(lambda ()
              (define-key c++-mode-map (kbd "C-c C-c") 'compile)
-             (define-key c++-mode-map (kbd "C-c C-r") 'recompile)))
+             (define-key c++-mode-map (kbd "C-c C-r") 'recompile)
+	     (define-key c++-mode-map (kbd "C-c x p") 'acm-run-program)))
 
 ;; c-eldoc
 ;; considerar incluir en `c-eldoc-includes' las librerías mediante `setq':
@@ -50,8 +51,8 @@
 	      ;; variables:
 	      ;; $(CC) -c -o $@ $(CPPFLAGS) $(CFLAGS) $<
 	      (let ((file (file-name-nondirectory buffer-file-name)))
-		(format "%s -c -o %s.o %s %s %s"
-			(or (getenv "CC") "gcc")
+		(format "%s -o %s.out %s %s %s"
+			(or (getenv "CC") "g++")
 			(file-name-sans-extension file)
 			(or (getenv "CPPFLAGS") "-DDEBUG=9")
 			(or (getenv "CFLAGS") "-ansi -pedantic -Wall -g")

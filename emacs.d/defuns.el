@@ -43,7 +43,7 @@
 
 ;; funciones para el juez uva online acm icpc
 (defun acm-problem (id_problem)
-  "esta función abre o genera una carpeta con sus respectivos
+  "Esta función abre o genera una carpeta con sus respectivos
 archivos en base al nombre del problema de la uva que se intenta
 resolver"
   (interactive "sUVA Problem Id:")
@@ -62,6 +62,19 @@ resolver"
         (find-file (concat nuevo-dir-problem "/" id_problem ".cpp"))
         (find-file (concat nuevo-dir-problem "/" id_problem "output.txt"))
         (find-file (concat nuevo-dir-problem "/" id_problem  "input.txt"))))))
+
+(defun acm-run-program ()
+  "Esta función ejecuta el archivo compilado pasandole en input
+correspondiente mediante un flujo."
+  (interactive)
+  (let ((id_problem (car (split-string (buffer-name) "\\."))))
+    (if (shell-command
+         (format ".\\/%s.out < %sinput.txt" id_problem id_problem)
+         "*results*" "*result-errors*")
+        (progn  (switch-to-buffer-other-window "*results*")
+                (fundamental-mode)
+                (message "Displaying results"))
+      (progn (message "Something went wrong")))))
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
@@ -167,6 +180,12 @@ Including indent-buffer, which should not be called automatically on save."
     (delete-region beg end)
     (insert (funcall fn contents))))
 
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;; org-mode functionality for MS Office export
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
 (defun org-html-export-to-docx (&optional OUTPUT-BUFFER
                                           ERROR-BUFFER ASYNC
                                           SUBTREEP VISIBLE-ONLY
@@ -179,11 +198,52 @@ en Word 2013 según los estándares de la FVP."
   (org-html-export-to-html ASYNC SUBTREEP VISIBLE-ONLY t EXT-PLIST)
   (let
       ((aux-html-file
-	(concat (car (split-string (buffer-name) "\\.")) ".html"))
+        (concat (car (split-string (buffer-name) "\\.")) ".html"))
        (docx-file
-	(concat (car (split-string (buffer-name) "\\.")) ".docx")))
+        (concat (car (split-string (buffer-name) "\\.")) ".docx")))
     (shell-command
      (concat "pandoc -s " aux-html-file " -o " docx-file))
     (delete-file aux-html-file)))
+
+(defun org-get-references-used ()
+  "(α)Esta función tiene el objetivo de recolectar todos los enlaces
+utilizados en el documento org para poder ponerlos como
+referencias al final del mismo."
+  (interactive)
+  (fundamental-mode)
+  (let
+      ((original-buffer (current-buffer)))
+    (switch-to-buffer-other-window "*links*")
+    (switch-to-buffer-other-window original-buffer)
+    (while (search-forward "\[\[" nil t) ;se busca "[[1][2]]"
+      (progn  (forward-char -2)
+              (mark-sexp)
+              (kill-ring-save (mark) (point))
+              (switch-to-buffer-other-window "*links*")
+              (yank)			;pegar "[[1][2]]"
+	      (move-beginning-of-line nil)
+	      (delete-pair)		;generar "[1][2]"
+	      (kill-sexp)
+	      (move-beginning-of-line nil)
+	      (delete-pair)
+	      (insert "- ")		;generer "- 2"
+	      (move-end-of-line nil)
+	      (insert "\n")
+	      (yank)
+	      (move-beginning-of-line nil)
+	      (insert "  ")
+	      (delete-pair)
+	      (move-end-of-line nil)
+	      (insert "\n")		;generar: "- 2"
+	      (end-of-buffer)		;         "  1"
+              (switch-to-buffer-other-window original-buffer)
+              (sp-forward-sexp)))
+    (progn
+      (message "link recollection terminated")
+      (org-mode)
+      (end-of-buffer)
+      (insert "\n* Referencias\n")
+      (insert-buffer "*links*")
+      (kill-buffer "*links*"))))
 
 (provide 'defuns)

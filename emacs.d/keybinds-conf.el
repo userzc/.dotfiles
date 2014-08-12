@@ -45,7 +45,8 @@
 (eval-after-load "org"
   '(progn
      ;; Change word separators
-     (global-set-key (kbd "C-c C") 'org-capture)
+     ;; (global-set-key (kbd "C-c C") 'org-capture)
+     (global-set-key (kbd "C-c c") 'org-capture)
      (global-set-key (kbd "C-c L") 'org-store-link)
      (global-set-key (kbd "C-c a") 'org-agenda)))
 
@@ -193,9 +194,12 @@
 ;; (global-set-key (kbd "C-c t") 'multi-term-next)
 ;; hay que buscar otro `key-bind' que sí funcione en `python-mode'
 (if (fboundp 'multi-term)
-    (progn (global-set-key (kbd "C-c c m") 'multi-term-dedicated-toggle)
+    ;; (progn (global-set-key (kbd "C-c c m") 'multi-term-dedicated-toggle)
+    ;;        ;; create a new one
+    ;;        (global-set-key (kbd "C-c c M") 'multi-term))
+    (progn (global-set-key (kbd "C-c m") 'multi-term-dedicated-toggle)
            ;; create a new one
-           (global-set-key (kbd "C-c c M") 'multi-term)))
+           (global-set-key (kbd "C-c M") 'multi-term)))
 
 ;; Para evitar que "yasnippet" interfiera con la completación mediante
 ;; TAB en "zsh"
