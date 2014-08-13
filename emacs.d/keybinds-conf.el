@@ -317,6 +317,7 @@
      (global-set-key (kbd "M-¶") 'mc/reverse-regions)           ;; AltGr-r = ¶
      (global-set-key (kbd "M-®") 'mc/reverse-regions)           ;; AltGr-r = ®
      (global-set-key (kbd "M-ß") 'mc/sort-regions)              ;; AltGr-s = ß
+     (global-set-key (kbd "C-ß") 'mc/sort-regions)              ;; AltGr-s = ß
      (global-set-key (kbd "M-S-SPC") 'set-rectangular-region-anchor)
      (global-set-key (kbd "M-þ") 'mc/mark-pop)                  ;; AltGr-p = þ
      (global-set-key (kbd "M-ö") 'mc/mark-pop)                  ;; AltGr-p = ö

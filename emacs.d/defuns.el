@@ -65,7 +65,8 @@ resolver"
 
 (defun acm-run-program ()
   "Esta función ejecuta el archivo compilado pasandole en input
-correspondiente mediante un flujo."
+correspondiente mediante un flujo. Se aprovecha la estructura de
+archivos creada por la función "
   (interactive)
   (let ((id_problem (car (split-string (buffer-name) "\\."))))
     (if (shell-command
@@ -244,6 +245,7 @@ referencias al final del mismo."
       (end-of-buffer)
       (insert "\n* Referencias\n")
       (insert-buffer "*links*")
-      (kill-buffer "*links*"))))
+      (switch-to-buffer "*links*")
+      (kill-buffer-and-window))))
 
 (provide 'defuns)
