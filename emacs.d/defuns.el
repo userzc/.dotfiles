@@ -207,7 +207,7 @@ en Word 2013 según los estándares de la FVP."
     (delete-file aux-html-file)))
 
 (defun org-get-references-used ()
-  "(α)Esta función tiene el objetivo de recolectar todos los enlaces
+  "[α] Esta función tiene el objetivo de recolectar todos los enlaces
 utilizados en el documento org para poder ponerlos como
 referencias al final del mismo."
   (interactive)
@@ -227,7 +227,7 @@ referencias al final del mismo."
 	      (kill-sexp)
 	      (move-beginning-of-line nil)
 	      (delete-pair)
-	      ;; generer "- yyyy.mm.dd, 2"
+	      ;; generar "- yyyy.mm.dd, 2"
 	      (insert (format-time-string "- %Y.%m.%d "))
 	      (move-end-of-line nil)
 	      (insert "\n")
