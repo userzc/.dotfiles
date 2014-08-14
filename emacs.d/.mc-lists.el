@@ -142,6 +142,7 @@
 	ibuffer-update
 	icicle-buffer
 	icicle-buffer-other-window
+	icicle-delete-window
 	icicle-pp-eval-expression
 	info
 	magit-goto-next-section

@@ -227,7 +227,8 @@ referencias al final del mismo."
 	      (kill-sexp)
 	      (move-beginning-of-line nil)
 	      (delete-pair)
-	      (insert "- ")		;generer "- 2"
+	      ;; generer "- yyyy.mm.dd, 2"
+	      (insert (format-time-string "- %Y.%m.%d "))
 	      (move-end-of-line nil)
 	      (insert "\n")
 	      (yank)
