@@ -22,6 +22,20 @@ python ~/.dotfiles/sync -i
 
    On Windows the script must be run as administrator.
 
+** Quick basic environment
+
+   To install some usefull features and get emacs and other googies as
+   soon as possible use:
+
+#+begin_src sh
+curl -L https:/github.com/userzc/.dotfiles/raw/master/basic_environ.sh | sh
+#+end_src
+
+*** Note:
+
+    Currently this only works on *Ubuntu 14.04*, later on
+    compatibility with other distributions may be added as I use them.
+
 ** Requirements
 
    | Software         | Windows Version | Prefered Source [W] | Unix Version | Prefered Source [U] |
@@ -79,11 +93,6 @@ python ~/.dotfiles/sync -i
    the posible files to modify (=-l=, =--list=) and for removal of the
    existing links or files (=-r=, =--remove=). The script is installing
    files through python, so it should also be portable to windows.
-
-** Wishlist
-
-   It should be possible to create a way to syncronize and install =git=
-   repositories such as =.oh-my-zsh/=.
 
 # Local Variables:
 # eval: (orgtbl-mode t)
