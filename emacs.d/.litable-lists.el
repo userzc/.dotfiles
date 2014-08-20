@@ -269,6 +269,7 @@
       replace-regexp-in-string
       replace-string
       reverse
+      s-join
       save-current-buffer
       save-excursion
       save-match-data

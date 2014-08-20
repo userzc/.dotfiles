@@ -40,12 +40,12 @@
 (setq custom-file "~/.emacs.d/emacs-custom.el")
 (load custom-file)
 
-;; TODO: for windows system there seems to a file read from the
+
 ;; varialbes:
 ;; `HKEY_LOCAL_MACHINE\Software\Microsoft\Command Processor\AutoRun'
 ;; `HKEY_CURRENT_USER\Software\Microsoft\Command Processor\AutoRun'
 ;; Maybe that is the place to add some paths to `git' and other
-;; programs thet don't seem to be working properly
+;; programs that don't seem to be working properly
 
 (require 'default-conf) ;Configuraciones personales por default
 (require 'package-conf) ;Configuración para paquetes

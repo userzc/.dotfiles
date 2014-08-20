@@ -37,6 +37,7 @@ IGNORED_ITEMS = [
     'readme_var.md',
     'readme_var.org',
     'sync.py',
+    'basic_environ.sh',
 ]
 SPECIFIC_INSTALL_DIRS = [
     ('config', '.config'),

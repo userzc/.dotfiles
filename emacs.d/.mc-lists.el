@@ -127,7 +127,9 @@
 	cleanup-buffer
 	comint-send-input
 	count-words-region
+	deb-view-dired-view
 	describe-key
+	dired-unmark-backward
 	diredp-next-line
 	diredp-relsymlink-this-file
 	ein:notebook-complete-dot

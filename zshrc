@@ -200,5 +200,8 @@ fi
 # This sourcing must happend after all plugins have been declared
 source $ZSH/oh-my-zsh.sh
 
+# To include NODE_PATH, but doesn't seem to work
+export NODE_PATH="/usr/local/lib/node_modules"
+
 #THIS MUST BE AT THE END OF THE FILE FOR GVM TO WORK!!!
 [[ -s "/home/rene/.gvm/bin/gvm-init.sh" ]] && source "/home/rene/.gvm/bin/gvm-init.sh"

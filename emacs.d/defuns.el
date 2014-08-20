@@ -77,6 +77,23 @@ archivos creada por la función "
                 (message "Displaying results"))
       (progn (message "Something went wrong")))))
 
+(defun acm-uva-node (command)
+  "[α] Esta función provee una interfáz a
+`uva-node'[https://github.com/lucastan/uva-node], de forma que se
+pueda ejecutar una variedad de subcomandos relacionados."
+  (interactive "suva-node:")
+  (let ((id_problem (car (split-string (buffer-name) "\\.")))
+        (uva-node-path "/usr/local/lib/node_modules/uva-node")
+        (output-buffer "*uva-node-results*"))
+    (if (shell-command
+         ;; (s-join " " '("node" uva-node-path command id_problem))
+         (concat  "node" " " uva-node-path " " command " " id_problem)
+         output-buffer)
+        (progn  (switch-to-buffer-other-window output-buffer)
+                (fundamental-mode)
+                (message "Displaying results"))
+      (progn (message "Something Went Wrong!!")))))
+
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;; rotate-windows, ver: http://whattheemacsd.com/
@@ -221,23 +238,23 @@ referencias al final del mismo."
               (mark-sexp)
               (kill-ring-save (mark) (point))
               (switch-to-buffer-other-window "*links*")
-              (yank)			;pegar "[[1][2]]"
-	      (move-beginning-of-line nil)
-	      (delete-pair)		;generar "[1][2]"
-	      (kill-sexp)
-	      (move-beginning-of-line nil)
-	      (delete-pair)
-	      ;; generar "- yyyy.mm.dd, 2"
-	      (insert (format-time-string "- %Y.%m.%d "))
-	      (move-end-of-line nil)
-	      (insert "\n")
-	      (yank)
-	      (move-beginning-of-line nil)
-	      (insert "  ")
-	      (delete-pair)
-	      (move-end-of-line nil)
-	      (insert "\n")		;generar: "- 2"
-	      (end-of-buffer)		;         "  1"
+              (yank)                    ;pegar "[[1][2]]"
+              (move-beginning-of-line nil)
+              (delete-pair)             ;generar "[1][2]"
+              (kill-sexp)
+              (move-beginning-of-line nil)
+              (delete-pair)
+              ;; generar "- yyyy.mm.dd, 2"
+              (insert (format-time-string "- %Y.%m.%d "))
+              (move-end-of-line nil)
+              (insert "\n")
+              (yank)
+              (move-beginning-of-line nil)
+              (insert "  ")
+              (delete-pair)
+              (move-end-of-line nil)
+              (insert "\n")             ;generar: "- 2"
+              (end-of-buffer)           ;         "  1"
               (switch-to-buffer-other-window original-buffer)
               (sp-forward-sexp)))
     (progn
