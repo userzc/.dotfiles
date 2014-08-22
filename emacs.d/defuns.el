@@ -82,12 +82,17 @@ archivos creada por la función "
 `uva-node'[https://github.com/lucastan/uva-node], de forma que se
 pueda ejecutar una variedad de subcomandos relacionados."
   (interactive "suva-node:")
-  (let ((id_problem (car (split-string (buffer-name) "\\.")))
-        (uva-node-path "/usr/local/lib/node_modules/uva-node")
-        (output-buffer "*uva-node-results*"))
+  (let* ((id_problem (car (split-string (buffer-name) "\\.")))
+	 (uva-node-path "/usr/local/lib/node_modules/uva-node")
+	 (output-buffer "*uva-node-results*")
+	 (full-uva-command (concat "node" " " uva-node-path " "
+				   command)))
+    (if (member command '("send" "view"))
+	(progn
+	  (setq full-uva-command  (concat full-uva-command " " id_problem)))
+      (message full-uva-command))
     (if (shell-command
-         ;; (s-join " " '("node" uva-node-path command id_problem))
-         (concat  "node" " " uva-node-path " " command " " id_problem)
+         full-uva-command
          output-buffer)
         (progn  (switch-to-buffer-other-window output-buffer)
                 (fundamental-mode)

@@ -113,5 +113,6 @@
 (require 'mail-conf)
 ;; (require 'yasnippet-conf)
 
+(load-theme 'tango-dark)
 
 (require 'keybinds-conf)
