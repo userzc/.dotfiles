@@ -81,16 +81,20 @@ archivos creada por la función "
   "[α] Esta función provee una interfáz a
 `uva-node'[https://github.com/lucastan/uva-node], de forma que se
 pueda ejecutar una variedad de subcomandos relacionados."
-  (interactive "suva-node:")
+  (interactive
+   (let ((uva-node-subcommands '("view" "show" "send" "status" "use")))
+     (list (completing-read
+	    "uva-node command:" uva-node-subcommands nil nil "show"))))
   (let* ((id_problem (car (split-string (buffer-name) "\\.")))
-	 (uva-node-path "/usr/local/lib/node_modules/uva-node")
-	 (output-buffer "*uva-node-results*")
-	 (full-uva-command (concat "node" " " uva-node-path " "
-				   command)))
-    (if (member command '("send" "view"))
-	(progn
-	  (setq full-uva-command  (concat full-uva-command " " id_problem)))
-      (message full-uva-command))
+         (uva-node-path "/usr/local/lib/node_modules/uva-node")
+         (output-buffer "*uva-node-results*")
+         (full-uva-command
+          (concat "node" " " uva-node-path " " command))
+         (commands-use-id-list '("send" "view")))
+    (if (member command commands-use-id-list)
+        (progn
+          (setq full-uva-command  (concat full-uva-command " " id_problem))))
+    (message (concat "Executing [ " full-uva-command " ]"))
     (if (shell-command
          full-uva-command
          output-buffer)

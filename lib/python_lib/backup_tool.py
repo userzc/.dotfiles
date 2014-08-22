@@ -36,7 +36,7 @@ elif ARGS.list_repositories:
     INFO_TYPE = "REPOS"
     print(string_text)
 else:
-    PARSER.error("No info type requested, add -q or -s.")
+    PARSER.error("No info type requested, add -p or -s.")
 if ARGS.save:
     machine_text = '_'.join(subprocess.check_output(["uname", "-i", "-n"]).split())
     file_name = join(
