@@ -68,11 +68,12 @@ resolver"
 correspondiente mediante un flujo. Se aprovecha la estructura de
 archivos creada por la función "
   (interactive)
-  (let ((id_problem (car (split-string (buffer-name) "\\."))))
+  (let* ((id_problem (car (split-string (buffer-name) "\\.")))
+         (results-buffer (concat "*results " id_problem "*" )))
     (if (shell-command
          (format ".\\/%s.out < %sinput.txt" id_problem id_problem)
-         "*results*" "*result-errors*")
-        (progn  (switch-to-buffer-other-window "*results*")
+         results-buffer "*result-errors*")
+        (progn  (switch-to-buffer-other-window results-buffer)
                 (fundamental-mode)
                 (message "Displaying results"))
       (progn (message "Something went wrong")))))
@@ -84,7 +85,7 @@ pueda ejecutar una variedad de subcomandos relacionados."
   (interactive
    (let ((uva-node-subcommands '("view" "show" "send" "status" "use")))
      (list (completing-read
-	    "uva-node command:" uva-node-subcommands nil nil "show"))))
+            "uva-node command:" uva-node-subcommands nil nil nil nil "show"))))
   (let* ((id_problem (car (split-string (buffer-name) "\\.")))
          (uva-node-path "/usr/local/lib/node_modules/uva-node")
          (output-buffer "*uva-node-results*")
@@ -93,8 +94,13 @@ pueda ejecutar una variedad de subcomandos relacionados."
          (commands-use-id-list '("send" "view")))
     (if (member command commands-use-id-list)
         (progn
-          (setq full-uva-command  (concat full-uva-command " " id_problem))))
-    (message (concat "Executing [ " full-uva-command " ]"))
+          (message (concat "Current file" (buffer-file-name)))
+          (setq uva-args
+                (if (string= command "send")
+                    (buffer-file-name)
+                  id_problem))
+          (setq full-uva-command  (concat full-uva-command " " uva-args))))
+    (message (concat "=: Executing [ " full-uva-command " ] :="))
     (if (shell-command
          full-uva-command
          output-buffer)
