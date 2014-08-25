@@ -163,6 +163,7 @@
 	python-shell-send-defun
 	python-shell-switch-to-shell
 	repeat
+	rotate-windows
 	scroll-other-window
 	sml/toggle-shorten-modes
 	tags-loop-continue

@@ -46,7 +46,14 @@
   "Esta función abre o genera una carpeta con sus respectivos
 archivos en base al nombre del problema de la uva que se intenta
 resolver"
-  (interactive "sUVA Problem Id:")
+  (interactive
+   (list (completing-read
+	  "UVA Problem Id:"
+	  (mapcar
+	   (lambda (x) (substring x 0 (- (length x) 1)))
+	   (cdr (cdr (sort (file-name-all-completions
+			    "" "~/Documents/ACM-ICPC/Tried/")
+			   'string<)))))))
   (let (nuevo-dir-problem)
     (setq nuevo-dir-problem (concat "~/Documents/ACM-ICPC/Tried/" id_problem))
     (message nuevo-dir-problem)
@@ -84,8 +91,9 @@ archivos creada por la función "
 pueda ejecutar una variedad de subcomandos relacionados."
   (interactive
    (let ((uva-node-subcommands '("view" "show" "send" "status" "use")))
-     (list (completing-read
-            "uva-node command:" uva-node-subcommands nil nil nil nil "show"))))
+     (list
+      (completing-read
+       "uva-node command:" uva-node-subcommands nil nil nil nil "status"))))
   (let* ((id_problem (car (split-string (buffer-name) "\\.")))
          (uva-node-path "/usr/local/lib/node_modules/uva-node")
          (output-buffer "*uva-node-results*")
@@ -101,9 +109,16 @@ pueda ejecutar una variedad de subcomandos relacionados."
                   id_problem))
           (setq full-uva-command  (concat full-uva-command " " uva-args))))
     (message (concat "=: Executing [ " full-uva-command " ] :="))
-    (if (shell-command
+    (if
+
+	(shell-command
          full-uva-command
          output-buffer)
+
+	;; (start-process "uva-node-process" output-buffer "node"
+	;; 	       uva-node-path
+	;; 	       command)
+
         (progn  (switch-to-buffer-other-window output-buffer)
                 (fundamental-mode)
                 (message "Displaying results"))

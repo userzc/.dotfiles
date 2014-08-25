@@ -10,14 +10,14 @@
 ;; que probar más detalladamente este comportamiento
 (setq projectile-completion-system 'default)
 
-(add-hook 'python-mode-hook 'projectile-on)
-(add-hook 'LaTeX-mode-hook 'projectile-on)
-(add-hook 'rst-mode-hook 'projectile-on)
-(add-hook 'c++-mode-hook 'projectile-on)
-(add-hook 'java-mode-hook 'projectile-on)
-(add-hook 'nxml-mode-hook 'projectile-on)
-(add-hook 'drools-mode-hook 'projectile-on)
-(add-hook 'malabar-groovy-mode-hook 'projectile-on)
+(add-hook 'python-mode-hook 'projectile-mode)
+(add-hook 'LaTeX-mode-hook 'projectile-mode)
+(add-hook 'rst-mode-hook 'projectile-mode)
+(add-hook 'c++-mode-hook 'projectile-mode)
+(add-hook 'java-mode-hook 'projectile-mode)
+(add-hook 'nxml-mode-hook 'projectile-mode)
+(add-hook 'drools-mode-hook 'projectile-mode)
+(add-hook 'malabar-groovy-mode-hook 'projectile-mode)
 
 ;; Ya se tiene bien configurado git en Windows, se puede confiar en
 ;; este método de indexado

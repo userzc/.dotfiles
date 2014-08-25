@@ -15,7 +15,8 @@
           '(lambda ()
              (define-key c++-mode-map (kbd "C-c C-c") 'compile)
              (define-key c++-mode-map (kbd "C-c C-r") 'recompile)
-	     (define-key c++-mode-map (kbd "C-c x p") 'acm-run-program)))
+	     (define-key c++-mode-map (kbd "C-c x p") 'acm-run-program)
+	     (define-key c-mode-base-map (kbd "C-c u") 'acm-uva-node)))
 
 ;; c-eldoc
 ;; considerar incluir en `c-eldoc-includes' las librerías mediante `setq':

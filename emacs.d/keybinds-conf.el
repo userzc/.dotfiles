@@ -103,7 +103,7 @@
      ))
 
 ;; Trabajar rápido en un problema de ACM
-(global-set-key (kbd "C-c C-n") 'acm-problem)
+(global-set-key (kbd "C-c o") 'acm-problem)
 
 ;; emmet-mode
 (eval-after-load "emmet-mode"
