@@ -102,7 +102,7 @@ for element in ARCHIVOS_DIR_ACTUAL:
         origin = join(DIR_ACTUAL, element)
         EXEC_FUNCTION(origin, target)
 
-if system() == 'Linux':
+if system() in ['Darwin', 'Linux']:
     for specific_dir in SPECIFIC_INSTALL_DIRS:
         for element in listdir(join(DIR_ACTUAL, specific_dir[0])):
             if not element in IGNORED_ITEMS and element[0] != '.':

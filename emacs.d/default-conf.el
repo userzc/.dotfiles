@@ -83,4 +83,12 @@
 (set-default 'truncate-lines nil)
 (setq truncate-lines nil)
 ;; (set-default 'truncate-lines t)
+
+;; To add emacsclient on Mac
+(if (equal system-type 'darwin)
+    (add-to-list "/usr/local/bin/"))
+
+;; autorevert in dired mode
+(add-hook 'dired-mode-hook 'auto-revert-mode)
+
 (provide 'default-conf)
