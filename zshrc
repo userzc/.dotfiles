@@ -202,6 +202,11 @@ source $ZSH/oh-my-zsh.sh
 
 # To include NODE_PATH, but doesn't seem to work
 export NODE_PATH="/usr/local/lib/node_modules"
+# export NODE_PATH="/usr/local/shape/npm"
+
+# Add android-sdk binaries and tools to path
+export PATH="/home/rene/dev-android/android-sdk-linux/tools/":$PATH
+export PATH="/home/rene/dev-android/android-sdk-linux/platform-tools/":$PATH
 
 #THIS MUST BE AT THE END OF THE FILE FOR GVM TO WORK!!!
 [[ -s "/home/rene/.gvm/bin/gvm-init.sh" ]] && source "/home/rene/.gvm/bin/gvm-init.sh"

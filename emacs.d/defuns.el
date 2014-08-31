@@ -48,12 +48,12 @@ archivos en base al nombre del problema de la uva que se intenta
 resolver"
   (interactive
    (list (completing-read
-	  "UVA Problem Id:"
-	  (mapcar
-	   (lambda (x) (substring x 0 (- (length x) 1)))
-	   (cdr (cdr (sort (file-name-all-completions
-			    "" "~/Documents/ACM-ICPC/Tried/")
-			   'string<)))))))
+          "UVA Problem Id:"
+          (mapcar
+           (lambda (x) (substring x 0 (- (length x) 1)))
+           (cdr (cdr (sort (file-name-all-completions
+                            "" "~/Documents/ACM-ICPC/Tried/")
+                           'string<)))))))
   (let (nuevo-dir-problem)
     (setq nuevo-dir-problem (concat "~/Documents/ACM-ICPC/Tried/" id_problem))
     (message nuevo-dir-problem)
@@ -109,20 +109,38 @@ pueda ejecutar una variedad de subcomandos relacionados."
                   id_problem))
           (setq full-uva-command  (concat full-uva-command " " uva-args))))
     (message (concat "=: Executing [ " full-uva-command " ] :="))
-    (if
+    (if (progn
+          (get-buffer-create output-buffer)
+          (set-buffer output-buffer)
+          (erase-buffer)
+          (start-process "uva-node-process" output-buffer "node"
+                         uva-node-path
+                         command)
 
-	(shell-command
-         full-uva-command
-         output-buffer)
+          ;; (compile (concat "node "
+          ;;                  uva-node-path " "
+          ;;                  command))
 
-	;; (start-process "uva-node-process" output-buffer "node"
-	;; 	       uva-node-path
-	;; 	       command)
+          )
 
-        (progn  (switch-to-buffer-other-window output-buffer)
-                (fundamental-mode)
+        (progn  (pop-to-buffer output-buffer)
+                (set-buffer output-buffer)
                 (message "Displaying results"))
-      (progn (message "Something Went Wrong!!")))))
+      (progn (message "Something Went Wrong!!")))
+    (while (eq (process-status "uva-node-process") 'run)
+      (colorize-buffer output-buffer))
+    (message "Colors should have been applied")
+    (colorize-buffer "*uva-node-results*")))
+
+(defun colorize-buffer (buffer)
+  "Esta función filtra las secuencias ansi que representan al
+color en el buffer seleccionado, aunque originalmente se requería
+que se coloreara un buffer en particular, esto no ha sido posible
+hasta el momento."
+  (interactive "Bbuffer:")
+  (set-buffer buffer)
+  (setq inhibit-read-only t)
+  (ansi-color-apply-on-region (point-min) (point-max)))
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;

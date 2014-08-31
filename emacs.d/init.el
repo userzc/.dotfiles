@@ -16,24 +16,24 @@
 
 (defvar lista-paquetes-instalados
   '(ac-math ace-jump-mode ack-and-a-half ag ample-zen-theme auctex
-	    auto-complete base16-theme bookmark+ c-eldoc cedit
-	    cl-lib clues-theme color-theme color-theme-gruber-darker
-	    color-theme-sanityinc-tomorrow command-log-mode
-	    cyberpunk-theme dash deferred dired+ dired-details
-	    dired-details+ ein emacs-eclim emmet-mode enclose
-	    expand-region git-commit-mode gitconfig-mode
-	    github-theme gitignore-mode google-c-style
-	    google-contacts gruvbox-theme icicles icomplete+
-	    ido-better-flex java-snippets litable magit
-	    mark-more-like-this markdown-mode moe-theme monky
-	    monokai-theme multi-term multiple-cursors niflheim-theme
-	    nose oauth2 popup powerline projectile purty-mode
-	    python-django qsimpleq-theme rainbow-delimiters
-	    rainbow-mode request smart-mode-line smart-tab
-	    smartparens solarized-theme spacegray-theme sr-speedbar
-	    sublime-themes tango-2-theme tangotango-theme
-	    textile-mode websocket wgrep windsize wrap-region
-	    yaml-mode yasnippet zenburn-theme zone-matrix)
+            auto-complete base16-theme bookmark+ c-eldoc cedit
+            cl-lib clues-theme color-theme color-theme-gruber-darker
+            color-theme-sanityinc-tomorrow command-log-mode
+            cyberpunk-theme dash deferred dired+ dired-details
+            dired-details+ ein emacs-eclim emmet-mode enclose
+            expand-region git-commit-mode gitconfig-mode
+            github-theme gitignore-mode google-c-style
+            google-contacts gruvbox-theme icicles icomplete+
+            ido-better-flex java-snippets litable magit
+            mark-more-like-this markdown-mode moe-theme monky
+            monokai-theme multi-term multiple-cursors niflheim-theme
+            nose oauth2 popup powerline projectile purty-mode
+            python-django qsimpleq-theme rainbow-delimiters
+            rainbow-mode request smart-mode-line smart-tab
+            smartparens solarized-theme spacegray-theme sr-speedbar
+            sublime-themes tango-2-theme tangotango-theme
+            textile-mode websocket wgrep windsize wrap-region
+            yaml-mode yasnippet zenburn-theme zone-matrix)
   "Lista de paquetes instalados actualmente en mi configuración.")
 
 ;; Default custom file

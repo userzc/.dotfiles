@@ -24,6 +24,7 @@
 ;; (load-theme 'tron t)
 ;; (load-theme 'github t)
 ;; (load-theme 'monokai t)
+;; (load-theme 'waher t)
 ;; (load-theme 'niflheim t)
 ;; (load-theme 'granger t)
 ;; (load-theme 'clues t)
