@@ -86,7 +86,7 @@
 
 ;; To add emacsclient on Mac
 (if (equal system-type 'darwin)
-    (add-to-list "/usr/local/bin/"))
+    (add-to-list 'exec-path "/usr/local/bin/"))
 
 ;; autorevert in dired mode
 (add-hook 'dired-mode-hook 'auto-revert-mode)
