@@ -91,6 +91,7 @@
 (require 'smart-mode-line)
 (require 'zone-matrix)
 (require 'speedbar)
+(require 'js2-refactor)
 ;; (require 'org)
 ;; (require 'eclim)
 

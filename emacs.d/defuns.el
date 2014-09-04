@@ -126,11 +126,23 @@ pueda ejecutar una variedad de subcomandos relacionados."
         (progn  (pop-to-buffer output-buffer)
                 (set-buffer output-buffer)
                 (message "Displaying results"))
-      (progn (message "Something Went Wrong!!")))
+      (progn (message "Something Went Wrong!!"))
+      (ansi-color-process-output t))
     (while (eq (process-status "uva-node-process") 'run)
-      (colorize-buffer output-buffer))
+      ;; (colorize-buffer output-buffer)
+      )
     (message "Colors should have been applied")
-    (colorize-buffer "*uva-node-results*")))
+    ;; (colorize-buffer "*uva-node-results*")
+    (ansi-color-process-output t)
+    (colorize-buffer-uva-results)))
+
+(defun colorize-buffer-uva-results ()
+  "Esta función filtra las secuencias ansi que representan al
+color en el buffer \"*uva-node-results*\""
+  (interactive)
+  (set-buffer "*uva-node-results*")
+  (setq inhibit-read-only t)
+  (ansi-color-apply-on-region (point-min) (point-max)))
 
 (defun colorize-buffer (buffer)
   "Esta función filtra las secuencias ansi que representan al
@@ -141,6 +153,14 @@ hasta el momento."
   (set-buffer buffer)
   (setq inhibit-read-only t)
   (ansi-color-apply-on-region (point-min) (point-max)))
+
+(defadvice acm-uva-node (after coloriza-uva-node-results activate)
+  "Este advice intenta colorizar el buffer \"*uva-node-resuls*\""
+  (progn
+    (set-buffer "*uva-node-results*")
+    (setq inhibit-read-only t)
+    (ansi-color-apply-on-region (point-min) (point-max))
+    (coloriza-uva-node-results)))
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;

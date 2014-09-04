@@ -56,4 +56,9 @@
 ;; Lista de funciones de multiple mode
 (add-to-list 'auto-mode-alist '(".mc-lists.el" . emacs-lisp-mode))
 
+;; Add js2-mode to javascript files
+(eval-after-load "js2-mode"
+  '(progn
+     (add-to-list 'auto-mode-alist '("\\.js$" . js2-mode))))
+
 (provide 'automodes-conf)

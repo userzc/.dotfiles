@@ -78,7 +78,8 @@
 			  (yasnippet t)
 			  (zenburn-theme nil)
 			  (emmet-mode t)
-			  (powerline nil)))
+			  (powerline nil)
+			  (js2-mode t)))
 
 (package-initialize)
 
@@ -112,6 +113,7 @@
 (require 'ido-conf)
 (require 'mail-conf)
 ;; (require 'yasnippet-conf)
+(require 'js2-mode)
 
 (load-theme 'tango-dark)
 

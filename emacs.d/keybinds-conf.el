@@ -501,4 +501,13 @@
      (define-key malabar-mode-map (kbd "C-c C-v C-s") 'malabar-groovy-stop)
      (define-key malabar-mode-map (kbd "C-c C-v r") 'malabar-groovy-restart)))
 
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;;         js2-refactor
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+(eval-after-load "js2-refactor"
+  '(progn
+     (js2r-add-keybindings-with-prefix "C-c C-m")))
+
 (provide 'keybinds-conf)

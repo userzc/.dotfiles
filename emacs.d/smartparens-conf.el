@@ -7,6 +7,7 @@
 (sp-local-tag 'emacs-lisp-mode "`" "`" "'" :actions '(wrap))
 (sp-local-tag 'org-mode "*" "*" "*" :actions '(wrap))
 (sp-local-tag 'org-mode "=" "=""=" :actions '(wrap))
+(sp-local-tag 'org-mode "~" "~""~" :actions '(wrap))
 (require 'smartparens-config)
 (require 'smartparens-latex)
 
