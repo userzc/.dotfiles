@@ -11,33 +11,33 @@
     "segments": {
         "right": [
             {
-                "name": "uptime",
+                "function": "uptime",
                 "priority": 50
             },
             {
-                "name": "system_load",
+                "function": "system_load",
                 "priority": 50
             },
             {
-                "name": "date"
+                "function": "date"
             },
             {
-                "name": "date",
+                "function": "date",
                 "args": {
                     "format": "%H:%M",
                     "istime": true
                 }
             },
             {
-                "name": "weather",
+                "function": "weather",
                 "priority": 50,
                 "args": {
                     "unit": "C",
-                    "location_query": "oaxaca, mexico"
+                    "location_query": "huajuapan, oaxaca, mexico"
                 }
             },
             {
-                "name": "hostname"
+                "function": "hostname"
             }
         ]
     }
