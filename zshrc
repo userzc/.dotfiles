@@ -211,8 +211,23 @@ export NODE_PATH="/usr/local/lib/node_modules"
 # export NODE_PATH="/usr/local/shape/npm"
 
 # Add android-sdk binaries and tools to path
-export PATH="/home/rene/dev-android/android-sdk-linux/tools/":$PATH
-export PATH="/home/rene/dev-android/android-sdk-linux/platform-tools/":$PATH
+
+if [[ `uname` == 'Darwin' ]]; then
+    echo 'In Darwin system'
+    export ANDROID_SDK='android-sdk-macosx'
+fi
+
+if [[ `uname` == 'Linux' ]]; then
+    echo 'In Linux system'
+    export ANDROID_SDK='android-sdk-macosx'
+fi
+
+
+export PATH="$HOME/dev-android/$ANDROID_SDK/tools/":$PATH
+export PATH="$HOME/dev-android/$ANDROID_SDK/platform-tools/":$PATH
+
+# export PATH="/Users/veureka/dev-android/$ANDROID_SDK/tools/":$PATH
+# export PATH="/Users/veureka/dev-android/$ANDROID_SDK//platform-tools/":$PATH
 
 #THIS MUST BE AT THE END OF THE FILE FOR GVM TO WORK!!!
 [[ -s "/home/rene/.gvm/bin/gvm-init.sh" ]] && source "/home/rene/.gvm/bin/gvm-init.sh"

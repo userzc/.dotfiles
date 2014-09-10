@@ -1,12 +1,32 @@
 #!/bin/sh
 
-echo "==== Installing common tools ===="
-sudo apt-get -y install git
-sudo apt-get -y install emacs
-sudo apt-get -y install zsh
-sudo apt-get -y install fonts-inconsolata
+if [ `uname` == 'Darwin' ]
+then
+    export OS_TYPE='mac'
+    export INSTALL_COMMAND='brew install'
+fi
 
-echo "==== Installing oh-my-sh [personal fork] ===="
+if [ `uname` == 'Linux']
+then
+    if [ -f /etc/redhat-release ]
+    then
+        export OS_TYPE='redhat'
+	export INSTALL_COMMAND='yum -y install'
+    elif [ -s `lsb_release` ]
+    then
+	export OS_TYPE='debian'
+	export INSTALL_COMMAND='apt-get -y install'
+    fi
+fi
+
+
+echo "==== Installing common tools ===="
+`sudo $INSTALL_COMMAND git`
+`sudo $INSTALL_COMMAND emacs`
+`sudo $INSTALL_COMMAND zsh`
+`sudo $INSTALL_COMMAND fonts-inconsolata`
+
+echo "==== Installing oh-my-zsh [personal fork] ===="
 if [ ! -d "~/.oh-my-zsh" ] ; then
     cd ~
     curl -L https://github.com/userzc/oh-my-zsh/raw/master/tools/install.sh | sh
