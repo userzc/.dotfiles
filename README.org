@@ -28,7 +28,7 @@ python ~/.dotfiles/sync -i
    soon as possible use:
 
 #+begin_src sh
-curl -L https:/github.com/userzc/.dotfiles/raw/master/basic_environ.sh | sh
+curl -L https://github.com/userzc/.dotfiles/raw/master/basic_environ.sh | sh
 #+end_src
 
 *** Note:
