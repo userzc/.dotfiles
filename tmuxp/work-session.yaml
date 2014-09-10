@@ -1,0 +1,11 @@
+session_name: work
+start-directory: "~"
+windows:
+  - window_name: stats
+    panes:
+      - tail -f /var/log/syslog
+      - htop
+  - window_name: 0
+    panes:
+      -
+    focus: true

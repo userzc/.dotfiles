@@ -129,11 +129,17 @@ export PATH=$PATH:"/usr/games"
 export PATH=$PATH:"$HOME/bin"
 export PATH=$PATH:"/home/rene/.local/bin"
 
-if [[ -e "/home/rene/powerline/powerline/bindings/tmux/powerline.conf" ]]; then
-    export TMUX_PL="/home/rene/powerline/powerline/bindings/tmux/powerline.conf"
+if [[ -e "$HOME/powerline/powerline/bindings/tmux/powerline.conf" ]]; then
+    export TMUX_PL="$HOME/powerline/powerline/bindings/tmux/powerline.conf"
 else
     echo "\033[0;31m"'powerline tmux not active'"\033[0;31m"
 fi
+
+# if [[ -e "/home/rene/powerline/powerline/bindings/tmux/powerline.conf" ]]; then
+#     export TMUX_PL="/home/rene/powerline/powerline/bindings/tmux/powerline.conf"
+# else
+#     echo "\033[0;31m"'powerline tmux not active'"\033[0;31m"
+# fi
 
 export PYTHONPATH="/home/rene/Documents"
 export PYTHONPATH=$PYTHONPATH:"/home/rene/Documents/Semestre 3/PDE/Proyecto/SegundoReporte/BurgersComputedSolutions/FLIC_Boost"
