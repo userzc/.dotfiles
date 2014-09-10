@@ -1,24 +1,25 @@
 #!/bin/sh
 
-if [ `uname` == 'Darwin' ]
-then
+if [ `uname` = 'Darwin' ]; then
     export OS_TYPE='mac'
     export INSTALL_COMMAND='brew install'
-fi
-
-if [ `uname` == 'Linux']
-then
-    if [ -f /etc/redhat-release ]
-    then
+elif [ `uname` = 'Linux' ]; then
+    if [ -f /etc/redhat-release ]; then
         export OS_TYPE='redhat'
-	export INSTALL_COMMAND='yum -y install'
-    elif [ -s `lsb_release` ]
-    then
-	export OS_TYPE='debian'
-	export INSTALL_COMMAND='apt-get -y install'
+        export INSTALL_COMMAND='yum -y install'
+    elif [ -n `lsb_release` ]; then
+        export OS_TYPE='debian'
+        export INSTALL_COMMAND='apt-get -y install'
     fi
+else
+    echo "No *nix OS detected"
 fi
 
+if [ "$OS_TYPE" ]
+then
+    echo "Install command is:" $INSTALL_COMMAND
+    echo "OS is:" $OS_TYPE
+fi
 
 echo "==== Installing common tools ===="
 `sudo $INSTALL_COMMAND git`
