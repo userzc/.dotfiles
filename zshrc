@@ -213,12 +213,12 @@ export NODE_PATH="/usr/local/lib/node_modules"
 # Add android-sdk binaries and tools to path
 
 if [[ `uname` == 'Darwin' ]]; then
-    echo 'In Darwin system'
+    # echo 'In Darwin system'
     export ANDROID_SDK='android-sdk-macosx'
 fi
 
 if [[ `uname` == 'Linux' ]]; then
-    echo 'In Linux system'
+    # echo 'In Linux system'
     export ANDROID_SDK='android-sdk-macosx'
 fi
 

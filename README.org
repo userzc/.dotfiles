@@ -24,7 +24,7 @@ python ~/.dotfiles/sync -i
 
 ** Quick basic environment
 
-   To install some usefull features and get emacs and other googies as
+   To install some usefull features and get emacs and other goodies as
    soon as possible use:
 
 #+begin_src sh
