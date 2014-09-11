@@ -15,10 +15,10 @@ else
     echo "No *nix OS detected"
 fi
 
-if [ "$OS_TYPE" ]
+if [ "$OS_TYPE" ] &&  [ "$INSTALL_COMMAND" ]
 then
-    echo "Install command is:" $INSTALL_COMMAND
-    echo "OS is:" $OS_TYPE
+    echo "Install command is: $INSTALL_COMMAND"
+    echo "OS is: $OS_TYPE"
 fi
 
 echo "==== Installing common tools ===="
