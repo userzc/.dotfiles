@@ -313,7 +313,7 @@ referencias al final del mismo."
               (move-beginning-of-line nil)
               (delete-pair)
               ;; generar "- yyyy.mm.dd, 2"
-              (insert (format-time-string "- %Y.%m.%d "))
+              (insert (format-time-string "- %Y.%m.%d, "))
               (move-end-of-line nil)
               (insert "\n")
               (yank)

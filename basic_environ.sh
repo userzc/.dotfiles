@@ -36,7 +36,6 @@ else
 fi
 
 echo "==== Installing Dotfiles ===="
-
 if [ ! -d "~/.dotfiles" ]; then
     /usr/bin/env git clone https://github.com/userzc/.dotfiles.git ~/.dotfiles
     cd ~/.dotfiles

@@ -64,6 +64,7 @@
 	org-kill-line
 	org-metaleft
 	org-metaright
+	org-open-line
 	org-return
 	org-return-indent
 	org-self-insert-command
