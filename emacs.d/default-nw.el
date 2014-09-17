@@ -37,6 +37,7 @@
 			  (dired+ t)
 			  (dired-details t)
 			  (dired-details+ t)
+			  (dired-x t)
 			  (ein nil)
 			  (enclose t)
 			  (expand-region t)
@@ -112,6 +113,7 @@
 (require 'smartparens-conf)
 (require 'ido-conf)
 (require 'mail-conf)
+(require 'dired-conf)
 ;; (require 'yasnippet-conf)
 (require 'js2-mode)
 

@@ -58,6 +58,7 @@
 	open-line-above
 	open-line-below
 	org-beginning-of-line
+	org-ctrl-c-star
 	org-delete-char
 	org-end-of-line
 	org-force-self-insert
@@ -69,6 +70,7 @@
 	org-return-indent
 	org-self-insert-command
 	org-table-blank-field
+	org-todo
 	org-yank
 	orgtbl-hijacker-command-102
 	orgtbl-self-insert-command

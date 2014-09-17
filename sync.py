@@ -32,12 +32,14 @@ USER_HOME = expanduser("~")
 IGNORED_ITEMS = [
     'config',
     'lib',
+    'bin',
     'README.md',
     'README.org',
     'readme_var.md',
     'readme_var.org',
     'sync.py',
     'basic_environ.sh',
+    'batch_script.el',
 ]
 SPECIFIC_INSTALL_DIRS = [
     ('config', '.config'),
