@@ -9,12 +9,11 @@ sudo yum install -y gcc make ncurses-devel
 sudo yum install -y giflib-devel libjpeg-devel libtiff-devel
 cd /usr/local/src/
 sudo wget http://ftp.gnu.org/pub/gnu/emacs/emacs-24.3.tar.gz
-tar -xzvf emacs-24.3.tar.gz
+sudo tar -xzvf emacs-24.3.tar.gz
 cd emacs-24.3
-./configure --without-x
-make
+sudo ./configure --without-x
+sudo make
 sudo make install
-
 
 echo "==== Installing Dotfiles ===="
 if [ ! -d "~/.dotfiles" ]; then
