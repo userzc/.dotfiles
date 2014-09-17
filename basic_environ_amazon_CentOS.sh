@@ -29,6 +29,7 @@ echo "==== Installing oh-my-zsh [personal fork] ===="
 if [ ! -d "~/.oh-my-zsh" ] ; then
     cd ~
     curl -L https://github.com/userzc/oh-my-zsh/raw/master/tools/install.sh | sh
+    mv .zshrc.pre-oh-my-zsh .zshrc
 else
     echo "===== oh-my-sh [personal fork] already installed"
 fi
