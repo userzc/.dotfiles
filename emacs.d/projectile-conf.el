@@ -16,6 +16,7 @@
 (add-hook 'c++-mode-hook 'projectile-mode)
 (add-hook 'java-mode-hook 'projectile-mode)
 (add-hook 'nxml-mode-hook 'projectile-mode)
+(add-hook 'html-mode-hook 'projectile-mode)
 (add-hook 'drools-mode-hook 'projectile-mode)
 (add-hook 'malabar-groovy-mode-hook 'projectile-mode)
 

@@ -1,3 +1,6 @@
+;; Por alguna razón emacs no está haciendo caso de la configuración de
+;; auto-mode-alist, así que se añade un hook para cambiar el major-mode
+(add-hook 'js-mode-hook 'js2-mode)
 ;; (add-hook 'js-mode-hook 'js2-minor-mode)
 (add-hook 'js2-mode-hook 'ac-js2-mode)
 

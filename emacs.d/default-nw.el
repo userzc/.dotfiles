@@ -66,6 +66,7 @@
 			  (rainbow-delimiters t)
 			  (rainbow-mode t)
 			  (request t)
+			  (s t)
 			  (smart-mode-line nil)
 			  (smart-tab t)
 			  (smartparens t)
@@ -80,7 +81,8 @@
 			  (zenburn-theme nil)
 			  (emmet-mode t)
 			  (powerline nil)
-			  (js2-mode t)))
+			  (js2-mode t)
+			  (js2-refactor t)))
 
 (package-initialize)
 

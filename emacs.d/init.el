@@ -41,7 +41,6 @@
 (setq custom-file "~/.emacs.d/emacs-custom.el")
 (load custom-file)
 
-
 ;; varialbes:
 ;; `HKEY_LOCAL_MACHINE\Software\Microsoft\Command Processor\AutoRun'
 ;; `HKEY_CURRENT_USER\Software\Microsoft\Command Processor\AutoRun'

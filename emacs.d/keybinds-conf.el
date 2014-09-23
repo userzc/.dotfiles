@@ -169,7 +169,7 @@
 ;; https://github.com/bbatsov/projectile
 ;; Es útil acceder de manera global a project-file sin tener que
 ;; activar el minor-mdoe
-(global-set-key (kbd "C-c p s") 'projectile-switch-project)
+(global-set-key (kbd "C-c p p") 'projectile-switch-project)
 
 (global-set-key (kbd "C-c n") 'cleanup-buffer)
 ;; Se necesita encontrar un nuevo key-bind para esta función y poder
@@ -509,5 +509,10 @@
 (eval-after-load "js2-refactor"
   '(progn
      (js2r-add-keybindings-with-prefix "C-c C-m")))
+
+(eval-after-load "js2-mode"
+  '(progn
+     (js2r-add-keybindings-with-prefix "C-c C-m")
+     (define-key js2-mode-map (kbd "M-j") nil)))
 
 (provide 'keybinds-conf)
