@@ -329,8 +329,8 @@
      ;; Parece ser útil tener multiple-cursors en regiones
      ;; (global-set-key (kbd "M-®") 'mc/mark-all-in-region)
      ;; ;; Se podria cambiar por:
-     (global-set-key (kbd "M-Æ") 'mc/mark-all-in-region)
-     (global-set-key (kbd "M-Á") 'mc/mark-all-in-region) ;AltGr-Shift-A = Á
+     (global-set-key (kbd "M-Æ") 'mc/mark-all-in-region-regexp)
+     (global-set-key (kbd "M-Á") 'mc/mark-all-in-region-regexp) ;AltGr-Shift-A = Á
      ;; No he podido identificar la tecla Hyper, así que estoy probando
      ;; diferentes opciones, investigar más respecto a ns-function-modifier
      ;; (setq ns-function-modifier 'hyper )

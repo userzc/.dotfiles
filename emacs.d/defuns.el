@@ -3,7 +3,7 @@
 (defadvice open-line (after open-line-reindent-line activate)
   "Indenta la nueva línea, sólo en los 'major-mode' apropiados"
   (if (member (buffer-local-value 'major-mode (current-buffer))
-              '(c++-mode nxml-mode malabar-mode sgml-mode))
+              '(c++-mode nxml-mode malabar-mode html-mode))
       (save-excursion
         ;; (next-line) ;this is for interactive use
         (forward-line)

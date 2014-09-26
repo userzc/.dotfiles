@@ -8,21 +8,21 @@
 (setq visible-bell t)
 (setq ring-bell-function
       (lambda ()
-	"Using Scroll Lock led as alarm"
-	(progn
-	  (call-process-shell-command "xset led named 'Scroll Lock'")
-	  (call-process-shell-command "xset -led named 'Scroll Lock'"))))
+        "Using Scroll Lock led as alarm"
+        (progn
+          (call-process-shell-command "xset led named 'Scroll Lock'")
+          (call-process-shell-command "xset -led named 'Scroll Lock'"))))
 
 ;; Write backup files to own directory
 (setq backup-directory-alist
       `(("." . ,(expand-file-name
-                 (concat user-emacs-directory "backups")))))
+		(concat user-emacs-directory "backups")))))
 
 ;; Make emacs recognize alias, see
 ;; http://stackoverflow.com/questions/12224909/is-there-a-way-to-get-my-emacs-to-recognize-my-bash-aliases-and-custom-functions
 ;; (setq shell-file-name "zsh")
 ;; (setq shell-command-switch "-ic")
-(setq shell-file-name "sh")		;this seems to be faster
+(setq shell-file-name "sh")             ;this seems to be faster
 
 
 ;; Make backups of files, even when they're in version control
