@@ -39,3 +39,7 @@ alias mvnaggbvv="mvn archetype:generate -B\
  -DarchetypeGroupId=org.codehaus.gmaven.archetypes\
  -DarchetypeArtifactId=gmaven-archetype-basic\
  -DgroupId=com.veureka "
+
+# Mercurial aliases (Using syntax similar to mercurial zsh plugin)
+alias hgslp='hg log --limit 20 --template "{node|short} | {date|isodatesec} | {author|person}: {desc|strip|firstline}\n" '
+alias hgsle='hg log --limit 20 --template "{node|short} | {date|isodatesec} | {author|emailuser}: {desc|strip|firstline}\n" '
