@@ -1,6 +1,8 @@
 ;; ibuffer > list-buffer
 (global-set-key (kbd "C-x C-b") 'ibuffer-list-buffers)
 
+(global-set-key (kbd "C-c C-c C-v") 'browse-url-of-buffer-firefox)
+
 ;; zap-up-to-char
 (eval-after-load "misc"
   '(progn    (global-set-key (kbd "M-Z") 'zap-up-to-char)

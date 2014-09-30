@@ -334,4 +334,34 @@ referencias al final del mismo."
       (switch-to-buffer "*links*")
       (kill-buffer-and-window))))
 
+;; Explore pages with firefox
+
+(defun browse-url-of-buffer-firefox (&optional buffer)
+  "Ask WWW browser Firefox to display BUFFER.
+Display the current buffer if BUFFER is nil.  Display only the
+currently visible part of BUFFER (from a temporary file) if
+buffer is narrowed."
+  (interactive)
+  (save-excursion
+    (and buffer (set-buffer buffer))
+    (let ((file-name
+           ;; Ignore real name if restricted
+           (and (not (buffer-narrowed-p))
+                (or buffer-file-name
+                    (and (boundp 'dired-directory) dired-directory)))))
+      (or file-name
+          (progn
+            (or browse-url-temp-file-name
+                (setq browse-url-temp-file-name
+                      (convert-standard-filename
+                       (make-temp-file
+                        (expand-file-name "burl" browse-url-temp-dir)
+                        nil ".html"))))
+            (setq file-name browse-url-temp-file-name)
+            (write-region (point-min) (point-max) file-name nil 'no-message)))
+      (async-shell-command
+       (concat "firefox "
+	       file-name) "*async-firefox-output*" "*async-firefox-error*"))))
+
+
 (provide 'defuns)
