@@ -8,3 +8,10 @@ bitbucket.org = 45:ad:ae:1a:cf:0e:73:47:06:07:e0:88:f5:cc:10:e5:fa:1c:f7:99
 [extensions]
 hgext.convert=
 hgext.purge=
+hgext.shelve=
+
+[merge]
+merge = emacs
+
+[merge-tools]
+emacs.args = -q --eval "(ediff-merge-with-ancestor \""$local"\" \""$other"\" \""$base"\" nil \""$output"\")"

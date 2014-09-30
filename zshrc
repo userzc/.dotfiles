@@ -221,6 +221,7 @@ fi
 
 export PATH="$HOME/dev-android/$ANDROID_SDK/tools/":$PATH
 export PATH="$HOME/dev-android/$ANDROID_SDK/platform-tools/":$PATH
+export ANDROID_HOME="$HOME/dev-android/$ANDROID_SDK/"
 
 
 #THIS MUST BE AT THE END OF THE FILE FOR GVM TO WORK!!!
