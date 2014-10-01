@@ -363,5 +363,4 @@ buffer is narrowed."
        (concat "firefox "
 	       file-name) "*async-firefox-output*" "*async-firefox-error*"))))
 
-
 (provide 'defuns)
