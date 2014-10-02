@@ -116,6 +116,7 @@
 (require 'icomplete-conf)
 (require 'ack-conf)
 (require 'magit-conf)
+(require 'monky-conf)
 (require 'multi-term-conf)
 (require 'mail-conf)
 (require 'auto-complete-conf)

@@ -130,7 +130,7 @@
 ;; monky-mode
 (eval-after-load "monky"
   '(progn
-     ;; (define-key magit-status-mode-map (kbd "q") 'magit-quit-session)
+     (define-key monky-status-mode-map (kbd "q") 'monky-quit-session)
      (global-set-key (kbd "C-c M-M") 'monky-status)))
 
 ;; nose-mode
