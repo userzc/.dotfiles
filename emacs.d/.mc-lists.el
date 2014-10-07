@@ -169,6 +169,7 @@
 	rotate-windows
 	scroll-other-window
 	sml/toggle-shorten-modes
+	sp-end-of-sexp
 	tags-loop-continue
 	tmm-menubar
 	toggle-input-method

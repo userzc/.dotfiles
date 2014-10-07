@@ -36,7 +36,7 @@
 ;; (load-theme 'base16-monokai t)
 ;; (load-theme 'ample-zen t)
 ;; (load-theme 'spacegray t)
-(load-theme 'sanityinc-tomorrow-eighties t)
+(load-theme 'sanityinc-tomorrow-night t)
 ;; (load-theme 'solarized-light t)
 ;; (load-theme 'qsimpleq t)
 ;; (load-theme 'dorsey t)

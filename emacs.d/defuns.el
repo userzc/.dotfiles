@@ -301,6 +301,7 @@ referencias al final del mismo."
       ((original-buffer (current-buffer)))
     (switch-to-buffer-other-window "*links*")
     (switch-to-buffer-other-window original-buffer)
+    (goto-char (point-min))
     (while (search-forward "\[\[" nil t) ;se busca "[[1][2]]"
       (progn  (forward-char -2)
               (mark-sexp)
@@ -329,7 +330,7 @@ referencias al final del mismo."
       (message "link recollection terminated")
       (org-mode)
       (end-of-buffer)
-      (insert "\n* Referencias\n")
+      (insert "\n* Referencias\n\n")
       (insert-buffer "*links*")
       (switch-to-buffer "*links*")
       (kill-buffer-and-window))))

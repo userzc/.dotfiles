@@ -223,6 +223,8 @@ export PATH="$HOME/dev-android/$ANDROID_SDK/tools/":$PATH
 export PATH="$HOME/dev-android/$ANDROID_SDK/platform-tools/":$PATH
 export ANDROID_HOME="$HOME/dev-android/$ANDROID_SDK/"
 
+# Cask
+export PATH="/home/rene/.cask/bin:$PATH"
 
 #THIS MUST BE AT THE END OF THE FILE FOR GVM TO WORK!!!
 [[ -s "/home/rene/.gvm/bin/gvm-init.sh" ]] && source "/home/rene/.gvm/bin/gvm-init.sh"
