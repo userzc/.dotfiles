@@ -146,6 +146,7 @@ export PYTHONPATH=$PYTHONPATH:"/home/rene/Documents/Semestre 3/PDE/Proyecto/Segu
 export PYTHONPATH=$PYTHONPATH:"/home/rene/Documents/Semestre 4/PruebaGeneral2D/BoostCode/"
 export PYTHONPATH=$PYTHONPATH:"/home/rene/Documents/Semestre 4/PruebaGeneral2D/PythonCode/"
 export PYTHONPATH=$PYTHONPATH:"/home/rene/Documents/FORCE_md/"
+export PYTHONPATH=$PYTHONPATH:"/home/rene/lib/python_lib/"
 
 if [[ -d $HOME/.virtualenvs ]]; then
     export WORKON_HOME="$HOME/.virtualenvs"

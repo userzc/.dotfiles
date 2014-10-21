@@ -40,13 +40,10 @@ def extendedEuclid(a, b):
     x = x1
     y = y1
 
-
 def extendedEuclid_mod(a, b):
     """This function calculates the greatest common divisor of two
     integers a, b. Does not need global variables. Can return GCD with
     negative sign so extra care is needed in that case.
-
-
 
     Parameters
     ----------
@@ -65,10 +62,41 @@ def extendedEuclid_mod(a, b):
     x, y, d = extendedEuclid_mod(b, a % b)
     return y, x - (a / b) * y, d
 
+def extendedEuclid_mod_test(a, b):
+    """This function tests the results of a tuple
+
+    Parameters
+    ----------
+    a , b : int
+        Integers for which the GCD is calculated.
+
+    """
+    tupla_euclid = euclid(a, b)
+    print "a * s + b * r =", a * tupla_euclid[0] + b * tupla_euclid[1]
+    print "d =", tupla_euclid[2]
+
+def extendedEuclid_mod_corrobora(a, b, tupla_euclid):
+    """This function tests the results of the `tupla_euclid` tuple with
+    the following assumptions:
+
+    >>> tupla_euclid = euclid(a, b)
+
+    It is supposed that `(s, r, d) = tupla_euclid`.
+
+    Parameters
+    ----------
+    a , b : int
+        Integers for which the GCD is calculated.
+    tupla_euclid : int, tuple
+        The tuple resulted from calling euclid(a, b)
+
+    """
+    print "a * s + b * r =", a * tupla_euclid[0] + b * tupla_euclid[1]
+    print "d =", tupla_euclid[2]
+
 def euclid(a, b):
     """This function calculates the greatest common divisor of two
     integers a, b. It's for the general case.
-
 
     Parameters
     ----------

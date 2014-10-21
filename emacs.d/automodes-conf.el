@@ -1,3 +1,6 @@
+;; Para archivos Cask
+(add-to-list 'auto-mode-alist '("Cask$" . emacs-lisp-mode))
+
 ;; Para pylintrc respaldado
 (add-to-list 'auto-mode-alist '("pylintrc$" . conf-mode))
 

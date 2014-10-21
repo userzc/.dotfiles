@@ -85,6 +85,7 @@
 	recompile
 	reindent-then-newline-and-indent
 	sh-assignment
+	shell-command
 	smart-tab
 	sp--self-insert-command
 	sp-backward-barf-sexp
