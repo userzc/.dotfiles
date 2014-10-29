@@ -37,6 +37,7 @@
 	forward-sexp
 	forward-to-word
 	ibuffer-mark-for-delete
+	ibuffer-mark-forward
 	icicle-exchange-point-and-mark
 	icicle-execute-extended-command
 	icicle-goto-marker-or-set-mark-command

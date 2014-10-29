@@ -36,7 +36,7 @@
 		  sr-speedbar sublime-themes tango-2-theme
 		  tangotango-theme textile-mode websocket wgrep
 		  windsize wrap-region yaml-mode yasnippet
-		  zenburn-theme zone-matrix )
+		  zenburn-theme zone-matrix)
   "Lista de paquetes instalados actualmente en mi configuración.")
 
 ;; Default custom file

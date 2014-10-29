@@ -114,8 +114,7 @@ pueda ejecutar una variedad de subcomandos relacionados."
           (set-buffer output-buffer)
           (erase-buffer)
           (start-process "uva-node-process" output-buffer "node"
-                         uva-node-path
-                         command)
+                          uva-node-path command uva-args)
 
           ;; (compile (concat "node "
           ;;                  uva-node-path " "
