@@ -107,20 +107,15 @@ pueda ejecutar una variedad de subcomandos relacionados."
                 (if (string= command "send")
                     (buffer-file-name)
                   id_problem))
-          (setq full-uva-command  (concat full-uva-command " " uva-args))))
+          (setq full-uva-command  (concat full-uva-command " " uva-args)))
+      (setq uva-args "" ))
     (message (concat "=: Executing [ " full-uva-command " ] :="))
     (if (progn
           (get-buffer-create output-buffer)
           (set-buffer output-buffer)
           (erase-buffer)
           (start-process "uva-node-process" output-buffer "node"
-                          uva-node-path command uva-args)
-
-          ;; (compile (concat "node "
-          ;;                  uva-node-path " "
-          ;;                  command))
-
-          )
+                          uva-node-path command uva-args))
 
         (progn  (pop-to-buffer output-buffer)
                 (set-buffer output-buffer)
@@ -154,12 +149,11 @@ hasta el momento."
   (ansi-color-apply-on-region (point-min) (point-max)))
 
 (defadvice acm-uva-node (after coloriza-uva-node-results activate)
-  "Este advice intenta colorizar el buffer \"*uva-node-resuls*\""
+  "Este advice intenta coloriza el buffer \"*uva-node-resuls*\""
   (progn
     (set-buffer "*uva-node-results*")
     (setq inhibit-read-only t)
-    (ansi-color-apply-on-region (point-min) (point-max))
-    (coloriza-uva-node-results)))
+    (ansi-color-apply-on-region (point-min) (point-max))))
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
