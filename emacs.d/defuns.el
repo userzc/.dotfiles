@@ -99,7 +99,11 @@ pueda ejecutar una variedad de subcomandos relacionados."
          (output-buffer "*uva-node-results*")
          (full-uva-command
           (concat "node" " " uva-node-path " " command))
-         (commands-use-id-list '("send" "view")))
+         (commands-use-id-list '("send" "view"))
+         (compilation-buffer-name-function
+          (lambda (&rest ignore)
+            "Función local para establecer el nombre del buffer
+          de compilación de manera apropiada" output-buffer)))
     (if (member command commands-use-id-list)
         (progn
           (message (concat "Current file" (buffer-file-name)))
@@ -110,25 +114,12 @@ pueda ejecutar una variedad de subcomandos relacionados."
           (setq full-uva-command  (concat full-uva-command " " uva-args)))
       (setq uva-args "" ))
     (message (concat "=: Executing [ " full-uva-command " ] :="))
-    (if (progn
-          (get-buffer-create output-buffer)
-          (set-buffer output-buffer)
-          (erase-buffer)
-          (start-process "uva-node-process" output-buffer "node"
-                          uva-node-path command uva-args))
-
+    (if (progn (compile full-uva-command t))
         (progn  (pop-to-buffer output-buffer)
                 (set-buffer output-buffer)
                 (message "Displaying results"))
-      (progn (message "Something Went Wrong!!"))
-      (ansi-color-process-output t))
-    (while (eq (process-status "uva-node-process") 'run)
-      ;; (colorize-buffer output-buffer)
-      )
-    (message "Colors should have been applied")
-    ;; (colorize-buffer "*uva-node-results*")
-    (ansi-color-process-output t)
-    (colorize-buffer-uva-results)))
+      (progn (message "Something Went Wrong!!")))
+    (message "Colors should have been applied")))
 
 (defun colorize-buffer-uva-results ()
   "Esta función filtra las secuencias ansi que representan al
@@ -355,6 +346,6 @@ buffer is narrowed."
             (write-region (point-min) (point-max) file-name nil 'no-message)))
       (async-shell-command
        (concat "firefox "
-	       file-name) "*async-firefox-output*" "*async-firefox-error*"))))
+               file-name) "*async-firefox-output*" "*async-firefox-error*"))))
 
 (provide 'defuns)
