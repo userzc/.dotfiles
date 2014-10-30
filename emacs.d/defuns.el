@@ -43,9 +43,10 @@
 
 ;; funciones para el juez uva online acm icpc
 (defun acm-problem (id_problem)
-  "Esta función abre o genera una carpeta con sus respectivos
-archivos en base al nombre del problema de la uva que se intenta
-resolver"
+  "Esta función genera una carpeta con los respectivos archivos
+en base al número del problema de la uva que se intenta resolver
+o abre los archivos correspondientes un problema ya intentado de
+las opciones para completado en el minibuffer."
   (interactive
    (list (completing-read
           "UVA Problem Id:"
@@ -103,7 +104,8 @@ pueda ejecutar una variedad de subcomandos relacionados."
          (compilation-buffer-name-function
           (lambda (&rest ignore)
             "Función local para establecer el nombre del buffer
-          de compilación de manera apropiada" output-buffer)))
+          de compilación de manera apropiada" output-buffer))
+         (previous-compile-command compile-command))
     (if (member command commands-use-id-list)
         (progn
           (message (concat "Current file" (buffer-file-name)))
@@ -111,15 +113,12 @@ pueda ejecutar una variedad de subcomandos relacionados."
                 (if (string= command "send")
                     (buffer-file-name)
                   id_problem))
-          (setq full-uva-command  (concat full-uva-command " " uva-args)))
-      (setq uva-args "" ))
+          (setq full-uva-command  (concat full-uva-command " " uva-args))))
     (message (concat "=: Executing [ " full-uva-command " ] :="))
     (if (progn (compile full-uva-command t))
-        (progn  (pop-to-buffer output-buffer)
-                (set-buffer output-buffer)
-                (message "Displaying results"))
+        (progn (message "Displaying results"))
       (progn (message "Something Went Wrong!!")))
-    (message "Colors should have been applied")))
+    (setq compile-command previous-compile-command)))
 
 (defun colorize-buffer-uva-results ()
   "Esta función filtra las secuencias ansi que representan al
@@ -138,13 +137,6 @@ hasta el momento."
   (set-buffer buffer)
   (setq inhibit-read-only t)
   (ansi-color-apply-on-region (point-min) (point-max)))
-
-(defadvice acm-uva-node (after coloriza-uva-node-results activate)
-  "Este advice intenta coloriza el buffer \"*uva-node-resuls*\""
-  (progn
-    (set-buffer "*uva-node-results*")
-    (setq inhibit-read-only t)
-    (ansi-color-apply-on-region (point-min) (point-max))))
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
