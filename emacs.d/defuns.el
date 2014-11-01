@@ -43,10 +43,11 @@
 
 ;; funciones para el juez uva online acm icpc
 (defun acm-problem (id_problem)
-  "Esta función genera una carpeta con los respectivos archivos
-en base al número del problema de la uva que se intenta resolver
-o abre los archivos correspondientes un problema ya intentado de
-las opciones para completado en el minibuffer."
+  "Esta función genera una carpeta y archivos dentro de la misma
+en base al número del problema de la UVA que se intenta resolver
+o abre los archivos correspondientes a un problema ya intentado,
+dando opciones para completado en el minibuffer si no se ha
+marcado como resuelto."
   (interactive
    (list (completing-read
           "UVA Problem Id:"
@@ -55,21 +56,26 @@ las opciones para completado en el minibuffer."
            (cdr (cdr (sort (file-name-all-completions
                             "" "~/Documents/ACM-ICPC/Tried/")
                            'string<)))))))
-  (let (nuevo-dir-problem)
-    (setq nuevo-dir-problem (concat "~/Documents/ACM-ICPC/Tried/" id_problem))
-    (message nuevo-dir-problem)
-    (if (file-directory-p nuevo-dir-problem)
+  (let* ((dir-problem nil)
+         (dir-tried (concat "~/Documents/ACM-ICPC/Tried/" id_problem))
+         (dir-accepted (concat "~/Documents/ACM-ICPC/Accepted/" id_problem)))
+    (cond
+     ((file-directory-p dir-accepted)
+      (setq dir-problem dir-accepted))
+     ((file-directory-p dir-tried)
+      (setq dir-problem dir-tried)))
+    (if dir-problem
         (progn
           (message  (concat "Ya existe: " id_problem))
-          (find-file (concat nuevo-dir-problem "/" id_problem "output.txt"))
-          (find-file (concat nuevo-dir-problem "/" id_problem  "input.txt"))
-          (find-file (concat nuevo-dir-problem "/" id_problem ".cpp")))
+          (find-file (concat dir-problem "/" id_problem "output.txt"))
+          (find-file (concat dir-problem "/" id_problem  "input.txt"))
+          (find-file (concat dir-problem "/" id_problem ".cpp")))
       (progn
         (message (concat "Se crea: " id_problem))
-        (dired-create-directory nuevo-dir-problem)
-        (find-file (concat nuevo-dir-problem "/" id_problem ".cpp"))
-        (find-file (concat nuevo-dir-problem "/" id_problem "output.txt"))
-        (find-file (concat nuevo-dir-problem "/" id_problem  "input.txt"))))))
+        (dired-create-directory dir-problem)
+        (find-file (concat dir-problem "/" id_problem ".cpp"))
+        (find-file (concat dir-problem "/" id_problem "output.txt"))
+        (find-file (concat dir-problem "/" id_problem  "input.txt"))))))
 
 (defun acm-run-program ()
   "Esta función ejecuta el archivo compilado pasandole en input
