@@ -41,6 +41,9 @@
 ;; join-line(aka delete-indentation)
 (global-set-key (kbd "M-j") 'join-line)
 
+;; Para acceder al programa man (principalmente cppman info)
+(global-set-key (kbd "C-c i") 'man)
+
 ;;;;;;;;;;;;;;
 ;; org-mode ;;
 ;;;;;;;;;;;;;;

@@ -15,7 +15,7 @@
 
 ;; (color-theme-wombat+)
 ;; (load-theme 'organic-green t)
-(load-theme 'tangotango t)
+;; (load-theme 'tangotango t)
 ;; (load-theme 'moe-light t)
 ;; (load-theme 'moe-dark t)
 ;; (load-theme 'wombat t)
@@ -31,7 +31,7 @@
 ;; (load-theme 'assemblage t)
 ;; (load-theme 'default-black t)
 ;; (custom-set-faces '(default ((t (:background "nil")))))
-;; (load-theme 'zenburn t)
+(load-theme 'zenburn t)
 ;; (load-theme 'base16-mocha t)
 ;; (load-theme 'base16-monokai t)
 ;; (load-theme 'ample-zen t)

@@ -18,6 +18,7 @@
 	c-electric-slash
 	c-electric-star
 	c-fill-paragraph
+	cedit-wrap-brace
 	comint-delchar-or-eof-or-kill-buffer
 	comint-delchar-or-maybe-eof
 	comment-dwim

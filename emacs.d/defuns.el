@@ -60,10 +60,8 @@ marcado como resuelto."
          (dir-tried (concat "~/Documents/ACM-ICPC/Tried/" id_problem))
          (dir-accepted (concat "~/Documents/ACM-ICPC/Accepted/" id_problem)))
     (cond
-     ((file-directory-p dir-accepted)
-      (setq dir-problem dir-accepted))
-     ((file-directory-p dir-tried)
-      (setq dir-problem dir-tried)))
+     ((file-directory-p dir-accepted) (setq dir-problem dir-accepted))
+     ((file-directory-p dir-tried) (setq dir-problem dir-tried)))
     (if dir-problem
         (progn
           (message  (concat "Ya existe: " id_problem))
@@ -157,7 +155,7 @@ hasta el momento."
 (defun rotate-windows ()
   "Rotate your windows"
   (interactive)
-  (cond ((not (> (count-windows)1))
+  (cond ((not (> (count-windows) 1))
          (message "You can't rotate a single window!"))
         (t
          (setq i 1)
