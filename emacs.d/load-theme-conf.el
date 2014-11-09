@@ -23,7 +23,7 @@
 ;; (load-theme 'cyberpunk t)
 ;; (load-theme 'tron t)
 ;; (load-theme 'github t)
-;; (load-theme 'monokai t)
+(load-theme 'monokai t)
 ;; (load-theme 'waher t)
 ;; (load-theme 'niflheim t)
 ;; (load-theme 'granger t)
@@ -31,7 +31,8 @@
 ;; (load-theme 'assemblage t)
 ;; (load-theme 'default-black t)
 ;; (custom-set-faces '(default ((t (:background "nil")))))
-(load-theme 'zenburn t)
+;; (load-theme 'zenburn t)
+;; (load-theme 'gotham t)	   ;
 ;; (load-theme 'base16-mocha t)
 ;; (load-theme 'base16-monokai t)
 ;; (load-theme 'ample-zen t)

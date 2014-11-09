@@ -1,0 +1,49 @@
+<keymap version="1" name="EmacsCustomKeymap" parent="Emacs">
+  <action id="AceJumpAction">
+    <keyboard-shortcut first-keystroke="control SEMICOLON" />
+    <keyboard-shortcut first-keystroke="alt L" />
+  </action>
+  <action id="EditorBackSpace">
+    <keyboard-shortcut first-keystroke="BACK_SPACE" />
+    <keyboard-shortcut first-keystroke="shift BACK_SPACE" />
+    <keyboard-shortcut first-keystroke="control H" />
+  </action>
+  <action id="EditorDeleteLine">
+    <keyboard-shortcut first-keystroke="control C" second-keystroke="K" />
+  </action>
+  <action id="SelectNextOccurrence">
+    <keyboard-shortcut first-keystroke="alt J" />
+    <keyboard-shortcut first-keystroke="shift alt N" />
+  </action>
+  <action id="SwitchApply">
+    <keyboard-shortcut first-keystroke="shift alt ENTER" />
+  </action>
+  <action id="SwitchDown">
+    <keyboard-shortcut first-keystroke="shift alt DOWN" />
+  </action>
+  <action id="SwitchLeft">
+    <keyboard-shortcut first-keystroke="shift alt LEFT" />
+  </action>
+  <action id="SwitchRight">
+    <keyboard-shortcut first-keystroke="shift alt RIGHT" />
+  </action>
+  <action id="SwitchUp">
+    <keyboard-shortcut first-keystroke="shift alt UP" />
+  </action>
+  <action id="Switcher">
+    <keyboard-shortcut first-keystroke="control X" second-keystroke="B" />
+    <keyboard-shortcut first-keystroke="control TAB" />
+  </action>
+  <action id="emacsIDEAs.AceJump">
+    <keyboard-shortcut first-keystroke="meta J" />
+    <keyboard-shortcut first-keystroke="shift alt UNDEFINED" />
+  </action>
+  <action id="emacsIDEAs.AceJumpWord">
+    <keyboard-shortcut first-keystroke="meta L" />
+    <keyboard-shortcut first-keystroke="meta I" second-keystroke="meta F" />
+    <keyboard-shortcut first-keystroke="alt UNDEFINED" />
+  </action>
+  <action id="tasks.goto">
+    <keyboard-shortcut first-keystroke="alt N" />
+  </action>
+</keymap>

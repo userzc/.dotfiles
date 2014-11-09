@@ -69,6 +69,7 @@ marcado como resuelto."
           (find-file (concat dir-problem "/" id_problem  "input.txt"))
           (find-file (concat dir-problem "/" id_problem ".cpp")))
       (progn
+	(setq dir-problem (concat "~/Documents/ACM-ICPC/Tried/" id_problem))
         (message (concat "Se crea: " id_problem))
         (dired-create-directory dir-problem)
         (find-file (concat dir-problem "/" id_problem ".cpp"))

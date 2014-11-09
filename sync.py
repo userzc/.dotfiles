@@ -40,6 +40,8 @@ IGNORED_ITEMS = [
     'sync.py',
     'basic_environ.sh',
     'batch_script.el',
+    'EmacsCustomKeymap.xml',    # Ignore until I figure out where to
+                                # put this
 ]
 SPECIFIC_INSTALL_DIRS = [
     ('config', '.config'),
