@@ -1,7 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
 <keymap version="1" name="EmacsCustomKeymap" parent="Emacs">
   <action id="AceJumpAction">
     <keyboard-shortcut first-keystroke="control SEMICOLON" />
     <keyboard-shortcut first-keystroke="alt L" />
+  </action>
+  <action id="CommentByLineComment">
+    <keyboard-shortcut first-keystroke="alt SEMICOLON" />
+    <keyboard-shortcut first-keystroke="shift alt COMMA" />
   </action>
   <action id="EditorBackSpace">
     <keyboard-shortcut first-keystroke="BACK_SPACE" />
@@ -11,9 +16,25 @@
   <action id="EditorDeleteLine">
     <keyboard-shortcut first-keystroke="control C" second-keystroke="K" />
   </action>
+  <action id="EditorTextStart">
+    <keyboard-shortcut first-keystroke="control HOME" />
+    <keyboard-shortcut first-keystroke="ESCAPE" second-keystroke="COMMA" />
+  </action>
+  <action id="ExpandRegion">
+    <keyboard-shortcut first-keystroke="control ADD" />
+    <keyboard-shortcut first-keystroke="control EQUALS" />
+    <keyboard-shortcut first-keystroke="shift control PLUS" />
+  </action>
+  <action id="Maven.ExecuteGoal">
+    <keyboard-shortcut first-keystroke="control C" second-keystroke="control V" />
+  </action>
   <action id="SelectNextOccurrence">
     <keyboard-shortcut first-keystroke="alt J" />
     <keyboard-shortcut first-keystroke="shift alt N" />
+  </action>
+  <action id="SurroundWith">
+    <keyboard-shortcut first-keystroke="control alt T" />
+    <keyboard-shortcut first-keystroke="shift alt BRACELEFT" />
   </action>
   <action id="SwitchApply">
     <keyboard-shortcut first-keystroke="shift alt ENTER" />
