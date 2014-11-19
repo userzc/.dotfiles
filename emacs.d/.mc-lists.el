@@ -18,6 +18,7 @@
 	c-electric-slash
 	c-electric-star
 	c-fill-paragraph
+	cedit-raise
 	cedit-wrap-brace
 	comint-delchar-or-eof-or-kill-buffer
 	comint-delchar-or-maybe-eof
@@ -153,6 +154,8 @@
 	icicle-delete-window
 	icicle-pp-eval-expression
 	info
+	isearch-forward-regexp
+	isearch-other-meta-char
 	magit-goto-next-section
 	magit-goto-previous-section
 	magit-status

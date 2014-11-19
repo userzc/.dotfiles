@@ -79,17 +79,30 @@ marcado como resuelto."
 (defun acm-run-program ()
   "Esta función ejecuta el archivo compilado pasandole en input
 correspondiente mediante un flujo. Se aprovecha la estructura de
-archivos creada por la función "
+archivos creada por la función `acm-problem'."
   (interactive)
   (let* ((id_problem (car (split-string (buffer-name) "\\.")))
-         (results-buffer (concat "*results " id_problem "*" )))
+         (results-buffer (concat "*results " id_problem "*" ))
+	 (input-name (parent-directory-name)))
     (if (shell-command
-         (format ".\\/%s.out < %sinput.txt" id_problem id_problem)
+         (format ".\\/%s.out < %sinput.txt" id_problem input-name)
          results-buffer "*result-errors*")
         (progn  (switch-to-buffer-other-window results-buffer)
                 (fundamental-mode)
                 (message "Displaying results"))
       (progn (message "Something went wrong")))))
+
+(defun parent-directory-name ()
+  "Función adicional para auxiliar en pasar archivos de entrada a
+diferentes programas dentro de la carpeta de un problema de la
+UVA que no necesariamente contienen su nombre el problema al cual
+se refieren."
+  (interactive)
+  (let* ((lista-elementos (split-string (buffer-file-name) "/" ))
+	 (longitud (length lista-elementos))
+	 (named-buffer (nth (- longitud 2) lista-elementos)))
+    (progn  (message (concat "name = " named-buffer))
+	    named-buffer)))
 
 (defun acm-uva-node (command)
   "[α] Esta función provee una interfáz a
