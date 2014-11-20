@@ -95,6 +95,7 @@
 (require 'js2-refactor)
 ;; (require 'org)
 ;; (require 'eclim)
+(require 'taskjuggler-mode)
 
 (condition-case nil (require 'malabar-mode)
   (error

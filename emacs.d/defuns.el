@@ -81,13 +81,14 @@ marcado como resuelto."
 correspondiente mediante un flujo. Se aprovecha la estructura de
 archivos creada por la función `acm-problem'."
   (interactive)
-  (let* ((id_problem (car (split-string (buffer-name) "\\.")))
-         (results-buffer (concat "*results " id_problem "*" ))
+  (let* ((prog-name (car (split-string (buffer-name) "\\.")))
+         (prog-results-buffer (concat "*results " prog-name "*" ))
+	 (prog-errors-buffer (concat "*errors " prog-name "*" ))
 	 (input-name (parent-directory-name)))
     (if (shell-command
-         (format ".\\/%s.out < %sinput.txt" id_problem input-name)
-         results-buffer "*result-errors*")
-        (progn  (switch-to-buffer-other-window results-buffer)
+         (format ".\\/%s.out < %sinput.txt" prog-name input-name)
+         prog-results-buffer prog-errors-buffer)
+        (progn  (switch-to-buffer-other-window prog-results-buffer)
                 (fundamental-mode)
                 (message "Displaying results"))
       (progn (message "Something went wrong")))))
@@ -101,8 +102,7 @@ se refieren."
   (let* ((lista-elementos (split-string (buffer-file-name) "/" ))
 	 (longitud (length lista-elementos))
 	 (named-buffer (nth (- longitud 2) lista-elementos)))
-    (progn  (message (concat "name = " named-buffer))
-	    named-buffer)))
+    (progn named-buffer)))
 
 (defun acm-uva-node (command)
   "[α] Esta función provee una interfáz a
