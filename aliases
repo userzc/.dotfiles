@@ -3,6 +3,10 @@
 # alias for Ag similar to the alias for grep
 alias -g A='| ag'
 
+# alias for case insensitive find
+alias ffi='find . -type f -iname'
+alias fdi='find . -type d -iname'
+
 # Cambio frecuente de red
 alias ca='nmcli connection up id AlphaCentauri'
 alias ce='nmcli connection up id Epsilon'

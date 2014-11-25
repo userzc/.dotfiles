@@ -128,6 +128,7 @@ export PATH=$PATH:"/bin"
 export PATH=$PATH:"/usr/games"
 export PATH=$PATH:"$HOME/bin"
 export PATH=$PATH:"/home/rene/.local/bin"
+export PATH=$PATH:"/home/rene/lib/python_lib/"
 
 if [[ -e "$HOME/powerline/powerline/bindings/tmux/powerline.conf" ]]; then
     export TMUX_PL="$HOME/powerline/powerline/bindings/tmux/powerline.conf"

@@ -308,6 +308,8 @@
      (global-set-key (kbd "C-c *") 'mc/mark-all-like-this)
      (global-set-key (kbd "C-c M-*") 'mc/mark-all-symbols-like-this)
      (global-set-key (kbd "C-c e") 'mc/edit-lines)
+     (global-set-key (kbd "C-c M-f") 'mc/mark-all-like-this-in-defun)
+     (global-set-key (kbd "C-c M-F") 'mc/mark-all-symbols-like-this-in-defun)
      (global-set-key (kbd "C-c M-e") 'mc/edit-ends-of-lines)
      (global-set-key (kbd "C-c M-a") 'mc/edit-beginnings-of-lines)
 

@@ -84,14 +84,13 @@ archivos creada por la función `acm-problem'."
   (let* ((prog-name (car (split-string (buffer-name) "\\.")))
          (prog-results-buffer (concat "*results " prog-name "*" ))
 	 (prog-errors-buffer (concat "*errors " prog-name "*" ))
-	 (input-name (parent-directory-name)))
-    (if (shell-command
-         (format ".\\/%s.out < %sinput.txt" prog-name input-name)
-         prog-results-buffer prog-errors-buffer)
+	 (input-name (parent-directory-name))
+	 (command (format ".\\/%s.out < %sinput.txt" prog-name input-name)))
+    (if (shell-command command prog-results-buffer prog-errors-buffer)
         (progn  (switch-to-buffer-other-window prog-results-buffer)
                 (fundamental-mode)
-                (message "Displaying results"))
-      (progn (message "Something went wrong")))))
+		(message (concat "acm-run-program: " command)))
+      (progn (message "acm-run-program: something went wrong")))))
 
 (defun parent-directory-name ()
   "Función adicional para auxiliar en pasar archivos de entrada a

@@ -135,7 +135,7 @@
 (require 'projectile-conf)
 (require 'groovy-conf)
 ;; (require 'eclim-conf)
-(require 'malabar-conf )
+;; (require 'malabar-conf )
 ;; (require 'powerline-conf)
 (require 'smart-mode-line-conf)
 (require 'drools-conf)
