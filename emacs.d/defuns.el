@@ -69,7 +69,7 @@ marcado como resuelto."
           (find-file (concat dir-problem "/" id_problem  "input.txt"))
           (find-file (concat dir-problem "/" id_problem ".cpp")))
       (progn
-	(setq dir-problem (concat "~/Documents/ACM-ICPC/Tried/" id_problem))
+        (setq dir-problem (concat "~/Documents/ACM-ICPC/Tried/" id_problem))
         (message (concat "Se crea: " id_problem))
         (dired-create-directory dir-problem)
         (find-file (concat dir-problem "/" id_problem ".cpp"))
@@ -83,13 +83,13 @@ archivos creada por la función `acm-problem'."
   (interactive)
   (let* ((prog-name (car (split-string (buffer-name) "\\.")))
          (prog-results-buffer (concat "*results " prog-name "*" ))
-	 (prog-errors-buffer (concat "*errors " prog-name "*" ))
-	 (input-name (parent-directory-name))
-	 (command (format ".\\/%s.out < %sinput.txt" prog-name input-name)))
+         (prog-errors-buffer (concat "*errors " prog-name "*" ))
+         (input-name (parent-directory-name))
+         (command (format ".\\/%s.out < %sinput.txt" prog-name input-name)))
     (if (shell-command command prog-results-buffer prog-errors-buffer)
         (progn  (switch-to-buffer-other-window prog-results-buffer)
                 (fundamental-mode)
-		(message (concat "acm-run-program: " command)))
+                (message (concat "acm-run-program: " command)))
       (progn (message "acm-run-program: something went wrong")))))
 
 (defun parent-directory-name ()
@@ -99,8 +99,8 @@ UVA que no necesariamente contienen su nombre el problema al cual
 se refieren."
   (interactive)
   (let* ((lista-elementos (split-string (buffer-file-name) "/" ))
-	 (longitud (length lista-elementos))
-	 (named-buffer (nth (- longitud 2) lista-elementos)))
+         (longitud (length lista-elementos))
+         (named-buffer (nth (- longitud 2) lista-elementos)))
     (progn named-buffer)))
 
 (defun acm-uva-node (command)
@@ -327,6 +327,16 @@ referencias al final del mismo."
       (insert-buffer "*links*")
       (switch-to-buffer "*links*")
       (kill-buffer-and-window))))
+
+;; org to md export (There seems to be a few other similar functions)
+(defun org-md-export (&optional file_name)
+  "Esta función exporta file_name.org a file_name.md mediante  org-ruby"
+  (interactive "P")
+  ;; org-ruby readme.org --translate markdown > readme.md
+  (let ((input-org (concat (car (split-string (buffer-name) "\\.")) ".org"))
+        (output-md (concat (car (split-string (buffer-name) "\\.")) ".md")))
+    (shell-command
+     (concat "org-ruby " input-org " --translate markdown > " output-md))))
 
 ;; Explore pages with firefox
 
