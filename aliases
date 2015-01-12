@@ -1,5 +1,8 @@
 # It should be possible for this aliases to be used in various shells
 
+# alias for sudo editing
+alias E="SUDO_EDITOR=\"emacsclient -t -a emacs\" sudoedit"
+
 # alias for Ag similar to the alias for grep
 alias -g A='| ag'
 
