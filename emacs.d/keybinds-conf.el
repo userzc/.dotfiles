@@ -10,7 +10,7 @@
              (global-set-key (kbd "M-F") 'forward-to-word)
              (global-set-key (kbd "M-B") 'backward-to-word)))
 
-;; change help-map to C-c h, tomado de:
+;; change help-map to C-c h, taken from:
 ;; https://github.com/magnars/.emacs.d/blob/master/key-bindings.el
 (global-set-key (kbd "C-c h") (lookup-key global-map (kbd "C-h")))
 (define-key key-translation-map [?\C-h] [?\C-?])
@@ -25,6 +25,8 @@
 ;; open lines faster from anywhere in the current line
 (global-set-key (kbd "<C-return>") 'open-line-below)
 (global-set-key (kbd "<C-S-return>") 'open-line-above)
+(global-set-key (kbd "C-j") 'open-line-below)
+(global-set-key (kbd "C-S-j") 'open-line-above)
 
 ;; Para ayudar a copiar una línea completa
 (global-set-key (kbd "C-c k") 'kill-whole-line)

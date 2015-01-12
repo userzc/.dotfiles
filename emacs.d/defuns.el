@@ -309,14 +309,14 @@ referencias al final del mismo."
               ;; generar "- yyyy.mm.dd, 2"
               (insert (format-time-string "- %Y.%m.%d, "))
               (move-end-of-line nil)
-              (insert "\n")
+              (insert "\n\n")
               (yank)
               (move-beginning-of-line nil)
               (insert "  ")
               (delete-pair)
               (move-end-of-line nil)
-              (insert "\n")             ;generar: "- 2"
-              (end-of-buffer)           ;         "  1"
+              (insert "\n\n")             ;generar: "- 2"
+              (end-of-buffer)             ;         " 1"
               (switch-to-buffer-other-window original-buffer)
               (sp-forward-sexp)))
     (progn

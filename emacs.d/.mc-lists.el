@@ -18,6 +18,7 @@
 	c-electric-slash
 	c-electric-star
 	c-fill-paragraph
+	c-indent-new-comment-line
 	cedit-raise
 	cedit-wrap-brace
 	comint-delchar-or-eof-or-kill-buffer
@@ -32,6 +33,7 @@
 	ein:worksheet-split-cell-at-point
 	enclose-remove
 	end-of-defun
+	enlarge-window-horizontally
 	eval-last-sexp
 	eval-print-last-sexp
 	fill-paragraph

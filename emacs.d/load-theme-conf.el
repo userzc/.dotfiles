@@ -15,7 +15,7 @@
 
 ;; (color-theme-wombat+)
 ;; (load-theme 'organic-green t)
-;; (load-theme 'tangotango t)
+(load-theme 'tangotango t)
 ;; (load-theme 'moe-light t)
 ;; (load-theme 'moe-dark t)
 ;; (load-theme 'wombat t)
@@ -23,7 +23,8 @@
 ;; (load-theme 'cyberpunk t)
 ;; (load-theme 'tron t)
 ;; (load-theme 'github t)
-(load-theme 'monokai t)
+;; (load-theme 'monokai t)
+;; (load-theme 'ubuntu t)
 ;; (load-theme 'waher t)
 ;; (load-theme 'niflheim t)
 ;; (load-theme 'granger t)

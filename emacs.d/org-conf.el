@@ -8,6 +8,9 @@
 (setq browse-url-browser-function 'browse-url-generic
       browse-url-generic-program "google-chrome")
 
+;; para poder escalar imagenes en org mode
+(setq org-image-actual-width nil )
+
 ;; make org-table ready for action!
 (require 'org-table)
 

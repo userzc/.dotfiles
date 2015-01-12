@@ -15,28 +15,26 @@
 ;; complementar con `zsh' y `multi-term'
 
 (defvar lista-paquetes-instalados
-  '(ace-jump-mode ac-js2 ack-and-a-half ac-math ag ample-zen-theme
-		  auctex auto-complete base16-theme bookmark+ cedit
-		  c-eldoc cl-lib clues-theme color-theme
-		  color-theme-gruber-darker
-		  color-theme-sanityinc-tomorrow command-log-mode
-		  cyberpunk-theme dash deferred dired+ dired-details
-		  dired-details+ ein emacs-eclim emmet-mode enclose
-		  expand-region feature-mode git-commit-mode
-		  gitconfig-mode github-theme gitignore-mode
-		  google-contacts google-c-style gruvbox-theme
-		  icicles icomplete+ ido-better-flex java-snippets
-		  js2-mode js2-refactor litable magit markdown-mode
-		  mark-more-like-this moe-theme monky monokai-theme
-		  multiple-cursors multi-term niflheim-theme nose
-		  oauth2 popup powerline projectile purty-mode
-		  python-django qsimpleq-theme rainbow-delimiters
-		  rainbow-mode request smart-mode-line smartparens
-		  smart-tab solarized-theme spacegray-theme
-		  sr-speedbar sublime-themes tango-2-theme
-		  tangotango-theme textile-mode websocket wgrep
-		  windsize wrap-region yaml-mode yasnippet
-		  zenburn-theme zone-matrix)
+  '(ac-js2 ac-math ace-jump-mode ack-and-a-half ag ample-zen-theme
+	auctex auto-complete base16-theme bookmark+ c-eldoc cedit
+	cl-lib clues-theme color-theme color-theme-gruber-darker
+	color-theme-sanityinc-tomorrow command-log-mode
+	cyberpunk-theme dash deferred dired+ dired-details
+	dired-details+ ein emacs-eclim emmet-mode enclose
+	expand-region feature-mode git-commit-mode gitconfig-mode
+	github-theme gitignore-mode google-c-style
+	google-contacts gruvbox-theme icicles icomplete+
+	ido-better-flex java-snippets js2-mode js2-refactor
+	litable magit mark-more-like-this markdown-mode moe-theme
+	monky monokai-theme multi-term multiple-cursors
+	niflheim-theme nose oauth2 popup powerline projectile
+	purty-mode python-django qsimpleq-theme
+	rainbow-delimiters rainbow-mode request smart-mode-line
+	smart-tab smartparens solarized-theme spacegray-theme
+	sr-speedbar sublime-themes tango-2-theme tangotango-theme
+	textile-mode ubuntu-theme websocket wgrep windsize
+	wrap-region yaml-mode yasnippet zenburn-theme
+	zone-matrix)
   "Lista de paquetes instalados actualmente en mi configuración.")
 
 ;; Default custom file
