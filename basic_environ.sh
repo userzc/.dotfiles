@@ -31,6 +31,8 @@ echo "==== Installing oh-my-zsh [personal fork] ===="
 if [ ! -d "~/.oh-my-zsh" ] ; then
     cd ~
     curl -L https://github.com/userzc/oh-my-zsh/raw/master/tools/install.sh | sh
+    # Esta línea pretende eliminar el archivo zshrc creado por .oh-my-zsh
+    rm .zshrc
 else
     echo "===== oh-my-sh [personal fork] already installed"
 fi
