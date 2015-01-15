@@ -25,9 +25,10 @@
  '((sh . t)
    (octave . t)
    (latex . t)
-   ;; (maxima . t)
+   (maxima . t)
    (python . t)
-   ;; (cpp . t)
+   (C . t)
+   (java . t)
    ))
 
 (provide 'org-conf)

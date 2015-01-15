@@ -55,7 +55,9 @@
      ;; (global-set-key (kbd "C-c C") 'org-capture)
      (global-set-key (kbd "C-c c") 'org-capture)
      (global-set-key (kbd "C-c L") 'org-store-link)
-     (global-set-key (kbd "C-c a") 'org-agenda)))
+     (global-set-key (kbd "C-c a") 'org-agenda)
+     (define-key org-mode-map (kbd "C-c C-'") 'org-edit-src-code)))
+
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;; magnars' keybinding rip-off ;;
