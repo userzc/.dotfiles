@@ -234,7 +234,8 @@ bindsym $mod+r mode "resize"
 # auto-start,
 # from https://github.com/utkukaratas/dotfiles/blob/master/i3/config
 exec gnome-keyring-daemon --start
-exec gnome-settings-daemon
+# exec gnome-settings-daemon
+exec unity-settings-daemon
 # First attempt to get NetworkManager in i3bar
 exec --no-startup-id nm-applet
 # # The regular bluetooth applet doesn't seem to work properly
