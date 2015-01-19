@@ -1,5 +1,4 @@
 {
-    "default_module": "powerline.segments.common",
     "segment_data": {
         "uptime": {
             "before": "⇑  "
@@ -11,25 +10,25 @@
     "segments": {
         "right": [
             {
-                "function": "uptime",
+                "function": "powerline.segments.common.sys.uptime",
                 "priority": 50
             },
             {
-                "function": "system_load",
+                "function": "powerline.segments.common.sys.system_load",
                 "priority": 50
             },
             {
-                "function": "date"
+                "function": "powerline.segments.common.time.date"
             },
             {
-                "function": "date",
+                "function": "powerline.segments.common.time.date",
                 "args": {
                     "format": "%H:%M",
                     "istime": true
                 }
             },
             {
-                "function": "weather",
+                "function": "powerline.segments.common.wthr.weather",
                 "priority": 50,
                 "args": {
                     "unit": "C",
@@ -37,7 +36,7 @@
                 }
             },
             {
-                "function": "hostname"
+                "function": "powerline.segments.common.net.hostname"
             }
         ]
     }

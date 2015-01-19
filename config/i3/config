@@ -245,11 +245,32 @@ exec --no-startup-id gnome-sound-applet
 # gnome poweroff menu including suspend, etc.
 bindsym $mod+Shift+x exec gnome-session-quit --power-off
 
-# # First attempt to get UbuntuOne sync
-# exec u1sdtool --start
+# ----------
+# i3 4.8 sound bindings
+# http://www.reddit.com/r/i3wm/comments/2j5cx5/went_from_debian_stable_to_testing_got_i3/
+
+# mpd / mpc
+bindcode $mod+34 exec --no-startup-id mpc toggle  # [
+bindcode $mod+35 exec --no-startup-id mpc next    # ]
+# bindsym $mod+p exec --no-startup-id notify-send "$(mpc -f "%artist% - %title%[ ([%album% ][%date%])]" | head -2)"
+# bindsym $mod+o exec --no-startup-id notify-send "$(mpc playlist -f "%position%> %artist% - %title%" | head -9)"
+
+# volume control
+bindsym XF86AudioRaiseVolume exec --no-startup-id amixer -q set Master 2dB+ unmute && killall -SIGUSR1 i3status
+bindsym XF86AudioLowerVolume exec --no-startup-id amixer -q set Master 2dB- unmute && killall -SIGUSR1 i3status
+bindsym XF86AudioMute exec amixer -q set Master toggle && killall -SIGUSR1 i3status
+
+# bindsym XF86AudioRaiseVolume exec --no-startup-id amixer -q set Master 2dB+ unmute
+# bindsym XF86AudioLowerVolume exec --no-startup-id amixer -q set Master 2dB- unmute
+# bindsym XF86AudioMute exec --no-startup-id amixer -q set Master toggle
+
+# ----------
 
 # Use dropbox instead, u1 went down
 exec dropbox start
+
+# Starting skype-call-recorder
+exec --no-startup-id skype-call-recorder
 
 # Use command line tool to change network conections.  Consider using
 # command `nmcli dev wifi` para listar las conecciones disponibles:
@@ -260,11 +281,18 @@ bindsym $mod+n exec "nmcli dev wifi | sed -e '1d' | dmenu -l 10 -i -nb $color_nb
 
 # Start i3bar to display a workspace bar (plus the system information i3status
 # finds out, if available)
+
 bar {
+
 	font pango:DejaVu Sans Mono 9
         status_command i3status --config ~/.config/i3/i3status.conf
 	tray_output primary
 	position top
+
+        # i3bar_command i3bgbar
+        # status_command python ~/powerline/powerline/bindings/i3/powerline-i3.py
+	# font pango:DejaVu Sans Mono 9
+
 }
 
 # Local Variables:

@@ -56,6 +56,8 @@
      (global-set-key (kbd "C-c c") 'org-capture)
      (global-set-key (kbd "C-c L") 'org-store-link)
      (global-set-key (kbd "C-c a") 'org-agenda)
+     (define-key org-mode-map (kbd "C-c C-SPC") 'org-table-blank-field)
+     (define-key org-mode-map (kbd "C-c SPC") nil)
      (define-key org-mode-map (kbd "C-c C-'") 'org-edit-src-code)))
 
 

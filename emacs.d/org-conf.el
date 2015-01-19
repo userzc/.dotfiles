@@ -19,6 +19,11 @@
 (setq org-mobile-directory "~/Dropbox/MobileOrg/")
 (setq org-mobile-inbox-for-pull "~/Dropbox/org/flagged.org")
 
+;; hilight current line in org-agenda-mode
+(add-hook 'org-agenda-mode-hook
+	  '(lambda ()
+	     (hl-line-mode 1)))
+
 ;; active babel languages
 (org-babel-do-load-languages
  'org-babel-load-languages
