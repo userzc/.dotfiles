@@ -25,6 +25,7 @@ echo "==== Installing common tools ===="
 `sudo $INSTALL_COMMAND git`
 `sudo $INSTALL_COMMAND emacs`
 `sudo $INSTALL_COMMAND zsh`
+`sudo $INSTALL_COMMAND tmux`
 `sudo $INSTALL_COMMAND fonts-inconsolata`
 
 echo "==== Installing oh-my-zsh [personal fork] ===="
@@ -37,6 +38,18 @@ else
     echo "===== oh-my-sh [personal fork] already installed"
 fi
 
+echo "==== Installing pip ===="
+curl_output=$(curl -O --silent --write-out "%{http_code}\n" https://bootstrap.pypa.io/get-pip.py)
+case "$curl_output" in
+    404)echo "Not suitable to install";;
+    200)echo "Installing"
+	`sudo python get-pip.py `
+	`git clone https://github.com/powerline/fonts ~/.fonts/powerline-fonts`
+	cd "~/.fonts/powerline-fonts"
+	`./install.sh`
+esac
+
+
 echo "==== Installing Dotfiles ===="
 if [ ! -d "~/.dotfiles" ]; then
     /usr/bin/env git clone https://github.com/userzc/.dotfiles.git ~/.dotfiles
@@ -47,5 +60,5 @@ if [ ! -d "~/.dotfiles" ]; then
     cd ~
 fi
 
-echo "==== Changing default shell ===="
-chsh -s /bin/zsh
+echo "==== To change default shell ===="
+echo "==== type: chsh -s /bin/zsh ==="

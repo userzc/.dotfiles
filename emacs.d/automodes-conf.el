@@ -40,7 +40,7 @@
       (add-to-list 'auto-mode-alist '("\\.markdown\\'" . markdown-mode))))
 
 ;; textile-mode
-(if (fboundp 'textile-mode)
+(eval-after-load "textile.el"
     (progn
       (add-to-list 'auto-mode-alist '("\\.textile\\'" . textile-mode))))
 

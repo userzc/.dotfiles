@@ -5,20 +5,20 @@
 
   To clone this repository, from prompt use:
 
-#+BEGIN_SRC sh
-git clone https://github.com/userzc/.dotfiles.git
-cd .dotfiles
-git submodule sync
-git submodule update --init --recursive
-#+END_SRC
+  #+BEGIN_SRC sh
+    git clone https://github.com/userzc/.dotfiles.git
+    cd .dotfiles
+    git submodule sync
+    git submodule update --init --recursive
+  #+END_SRC
 
 ** Instalation
 
    To install the files in this repository use:
 
-#+BEGIN_SRC sh
-python ~/.dotfiles/sync -i
-#+END_SRC
+   #+BEGIN_SRC sh
+     python ~/.dotfiles/sync -i
+   #+END_SRC
 
    On Windows the script must be run as administrator.
 
@@ -27,9 +27,14 @@ python ~/.dotfiles/sync -i
    To install some usefull features and get emacs and other goodies as
    soon as possible use:
 
-#+begin_src sh
-curl -L https://github.com/userzc/.dotfiles/raw/master/basic_environ.sh | sh
-#+end_src
+   #+begin_src sh
+    curl -L https://github.com/userzc/.dotfiles/raw/master/basic_environ.sh | sh
+   #+end_src
+
+   #+begin_src sh
+     wget --no-check-certificate https://github.com/userzc/.dotfiles/raw/master/basic_environ.sh -O - | sh
+   #+end_src
+
 
 *** Note:
 
@@ -94,6 +99,6 @@ curl -L https://github.com/userzc/.dotfiles/raw/master/basic_environ.sh | sh
    existing links or files (=-r=, =--remove=). The script is installing
    files through python, so it should also be portable to windows.
 
-# Local Variables:
-# eval: (orgtbl-mode t)
-# End:
+   # Local Variables:
+   # eval: (orgtbl-mode t)
+   # End:
