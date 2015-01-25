@@ -44,11 +44,15 @@ curl_output=$(curl -O --silent --write-out "%{http_code}\n" https://bootstrap.py
 case "$curl_output" in
     404)echo "Not suitable to install";;
     200)echo "Installing"
-	`sudo python get-pip.py `
-	`git clone https://github.com/powerline/fonts ~/.fonts/powerline-fonts`
-	cd "~/.fonts/powerline-fonts"
-	`./install.sh`
+        `sudo python get-pip.py `
+        `git clone https://github.com/powerline/fonts ~/.fonts/powerline-fonts`
+        cd "~/.fonts/powerline-fonts"
+        `./install.sh`
+	echo "==== Installing powerline ===="
+	`git clone https://github.com/powerline/powerline`
+	`pip install -U --user ~/powerline`
 esac
+
 
 
 echo "==== Installing Dotfiles ===="
