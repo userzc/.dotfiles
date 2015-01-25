@@ -26,6 +26,7 @@ echo "==== Installing common tools ===="
 `sudo $INSTALL_COMMAND emacs`
 `sudo $INSTALL_COMMAND zsh`
 `sudo $INSTALL_COMMAND tmux`
+`sudo $INSTALL_COMMAND curl`
 `sudo $INSTALL_COMMAND fonts-inconsolata`
 
 echo "==== Installing oh-my-zsh [personal fork] ===="

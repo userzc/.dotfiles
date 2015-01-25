@@ -27,9 +27,13 @@
    To install some usefull features and get emacs and other goodies as
    soon as possible use:
 
+   curl:
+
    #+begin_src sh
     curl -L https://github.com/userzc/.dotfiles/raw/master/basic_environ.sh | sh
    #+end_src
+
+   or wget:
 
    #+begin_src sh
      wget --no-check-certificate https://github.com/userzc/.dotfiles/raw/master/basic_environ.sh -O - | sh
@@ -38,7 +42,7 @@
 
 *** Note:
 
-    Currently this only works on *Ubuntu 14.04*, later on
+    Currently this only works on *Ubuntu 14.04*, *Ubuntu 14.10*, later on
     compatibility with other distributions may be added as I use them.
 
 ** Requirements
