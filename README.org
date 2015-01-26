@@ -24,10 +24,8 @@
 
 ** Quick basic environment
 
-   To install some usefull features and get emacs and other goodies as
-   soon as possible use:
-
-   curl:
+   To install some usefull features, such emacs and other goodies as
+   soon as possible, use the =basic_environ.sh= script with curl:
 
    #+begin_src sh
     curl -L https://github.com/userzc/.dotfiles/raw/master/basic_environ.sh | sh
