@@ -88,4 +88,11 @@ re-downloaded in order to locate PACKAGE."
    (package-refresh-contents)
    (init--install-packages)))
 
+
+;; hilight current line in package-menu-mode
+(add-hook 'package-menu-mode-hook
+	  '(lambda ()
+	     (hl-line-mode 1)))
+
+
 (provide 'package-conf)

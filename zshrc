@@ -5,11 +5,7 @@ ZSH=$HOME/.oh-my-zsh
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 
-# alias e="emacsclient"
-# alias enw="emacsclient -nw"
-# alias enwq="emacs -nw -Q"
-# alias enwd="emacs -nw -q --no-splash -l ~/.emacs.d/default-nw.el"
-
+# This alias is specific to zsh
 alias lsd="ls -d *(/)"
 
 # source the alias file
@@ -205,25 +201,33 @@ then
     unset GVM_INIT
 fi
 
-# This sourcing must happend after all plugins have been declared
-source $ZSH/oh-my-zsh.sh
-
-# To include NODE_PATH, but doesn't seem to work
-export NODE_PATH="/usr/local/lib/node_modules"
-# export NODE_PATH="/usr/local/shape/npm"
-
 # Add android-sdk binaries and tools to path
 if [[ `uname` == 'Linux' ]]; then
     # echo 'In Linux system'
     export ANDROID_SDK='android-sdk-linux'
+    if (( $+commands[lsb_release] )); then
+        plugins+=(debian)
+    fi
 elif [[ `uname` == 'Darwin' ]]; then
     # echo 'In Darwin system'
     export ANDROID_SDK='android-sdk-macosx'
 fi
-
 export PATH="$HOME/dev-android/$ANDROID_SDK/tools/":$PATH
 export PATH="$HOME/dev-android/$ANDROID_SDK/platform-tools/":$PATH
 export ANDROID_HOME="$HOME/dev-android/$ANDROID_SDK/"
+
+# This sourcing must happend after all plugins have been declared
+source $ZSH/oh-my-zsh.sh
+
+# # Unalias for the ag searcher(debian plugin)
+if (( $+commands[lsb_release] )); then
+    unalias ag
+    alias aug='sudo $apt_pref upgrade'
+fi
+
+# To include NODE_PATH, but doesn't seem to work
+export NODE_PATH="/usr/local/lib/node_modules"
+# export NODE_PATH="/usr/local/shape/npm"
 
 # Cask
 export PATH="/home/rene/.cask/bin:$PATH"
