@@ -34,3 +34,4 @@ cookies
 /emacs.d/semanticdb/
 /emacs.d/srecode-map.el
 /emacs.d/projectile.cache
+/emacs.d/.cask/

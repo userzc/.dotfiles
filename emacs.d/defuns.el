@@ -137,24 +137,6 @@ pueda ejecutar una variedad de subcomandos relacionados."
       (progn (message "Something Went Wrong!!")))
     (setq compile-command previous-compile-command)))
 
-(defun colorize-buffer-uva-results ()
-  "Esta función filtra las secuencias ansi que representan al
-color en el buffer \"*uva-node-results*\""
-  (interactive)
-  (set-buffer "*uva-node-results*")
-  (setq inhibit-read-only t)
-  (ansi-color-apply-on-region (point-min) (point-max)))
-
-(defun colorize-buffer (buffer)
-  "Esta función filtra las secuencias ansi que representan al
-color en el buffer seleccionado, aunque originalmente se requería
-que se coloreara un buffer en particular, esto no ha sido posible
-hasta el momento."
-  (interactive "Bbuffer:")
-  (set-buffer buffer)
-  (setq inhibit-read-only t)
-  (ansi-color-apply-on-region (point-min) (point-max)))
-
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;; rotate-windows, ver: http://whattheemacsd.com/
@@ -289,30 +271,32 @@ en Word 2013 según los estándares de la FVP."
 utilizados en el documento org para poder ponerlos como
 referencias al final del mismo."
   (interactive)
-  (get-buffer-create"*links*")
-  (goto-char (point-min))
-  (while (search-forward-regexp "\\[\\(\\[.*?\\]\\)\\(\\[.*?\\]\\)?\\]" nil t)
+  (let ((links-buffer "*links*" ))
+    (get-buffer-create links-buffer)
+    (goto-char (point-min))
+    (while (search-forward-regexp "\\[\\(\\[.*?\\]\\)\\(\\[.*?\\]\\)?\\]" nil t)
+      (progn
+        (if (match-string 2)
+            (progn
+              (message "Link and Description found")
+              (with-current-buffer links-buffer
+                (insert (format-time-string "- %Y.%m.%d, ")))
+              (append-to-buffer links-buffer
+                                (+ (match-beginning 2) 1) (- (match-end 2) 1))
+              (with-current-buffer links-buffer (insert "\n\n  "))
+              (append-to-buffer links-buffer
+                                (+ (match-beginning 1) 1) (- (match-end 1) 1))
+              (with-current-buffer links-buffer (insert "\n\n")))
+          (progn
+            ;; En esta parte se debe decidir que hacer en el caso de
+            ;; referencias a archivos locales
+            (message "Only link found [No description]")))))
     (progn
-      (if (match-string 2)
-	  (progn
-	    (with-current-buffer "*links*"
-	      (insert (format-time-string "- %Y.%m.%d, ")))
-	    (append-to-buffer "*links*" (+ (match-beginning 2) 1) (- (match-end 2) 1))
-	    (with-current-buffer "*links*"
-	      (insert "\n\n  "))
-	    (append-to-buffer "*links*" (+ (match-beginning 1) 1) (- (match-end 1) 1))
-	    (with-current-buffer "*links*"
-	      (insert "\n\n")))
-	(progn
-	  ;; En esta parte se debe decidir que hacer en el caso de
-	  ;; referencias a archivos locales
-	  (message "Only link found [No description]")))))
-  (progn
-    (message "link recollection terminated")
-    (end-of-buffer)
-    (insert "\n* Referencias\n\n")
-    (insert-buffer-substring "*links*")
-    (kill-buffer "*links*")))
+      (message "link recollection terminated")
+      (end-of-buffer)
+      (insert "\n* Referencias\n\n")
+      (insert-buffer-substring links-buffer)
+      (kill-buffer links-buffer))))
 
 ;; org to md export (There seems to be a few other similar functions)
 (defun org-md-export (&optional file_name)
