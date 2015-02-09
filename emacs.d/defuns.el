@@ -284,34 +284,6 @@ en Word 2013 según los estándares de la FVP."
      (concat "pandoc -s " aux-html-file " -o " docx-file))
     (delete-file aux-html-file)))
 
-(defun search-test ()
-  (interactive)
-  (while (search-forward-regexp "\\[\\(\\[.*?\\]\\)\\(\\[.*?\\]\\)?\\]" nil t)
-    (progn
-      ;; El primer grupo es el link, el segundo es la descripción
-      ;; (message "%s" (match-data))
-
-      ;; (message "Beginning and end math")
-      ;; (message "%s" (match-beginning 1))
-      ;; (message "%s" (match-end 1))
-      ;; (message "----")
-
-      (if (match-string 2)
-          (progn
-            (get-buffer-create"*links-test*")
-            (with-current-buffer "*links-test*"
-              (insert (format-time-string "- %Y.%m.%d, ")))
-            (append-to-buffer "*links-test*" (+ (match-beginning 2) 1) (- (match-end 2) 1))
-            (with-current-buffer "*links-test*"
-              (insert "\n\n  "))
-            (append-to-buffer "*links-test*" (+ (match-beginning 1) 1) (- (match-end 1) 1))
-            (with-current-buffer "*links-test*"
-              (insert "\n\n")))
-        (progn
-          ;; En esta parte se debe decidir que hacer en el caso de
-          ;; referencias a archivos locales
-          (message "Only link found [No description]"))))))
-
 (defun org-get-references-used ()
   "[α] Esta función tiene el objetivo de recolectar todos los enlaces
 utilizados en el documento org para poder ponerlos como
