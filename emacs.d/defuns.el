@@ -284,6 +284,29 @@ en Word 2013 según los estándares de la FVP."
      (concat "pandoc -s " aux-html-file " -o " docx-file))
     (delete-file aux-html-file)))
 
+(defun search-test ()
+  (interactive)
+  (while (search-forward-regexp "\\[\\(\\[.*\\]\\)\\(\\[.*\\]\\)?\\]" nil t)
+    (progn
+      ;; El primer grupo es el link, el segundo es la descripción
+      ;; (message "%s" (match-data))
+
+      ;; (message "Beginning and end math")
+      ;; (message "%s" (match-beginning 1))
+      ;; (message "%s" (match-end 1))
+      ;; (message "----")
+
+      ;; (if (not (match-string 2))
+      ;;          (progn
+      ;;            ;; (message "Grupo 2: %s" (match-string 2))
+      ;;            (message "No description"))
+      ;;        (progn
+      ;;          (print "Grupo 1: %s" (match-string 1))
+      ;;          (print "Grupo 2: %s" (match-string 2))))
+      (message "Grupo 1: %s" (match-string 1))
+      (message "Grupo 2: %s" (match-string 2))
+      )))
+
 (defun org-get-references-used ()
   "[α] Esta función tiene el objetivo de recolectar todos los enlaces
 utilizados en el documento org para poder ponerlos como
@@ -296,6 +319,8 @@ referencias al final del mismo."
     (switch-to-buffer-other-window original-buffer)
     (goto-char (point-min))
     (while (search-forward "\[\[" nil t) ;se busca "[[1][2]]"
+      ;; considerar utilizar `match-data', `match-string',
+      ;; `append-to-buffer', `match-beginning', `match-end'
       (progn  (forward-char -2)
               (mark-sexp)
               (kill-ring-save (mark) (point))

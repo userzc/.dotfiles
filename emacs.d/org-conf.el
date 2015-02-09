@@ -38,7 +38,10 @@
 ;; org-agenda custom commands
 ;; http://orgmode.org/worg/org-tutorials/org-custom-agenda-commands.html
 (setq org-agenda-custom-commands
-      '(("c" "Computer information" tags "computer"
+      '(("i" "Computer information" tags "computer"
          ((org-agenda-sorting-strategy '(priority-down effort-down))))))
+
+;; https://github.com/coldnew/org-ioslide
+(require 'ox-ioslide)
 
 (provide 'org-conf)

@@ -27,8 +27,8 @@
 	ido-better-flex java-snippets js2-mode js2-refactor
 	litable magit mark-more-like-this markdown-mode moe-theme
 	monky monokai-theme multi-term multiple-cursors
-	niflheim-theme nose oauth2 popup powerline projectile
-	purty-mode python-django qsimpleq-theme
+	niflheim-theme nose oauth2 ox-ioslide popup powerline
+	projectile purty-mode python-django qsimpleq-theme
 	rainbow-delimiters rainbow-mode request smart-mode-line
 	smart-tab smartparens solarized-theme spacegray-theme
 	sr-speedbar sublime-themes tango-2-theme tangotango-theme
