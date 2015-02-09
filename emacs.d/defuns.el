@@ -286,7 +286,7 @@ en Word 2013 según los estándares de la FVP."
 
 (defun search-test ()
   (interactive)
-  (while (search-forward-regexp "\\[\\(\\[.*\\]\\)\\(\\[.*\\]\\)?\\]" nil t)
+  (while (search-forward-regexp "\\[\\(\\[.*?\\]\\)\\(\\[.*?\\]\\)?\\]" nil t)
     (progn
       ;; El primer grupo es el link, el segundo es la descripción
       ;; (message "%s" (match-data))
@@ -296,62 +296,51 @@ en Word 2013 según los estándares de la FVP."
       ;; (message "%s" (match-end 1))
       ;; (message "----")
 
-      ;; (if (not (match-string 2))
-      ;;          (progn
-      ;;            ;; (message "Grupo 2: %s" (match-string 2))
-      ;;            (message "No description"))
-      ;;        (progn
-      ;;          (print "Grupo 1: %s" (match-string 1))
-      ;;          (print "Grupo 2: %s" (match-string 2))))
-      (message "Grupo 1: %s" (match-string 1))
-      (message "Grupo 2: %s" (match-string 2))
-      )))
+      (if (match-string 2)
+          (progn
+            (get-buffer-create"*links-test*")
+            (with-current-buffer "*links-test*"
+              (insert (format-time-string "- %Y.%m.%d, ")))
+            (append-to-buffer "*links-test*" (+ (match-beginning 2) 1) (- (match-end 2) 1))
+            (with-current-buffer "*links-test*"
+              (insert "\n\n  "))
+            (append-to-buffer "*links-test*" (+ (match-beginning 1) 1) (- (match-end 1) 1))
+            (with-current-buffer "*links-test*"
+              (insert "\n\n")))
+        (progn
+          ;; En esta parte se debe decidir que hacer en el caso de
+          ;; referencias a archivos locales
+          (message "Only link found [No description]"))))))
 
 (defun org-get-references-used ()
   "[α] Esta función tiene el objetivo de recolectar todos los enlaces
 utilizados en el documento org para poder ponerlos como
 referencias al final del mismo."
   (interactive)
-  (fundamental-mode)
-  (let
-      ((original-buffer (current-buffer)))
-    (switch-to-buffer-other-window "*links*")
-    (switch-to-buffer-other-window original-buffer)
-    (goto-char (point-min))
-    (while (search-forward "\[\[" nil t) ;se busca "[[1][2]]"
-      ;; considerar utilizar `match-data', `match-string',
-      ;; `append-to-buffer', `match-beginning', `match-end'
-      (progn  (forward-char -2)
-              (mark-sexp)
-              (kill-ring-save (mark) (point))
-              (switch-to-buffer-other-window "*links*")
-              (yank)                    ;pegar "[[1][2]]"
-              (move-beginning-of-line nil)
-              (delete-pair)             ;generar "[1][2]"
-              (kill-sexp)
-              (move-beginning-of-line nil)
-              (delete-pair)
-              ;; generar "- yyyy.mm.dd, 2"
-              (insert (format-time-string "- %Y.%m.%d, "))
-              (move-end-of-line nil)
-              (insert "\n\n")
-              (yank)
-              (move-beginning-of-line nil)
-              (insert "  ")
-              (delete-pair)
-              (move-end-of-line nil)
-              (insert "\n\n")             ;generar: "- 2"
-              (end-of-buffer)             ;         " 1"
-              (switch-to-buffer-other-window original-buffer)
-              (sp-forward-sexp)))
+  (get-buffer-create"*links*")
+  (goto-char (point-min))
+  (while (search-forward-regexp "\\[\\(\\[.*?\\]\\)\\(\\[.*?\\]\\)?\\]" nil t)
     (progn
-      (message "link recollection terminated")
-      (org-mode)
-      (end-of-buffer)
-      (insert "\n* Referencias\n\n")
-      (insert-buffer "*links*")
-      (switch-to-buffer "*links*")
-      (kill-buffer-and-window))))
+      (if (match-string 2)
+	  (progn
+	    (with-current-buffer "*links*"
+	      (insert (format-time-string "- %Y.%m.%d, ")))
+	    (append-to-buffer "*links*" (+ (match-beginning 2) 1) (- (match-end 2) 1))
+	    (with-current-buffer "*links*"
+	      (insert "\n\n  "))
+	    (append-to-buffer "*links*" (+ (match-beginning 1) 1) (- (match-end 1) 1))
+	    (with-current-buffer "*links*"
+	      (insert "\n\n")))
+	(progn
+	  ;; En esta parte se debe decidir que hacer en el caso de
+	  ;; referencias a archivos locales
+	  (message "Only link found [No description]")))))
+  (progn
+    (message "link recollection terminated")
+    (end-of-buffer)
+    (insert "\n* Referencias\n\n")
+    (insert-buffer-substring "*links*")
+    (kill-buffer "*links*")))
 
 ;; org to md export (There seems to be a few other similar functions)
 (defun org-md-export (&optional file_name)
