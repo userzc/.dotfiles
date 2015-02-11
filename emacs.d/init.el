@@ -16,25 +16,25 @@
 
 (defvar lista-paquetes-instalados
   '(ac-js2 ac-math ace-jump-mode ack-and-a-half ag ample-zen-theme
-	auctex auto-complete base16-theme bookmark+ c-eldoc cedit
-	cl-lib clues-theme color-theme color-theme-gruber-darker
-	color-theme-sanityinc-tomorrow command-log-mode
-	cyberpunk-theme dash deferred dired+ dired-details
-	dired-details+ ein emacs-eclim emmet-mode enclose
-	expand-region feature-mode git-commit-mode gitconfig-mode
-	github-theme gitignore-mode google-c-style
-	google-contacts gruvbox-theme icicles icomplete+
-	ido-better-flex java-snippets js2-mode js2-refactor
-	litable magit mark-more-like-this markdown-mode moe-theme
-	monky monokai-theme multi-term multiple-cursors
-	niflheim-theme nose oauth2 ox-ioslide popup powerline
-	projectile purty-mode python-django qsimpleq-theme
-	rainbow-delimiters rainbow-mode request smart-mode-line
-	smart-tab smartparens solarized-theme spacegray-theme
-	sr-speedbar sublime-themes tango-2-theme tangotango-theme
-	textile-mode ubuntu-theme websocket wgrep windsize
-	wrap-region yaml-mode yasnippet zenburn-theme
-	zone-matrix)
+	   auctex auto-complete base16-theme bookmark+ c-eldoc cedit
+	   cl-lib clues-theme color-theme color-theme-gruber-darker
+	   color-theme-sanityinc-tomorrow command-log-mode
+	   cyberpunk-theme dash deferred dired+ dired-details
+	   dired-details+ ein emacs-eclim emmet-mode enclose
+	   expand-region feature-mode git-commit-mode gitconfig-mode
+	   github-theme gitignore-mode google-c-style
+	   google-contacts gruvbox-theme icicles icomplete+
+	   ido-better-flex java-snippets js2-mode js2-refactor
+	   litable magit mark-more-like-this markdown-mode moe-theme
+	   monky monokai-theme multi-term multiple-cursors
+	   niflheim-theme nose oauth2 ox-ioslide popup powerline
+	   projectile purty-mode python-django qsimpleq-theme
+	   rainbow-delimiters rainbow-mode request smart-mode-line
+	   smart-tab smartparens solarized-theme spacegray-theme
+	   sr-speedbar sublime-themes tango-2-theme tangotango-theme
+	   textile-mode ubuntu-theme websocket wgrep wgrep-ag windsize
+	   wrap-region yaml-mode yasnippet zenburn-theme
+	   zone-matrix)
   "Lista de paquetes instalados actualmente en mi configuración.")
 
 ;; Default custom file
@@ -47,10 +47,6 @@
 ;; Maybe that is the place to add some paths to `git' and other
 ;; programs that don't seem to be working properly
 
-(require 'default-conf) ;Configuraciones personales por default
-(require 'package-conf) ;Configuración para paquetes
-(require 'automodes-conf) ;Configuración para diferentes tipos de archivos
-(require 'defuns) ;Funciones para edición
 
 ;; Al parecer las siguientes lineas hacen que cualquier subdirectorio
 ;; de la carpeta "~/.emacs.d/lisp/" sea cargada al load-path, lo cual
@@ -58,8 +54,15 @@
 ;; - nxhtml     : se obtiene mumamo-mode y más.
 ;; - linkd      : Drew Adams lo utiliza p/documentaciones de sus paquetes
 (add-to-list 'load-path "~/.emacs.d/lisp/")
+(add-to-list 'load-path "~/.emacs.d/defuns/")
 (let ((default-directory "~/.emacs.d/lisp/"))
   (normal-top-level-add-subdirs-to-load-path))
+
+
+(require 'default-conf) ;Configuraciones personales por default
+(require 'package-conf) ;Configuración para paquetes
+(require 'automodes-conf) ;Configuración para diferentes tipos de archivos
+(require 'defuns) ;Funciones para edición
 
 ;; La siguiente opción se añade para poder utilizar emacs como servidor
 ;; en particular en ipython y en octave
@@ -68,6 +71,7 @@
 
 ;; Required libraries
 (require 'misc)
+(require 'wgrep)
 (require 'bookmark+)
 (require 'expand-region)
 (require 'emmet-mode)
