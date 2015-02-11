@@ -21,7 +21,11 @@
 
 (Before
  ;; Before each scenario is run
- )
+ (switch-to-buffer
+  (get-buffer-create "org-doc-sample.org"))
+ (erase-buffer)
+ ;; (deactivate-mark)
+)
 
 (After
  ;; After each scenario is run
