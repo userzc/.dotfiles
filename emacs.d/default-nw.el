@@ -3,6 +3,7 @@
 
 ;; Para cargar archivos en `~/.emacs.d'
 (add-to-list 'load-path user-emacs-directory)
+(add-to-list 'load-path "~/.emacs.d/defuns/")
 
 ;; Configuraciones personales por default
 (require 'default-conf)

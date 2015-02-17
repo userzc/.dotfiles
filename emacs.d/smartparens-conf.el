@@ -4,10 +4,11 @@
 (setq sp-ignore-modes-list
       '(ein:notebooklist-mode speedbar-mode))
 
-(sp-local-tag 'emacs-lisp-mode "`" "`" "'" :actions '(wrap))
-(sp-local-tag 'org-mode "*" "*" "*" :actions '(wrap))
-(sp-local-tag 'org-mode "=" "=""=" :actions '(wrap))
-(sp-local-tag 'org-mode "~" "~""~" :actions '(wrap))
+(sp-local-pair 'emacs-lisp-mode  "`" "'" :wrap "`")
+(sp-local-pair 'org-mode  "*" "*" :wrap "*")
+(sp-local-pair 'org-mode  "=""=" :wrap "=")
+(sp-local-pair 'org-mode  "~""~" :wrap "~")
+
 (require 'smartparens-config)
 (require 'smartparens-latex)
 
