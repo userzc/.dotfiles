@@ -27,14 +27,14 @@
 	   ido-better-flex java-snippets js2-mode js2-refactor
 	   litable magit mark-more-like-this markdown-mode moe-theme
 	   monky monokai-theme multi-term multiple-cursors
-	   niflheim-theme nose oauth2 ox-ioslide popup powerline
-	   projectile purty-mode python-django qsimpleq-theme
-	   rainbow-delimiters rainbow-mode request smart-mode-line
-	   smart-tab smartparens solarized-theme spacegray-theme
-	   sr-speedbar sublime-themes tango-2-theme tangotango-theme
-	   textile-mode ubuntu-theme websocket wgrep wgrep-ag windsize
-	   wrap-region yaml-mode yasnippet zenburn-theme
-	   zone-matrix)
+	   niflheim-theme nose oauth2 ox-ioslide
+	   popup powerline projectile purty-mode python-django
+	   qsimpleq-theme rainbow-delimiters rainbow-mode request
+	   smart-mode-line smart-tab smartparens solarized-theme
+	   spacegray-theme sr-speedbar sublime-themes tango-2-theme
+	   tangotango-theme textile-mode ubuntu-theme websocket
+	   wgrep wgrep-ag windsize wrap-region yaml-mode yasnippet
+	   zone-matrix zenburn-theme)
   "Lista de paquetes instalados actualmente en mi configuración.")
 
 ;; Default custom file

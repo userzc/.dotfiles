@@ -60,6 +60,7 @@
 	mark-sexp
 	markdown-exdent-or-delete
 	maxima-send-full-line-and-goto-next-form
+	nxml-electric-slash
 	open-line-above
 	open-line-below
 	org-beginning-of-line
@@ -68,6 +69,7 @@
 	org-end-of-line
 	org-force-self-insert
 	org-kill-line
+	org-mark-element
 	org-metaleft
 	org-metaright
 	org-open-line
@@ -167,8 +169,11 @@
 	multi-term-dedicated-toggle
 	next-error
 	nosetests-one
+	org-agenda-next-line
+	org-agenda-previous-line
 	org-ctrl-c-ctrl-c
 	orgtbl-ctrl-c-ctrl-c
+	pcomplete
 	previous-error
 	pylint
 	python-shell-send-defun

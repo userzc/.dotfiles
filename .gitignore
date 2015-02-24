@@ -36,3 +36,4 @@ cookies
 /emacs.d/projectile.cache
 .cask/
 dist/
+/emacs.d/.org-id-locations
