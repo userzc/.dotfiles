@@ -135,7 +135,12 @@ pueda ejecutar una variedad de subcomandos relacionados."
     (if (progn (compile full-uva-command t))
         (progn (message "Displaying results"))
       (progn (message "Something Went Wrong!!")))
-    (setq compile-command previous-compile-command)))
+    (setq compile-command previous-compile-command)
+    ;; (with-current-buffer output-buffer
+    ;;   (compilation-mode)
+    ;;   (setq buffer-read-only t)
+    ;;   )
+    ))
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;

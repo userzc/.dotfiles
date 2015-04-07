@@ -232,5 +232,8 @@ export NODE_PATH="/usr/local/lib/node_modules"
 # Cask
 export PATH="/home/rene/.cask/bin:$PATH"
 
+# Vert.x
+export PATH="/home/rene/vert.x/vert.x-2.1.5/bin/:$PATH"
+
 #THIS MUST BE AT THE END OF THE FILE FOR GVM TO WORK!!!
 [[ -s "/home/rene/.gvm/bin/gvm-init.sh" ]] && source "/home/rene/.gvm/bin/gvm-init.sh"

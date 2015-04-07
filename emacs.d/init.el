@@ -13,6 +13,8 @@
 ;; https://github.com/emacsmirror/readline-complete/blob/master/readline-complete.el
 ;; parece que es una alternativa para generar opciones para
 ;; complementar con `zsh' y `multi-term'
+;; - `hgignore-mode'
+;; - `showkey'
 
 (defvar lista-paquetes-instalados
   '(ac-js2 ac-math ace-jump-mode ack-and-a-half ag ample-zen-theme

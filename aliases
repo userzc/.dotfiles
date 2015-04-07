@@ -28,6 +28,12 @@ alias mvnagb="mvn archetype:generate -B\
  -DarchetypeArtifactId=maven-archetype-quickstart\
  -DarchetypeVersion=1.0"
 
+alias mvnagbv="mvn archetype:generate -B\
+ -DarchetypeGroupId=org.apache.maven.archetypes\
+ -DarchetypeArtifactId=maven-archetype-quickstart\
+ -DarchetypeVersion=1.0\
+ -DgroupId=com.veureka "
+
 # Gmaven groovy archtype version = 1.0
 # compiles out of the box
 alias mvnaggbv="mvn archetype:generate -B\

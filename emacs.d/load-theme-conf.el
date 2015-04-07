@@ -15,7 +15,8 @@
 
 ;; (color-theme-wombat+)
 ;; (load-theme 'organic-green t)
-(load-theme 'tangotango t)
+;; (load-theme 'tangotango t)
+(load-theme 'material t)
 ;; (load-theme 'moe-light t)
 ;; (load-theme 'moe-dark t)
 ;; (load-theme 'wombat t)
