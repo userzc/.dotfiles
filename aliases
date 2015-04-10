@@ -10,10 +10,6 @@ alias -g A='| ag'
 alias ffi='find . -type f -iname'
 alias fdi='find . -type d -iname'
 
-# Cambio frecuente de red
-alias ca='nmcli connection up id AlphaCentauri'
-alias ce='nmcli connection up id Epsilon'
-
 # batch mode archetype generate, the main example is:
 # mvn archetype:generate -B \
 #     -DarchetypeGroupId=org.apache.maven.archetypes \

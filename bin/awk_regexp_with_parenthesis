@@ -1,0 +1,2 @@
+#!/bin/bash
+awk '{match($0, "'\''.*'\''", a)}END{print a[0]}' $1
