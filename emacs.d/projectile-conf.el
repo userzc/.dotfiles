@@ -10,6 +10,10 @@
 ;; que probar más detalladamente este comportamiento
 (setq projectile-completion-system 'default)
 
+;; Cambiando projectos
+(setq projectile-switch-project-action 'projectile-dired)
+;; (setq projectile-switch-project-action 'projectile-find-dir)
+
 (add-hook 'python-mode-hook 'projectile-mode)
 (add-hook 'LaTeX-mode-hook 'projectile-mode)
 (add-hook 'rst-mode-hook 'projectile-mode)
@@ -24,6 +28,7 @@
 (add-hook 'emacs-lisp-mode-hook 'projectile-mode)
 (add-hook 'feature-mode-hook 'projectile-mode)
 (add-hook 'scss-mode-hook 'projectile-mode)
+(add-hook 'dired-mode-hook 'projectile-mode)
 
 ;; Ya se tiene bien configurado git en Windows, se puede confiar en
 ;; este método de indexado
