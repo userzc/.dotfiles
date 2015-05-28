@@ -92,6 +92,7 @@
 	query-replace
 	recompile
 	reindent-then-newline-and-indent
+	sgml-slash
 	sh-assignment
 	shell-command
 	smart-tab
@@ -141,6 +142,7 @@
 	count-words-region
 	deb-view-dired-view
 	describe-key
+	dired-jump-other-window
 	dired-unmark-backward
 	diredp-next-line
 	diredp-relsymlink-this-file

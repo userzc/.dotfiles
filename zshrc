@@ -126,6 +126,17 @@ export PATH=$PATH:"$HOME/bin"
 export PATH=$PATH:"/home/rene/.local/bin"
 export PATH=$PATH:"/home/rene/lib/python_lib/"
 
+# Sencha Cmd
+if [[ -d "$HOME/bin/Sencha/Cmd/5.1.3.61" ]]; then
+    export PATH=$PATH:"$HOME/bin/Sencha/Cmd/5.1.3.61"
+    export SENCHA_CMD_3_0_0="$HOME/bin/Sencha/Cmd/5.1.3.61"
+fi
+
+# Sencha ExtJS
+if [[ -d "$HOME/extJS-test/libraries/ext-5.1.1/" ]]; then
+    export EXTJSSDK="$HOME/extJS-test/libraries/ext-5.1.1/"
+fi
+
 if [[ -e "$HOME/powerline/powerline/bindings/tmux/powerline.conf" ]]; then
     export TMUX_PL="$HOME/powerline/powerline/bindings/tmux/powerline.conf"
 else

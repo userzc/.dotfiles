@@ -23,6 +23,7 @@
 (add-hook 'org-mode-hook 'projectile-mode)
 (add-hook 'emacs-lisp-mode-hook 'projectile-mode)
 (add-hook 'feature-mode-hook 'projectile-mode)
+(add-hook 'scss-mode-hook 'projectile-mode)
 
 ;; Ya se tiene bien configurado git en Windows, se puede confiar en
 ;; este método de indexado

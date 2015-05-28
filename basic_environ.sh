@@ -49,7 +49,7 @@ case "$curl_output" in
         cd "~/.fonts/powerline-fonts"
         `./install.sh`
 	echo "==== Installing powerline ===="
-	`git clone -b master ttps://github.com/powerline/powerline`
+	`git clone -b master https://github.com/powerline/powerline`
 	`pip install -U --user ~/powerline`
 esac
 
