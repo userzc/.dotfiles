@@ -143,6 +143,7 @@
 	deb-view-dired-view
 	describe-key
 	dired-jump-other-window
+	dired-other-window
 	dired-unmark-backward
 	diredp-next-line
 	diredp-relsymlink-this-file

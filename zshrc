@@ -126,15 +126,31 @@ export PATH=$PATH:"$HOME/bin"
 export PATH=$PATH:"/home/rene/.local/bin"
 export PATH=$PATH:"/home/rene/lib/python_lib/"
 
+# # Sencha Cmd 6
+# if [[ -d "$HOME/bin/Sencha/Cmd/6.0.0.154" ]]; then
+#     export PATH=$PATH:"$HOME/bin/Sencha/Cmd/6.0.0.154"
+#     export SENCHA_CMD_3_0_0="$HOME/bin/Sencha/Cmd/6.0.0.154"
+# fi
+
 # Sencha Cmd
 if [[ -d "$HOME/bin/Sencha/Cmd/5.1.3.61" ]]; then
     export PATH=$PATH:"$HOME/bin/Sencha/Cmd/5.1.3.61"
     export SENCHA_CMD_3_0_0="$HOME/bin/Sencha/Cmd/5.1.3.61"
 fi
 
+# Sencha ExtJS6
+if [[ -d "$HOME/sencha-test/libraries/ext-6.0.0.415" ]]; then
+    export EXTJS6SDK="$HOME/sencha-test/libraries/ext-6.0.0.415"
+fi
+
 # Sencha ExtJS
-if [[ -d "$HOME/extJS-test/libraries/ext-5.1.1/" ]]; then
-    export EXTJSSDK="$HOME/extJS-test/libraries/ext-5.1.1/"
+if [[ -d "$HOME/sencha-test/libraries/ext-5.1.1/" ]]; then
+    export EXTJSSDK="$HOME/sencha-test/libraries/ext-5.1.1/"
+fi
+
+# Sencha Touch
+if [[ -d "$HOME/sencha-test/libraries/touch-2.4.1/" ]]; then
+    export TOUCHJSSDK="$HOME/sencha-test/libraries/touch-2.4.1/"
 fi
 
 if [[ -e "$HOME/powerline/powerline/bindings/tmux/powerline.conf" ]]; then
@@ -142,12 +158,6 @@ if [[ -e "$HOME/powerline/powerline/bindings/tmux/powerline.conf" ]]; then
 else
     echo "\033[0;31m"'powerline tmux not active'"\033[0;31m"
 fi
-
-# if [[ -e "/home/rene/powerline/powerline/bindings/tmux/powerline.conf" ]]; then
-#     export TMUX_PL="/home/rene/powerline/powerline/bindings/tmux/powerline.conf"
-# else
-#     echo "\033[0;31m"'powerline tmux not active'"\033[0;31m"
-# fi
 
 export PYTHONPATH="/home/rene/Documents"
 export PYTHONPATH=$PYTHONPATH:"/home/rene/Documents/Semestre 3/PDE/Proyecto/SegundoReporte/BurgersComputedSolutions/FLIC_Boost"
