@@ -37,3 +37,4 @@ cookies
 .cask/
 dist/
 /emacs.d/.org-id-locations
+/emacs.d/lisp/nxhtml/etc/schema/xhtml-loader.rnc
