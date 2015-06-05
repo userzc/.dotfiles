@@ -126,11 +126,11 @@ export PATH=$PATH:"$HOME/bin"
 export PATH=$PATH:"/home/rene/.local/bin"
 export PATH=$PATH:"/home/rene/lib/python_lib/"
 
-# # Sencha Cmd 6
-# if [[ -d "$HOME/bin/Sencha/Cmd/6.0.0.154" ]]; then
-#     export PATH=$PATH:"$HOME/bin/Sencha/Cmd/6.0.0.154"
-#     export SENCHA_CMD_3_0_0="$HOME/bin/Sencha/Cmd/6.0.0.154"
-# fi
+# Sencha Cmd 6
+if [[ -d "$HOME/bin/Sencha/Cmd/6.0.0.154" ]]; then
+    export PATH=$PATH:"$HOME/bin/Sencha/Cmd/6.0.0.154"
+    export SENCHA_CMD_3_0_0="$HOME/bin/Sencha/Cmd/6.0.0.154"
+fi
 
 # Sencha Cmd
 if [[ -d "$HOME/bin/Sencha/Cmd/5.1.3.61" ]]; then
