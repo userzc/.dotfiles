@@ -11,7 +11,8 @@
 ;; You may delete these explanatory comments.
 (package-initialize)
 
-(add-to-list 'load-path user-emacs-directory) ;Cargar archivos en `~/.emacs.d'
+;; (add-to-list 'load-path user-emacs-directory) ;Cargar archivos en `~/.emacs.d'
+(add-to-list 'load-path "~/.emacs.d/settings-lisp/")
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;; Considerar instalar: ;;
