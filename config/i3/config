@@ -53,6 +53,9 @@ set $color_nb '#49483E'
 # set $color_sf '#FD971F'
 set $color_sf '#F92672'
 set $color_sb '#171A0B'
+# # So far I can't load the apropiarte fonts
+set $fn 'pango:DejaVu Sans Mono 9'
+# set $fn 'Meslo LG S for Powerline RegularForPowerline'
 
 # quickswitch https://github.com/proxypoke/quickswitch-for-i3
 # bindsym $mod+Tab exec quickswitch.py
@@ -185,8 +188,13 @@ bindsym $mod+Control+Shift+0 move container to workspace 10
 bindsym $mod+Shift+c reload
 # restart i3 inplace (preserves your layout/session, can be used to upgrade i3)
 bindsym $mod+Shift+r restart
+
 # exit i3 (logs you out of your X session)
-bindsym $mod+Shift+e exec "i3-nagbar -t warning -m 'You pressed the exit shortcut. Do you really want to exit i3? This will end your X session.' -b 'Yes, exit i3' 'i3-msg exit'"
+# bindsym $mod+Shift+e exec "i3-nagbar -t warning -m 'You pressed the exit shortcut. Do you really want to exit i3? This will end your X session.' -b 'Yes, exit i3' 'i3-msg exit'"
+
+# Personal exit script, based on https://faq.i3wm.org/question/1262/exiting-i3-without-mouse-click/
+# bindsym $mod+Control+Delete exec "~/bin/i3_exit_dmenu.sh"
+bindsym Mod1+Control+Delete exec "~/bin/i3_exit_dmenu.sh"
 
 # Considerar utilizar los `assign` para poder programar en que parte
 # se inicie automáticamente skype y otros programas de comunicación en
@@ -278,7 +286,7 @@ exec --no-startup-id skype-call-recorder
 
 # awk_regexp_with_quotes es un script personalizado para no tener
 # que lidiar con comillas anidadas
-bindsym $mod+n exec "nmcli -f ssid,device,rate,signal dev wifi | sed -e '1d' | dmenu -l 10 -i -nb $color_nb -nf $color_nf -sb $color_sb -sf $color_sf | awk_regexp_with_quotes | xargs nmcli connection up id"
+bindsym $mod+n exec "nmcli -f ssid,device,rate,signal,bars dev wifi | sed -e '1d' | dmenu -l 10 -i -fn $fn -nb $color_nb -nf $color_nf -sb $color_sb -sf $color_sf | awk_regexp_with_quotes | xargs nmcli connection up id"
 
 # Start i3bar to display a workspace bar (plus the system information i3status
 # finds out, if available)
