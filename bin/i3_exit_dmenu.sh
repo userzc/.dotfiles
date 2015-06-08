@@ -8,15 +8,15 @@
 
 # -nb $nb  -nf $nf  -sb $sb  -sf $sf  -fn $fn
 
-# para más opciones ver: https://github.com/ashinkarov/i3-extras/blob/master/i3-exit
-
 select=$( echo -e "REBOOT\nSHUTDOWN\nLOGOUT" | dmenu -l 5 -i -p  "Exit action to perform: ")
 
-case "$select" in
-    "REBOOT") i3-nagbar -m "Selección: $select";;
-    "SHUTDOWN") i3-nagbar -m "Selección: $select";;
-    "LOGOUT") i3-nagbar -m "Selección: $select";;
-esac;
+# Fuente
+# http://askubuntu.com/questions/454039/what-command-is-executed-when-shutdown-from-the-graphical-menu-in-14-04
 
-# i3-nagbar -m "This would exit"
-# i3-msg exit
+case "$select" in
+    "SUSPEND") dbus-send --system --print-reply --dest=org.freedesktop.login1 /org/freedesktop/login1 "org.freedesktop.login1.Manager.Suspend" boolean:true ;;
+    "HIBERNATE") dbus-send --system --print-reply --dest=org.freedesktop.login1 /org/freedesktop/login1 "org.freedesktop.login1.Manager.Hibernate" boolean:true ;;
+    "REBOOT") dbus-send --system --print-reply --dest=org.freedesktop.login1 /org/freedesktop/login1 "org.freedesktop.login1.Manager.Reboot" boolean:true ;;
+    "SHUTDOWN") dbus-send --system --print-reply --dest=org.freedesktop.login1 /org/freedesktop/login1 "org.freedesktop.login1.Manager.PowerOff" boolean:true ;;
+    "LOGOUT") i3-msg exit;;
+esac;
