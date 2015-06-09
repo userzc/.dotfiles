@@ -2,8 +2,8 @@
 ;; -nw -q -l default.el
 
 ;; Para cargar archivos en `~/.emacs.d'
-(add-to-list 'load-path user-emacs-directory)
 (add-to-list 'load-path "~/.emacs.d/defuns/")
+(add-to-list 'load-path "~/.emacs.d/settings-lisp/")
 
 ;; Configuraciones personales por default
 (require 'default-conf)
