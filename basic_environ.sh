@@ -61,7 +61,7 @@ if [ ! -d "~/.dotfiles" ]; then
     cd ~/.dotfiles
     git submodule sync
     git submodule update --init --recursive
-    python sync.py -i
+    dotfiles_sync -i
     cd ~
 fi
 

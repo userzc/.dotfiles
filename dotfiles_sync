@@ -37,7 +37,7 @@ IGNORED_ITEMS = [
     'README.org',
     'readme_var.md',
     'readme_var.org',
-    'sync.py',
+    'dotfiles_sync',
     'basic_environ.sh',
     'batch_script.el',
     'EmacsCustomKeymap.xml',    # Ignore until I figure out where to

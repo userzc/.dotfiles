@@ -21,7 +21,7 @@ if [ ! -d "~/.dotfiles" ]; then
     cd ~/.dotfiles
     git submodule sync
     git submodule update --init --recursive
-    scl enable python27 'python sync.py -i'
+    scl enable python27 'dotfiles_sync -i'
     cd ~
 fi
 

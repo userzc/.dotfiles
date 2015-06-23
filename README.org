@@ -104,8 +104,9 @@
 
 ** Features
 
-   So far this script is able to =symlink= files and folders under some
-   specific lists and special cases (=.config/= folder).
+   So far install script =dotfiles_sync= is able to =symlink= files
+   and folders under some specific lists and special cases (=.config/=
+   folder).
 
    This script accepts options for install (=-i=, =--install=), listing
    the posible files to modify (=-l=, =--list=) and for removal of the
