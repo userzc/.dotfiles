@@ -125,6 +125,7 @@ export PATH=$PATH:"/usr/games"
 export PATH=$PATH:"$HOME/bin"
 export PATH=$PATH:"/home/rene/.local/bin"
 export PATH=$PATH:"/home/rene/lib/python_lib/"
+export PATH=$PATH:"$HOME/.dotfiles" # access to dotfiles_sync
 
 # Sencha Cmd 6
 if [[ -d "$HOME/bin/Sencha/Cmd/6.0.0.154" ]]; then
