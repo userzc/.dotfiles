@@ -29,6 +29,7 @@
 (add-hook 'feature-mode-hook 'projectile-mode)
 (add-hook 'scss-mode-hook 'projectile-mode)
 (add-hook 'dired-mode-hook 'projectile-mode)
+(add-hook 'sh-mode-hook 'projectile-mode)
 (add-hook 'js2-mode-hook 'projectile-mode)
 (add-hook 'js-mode-hook 'projectile-mode)
 
