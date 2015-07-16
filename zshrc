@@ -128,20 +128,19 @@ export PATH=$PATH:"/home/rene/lib/python_lib/"
 export PATH=$PATH:"$HOME/.dotfiles" # access to dotfiles_sync
 
 # Sencha Cmd 6
-if [[ -d "$HOME/bin/Sencha/Cmd/6.0.0.154" ]]; then
-    export PATH=$PATH:"$HOME/bin/Sencha/Cmd/6.0.0.154"
-    export SENCHA_CMD_3_0_0="$HOME/bin/Sencha/Cmd/6.0.0.154"
-fi
-
+if [[ -d "$HOME/bin/Sencha/Cmd/6.0.0.202" ]]; then
+    export PATH=$PATH:"$HOME/bin/Sencha/Cmd/6.0.0.202"
+    export SENCHA_CMD_3_0_0="$HOME/bin/Sencha/Cmd/6.0.0.202"
+elif
 # Sencha Cmd
-if [[ -d "$HOME/bin/Sencha/Cmd/5.1.3.61" ]]; then
+ [[ -d "$HOME/bin/Sencha/Cmd/5.1.3.61" ]]; then
     export PATH=$PATH:"$HOME/bin/Sencha/Cmd/5.1.3.61"
     export SENCHA_CMD_3_0_0="$HOME/bin/Sencha/Cmd/5.1.3.61"
 fi
 
 # Sencha ExtJS6
-if [[ -d "$HOME/sencha-test/libraries/ext-6.0.0.415" ]]; then
-    export EXTJS6SDK="$HOME/sencha-test/libraries/ext-6.0.0.415"
+if [[ -d "$HOME/sencha-test/libraries/ext-6.0.0-gpl" ]]; then
+    export EXTJS6SDK="$HOME/sencha-test/libraries/ext-6.0.0-gpl"
 fi
 
 # Sencha ExtJS
@@ -150,8 +149,8 @@ if [[ -d "$HOME/sencha-test/libraries/ext-5.1.1/" ]]; then
 fi
 
 # Sencha Touch
-if [[ -d "$HOME/sencha-test/libraries/touch-2.4.1/" ]]; then
-    export TOUCHJSSDK="$HOME/sencha-test/libraries/touch-2.4.1/"
+if [[ -d "$HOME/sencha-test/libraries/touch-2.4.2-gpl/" ]]; then
+    export TOUCHJSSDK="$HOME/sencha-test/libraries/touch-2.4.2-gpl/"
 fi
 
 if [[ -e "$HOME/powerline/powerline/bindings/tmux/powerline.conf" ]]; then

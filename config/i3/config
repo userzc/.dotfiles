@@ -276,6 +276,7 @@ bindsym XF86AudioMute exec pactl set-sink-mute $current_sink toggle # mute sound
 # playerctl: https://github.com/acrisci/playerctl
 # check for the releases page: https://github.com/acrisci/playerctl/releases
 bindsym XF86AudioPlay exec playerctl play-pause
+bindsym Control+XF86AudioPlay exec "unity-control-center sound"
 
 # ----------
 

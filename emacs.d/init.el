@@ -31,7 +31,7 @@
            color-theme-sanityinc-tomorrow command-log-mode
            cyberpunk-theme dash deferred dired+ dired-details
            dired-details+ ein emacs-eclim emmet-mode enclose
-           expand-region feature-mode git-commit-mode gitconfig-mode
+           expand-region feature-mode gitconfig-mode
            github-theme gitignore-mode google-c-style
            google-contacts gruvbox-theme icicles icomplete+
            ido-better-flex java-snippets js2-mode js2-refactor

@@ -17,11 +17,12 @@
       (define-key map (icicle-kbd "M-¬")
         'icicle-all-candidates-list-alt-action))))
 
-(require 'icicles)
 (defun bind-my-icicles-top-keys ()
   "Set some Icicles bindings for `icicle-mode'"
   (when icicle-mode
     (define-key icicle-mode-map (icicle-kbd "C-c l") 'icicle-locate)))
+
+(require 'icicles)
 
 (setq icicle-top-level-when-sole-completion-delay 0.1)
 (setq icicle-zap-to-char-candidates 'icicle-ucs-names)
