@@ -44,11 +44,11 @@ IGNORED_ITEMS = [
                                 # put this
 ]
 SPECIFIC_INSTALL_DIRS = [
+    # (dir_path, destination_path)
     ('config', '.config'),
     ('lib', 'lib'),
     ('bin', 'bin'),
 ]
-
 def listing_function(from_here, to_here):
     """This is the function used to list the possible files to install.
 
