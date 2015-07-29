@@ -26,26 +26,26 @@
 
 (defvar lista-paquetes-instalados
   '(ac-js2 ac-math ace-jump-mode ack-and-a-half ag ample-zen-theme
-           auctex auto-complete base16-theme bookmark+ c-eldoc cedit
-           cl-lib clues-theme color-theme color-theme-gruber-darker
-           color-theme-sanityinc-tomorrow command-log-mode
-           cyberpunk-theme dash deferred dired+ dired-details
-           dired-details+ ein emacs-eclim emmet-mode enclose
-           expand-region feature-mode gitconfig-mode
-           github-theme gitignore-mode google-c-style
-           google-contacts gruvbox-theme icicles icomplete+
-           ido-better-flex java-snippets js2-mode js2-refactor
-           litable lorem-ipsum magit mark-more-like-this
-           markdown-mode material-theme moe-theme monky
-           monokai-theme multi-term multiple-cursors niflheim-theme
-           nose oauth2 ox-ioslide popup powerline projectile
-           purty-mode python-django qsimpleq-theme
-           rainbow-delimiters rainbow-mode request scss-mode
-           smart-mode-line smart-tab smartparens solarized-theme
-           spacegray-theme sr-speedbar sublime-themes tango-2-theme
-           tangotango-theme textile-mode ubuntu-theme websocket
-           wgrep wgrep-ag windsize wrap-region yaml-mode yasnippet
-           zenburn-theme zone-matrix)
+	   auctex auto-complete base16-theme bookmark+ c-eldoc cedit
+	   cl-lib clues-theme color-theme color-theme-gruber-darker
+	   color-theme-sanityinc-tomorrow command-log-mode
+	   cyberpunk-theme dash deferred dired+ dired-details
+	   dired-details+ ein emacs-eclim emmet-mode enclose
+	   expand-region feature-mode gitconfig-mode github-theme
+	   gitignore-mode google-c-style google-contacts
+	   gruvbox-theme icicles icomplete+ ido-better-flex
+	   java-snippets js2-mode js2-refactor litable lorem-ipsum
+	   magit mark-more-like-this markdown-mode material-theme
+	   moe-theme monky monokai-theme multi-term multiple-cursors
+	   niflheim-theme nose oauth2 ox-ioslide popup powerline
+	   projectile purty-mode python-django qsimpleq-theme
+	   rainbow-delimiters rainbow-mode request restclient-mode
+	   scss-mode smart-mode-line smart-tab smartparens
+	   solarized-theme spacegray-theme sr-speedbar
+	   sublime-themes tango-2-theme tangotango-theme
+	   textile-mode ubuntu-theme websocket wgrep wgrep-ag
+	   windsize wrap-region yaml-mode yasnippet zenburn-theme
+	   zone-matrix )
   "Lista de paquetes instalados actualmente en mi configuración.")
 
 ;; Default custom file
