@@ -123,8 +123,8 @@ export PATH=$PATH:"/sbin"
 export PATH=$PATH:"/bin"
 export PATH=$PATH:"/usr/games"
 export PATH=$PATH:"$HOME/bin"
-export PATH=$PATH:"/home/rene/.local/bin"
-export PATH=$PATH:"/home/rene/lib/python_lib/"
+export PATH=$PATH:"$HOME/.local/bin"
+export PATH=$PATH:"$HOME/lib/python_lib/"
 export PATH=$PATH:"$HOME/.dotfiles" # access to dotfiles_sync
 
 # Sencha Cmd 6
@@ -159,12 +159,12 @@ else
     echo "\033[0;31m"'powerline tmux not active'"\033[0;31m"
 fi
 
-export PYTHONPATH="/home/rene/Documents"
-export PYTHONPATH=$PYTHONPATH:"/home/rene/Documents/Semestre 3/PDE/Proyecto/SegundoReporte/BurgersComputedSolutions/FLIC_Boost"
-export PYTHONPATH=$PYTHONPATH:"/home/rene/Documents/Semestre 4/PruebaGeneral2D/BoostCode/"
-export PYTHONPATH=$PYTHONPATH:"/home/rene/Documents/Semestre 4/PruebaGeneral2D/PythonCode/"
-export PYTHONPATH=$PYTHONPATH:"/home/rene/Documents/FORCE_md/"
-export PYTHONPATH=$PYTHONPATH:"/home/rene/lib/python_lib/"
+export PYTHONPATH="$HOME/Documents"
+export PYTHONPATH=$PYTHONPATH:"$HOME/Documents/Semestre 3/PDE/Proyecto/SegundoReporte/BurgersComputedSolutions/FLIC_Boost"
+export PYTHONPATH=$PYTHONPATH:"$HOME/Documents/Semestre 4/PruebaGeneral2D/BoostCode/"
+export PYTHONPATH=$PYTHONPATH:"$HOME/Documents/Semestre 4/PruebaGeneral2D/PythonCode/"
+export PYTHONPATH=$PYTHONPATH:"$HOME/Documents/FORCE_md/"
+export PYTHONPATH=$PYTHONPATH:"$HOME/lib/python_lib/"
 
 if [[ -d $HOME/.virtualenvs ]]; then
     export WORKON_HOME="$HOME/.virtualenvs"
@@ -251,10 +251,10 @@ export NODE_PATH="/usr/local/lib/node_modules"
 # export NODE_PATH="/usr/local/shape/npm"
 
 # Cask
-export PATH="/home/rene/.cask/bin:$PATH"
+export PATH="$HOME/.cask/bin:$PATH"
 
 # Vert.x
-export PATH="/home/rene/vert.x/vert.x-2.1.5/bin/:$PATH"
+export PATH="$HOME/vert.x/vert.x-2.1.5/bin/:$PATH"
 
 #THIS MUST BE AT THE END OF THE FILE FOR GVM TO WORK!!!
-[[ -s "/home/rene/.gvm/bin/gvm-init.sh" ]] && source "/home/rene/.gvm/bin/gvm-init.sh"
+[[ -s "$HOME/.gvm/bin/gvm-init.sh" ]] && source "$HOME/.gvm/bin/gvm-init.sh"
