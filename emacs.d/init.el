@@ -39,7 +39,7 @@
 	   moe-theme monky monokai-theme multi-term multiple-cursors
 	   niflheim-theme nose oauth2 ox-ioslide popup powerline
 	   projectile purty-mode python-django qsimpleq-theme
-	   rainbow-delimiters rainbow-mode request restclient-mode
+	   rainbow-delimiters rainbow-mode request restclient
 	   scss-mode smart-mode-line smart-tab smartparens
 	   solarized-theme spacegray-theme sr-speedbar
 	   sublime-themes tango-2-theme tangotango-theme

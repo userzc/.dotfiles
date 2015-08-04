@@ -67,6 +67,7 @@
 			  (rainbow-delimiters t)
 			  (rainbow-mode t)
 			  (request t)
+			  (restclient t)
 			  (s t)
 			  (smart-mode-line nil)
 			  (smart-tab t)
