@@ -8,7 +8,8 @@
 
 # -nb $nb  -nf $nf  -sb $sb  -sf $sf  -fn $fn
 
-select=$( echo -e "REBOOT\nSHUTDOWN\nLOGOUT" | dmenu -l 5 -i -p  "Exit action to perform: ")
+# hibernate doesn't seem to work on the Dell Inspiron
+select=$( echo -e "SUSPEND\nREBOOT\nSHUTDOWN\nLOGOUT" | dmenu -l 5 -i -p  "Exit action to perform: ")
 
 # Fuente
 # http://askubuntu.com/questions/454039/what-command-is-executed-when-shutdown-from-the-graphical-menu-in-14-04
