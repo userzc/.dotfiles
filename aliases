@@ -10,6 +10,10 @@ alias -g A='| ag'
 alias ffi='find . -type f -iname'
 alias fdi='find . -type d -iname'
 
+####################
+# maven archetypes #
+####################
+
 # batch mode archetype generate, the main example is:
 # mvn archetype:generate -B \
 #     -DarchetypeGroupId=org.apache.maven.archetypes \
@@ -28,7 +32,7 @@ alias mvnagbv="mvn archetype:generate -B\
  -DarchetypeGroupId=org.apache.maven.archetypes\
  -DarchetypeArtifactId=maven-archetype-quickstart\
  -DarchetypeVersion=1.0\
- -DgroupId=com.veureka "
+ -DgroupId=com.veureka"
 
 # Gmaven groovy archtype version = 1.0
 # compiles out of the box
@@ -47,7 +51,23 @@ alias mvnaggbv="mvn archetype:generate -B\
 alias mvnaggbvv="mvn archetype:generate -B\
  -DarchetypeGroupId=org.codehaus.gmaven.archetypes\
  -DarchetypeArtifactId=gmaven-archetype-basic\
- -DgroupId=com.veureka "
+ -DgroupId=com.veureka"
+
+# Webapp to use with jersey, for REST services, taken from the jersey's user guide
+# mvn archetype:generate -DarchetypeArtifactId=jersey-quickstart-webapp \
+# -DarchetypeGroupId=org.glassfish.jersey.archetypes -DinteractiveMode=false \
+# -DgroupId=com.example -DartifactId=simple-service-webapp -Dpackage=com.example \
+# -DarchetypeVersion=2.19
+
+alias mvnagjwa="mvn archetype:generate -B\
+ -DarchetypeGroupId=org.glassfish.jersey.archetypes\
+ -DarchetypeArtifactId=jersey-quickstart-webapp\
+ -DarchetypeVersion=2.19\
+ -DgroupId=com.veureka"
+
+########################
+# mercurial archetypes #
+########################
 
 # Mercurial aliases (Using syntax similar to mercurial zsh plugin)
 alias hgslp='hg log --limit 20 --template "{node|short} | {date|isodatesec} | {author|person}: {desc|strip|firstline}\n" '

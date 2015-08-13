@@ -1,0 +1,12 @@
+#!/usr/bin/awk -f
+# More info at:
+# http://www.grymoire.com/Unix/Awk.html#uh-26
+BEGIN {
+  FS = ":";
+}
+{
+  # match($0, "([^:]+):([^:]+):([^:]+):([^:]+):([^:]+)", a)
+  name="'"$1"'";
+  printf("%-20s%-8s%-12s%-4s%-8s\n", name, $2, $3, $4, $5);
+}
+END {}

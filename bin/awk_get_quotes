@@ -1,0 +1,4 @@
+#!/bin/sh
+# Taken from:
+# http://www.grymoire.com/Unix/Awk.html#uh-26
+awk '{match($0, "'\''.*'\''", a)}END{print a[0]}' $1

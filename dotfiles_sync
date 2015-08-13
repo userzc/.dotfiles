@@ -49,6 +49,7 @@ SPECIFIC_INSTALL_DIRS = [
     ('lib', 'lib'),
     ('bin', 'bin'),
 ]
+
 def listing_function(from_here, to_here):
     """This is the function used to list the possible files to install.
 
