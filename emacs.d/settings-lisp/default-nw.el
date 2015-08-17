@@ -23,6 +23,7 @@
 			  (ack-and-a-half t)
 			  (auctex nil)
 			  (auto-complete nil)
+			  (async t)
 			  (bookmark+ t)
 			  (c-eldoc t)
 			  (cl-lib t)

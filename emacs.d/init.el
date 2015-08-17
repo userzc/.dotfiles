@@ -109,6 +109,7 @@
 ;; (require 'org)
 ;; (require 'eclim)
 (require 'taskjuggler-mode)
+(require 'recentf)
 
 (condition-case nil (require 'malabar-mode)
   (error
@@ -154,5 +155,6 @@
 (require 'drools-conf)
 (require 'sr-speedbar-conf)
 (require 'js2-conf)
+(require 'recentf-conf)
 
 (require 'keybinds-conf)

@@ -20,7 +20,8 @@
 (defun bind-my-icicles-top-keys ()
   "Set some Icicles bindings for `icicle-mode'"
   (when icicle-mode
-    (define-key icicle-mode-map (icicle-kbd "C-c l") 'icicle-locate)))
+    (define-key icicle-mode-map (icicle-kbd "C-c l") 'icicle-locate)
+    (define-key icicle-mode-map (icicle-kbd "C-c C-f") 'icicle-recent-file)))
 
 (require 'icicles)
 

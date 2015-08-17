@@ -17,7 +17,7 @@
    To install the files in this repository use:
 
    #+BEGIN_SRC sh
-     python ~/.dotfiles/sync -i
+     dotfiles_sync -i
    #+END_SRC
 
    On Windows the script must be run as administrator.
