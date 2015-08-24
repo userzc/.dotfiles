@@ -30,8 +30,8 @@
 (add-to-list 'auto-mode-alist '("gitconfig" . gitconfig-mode))
 (add-to-list 'auto-mode-alist '("hgrc" . gitconfig-mode))
 
-;; Para cargar el archivo gitignore
-(add-to-list 'auto-mode-alist '(".hgignore" . gitconfig-mode))
+;; ;; Para cargar el archivo gitignore
+;; (add-to-list 'auto-mode-alist '(".hgignore" . gitconfig-mode))
 
 ;; markdown-mode
 (if (fboundp 'markdown-mode)
