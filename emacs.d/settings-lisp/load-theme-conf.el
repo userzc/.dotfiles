@@ -13,11 +13,12 @@
 (add-to-list 'custom-theme-load-path
              "~/.emacs.d/lisp/default-black-theme/")
 
+;;;;;;;;;;;;;;;;;
+;; Dark themes ;;
+;;;;;;;;;;;;;;;;;
 ;; (color-theme-wombat+)
-;; (load-theme 'organic-green t)
 ;; (load-theme 'tangotango t)
 ;; (load-theme 'material t)
-;; (load-theme 'moe-light t)
 ;; (load-theme 'moe-dark t)
 ;; (load-theme 'wombat t)
 ;; (load-theme 'tango-2 t)
@@ -28,6 +29,8 @@
 ;; (load-theme 'ubuntu t)
 ;; (load-theme 'waher t)
 (load-theme 'niflheim t)
+;; (load-theme 'oldlace t)
+;; (load-theme 'professional t)
 ;; (load-theme 'granger t)
 ;; (load-theme 'clues t)
 ;; (load-theme 'assemblage t)
@@ -40,7 +43,6 @@
 ;; (load-theme 'ample-zen t)
 ;; (load-theme 'spacegray t)
 ;; (load-theme 'sanityinc-tomorrow-night t)
-;; (load-theme 'solarized-light t)
 ;; (load-theme 'solarized-dark t)
 ;; (load-theme 'qsimpleq t)
 ;; (load-theme 'dorsey t)
@@ -51,6 +53,13 @@
 ;; (load-theme 'odersky t)
 ;; (load-theme 'wilson t)
 ;; (load-theme 'gruvbox t)
+
+;;;;;;;;;;;;;;;;;;
+;; Light themes ;;
+;;;;;;;;;;;;;;;;;;
+;; (load-theme 'moe-light t)
+;; (load-theme 'solarized-light t)
+;; (load-theme 'organic-green t)
 
 ;; font
 (if (equal system-type 'gnu/linux)

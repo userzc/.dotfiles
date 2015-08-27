@@ -138,9 +138,14 @@ elif
     export SENCHA_CMD_3_0_0="$HOME/bin/Sencha/Cmd/5.1.3.61"
 fi
 
+# Sencha ExtJS6-premium: libraries/ext-premium-6.0.0-trial/
+if [[ -d "$HOME/sencha-test/libraries/ext-premium-6.0.0/ext-6.0.0" ]]; then
+    export EXTJS6PREMIUM_TRIAL_SDK="$HOME/sencha-test/libraries/ext-premium-6.0.0/ext-6.0.0/"
+fi
+
 # Sencha ExtJS6
 if [[ -d "$HOME/sencha-test/libraries/ext-6.0.0-gpl" ]]; then
-    export EXTJS6SDK="$HOME/sencha-test/libraries/ext-6.0.0-gpl"
+    export EXTJS6SDK="$HOME/sencha-test/libraries/ext-6.0.0-gpl/"
 fi
 
 # Sencha ExtJS

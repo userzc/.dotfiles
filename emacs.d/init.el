@@ -23,6 +23,7 @@
 ;; complementar con `zsh' y `multi-term'
 ;; - `hgignore-mode'
 ;; - `showkey'
+;; - `neotree', from https://github.com/jaypei/emacs-neotree, available in melpa
 
 (defvar lista-paquetes-instalados
   '(ac-js2 ac-math ace-jump-mode ack-and-a-half ag ample-zen-theme auctex
