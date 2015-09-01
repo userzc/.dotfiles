@@ -28,7 +28,7 @@
 ;; (load-theme 'monokai t)
 ;; (load-theme 'ubuntu t)
 ;; (load-theme 'waher t)
-(load-theme 'niflheim t)
+;; (load-theme 'niflheim t)
 ;; (load-theme 'oldlace t)
 ;; (load-theme 'professional t)
 ;; (load-theme 'granger t)
@@ -40,6 +40,9 @@
 ;; (load-theme 'gotham t)
 ;; (load-theme 'base16-mocha t)
 ;; (load-theme 'base16-monokai t)
+;; (load-theme 'base16-greenscreen-light t)
+;; (load-theme 'base16-ocean-dark t)
+(load-theme 'base16-flat-dark t)
 ;; (load-theme 'ample-zen t)
 ;; (load-theme 'spacegray t)
 ;; (load-theme 'sanityinc-tomorrow-night t)
@@ -60,6 +63,7 @@
 ;; (load-theme 'moe-light t)
 ;; (load-theme 'solarized-light t)
 ;; (load-theme 'organic-green t)
+;; (load-theme 'base16-mocha-light t)
 
 ;; font
 (if (equal system-type 'gnu/linux)

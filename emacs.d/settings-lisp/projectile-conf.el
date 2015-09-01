@@ -34,6 +34,8 @@
 (add-hook 'js-mode-hook 'projectile-mode)
 (add-hook 'conf-space-mode-hook 'projectile-mode)
 (add-hook 'awk-mode-hook 'projectile-mode)
+(add-hook 'markdown-mode-hook 'projectile-mode)
+(add-hook 'textile-mode-hook 'projectile-mode)
 
 ;; Ya se tiene bien configurado git en Windows, se puede confiar en
 ;; este método de indexado
