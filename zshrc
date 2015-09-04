@@ -261,5 +261,13 @@ export PATH="$HOME/.cask/bin:$PATH"
 # Vert.x
 export PATH="$HOME/vert.x/vert.x-2.1.5/bin/:$PATH"
 
+# Activate tmuxp source completion
+if (( $+commands[tmuxp] )); then
+    # echo "sourcing tmuxp.zsh"
+    source tmuxp.zsh
+else
+    echo "tmuxp not found"
+fi
+
 #THIS MUST BE AT THE END OF THE FILE FOR GVM TO WORK!!!
 [[ -s "$HOME/.gvm/bin/gvm-init.sh" ]] && source "$HOME/.gvm/bin/gvm-init.sh"
