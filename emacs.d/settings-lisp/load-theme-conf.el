@@ -17,7 +17,7 @@
 ;; Dark themes ;;
 ;;;;;;;;;;;;;;;;;
 ;; (color-theme-wombat+)
-;; (load-theme 'tangotango t)
+(load-theme 'tangotango t)
 ;; (load-theme 'material t)
 ;; (load-theme 'moe-dark t)
 ;; (load-theme 'wombat t)
@@ -38,11 +38,11 @@
 ;; (custom-set-faces '(default ((t (:background "nil")))))
 ;; (load-theme 'zenburn t)
 ;; (load-theme 'gotham t)
-;; (load-theme 'base16-mocha t)
+;; (load-theme 'base16-mocha-dark t)
 ;; (load-theme 'base16-monokai t)
 ;; (load-theme 'base16-greenscreen-light t)
 ;; (load-theme 'base16-ocean-dark t)
-(load-theme 'base16-flat-dark t)
+;; (load-theme 'base16-flat-dark t)
 ;; (load-theme 'ample-zen t)
 ;; (load-theme 'spacegray t)
 ;; (load-theme 'sanityinc-tomorrow-night t)

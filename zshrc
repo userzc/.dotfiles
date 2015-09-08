@@ -105,6 +105,7 @@ plugins=(
     pip
     themes
     common-aliases
+    ssh-agent
     # django
     vagrant
     mercurial)
