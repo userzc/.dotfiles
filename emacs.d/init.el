@@ -136,7 +136,7 @@
 (require 'multi-term-conf)
 (require 'mail-conf)
 (require 'auto-complete-conf)
-(require 'nxhtml-conf)
+;; (require 'nxhtml-conf)
 (require 'emaxima-conf)
 (require 'python-conf)
 (require 'ein-conf)
