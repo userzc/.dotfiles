@@ -29,7 +29,7 @@
 (setq vc-make-backend-files t)
 
 ;; No cargar el default
-(setq inhibit-default-init t)
+(setq inhibit-startup-screen t)
 
 ;; Para quitar el cursor del mouse cuando estorba
 (mouse-avoidance-mode 'banish)

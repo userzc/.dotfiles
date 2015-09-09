@@ -128,7 +128,7 @@
 (require 'dired-conf)
 (require 'icicles-conf)
 (require 'yasnippet-conf)
-(require 'desktop-conf)
+;; (require 'desktop-conf)
 (require 'icomplete-conf)
 (require 'ack-conf)
 (require 'magit-conf)
