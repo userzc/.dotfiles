@@ -10,6 +10,10 @@ alias -g A='| ag'
 alias ffi='find . -type f -iname'
 alias fdi='find . -type d -iname'
 
+# debian based alias
+alias apsh='aptitude show'
+alias acsh="apt-cache show"
+
 ####################
 # maven archetypes #
 ####################

@@ -525,7 +525,6 @@
 
 (eval-after-load "js2-mode"
   '(progn
-     (js2r-add-keybindings-with-prefix "C-c C-m")
      (define-key js2-mode-map (kbd "M-j") nil)))
 
 (provide 'keybinds-conf)

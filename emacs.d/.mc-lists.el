@@ -65,6 +65,7 @@
 	open-line-above
 	open-line-below
 	org-beginning-of-line
+	org-ctrl-c-minus
 	org-ctrl-c-star
 	org-delete-char
 	org-end-of-line
