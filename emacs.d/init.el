@@ -153,5 +153,6 @@
 (require 'js2-conf)
 (require 'js2r-conf)
 (require 'recentf-conf)
+(require 'neotree-conf)
 
 (require 'keybinds-conf)

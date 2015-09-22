@@ -22,6 +22,9 @@
 ;; delete-pairs
 (global-set-key (kbd "C-c d") 'delete-pair)
 
+;; neotree-mode
+(global-set-key (kbd "C-c M-N") 'neotree-toggle)
+
 ;; open lines faster from anywhere in the current line
 (global-set-key (kbd "<C-return>") 'open-line-below)
 (global-set-key (kbd "<C-S-return>") 'open-line-above)
