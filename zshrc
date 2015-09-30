@@ -105,7 +105,7 @@ plugins=(
     pip
     themes
     common-aliases
-    ssh-agent
+    # ssh-agent # Plugin interfiere con Magit, investigar porque
     # django
     vagrant
     mercurial)

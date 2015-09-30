@@ -4,7 +4,6 @@
 ;; semi-fuctional on emacs-version "24.3.50.1" ;;
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
-
 ;; Added by Package.el.  This must come before configurations of
 ;; installed packages.  Don't delete this line.  If you don't want it,
 ;; just comment it out by adding a semicolon to the start of the line.
@@ -22,28 +21,30 @@
 ;; parece que es una alternativa para generar opciones para
 ;; complementar con `zsh' y `multi-term'
 ;; - `showkey'
-;; - `neotree', from https://github.com/jaypei/emacs-neotree, available in melpa
 
 (defvar lista-paquetes-instalados
-  '(ac-js2 ac-math ace-jump-mode ack-and-a-half ag ample-zen-theme auctex
-	   auto-complete base16-theme bookmark+ c-eldoc cedit cl-lib
-	   clues-theme color-theme color-theme-gruber-darker
-	   color-theme-sanityinc-tomorrow command-log-mode
-	   cyberpunk-theme dash deferred dired+ dired-details
-	   dired-details+ ein emacs-eclim emmet-mode enclose
-	   expand-region feature-mode gitconfig-mode github-theme
-	   gitignore-mode google-c-style google-contacts gruvbox-theme
-	   hgignore-mode icicles icomplete+ ido-better-flex java-snippets
-	   js2-mode js2-refactor litable lorem-ipsum magit
-	   mark-more-like-this markdown-mode material-theme moe-theme
-	   monky monokai-theme multi-term multiple-cursors niflheim-theme
-	   nose oauth2 ox-ioslide popup powerline projectile purty-mode
-	   python-django qsimpleq-theme rainbow-delimiters rainbow-mode
-	   request restclient scss-mode smart-mode-line smart-tab
-	   smartparens solarized-theme spacegray-theme sr-speedbar
-	   sublime-themes tango-2-theme tangotango-theme textile-mode
-	   ubuntu-theme websocket wgrep wgrep-ag windsize wrap-region
-	   yaml-mode yasnippet zenburn-theme zone-matrix)
+  '(ac-js2 ac-math ace-jump-mode ack-and-a-half ag ample-zen-theme
+	auctex auto-complete base16-theme bookmark+ c-eldoc cedit
+	cl-lib clues-theme color-theme color-theme-gruber-darker
+	color-theme-sanityinc-tomorrow command-log-mode
+	cyberpunk-theme dash deferred dired+ dired-details
+	dired-details+ ein emacs-eclim emmet-mode enclose
+	expand-region feature-mode gitconfig-mode github-theme
+	gitignore-mode google-c-style google-contacts
+	gruvbox-theme hgignore-mode icicles icomplete+
+	ido-better-flex java-snippets js2-mode js2-refactor
+	litable lorem-ipsum magit mark-more-like-this
+	markdown-mode material-theme moe-theme monky
+	monokai-theme multi-term multiple-cursors neotree
+	niflheim-theme nose oauth2 ox-ioslide popup powerline
+	projectile purty-mode python-django qsimpleq-theme
+	rainbow-delimiters rainbow-mode request restclient
+	scss-mode smart-mode-line smart-tab smartparens
+	solarized-theme spacegray-theme sr-speedbar
+	sublime-themes tango-2-theme tangotango-theme
+	textile-mode ubuntu-theme websocket wgrep wgrep-ag
+	windsize wrap-region yaml-mode yasnippet zenburn-theme
+	zone-matrix)
   "Lista de paquetes instalados actualmente en mi configuración.")
 
 ;; Default custom file
@@ -154,5 +155,6 @@
 (require 'js2r-conf)
 (require 'recentf-conf)
 (require 'neotree-conf)
+(require 'css-conf)
 
 (require 'keybinds-conf)

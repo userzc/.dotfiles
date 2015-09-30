@@ -51,6 +51,8 @@
 	indent-new-comment-line
 	insert-parentheses
 	insert-register
+	js2r-contract-object
+	js2r-expand-object
 	keyboard-escape-quit
 	keyboard-quit
 	kill-region
