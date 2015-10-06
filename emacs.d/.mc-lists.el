@@ -124,6 +124,7 @@
 	upcase-region
 	wdired-downcase-word
 	wdired-upcase-word
+	widget-button-press
 	yas-expand
 	zap-up-to-char
 	))

@@ -34,6 +34,7 @@ bindsym $mod+2 exec "google-chrome"
 # bindsym $mod+3 exec XMODIFIERS="" emacs
 bindsym $mod+3 exec emacs
 bindsym $mod+4 exec rhythmbox
+bindsym Print exec gnome-screenshot -i
 
 # Opciones a considearar para cambiar colores
 

@@ -159,6 +159,11 @@ if [[ -d "$HOME/sencha-test/libraries/touch-2.4.2-gpl/" ]]; then
     export TOUCHJSSDK="$HOME/sencha-test/libraries/touch-2.4.2-gpl/"
 fi
 
+# Sencha Touch 2.3
+if [[ -d "$HOME/sencha-test/libraries/touch23/2.3.1.410/gpl" ]]; then
+    export TOUCHJSSDK23="$HOME/sencha-test/libraries/touch23/2.3.1.410/gpl"
+fi
+
 if [[ -e "$HOME/powerline/powerline/bindings/tmux/powerline.conf" ]]; then
     export TMUX_PL="$HOME/powerline/powerline/bindings/tmux/powerline.conf"
 else
