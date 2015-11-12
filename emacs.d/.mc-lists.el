@@ -53,6 +53,7 @@
 	insert-register
 	js2r-contract-object
 	js2r-expand-object
+	js2r-log-this
 	keyboard-escape-quit
 	keyboard-quit
 	kill-region
@@ -125,6 +126,7 @@
 	wdired-downcase-word
 	wdired-upcase-word
 	widget-button-press
+	yaml-electric-dash-and-dot
 	yas-expand
 	zap-up-to-char
 	))
@@ -143,6 +145,7 @@
 	c-end-of-statement
 	cleanup-buffer
 	comint-send-input
+	compile-goto-error
 	count-words-region
 	deb-view-dired-view
 	describe-key
@@ -196,6 +199,7 @@
 	toggle-input-method
 	wdired-finish-edit
 	wdired-previous-line
+	wgrep-finish-edit
 	windsize-down
 	windsize-up
 	yank-rectangle

@@ -1,7 +1,7 @@
 {
     "segment_data": {
         "uptime": {
-            "before": "⇑  "
+            "before": "⇑ "
         },
         "date": {
             "before": "⌚ "
@@ -32,7 +32,8 @@
                 "priority": 50,
                 "args": {
                     "unit": "C",
-                    "location_query": "Huajuapan, OA, MX"
+                    "location_query": "Huajuapan, OA, MX",
+		    "interval": 10
                 }
             },
             {

@@ -129,14 +129,26 @@ export PATH=$PATH:"$HOME/lib/python_lib/"
 export PATH=$PATH:"$HOME/.dotfiles" # access to dotfiles_sync
 
 # Sencha Cmd 6
-if [[ -d "$HOME/bin/Sencha/Cmd/6.0.0.202" ]]; then
+if [[ -d "$HOME/bin/Sencha/Cmd/6.0.2.14" ]]; then
+    export PATH=$PATH:"$HOME/bin/Sencha/Cmd/6.0.2.14"
+    export SENCHA_CMD_3_0_0="$HOME/bin/Sencha/Cmd/6.0.2.14"
+elif [[ -d "$HOME/bin/Sencha/Cmd/6.0.0.202" ]]; then
     export PATH=$PATH:"$HOME/bin/Sencha/Cmd/6.0.0.202"
     export SENCHA_CMD_3_0_0="$HOME/bin/Sencha/Cmd/6.0.0.202"
-elif
-# Sencha Cmd
- [[ -d "$HOME/bin/Sencha/Cmd/5.1.3.61" ]]; then
+elif [[ -d "$HOME/bin/Sencha/Cmd/5.1.3.61" ]]; then
+    # Sencha Cmd
     export PATH=$PATH:"$HOME/bin/Sencha/Cmd/5.1.3.61"
     export SENCHA_CMD_3_0_0="$HOME/bin/Sencha/Cmd/5.1.3.61"
+fi
+
+# Sencha ExtJS6.1-commercial:
+if [[ -d "$HOME/sencha-test/libraries/ext-6.0.1" ]]; then
+    export EXTJS6_COMMERCIAL_SDK="$HOME/sencha-test/libraries/ext-6.0.1/"
+fi
+
+# Sencha ExtJS6.0-commercial:
+if [[ -d "$HOME/sencha-test/libraries/ext-6.0.0" ]]; then
+    export EXTJS6_0_COMMERCIAL_SDK="$HOME/sencha-test/libraries/ext-6.0.0/"
 fi
 
 # Sencha ExtJS6-premium: libraries/ext-premium-6.0.0-trial/
@@ -146,7 +158,7 @@ fi
 
 # Sencha ExtJS6
 if [[ -d "$HOME/sencha-test/libraries/ext-6.0.0-gpl" ]]; then
-    export EXTJS6SDK="$HOME/sencha-test/libraries/ext-6.0.0-gpl/"
+    export EXTJS6SDK_GPL="$HOME/sencha-test/libraries/ext-6.0.0-gpl/"
 fi
 
 # Sencha ExtJS
@@ -163,6 +175,12 @@ fi
 if [[ -d "$HOME/sencha-test/libraries/touch23/2.3.1.410/gpl" ]]; then
     export TOUCHJSSDK23="$HOME/sencha-test/libraries/touch23/2.3.1.410/gpl"
 fi
+
+# Bryntum Scheduler 4.0
+if [[ -d "$HOME/sencha-test/libraries/scheduler-4.0.0" ]]; then
+    export SCHEDULER4="$HOME/sencha-test/libraries/scheduler-4.0.0"
+fi
+
 
 if [[ -e "$HOME/powerline/powerline/bindings/tmux/powerline.conf" ]]; then
     export TMUX_PL="$HOME/powerline/powerline/bindings/tmux/powerline.conf"
@@ -204,8 +222,12 @@ fi
 # fi
 
 if (( $+commands[mvn] )); then
-    # Suponiendo que maven 3 fué instalado del repositorio de ubuntu
-    export M2_HOME=/usr/share/maven
+    # Suponiendo que maven 3 fué instalado del repositorio de ubuntu,
+    # parece ser que la nueva el nuevo maven 3 no necesita M2_HOME.
+    # En 15.04 se está utilizando un ppa:
+    # https://launchpad.net/~vkorenev/+archive/ubuntu/maven3/+packages
+
+    # export M2_HOME=/usr/share/maven
     plugins+=(mvn)
 else
     echo "mvn doesn't exist";
@@ -276,4 +298,5 @@ else
 fi
 
 #THIS MUST BE AT THE END OF THE FILE FOR GVM TO WORK!!!
-[[ -s "$HOME/.gvm/bin/gvm-init.sh" ]] && source "$HOME/.gvm/bin/gvm-init.sh"
+# [[ -s "$HOME/.gvm/bin/gvm-init.sh" ]] && source "$HOME/.gvm/bin/gvm-init.sh"
+export SDKMAN_DIR="/home/rene/.sdkman" && source "/home/rene/.sdkman/bin/sdkman-init.sh"
