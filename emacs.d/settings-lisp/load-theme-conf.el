@@ -17,7 +17,8 @@
 ;; Dark themes ;;
 ;;;;;;;;;;;;;;;;;
 ;; (color-theme-wombat+)
-(load-theme 'tangotango t)
+;; (load-theme 'tangotango t)
+(load-theme 'badwolf t)
 ;; (load-theme 'material t)
 ;; (load-theme 'moe-dark t)
 ;; (load-theme 'wombat t)

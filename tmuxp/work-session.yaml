@@ -5,7 +5,7 @@ windows:
     panes:
       - tail -f /var/log/syslog
       - htop
-  - window_name: 0
+  - window_name: "0"
     panes:
       -
     focus: true
