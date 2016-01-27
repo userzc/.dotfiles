@@ -32,6 +32,7 @@
 	diredp-capitalize-this-file
 	downcase-region
 	ein:worksheet-split-cell-at-point
+	emmet-expand-line
 	enclose-remove
 	end-of-defun
 	enlarge-window-horizontally

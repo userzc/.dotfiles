@@ -184,6 +184,8 @@ fi
 
 if [[ -e "$HOME/powerline/powerline/bindings/tmux/powerline.conf" ]]; then
     export TMUX_PL="$HOME/powerline/powerline/bindings/tmux/powerline.conf"
+elif [[ -e "/usr/share/powerline/bindings/tmux/powerline.conf" ]]; then
+    export TMUX_PL="/usr/share/powerline/bindings/tmux/powerline.conf"
 else
     echo "\033[0;31m"'powerline tmux not active'"\033[0;31m"
 fi
@@ -280,7 +282,7 @@ if (( $+commands[lsb_release] )); then
 fi
 
 # To include NODE_PATH, but doesn't seem to work
-export NODE_PATH="/usr/local/lib/node_modules"
+export NODE_PATH="$NODE_PATH:/usr/lib/node_modules:/usr/local/lib/node_modules"
 # export NODE_PATH="/usr/local/shape/npm"
 
 # Cask

@@ -155,5 +155,6 @@
 (require 'recentf-conf)
 (require 'neotree-conf)
 (require 'css-conf)
+(require 'flyspell-conf)
 
 (require 'keybinds-conf)

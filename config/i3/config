@@ -210,6 +210,10 @@ bindsym Mod1+Control+Delete exec "~/bin/i3_exit_dmenu.sh"
 # Start skype
 assign [class="^Skype$" instance="^skype$"] → 5: Communications
 
+# Start IntelliJ Idea
+assign [class="^jetbrains-idea$" instance="^sun-awt-X11-XFramePeer$"] → 1
+assign [class="^jetbrains-idea$" instance="^sun-awt-X11-XDialogPeer$"] → 1
+
 # # Start assign
 # assign [class="net-sourceforge-processdash-Main" instance="sun-awt-X11-XFramePeer"] → 4: PSP Dashboard
 
