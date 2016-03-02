@@ -74,8 +74,10 @@
 	org-delete-char
 	org-end-of-line
 	org-force-self-insert
+	org-insert-todo-heading
 	org-kill-line
 	org-mark-element
+	org-meta-return
 	org-metaleft
 	org-metaright
 	org-open-line

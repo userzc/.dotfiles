@@ -20,11 +20,15 @@
   (package-refresh-contents))
 
 (require 'package)
-(add-to-list 'package-archives
-             '("marmalade" .
-               "http://marmalade-repo.org/packages/") t)
-(add-to-list 'package-archives
-             '("melpa" . "http://melpa.milkbox.net/packages/") t)
+(setq package-archives
+      '(("marmalade" . "http://marmalade-repo.org/packages/")
+        ("melpa" . "http://melpa.org/packages/")
+        ("melpa-stable" . "http://stable.melpa.org/packages/")
+        ("gnu" . "https://elpa.gnu.org/packages/")))
+
+(setq package-pinned-packages
+      '((magit . "melpa-stable")
+        (magit-popup . "melpa-stable")))
 
 (defvar package-filter-function nil
   "Optional predicate function used to internally filter packages
@@ -36,25 +40,25 @@ where PACKAGE is a symbol, VERSION is a vector as produced by
 archive.")
 
 (defadvice package--add-to-archive-contents
-  (around filter-packages (package archive) activate)
+    (around filter-packages (package archive) activate)
   "Add filtering of available packages using
 `package-filter-function', if non-nil."
   (when (or (null package-filter-function)
-	    (funcall package-filter-function
-		     (car package)
-		     (funcall (if (fboundp 'package-desc-version)
-				  'package--ac-desc-version
-				'package-desc-vers)
-			      (cdr package))
-		     archive))
+            (funcall package-filter-function
+                     (car package)
+                     (funcall (if (fboundp 'package-desc-version)
+                                  'package--ac-desc-version
+                                'package-desc-vers)
+                              (cdr package))
+                     archive))
     ad-do-it))
 
 (setq package-filter-function
       (lambda (package version archive)
-	(and
-	 (not (memq package '(eieio)))
-	 (or (not (string-equal archive "melpa"))
-	     (not (memq package '(slime)))))))
+        (and
+         (not (memq package '(eieio)))
+         (or (not (string-equal archive "melpa"))
+             (not (memq package '(slime)))))))
 
 (defun packages-install (packages)
   "Función para determinar si todos los paquetes de la lista de
@@ -91,8 +95,8 @@ re-downloaded in order to locate PACKAGE."
 
 ;; hilight current line in package-menu-mode
 (add-hook 'package-menu-mode-hook
-	  '(lambda ()
-	     (hl-line-mode 1)))
+          '(lambda ()
+             (hl-line-mode 1)))
 
 
 (provide 'package-conf)

@@ -19,6 +19,7 @@
 ;; (color-theme-wombat+)
 ;; (load-theme 'tangotango t)
 (load-theme 'badwolf t)
+;; (load-theme 'idea-darkula t)
 ;; (load-theme 'material t)
 ;; (load-theme 'moe-dark t)
 ;; (load-theme 'wombat t)
@@ -66,18 +67,31 @@
 ;; (load-theme 'organic-green t)
 ;; (load-theme 'base16-mocha-light t)
 
+;; ;; font
+;; (if (equal system-type 'gnu/linux)
+;;     (condition-case nil
+;;         (set-default-font "Meslo LG S DZ Regular for Powerline-11")
+;;         ;; (set-default-font "Inconsolata-dz for Powerline-10")
+;;       (error
+;;        (set-default-font "Inconsolata-11")))
+;;   (condition-case nil
+;;       (set-default-font "Inconsolata-11")
+;;     (error
+;;      (set-default-font "DejaVu Sans Mono-10"))))
+
 ;; font
 (if (equal system-type 'gnu/linux)
     (condition-case nil
-        ;; (set-default-font "Meslo LG S DZ Regular for Powerline-11")
-        (set-default-font "Inconsolata-dz for Powerline-10")
-	;; (set-default-font "Ubuntu Mono-11")
+        ;; (set-face-attribute 'default t :font "Meslo LG S DZ Regular for Powerline-11" )
+        ;; (set-face-attribute 'default t :font "Inconsolata-dz for Powerline-10" )
+        (set-face-font 'default "Inconsolata-dz for Powerline-10" )
       (error
-       (set-default-font "Inconsolata-11")))
+       (set-face-attribute 'default t :font "Inconsolata-11")))
   (condition-case nil
-      (set-default-font "Inconsolata-11")
+      (set-face-attribute 'default t :font "Inconsolata-11" )
     (error
-     (set-default-font "DejaVu Sans Mono-10"))))
+     (set-face-attribute 'default t :font "DejaVu Sans Mono-10")
+     )))
 
 ;; Opciones:
 ;; -adobe-Source Code Pro for Powerline-bold-normal-normal-*-*-*-*-*-m-0-iso10646-1
