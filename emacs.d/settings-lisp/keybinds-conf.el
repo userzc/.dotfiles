@@ -528,6 +528,7 @@
 
 (eval-after-load "js2-mode"
   '(progn
+     (define-key js2-mode-map (kbd "C-c C-z") 'nodejs-repl-switch-to-repl)
      (define-key js2-mode-map (kbd "M-j") nil)))
 
 (provide 'keybinds-conf)

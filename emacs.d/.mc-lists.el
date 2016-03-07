@@ -129,6 +129,7 @@
 	wdired-downcase-word
 	wdired-upcase-word
 	widget-button-press
+	windsize-left
 	windsize-right
 	yaml-electric-dash-and-dot
 	yas-expand

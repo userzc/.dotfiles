@@ -19,6 +19,8 @@
 ;; (color-theme-wombat+)
 ;; (load-theme 'tangotango t)
 (load-theme 'badwolf t)
+;; (load-theme 'spacemacs-dark t)
+;; (load-theme 'green-phosphor t)
 ;; (load-theme 'idea-darkula t)
 ;; (load-theme 'material t)
 ;; (load-theme 'moe-dark t)
@@ -67,76 +69,42 @@
 ;; (load-theme 'organic-green t)
 ;; (load-theme 'base16-mocha-light t)
 
-;; ;; font
-;; (if (equal system-type 'gnu/linux)
-;;     (condition-case nil
-;;         (set-default-font "Meslo LG S DZ Regular for Powerline-11")
-;;         ;; (set-default-font "Inconsolata-dz for Powerline-10")
-;;       (error
-;;        (set-default-font "Inconsolata-11")))
-;;   (condition-case nil
-;;       (set-default-font "Inconsolata-11")
-;;     (error
-;;      (set-default-font "DejaVu Sans Mono-10"))))
+;;;;;;;;;;;;;;;;;;;
+;; font and size ;;
+;;;;;;;;;;;;;;;;;;;
 
-;; font
+;; (setq selected-font "anonymous-pro")
+;; (setq selected-font "arimo")
+;; (setq selected-font "cousine")
+;; (setq selected-font "deja-vu-sans-mono")
+;; (setq selected-font "droid-sans-mono")
+;; (setq selected-font "droid-sans-mono-dotted")
+;; (setq selected-font "droid-sans-mono-slashed")
+;; (setq selected-font "fira-mono-10")
+(setq selected-font "Hack-10")
+;; (setq selected-font "inconsolata")
+;; (setq selected-font "inconsolata-dz")
+;; (setq selected-font "inconsolata-g")
+;; (setq selected-font "input-mono")
+;; (setq selected-font "liberation-mono")
+;; (setq selected-font "Meslo LG S for Powerline")
+;; (setq selected-font "monofur")
+;; (setq selected-font "roboto-mono")
+;; (setq selected-font "samples")
+;; (setq selected-font "source-code-pro")
+;; (setq selected-font "symbol-neu")
+;; (setq selected-font "terminus")
+;; (setq selected-font "tinos")
+;; (setq selected-font "ubuntu-mono")
+
 (if (equal system-type 'gnu/linux)
     (condition-case nil
-        ;; (set-face-attribute 'default t :font "Meslo LG S DZ Regular for Powerline-11" )
-        ;; (set-face-attribute 'default t :font "Inconsolata-dz for Powerline-10" )
-        (set-face-font 'default "Inconsolata-dz for Powerline-10" )
+        (set-frame-font selected-font)
       (error
-       (set-face-attribute 'default t :font "Inconsolata-11")))
+       (set-frame-font "Inconsolata-11")))
   (condition-case nil
-      (set-face-attribute 'default t :font "Inconsolata-11" )
+      (set-frame-font "Inconsolata-11")
     (error
-     (set-face-attribute 'default t :font "DejaVu Sans Mono-10")
-     )))
-
-;; Opciones:
-;; -adobe-Source Code Pro for Powerline-bold-normal-normal-*-*-*-*-*-m-0-iso10646-1
-;; -adobe-Source Code Pro for Powerline-extra-light-normal-normal-*-*-*-*-*-m-0-iso10646-1
-;; -adobe-Source Code Pro for Powerline-light-normal-normal-*-*-*-*-*-m-0-iso10646-1
-;; -adobe-Source Code Pro for Powerline-normal-normal-normal-*-*-*-*-*-m-0-iso10646-1
-;; -adobe-Source Code Pro for Powerline-semi-bold-normal-normal-*-*-*-*-*-m-0-iso10646-1
-;; -adobe-Source Code Pro for Powerline-ultra-bold-normal-normal-*-*-*-*-*-m-0-iso10646-1
-;; -bitstream-Meslo LG L DZ for Powerline-normal-normal-normal-*-*-*-*-*-m-0-iso10646-1
-;; -bitstream-Meslo LG L for Powerline-normal-normal-normal-*-*-*-*-*-m-0-iso10646-1
-;; -bitstream-Meslo LG M DZ for Powerline-normal-normal-normal-*-*-*-*-*-m-0-iso10646-1
-;; -bitstream-Meslo LG M for Powerline-normal-normal-normal-*-*-*-*-*-m-0-iso10646-1
-;; -bitstream-Meslo LG S DZ for Powerline-normal-normal-normal-*-*-*-*-*-m-0-iso10646-1
-;; -bitstream-Meslo LG S for Powerline-normal-normal-normal-*-*-*-*-*-m-0-iso10646-1
-;; -unknown-Anonymous Pro for Powerline-bold-italic-normal-*-*-*-*-*-m-0-iso10646-1
-;; -unknown-Anonymous Pro for Powerline-bold-normal-normal-*-*-*-*-*-m-0-iso10646-1
-;; -unknown-Anonymous Pro for Powerline-normal-italic-normal-*-*-*-*-*-m-0-iso10646-1
-;; -unknown-Anonymous Pro for Powerline-normal-normal-normal-*-*-*-*-*-m-0-iso10646-1
-;; -unknown-DejaVu Sans Mono for Powerline-bold-normal-normal-*-*-*-*-*-m-0-iso10646-1
-;; -unknown-DejaVu Sans Mono for Powerline-bold-oblique-normal-*-*-*-*-*-m-0-iso10646-1
-;; -unknown-DejaVu Sans Mono for Powerline-normal-normal-normal-*-*-*-*-*-m-0-iso10646-1
-;; -unknown-DejaVu Sans Mono for Powerline-normal-oblique-normal-*-*-*-*-*-m-0-iso10646-1
-;; -unknown-Droid Sans Mono for Powerline-normal-normal-normal-*-*-*-*-*-m-0-iso10646-1
-;; -unknown-Fira Mono for Powerline-bold-normal-normal-*-*-*-*-*-m-0-iso10646-1
-;; -unknown-Fira Mono for Powerline-normal-normal-normal-*-*-*-*-*-m-0-iso10646-1
-;; -unknown-Fira Mono Medium for Powerline-normal-normal-normal-*-*-*-*-*-m-0-iso10646-1
-;; -unknown-Inconsolata for Powerline-normal-normal-normal-*-*-*-*-*-m-0-iso10646-1
-;; -unknown-Inconsolata-dz for Powerline-normal-normal-normal-*-*-*-*-*-m-0-iso10646-1
-;; -unknown-Inconsolata-g for Powerline-normal-normal-normal-*-*-*-*-*-m-0-iso10646-1
-;; -unknown-Liberation Mono for Powerline-bold-italic-normal-*-*-*-*-*-m-0-iso10646-1
-;; -unknown-Liberation Mono for Powerline-bold-normal-normal-*-*-*-*-*-m-0-iso10646-1
-;; -unknown-Liberation Mono for Powerline-normal-italic-normal-*-*-*-*-*-m-0-iso10646-1
-;; -unknown-Liberation Mono for Powerline-normal-normal-normal-*-*-*-*-*-m-0-iso10646-1
-;; -unknown-monofur for Powerline-bold-normal-normal-*-*-*-*-*-*-0-iso10646-1
-;; -unknown-monofur for Powerline-normal-italic-normal-*-*-*-*-*-m-0-iso10646-1
-;; -unknown-monofur for Powerline-normal-normal-normal-*-*-*-*-*-m-0-iso10646-1
-;; -unknown-Ubuntu Mono derivative Powerline-bold-italic-normal-*-*-*-*-*-m-0-iso10646-1
-;; -unknown-Ubuntu Mono derivative Powerline-bold-normal-normal-*-*-*-*-*-m-0-iso10646-1
-;; -unknown-Ubuntu Mono derivative Powerline-normal-italic-normal-*-*-*-*-*-m-0-iso10646-1
-;; -unknown-Ubuntu Mono derivative Powerline-normal-normal-normal-*-*-*-*-*-m-0-iso10646-1
-
-;; Ejemplos de nombres:
-;; -unknown-Inconsolata-normal-normal-normal-*-*-*-*-*-m-0-iso10646-1
-;; -unknown-Inconsolata-normal-normal-normal-*-15-*-*-*-m-0-fontset-auto1
-;; -unknown-Inconsolata-normal-normal-normal-*-16-*-*-*-m-0-fontset-auto27
-;; -unknown-Inconsolata-normal-normal-normal-*-16-*-*-*-m-0-fontset-auto28
+     (set-frame-font "DejaVu Sans Mono-10"))))
 
 (provide 'load-theme-conf)
