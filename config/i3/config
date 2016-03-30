@@ -160,32 +160,43 @@ bindsym $mod+a focus parent
 # used to be something about monitor configuration switching
 bindsym $mod+p focus child
 
+set $ws1 "1  "
+set $ws2 "2"
+set $ws3 "3"
+set $ws4 "4   "
+set $ws5 "5   "
+set $ws6 "6"
+set $ws7 "7"
+set $ws8 "8"
+set $ws9 "9"
+set $ws10 "10"
+
 # switch to workspace
-bindsym $mod+Control+1 workspace 1
-bindsym $mod+Control+2 workspace 2
-bindsym $mod+Control+3 workspace 3
-bindsym $mod+Control+4 workspace 4: VirtualMachine
-bindsym $mod+Control+5 workspace 5: Communications
-bindsym $mod+Control+6 workspace 6
-bindsym $mod+Control+7 workspace 7
-bindsym $mod+Control+8 workspace 8
-bindsym $mod+Control+9 workspace 9
-bindsym $mod+Control+0 workspace 10
+bindsym $mod+Control+1 workspace $ws1
+bindsym $mod+Control+2 workspace $ws2
+bindsym $mod+Control+3 workspace $ws3
+bindsym $mod+Control+4 workspace $ws4
+bindsym $mod+Control+5 workspace $ws5
+bindsym $mod+Control+6 workspace $ws6
+bindsym $mod+Control+7 workspace $ws7
+bindsym $mod+Control+8 workspace $ws8
+bindsym $mod+Control+9 workspace $ws9
+bindsym $mod+Control+0 workspace $ws10
 
 # enable back_and_forth
 workspace_auto_back_and_forth yes
 
 # move focused container to workspace
-bindsym $mod+Control+Shift+1 move container to workspace 1
-bindsym $mod+Control+Shift+2 move container to workspace 2
-bindsym $mod+Control+Shift+3 move container to workspace 3
-bindsym $mod+Control+Shift+4 move container to workspace 4: VirtualMachine
-bindsym $mod+Control+Shift+5 move container to workspace 5: Communications
-bindsym $mod+Control+Shift+6 move container to workspace 6
-bindsym $mod+Control+Shift+7 move container to workspace 7
-bindsym $mod+Control+Shift+8 move container to workspace 8
-bindsym $mod+Control+Shift+9 move container to workspace 9
-bindsym $mod+Control+Shift+0 move container to workspace 10
+bindsym $mod+Control+Shift+1 move container to workspace $ws1
+bindsym $mod+Control+Shift+2 move container to workspace $ws2
+bindsym $mod+Control+Shift+3 move container to workspace $ws3
+bindsym $mod+Control+Shift+4 move container to workspace $ws4
+bindsym $mod+Control+Shift+5 move container to workspace $ws5
+bindsym $mod+Control+Shift+6 move container to workspace $ws6
+bindsym $mod+Control+Shift+7 move container to workspace $ws7
+bindsym $mod+Control+Shift+8 move container to workspace $ws8
+bindsym $mod+Control+Shift+9 move container to workspace $ws9
+bindsym $mod+Control+Shift+0 move container to workspace $ws10
 
 # reload the configuration file
 bindsym $mod+Shift+c reload
@@ -208,17 +219,17 @@ bindsym Mod1+Control+Delete exec "~/bin/i3_exit_dmenu.sh"
 # se tiene algo como
 
 # Start skype
-assign [class="^Skype$" instance="^skype$"] → 5: Communications
+assign [class="^Skype$" instance="^skype$"] → $ws5
 
 # Start IntelliJ Idea
-assign [class="^jetbrains-idea$" instance="^sun-awt-X11-XFramePeer$"] → 1
-assign [class="^jetbrains-idea$" instance="^sun-awt-X11-XDialogPeer$"] → 1
+assign [class="^jetbrains-idea$" instance="^sun-awt-X11-XFramePeer$"] → $ws1
+assign [class="^jetbrains-idea$" instance="^sun-awt-X11-XDialogPeer$"] → $ws1
 
 # # Start assign
 # assign [class="net-sourceforge-processdash-Main" instance="sun-awt-X11-XFramePeer"] → 4: PSP Dashboard
 
 # Start assign
-assign [class="VirtualBox"  instance="Qt-subapplication"] → 4: VirtualMachine
+assign [class="VirtualBox"  instance="Qt-subapplication"] → $ws4
 
 # resize window (you can also use the mouse for that)
 mode "resize" {
@@ -301,7 +312,9 @@ bindsym $mod+n exec "nmcli -t -f ssid,device,rate,signal,bars dev wifi | awk_pri
 
 bar {
 
-	font pango:DejaVu Sans Mono 9
+	# font pango:DejaVu Sans Mono 9
+	# font xft:DejaVu Sans Mono 9, Font Awesome 9
+	font xft:Font Awesome 8
         status_command i3status --config ~/.config/i3/i3status.conf
 	tray_output primary
 	position top

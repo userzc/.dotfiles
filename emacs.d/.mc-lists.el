@@ -5,6 +5,9 @@
       '(
 	TeX-insert-backslash
 	TeX-newline
+	artist-backward-char
+	artist-forward-char
+	artist-next-line
 	backward-sexp
 	backward-to-word
 	backward-up-list
@@ -90,6 +93,9 @@
 	orgtbl-hijacker-command-102
 	orgtbl-self-insert-command
 	package-menu-mark-unmark
+	picture-beginning-of-line
+	picture-clear-column
+	picture-self-insert
 	python-indent-dedent-line-backspace
 	python-indent-electric-colon
 	python-indent-shift-left
@@ -190,6 +196,7 @@
 	org-ctrl-c-ctrl-c
 	orgtbl-ctrl-c-ctrl-c
 	pcomplete
+	picture-backward-clear-column
 	previous-error
 	pylint
 	python-shell-send-defun
