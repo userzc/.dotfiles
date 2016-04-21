@@ -22,32 +22,29 @@
 ;; - `showkey'
 
 (defvar lista-paquetes-instalados
-  '(ac-mathac-js2 ace-jump-mode ack-and-a-half ag ample-zen-theme
-	       auctex auto-complete badwolf-theme base16-theme
-	       bookmark+ c-eldoc cedit cl-lib clues-theme
-	       color-theme color-theme-gruber-darker
-	       color-theme-sanityinc-tomorrow command-log-mode
-	       cyberpunk-theme dash deferred dired+ dired-details
-	       dired-details+ ein emacs-eclim emmet-mode enclose
-	       expand-region feature-mode gitconfig-mode
-	       github-theme gitignore-mode google-c-style
-	       google-contacts gradle-mode gradle-mode
-	       groovy-mode gruvbox-theme hgignore-mode icicles
-	       icomplete+ ido-better-flex java-snippets
-	       javadoc-lookup js2-mode js2-refactor litable
-	       lorem-ipsum magit mark-more-like-this
-	       markdown-mode material-theme moe-theme monky
-	       monokai-theme multi-term multiple-cursors neotree
-	       niflheim-theme nose oauth2 ox-ioslide popup
-	       powerline projectile purty-mode python-django
-	       qsimpleq-theme rainbow-delimiters rainbow-mode
-	       request restclient scss-mode smart-mode-line
-	       smart-tab smartparens solarized-theme
-	       spacegray-theme sr-speedbar sublime-themes
-	       tango-2-theme tangotango-theme textile-mode
-	       ubuntu-theme websocket wgrep wgrep-ag windsize
-	       wrap-region yaml-mode yasnippet zenburn-theme
-	       zone-matrix)
+  '(ac-js2 ac-math ace-jump-mode ack-and-a-half ag ample-zen-theme
+	   auctex auto-complete badwolf-theme base16-theme bookmark+
+	   c-eldoc cedit cl-lib clues-theme color-theme
+	   color-theme-gruber-darker color-theme-sanityinc-tomorrow
+	   command-log-mode cyberpunk-theme dash deferred dired+
+	   dired-details dired-details+ ein emacs-eclim emmet-mode
+	   enclose expand-region feature-mode gitconfig-mode
+	   github-theme gitignore-mode google-c-style
+	   google-contacts gradle-mode gradle-mode groovy-mode
+	   gruvbox-theme hgignore-mode icicles icomplete+
+	   ido-better-flex java-snippets javadoc-lookup js2-mode
+	   js2-refactor litable lorem-ipsum magit
+	   mark-more-like-this markdown-mode material-theme
+	   moe-theme monky monokai-theme multi-term multiple-cursors
+	   neotree niflheim-theme nose oauth2 ox-ioslide popup
+	   powerline projectile purty-mode python-django
+	   qsimpleq-theme rainbow-delimiters rainbow-mode request
+	   restclient scss-mode smart-mode-line smart-tab
+	   smartparens solarized-theme spacegray-theme sr-speedbar
+	   sublime-themes tango-2-theme tangotango-theme
+	   textile-mode tide ubuntu-theme web-mode zone-matrix
+	   websocket wgrep wgrep-ag windsize wrap-region yaml-mode
+	   yasnippet zenburn-theme)
   "Lista de paquetes instalados actualmente en mi configuración.")
 
 ;; Default custom file
@@ -112,6 +109,7 @@
 ;; (require 'eclim)
 (require 'taskjuggler-mode)
 (require 'recentf)
+(require 'web-mode)
 
 (condition-case nil (require 'malabar-mode)
   (error
@@ -160,5 +158,6 @@
 (require 'neotree-conf)
 (require 'css-conf)
 (require 'flyspell-conf)
+(require 'tide-conf)
 
 (require 'keybinds-conf)

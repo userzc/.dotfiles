@@ -29,7 +29,7 @@
 (setq package-pinned-packages
       '((magit . "melpa-stable")
         (magit-popup . "melpa-stable")
-	(lacarte . "marmalade")))
+        (lacarte . "marmalade")))
 
 (defvar package-filter-function nil
   "Optional predicate function used to internally filter packages
