@@ -299,6 +299,21 @@ else
     echo "tmuxp not found"
 fi
 
+# Inform if sdkman is not active (groovy, scala, maybe vertx)
+if [ ! -d $HOME/.sdkman ]
+then
+    echo "\033[0;31m"'sdkman not active'"\033[0;31m"
+fi
+
+# Inform if nvm is not active (node, npm)
+if [ ! -d $HOME/.nvm ]
+then
+    echo "\033[0;31m"'nvm not active'"\033[0;31m"
+fi
+
 #THIS MUST BE AT THE END OF THE FILE FOR GVM TO WORK!!!
 # [[ -s "$HOME/.gvm/bin/gvm-init.sh" ]] && source "$HOME/.gvm/bin/gvm-init.sh"
 export SDKMAN_DIR="/home/rene/.sdkman" && source "/home/rene/.sdkman/bin/sdkman-init.sh"
+
+export NVM_DIR="/home/rene/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"  # This loads nvm

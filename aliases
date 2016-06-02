@@ -14,6 +14,9 @@ alias fdi='find . -type d -iname'
 alias apsh='aptitude show'
 alias acsh="apt-cache show"
 
+# xdg-open alias, to "open" a file form command line with the configured application
+alias o='xdg-open'
+
 ####################
 # maven archetypes #
 ####################
