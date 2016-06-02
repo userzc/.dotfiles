@@ -36,6 +36,12 @@ bindsym $mod+3 exec emacs
 bindsym $mod+4 exec rhythmbox
 bindsym Print exec gnome-screenshot -i
 
+# Compton - composite manager, for rofi transparencies
+exec --no-startup-id compton -f
+
+# feh - wallpaper setup
+exec_always --no-startup-id feh --bg-scale /usr/share/backgrounds/Mr._Tau_and_The_Tree_-_by_TJ.jpg
+
 # Opciones a considearar para cambiar colores
 
 # -fn font
@@ -60,11 +66,20 @@ set $color_sb '#171A0B'
 set $fn 'pango:DejaVu Sans Mono 9'
 # set $fn 'Meslo LG S for Powerline RegularForPowerline'
 
+
+# rofi colors: https://github.com/alexbooker/dotfiles/blob/ubuntu/.i3/config
+set $bg-color            #2f343f
+set $inactive-bg-color   #2f343f
+set $text-color          #f3f4f5
+set $inactive-text-color #676E7D
+set $urgent-bg-color     #E53935
+
+
 # quickswitch https://github.com/proxypoke/quickswitch-for-i3
 # bindsym $mod+Tab exec quickswitch.py
-bindsym $mod+Tab exec quickswitch.py -d "dmenu -i -b -l 20 -nb $color_nb -nf $color_nf -sb $color_sb -sf $color_sf"
+bindsym $mod+Tab exec quickswitch.py -d "dmenu -p '[switch]:' -i -b -l 20 -nb $color_nb -nf $color_nf -sb $color_sb -sf $color_sf"
 
-bindsym $mod+Shift+Tab exec quickswitch.py -m -d "dmenu -b -l 20 -i -nb $color_nb -nf $color_nf -sb $color_sb -sf $color_sf"
+bindsym $mod+Shift+Tab exec quickswitch.py -m -d "dmenu -p '[move]:' -b -l 20 -i -nb $color_nb -nf $color_nf -sb $color_sb -sf $color_sf"
 
 # Scratchpad configuration
 # http://i3wm.org/docs/userguide.html#_scratchpad
@@ -76,7 +91,10 @@ bindsym $mod+Shift+q kill
 
 # start dmenu (a program launcher)
 # bindsym $mod+d exec dmenu_run
-bindsym $mod+d exec dmenu_run -nb $color_nb -nf $color_nf -sb $color_sb -sf $color_sf
+# bindsym $mod+d exec dmenu_run -nb $color_nb -nf $color_nf -sb $color_sb -sf $color_sf
+# bindsym $mod+d exec --no-startup-id j4-dmenu-desktop --dmenu='rofi -i -dmenu -p "run:" -lines 3 -eh 2 -padding 180  -opacity "85" -bw 0 -bc "$bg-color" -bg "$bg-color" -fg "$text-color" -hlbg "$bg-color" -hlfg "#9575cd" -font "System San Francisco Display 18"'
+bindsym $mod+d exec --no-startup-id j4-dmenu-desktop --dmenu='rofi -i -dmenu -p "[run]:" -lines 3 -width 100 -eh 2 -padding 180 -opacity "85" -bw 0 -bc "$bg-color" -bg "$color_nb" -fg "$color_nf" -hlbg "$color_sb" -hlfg "$color_sf" -font "System San Francisco Display 18"'
+
 
 # There also is the (new) i3-dmenu-desktop which only displays applications
 # shipping a .desktop file. It is a wrapper around dmenu, so you need that
@@ -135,21 +153,21 @@ bindsym $mod+space focus mode_toggle
 # flaoting point moving mode
 # https://faq.i3wm.org/question/2787/move-floating-window-with-arrows/
 mode "move-floating" {
-     # Using Arrows
-     bindsym Up move up 10px
-     bindsym Left move left 10px
-     bindsym Down move down 10px
-     bindsym Right move right 10px
+# Using Arrows
+bindsym Up move up 10px
+bindsym Left move left 10px
+bindsym Down move down 10px
+bindsym Right move right 10px
 
-     # Using home row
-     bindsym j move left
-     bindsym k move down
-     bindsym l move up
-     bindsym ntilde move right
-     bindsym ntilde move right
+# Using home row
+bindsym j move left
+bindsym k move down
+bindsym l move up
+bindsym ntilde move right
+bindsym ntilde move right
 
-     bindsym $mod+m mode "default"
-     bindsym Escape mode "default"
+bindsym $mod+m mode "default"
+bindsym Escape mode "default"
 }
 bindsym $mod+m focus floating; mode "move-floating"
 
@@ -229,30 +247,30 @@ assign [class="^jetbrains-idea$" instance="^sun-awt-X11-XDialogPeer$"] → $ws1
 # assign [class="net-sourceforge-processdash-Main" instance="sun-awt-X11-XFramePeer"] → 4: PSP Dashboard
 
 # Start assign
-assign [class="VirtualBox"  instance="Qt-subapplication"] → $ws4
+assign [class="VirtualBox"  instance="VirtualBox"] → $ws4
 
 # resize window (you can also use the mouse for that)
 mode "resize" {
-        # These bindings trigger as soon as you enter the resize mode
-        # Pressing left will shrink the window’s width.
-        # Pressing right will grow the window’s width.
-        # Pressing up will shrink the window’s height.
-        # Pressing down will grow the window’s height.
-        bindsym semicolon resize shrink width 10 px or 10 ppt
-        bindsym ntilde resize shrink width 10 px or 10 ppt
-        bindsym l resize grow height 10 px or 10 ppt
-        bindsym k resize shrink height 10 px or 10 ppt
-        bindsym j resize grow width 10 px or 10 ppt
+# These bindings trigger as soon as you enter the resize mode
+# Pressing left will shrink the window’s width.
+# Pressing right will grow the window’s width.
+# Pressing up will shrink the window’s height.
+# Pressing down will grow the window’s height.
+bindsym semicolon resize shrink width 10 px or 10 ppt
+bindsym ntilde resize shrink width 10 px or 10 ppt
+bindsym l resize grow height 10 px or 10 ppt
+bindsym k resize shrink height 10 px or 10 ppt
+bindsym j resize grow width 10 px or 10 ppt
 
-        # same bindings, but for the arrow keys
-        bindsym Right resize shrink width 10 px or 10 ppt
-        bindsym Up resize grow height 10 px or 10 ppt
-        bindsym Down resize shrink height 10 px or 10 ppt
-        bindsym Left resize grow width 10 px or 10 ppt
+# same bindings, but for the arrow keys
+bindsym Right resize shrink width 10 px or 10 ppt
+bindsym Up resize grow height 10 px or 10 ppt
+bindsym Down resize shrink height 10 px or 10 ppt
+bindsym Left resize grow width 10 px or 10 ppt
 
-        # back to normal: Enter or Escape
-        bindsym Return mode "default"
-        bindsym Escape mode "default"
+# back to normal: Enter or Escape
+bindsym Return mode "default"
+bindsym Escape mode "default"
 }
 
 bindsym $mod+r mode "resize"
@@ -312,16 +330,16 @@ bindsym $mod+n exec "nmcli -t -f ssid,device,rate,signal,bars dev wifi | awk_pri
 
 bar {
 
-	# font pango:DejaVu Sans Mono 9
-	# font xft:DejaVu Sans Mono 9, Font Awesome 9
-	font xft:Font Awesome 8
-        status_command i3status --config ~/.config/i3/i3status.conf
-	tray_output primary
-	position top
+# font pango:DejaVu Sans Mono 9
+# font xft:DejaVu Sans Mono 9, Font Awesome 9
+font xft:Font Awesome 8
+status_command i3status --config ~/.config/i3/i3status.conf
+tray_output primary
+position top
 
-        # i3bar_command i3bgbar
-        # status_command python ~/powerline/powerline/bindings/i3/powerline-i3.py
-	# font pango:DejaVu Sans Mono 9
+# i3bar_command i3bgbar
+# status_command python ~/powerline/powerline/bindings/i3/powerline-i3.py
+# font pango:DejaVu Sans Mono 9
 
 }
 

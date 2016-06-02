@@ -40,5 +40,6 @@ do
     fi
     echo "line ${i}:" $myline "|*- endl -*|"
     sleep 0.1
+    # eval "${myline}"
     (( i++ ))
 done
