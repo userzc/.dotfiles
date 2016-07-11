@@ -1,11 +1,12 @@
-session_name: work
+session_name: work-test
 start-directory: "~"
 windows:
-  - window_name: stats
+  - window_name: "stats"
     panes:
       - tail -f /var/log/syslog
       - htop
-  - window_name: "0"
+  - window_name: "TA-logs[core,rest]"
     panes:
-      -
+      - ls
+      - echo "Window que sirve de prueba para el nombrado de ventanas"
     focus: true

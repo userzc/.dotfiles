@@ -21,7 +21,7 @@
 
 (require 'package)
 (setq package-archives
-      '(("marmalade" . "http://marmalade-repo.org/packages/")
+      '(("marmalade" . "https://marmalade-repo.org/packages/")
         ("melpa" . "http://melpa.org/packages/")
         ("melpa-stable" . "http://stable.melpa.org/packages/")
         ("gnu" . "https://elpa.gnu.org/packages/")))

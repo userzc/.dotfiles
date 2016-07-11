@@ -5,6 +5,7 @@
 	user = userzc
 [core]
 	editor = emacsclient
+	autocrlf = input
 [color]
 	branch = auto
 	diff = auto

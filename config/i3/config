@@ -93,7 +93,7 @@ bindsym $mod+Shift+q kill
 # bindsym $mod+d exec dmenu_run
 # bindsym $mod+d exec dmenu_run -nb $color_nb -nf $color_nf -sb $color_sb -sf $color_sf
 # bindsym $mod+d exec --no-startup-id j4-dmenu-desktop --dmenu='rofi -i -dmenu -p "run:" -lines 3 -eh 2 -padding 180  -opacity "85" -bw 0 -bc "$bg-color" -bg "$bg-color" -fg "$text-color" -hlbg "$bg-color" -hlfg "#9575cd" -font "System San Francisco Display 18"'
-bindsym $mod+d exec --no-startup-id j4-dmenu-desktop --dmenu='rofi -i -dmenu -p "[run]:" -lines 3 -width 100 -eh 2 -padding 180 -opacity "85" -bw 0 -bc "$bg-color" -bg "$color_nb" -fg "$color_nf" -hlbg "$color_sb" -hlfg "$color_sf" -font "System San Francisco Display 18"'
+bindsym $mod+d exec --no-startup-id j4-dmenu-desktop --dmenu='rofi -i -dmenu -p "[run]:" -lines 3 -width 60 -eh 2 -padding 180 -opacity "85" -bw 0 -bc "$bg-color" -bg "$color_nb" -fg "$color_nf" -hlbg "$color_sb" -hlfg "$color_sf" -font "System San Francisco Display 18"'
 
 
 # There also is the (new) i3-dmenu-desktop which only displays applications

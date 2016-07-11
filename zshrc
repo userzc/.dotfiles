@@ -291,10 +291,12 @@ export PATH="$HOME/.cask/bin:$PATH"
 # Vert.x
 export PATH="$HOME/vert.x/vert.x-2.1.5/bin/:$PATH"
 
-# Activate tmuxp source completion
+# Activate tmuxp source completion(tmuxp >= 1.2)
 if (( $+commands[tmuxp] )); then
-    # echo "sourcing tmuxp.zsh"
-    source tmuxp.zsh
+    autoload bashcompinit
+    bashcompinit
+    eval "$(_TMUXP_COMPLETE=source tmuxp)"
+    # source tmuxp.zsh
 else
     echo "tmuxp not found"
 fi
