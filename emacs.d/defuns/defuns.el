@@ -88,7 +88,7 @@ archivos creada por la función `acm-problem'."
          (command (format ".\\/%s.out < %sinput.txt" prog-name input-name)))
     (if (shell-command command prog-results-buffer prog-errors-buffer)
         (progn  (switch-to-buffer-other-window prog-results-buffer)
-                (fundamental-mode)
+                (view-mode)
                 (message (concat "acm-run-program: " command)))
       (progn (message "acm-run-program: something went wrong")))))
 
@@ -113,10 +113,12 @@ pueda ejecutar una variedad de subcomandos relacionados."
       (completing-read
        "uva-node command:" uva-node-subcommands nil nil nil nil "status"))))
   (let* ((id_problem (car (split-string (buffer-name) "\\.")))
-         (uva-node-path "/usr/local/lib/node_modules/uva-node")
+         (uva-node-path "/home/rene/.nvm/versions/node/v5.10.1/bin/uva")
+         (node-path "/home/rene/.nvm/versions/node/v5.10.1/bin/node")
          (output-buffer "*uva-node-results*")
          (full-uva-command
-          (concat "node" " " uva-node-path " " command))
+          (concat node-path " " uva-node-path " " command)
+          )
          (commands-use-id-list '("send" "view"))
          (compilation-buffer-name-function
           (lambda (&rest ignore)
@@ -136,11 +138,10 @@ pueda ejecutar una variedad de subcomandos relacionados."
         (progn (message "Displaying results"))
       (progn (message "Something Went Wrong!!")))
     (setq compile-command previous-compile-command)
-    ;; (with-current-buffer output-buffer
-    ;;   (compilation-mode)
-    ;;   (setq buffer-read-only t)
-    ;;   )
-    ))
+    (with-current-buffer output-buffer
+      (progn
+        (view-mode)
+	(setq buffer-read-only t)))))
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;

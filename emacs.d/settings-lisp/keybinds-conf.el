@@ -49,6 +49,21 @@
 ;; Para acceder al programa man (principalmente cppman info)
 (global-set-key (kbd "C-c i") 'man)
 
+;; Configuración para find-file-at-point (ffap)
+(global-set-key (kbd "C-x C-S-f") 'ffap)
+(global-set-key (kbd "C-x 4 C-S-f") 'ffap-other-window)
+(global-set-key (kbd "C-x 5 C-S-f") 'ffap-other-frame)
+
+;; Configuración para find-dired
+(global-set-key (kbd "C-c j") 'find-dired)
+
+;;;;;;;;;;;;
+;; dired+ ;;
+;;;;;;;;;;;;
+(eval-after-load "dired+"
+  '(progn
+     (define-key dired-mode-map (kbd "C-o") 'dired-display-file)))
+
 ;;;;;;;;;;;;;;
 ;; org-mode ;;
 ;;;;;;;;;;;;;;
