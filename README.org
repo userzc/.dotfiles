@@ -28,13 +28,13 @@
    soon as possible, use the =basic_environ.sh= script with curl:
 
    #+begin_src sh
-    curl -L https://github.com/userzc/.dotfiles/raw/master/basic_environ.sh | sh
+    sh -c "$(curl -fsSL https://github.com/userzc/.dotfiles/raw/master/basic_environ.sh)"
    #+end_src
 
    or wget:
 
    #+begin_src sh
-     wget --no-check-certificate https://github.com/userzc/.dotfiles/raw/master/basic_environ.sh -O - | sh
+     sh -c "$(wget --no-check-certificate https://github.com/userzc/.dotfiles/raw/master/basic_environ.sh -O -)"
    #+end_src
 
 

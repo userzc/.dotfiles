@@ -16,23 +16,23 @@ sudo make
 sudo make install
 
 echo "==== Installing Dotfiles ===="
-if [ ! -d "~/.dotfiles" ]; then
-    /usr/bin/env git clone https://github.com/userzc/.dotfiles.git ~/.dotfiles
-    cd ~/.dotfiles
+if [ ! -d "$HOME/.dotfiles" ]; then
+    /usr/bin/env git clone https://github.com/userzc/.dotfiles.git $HOME/.dotfiles
+    cd $HOME/.dotfiles
     git submodule sync
     git submodule update --init --recursive
     scl enable python27 'dotfiles_sync -i'
-    cd ~
+    cd $HOME
 fi
 
 echo "==== Installing oh-my-zsh [personal fork] ===="
-if [ ! -d "~/.oh-my-zsh" ] ; then
-    cd ~
+if [ ! -d "$HOME/.oh-my-zsh" ] ; then
+    cd $HOME
     curl -L https://github.com/userzc/oh-my-zsh/raw/master/tools/install.sh | sh
     mv .zshrc.pre-oh-my-zsh .zshrc
 else
     echo "===== oh-my-sh [personal fork] already installed"
 fi
 
-emacs --batch ~/.emacs.d/default-conf.el -l ~/.emacs.d/batch_script.el -f save-buffer
-emacs --batch -l ~/.emacs.d/init.el
+emacs --batch $HOME/.emacs.d/default-conf.el -l $HOME/.emacs.d/batch_script.el -f save-buffer
+emacs --batch -l $HOME/.emacs.d/init.el

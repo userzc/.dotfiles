@@ -79,3 +79,11 @@ alias mvnagjwa="mvn archetype:generate -B\
 # Mercurial aliases (Using syntax similar to mercurial zsh plugin)
 alias hgslp='hg log --limit 20 --template "{node|short} | {date|isodatesec} | {author|person}: {desc|strip|firstline}\n" '
 alias hgsle='hg log --limit 20 --template "{node|short} | {date|isodatesec} | {author|emailuser}: {desc|strip|firstline}\n" '
+
+###################
+# vagrant aliases #
+###################
+alias vas='vagrant status'
+alias vaup='vagrant up'
+alias vah='vagrant halt'
+alias vassh='vagrant ssh'

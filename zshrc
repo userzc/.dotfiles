@@ -107,6 +107,7 @@ plugins=(
     common-aliases
     # ssh-agent # Plugin interfiere con Magit, investigar porque
     # django
+    tmux
     vagrant
     mercurial)
 
@@ -181,11 +182,13 @@ if [[ -d "$HOME/sencha-test/libraries/scheduler-4.0.0" ]]; then
     export SCHEDULER4="$HOME/sencha-test/libraries/scheduler-4.0.0"
 fi
 
-
+# Tmux powerline configuration
 if [[ -e "$HOME/powerline/powerline/bindings/tmux/powerline.conf" ]]; then
     export TMUX_PL="$HOME/powerline/powerline/bindings/tmux/powerline.conf"
 elif [[ -e "/usr/share/powerline/bindings/tmux/powerline.conf" ]]; then
     export TMUX_PL="/usr/share/powerline/bindings/tmux/powerline.conf"
+elif [[ -e "$HOME/.local/lib/python2.7/site-packages/powerline/bindings/tmux/powerline.conf" ]]; then
+    export TMUX_PL="$HOME/.local/lib/python2.7/site-packages/powerline/bindings/tmux/powerline.conf"
 else
     echo "\033[0;31m"'powerline tmux not active'"\033[0;31m"
 fi
