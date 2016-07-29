@@ -30,8 +30,8 @@ echo "==== Installing common tools ===="
 `sudo $INSTALL_COMMAND fonts-inconsolata`
 
 echo "==== Installing oh-my-zsh [personal fork] ===="
-if [ ! -d "~/.oh-my-zsh" ] ; then
-    cd ~
+if [ ! -d "$HOME/.oh-my-zsh" ] ; then
+    cd $HOME
     curl -L https://github.com/userzc/oh-my-zsh/raw/master/tools/install.sh | sh
     # Esta línea pretende eliminar el archivo zshrc creado por .oh-my-zsh
     rm .zshrc
@@ -45,24 +45,25 @@ case "$curl_output" in
     404)echo "Not suitable to install";;
     200)echo "Installing"
         `sudo python get-pip.py `
-        `git clone https://github.com/powerline/fonts ~/.fonts/powerline-fonts`
-        cd "~/.fonts/powerline-fonts"
+        `git clone https://github.com/powerline/fonts $HOME/.fonts/powerline-fonts`
+        cd "$HOME/.fonts/powerline-fonts"
         `./install.sh`
         echo "==== Installing powerline ===="
-        `git clone -b master https://github.com/powerline/powerline`
-        `pip install -U --user ~/powerline`
+        # `git clone -b master https://github.com/powerline/powerline`
+        `pip install --user powerline-status`
+        `pip install --user tmuxp`
 esac
 
 
 
 echo "==== Installing Dotfiles ===="
-if [ ! -d "~/.dotfiles" ]; then
-    /usr/bin/env git clone https://github.com/userzc/.dotfiles.git ~/.dotfiles
-    cd ~/.dotfiles
+if [ ! -d "$HOME/.dotfiles" ]; then
+    /usr/bin/env git clone https://github.com/userzc/.dotfiles.git $HOME/.dotfiles
+    cd $HOME/.dotfiles
     git submodule sync
     git submodule update --init --recursive
     ./dotfiles_sync -i
-    cd ~
+    cd $HOME
 fi
 
 echo "==== To change default shell ===="

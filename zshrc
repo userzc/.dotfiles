@@ -295,11 +295,10 @@ export PATH="$HOME/.cask/bin:$PATH"
 export PATH="$HOME/vert.x/vert.x-2.1.5/bin/:$PATH"
 
 # Activate tmuxp source completion(tmuxp >= 1.2)
-if (( $+commands[tmuxp] )); then
+if $(which tmuxp &> /dev/null) ; then
     autoload bashcompinit
     bashcompinit
     eval "$(_TMUXP_COMPLETE=source tmuxp)"
-    # source tmuxp.zsh
 else
     echo "tmuxp not found"
 fi
@@ -308,17 +307,17 @@ fi
 if [ ! -d $HOME/.sdkman ]
 then
     echo "\033[0;31m"'sdkman not active'"\033[0;31m"
+else
+    #THIS MUST BE AT THE END OF THE FILE FOR GVM TO WORK!!!
+    # [[ -s "$HOME/.gvm/bin/gvm-init.sh" ]] && source "$HOME/.gvm/bin/gvm-init.sh"
+    export SDKMAN_DIR="/home/rene/.sdkman" && source "/home/rene/.sdkman/bin/sdkman-init.sh"
 fi
 
 # Inform if nvm is not active (node, npm)
 if [ ! -d $HOME/.nvm ]
 then
     echo "\033[0;31m"'nvm not active'"\033[0;31m"
+else
+    export NVM_DIR="/home/rene/.nvm"
+    [ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"  # This loads nvm
 fi
-
-#THIS MUST BE AT THE END OF THE FILE FOR GVM TO WORK!!!
-# [[ -s "$HOME/.gvm/bin/gvm-init.sh" ]] && source "$HOME/.gvm/bin/gvm-init.sh"
-export SDKMAN_DIR="/home/rene/.sdkman" && source "/home/rene/.sdkman/bin/sdkman-init.sh"
-
-export NVM_DIR="/home/rene/.nvm"
-[ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"  # This loads nvm
