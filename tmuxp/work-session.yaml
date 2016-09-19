@@ -5,8 +5,16 @@ windows:
     panes:
       - tail -f /var/log/syslog
       - htop
-  - window_name: "TA-logs[core,rest]"
+  - window_name: "xenial_vagrant"
     panes:
-      - ls
-      - echo "Window que sirve de prueba para el nombrado de ventanas"
+      - shell_command:
+          - cd "/home/rene/xenial_vagrant/"
+      - shell_command:
+          - cd "/home/rene/xenial_vagrant/"
+  - window_name: "p-workspace"
+    panes:
+      - shell_command:
+          - cd "/home/rene/personal-workspace/TimeTableScheduler/"
+      - shell_command:
+          - cd "/home/rene/personal-workspace/TimeTableScheduler/"
     focus: true

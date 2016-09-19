@@ -30,6 +30,7 @@
       '((magit . "melpa-stable")
         (magit-popup . "melpa-stable")
         (lacarte . "marmalade")
+	(groovy-mode . "melpa")
 	(projectile . "melpa-stable")))
 
 (defvar package-filter-function nil

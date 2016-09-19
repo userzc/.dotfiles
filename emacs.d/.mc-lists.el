@@ -129,6 +129,7 @@
 	sp-up-sexp
 	string-rectangle
 	tab-to-tab-stop
+	transpose-sexps
 	transpose-words
 	universal-argument-minus
 	upcase-region
@@ -188,6 +189,7 @@
 	malabar-run-maven-command
 	mouse-drag-mode-line
 	mouse-minor-mode-menu
+	move-to-window-line-top-bottom
 	multi-term-dedicated-toggle
 	next-error
 	nosetests-one

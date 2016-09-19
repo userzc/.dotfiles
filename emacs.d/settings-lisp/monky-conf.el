@@ -11,4 +11,7 @@
   (kill-buffer)
   (jump-to-register :monky-fullscreen))
 
+;; Using a single cmdserver and communicate through pipes (speed up)
+(setq monky-process-type 'cmdserver)
+
 (provide 'monky-conf)

@@ -91,4 +91,7 @@
 ;; autorevert in dired mode
 (add-hook 'dired-mode-hook 'auto-revert-mode)
 
+;; Ediff in one frame
+(setq ediff-window-setup-function 'ediff-setup-windows-plain)
+
 (provide 'default-conf)

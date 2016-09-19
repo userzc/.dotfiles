@@ -68,6 +68,7 @@
 ;; (load-theme 'solarized-light t)
 ;; (load-theme 'organic-green t)
 ;; (load-theme 'base16-mocha-light t)
+;; (load-theme 'base16-google-light)
 
 ;;;;;;;;;;;;;;;;;;;
 ;; font and size ;;

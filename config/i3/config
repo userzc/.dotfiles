@@ -243,6 +243,7 @@ assign [class="^skypeforlinux$" instance="^skypeforlinux$"] → $ws5
 # Start IntelliJ Idea
 assign [class="^jetbrains-idea$" instance="^sun-awt-X11-XFramePeer$"] → $ws1
 assign [class="^jetbrains-idea$" instance="^sun-awt-X11-XDialogPeer$"] → $ws1
+assign [class="^jetbrains-idea-ce$" instance="^sun-awt-X11-XFramePeer$"] → $ws1
 
 # # Start assign
 # assign [class="net-sourceforge-processdash-Main" instance="sun-awt-X11-XFramePeer"] → 4: PSP Dashboard
@@ -313,13 +314,19 @@ bindsym XF86AudioMute exec pactl set-sink-mute $current_sink toggle # mute sound
 bindsym XF86AudioPlay exec playerctl play-pause
 bindsym Control+XF86AudioPlay exec "unity-control-center sound"
 
+# Sreen brightness controls
+bindsym XF86MonBrightnessUp exec xbacklight -inc 10 # increase screen brightness
+bindsym XF86MonBrightnessDown exec xbacklight -dec 10 # decrease screen brightness
+bindsym Shift+XF86AudioRaiseVolume exec xbacklight -inc 10 # increase screen brightness
+bindsym Shift+XF86AudioLowerVolume exec xbacklight -dec 10 # decrease screen brightness
+
 # ----------
 
 # Use dropbox instead, u1 went down
 exec dropbox start
 
 # Starting skype-call-recorder
-exec --no-startup-id skype-call-recorder
+exec --no-startup-id "sh -c 'sleep 30; skype-call-recorder'"
 
 # Use command line tool to change network conections.  Consider using
 # command `nmcli dev wifi` para listar las conecciones disponibles:
