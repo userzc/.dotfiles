@@ -29,10 +29,12 @@ echo "==== Installing common tools ===="
 `sudo $INSTALL_COMMAND curl`
 `sudo $INSTALL_COMMAND fonts-inconsolata`
 
-echo "==== Installing oh-my-zsh [personal fork] ===="
+# echo "==== Installing oh-my-zsh [personal fork] ===="
+echo "==== Installing oh-my-zsh ===="
 if [ ! -d "$HOME/.oh-my-zsh" ] ; then
     cd $HOME
-    curl -L https://github.com/userzc/oh-my-zsh/raw/master/tools/install.sh | sh
+    # curl -L https://github.com/userzc/oh-my-zsh/raw/master/tools/install.sh | sh
+    sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
     # Esta línea pretende eliminar el archivo zshrc creado por .oh-my-zsh
     rm .zshrc
 else
