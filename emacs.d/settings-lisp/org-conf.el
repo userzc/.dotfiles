@@ -14,6 +14,12 @@
 ;; make org-table ready for action!
 (require 'org-table)
 
+;; use pretty org bullets
+(require 'org-bullets)
+(add-hook 'org-mode-hook (lambda () (org-bullets-mode 1)))
+
+(setq org-ellipsis "⤵")
+
 ;; Settings for MobileOrg (I couldn't find the original site, the
 ;; following is a repalcement):
 ;; http://blog.everythingtastesbetterwithchilli.com/2013/02/10/org-mode-as-exocortex-introduction-to-mobile-org/

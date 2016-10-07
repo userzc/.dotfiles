@@ -60,7 +60,7 @@
 			;; uva options C++ 4.8.2: -lm -lcrypt -02 -pipe -DONLINE-JUDGE
 			;; C++11 4.8.2 - GNU C++ Compiler with options: -lm -lcrypt -O2 -std=c++11 -pipe -DONLINE_JUDGE
 			;; http://uva.onlinejudge.org/index.php?option=com_onlinejudge&Itemid=25
-			(or (getenv "CFLAGS") "-lm -lcrypt -O2 -pipe -DONLINE_JUDGE -pedantic -Wall -g")
+			(or (getenv "CFLAGS") "-lm -lcrypt -O2 -std=c++11 -pipe -DONLINE_JUDGE -pedantic -Wall")
 			file))))))))
 
 (provide 'c-conf)

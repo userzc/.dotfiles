@@ -1,6 +1,8 @@
 # Path to your oh-my-zsh configuration.
 export ZSH=$HOME/.oh-my-zsh
-export ZSH_CUSTOM=$HOME/.dotfiles/zsh_custom
+
+# Path to custom definitions (themes and plugins)
+export ZSH_CUSTOM="$HOME/.dotfiles/zsh_custom"
 
 # Example aliases
 # alias zshconfig="mate ~/.zshrc"
@@ -110,7 +112,8 @@ plugins=(
     # django
     tmux
     vagrant
-    mercurial)
+    mercurial
+    personal_functions)
 
 # # suggestion from file ~/.oh-my-zsh/plugins/mvn/mvn.plugin.zsh, but
 # # doesn't seem to be working, more tests are required
@@ -188,6 +191,8 @@ if [[ -e "$HOME/powerline/powerline/bindings/tmux/powerline.conf" ]]; then
     export TMUX_PL="$HOME/powerline/powerline/bindings/tmux/powerline.conf"
 elif [[ -e "/usr/share/powerline/bindings/tmux/powerline.conf" ]]; then
     export TMUX_PL="/usr/share/powerline/bindings/tmux/powerline.conf"
+elif [[ -e "/usr/local/lib/python2.7/dist-packages/powerline/bindings/tmux/powerline.conf" ]]; then
+    export TMUX_PL="/usr/local/lib/python2.7/dist-packages/powerline/bindings/tmux/powerline.conf"
 elif [[ -e "$HOME/.local/lib/python2.7/site-packages/powerline/bindings/tmux/powerline.conf" ]]; then
     export TMUX_PL="$HOME/.local/lib/python2.7/site-packages/powerline/bindings/tmux/powerline.conf"
 else
