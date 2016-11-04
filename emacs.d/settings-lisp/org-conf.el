@@ -65,7 +65,18 @@
         ("D" "Archive search" search "DONE"
          ((org-agenda-files (file-expand-wildcards "~/Dropbox/org/*.org_archive"))))))
 
+;; increase org latex preview scale
+(setq org-format-latex-options
+      '(:foreground default :background default
+		   :scale 2.0 :html-foreground "Black"
+		   :html-background "Transparent" :html-scale 1.0
+		   :matchers ("begin" "$1" "$" "$$" "\\(" "\\[")))
+
 ;; https://github.com/coldnew/org-ioslide
 (require 'ox-ioslide)
+(require 'ox-ioslide-helper)
+
+;; https://github.com/marsmining/ox-twbs
+(require 'ox-twbs)
 
 (provide 'org-conf)

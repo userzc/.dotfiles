@@ -24,6 +24,10 @@
 
 ;; neotree-mode
 (global-set-key (kbd "C-c M-N") 'neotree-toggle)
+(eval-after-load "neotree"
+  '(progn
+     (define-key neotree-mode-map (kbd "t") 'neotree-toogle-icons-theme)))
+
 
 ;; open lines faster from anywhere in the current line
 (global-set-key (kbd "<C-return>") 'open-line-below)

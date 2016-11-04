@@ -29,6 +29,7 @@
 (setq package-pinned-packages
       '((magit . "melpa-stable")
         (magit-popup . "melpa-stable")
+        ;; (org . "melpa-stable")
         (lacarte . "marmalade")
 	(groovy-mode . "melpa")
 	(projectile . "melpa-stable")))

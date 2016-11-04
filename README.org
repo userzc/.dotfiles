@@ -40,9 +40,8 @@
 
 *** Note:
 
-    Currently this only works on *Ubuntu 14.04*, *Ubuntu 14.10*,
-    *Ubuntu 15.04* later on compatibility with other distributions may
-    be added as I use them.
+    Currently this only works on *Ubuntu 16.04* later on compatibility
+    with other distributions may be added as I use them.
 
     To use it in *debian 8*, the package =sudo= must be added and
     configured:
@@ -56,22 +55,27 @@
 
 ** Requirements
 
-   | Software         | Windows Version | Prefered Source [W] | Unix Version | Prefered Source [U] |
-   |------------------+-----------------+---------------------+--------------+---------------------|
-   | Emacs            | >= 24           | chocolatey          |        >= 24 | standard repo       |
-   | Inconsolata Font | ---             | ---                 |    001.010-4 | standard repo       |
-   | python           | >= 3.2          | chocolatey          |       >= 2.7 | standard repo       |
-   | git              | ---             | chocolatey          |      1.8.3.2 | standard repo       |
-   | quickswitch-i3   | ---             | ---                 |          2.0 | pip (PyPI)          |
-   | rope             | 0.9.4           | pip (PyPI)          |        0.9.4 | pip (PyPI)          |
-   | ropemacs         | 0.7             | pip (PyPI)          |          0.7 | pip (PyPI)          |
-   | ropemode         | 0.2             | pip (PyPI)          |          0.2 | pip (PyPI)          |
-   | texlive          | ---             | ---                 |         2012 | standard repo       |
-   | eclim            | 2.3.4           | [[http://eclim.org][eclim]]               |        2.3.2 | [[http://eclim.org][eclim]]               |
-   | eclipse          | Kepler          | [[http://eclipse.org][eclipse]]             |       Kepler | [[http://eclipse.org][eclipse]]             |
-   | java             | 1.7 Oracle      | chocolatey          |   1.7 Oracle | [[https://launchpad.net/~webupd8team/+archive/java][webupd8 ppa]]         |
-   | groovy           | NA              | NA                  |        2.2.1 | [[http://gvmtool.net/][gvm]]                 |
-   | maven            | 3.0.5           | chocolatey          |        3.0.4 | standard repo       |
+   | Software           | Windows Version | Prefered Source [W] | Unix Version | Prefered Source [U] |
+   |--------------------+-----------------+---------------------+--------------+---------------------|
+   | Emacs              | >= 24           | chocolatey          |        >= 24 | standard repo       |
+   | Octicons font      | ---             | ---                 |          3.5 | stardard repo       |
+   | Awesome Font       | ---             | ---                 |          4.5 | standard repo       |
+   | all-the-icons font | ---             | ---                 |          --- | [[https://github.com/domtronn/all-the-icons.el/tree/master/fonts][github repo]]         |
+   | file-icons font    | ---             | ---                 |          --- | [[https://github.com/domtronn/all-the-icons.el/tree/master/fonts][github repo]]         |
+   | Weather-icons font | ---             | ---                 |          --- | [[https://github.com/domtronn/all-the-icons.el/tree/master/fonts][github repo]]         |
+   | Inconsolata Font   | ---             | ---                 |    001.010-4 | standard repo       |
+   | python             | >= 3.2          | chocolatey          |       >= 2.7 | standard repo       |
+   | git                | ---             | chocolatey          |      1.8.3.2 | standard repo       |
+   | quickswitch-i3     | ---             | ---                 |          2.0 | pip (PyPI)          |
+   | rope               | 0.9.4           | pip (PyPI)          |        0.9.4 | pip (PyPI)          |
+   | ropemacs           | 0.7             | pip (PyPI)          |          0.7 | pip (PyPI)          |
+   | ropemode           | 0.2             | pip (PyPI)          |          0.2 | pip (PyPI)          |
+   | texlive            | ---             | ---                 |         2012 | standard repo       |
+   | eclim              | 2.3.4           | [[http://eclim.org][eclim]]               |        2.3.2 | [[http://eclim.org][eclim]]               |
+   | eclipse            | Kepler          | [[http://eclipse.org][eclipse]]             |       Kepler | [[http://eclipse.org][eclipse]]             |
+   | java               | 1.7 Oracle      | chocolatey          |   1.7 Oracle | [[https://launchpad.net/~webupd8team/+archive/java][webupd8 ppa]]         |
+   | groovy             | NA              | NA                  |        2.2.1 | [[http://gvmtool.net/][gvm]]                 |
+   | maven              | 3.0.5           | chocolatey          |        3.0.4 | standard repo       |
 
 *** Note on Ubuntu
 

@@ -343,4 +343,13 @@ buffer is narrowed."
        (concat "firefox "
                file-name) "*async-firefox-output*" "*async-firefox-error*"))))
 
+(defun neotree-toogle-icons-theme ()
+  "Toggle neotree theme between `icons' and `arrow'"
+  (interactive)
+  (progn
+    (if (eq neo-theme 'icons)
+	(setq neo-theme 'arrow)
+      (setq neo-theme 'icons)))
+  (neotree-refresh))
+
 (provide 'defuns)
