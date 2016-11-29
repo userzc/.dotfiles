@@ -31,11 +31,9 @@ echo "==== Installing common tools ===="
 `sudo $INSTALL_COMMAND fonts-font-awesome`
 `sudo $INSTALL_COMMAND fonts-octicons`
 
-# echo "==== Installing oh-my-zsh [personal fork] ===="
 echo "==== Installing oh-my-zsh ===="
-if [ ! -d "$HOME/.oh-my-zsh" ] ; then
+if [ ! -d "$HOME/.oh-my-zsh" ]; then
     cd $HOME
-    # curl -L https://github.com/userzc/oh-my-zsh/raw/master/tools/install.sh | sh
     sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
     # Esta línea pretende eliminar el archivo zshrc creado por .oh-my-zsh
     rm .zshrc
@@ -43,7 +41,21 @@ else
     echo "===== oh-my-sh [personal fork] already installed"
 fi
 
+echo "==== Installing extra fonts for neotree (emacs) ===="
+mkdir "$HOME/.fonts/" && cd "$HOME/.fonts/"
+if [ ! -f "$HOME/.fonts/weathericons.ttf" ]; then
+    curl -LO https://github.com/domtronn/all-the-icons.el/raw/master/fonts/weathericons.ttf
+fi
+if [ ! -f "$HOME/.fonts/all-the-icons.tt" ]; then
+    curl -LO https://github.com/domtronn/all-the-icons.el/raw/master/fonts/all-the-icons.ttf
+fi
+if [ ! -f "$HOME/.fonts/file-icons.ttf" ]; then
+    curl -LO https://github.com/domtronn/all-the-icons.el/raw/master/fonts/file-icons.ttf
+fi
+`fc-cache -f $HOME/.fonts/`
+
 echo "==== Installing pip ===="
+cd "$HOME"
 curl_output=$(curl -O --silent --write-out "%{http_code}\n" https://bootstrap.pypa.io/get-pip.py)
 case "$curl_output" in
     404)echo "Not suitable to install";;
@@ -53,12 +65,9 @@ case "$curl_output" in
         cd "$HOME/.fonts/powerline-fonts"
         `./install.sh`
         echo "==== Installing powerline ===="
-        # `git clone -b master https://github.com/powerline/powerline`
         `pip install --user powerline-status`
         `pip install --user tmuxp`
 esac
-
-
 
 echo "==== Installing Dotfiles ===="
 if [ ! -d "$HOME/.dotfiles" ]; then

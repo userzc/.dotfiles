@@ -179,6 +179,7 @@
 	icicle-buffer
 	icicle-buffer-other-window
 	icicle-delete-window
+	icicle-pop-tag-mark
 	icicle-pp-eval-expression
 	info
 	isearch-forward-regexp
