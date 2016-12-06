@@ -1,2 +1,8 @@
 #!/bin/bash
-emacsclient -nw "$1"
+
+if [ "$#" == 0 ];
+then
+    emacsclient -nw
+else
+    emacsclient -nw "$1"
+fi

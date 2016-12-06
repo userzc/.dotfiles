@@ -113,8 +113,8 @@ pueda ejecutar una variedad de subcomandos relacionados."
       (completing-read
        "uva-node command:" uva-node-subcommands nil nil nil nil "status"))))
   (let* ((id_problem (car (split-string (buffer-name) "\\.")))
-         (uva-node-path "/home/rene/.nvm/versions/node/v5.10.1/bin/uva")
-         (node-path "/home/rene/.nvm/versions/node/v5.10.1/bin/node")
+         (uva-node-path "$HOME/.nvm/versions/node/v5.10.1/bin/uva")
+         (node-path "$HOME/.nvm/versions/node/v5.10.1/bin/node")
          (output-buffer "*uva-node-results*")
          (full-uva-command
           (concat node-path " " uva-node-path " " command)

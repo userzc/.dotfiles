@@ -1,2 +1,8 @@
 #!/bin/bash
-emacs -nw -Q "$1"
+
+if [ "$#" == 0 ];
+then
+    emacs -nw -Q
+else
+    emacs -nw -Q "$1"
+fi
