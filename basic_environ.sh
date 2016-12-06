@@ -23,6 +23,7 @@ fi
 
 echo "==== Installing common tools ===="
 `sudo $INSTALL_COMMAND python3`
+`sudo $INSTALL_COMMAND python`
 `sudo $INSTALL_COMMAND git`
 `sudo $INSTALL_COMMAND emacs`
 `sudo $INSTALL_COMMAND zsh`
