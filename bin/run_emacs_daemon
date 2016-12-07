@@ -4,5 +4,5 @@ if [[ `ps cax | grep emacs$` == "" ]]; then
     echo "Initiating Emacs Daemon"
     emacs --daemon
 else
-    echo "Emacss session already running"
+    echo "Emacs' session already running"
 fi
