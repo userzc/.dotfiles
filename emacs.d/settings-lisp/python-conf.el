@@ -60,10 +60,11 @@
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;; (require 'python)
 (setq
- python-shell-interpreter "ipython"
- python-shell-interpreter-args "console --colors=linux --existing"
- python-shell-prompt-regexp "In \\[[0-9]+\\]: "
- python-shell-prompt-output-regexp "Out\\[[0-9]+\\]: "
+ ;; python-shell-interpreter "/usr/local/bin/jupyter"
+ python-shell-interpreter "/usr/local/bin/ipython"
+ python-shell-interpreter-args "--simple-prompt"
+ ;; python-shell-prompt-regexp "In \\[[0-9]+\\]: "
+ ;; python-shell-prompt-output-regexp "Out\\[[0-9]+\\]: "
  python-shell-completion-setup-code
  "from IPython.core.completerlib import module_completion"
  python-shell-completion-module-string-code
