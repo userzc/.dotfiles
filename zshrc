@@ -316,7 +316,7 @@ then
 else
     #THIS MUST BE AT THE END OF THE FILE FOR GVM TO WORK!!!
     # [[ -s "$HOME/.gvm/bin/gvm-init.sh" ]] && source "$HOME/.gvm/bin/gvm-init.sh"
-    export SDKMAN_DIR="/home/rene/.sdkman" && source "/home/rene/.sdkman/bin/sdkman-init.sh"
+    export SDKMAN_DIR="$HOME/.sdkman" && source "$HOME/.sdkman/bin/sdkman-init.sh"
 fi
 
 # Inform if nvm is not active (node, npm)
@@ -324,6 +324,6 @@ if [ ! -d $HOME/.nvm ]
 then
     echo "\033[0;31m"'nvm not active'"\033[0;31m"
 else
-    export NVM_DIR="/home/rene/.nvm"
+    export NVM_DIR="$HOME/.nvm"
     [ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"  # This loads nvm
 fi
