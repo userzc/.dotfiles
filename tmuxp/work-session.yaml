@@ -2,9 +2,11 @@ session_name: work-test
 start-directory: "~"
 windows:
   - window_name: "stats"
+    layout: "main-horizontal"
     panes:
-      - tail -f /var/log/syslog
       - htop
+      - tail -f /var/log/syslog
+      - speedometer -r enp3s0f1 -t enp3s0f1 -c -r wlp2s0 -t wlp2s0
   - window_name: "xenial_vagrant"
     panes:
       - shell_command:

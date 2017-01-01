@@ -109,7 +109,7 @@
 (require 'taskjuggler-mode)
 (require 'recentf)
 (require 'web-mode)
-(require 'jdee)
+;; (require 'jdee)
 
 (condition-case nil (require 'malabar-mode)
   (error
@@ -149,7 +149,7 @@
 ;; (require 'eclim-conf)
 ;; (require 'malabar-conf )
 ;; (require 'powerline-conf)
-(require 'jdee-conf)
+;; (require 'jdee-conf)
 (require 'smart-mode-line-conf)
 (require 'drools-conf)
 (require 'sr-speedbar-conf)
