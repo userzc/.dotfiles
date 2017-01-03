@@ -358,13 +358,8 @@ buffer is narrowed."
   "Return filePath's file content."
   (with-temp-buffer
     (insert-file-contents filePath)
-    (goto-char (point-max))
-    (let*
-        ((total-lines (count-lines (point-min) (point-max)))
-         (i 0))
-      (while (< i total-lines)
-        (join-line)
-	(setq i (+ i 1)))
-      (buffer-string))))
+    (goto-char (point-min))
+    (while (search-forward "\n" nil t) (replace-match "" nil t))
+    (buffer-string)))
 
 (provide 'defuns)
