@@ -141,7 +141,7 @@ pueda ejecutar una variedad de subcomandos relacionados."
     (with-current-buffer output-buffer
       (progn
         (view-mode)
-	(setq buffer-read-only t)))))
+        (setq buffer-read-only t)))))
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
@@ -348,8 +348,23 @@ buffer is narrowed."
   (interactive)
   (progn
     (if (eq neo-theme 'icons)
-	(setq neo-theme 'arrow)
+        (setq neo-theme 'arrow)
       (setq neo-theme 'icons)))
   (neotree-refresh))
+
+;; Read File Content into a String, so that it can be used with restclient-mode
+;; http://ergoemacs.org/emacs/elisp_read_file_content.html
+(defun get-string-from-file (filePath)
+  "Return filePath's file content."
+  (with-temp-buffer
+    (insert-file-contents filePath)
+    (goto-char (point-max))
+    (let*
+        ((total-lines (count-lines (point-min) (point-max)))
+         (i 0))
+      (while (< i total-lines)
+        (join-line)
+	(setq i (+ i 1)))
+      (buffer-string))))
 
 (provide 'defuns)
