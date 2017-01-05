@@ -103,6 +103,7 @@ export TERM="xterm-256color"
 
 plugins=(
     git
+    gitignore
     git-extras
     history
     pip
