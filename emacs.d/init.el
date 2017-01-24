@@ -32,7 +32,7 @@
 	   feature-mode gitconfig-mode github-theme gitignore-mode
 	   google-c-style google-contacts gradle-mode gradle-mode
 	   groovy-mode gruvbox-theme hgignore-mode icicles icomplete+
-	   ido-better-flex java-snippets javadoc-lookup jdee js2-mode
+	   ido-better-flex java-snippets javadoc-lookup js2-mode
 	   js2-refactor litable lorem-ipsum magit mark-more-like-this
 	   markdown-mode material-theme moe-theme monky monokai-theme
 	   multi-term multiple-cursors neotree niflheim-theme nose

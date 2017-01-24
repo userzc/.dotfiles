@@ -64,7 +64,7 @@ case "$curl_output" in
     404)echo "Not suitable to install";;
     200)echo "Installing"
         `sudo python get-pip.py `
-        `git clone https://github.com/powerline/fonts $HOME/.fonts/powerline-fonts`
+        `git clone --depth 1 https://github.com/powerline/fonts $HOME/.fonts/powerline-fonts`
         cd "$HOME/.fonts/powerline-fonts"
         `./install.sh`
         echo "==== Installing powerline ===="
@@ -74,7 +74,7 @@ esac
 
 echo "==== Installing Dotfiles ===="
 if [ ! -d "$HOME/.dotfiles" ]; then
-    /usr/bin/env git clone https://github.com/userzc/.dotfiles.git $HOME/.dotfiles
+    /usr/bin/env git clone --depth 1 https://github.com/userzc/.dotfiles.git $HOME/.dotfiles
     cd $HOME/.dotfiles
     git submodule sync
     git submodule update --init --recursive

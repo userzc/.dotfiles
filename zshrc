@@ -113,6 +113,7 @@ plugins=(
     # django
     tmux
     vagrant
+    rust
     mercurial
     personal_functions)
 
@@ -300,6 +301,9 @@ export PATH="$HOME/.cask/bin:$PATH"
 
 # Vert.x
 export PATH="$HOME/vert.x/vert.x-2.1.5/bin/:$PATH"
+
+# Cargo (rust and parity)
+export PATH="$HOME/.cargo/bin:$PATH"
 
 # Activate tmuxp source completion(tmuxp >= 1.2)
 if $(which tmuxp &> /dev/null) ; then

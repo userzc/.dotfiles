@@ -79,4 +79,7 @@
 ;; https://github.com/marsmining/ox-twbs
 (require 'ox-twbs)
 
+;; export to md
+(require 'ox-md)
+
 (provide 'org-conf)
