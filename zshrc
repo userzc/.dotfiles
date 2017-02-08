@@ -35,8 +35,6 @@ export DISABLE_AUTO_TITLE="true"
 # Inicialization of the editor en linea con emacs keymap
 bindkey -e
 
-fpath=("$HOME/lib/" "${fpath[@]}")
-
 # Esta parte es añadida para conseguir que Emacs sea el editor por default
 # En las pruebas está hecho parece estar funcionando de manera adecuada
 
@@ -288,11 +286,15 @@ export ANDROID_HOME="$HOME/dev-android/$ANDROID_SDK/"
 # This sourcing must happend after all plugins have been declared
 source $ZSH/oh-my-zsh.sh
 
-# Autoload a custom edit-command-line function
-autoload -Uz my-edit-command-line
-zle -N my-edit-command-line
-bindkey -rpM emacs "^X^E"
-bindkey -M emacs "^X^E" my-edit-command-line
+# Autoload a custom edit-command-line function for $ZSH_VERSION
+if [[ $ZSH_VERSION < "5.2" ]]
+then
+    fpath=("$HOME/lib/" "${fpath[@]}")
+    autoload -Uz my-edit-command-line
+    zle -N my-edit-command-line
+    bindkey -rpM emacs "^X^E"
+    bindkey -M emacs "^X^E" my-edit-command-line
+fi
 
 # # Unalias for the ag searcher(debian plugin)
 if (( $+commands[lsb_release] )); then
