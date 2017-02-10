@@ -100,12 +100,12 @@
 
 (if (equal system-type 'gnu/linux)
     (condition-case nil
-        (set-frame-font selected-font)
+        (set-frame-font selected-font nil t)
       (error
-       (set-frame-font "Inconsolata-11")))
+       (set-frame-font "Inconsolata-11" nil t)))
   (condition-case nil
-      (set-frame-font "Inconsolata-11")
+      (set-frame-font "Inconsolata-11" nil t)
     (error
-     (set-frame-font "DejaVu Sans Mono-10"))))
+     (set-frame-font "DejaVu Sans Mono-10" nil t))))
 
 (provide 'load-theme-conf)

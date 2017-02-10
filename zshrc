@@ -32,15 +32,19 @@ export DISABLE_AUTO_TITLE="true"
 # Uncomment following line if you want red dots to be displayed while
 # waiting for completion COMPLETION_WAITING_DOTS="true"
 
+# Ignore leading space commands from history
+setopt -g hist_ignore_space
+
 # Inicialization of the editor en linea con emacs keymap
 bindkey -e
 
 # Esta parte es añadida para conseguir que Emacs sea el editor por default
 # En las pruebas está hecho parece estar funcionando de manera adecuada
 
+export FCEDITOR="enw"
 export EDITOR="enwd"
 export ALTERNATE_EDITOR="enwq"
-export VISUAL="emacsclient"
+export VISUAL="emacsclient -c"
 # export EDITOR="emacsclient -nw -a emacs -nw -q -l ~/.emacs.d/default-nw.el"
 # Sin embargo hay que considerar casos en los que no se tiene una
 # sesión de servidor emacs iniciada, por lo que se debe investigar
@@ -114,6 +118,7 @@ plugins=(
     tmux
     vagrant
     rust
+    fabric
     mercurial
     personal_functions)
 

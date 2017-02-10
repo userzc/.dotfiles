@@ -1,2 +1,2 @@
 #!/bin/bash
-emacsclient "$1"
+emacsclient -c "$1"
