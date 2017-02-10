@@ -13,6 +13,8 @@
 (add-to-list 'custom-theme-load-path
              "~/.emacs.d/lisp/default-black-theme/")
 
+(defvar selected-font nil "The font to set on all frames")
+
 ;;;;;;;;;;;;;;;;;
 ;; Dark themes ;;
 ;;;;;;;;;;;;;;;;;
