@@ -236,20 +236,28 @@ bindsym Mod1+Control+Delete exec "~/bin/i3_exit_dmenu.sh"
 # http://i3wm.org/docs/userguide.html#_automatically_putting_clients_on_specific_workspaces
 # se tiene algo como
 
-# Start skype
+# Assign  skype
 assign [class="^Skype$" instance="^skype$"] → $ws5
 assign [class="^skypeforlinux$" instance="^skypeforlinux$"] → $ws5
 
-# Start IntelliJ Idea
+# Assign  IntelliJ Idea
 assign [class="^jetbrains-idea$" instance="^sun-awt-X11-XFramePeer$"] → $ws1
 assign [class="^jetbrains-idea$" instance="^sun-awt-X11-XDialogPeer$"] → $ws1
 assign [class="^jetbrains-idea-ce$" instance="^sun-awt-X11-XFramePeer$"] → $ws1
 
-# # Start assign
+# # Assign  assign
 # assign [class="net-sourceforge-processdash-Main" instance="sun-awt-X11-XFramePeer"] → 4: PSP Dashboard
 
-# Start assign
+# Assign VirtualBox
 assign [class="VirtualBox"  instance="VirtualBox"] → $ws4
+
+# Assign Spotify
+
+# The following doesn's seem to work, but is there for completeness
+assign [class="Spotify"  instance="spotify"] → $ws2
+# This line actually works, it needs a config reload after spotify is running
+for_window [class="Spotify"] move to workspace $ws2
+
 
 # resize window (you can also use the mouse for that)
 mode "resize" {
