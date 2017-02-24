@@ -152,6 +152,7 @@
 ;; (require 'jdee-conf)
 (require 'smart-mode-line-conf)
 (require 'drools-conf)
+;; (require 'emms-conf)
 (require 'sr-speedbar-conf)
 (require 'js2-conf)
 (require 'js2r-conf)

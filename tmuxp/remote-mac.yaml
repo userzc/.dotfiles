@@ -1,7 +1,0 @@
-session_name: remote-mac
-start-directory: "~"
-windows:
-  - window_name: zsh_home
-    panes:
-      - shell_command:
-          - ssh veureka@172.30.20.149 -i /home/rene/.ssh/veureka.pem

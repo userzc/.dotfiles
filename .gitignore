@@ -9,6 +9,20 @@ emacs.d/eshell/history
 emacs.d/projectile-bookmarks.eld
 emacs.d/ac-comphist.dat
 
+# yasnippets de latex-yasnippets
+emacs.d/snippets/latex-mode/
+
+# yasnippets de org-yasnippets
+emacs.d/snippets/org-mode/
+
+# archivos de tmuxp que no han sido rastreados
+tmuxp/
+
+# mantén algunos archivos locales
+!tmuxp/example.yaml
+!tmuxp/tesis.yaml
+!tmuxp/work-session.yaml
+
 # archivos byte-compiled
 *.elc
 
@@ -40,3 +54,7 @@ dist/
 /emacs.d/lisp/nxhtml/etc/schema/xhtml-loader.rnc
 /emacs.d/ido.last
 /emacs.d/recentf
+
+# archivos generados por paquetes de emacs
+/emacs.d/abbrev_defs
+/emacs.d/emms/
