@@ -322,8 +322,8 @@ export PATH="$HOME/.cargo/bin:$PATH"
 
 # Activate tmuxp source completion(tmuxp >= 1.2)
 if $(which tmuxp &> /dev/null) ; then
-    autoload bashcompinit
-    bashcompinit
+    autoload -U bashcompinit
+    bashcompinit -i
     eval "$(_TMUXP_COMPLETE=source tmuxp)"
 else
     echo "tmuxp not found"

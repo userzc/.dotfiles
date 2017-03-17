@@ -74,6 +74,7 @@
 	org-beginning-of-line
 	org-ctrl-c-minus
 	org-ctrl-c-star
+	org-cycle
 	org-delete-char
 	org-end-of-line
 	org-force-self-insert

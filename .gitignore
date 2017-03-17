@@ -58,3 +58,5 @@ dist/
 # archivos generados por paquetes de emacs
 /emacs.d/abbrev_defs
 /emacs.d/emms/
+
+/emacs.d/request/
