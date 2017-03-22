@@ -40,6 +40,7 @@
 (add-hook 'css-mode-hook 'projectile-mode)
 (add-hook 'yaml-mode-hook 'projectile-mode)
 (add-hook 'typescript-mode-hook 'projectile-mode)
+(add-hook 'gitignore-mode-hook 'projectile-mode)
 
 ;; Ya se tiene bien configurado git en Windows, se puede confiar en
 ;; este método de indexado
