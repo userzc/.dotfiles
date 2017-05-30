@@ -66,6 +66,7 @@
 	magit-stage-item
 	mark-paragraph
 	mark-sexp
+	markdown-electric-backquote
 	markdown-exdent-or-delete
 	maxima-send-full-line-and-goto-next-form
 	nxml-electric-slash

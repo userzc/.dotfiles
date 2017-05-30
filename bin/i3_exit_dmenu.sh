@@ -23,6 +23,7 @@ message="Suspend
 Hibernate [-- CAUTION --]
 Reboot
 Shutdown
+Lock
 Logout"
 
 # hibernate doesn't seem to work on the Dell Inspiron
@@ -37,5 +38,6 @@ case "$select" in
     "Hibernate [-- CAUTION --]") dbus-send --system --print-reply --dest=org.freedesktop.login1 /org/freedesktop/login1 "org.freedesktop.login1.Manager.Hibernate" boolean:true ;;
     "Reboot") dbus-send --system --print-reply --dest=org.freedesktop.login1 /org/freedesktop/login1 "org.freedesktop.login1.Manager.Reboot" boolean:true ;;
     "Shutdown") dbus-send --system --print-reply --dest=org.freedesktop.login1 /org/freedesktop/login1 "org.freedesktop.login1.Manager.PowerOff" boolean:true ;;
+    "Lock") i3lock;;
     "Logout") i3-msg exit;;
 esac;
