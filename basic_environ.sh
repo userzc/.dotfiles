@@ -70,6 +70,7 @@ case "$curl_output" in
         echo "==== Installing powerline ===="
         `pip install --user powerline-status`
         `pip install --user tmuxp`
+        `sudo pip install yamllint`
 esac
 
 echo "==== Installing Dotfiles ===="

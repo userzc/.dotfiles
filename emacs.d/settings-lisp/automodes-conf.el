@@ -67,4 +67,13 @@
   '(progn
      (add-to-list 'auto-mode-alist '("\\.js$" . js2-mode))))
 
+;; Add yamllint check to yaml-files
+(eval-after-load "flycheck"
+  '(add-hook 'flycheck-mode-hook 'flycheck-yamllint-setup))
+
+;; Add flycheck to yaml-mode
+(eval-after-load "yaml-mode"
+  '(add-hook 'yaml-mode-hook
+	     '(lambda () (flycheck-mode t))))
+
 (provide 'automodes-conf)
