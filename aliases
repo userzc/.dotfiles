@@ -17,6 +17,9 @@ alias acsh="apt-cache show"
 # xdg-open alias, to "open" a file form command line with the configured application
 alias o='xdg-open'
 
+# send standard output to xclip -selection copy
+alias -g XSC='| xclip -selection c.'
+
 ####################
 # maven archetypes #
 ####################
