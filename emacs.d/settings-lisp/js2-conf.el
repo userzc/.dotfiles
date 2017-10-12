@@ -4,4 +4,7 @@
 
 (setq js2-highlight-level 3)
 
+;; Activar jasmine en js2-mode
+(add-hook 'js2-mode-hook '(lambda () (jasminejs-mode)))
+
 (provide 'js2-conf)

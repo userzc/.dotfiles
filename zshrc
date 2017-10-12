@@ -116,8 +116,8 @@ plugins=(
     # ssh-agent # Plugin interfiere con Magit, investigar porque
     # django
     tmux
+    npm
     vagrant
-    rust
     fabric
     mercurial
     personal_functions)

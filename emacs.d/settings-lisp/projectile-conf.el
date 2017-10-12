@@ -46,4 +46,21 @@
 ;; este método de indexado
 (setq projectile-indexing-method 'alien)
 
+;; Configuración de proyectos para npm
+
+;; Añadir nuevo tipo de projecto -- versión 0.14.0 (stable)
+(projectile-register-project-type 'npm '("package.json")
+                  "npm install" ; :compile
+                  "npm test" ; :test
+                  "npm start" ; :run
+                  ;; :test-suffix "Spec"	;This is not working on version 0.14.0
+)
+
+;; ;; Projectile version "20170917.410"
+;; (projectile-register-project-type 'npm '("package.json")
+;;                   :compile "npm install"
+;;                   :test "npm test"
+;;                   :run "npm start"
+;;                   :test-suffix "Spec")
+
 (provide 'projectile-conf)

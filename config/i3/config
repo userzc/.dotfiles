@@ -216,6 +216,12 @@ bindsym $mod+Control+Shift+8 move container to workspace $ws8
 bindsym $mod+Control+Shift+9 move container to workspace $ws9
 bindsym $mod+Control+Shift+0 move container to workspace $ws10
 
+# Move the current workspace to another RandR output
+bindsym $mod+x+Right move workspace to output right
+bindsym $mod+x+Left move workspace to output left
+bindsym $mod+x+Down move workspace to output down
+bindsym $mod+x+Up move workspace to output up
+
 # reload the configuration file
 bindsym $mod+Shift+c reload
 # restart i3 inplace (preserves your layout/session, can be used to upgrade i3)
