@@ -374,25 +374,18 @@
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;; avy, modo que retoma:
 ;; acejump, http://emacsrocks.com/e10.html
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-;; los keybinds son los sugeridos por emacs rocks
 
-(eval-after-load "ace-jump-mode"
-  ;; (define-key global-map (kbd "C-ø") 'ace-jump-mode)
-  ;; (define-key global-map (kbd "M-ø") 'ace-jump-mode) ; to access in terminal
+(eval-after-load "avy"
   '(progn
-     (define-key global-map (kbd "M-ñ") 'ace-jump-mode) ; to access in terminal
-     (define-key global-map (kbd "C-;") 'ace-jump-mode) ; to access in terminal
-     (autoload
-       'ace-jump-mode-pop-mark
-       "ace-jump-mode"
-       "Ace jump back:-)"
-       t)
-     (eval-after-load "ace-jump-mode"
-       '(ace-jump-mode-enable-mark-sync))
-     (define-key global-map (kbd "C-c SPC") 'ace-jump-mode-pop-mark)))
+     (setq subword-mode t)				; enable subword-mode
+     (define-key global-map (kbd "M-ñ") 'avy-goto-char) ; to access in terminal
+     (define-key global-map (kbd "C-;") 'avy-goto-char) ; to access in terminal
+     (define-key global-map (kbd "M-Ñ") 'avy-goto-word-or-subword-1)
+     (define-key global-map (kbd "C-M-;") 'avy-goto-word-or-subword-1)))
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
