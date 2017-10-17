@@ -382,10 +382,10 @@
 (eval-after-load "avy"
   '(progn
      (setq subword-mode t)				; enable subword-mode
-     (define-key global-map (kbd "M-ñ") 'avy-goto-char) ; to access in terminal
-     (define-key global-map (kbd "C-;") 'avy-goto-char) ; to access in terminal
-     (define-key global-map (kbd "M-Ñ") 'avy-goto-word-or-subword-1)
-     (define-key global-map (kbd "C-M-;") 'avy-goto-word-or-subword-1)))
+     (define-key global-map (kbd "M-ñ") 'avy-goto-word-or-subword-1) ; to access in terminal
+     (define-key global-map (kbd "C-;") 'avy-goto-word-or-subword-1) ; to access in terminal
+     (define-key global-map (kbd "M-Ñ") 'avy-goto-char)
+     (define-key global-map (kbd "C-M-;") 'avy-goto-char)))
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
