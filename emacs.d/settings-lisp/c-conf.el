@@ -63,4 +63,9 @@
 			(or (getenv "CFLAGS") "-lm -lcrypt -O2 -std=c++11 -pipe -DONLINE_JUDGE -pedantic -Wall")
 			file))))))))
 
+;; Configuración de subword-mode
+(add-hook 'c-mode-common-hook
+	  (lambda () (subword-mdoe 1)))
+
+
 (provide 'c-conf)

@@ -16,7 +16,7 @@
 ;; Write backup files to own directory
 (setq backup-directory-alist
       `(("." . ,(expand-file-name
-		(concat user-emacs-directory "backups")))))
+                 (concat user-emacs-directory "backups")))))
 
 ;; Make emacs recognize alias, see
 ;; http://stackoverflow.com/questions/12224909/is-there-a-way-to-get-my-emacs-to-recognize-my-bash-aliases-and-custom-functions
@@ -64,7 +64,7 @@
 (setq ispell-dictionary "castellano8")
 
 ;; para utilizar sólo espacios
-(setq indent-tabs-mode nil)
+(setq-default indent-tabs-mode nil)
 
 (put 'upcase-region 'disabled nil)
 (put 'downcase-region 'disabled nil)

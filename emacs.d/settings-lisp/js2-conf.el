@@ -7,4 +7,7 @@
 ;; Activar jasmine en js2-mode
 (add-hook 'js2-mode-hook '(lambda () (jasminejs-mode)))
 
+;; Activar jasmine en js2-mode
+(add-hook 'js2-mode-hook '(lambda () (subword-mode 1)))
+
 (provide 'js2-conf)
