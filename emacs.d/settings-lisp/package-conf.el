@@ -32,8 +32,7 @@
         (flycheck-yamllint . "melpa-stable")
         ;; (org . "melpa-stable")
         (lacarte . "marmalade")
-	(groovy-mode . "melpa")
-	(projectile . "melpa-stable")))
+	(groovy-mode . "melpa")))
 
 (defvar package-filter-function nil
   "Optional predicate function used to internally filter packages
