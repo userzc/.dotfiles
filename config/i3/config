@@ -339,9 +339,6 @@ bindsym Shift+XF86AudioLowerVolume exec xbacklight -dec 10 # decrease screen bri
 # Use dropbox instead, u1 went down
 exec dropbox start
 
-# Starting skype-call-recorder
-exec --no-startup-id "sh -c 'sleep 30; skype-call-recorder'"
-
 # Use command line tool to change network conections.  Consider using
 # command `nmcli dev wifi` para listar las conecciones disponibles:
 # http://www.linux-commands-examples.com/nmcli

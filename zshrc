@@ -306,7 +306,6 @@ fi
 
 # # Unalias for the ag searcher(debian plugin)
 if (( $+commands[lsb_release] )); then
-    unalias ag
     alias aug='sudo $apt_pref upgrade'
 fi
 
