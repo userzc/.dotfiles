@@ -1,0 +1,12 @@
+rofi.lines: 3
+rofi.width: 60
+rofi.eh: 2
+rofi.padding: 180
+rofi.opacity: "85"
+rofi.bw: 0
+rofi.color-window: #49483E,#2f343f,#2f343f
+rofi.color-normal: #49483e,#66D9EF,#49483E,#171A0B,#f92672
+! rofi.font: "System San Francisco Display 18"
+! Local Variables:
+! eval: (rainbow-mode)
+! End:
