@@ -21,7 +21,7 @@ Lock
 Logout"
 
 # hibernate doesn't seem to work on the Dell Inspiron
-select=$( echo -e "$message" | rofi -sidebar-mode -dmenu -i -p "[exit]:" -width 100 -padding 50 -hide-scrollbar -lines 5 -eh 2  -opacity "85" -bw 0 -bc "$bg_color" -bg "$color_nb" -fg "$color_nf" -hlbg "$color_sb" -hlfg "$color_sf" -hide-scroll-bar -font "$fn")
+select=$( echo -e "$message" | rofi -sidebar-mode -dmenu -i -p "[exit]:" -width 100 -padding 50 -hide-scrollbar -lines 5 -eh 2  -opacity "85" -bw 0 -bc "$bg_color" -bg "$color_nb" -fg "$color_nf" -hlbg "$color_sb" -hlfg "$color_sf" -hide-scroll-bar -font "$fn1")
 
 # # Ubuntu 17.10
 # select=$( echo -e "$message" | rofi -dmenu -i -p "[exit]:" -sidebar-mode -config ~/.config/rofi/exit_config -hide-scrollbar -font "$fn1")
