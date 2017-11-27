@@ -13,18 +13,26 @@ fn='pango=:DejaVu Sans Mono 9'
 fn1="System San Francisco Display 18"
 # set $fn 'Meslo LG S for Powerline RegularForPowerline'
 
-message="Suspend
-Hibernate [-- CAUTION --]
+message="Lock
+Logout
+Suspend
 Reboot
 Shutdown
-Lock
-Logout"
+Hibernate [-- CAUTION --]"
+
+if [ $(uname) == 'Linux' ]; then
+    if [ -n $(command -v lsb_release) ]; then
+        os_type="$(lsb_release -si)"
+        os_version="$(lsb_release -sr)"
+    fi
+fi
 
 # hibernate doesn't seem to work on the Dell Inspiron
-select=$( echo -e "$message" | rofi -sidebar-mode -dmenu -i -p "[exit]:" -width 100 -padding 50 -hide-scrollbar -lines 5 -eh 2  -opacity "85" -bw 0 -bc "$bg_color" -bg "$color_nb" -fg "$color_nf" -hlbg "$color_sb" -hlfg "$color_sf" -hide-scroll-bar -font "$fn1")
-
-# # Ubuntu 17.10
-# select=$( echo -e "$message" | rofi -dmenu -i -p "[exit]:" -sidebar-mode -config ~/.config/rofi/exit_config -hide-scrollbar -font "$fn1")
+if [[ ( $(lsb_release -si) == "Ubuntu" ) && ( $(echo "$os_version > 16.04" | bc) == "1" ) ]];  then
+    select=$( echo -e "$message" | rofi -dmenu -i -p "[exit]:" -sidebar-mode -config ~/.config/rofi/exit_config -hide-scrollbar -font "$fn1")
+elif [[ ( $(lsb_release -si) == "Ubuntu" ) && ( $(echo "$os_version <= 16.04" | bc) == "1" ) ]]; then
+    select=$( echo -e "$message" | rofi -sidebar-mode -dmenu -i -p "[exit]:" -width 100 -padding 50 -hide-scrollbar -lines 6 -eh 2  -opacity "85" -bw 0 -bc "$bg_color" -bg "$color_nb" -fg "$color_nf" -hlbg "$color_sb" -hlfg "$color_sf" -hide-scroll-bar -font "$fn1")
+fi
 
 # Fuente
 # http://askubuntu.com/questions/454039/what-command-is-executed-when-shutdown-from-the-graphical-menu-in-14-04
@@ -37,3 +45,7 @@ case "$select" in
     "Lock") i3lock;;
     "Logout") i3-msg exit;;
 esac;
+
+# Local Variables:
+# eval: (rainbow-mode)
+# End:
