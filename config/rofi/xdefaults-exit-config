@@ -7,5 +7,6 @@ rofi.bw: 0
 rofi.color-window: #49483E,#2f343f,#2f343f
 rofi.color-normal: #49483e,#66D9EF,#49483E,#171A0B,#f92672
 ! Local Variables:
+! mode: conf-xdefaults
 ! eval: (rainbow-mode)
 ! End:

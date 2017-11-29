@@ -29,7 +29,7 @@ fi
 
 # hibernate doesn't seem to work on the Dell Inspiron
 if [[ ( $(lsb_release -si) == "Ubuntu" ) && ( $(echo "$os_version > 16.04" | bc) == "1" ) ]];  then
-    select=$( echo -e "$message" | rofi -dmenu -i -p "[exit]:" -sidebar-mode -config ~/.config/rofi/exit_config -hide-scrollbar -font "$fn1")
+    select=$( echo -e "$message" | rofi -dmenu -i -p "[exit]:" -sidebar-mode -config ~/.config/rofi/xdefaults-exit-config -hide-scrollbar -font "$fn1")
 elif [[ ( $(lsb_release -si) == "Ubuntu" ) && ( $(echo "$os_version <= 16.04" | bc) == "1" ) ]]; then
     select=$( echo -e "$message" | rofi -sidebar-mode -dmenu -i -p "[exit]:" -width 100 -padding 50 -hide-scrollbar -lines 6 -eh 2  -opacity "85" -bw 0 -bc "$bg_color" -bg "$color_nb" -fg "$color_nf" -hlbg "$color_sb" -hlfg "$color_sf" -hide-scroll-bar -font "$fn1")
 fi
