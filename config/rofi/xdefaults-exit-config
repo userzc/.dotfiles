@@ -1,7 +1,6 @@
 rofi.lines: 6
-rofi.width: 50
+rofi.width: 100
 rofi.eh: 2
-rofi.padding: 50
 rofi.opacity: "85"
 rofi.bw: 0
 rofi.color-window: #49483E,#2f343f,#2f343f
