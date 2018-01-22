@@ -41,8 +41,9 @@
            restclient scss-mode smart-mode-line smart-tab smartparens
            solarized-theme spacegray-theme sr-speedbar sublime-themes
            tango-2-theme tangotango-theme textile-mode tide
-           ubuntu-theme web-mode websocket wgrep wgrep-ag windsize
-           wrap-region yaml-mode yasnippet zenburn-theme zone-matrix)
+           ubuntu-theme virtualenvwrapper web-mode websocket wgrep
+           wgrep-ag windsize wrap-region yaml-mode yasnippet
+           zenburn-theme zone-matrix)
   "Lista de paquetes instalados actualmente en mi configuración.")
 
 ;; Default custom file

@@ -60,9 +60,10 @@
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;; (require 'python)
 (setq
- ;; python-shell-interpreter "/usr/local/bin/jupyter"
- python-shell-interpreter "/usr/local/bin/ipython"
- python-shell-interpreter-args "--simple-prompt"
+ ;; python-shell-interpreter "/usr/local/bin/ipython"
+ ;; python-shell-interpreter "ipython"
+ python-shell-interpreter "jupyter"     ;virtualenvwrapper.el permite esto
+ python-shell-interpreter-args "console --simple-prompt --existing"
  ;; python-shell-prompt-regexp "In \\[[0-9]+\\]: "
  ;; python-shell-prompt-output-regexp "Out\\[[0-9]+\\]: "
  python-shell-completion-setup-code
@@ -72,5 +73,15 @@
  python-shell-completion-string-code
  "';'.join(get_ipython().Completer.all_completions('''%s'''))\n"
  )
+
+(require 'virtualenvwrapper)
+(venv-initialize-interactive-shells) ;; if you want interactive shell support
+
+;; (venv-initialize-eshell) ;; if you want eshell support
+;; ;; note that setting `venv-location` is not necessary if you
+;; ;; use the default location (`~/.virtualenvs`), or if the
+;; ;; the environment variable `WORKON_HOME` points to the right place
+
+(setq venv-location "~/.virtualenvs")
 
 (provide 'python-conf)
