@@ -1,0 +1,4 @@
+(:name bookmark+
+       :pkgname "bookmark-plus"
+       :type git
+       :url "https://github.com/emacsmirror/bookmark-plus.git")

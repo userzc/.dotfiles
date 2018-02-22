@@ -1,0 +1,4 @@
+( :name icomplete+
+        :pkgname "icomplete-plus"
+        :type git
+        :url "https://github.com/emacsmirror/icomplete-plus.git")

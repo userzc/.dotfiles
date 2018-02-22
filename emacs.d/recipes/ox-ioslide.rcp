@@ -1,0 +1,3 @@
+( :name ox-ioslide
+  :type emacsmirror
+  :url "https://github.com/emacsmirror/ox-ioslide.git")

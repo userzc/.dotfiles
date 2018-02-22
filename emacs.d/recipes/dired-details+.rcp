@@ -1,0 +1,4 @@
+( :name dired-details+
+        :pkgname "dired-details-plus"
+        :type git
+        :url "https://github.com/emacsmirror/dired-details-plus.git")
