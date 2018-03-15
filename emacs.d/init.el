@@ -22,25 +22,20 @@
 ;; - `showkey'
 
 (defvar lista-paquetes-instalados
-  '(ac-js2 ac-math ack-and-a-half ag all-the-icons ample-zen-theme
-           auctex auto-complete avy badwolf-theme base16-theme c-eldoc
-           cedit cl-lib clues-theme color-theme
-           color-theme-gruber-darker color-theme-sanityinc-tomorrow
-           command-log-mode cyberpunk-theme dash deferred
-           dired-details eclim ein emmet-mode enclose expand-region f
-           feature-mode gitconfig-mode github-theme gitignore-mode
+  '(ac-js2 ac-math ack-and-a-half ag all-the-icons auctex auto-complete
+           avy badwolf-theme c-eldoc cedit cl-lib command-log-mode dash
+           deferred dired-details eclim ein emmet-mode enclose
+           expand-region f feature-mode gitconfig-mode gitignore-mode
            google-c-style google-contacts gradle-mode gradle-mode
-           groovy-mode gruvbox-theme hgignore-mode ido-better-flex
-           jasminejs-mode java-snippets javadoc-lookup js2-mode
-           js2-refactor litable lorem-ipsum magit makey
-           mark-more-like-this markdown-mode material-theme moe-theme
-           monky monokai-theme multi-term multiple-cursors neotree
-           nose oauth2 org-bullets popup powerline projectile
-           purty-mode python-django qsimpleq-theme rainbow-delimiters
-           rainbow-mode request restclient scss-mode smart-mode-line
-           smart-tab smartparens solarized-theme spacegray-theme
-           sr-speedbar sublime-themes tango-2-theme tangotango-theme
-           textile-mode tide ubuntu-theme virtualenvwrapper web-mode
+           groovy-mode hgignore-mode ido-better-flex jasminejs-mode
+           java-snippets javadoc-lookup js2-mode js2-refactor litable
+           lorem-ipsum magit makey mark-more-like-this markdown-mode
+           monky monokai-theme multi-term multiple-cursors neotree nose
+           oauth2 org-bullets popup powerline projectile purty-mode
+           python-django rainbow-delimiters rainbow-mode request
+           restclient scss-mode smart-mode-line smart-tab smartparens
+           spacegray-theme sr-speedbar sublime-themes tango-2-theme
+           tangotango-theme textile-mode tide virtualenvwrapper web-mode
            websocket wgrep wgrep-ag windsize wrap-region yaml-mode
            yasnippet zenburn-theme zone-matrix)
   "Lista de paquetes instalados actualmente en mi configuración.")
@@ -91,7 +86,6 @@
 (require 'bookmark+)
 (require 'expand-region)
 (require 'emmet-mode)
-(require 'moe-theme)
 (require 'magit)
 (require 'monky)
 (require 'avy)
