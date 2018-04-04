@@ -13,4 +13,13 @@
 ;; Avoid warning message for magit-1.4.0
 (setq magit-last-seen-setup-instructions "1.4.0")
 
+;; Muestra sólo commits no subidos
+;; https://github.com/magit/magit/issues/3230#issuecomment-339900039
+(magit-add-section-hook 'magit-status-sections-hook
+                        'magit-insert-unpushed-to-upstream
+                        'magit-insert-unpushed-to-upstream-or-recent
+                        'replace)
+
+(magit-add-section-hook 'magit-status-sections-hook
+                        'magit-insert-unpulled-from-upstream)
 (provide 'magit-conf)

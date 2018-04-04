@@ -287,9 +287,12 @@ elif [[ `uname` == 'Darwin' ]]; then
     # echo 'In Darwin system'
     export ANDROID_SDK='android-sdk-macosx'
 fi
+
 export PATH="$HOME/dev-android/$ANDROID_SDK/tools/":$PATH
+export PATH="$HOME/dev-android/$ANDROID_SDK/tools/bin/":$PATH
 export PATH="$HOME/dev-android/$ANDROID_SDK/platform-tools/":$PATH
-export ANDROID_HOME="$HOME/dev-android/$ANDROID_SDK/"
+export ANDROID_SDK_ROOT="$HOME/dev-android/$ANDROID_SDK/"
+# export ANDROID_SDK_ROOT="$HOME/dev-android/$ANDROID_SDK/tools/"
 
 # This sourcing must happend after all plugins have been declared
 source $ZSH/oh-my-zsh.sh
@@ -341,6 +344,10 @@ else
     export SDKMAN_DIR="$HOME/.sdkman" && source "$HOME/.sdkman/bin/sdkman-init.sh"
 fi
 
+# https://github.com/creationix/nvm/issues/1651
+# Se ejecuta:
+# nvm unalias default
+# nvm install lts/*
 # Inform if nvm is not active (node, npm)
 if [ ! -d $HOME/.nvm ]
 then
