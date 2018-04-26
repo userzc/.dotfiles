@@ -38,8 +38,8 @@ do
         done=1
         continue
     fi
-    echo "line ${i}:" $myline "|*- endl -*|"
-    sleep 0.1
-    # eval "${myline}"
+    # echo "line ${i}:" $myline "|*- endl -*|"
+    # sleep 0.1
+    eval "${myline}"
     (( i++ ))
 done

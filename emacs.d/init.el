@@ -78,6 +78,7 @@
 
 ;; Configuraciones para instalar paquetes que sólo están en emacswiki
 ;; (mediante emacsmirror)
+;; TODO: mover dependencias ox-ioslide a el-get (f makey)
 (require 'el-get-conf)
 
 ;; required libraries
