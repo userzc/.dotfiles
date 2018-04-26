@@ -6,7 +6,7 @@ windows:
     panes:
       - htop
       - tail -f /var/log/syslog
-      - speedometer -r enp3s0f1 -t enp3s0f1 -c -r wlp2s0 -t wlp2s0
+      - speedometer -r enp2s0f5 -t enp2s0f5 -c -r wlp1s0 -t wlp1s0
   - window_name: "xenial_vagrant"
     panes:
       - shell_command:
