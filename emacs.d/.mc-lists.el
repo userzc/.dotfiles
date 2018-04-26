@@ -68,6 +68,7 @@
         mark-sexp
         markdown-electric-backquote
         markdown-exdent-or-delete
+        markdown-outdent-or-delete
         maxima-send-full-line-and-goto-next-form
         nxml-electric-slash
         open-line-above
@@ -133,6 +134,7 @@
         tab-to-tab-stop
         transpose-sexps
         transpose-words
+        typescript-insert-and-indent
         universal-argument-minus
         upcase-region
         wdired-downcase-word
@@ -160,6 +162,7 @@
         c-end-of-statement
         cleanup-buffer
         comint-send-input
+        compilation-next-error
         compile-goto-error
         count-words-region
         deb-view-dired-view

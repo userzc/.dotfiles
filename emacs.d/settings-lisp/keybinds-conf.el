@@ -534,6 +534,7 @@
 ;;         js2-refactor
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
 (eval-after-load "js2-refactor"
   '(progn
      (js2r-add-keybindings-with-prefix "C-c C-m")))
@@ -542,5 +543,16 @@
   '(progn
      (define-key js2-mode-map (kbd "C-c C-z") 'nodejs-repl-switch-to-repl)
      (define-key js2-mode-map (kbd "M-j") nil)))
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;;         company
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
+(eval-after-load "company"
+  '(progn
+     (define-key company-mode-map (kbd "C-.") 'company-complete)))
+
 
 (provide 'keybinds-conf)
