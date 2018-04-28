@@ -319,9 +319,6 @@ export NODE_PATH="$NODE_PATH:/usr/lib/node_modules:/usr/local/lib/node_modules"
 # Cask
 export PATH="$HOME/.cask/bin:$PATH"
 
-# Vert.x
-export PATH="$HOME/vert.x/vert.x-2.1.5/bin/:$PATH"
-
 # Cargo (rust and parity)
 export PATH="$HOME/.cargo/bin:$PATH"
 
@@ -339,8 +336,6 @@ if [ ! -d $HOME/.sdkman ]
 then
     echo "\033[0;31m"'sdkman not active'"\033[0;31m"
 else
-    #THIS MUST BE AT THE END OF THE FILE FOR GVM TO WORK!!!
-    # [[ -s "$HOME/.gvm/bin/gvm-init.sh" ]] && source "$HOME/.gvm/bin/gvm-init.sh"
     export SDKMAN_DIR="$HOME/.sdkman" && source "$HOME/.sdkman/bin/sdkman-init.sh"
 fi
 
