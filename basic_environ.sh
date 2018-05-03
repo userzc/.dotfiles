@@ -67,8 +67,6 @@ case "$curl_output" in
         `git clone --depth 1 https://github.com/powerline/fonts $HOME/.fonts/powerline-fonts`
         cd "$HOME/.fonts/powerline-fonts"
         `./install.sh`
-        echo "==== Installing powerline ===="
-        `pip install --user powerline-status`
         `pip install --user tmuxp`
         `sudo pip install yamllint`
 esac

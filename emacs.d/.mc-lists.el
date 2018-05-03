@@ -134,6 +134,7 @@
         tab-to-tab-stop
         transpose-sexps
         transpose-words
+        typescript-insert-and-autoconvert-to-template
         typescript-insert-and-indent
         universal-argument-minus
         upcase-region
