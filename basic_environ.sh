@@ -27,6 +27,8 @@ echo "==== Installing common tools ===="
 `sudo $INSTALL_COMMAND git`
 `sudo $INSTALL_COMMAND emacs`
 `sudo $INSTALL_COMMAND speedometer`
+`sudo $INSTALL_COMMAND silversearcher-ag`
+`sudo $INSTALL_COMMAND htop`
 `sudo $INSTALL_COMMAND zsh`
 `sudo $INSTALL_COMMAND tmux`
 `sudo $INSTALL_COMMAND curl`
