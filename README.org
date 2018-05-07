@@ -52,6 +52,14 @@
       adduser $USER sudo
     #+end_src
 
+** Basic =i3= environment
+
+   To install the custom [[https://i3wm.org/][i3]] environment:
+
+   #+BEGIN_SRC sh
+     # as root
+     ./i3_environ.sh
+   #+END_SRC
 
 ** Requirements
 

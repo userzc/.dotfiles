@@ -31,6 +31,8 @@ echo "==== Installing common tools ===="
 `sudo $INSTALL_COMMAND htop`
 `sudo $INSTALL_COMMAND zsh`
 `sudo $INSTALL_COMMAND tmux`
+`sudo $INSTALL_COMMAND xclip`
+`sudo $INSTALL_COMMAND aptitude`
 `sudo $INSTALL_COMMAND curl`
 `sudo $INSTALL_COMMAND fonts-inconsolata`
 `sudo $INSTALL_COMMAND fonts-font-awesome`
@@ -71,6 +73,7 @@ case "$curl_output" in
         `./install.sh`
         `pip install --user tmuxp`
         `sudo pip install yamllint`
+        `sudo pip install speedtest-cli`
 esac
 
 echo "==== Installing Dotfiles ===="
@@ -85,3 +88,4 @@ fi
 
 echo "==== To change default shell ===="
 echo "==== type: chsh -s /bin/zsh ==="
+exit 0
