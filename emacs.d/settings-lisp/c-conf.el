@@ -65,7 +65,7 @@
 
 ;; Configuración de subword-mode
 (add-hook 'c-mode-common-hook
-	  (lambda () (subword-mdoe 1)))
+	  (lambda () (subword-mode 1)))
 
 
 (provide 'c-conf)

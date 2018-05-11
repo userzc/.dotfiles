@@ -1,6 +1,6 @@
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-;; Se inicia de nuevo con emacs 24             ;;
-;; tested on emacs-version "24.4.1"            ;;
+;; Se inicia de nuevo con emacs 25             ;;
+;; tested on emacs-version "25.2.2"            ;;
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
 ;; Added by Package.el.  This must come before configurations of
@@ -24,23 +24,23 @@
 (defvar lista-paquetes-instalados
   '(ac-js2 ac-math ack-and-a-half ag all-the-icons auctex
            auto-complete avy badwolf-theme c-eldoc cedit cl-lib
-           command-log-mode company dash deferred dired-details
-           eclim ein emmet-mode enclose exec-path-from-shell
-           expand-region f feature-mode gitconfig-mode
+           command-log-mode company dash deferred dired-details ein
+           emmet-mode enclose exec-path-from-shell expand-region f
+           feature-mode flycheck-yamllint gitconfig-mode
            gitignore-mode google-c-style google-contacts gradle-mode
            gradle-mode groovy-mode hgignore-mode ido-better-flex
            jasminejs-mode java-snippets javadoc-lookup js2-mode
            js2-refactor litable lorem-ipsum magit makey
            mark-more-like-this markdown-mode monky monokai-theme
-           multi-term multiple-cursors neotree nose oauth2
-           org-bullets popup powerline projectile purty-mode
-           python-django rainbow-delimiters rainbow-mode request
-           restclient scss-mode smart-mode-line smart-tab
-           smartparens spacegray-theme sr-speedbar sublime-themes
-           tango-2-theme tangotango-theme textile-mode tide
-           virtualenvwrapper web-mode websocket wgrep wgrep-ag
-           windsize wrap-region yaml-mode yasnippet
-           yasnippet-snippets zenburn-theme zone-matrix)
+           multi-term multiple-cursors neotree nose oauth2 org-bullets
+           popup powerline projectile purty-mode python-django
+           rainbow-delimiters rainbow-mode request restclient
+           scss-mode smart-mode-line smart-tab smartparens
+           spacegray-theme sr-speedbar sublime-themes tango-2-theme
+           tangotango-theme textile-mode tide virtualenvwrapper
+           web-mode websocket wgrep wgrep-ag windsize wrap-region
+           yaml-mode yasnippet yasnippet-snippets zenburn-theme
+           zone-matrix)
   "Lista de paquetes instalados actualmente en mi configuración.")
 
 (setq el-get-paquetes-instalados
@@ -61,7 +61,6 @@
 ;; Al parecer las siguientes lineas hacen que cualquier subdirectorio
 ;; de la carpeta "~/.emacs.d/lisp/" sea cargada al load-path, lo cual
 ;; es necesario para los paquetes:
-;; - nxhtml     : se obtiene mumamo-mode y más.
 ;; - linkd      : Drew Adams lo utiliza p/documentaciones de sus paquetes
 (add-to-list 'load-path "~/.emacs.d/lisp/")
 (add-to-list 'load-path "~/.emacs.d/defuns/")
@@ -115,16 +114,10 @@
 ;; (require 'zone-matrix)
 (require 'speedbar)
 (require 'js2-refactor)
-;; (require 'org)
-;; (require 'eclim)
 (require 'taskjuggler-mode)
 (require 'recentf)
 (require 'web-mode)
 ;; (require 'jdee)
-
-(condition-case nil (require 'malabar-mode)
-  (error
-   (message "Malabar mode not found")))
 
 (condition-case nil
     (require 'drools-mode)
@@ -146,7 +139,6 @@
 (require 'multi-term-conf)
 (require 'mail-conf)
 (require 'auto-complete-conf)
-;; (require 'nxhtml-conf)
 (require 'emaxima-conf)
 (require 'python-conf)
 (require 'ein-conf)
@@ -157,10 +149,9 @@
 (require 'load-theme-conf)
 (require 'projectile-conf)
 (require 'groovy-conf)
-;; (require 'eclim-conf)
 ;; (require 'malabar-conf )
 ;; (require 'powerline-conf)
-;; (require 'jdee-conf)
+(require 'jdee-conf)
 (require 'smart-mode-line-conf)
 (require 'drools-conf)
 ;; (require 'emms-conf)

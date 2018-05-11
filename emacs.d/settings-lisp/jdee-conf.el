@@ -1,2 +1,2 @@
-(setq jdee-server-dir "~/personal-workspace/jdee-server/target/")
+(setq jdee-server-dir "~/personal-workspace/java-jars/")
 (provide 'jdee-conf)

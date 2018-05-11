@@ -65,7 +65,7 @@
 
    | Software           | Windows Version | Prefered Source [W] | Unix Version | Prefered Source [U] |
    |--------------------+-----------------+---------------------+--------------+---------------------|
-   | Emacs              | >= 24           | chocolatey          |        >= 24 | standard repo       |
+   | Emacs              | >= 25           | chocolatey          |        >= 25 | standard repo       |
    | Octicons font      | ---             | ---                 |          3.5 | stardard repo       |
    | Awesome Font       | ---             | ---                 |          4.5 | standard repo       |
    | all-the-icons font | ---             | ---                 |          --- | [[https://github.com/domtronn/all-the-icons.el/tree/master/fonts][github repo]]         |
@@ -79,10 +79,8 @@
    | ropemacs           | 0.7             | pip (PyPI)          |          0.7 | pip (PyPI)          |
    | ropemode           | 0.2             | pip (PyPI)          |          0.2 | pip (PyPI)          |
    | texlive            | ---             | ---                 |         2012 | standard repo       |
-   | eclim              | 2.3.4           | [[http://eclim.org][eclim]]               |        2.3.2 | [[http://eclim.org][eclim]]               |
-   | eclipse            | Kepler          | [[http://eclipse.org][eclipse]]             |       Kepler | [[http://eclipse.org][eclipse]]             |
-   | java               | 1.7 Oracle      | chocolatey          |   1.7 Oracle | [[https://launchpad.net/~webupd8team/+archive/java][webupd8 ppa]]         |
-   | groovy             | NA              | NA                  |        2.2.1 | [[http://gvmtool.net/][gvm]]                 |
+   | java               | 1.8 Oracle      | chocolatey          |   1.8 Oracle | [[https://launchpad.net/~webupd8team/+archive/java][webupd8 ppa]]         |
+   | groovy             | NA              | NA                  |        2.2.1 | [[http://gvmtool.net/][skdman]]              |
    | maven              | 3.0.5           | chocolatey          |        3.0.4 | standard repo       |
 
 *** Note on Ubuntu
@@ -100,19 +98,15 @@
     [[http://chocolatey.org][chocolatey]] since this facilitates the process, in particular
     install packages.
 
-    So far the installation of *maven* facilitates the use of *malabar*
-    mode in Windows, however work still needs to be done to
-    get *eclimd* working properly.
-
 *** Note on Java related software
+
+    So far the installation of *maven*, [[https://github.com/jdee-emacs/jdee][jdee]] and [[https://github.com/jdee-emacs/jdee-server][jdee-server]] are
+    working in Ubuntu 17.10 following their respective install
+    instructions
 
     Most java software on ubuntu was installed manually:
 
-    - eclipse was installed using the turorial [[http://akovid.blogspot.mx/2012/08/installing-eclipse-juno-42-in-ubuntu.html][installing eclipse on Ubuntu]].
-    - eclim was installed following the [[http://eclim.org/install.html][installation instructions]] from
-      the official webpage.
-    - groovy was also installed using the [[http://gvmtool.net/][installation instructions]]
-      from the official webpage.
+    - groovy was installed using the [[http://sdkman.io/][skdman]] CLI program.
 
 ** Features
 
