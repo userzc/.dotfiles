@@ -20,16 +20,18 @@ then
 fi
 
 echo "==== Installing common tools ===="
+`sudo $INSTALL_COMMAND i3`
+`sudo $INSTALL_COMMAND pavucontrol`
 `sudo $INSTALL_COMMAND j4-dmenu-desktop`
 `sudo $INSTALL_COMMAND rofi`
 `sudo $INSTALL_COMMAND compton`
 `sudo $INSTALL_COMMAND feh`
 
-
 echo "==== Installing pip tools ===="
 cd "$HOME"
 `sudo pip install i3-py`
 `sudo pip install quickswitch-i3`
+`sudo pip install virtualenvwrapper`
 
 echo "==== Ready to restart  ===="
 exit 0

@@ -15,8 +15,6 @@ fn1="System San Francisco Display 18"
 
 # screeen padding
 screen_padding=$(($(xwininfo -root |awk '/Height/ { print $2}')/3))
-echo "padding: $screen_padding"
-# screen_padding=50
 
 message="Lock
 Logout
@@ -34,14 +32,13 @@ fi
 
 # hibernate doesn't seem to work on the Dell Inspiron
 if [[ ( $(lsb_release -si) == "Ubuntu" ) && ( $(echo "$os_version > 16.04" | bc) == "1" ) ]];  then
-    select=$( echo -e "$message" | rofi -dmenu -i -p "[exit]:" -sidebar-mode -config ~/.config/rofi/xdefaults-exit-config -padding "$screen_padding" -hide-scrollbar -font "$fn1")
+    select=$( echo -e "$message" | rofi -dmenu -i -p "[exit]" -sidebar-mode -config ~/.config/rofi/xdefaults-exit-config -padding "$screen_padding" -hide-scrollbar -font "$fn1")
 elif [[ ( $(lsb_release -si) == "Ubuntu" ) && ( $(echo "$os_version <= 16.04" | bc) == "1" ) ]]; then
-    select=$( echo -e "$message" | rofi -sidebar-mode -dmenu -i -p "[exit]:" -width 100 -padding "$screen_padding" -hide-scrollbar -lines 6 -eh 2  -opacity "85" -bw 0 -bc "$bg_color" -bg "$color_nb" -fg "$color_nf" -hlbg "$color_sb" -hlfg "$color_sf" -hide-scroll-bar -font "$fn1")
+    select=$( echo -e "$message" | rofi -sidebar-mode -dmenu -i -p "[exit]" -width 100 -padding "$screen_padding" -hide-scrollbar -lines 6 -eh 2  -opacity "85" -bw 0 -bc "$bg_color" -bg "$color_nb" -fg "$color_nf" -hlbg "$color_sb" -hlfg "$color_sf" -hide-scroll-bar -font "$fn1")
 fi
 
 # Fuente
 # http://askubuntu.com/questions/454039/what-command-is-executed-when-shutdown-from-the-graphical-menu-in-14-04
-
 case "$select" in
     "Suspend") dbus-send --system --print-reply --dest=org.freedesktop.login1 /org/freedesktop/login1 "org.freedesktop.login1.Manager.Suspend" boolean:true ;;
     "Hibernate [-- CAUTION --]") dbus-send --system --print-reply --dest=org.freedesktop.login1 /org/freedesktop/login1 "org.freedesktop.login1.Manager.Hibernate" boolean:true ;;
