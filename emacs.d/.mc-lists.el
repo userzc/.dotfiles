@@ -165,6 +165,7 @@
         comint-send-input
         compilation-next-error
         compile-goto-error
+        completion-at-point
         count-words-region
         deb-view-dired-view
         describe-key
