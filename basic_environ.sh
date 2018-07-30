@@ -34,6 +34,7 @@ echo "==== Installing common tools ===="
 `sudo $INSTALL_COMMAND xclip`
 `sudo $INSTALL_COMMAND aptitude`
 `sudo $INSTALL_COMMAND curl`
+`sudo $INSTALL_COMMAND fonts-monoid`
 `sudo $INSTALL_COMMAND fonts-inconsolata`
 `sudo $INSTALL_COMMAND fonts-font-awesome`
 `sudo $INSTALL_COMMAND fonts-octicons`
@@ -45,7 +46,7 @@ if [ ! -d "$HOME/.oh-my-zsh" ]; then
     # Esta línea pretende eliminar el archivo zshrc creado por .oh-my-zsh
     rm .zshrc
 else
-    echo "===== oh-my-sh [personal fork] already installed"
+    echo "===== oh-my-sh already installed"
 fi
 
 echo "==== Installing extra fonts for neotree (emacs) ===="

@@ -22,7 +22,7 @@
 ;; - `showkey'
 
 (defvar lista-paquetes-instalados
-  '(ac-js2 ac-math ack-and-a-half ag all-the-icons auctex
+  '(ac-js2 ac-math ag all-the-icons auctex
            auto-complete avy badwolf-theme c-eldoc cedit cl-lib
            command-log-mode company dash deferred dired-details ein
            emmet-mode enclose exec-path-from-shell expand-region f
@@ -133,7 +133,7 @@
 (require 'yasnippet-conf)
 ;; (require 'desktop-conf)
 (require 'icomplete-conf)
-(require 'ack-conf)
+;; (require 'ack-conf)
 (require 'magit-conf)
 (require 'monky-conf)
 (require 'multi-term-conf)

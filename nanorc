@@ -14,6 +14,3 @@ set regexp
 
 ## The spelling checker
 set speller "aspell -x -c"
-
-## Enable the new (experimental) generic undo code, not just for line cuts
-set undo
