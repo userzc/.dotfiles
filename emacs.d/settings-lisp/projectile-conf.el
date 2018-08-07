@@ -1,10 +1,8 @@
 ;; https://github.com/bbatsov/projectile
 
-;; para que esto funcione, no se debe hacer `require' de projectile
-;; antes de que se ejecute la siguiente instrucción, de lo contrario
-;; habría que hacer un remap con todas las funciones de `projectile'
-;; en un `eval-after-load'.
-;; (setq-default projectile-keymap-prefix (kbd "C-c f"))
+;; Se movió la configuración de projectile-keymap-prefix a
+;; `default-conf.el'
+;; ver https://github.com/bbatsov/projectile/issues/1258
 
 ;; El sistema default permite la interacción con `iciciles', aún hay
 ;; que probar más detalladamente este comportamiento

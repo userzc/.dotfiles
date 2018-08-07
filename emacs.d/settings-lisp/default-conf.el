@@ -94,4 +94,7 @@
 ;; Ediff in one frame
 (setq ediff-window-setup-function 'ediff-setup-windows-plain)
 
+;; projectile prefix
+(setq projectile-keymap-prefix (kbd "C-c p"))
+
 (provide 'default-conf)

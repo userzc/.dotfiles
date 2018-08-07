@@ -149,8 +149,8 @@
           (define-key emmet-mode-keymap (kbd "<C-return>") 'nil)))
 
 ;; Webjump let's you quickly search google, wikipedia, emacs wiki
-(global-set-key (kbd "C-x g") 'webjump)
-(global-set-key (kbd "C-x M-g") 'browse-url-at-point)
+(global-set-key (kbd "C-x G") 'webjump)
+(global-set-key (kbd "C-x M-G") 'browse-url-at-point)
 
 ;; magit-mode
 (eval-after-load "magit"
