@@ -56,7 +56,9 @@ echo "==== Installing common tools ===="
 `sudo $INSTALL_COMMAND aptitude`
 `sudo $INSTALL_COMMAND curl`
 `sudo $INSTALL_COMMAND fonts-monoid`
+`sudo $INSTALL_COMMAND fonts-powerline`
 `sudo $INSTALL_COMMAND fonts-inconsolata`
+`sudo $INSTALL_COMMAND fonts-hack`
 `sudo $INSTALL_COMMAND fonts-font-awesome`
 `sudo $INSTALL_COMMAND fonts-octicons`
 `sudo $INSTALL_COMMAND python-pip`

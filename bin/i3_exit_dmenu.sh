@@ -31,7 +31,7 @@ if [ $(uname) == 'Linux' ]; then
 fi
 
 # hibernate doesn't seem to work on the Dell Inspiron
-if [[ ( $(lsb_release -si) == "Ubuntu" ) && ( $(echo "$os_version > 16.04" | bc) == "1" ) ]];  then
+if [[ ( $(lsb_release -si) == "Ubuntu" ) && ( $(echo "$os_version > 16.04" | bc) == "1" ) || ( $(lsb_release -si) == "Debian" ) ]];  then
     select=$( echo -e "$message" | rofi -dmenu -i -p "[exit]" -sidebar-mode -config ~/.config/rofi/xdefaults-exit-config -padding "$screen_padding" -hide-scrollbar -font "$fn1")
 elif [[ ( $(lsb_release -si) == "Ubuntu" ) && ( $(echo "$os_version <= 16.04" | bc) == "1" ) ]]; then
     select=$( echo -e "$message" | rofi -sidebar-mode -dmenu -i -p "[exit]" -width 100 -padding "$screen_padding" -hide-scrollbar -lines 6 -eh 2  -opacity "85" -bw 0 -bc "$bg_color" -bg "$color_nb" -fg "$color_nf" -hlbg "$color_sb" -hlfg "$color_sf" -hide-scroll-bar -font "$fn1")
