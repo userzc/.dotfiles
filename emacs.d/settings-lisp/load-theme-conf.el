@@ -83,7 +83,7 @@
 ;; (setq selected-font "droid-sans-mono")
 ;; (setq selected-font "droid-sans-mono-dotted")
 ;; (setq selected-font "droid-sans-mono-slashed")
-;; (setq selected-font "fira-mono-10")
+;; (setq selected-font "fira-code")
 (setq selected-font "Hack-10")
 ;; (setq selected-font "inconsolata")
 ;; (setq selected-font "inconsolata-dz")
@@ -103,7 +103,7 @@
 (if (equal system-type 'gnu/linux)
     (condition-case nil
         (set-frame-font selected-font nil t)
-      (error
+      (error "Failed to set selected-font. Attempting to use Inconsolata-11"
        (set-frame-font "Inconsolata-11" nil t)))
   (condition-case nil
       (set-frame-font "Inconsolata-11" nil t)

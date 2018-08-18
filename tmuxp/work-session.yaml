@@ -7,16 +7,16 @@ windows:
       - htop
       - tail -f /var/log/syslog
       - speedometer -r enp2s0f5 -t enp2s0f5 -c -r wlp1s0 -t wlp1s0
-  - window_name: "xenial_vagrant"
+  - window_name: "home"
     panes:
       - shell_command:
-          - cd "/home/rene/xenial_vagrant/"
+          - cd "/home/rene/"
       - shell_command:
-          - cd "/home/rene/xenial_vagrant/"
+          - cd "/home/rene/"
   - window_name: "p-workspace"
     panes:
       - shell_command:
-          - cd "/home/rene/personal-workspace/TimeTableScheduler/"
+          - cd "/home/rene/personal-workspace/reporte-ventas-centerfit"
       - shell_command:
-          - cd "/home/rene/personal-workspace/TimeTableScheduler/"
+          - cd "/home/rene/personal-workspace/reporte-ventas-centerfit"
     focus: true
