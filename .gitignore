@@ -64,6 +64,3 @@ el-get/
 
 # bookmarks autogenerados
 emacs.d/bookmarks
-
-# network security autogenerados
-emacs.d/network-security.data

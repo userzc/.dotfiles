@@ -118,6 +118,7 @@
         sp-backward-sexp
         sp-backward-slurp-sexp
         sp-backward-up-sexp
+        sp-copy-sexp
         sp-down-sexp
         sp-forward-barf-sexp
         sp-forward-sexp
@@ -174,6 +175,7 @@
         dired-unmark-backward
         diredp-next-line
         diredp-relsymlink-this-file
+        down-list
         ein:notebook-complete-dot
         ein:notebook-save-notebook-command
         ein:worksheet-execute-cell

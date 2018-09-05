@@ -48,7 +48,7 @@
 ;; Configuración de proyectos para npm ;;
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
-(add-to-list 'projectile-globally-ignored-directories "node_modules")
+(add-to-list 'projectile-globally-ignored-directories "*node_modules")
 
 ;; ;; Añadir nuevo tipo de projecto -- versión 0.14.0 (stable)
 ;; (projectile-register-project-type 'npm '("package.json")
