@@ -68,9 +68,13 @@ echo "==== Installing common tools ===="
 echo "==== Installing oh-my-zsh ===="
 if [ ! -d "$HOME/.oh-my-zsh" ]; then
     cd $HOME
-    sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
-    # Esta línea pretende eliminar el archivo zshrc creado por .oh-my-zsh
-    rm .zshrc
+    # sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
+    git clone --depth=1 https://github.com/robbyrussell/oh-my-zsh.git ~/.oh-my-zsh
+
+    # Respaldo de .zshrc existente
+    if [ -f ~/.zshrc ] || [ -h ~/.zshrc ]; then
+        mv ~/.zshrc ~/.zshrc.pre-oh-my-zsh;
+    fi
 else
     echo "===== oh-my-sh already installed"
 fi
