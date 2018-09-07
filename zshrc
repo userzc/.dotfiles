@@ -204,7 +204,11 @@ export PYTHONPATH=$PYTHONPATH:"$HOME/Documents/Semestre 4/PruebaGeneral2D/Python
 export PYTHONPATH=$PYTHONPATH:"$HOME/Documents/FORCE_md/"
 export PYTHONPATH=$PYTHONPATH:"$HOME/lib/python_lib/"
 
-if [[ -d $HOME/.virtualenvs ]]; then
+if [ -x "$( command -v virtualenv)" ]; then
+    #  /usr/bin/virtualenv
+    if [[ ! -d $HOME/.virtualenvs ]]; then
+        mkdir $HOME/.virtualenvs
+    fi
     export WORKON_HOME="$HOME/.virtualenvs"
     plugins+=(virtualenv)
 else
@@ -213,6 +217,8 @@ fi
 
 if [[ -e /usr/local/bin/virtualenvwrapper.sh ]]; then
     source /usr/local/bin/virtualenvwrapper.sh
+elif [[ -f /usr/share/virtualenvwrapper/virtualenvwrapper.sh ]]; then
+    source /usr/share/virtualenvwrapper/virtualenvwrapper.sh
 else
     echo "\033[0;31m"'virtualenvwrapper not active'"\033[0;31m"
 fi
