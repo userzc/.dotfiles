@@ -50,6 +50,7 @@
       # as root
       aptitude install sudo
       adduser $USER sudo
+      adduser $USER adm
     #+end_src
 
 ** Basic =i3= environment

@@ -205,7 +205,6 @@ export PYTHONPATH=$PYTHONPATH:"$HOME/Documents/FORCE_md/"
 export PYTHONPATH=$PYTHONPATH:"$HOME/lib/python_lib/"
 
 if [ -x "$( command -v virtualenv)" ]; then
-    #  /usr/bin/virtualenv
     if [[ ! -d $HOME/.virtualenvs ]]; then
         mkdir $HOME/.virtualenvs
     fi

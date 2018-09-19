@@ -81,6 +81,7 @@ fi
 
 `sudo pip install tmuxp`
 `sudo pip install yamllint`
+`sudo pip install speedtest-cli`
 
 echo "==== Installing Dotfiles ===="
 if [ ! -d "$HOME/.dotfiles" ]; then
