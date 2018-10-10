@@ -8,7 +8,17 @@ elif [ `uname` = 'Linux' ]; then
         export OS_TYPE='redhat'
         export INSTALL_COMMAND='yum -y install'
     elif [ -n `lsb_release` ]; then
+        distributor_id=$(lsb_release -is)
         export OS_TYPE='debian'
+        if [ $distributor_id = 'Ubuntu' ]; then
+            # Ubuntu
+            export EMACS_VERSION='emacs'
+            echo 'Ubuntu detected'
+        else
+            # Debian
+            export EMACS_VERSION='emacs25'
+            echo 'Debian detected'
+        fi
         export INSTALL_COMMAND='apt-get -y install'
     fi
 else
@@ -25,7 +35,7 @@ echo "==== Installing common tools ===="
 `sudo $INSTALL_COMMAND python3`
 `sudo $INSTALL_COMMAND python`
 `sudo $INSTALL_COMMAND git`
-`sudo $INSTALL_COMMAND emacs`
+`sudo $INSTALL_COMMAND $EMACS_VERSION`
 `sudo $INSTALL_COMMAND speedometer`
 `sudo $INSTALL_COMMAND silversearcher-ag`
 `sudo $INSTALL_COMMAND htop`
@@ -35,51 +45,36 @@ echo "==== Installing common tools ===="
 `sudo $INSTALL_COMMAND aptitude`
 `sudo $INSTALL_COMMAND curl`
 `sudo $INSTALL_COMMAND fonts-monoid`
+`sudo $INSTALL_COMMAND fonts-powerline`
 `sudo $INSTALL_COMMAND fonts-inconsolata`
+`sudo $INSTALL_COMMAND fonts-hack`
 `sudo $INSTALL_COMMAND fonts-font-awesome`
 `sudo $INSTALL_COMMAND fonts-octicons`
+`sudo $INSTALL_COMMAND python-pip`
+`sudo $INSTALL_COMMAND python3-pip`
+`sudo $INSTALL_COMMAND virtualenvwrapper`
 
 echo "==== Installing oh-my-zsh ===="
 if [ ! -d "$HOME/.oh-my-zsh" ]; then
     cd $HOME
-    sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
-    # Esta línea pretende eliminar el archivo zshrc creado por .oh-my-zsh
-    rm .zshrc
+    # sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
+    git clone --depth=1 https://github.com/robbyrussell/oh-my-zsh.git ~/.oh-my-zsh
+
+    # Respaldo de .zshrc existente
+    if [ -f ~/.zshrc ] || [ -h ~/.zshrc ]; then
+        mv ~/.zshrc ~/.zshrc.pre-oh-my-zsh;
+    fi
 else
     echo "===== oh-my-sh already installed"
 fi
 
-echo "==== Installing extra fonts for neotree (emacs) ===="
-mkdir "$HOME/.fonts/" && cd "$HOME/.fonts/"
-if [ ! -f "$HOME/.fonts/weathericons.ttf" ]; then
-    curl -LO https://github.com/domtronn/all-the-icons.el/raw/master/fonts/weathericons.ttf
-fi
-if [ ! -f "$HOME/.fonts/all-the-icons.tt" ]; then
-    curl -LO https://github.com/domtronn/all-the-icons.el/raw/master/fonts/all-the-icons.ttf
-fi
-if [ ! -f "$HOME/.fonts/file-icons.ttf" ]; then
-    curl -LO https://github.com/domtronn/all-the-icons.el/raw/master/fonts/file-icons.ttf
-fi
-`fc-cache -f $HOME/.fonts/`
-
-echo "==== Installing pip ===="
-cd "$HOME"
-curl_output=$(curl -O --silent --write-out "%{http_code}\n" https://bootstrap.pypa.io/get-pip.py)
-case "$curl_output" in
-    404)echo "Not suitable to install";;
-    200)echo "Installing"
-        `sudo python get-pip.py `
-        `git clone --depth 1 https://github.com/powerline/fonts $HOME/.fonts/powerline-fonts`
-        cd "$HOME/.fonts/powerline-fonts"
-        `./install.sh`
-        `pip install --user tmuxp`
-        `sudo pip install yamllint`
-        `sudo pip install speedtest-cli`
-esac
+`sudo pip install tmuxp`
+`sudo pip install yamllint`
+`sudo pip install speedtest-cli`
 
 echo "==== Installing Dotfiles ===="
 if [ ! -d "$HOME/.dotfiles" ]; then
-    /usr/bin/env git clone --depth 1 https://github.com/userzc/.dotfiles.git $HOME/.dotfiles
+    /usr/bin/env git clone --depth 1 --no-single-branch https://github.com/userzc/.dotfiles.git $HOME/.dotfiles
     cd $HOME/.dotfiles
     git submodule sync
     git submodule update --init --recursive
@@ -89,4 +84,5 @@ fi
 
 echo "==== To change default shell ===="
 echo "==== type: chsh -s /bin/zsh ==="
+echo "==== or:  edit /etc/passwd  ==="
 exit 0

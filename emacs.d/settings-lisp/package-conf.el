@@ -34,7 +34,10 @@
         (lacarte . "marmalade")
         (groovy-mode . "melpa")
         (exec-path-from-shell . "melpa-stable")
-        (yasnippet-snippets . "melpa-stable")))
+        (yasnippet-snippets . "melpa-stable")
+        (editorconfig . "melpa-stable")
+
+))
 
 (defvar package-filter-function nil
   "Optional predicate function used to internally filter packages
