@@ -64,6 +64,7 @@ echo "==== Installing common tools ===="
 `sudo $INSTALL_COMMAND python-pip`
 `sudo $INSTALL_COMMAND python3-pip`
 `sudo $INSTALL_COMMAND virtualenvwrapper`
+`sudo $INSTALL_COMMAND playerctl`
 
 echo "==== Installing oh-my-zsh ===="
 if [ ! -d "$HOME/.oh-my-zsh" ]; then

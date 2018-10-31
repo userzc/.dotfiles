@@ -97,4 +97,7 @@
 ;; projectile prefix
 (setq projectile-keymap-prefix (kbd "C-c p"))
 
+;; smerge prefix
+(setq smerge-command-prefix (kbd "C-c v"))
+
 (provide 'default-conf)

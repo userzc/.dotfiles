@@ -158,6 +158,11 @@
      (define-key magit-status-mode-map (kbd "q") 'magit-quit-session)
      (global-set-key (kbd "C-c M-m") 'magit-status)))
 
+;; ;; smerge-mode
+;; (eval-after-load "smerge-mode"
+;;   '(progn
+;;      (setq smerge-command-prefix (kbd "C-c v"))))
+
 ;; monky-mode
 (eval-after-load "monky"
   '(progn
