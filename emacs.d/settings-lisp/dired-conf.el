@@ -4,6 +4,9 @@
 (add-hook 'dired-load-hook
           (function (lambda () (load "dired-x"))))
 
+;; Dired listing options
+(setq dired-listing-switches "-alh --group-directories-first")
+
 ;; dired-details+
 (require 'dired-details+)
 (setq-default dired-details-hidden-string "--- " )

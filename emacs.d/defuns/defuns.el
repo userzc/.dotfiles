@@ -362,4 +362,22 @@ buffer is narrowed."
     (while (search-forward "\n" nil t) (replace-match "" nil t))
     (buffer-string)))
 
+(defun display-ansi-colors ()
+  "Función para colorear logs con códigos de color"
+  (interactive)
+  (let ((inhibit-read-only t))
+    (ansi-color-apply-on-region (point-min) (point-max))))
+
+
+;; Revisar la página 63 de "Writing GNU Emacs Extensions.PDF" para más
+;; información sobre cómo realizar todo sin necesitar interacción del
+;; usuario
+(defun clean-ansi-colors ()
+  "Función para eliminar códigos de color, principalmente de archivos logs"
+  (interactive)
+  (let ((inhibit-read-only t))
+    (ansi-color-filter-region (point-min) (point-max))
+    (query-replace "[1A" "" nil (point-min) (point-max))
+    (query-replace "[2K" "" nil (point-min) (point-max))))
+
 (provide 'defuns)
