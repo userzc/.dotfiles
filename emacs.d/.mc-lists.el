@@ -226,6 +226,7 @@
         toggle-input-method
         wdired-finish-edit
         wdired-previous-line
+        wgrep-change-to-wgrep-mode
         wgrep-finish-edit
         windsize-down
         windsize-up
