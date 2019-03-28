@@ -6,10 +6,12 @@
 #     if (b == 0) {x = 1; y = 0; d = a; return;}
 #     extended_euclid(b, a % b ); # similar as the original gcd
 #     int x1 = y;
-#     int y1 = x - (a / b) * y;
+#     int y1 = x - (a // b) * y;
 #     x = x1;
 #     y = y1;
 # }
+
+from __future__ import print_function
 
 d = 0
 x = 0
@@ -36,7 +38,7 @@ def extended_euclid(a, b):
         return
         extended_euclid(b, a % b)
         x1 = y
-        y1 = x - (a / b) * y
+        y1 = x - (a // b) * y
         x = x1
         y = y1
 
@@ -59,7 +61,7 @@ def extended_euclid_wiki(a, b, s0=1, s1=0, t0=0, t1=1):
     """
     if b == 0:
         return s0, t0, a, s1, t1
-    q_i = (a / b)
+    q_i = (a // b)
     x, y, d, s, t = extended_euclid_wiki(b, a % b, s1, s0 - q_i * s1,
                                         t1, t0 - q_i * t1)
     return y, x, d, s, t
@@ -85,10 +87,10 @@ def extended_gcd(a, b, s0=1, s1=0, t0=0, t1=1):
     s0, s1, t0, t1, r0, r1 = 1, 0, 0, 1, a, b
 
     while r1 != 0:
-        qi = r0 / r1
+        qi = r0 // r1
         (s0, s1, t0, t1, r0, r1) = (s1, s0 - qi * s1, t1, t0 - qi * t1,
                                     r1, r0 - qi * r1)
-        print '(s0, s1, t0, t1, r0, r1) = ', (s0, s1, t0, t1, r0, r1)
+        print('(s0, s1, t0, t1, r0, r1) = (%d, %d, %d, %d, %d, %d)', (s0, s1, t0, t1, r0, r1))
     return s0, t0, s1, t1, r0
 
 def extended_euclid_mod(a, b):
@@ -111,7 +113,7 @@ def extended_euclid_mod(a, b):
     if b == 0:
         return 1, 0, a
     x, y, d = extended_euclid_mod(b, a % b)
-    return y, x - (a / b) * y, d
+    return y, x - (a // b) * y, d
 
 def extended_euclid_mod_test(a, b):
     """This function tests the results of a tuple
@@ -123,8 +125,9 @@ def extended_euclid_mod_test(a, b):
 
     """
     tupla_euclid = euclid(a, b)
-    print "a * s + b * r =", a , '*', tupla_euclid[0] , '+', b , '*', tupla_euclid[1], '=', a * tupla_euclid[0] + b * tupla_euclid[1]
-    print "d =", tupla_euclid[2]
+    print("a * s + b * r = %d * %d + %d * %d = %d", (a, tupla_euclid[0] , b, tupla_euclid[1], a * tupla_euclid[0] + b * tupla_euclid[1]))
+    print("d = %d", tupla_euclid[2])
+
 
 def extended_euclid_mod_corrobora(a, b, tupla_euclid):
     """This function tests the results of the `tupla_euclid` tuple with
@@ -142,8 +145,8 @@ def extended_euclid_mod_corrobora(a, b, tupla_euclid):
         The tuple resulted from calling euclid(a, b)
 
     """
-    print "a * s + b * r =", a ,'*', tupla_euclid[0] , '+', b ,'*', tupla_euclid[1], '=', a * tupla_euclid[0] + b * tupla_euclid[1]
-    print "d =", tupla_euclid[2]
+    print("a * s + b * r = %d * %d + %d * %d = %d", (a, tupla_euclid[0], b, tupla_euclid[1], a * tupla_euclid[0] + b * tupla_euclid[1]))
+    print("d = %d", tupla_euclid[2])
 
 def euclid(a, b):
     """This function calculates the greatest common divisor of two
@@ -164,4 +167,4 @@ def euclid(a, b):
     if b == 0:
         return (1, 0, a) if a > 0 else (-1, 0, -a)
     x, y, d = euclid(b, a % b)
-    return y, x - (a / b) * y, d
+    return y, x - (a // b) * y, d
