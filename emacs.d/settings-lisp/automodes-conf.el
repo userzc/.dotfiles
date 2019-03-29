@@ -39,6 +39,9 @@
       (add-to-list 'auto-mode-alist '("\\.md\\'" . gfm-mode))
       (add-to-list 'auto-mode-alist '("\\.markdown\\'" . markdown-mode))))
 
+;; Para archivos Rmd (jupytext)
+(add-to-list 'auto-mode-alist '("\\.Rmd$"  . poly-markdown-mode))
+
 ;; textile-mode
 (eval-after-load "textile.el"
     (progn
