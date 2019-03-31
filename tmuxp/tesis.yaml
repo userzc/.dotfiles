@@ -1,4 +1,4 @@
-session_name: Tesis
+!!session_name: Tesis
 start-directory: '~'
 windows:
   - window_name: Codigo Tesis

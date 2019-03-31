@@ -85,7 +85,7 @@
 ;; (setq selected-font "droid-sans-mono-slashed")
 ;; (setq selected-font "fira-mono-10")
 ;; (setq selected-font "Hack-10")
-(setq selected-font "Monoisome-9")
+(setq selected-font "Monoisome-8")
 ;; (setq selected-font "inconsolata")
 ;; (setq selected-font "inconsolata-dz")
 ;; (setq selected-font "inconsolata-g")
@@ -105,9 +105,9 @@
     (condition-case nil
         (set-frame-font selected-font nil t)
       (error
-       (set-frame-font "Inconsolata-11" nil t)))
+       (set-frame-font "Inconsolata-8" nil t)))
   (condition-case nil
-      (set-frame-font "Inconsolata-11" nil t)
+      (set-frame-font "Inconsolata-8" nil t)
     (error
      (set-frame-font "DejaVu Sans Mono-10" nil t))))
 

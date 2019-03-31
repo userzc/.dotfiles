@@ -22,6 +22,9 @@ font -misc-fixed-medium-r-normal--13-120-75-75-C-70-iso10646-1
 # chose a FreeType font, such as:
 # font pango:DejaVu Sans Mono 10
 
+# Screen resolution
+exec --no-startup-id xrandr --output eDP-1-1 --mode 2048x1152
+
 # Use Mouse+$mod to drag floating windows to their wanted position
 floating_modifier $mod
 
@@ -361,7 +364,6 @@ bar {
 # font xft:DejaVu Sans Mono 9, Font Awesome 9
 font xft:Font Awesome 8
 status_command i3status --config ~/.config/i3/i3status.conf
-tray_output primary
 position top
 
 # i3bar_command i3bgbar
