@@ -209,6 +209,7 @@ if [ -x "$( command -v virtualenv)" ]; then
         mkdir $HOME/.virtualenvs
     fi
     export WORKON_HOME="$HOME/.virtualenvs"
+    export VIRTUALENV_PYTHON=`which python3`
     plugins+=(virtualenv)
 else
     echo "\033[0;31m"'virtualenv not active'"\033[0;31m"
