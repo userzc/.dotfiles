@@ -296,6 +296,8 @@ assign [class="Spotify"  instance="spotify"] → $ws2
 # This line actually works, it needs a config reload after spotify is running
 for_window [class="Spotify"] move to workspace $ws2
 
+# Assign Rhythmbox
+assign [class="Rhythmbox" instance="rhythmbox"] → $ws2
 
 # resize window (you can also use the mouse for that)
 mode "resize" {
@@ -366,6 +368,9 @@ bindsym XF86MonBrightnessUp exec xbacklight -inc 10 # increase screen brightness
 bindsym XF86MonBrightnessDown exec xbacklight -dec 10 # decrease screen brightness
 bindsym Shift+XF86AudioRaiseVolume exec xbacklight -inc 10 # increase screen brightness
 bindsym Shift+XF86AudioLowerVolume exec xbacklight -dec 10 # decrease screen brightness
+
+# Pomodoro
+bindsym $mod+Shift+p exec gnome-pomodoro --pause-resume
 
 # ----------
 

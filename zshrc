@@ -316,11 +316,9 @@ export PATH="$HOME/.cask/bin:$PATH"
 # Cargo (rust and parity)
 export PATH="$HOME/.cargo/bin:$PATH"
 
-# Activate tmuxp source completion(tmuxp >= 1.2)
+# Activate tmuxp source completion (tmuxp >= 1.5.1)
 if $(which tmuxp &> /dev/null) ; then
-    autoload -U bashcompinit
-    bashcompinit -i
-    eval "$(_TMUXP_COMPLETE=source tmuxp)"
+    eval "$(_TMUXP_COMPLETE=source_zsh tmuxp)"
 else
     echo "tmuxp not found"
 fi
