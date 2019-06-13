@@ -1,0 +1,43 @@
+session_name: data-analysis
+start-directory: "~"
+windows:
+  - window_name: "stats"
+    layout: "tiled"
+    panes:
+      - htop
+      - tail -f /var/log/syslog
+      - speedometer -r enp4s0 -t enp4s0 -c -r wlp5s0 -t wlp5s0
+      - nvtop
+  - window_name: "home"
+    panes:
+      - shell_command:
+          - cd "/home/rene/"
+      - shell_command:
+          - cd "/home/rene/"
+  - window_name: "data-providers-integration"
+    panes:
+      - shell_command:
+          - cd "/home/rene/workspace/data-providers-integrations/report-cli/"
+          - workon report-cli
+      - shell_command:
+          - cd "/home/rene/workspace/data-providers-integrations/report-cli/"
+          - workon report-cli
+    focus: true
+  - window_name: "available-entities-reader"
+    panes:
+      - shell_command:
+          - cd "/home/rene/workspace/hotels-data-analysis/"
+          - cd "available_entities_reader/"
+          - workon report-cli
+      - shell_command:
+          - cd "/home/rene/workspace/hotels-data-analysis/"
+          - cd "available_entities_reader/"
+          - workon report-cli
+  - window_name: "jupyter-notebooks"
+    panes:
+      - shell_command:
+          - cd "/home/rene/workspace/jupyter-notebooks/"
+          - workon report-cli
+      - shell_command:
+          - cd "/home/rene/workspace/jupyter-notebooks/"
+          - workon report-cli

@@ -15,14 +15,6 @@ emacs.d/snippets/latex-mode/
 # yasnippets de org-yasnippets
 emacs.d/snippets/org-mode/
 
-# archivos de tmuxp que no han sido rastreados
-tmuxp/
-
-# mantén algunos archivos locales
-!tmuxp/example.yaml
-!tmuxp/tesis.yaml
-!tmuxp/work-session.yaml
-
 # archivos byte-compiled
 *.elc
 
