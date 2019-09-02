@@ -8,7 +8,7 @@
 
 ;; Indentación de javascript
 ;; https://github.com/standard/standard
-(setq js-indent-level 2)
+(setq js-indent-level 4)
 
 (setq js2-highlight-level 3)
 

@@ -17,6 +17,14 @@ windows:
   - window_name: "data-providers-integration"
     panes:
       - shell_command:
+          - cd "/home/rene/workspace/data-providers-integrations"
+          - workon report-cli
+      - shell_command:
+          - cd "/home/rene/workspace/data-providers-integrations"
+          - workon report-cli
+  - window_name: "report-cli"
+    panes:
+      - shell_command:
           - cd "/home/rene/workspace/data-providers-integrations/report-cli/"
           - workon report-cli
       - shell_command:
@@ -33,26 +41,31 @@ windows:
           - cd "/home/rene/workspace/hotels-data-analysis/"
           - cd "available_entities_reader/"
           - workon report-cli
-  - window_name: "jupyter-notebooks"
+  - window_name: "outlier-detection-cli"
     panes:
       - shell_command:
-          - cd "/home/rene/workspace/jupyter-notebooks/"
-          - workon report-cli
+          - cd "/home/rene/workspace/data-providers-integrations/"
+          - cd "outlier-detection-cli/"
+          - workon outlier-detection-cli
       - shell_command:
-          - cd "/home/rene/workspace/jupyter-notebooks/"
-          - workon report-cli
+          - cd "/home/rene/workspace/data-providers-integrations/"
+          - cd "outlier-detection-cli/"
+          - workon outlier-detection-cli
   - window_name: "versioned-jupyter-notebooks"
     panes:
       - shell_command:
           - cd "/home/rene/workspace/data-providers-integrations/"
           - cd "versioned_jupyter_notebooks/"
-          - workon match-freemium
+          - workon report-cli
       - shell_command:
           - cd "/home/rene/workspace/data-providers-integrations/"
           - cd "versioned_jupyter_notebooks/"
-          - workon match-freemium
+          - workon report-cli
   - window_name: "report-cli-output"
     panes:
       - shell_command:
           - cd "/home/rene/workspace/report-cli-output/"
+          - workon report-cli
+      - shell_command:
+          - cd "/fvp/report-cli-output/"
           - workon report-cli
