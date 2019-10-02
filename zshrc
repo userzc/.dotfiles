@@ -4,6 +4,9 @@ export ZSH=$HOME/.oh-my-zsh
 # Path to custom definitions (themes and plugins)
 export ZSH_CUSTOM="$HOME/.dotfiles/zsh_custom"
 
+# Variable para gcloud zsh plugin
+export CLOUDSDK_HOME="/usr/share/google-cloud-sdk/"
+
 # Example aliases
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
@@ -288,6 +291,11 @@ export PATH="$HOME/dev-android/$ANDROID_SDK/platform-tools/":$PATH
 export ANDROID_SDK_ROOT="$HOME/dev-android/$ANDROID_SDK/"
 # export ANDROID_SDK_ROOT="$HOME/dev-android/$ANDROID_SDK/tools/"
 
+# Add gcloud plugin in case the folder exists
+if [[ -d "$CLOUDSDK_HOME" ]]; then
+    plugins+=(gcloud)
+fi
+
 # This sourcing must happend after all plugins have been declared
 source $ZSH/oh-my-zsh.sh
 
@@ -344,3 +352,6 @@ else
     [ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"  # This loads nvm
     [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
 fi
+
+# zsh syntax highlighting (requires ubuntu package zsh-syntax-highlighting)
+source /usr/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh

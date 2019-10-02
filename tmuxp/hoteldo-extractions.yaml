@@ -54,3 +54,19 @@ windows:
       - shell_command:
           - cd "/fvp/repository/ps-directrips-ota-sysadmin/DB/database/hotelDO"
           - cd "images-gen"
+  - window_name: "syncHDODirectrips"
+    panes:
+      - shell_command:
+          - cd "/fvp/repository/ps-directrips-ota-sysadmin/DB/database/hotelDO"
+          - cd "syncHDODirectrips"
+      - shell_command:
+          - cd "/fvp/repository/ps-directrips-ota-sysadmin/DB/database/hotelDO"
+          - cd "syncHDODirectrips"
+  - window_name: "genericScripts"
+    panes:
+      - shell_command:
+          - cd "/fvp/repository/ps-directrips-ota-sysadmin/DB/database"
+          - cd "genericScripts"
+      - shell_command:
+          - cd "/fvp/repository/ps-directrips-ota-sysadmin/DB/database"
+          - cd "genericScripts"
