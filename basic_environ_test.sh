@@ -51,6 +51,7 @@ echo "==== Installing common tools ===="
 `sudo $INSTALL_COMMAND silversearcher-ag`
 `sudo $INSTALL_COMMAND htop`
 `sudo $INSTALL_COMMAND zsh`
+`sudo $INSTALL_COMMAND zsh-syntax-highlighting`
 `sudo $INSTALL_COMMAND tmux`
 `sudo $INSTALL_COMMAND xclip`
 `sudo $INSTALL_COMMAND aptitude`

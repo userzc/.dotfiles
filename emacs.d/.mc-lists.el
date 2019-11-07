@@ -13,6 +13,7 @@
         backward-up-list
         beginning-of-buffer
         beginning-of-defun
+        browse-url-at-point
         browse-url-of-buffer
         c-electric-colon
         c-electric-delete-forward
@@ -58,6 +59,7 @@
         js2r-contract-object
         js2r-expand-object
         js2r-log-this
+        js2r-rename-var
         keyboard-escape-quit
         keyboard-quit
         kill-region
@@ -190,6 +192,7 @@
         icicle-buffer
         icicle-buffer-other-window
         icicle-delete-window
+        icicle-handle-switch-frame
         icicle-pop-tag-mark
         icicle-pp-eval-expression
         info
@@ -201,6 +204,7 @@
         malabar-run-maven-command
         mouse-drag-mode-line
         mouse-minor-mode-menu
+        mouse-set-region
         move-to-window-line-top-bottom
         multi-term-dedicated-toggle
         neotree-toggle

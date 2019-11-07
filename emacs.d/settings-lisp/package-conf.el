@@ -11,6 +11,10 @@
     (setq package-user-dir "~\\.elpa")
   (setq package-user-dir "~/.emacs.d/elpa"))
 
+;; ;; Arreglo temporal en caso de no poder verificar firmas de paquetes
+;; (setq package-check-signature nill)
+
+
 ;; Intentando nueva forma para descargar paquetes, basado en
 ;; https://github.com/purcell/emacs.d y
 ;; https://github.com/magnars/.emacs.d/blob/master/setup-package.el
