@@ -90,3 +90,6 @@ alias vas='vagrant status'
 alias vaup='vagrant up'
 alias vah='vagrant halt'
 alias vassh='vagrant ssh'
+
+# Paste copied link and parse it with peerflix and vlc
+alias pf='peerflix "$(xclip -o)" --vlc'
