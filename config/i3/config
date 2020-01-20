@@ -371,6 +371,7 @@ bindsym Shift+XF86AudioLowerVolume exec xbacklight -dec 10 # decrease screen bri
 
 # Pomodoro
 bindsym $mod+Shift+p exec gnome-pomodoro --pause-resume
+bindsym $mod+Shift+Control+p exec gnome-pomodoro --start-stop
 
 # ----------
 
