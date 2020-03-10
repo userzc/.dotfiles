@@ -278,6 +278,8 @@ bindsym Mod1+Control+Delete exec "~/bin/i3_exit_dmenu.sh"
 assign [class="^Skype$" instance="^skype$"] → $ws5
 assign [class="^skypeforlinux$" instance="^skypeforlinux$"] → $ws5
 
+assign [class="^Slack$" instance="^slack$"] → $ws5
+
 # Assign  IntelliJ Idea
 assign [class="^jetbrains-idea$" instance="^sun-awt-X11-XFramePeer$"] → $ws1
 assign [class="^jetbrains-idea$" instance="^sun-awt-X11-XDialogPeer$"] → $ws1
