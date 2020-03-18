@@ -115,6 +115,7 @@ plugins=(
     git
     gitignore
     git-extras
+    git-flow
     history
     pip
     themes

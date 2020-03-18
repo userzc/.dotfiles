@@ -1,0 +1,56 @@
+session_name: project-hu
+start-directory: "~"
+windows:
+  - window_name: "stats"
+    layout: "tiled"
+    panes:
+      - htop
+      - tail -f /var/log/syslog
+      - speedometer -r enp4s0 -t enp4s0 -c -r wlp5s0 -t wlp5s0
+      - nvtop
+  - window_name: "home"
+    panes:
+      - shell_command:
+          - cd "/home/rene/"
+      - shell_command:
+          - cd "/home/rene/"
+  - window_name: "project hu"
+    panes:
+      - shell_command:
+          - cd "/datyra/repository/project-hu/"
+          - workon project-hu-env
+      - shell_command:
+          - cd "/datyra/repository/project-hu/"
+          - workon project-hu-env
+  - window_name: "processingaudio"
+    panes:
+      - shell_command:
+          - cd "/datyra/repository/project-hu/processingaudio/"
+          - workon project-hu-env
+      - shell_command:
+          - cd "/datyra/repository/project-hu/processingaudio/"
+          - workon project-hu-env
+  - window_name: "transcription"
+    panes:
+      - shell_command:
+          - cd "/datyra/repository/project-hu/transcription/"
+          - workon project-hu-env
+      - shell_command:
+          - cd "/datyra/repository/project-hu/transcription/"
+          - workon project-hu-env
+  - window_name: "detokenizer"
+    panes:
+      - shell_command:
+          - cd "/datyra/repository/project-hu/detokenizer/"
+          - workon project-hu-env
+      - shell_command:
+          - cd "/datyra/repository/project-hu/detokenizer/"
+          - workon project-hu-env
+  - window_name: "analysis"
+    panes:
+      - shell_command:
+          - cd "/datyra/repository/project-hu/analysis/"
+          - workon project-hu-env
+      - shell_command:
+          - cd "/datyra/repository/project-hu/analysis/"
+          - workon project-hu-env
