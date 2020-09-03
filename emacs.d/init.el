@@ -164,5 +164,6 @@
 (require 'flyspell-conf)
 (require 'tide-conf)
 (require 'jasminejs-conf)
+(require 'sql-conf)
 
 (require 'keybinds-conf)
