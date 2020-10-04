@@ -355,15 +355,21 @@ bindcode $mod+35 exec --no-startup-id mpc next    # ]
 # https://faq.i3wm.org/question/125/how-to-change-the-systems-volume/
 set $current_sink `pactl list short sinks | grep RUNNING | cut -f1`
 # https://faq.i3wm.org/question/3747/enabling-multimedia-keys/
-bindsym XF86AudioRaiseVolume exec pactl set-sink-volume $current_sink +5% # increase sound volume
+# bindsym XF86AudioRaiseVolume exec pactl set-sink-volume $current_sink +5% # increase sound volume
+bindsym $mod+Mod1+Up exec pactl set-sink-volume $current_sink +5% # increase sound volume
 # bindsym XF86AudioLowerVolume exec pactl set-sink-volume 0 -- -5% # original: decrease sound volume
-bindsym XF86AudioLowerVolume exec pactl set-sink-volume $current_sink -5% # working: decrease sound volume
-bindsym XF86AudioMute exec pactl set-sink-mute $current_sink toggle # mute sound
+# bindsym XF86AudioLowerVolume exec pactl set-sink-volume $current_sink -5% # working: decrease sound volume
+bindsym $mod+Mod1+Down exec pactl set-sink-volume $current_sink -5% # working: decrease sound volume
+# bindsym XF86AudioMute exec pactl set-sink-mute $current_sink toggle # mute sound
+bindsym $mod+Mod1+t exec pactl set-sink-mute $current_sink toggle # mute sound
+
 # playerctl: https://github.com/acrisci/playerctl
 # check for the releases page: https://github.com/acrisci/playerctl/releases
-bindsym XF86AudioPlay exec playerctl play-pause
+# bindsym XF86AudioPlay exec playerctl play-pause
+bindsym $mod+Control+space exec playerctl play-pause
 # bindsym Control+XF86AudioPlay exec "unity-control-center sound"
-bindsym Control+XF86AudioPlay exec pavucontrol
+# bindsym Control+XF86AudioPlay exec pavucontrol
+bindsym Control+Shift+space exec pavucontrol
 
 # Sreen brightness controls
 bindsym XF86MonBrightnessUp exec xbacklight -inc 10 # increase screen brightness
