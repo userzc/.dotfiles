@@ -50,16 +50,18 @@ exec --no-startup-id xrandr --output eDP-1-1 --mode 2048x1152
 # Use Mouse+$mod to drag floating windows to their wanted position
 floating_modifier $mod
 
+
 # start applications, same order as in unity
 bindsym $mod+Return exec i3-sensible-terminal
 bindsym $mod+Shift1 exec nautilus --no-desktop
-bindsym $mod+1 exec i3-sensible-terminal -e ranger
+bindsym $mod+1 exec rxvt -e ranger
 # bindsym $mod+2 exec "$BROWSER"
 bindsym $mod+2 exec "google-chrome"
 # # Creo que se utilizaba xmodifiers para acceder a acentos
 # bindsym $mod+3 exec XMODIFIERS="" emacs
 bindsym $mod+3 exec emacs
 bindsym $mod+4 exec rhythmbox
+bindsym $mod+5 exec rxvt -e nnn
 # Screenshot to clipboard (https://github.com/LukeSmithxyz/voidrice/blob/master/.config/i3/config)
 bindsym Print exec maim | xclip -selection clipboard -t image/png
 # Screenshot options
