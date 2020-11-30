@@ -143,7 +143,7 @@
   ;; Auto-start on any markup modes
   '(progn (add-hook 'nxml-mode-hook 'emmet-mode)
           (add-hook 'sgml-mode-hook 'emmet-mode)
-          (define-key emmet-mode-keymap (kbd "C-c C-j")
+          (define-key emmet-mode-keymap (kbd "<C-tab>")
             'emmet-expand-line)
           (define-key emmet-mode-keymap (kbd "C-j") 'nil)
           (define-key emmet-mode-keymap (kbd "<C-return>") 'nil)))
