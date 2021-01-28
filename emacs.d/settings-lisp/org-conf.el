@@ -47,7 +47,7 @@
 ;; active babel languages
 (org-babel-do-load-languages
  'org-babel-load-languages
- '((sh . t)
+ '((shell . t)
    (octave . t)
    (latex . t)
    (maxima . t)
