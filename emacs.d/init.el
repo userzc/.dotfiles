@@ -22,7 +22,7 @@
 ;; - `showkey'
 
 (defvar lista-paquetes-instalados
-  '(ac-mathac-js2 ag all-the-icons auctex auto-complete avy badwolf-theme
+  '(ac-math ac-js2 ag all-the-icons auctex auto-complete avy badwolf-theme
                c-eldoc cedit cl-lib command-log-mode company dash
                deferred dired-details editorconfig ein emmet-mode
                enclose exec-path-from-shell expand-region f

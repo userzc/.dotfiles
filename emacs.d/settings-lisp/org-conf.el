@@ -31,6 +31,12 @@
 ;; (require 'org-mobile)
 ;; (org-mobile-sync-mode 1)
 
+;; Prepare shell babel mode for emacs-version >= 26
+(if (equal emacs-version "25.2.2")
+    (setq shell-org-mode "sh")
+  (setq shell-org-mode "shell"))
+
+
 ;; hilight current line in org-agenda-mode
 (add-hook 'org-agenda-mode-hook
           '(lambda ()
@@ -47,7 +53,7 @@
 ;; active babel languages
 (org-babel-do-load-languages
  'org-babel-load-languages
- '((shell . t)
+ '((sh . t)
    (octave . t)
    (latex . t)
    (maxima . t)
