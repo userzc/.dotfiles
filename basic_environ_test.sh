@@ -52,6 +52,7 @@ echo "==== Installing common tools ===="
 `sudo $INSTALL_COMMAND htop`
 `sudo $INSTALL_COMMAND zsh`
 `sudo $INSTALL_COMMAND zsh-syntax-highlighting`
+`sudo $INSTALL_COMMAND rxvt-unicode`
 `sudo $INSTALL_COMMAND tmux`
 `sudo $INSTALL_COMMAND xclip`
 `sudo $INSTALL_COMMAND aptitude`
@@ -62,7 +63,6 @@ echo "==== Installing common tools ===="
 `sudo $INSTALL_COMMAND fonts-hack`
 `sudo $INSTALL_COMMAND fonts-font-awesome`
 `sudo $INSTALL_COMMAND fonts-octicons`
-`sudo $INSTALL_COMMAND python-pip`
 `sudo $INSTALL_COMMAND python3-pip`
 `sudo $INSTALL_COMMAND virtualenvwrapper`
 `sudo $INSTALL_COMMAND playerctl`
@@ -81,9 +81,9 @@ else
     echo "===== oh-my-sh already installed"
 fi
 
-`sudo pip install tmuxp`
-`sudo pip install yamllint`
-`sudo pip install speedtest-cli`
+`sudo pip3 install tmuxp`        # not working [pip], perhaps with pip3
+`sudo pip3 install yamllint`     # not working [pip], perhaps with pip3
+`sudo pip3 install speedtest-cli` # not working [pip], perhaps with pip3
 
 echo "==== Installing Dotfiles ===="
 if [ ! -d "$HOME/.dotfiles" ]; then
