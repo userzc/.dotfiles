@@ -1,7 +1,8 @@
 ;; Ido backup settings
-(setq ido-enable-flex-mathching t)
-(setq ido-everywhere t)
-(ido-better-flex/enable)
+(require 'flx-ido)
 (ido-mode 1)
+(ido-everywhere 1)
+(flx-ido-mode 1)
+
 
 (provide 'ido-conf)

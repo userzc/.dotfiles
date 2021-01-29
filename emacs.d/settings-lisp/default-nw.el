@@ -19,8 +19,8 @@
 ;; package-load-list para no cargar demasiados paquetes
 
 (setq package-load-list '((ac-math nil)
-			  (ace-jump-mode t)
-			  (ack-and-a-half t)
+			  (avy t)
+			  (ag t)
 			  (auctex nil)
 			  (auto-complete nil)
 			  (async t)
@@ -51,7 +51,8 @@
 			  (google-contacts t)
 			  (icicles nil)
 			  (icomplete+ t)
-			  (ido-better-flex t)
+			  (flx t)
+			  (flx-ido t)
 			  (magit t)
 			  (magit-popup t)
 			  (mark-more-like-this nil)
@@ -103,7 +104,7 @@
 ;; Librerias requeridas
 (require 'cl)
 (require 'misc)
-(require 'ace-jump-mode)
+(require 'avy)
 (require 'smart-tab)
 (require 'expand-region)
 (require 'markdown-mode)
@@ -118,7 +119,7 @@
 ;; (require 'wrap-region-conf)
 (require 'smartparens-conf)
 (require 'ido-conf)
-(require 'mail-conf)
+;; (require 'mail-conf)
 (require 'dired-conf)
 ;; (require 'yasnippet-conf)
 (require 'js2-mode)
