@@ -31,10 +31,18 @@
 ;; (require 'org-mobile)
 ;; (org-mobile-sync-mode 1)
 
+(setq org-babel-language-list
+      '((octave . t)
+       (latex . t)
+       (maxima . t)
+       (python . t)
+       (C . t)
+       (java . t)))
+
 ;; Prepare shell babel mode for emacs-version >= 26
 (if (equal emacs-version "25.2.2")
-    (setq shell-org-mode "sh")
-  (setq shell-org-mode "shell"))
+    (add-to-list 'org-babel-language-list '(sh . t))
+  (add-to-list 'org-babel-language-list '(shell . t)))
 
 
 ;; hilight current line in org-agenda-mode
@@ -53,13 +61,7 @@
 ;; active babel languages
 (org-babel-do-load-languages
  'org-babel-load-languages
- '((sh . t)
-   (octave . t)
-   (latex . t)
-   (maxima . t)
-   (python . t)
-   (C . t)
-   (java . t)))
+ org-babel-language-list)
 
 ;; org-agenda custom commands
 ;; http://orgmode.org/worg/org-tutorials/org-custom-agenda-commands.html
