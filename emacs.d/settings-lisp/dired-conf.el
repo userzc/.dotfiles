@@ -7,8 +7,11 @@
 ;; Dired listing options
 (setq dired-listing-switches "-alh --group-directories-first")
 
-;; dired-details+
-(require 'dired-details+)
-(setq-default dired-details-hidden-string "--- " )
+;; dired-details+ conf if dired-details is available
+(if (equal emacs-version "25.2.2")
+    (progn
+      (require 'dired-details+)
+      (setq-default dired-details-hidden-string "--- " )))
+
 
 (provide 'dired-conf)
