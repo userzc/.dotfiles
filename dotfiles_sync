@@ -42,6 +42,8 @@ IGNORED_ITEMS = [
     'batch_script.el',
     'EmacsCustomKeymap.xml',    # Ignore until I figure out where to
                                 # put this
+    'basic_environ_ubuntu_18_04.sh',
+    'i3_environ_ubuntu_18_04.sh',
 ]
 SPECIFIC_INSTALL_DIRS = [
     # (dir_path, destination_path)
