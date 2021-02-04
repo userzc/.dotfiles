@@ -356,3 +356,22 @@ fi
 
 # zsh syntax highlighting (requires ubuntu package zsh-syntax-highlighting)
 source /usr/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+
+if [ ! -d "$HOME/anaconda3" ]; then
+    echo "\033[0;31m"'nvm not active'"\033[0;31m"
+else
+    # >>> conda initialize >>>
+    # !! Contents within this block are managed by 'conda init' !!
+    __conda_setup="$('/home/rene/anaconda3/bin/conda' 'shell.zsh' 'hook' 2> /dev/null)"
+    if [ $? -eq 0 ]; then
+        eval "$__conda_setup"
+    else
+        if [ -f "/home/rene/anaconda3/etc/profile.d/conda.sh" ]; then
+            . "/home/rene/anaconda3/etc/profile.d/conda.sh"
+        else
+            export PATH="/home/rene/anaconda3/bin:$PATH"
+        fi
+    fi
+    unset __conda_setup
+    # <<< conda initialize <<<
+fi
