@@ -380,4 +380,12 @@ buffer is narrowed."
     (query-replace "[1A" "" nil (point-min) (point-max))
     (query-replace "[2K" "" nil (point-min) (point-max))))
 
+;; shorthand for interactive lambdas
+;; https://github.com/magnars/.emacs.d/blob/master/defuns/misc-defuns.el
+(defmacro λ (&rest body)
+  `(lambda ()
+     (interactive)
+     ,@body))
+
+
 (provide 'defuns)

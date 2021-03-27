@@ -12,6 +12,10 @@
 
 
 
+;; open load theme file
+;; https://stackoverflow.com/a/12558095
+(global-set-key (kbd "C-S-t") (λ (find-file "~/.emacs.d/settings-lisp/load-theme-conf.el")))
+
 ;; change help-map to C-c h, taken from:
 ;; https://github.com/magnars/.emacs.d/blob/master/key-bindings.el
 (global-set-key (kbd "C-c h") (lookup-key global-map (kbd "C-h")))
@@ -88,12 +92,6 @@
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;; magnars' keybinding rip-off ;;
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-;; shorthand for interactive lambdas
-(defmacro λ (&rest body)
-  `(lambda ()
-     (interactive)
-     ,@body))
-
 (eval-after-load "s"
   '(progn
      ;; Change word separators
@@ -103,9 +101,6 @@
      (global-set-key (kbd "C-x + c") (λ (replace-region-by 's-lower-camel-case)))
      (global-set-key (kbd "C-x + C") (λ (replace-region-by 's-upper-camel-case)))))
 
-
-;; open load theme file
-(global-set-key (kbd "C-S-t") (λ (find-file "~/.emacs.d/settings-lisp/load-theme-conf.el")))
 
 ;; Las siguientes lineas son para probar el paquete `bookmark+'
 (eval-after-load "bookmark+"
