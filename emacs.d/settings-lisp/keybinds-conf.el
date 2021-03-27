@@ -10,6 +10,8 @@
              (global-set-key (kbd "M-F") 'forward-to-word)
              (global-set-key (kbd "M-B") 'backward-to-word)))
 
+
+
 ;; change help-map to C-c h, taken from:
 ;; https://github.com/magnars/.emacs.d/blob/master/key-bindings.el
 (global-set-key (kbd "C-c h") (lookup-key global-map (kbd "C-h")))
@@ -101,6 +103,9 @@
      (global-set-key (kbd "C-x + c") (λ (replace-region-by 's-lower-camel-case)))
      (global-set-key (kbd "C-x + C") (λ (replace-region-by 's-upper-camel-case)))))
 
+
+;; open load theme file
+(global-set-key (kbd "C-S-t") (λ (find-file "~/.emacs.d/settings-lisp/load-theme-conf.el")))
 
 ;; Las siguientes lineas son para probar el paquete `bookmark+'
 (eval-after-load "bookmark+"
