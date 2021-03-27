@@ -58,11 +58,13 @@ URxvt.depth: 24
 URxvt.iso14755: false
 
 
-! TODO: copy & paste in rxvt
-URxvt.perl-ext-common: default,clipboard
-URxvt.keysym.Shift-Control-V: perl:clipboard:paste
-URxvt.keysym.Meta-V: perl:clipboard:paste
-URxvt.iso14755: False
+!! copy & paste in rxvt
+! https://unix.stackexchange.com/a/329556
+! https://wiki.archlinux.org/index.php/rxvt-unicode#Cut_and_paste (not so helpful link)
+URxvt.perl-ext-common: default,clipboard,font-size
+URxvt.clipboard.autocopy: true
+URxvt.keysym.Shift-Control-V: eval:paste_clipboard
+URxvt.iso14755: false
 
 ! Local Variables:
 ! mode: conf-xdefaults

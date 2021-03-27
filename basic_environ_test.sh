@@ -55,6 +55,7 @@ echo "==== Installing common tools ===="
 `sudo $INSTALL_COMMAND rxvt-unicode`
 `sudo $INSTALL_COMMAND tmux`
 `sudo $INSTALL_COMMAND xclip`
+`sudo $INSTALL_COMMAND xsel`
 `sudo $INSTALL_COMMAND aptitude`
 `sudo $INSTALL_COMMAND curl`
 `sudo $INSTALL_COMMAND fonts-monoid`
