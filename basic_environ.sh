@@ -42,6 +42,7 @@ echo "==== Installing common tools ===="
 `sudo $INSTALL_COMMAND zsh`
 `sudo $INSTALL_COMMAND zsh-syntax-highlighting`
 `sudo $INSTALL_COMMAND tmux`
+`sudo $INSTALL_COMMAND rxvt-unicode`
 `sudo $INSTALL_COMMAND xclip`
 `sudo $INSTALL_COMMAND aptitude`
 `sudo $INSTALL_COMMAND curl`
@@ -69,9 +70,9 @@ else
     echo "===== oh-my-sh already installed"
 fi
 
-`sudo pip install tmuxp`
-`sudo pip install yamllint`
-`sudo pip install speedtest-cli`
+`sudo pip3 install tmuxp`
+`sudo pip3 install yamllint`
+`sudo pip3 install speedtest-cli`
 
 echo "==== Installing Dotfiles ===="
 if [ ! -d "$HOME/.dotfiles" ]; then
