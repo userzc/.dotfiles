@@ -112,6 +112,8 @@ export TERM="xterm-256color"
 # Interesting plugins: themes, pip
 
 plugins=(
+    docker
+    docker-compose
     git
     gitignore
     git-extras
@@ -353,6 +355,9 @@ else
     [ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"  # This loads nvm
     [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
 fi
+
+# AIRFLOW home variable
+export AIRFLOW_HOME="$HOME/workspace/datyra/airflow-1.10.12/airflow"
 
 # zsh syntax highlighting (requires ubuntu package zsh-syntax-highlighting)
 source /usr/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh

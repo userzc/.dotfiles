@@ -1,0 +1,35 @@
+session_name: airflow-1_10_12
+start-directory: "~"
+windows:
+  - window_name: "stats"
+    layout: "tiled"
+    panes:
+      - htop
+      - tail -f /var/log/syslog
+      - speedometer -r enp4s0 -t enp4s0 -c -r wlp5s0 -t wlp5s0
+      - nvtop
+  - window_name: "home"
+    panes:
+      - shell_command:
+          - cd "/home/rene/"
+      - shell_command:
+          - cd "/home/rene/"
+  - window_name: "airflow webserver"
+    panes:
+      - shell_command:
+          - cd "$HOME/workspace/datyra/airflow-1.10.12/"
+          - conda activate airflow_1_10_12_env
+          - airflow webserver -p 8080
+      - shell_command:
+          - cd "$HOME/workspace/datyra/airflow-1.10.12/"
+          - conda activate airflow_1_10_12_env
+    focus: true
+  - window_name: "airflow scheduler"
+    panes:
+      - shell_command:
+          - cd "$HOME/personal-workspace/udacity_html/"
+          - conda activate airflow_1_10_12_env
+          - airflow scheduler
+      - shell_command:
+          - cd "/home/rene/personal-workspace/udacity/"
+          - conda activate airflow_1_10_12_env

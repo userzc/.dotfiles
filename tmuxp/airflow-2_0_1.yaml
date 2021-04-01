@@ -1,0 +1,31 @@
+session_name: airflow-2_0_1
+start-directory: "~"
+windows:
+  - window_name: "stats"
+    layout: "tiled"
+    panes:
+      - htop
+      - tail -f /var/log/syslog
+      - speedometer -r enp4s0 -t enp4s0 -c -r wlp5s0 -t wlp5s0
+      - nvtop
+  - window_name: "home"
+    panes:
+      - shell_command:
+          - cd "/home/rene/"
+      - shell_command:
+          - cd "/home/rene/"
+  - window_name: "airflow[docker]"
+    panes:
+      - shell_command:
+          - cd "$HOME/workspace/datyra/airflow-2.0.1/airflow/"
+          - docker-compose up
+      - shell_command:
+          - cd "$HOME/workspace/datyra/airflow-2.0.1/airflow/"
+          - echo "To stop: docker-compose down"
+    focus: true
+  - window_name: "workspace"
+    panes:
+      - shell_command:
+          - cd "$HOME/workspace/datyra/airflow-2.0.1/airflow/"
+      - shell_command:
+          - cd "$HOME/workspace/datyra/airflow-2.0.1/airflow/"
