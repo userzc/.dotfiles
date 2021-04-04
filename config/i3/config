@@ -66,7 +66,10 @@ bindsym $mod+5 exec rxvt -e nnn
 # Screenshot to clipboard (https://github.com/LukeSmithxyz/voidrice/blob/master/.config/i3/config)
 bindsym Print exec maim | xclip -selection clipboard -t image/png
 # Screenshot options
-bindsym Shift+Print exec gnome-screenshot -i
+bindsym Shift+Print exec maim -i "$(xdotool getactivewindow)" | xclip -selection clipboard -t image/png
+bindsym Control+Print exec maim -s | xclip -selection clipboard -t image/png
+# Backup screenshot tools
+bindsym Control+Shift+Print exec gnome-screenshot -i
 
 # Compton - composite manager, for rofi transparencies
 exec --no-startup-id compton -f
