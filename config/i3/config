@@ -70,7 +70,7 @@ bindsym Shift+Print exec maim -i "$(xdotool getactivewindow)" | xclip -selection
 bindsym Control+Print exec maim -s | xclip -selection clipboard -t image/png
 # Screnshot options (to file)
 bindsym $mod+Print exec maim ~/Pictures/screenshot_$(date +%s).png
-bindsym $mod+Shift+Print exec maim ~/Pictures/screenshot_$(date +%s).png
+bindsym $mod+Shift+Print exec maim -i "$(xdotool getactivewindow)" ~/Pictures/screenshot_$(date +%s).png
 bindsym $mod+Control+Print exec maim -s ~/Pictures/screenshot_$(date +%s).png
 # Backup screenshot tools
 bindsym Control+Shift+Print exec gnome-screenshot -i
