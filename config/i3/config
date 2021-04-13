@@ -65,9 +65,13 @@ bindsym $mod+4 exec rhythmbox
 bindsym $mod+5 exec rxvt -e nnn
 # Screenshot to clipboard (https://github.com/LukeSmithxyz/voidrice/blob/master/.config/i3/config)
 bindsym Print exec maim | xclip -selection clipboard -t image/png
-# Screenshot options
+# Screenshot options (to clipboard)
 bindsym Shift+Print exec maim -i "$(xdotool getactivewindow)" | xclip -selection clipboard -t image/png
 bindsym Control+Print exec maim -s | xclip -selection clipboard -t image/png
+# Screnshot options (to file)
+bindsym $mod+Print exec maim ~/Pictures/screenshot_$(date +%s).png
+bindsym $mod+Shift+Print exec maim ~/Pictures/screenshot_$(date +%s).png
+bindsym $mod+Control+Print exec maim -s ~/Pictures/screenshot_$(date +%s).png
 # Backup screenshot tools
 bindsym Control+Shift+Print exec gnome-screenshot -i
 
