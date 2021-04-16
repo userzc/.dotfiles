@@ -20,6 +20,8 @@
                         'magit-insert-unpushed-to-upstream-or-recent
                         'replace)
 
+(add-hook 'magit-mode-hook 'turn-on-magit-gitflow)
+
 (magit-add-section-hook 'magit-status-sections-hook
                         'magit-insert-unpulled-from-upstream)
 (provide 'magit-conf)
