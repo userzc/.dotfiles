@@ -84,4 +84,6 @@
 
 (setq venv-location "~/.virtualenvs")
 
+(elpy-enable)
+
 (provide 'python-conf)

@@ -40,6 +40,7 @@
         (exec-path-from-shell . "melpa-stable")
         (yasnippet-snippets . "melpa-stable")
         (editorconfig . "melpa-stable")
+        (elpy . "melpa-stable")
 
 ))
 
