@@ -327,6 +327,12 @@ export PATH="$HOME/.cask/bin:$PATH"
 # Cargo (rust and parity)
 export PATH="$HOME/.cargo/bin:$PATH"
 
+# GH (github cli) environment variables
+# Note: completion file was set on:
+# /home/rene/.dotfiles/zsh_custom/plugins/personal_functions
+# https://cli.github.com/manual/gh_completion
+export GH_PAGER='less -R'
+
 # Activate tmuxp source completion (tmuxp >= 1.5.1)
 if $(which tmuxp &> /dev/null) ; then
     eval "$(_TMUXP_COMPLETE=source_zsh tmuxp)"
