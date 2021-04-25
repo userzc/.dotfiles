@@ -2,7 +2,7 @@
 
 if [ "$#" == 0 ];
 then
-    emacsclient -nw
+    emacsclient -c -nw
 else
-    emacsclient -nw "$1"
+    emacsclient -c -nw "$1"
 fi

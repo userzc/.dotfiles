@@ -312,6 +312,12 @@ then
     bindkey -M emacs "^X^E" my-edit-command-line
 fi
 
+# Setup a console edit command line function
+fpath=("$HOME/lib/" "${fpath[@]}")
+autoload -Uz console-edit-command-line
+zle -N console-edit-command-line
+bindkey -M emacs "^xe" console-edit-command-line
+
 # # Unalias for the ag searcher(debian plugin)
 if (( $+commands[lsb_release] )); then
     alias aug='sudo $apt_pref upgrade'
