@@ -45,7 +45,7 @@ font -misc-fixed-medium-r-normal--13-120-75-75-C-70-iso10646-1
 # (320, 180)]
 
 # exec --no-startup-id xrandr --output eDP-1-1 --mode 1920x1080
-exec --no-startup-id xrandr --output eDP-1-1 --mode 2048x1152
+exec --no-startup-id xrandr --output eDP-1 --mode 2048x1152
 
 # Use Mouse+$mod to drag floating windows to their wanted position
 floating_modifier $mod

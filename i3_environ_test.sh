@@ -26,6 +26,7 @@ echo "==== Installing common tools ===="
 `sudo $INSTALL_COMMAND rofi`
 `sudo $INSTALL_COMMAND compton`
 `sudo $INSTALL_COMMAND feh`
+`sudo $INSTALL_COMMAND playerctl`
 
 echo "==== Installing pip tools ===="
 cd "$HOME"
