@@ -368,6 +368,17 @@ else
     [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
 fi
 
+# fzf from repositories
+if $(which fzf &> /dev/null) ; then
+    # Append this line to ~/.zshrc to enable fzf keybindings for Zsh:
+    source /usr/share/doc/fzf/examples/key-bindings.zsh
+    # Append this line to ~/.zshrc to enable fuzzy auto-completion for Zsh:
+    source /usr/share/doc/fzf/examples/completion.zsh
+else
+    echo "fzf not found"
+fi
+
+
 # AIRFLOW home variable
 export AIRFLOW_HOME="$HOME/workspace/datyra/airflow-1.10.12/airflow"
 
