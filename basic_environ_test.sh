@@ -68,6 +68,7 @@ echo "==== Installing common tools ===="
 `sudo $INSTALL_COMMAND virtualenvwrapper`
 `sudo $INSTALL_COMMAND playerctl`
 `sudo $INSTALL_COMMAND fzf`
+`sudo $INSTALL_COMMAND figlet`
 
 echo "==== Installing oh-my-zsh ===="
 if [ ! -d "$HOME/.oh-my-zsh" ]; then
