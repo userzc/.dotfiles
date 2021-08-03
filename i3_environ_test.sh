@@ -28,6 +28,7 @@ echo "==== Installing common tools ===="
 `sudo $INSTALL_COMMAND feh`
 `sudo $INSTALL_COMMAND playerctl`
 `sudo $INSTALL_COMMAND maim`
+`sudo $INSTALL_COMMAND xdotool`
 
 echo "==== Installing pip tools ===="
 cd "$HOME"
