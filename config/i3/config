@@ -44,7 +44,9 @@ font -misc-fixed-medium-r-normal--13-120-75-75-C-70-iso10646-1
 # (432, 243),
 # (320, 180)]
 
-# exec --no-startup-id xrandr --output eDP-1-1 --mode 1920x1080
+# In case nvidia card is being used
+exec --no-startup-id xrandr --output eDP-1-1 --mode 2048x1152
+# In case default card is being used (intel)
 exec --no-startup-id xrandr --output eDP-1 --mode 2048x1152
 
 # Use Mouse+$mod to drag floating windows to their wanted position
