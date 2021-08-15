@@ -386,7 +386,7 @@ export AIRFLOW_HOME="$HOME/workspace/datyra/airflow-1.10.12/airflow"
 source /usr/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 
 if [ ! -d "$HOME/anaconda3" ]; then
-    echo "\033[0;31m"'nvm not active'"\033[0;31m"
+    echo "\033[0;31m"'Anaconda not active'"\033[0;31m"
 else
     # >>> conda initialize >>>
     # !! Contents within this block are managed by 'conda init' !!

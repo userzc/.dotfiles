@@ -6,7 +6,7 @@ windows:
     panes:
       - htop
       - tail -f /var/log/syslog
-      - speedometer -r enp4s0 -t enp4s0 -c -r wlp5s0 -t wlp5s0
+      - speedometer -r enp3s0 -t enp3s0 -c -r wlp0s20f3 -t wlp0s20f3
       - nvtop
   - window_name: "home"
     panes:

@@ -83,6 +83,7 @@
 ;; ;; the environment variable `WORKON_HOME` points to the right place
 
 (setq venv-location "~/.virtualenvs")
+(setq elpy-rpc-python-command "/usr/bin/python3")
 
 (elpy-enable)
 
