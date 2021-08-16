@@ -30,6 +30,7 @@ echo "==== Installing common tools ===="
 `sudo $INSTALL_COMMAND maim`
 `sudo $INSTALL_COMMAND xdotool`
 `sudo $INSTALL_COMMAND ranger`
+`sudo $INSTALL_COMMAND blueman`
 
 echo "==== Installing pip tools ===="
 cd "$HOME"
