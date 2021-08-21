@@ -65,6 +65,7 @@ bindsym $mod+2 exec "google-chrome"
 bindsym $mod+3 exec emacs
 bindsym $mod+4 exec rhythmbox
 bindsym $mod+5 exec rxvt -e nnn
+
 # Screenshot to clipboard (https://github.com/LukeSmithxyz/voidrice/blob/master/.config/i3/config)
 bindsym Print exec maim | xclip -selection clipboard -t image/png
 # Screenshot options (to clipboard)
@@ -76,6 +77,19 @@ bindsym $mod+Shift+Print exec maim -i "$(xdotool getactivewindow)" ~/Pictures/sc
 bindsym $mod+Control+Print exec maim -s ~/Pictures/screenshot_$(date +%s).png
 # Backup screenshot tools
 bindsym Control+Shift+Print exec gnome-screenshot -i
+
+# # [Using Pause key] Screenshot, for compatibility with default VSG Bellatrix configuration
+# bindsym Pause exec maim | xclip -selection clipboard -t image/png
+# # Screenshot options (to clipboard)
+# bindsym Shift+Pause exec maim -i "$(xdotool getactivewindow)" | xclip -selection clipboard -t image/png
+# bindsym Control+Pause exec maim -s | xclip -selection clipboard -t image/png
+# # Screnshot options (to file)
+# bindsym $mod+Pause exec maim ~/Pictures/screenshot_$(date +%s).png
+# bindsym $mod+Shift+Pause exec maim -i "$(xdotool getactivewindow)" ~/Pictures/screenshot_$(date +%s).png
+# bindsym $mod+Control+Pause exec maim -s ~/Pictures/screenshot_$(date +%s).png
+# # Backup screenshot tools
+# bindsym Control+Shift+Pause exec gnome-screenshot -i
+
 
 # Compton - composite manager, for rofi transparencies
 exec --no-startup-id compton -f

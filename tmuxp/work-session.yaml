@@ -22,5 +22,4 @@ windows:
       - shell_command:
           - cd "/home/rene/personal-workspace/udacity/Data Analysis Nanodegree Program/introduction_to_data_analysis/"
           - conda activate investigate_data_set
-          - jupyter notebook
     focus: true
