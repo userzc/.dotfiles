@@ -18,18 +18,18 @@ windows:
     panes:
       - shell_command:
           - cd "$HOME/workspace/datyra/airflow-1.10.12/"
-          - conda activate airflow_1_10_12_env
+          - conda activate airflow_1_10_12
           - airflow webserver -p 8080
       - shell_command:
           - cd "$HOME/workspace/datyra/airflow-1.10.12/"
-          - conda activate airflow_1_10_12_env
+          - conda activate airflow_1_10_12
     focus: true
   - window_name: "airflow scheduler"
     panes:
       - shell_command:
-          - cd "$HOME/personal-workspace/udacity_html/"
-          - conda activate airflow_1_10_12_env
+          - cd "$HOME/workspace/datyra/airflow-1.10.12/"
+          - conda activate airflow_1_10_12
           - airflow scheduler
       - shell_command:
-          - cd "/home/rene/personal-workspace/udacity/"
-          - conda activate airflow_1_10_12_env
+          - cd "$HOME/workspace/datyra/airflow-1.10.12/"
+          - conda activate airflow_1_10_12

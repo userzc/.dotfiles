@@ -22,4 +22,23 @@ windows:
       - shell_command:
           - cd "/home/rene/personal-workspace/udacity/Data Analysis Nanodegree Program/introduction_to_data_analysis/"
           - conda activate investigate_data_set
+  - window_name: "udacity"
+    panes:
+      - shell_command:
+          - cd "$HOME/personal-workspace/udacity_html/"
+          - conda activate data_wrangling_project_env
+          - airflow scheduler
+      - shell_command:
+          - cd "/home/rene/personal-workspace/udacity/"
+          - conda activate data_wrangling_project_env
+  - window_name: "data-wrangling"
+    panes:
+      - shell_command:
+          - cd "/home/rene/personal-workspace/udacity/"
+          - cd "data_wrangling/project"
+          - conda activate data_wrangling_project_env
+      - shell_command:
+          - cd "/home/rene/personal-workspace/udacity/"
+          - cd "data_wrangling/project"
+          - conda activate data_wrangling_project_env
     focus: true
