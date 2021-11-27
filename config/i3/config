@@ -399,7 +399,8 @@ bindsym $mod+Mod1+t exec pactl set-sink-mute $current_sink toggle # mute sound
 bindsym $mod+Control+space exec playerctl play-pause
 # bindsym Control+XF86AudioPlay exec "unity-control-center sound"
 # bindsym Control+XF86AudioPlay exec pavucontrol
-bindsym Control+Shift+space exec pavucontrol
+# bindsym Control+Shift+space exec pavucontrol
+bindsym $mod+Mod1+space exec pavucontrol
 
 # Sreen brightness controls
 bindsym XF86MonBrightnessUp exec xbacklight -inc 10 # increase screen brightness
