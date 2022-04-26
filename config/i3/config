@@ -95,7 +95,7 @@ bindsym Control+Shift+Print exec gnome-screenshot -i
 exec --no-startup-id compton -f
 
 # feh - wallpaper setup
-exec_always --no-startup-id feh --bg-scale ~/.config/wallpapaer.jpg
+exec_always --no-startup-id feh --bg-fill ~/.config/wallpaper.jpg
 
 # Opciones a considearar para cambiar colores
 
