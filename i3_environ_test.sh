@@ -20,23 +20,23 @@ then
 fi
 
 echo "==== Installing common tools ===="
-`sudo $INSTALL_COMMAND i3`
-`sudo $INSTALL_COMMAND pavucontrol`
-`sudo $INSTALL_COMMAND j4-dmenu-desktop`
-`sudo $INSTALL_COMMAND rofi`
-`sudo $INSTALL_COMMAND compton`
-`sudo $INSTALL_COMMAND feh`
-`sudo $INSTALL_COMMAND playerctl`
-`sudo $INSTALL_COMMAND maim`
-`sudo $INSTALL_COMMAND xdotool`
-`sudo $INSTALL_COMMAND ranger`
-`sudo $INSTALL_COMMAND blueman`
+echo "installing i3" && `sudo $INSTALL_COMMAND i3`
+echo "installing pavucontrol" && `sudo $INSTALL_COMMAND pavucontrol`
+echo "installing j4-dmenu-desktop" && `sudo $INSTALL_COMMAND j4-dmenu-desktop`
+echo "installing rofi" && `sudo $INSTALL_COMMAND rofi`
+echo "installing compton" && `sudo $INSTALL_COMMAND compton`
+echo "installing feh" && `sudo $INSTALL_COMMAND feh`
+echo "installing playerctl" && `sudo $INSTALL_COMMAND playerctl`
+echo "installing maim" && `sudo $INSTALL_COMMAND maim`
+echo "installing xdotool" && `sudo $INSTALL_COMMAND xdotool`
+echo "installing ranger" && `sudo $INSTALL_COMMAND ranger`
+echo "installing blueman" && `sudo $INSTALL_COMMAND blueman`
 
 echo "==== Installing pip tools ===="
 cd "$HOME"
-`sudo pip3 install i3-py`
-`sudo pip3 install quickswitch-i3`
-`sudo pip3 install virtualenvwrapper`
+echo "(pip3) installing i3-py" && `sudo pip3 install i3-py`
+echo "(pip3) installing quickswitch-i3" && `sudo pip3 install quickswitch-i3`
+echo "(pip3) installing virtualenvwrapper" && `sudo pip3 install virtualenvwrapper`
 
 echo "==== Ready to restart  ===="
 exit 0
