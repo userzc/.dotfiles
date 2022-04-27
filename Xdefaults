@@ -67,11 +67,39 @@
 xterm*dynamicColors: true
 urxvt*dynamicColors: on
 
-!! URxvt Appearance
+! Working font
+URxvt Appearance
 URxvt.font: xft:Monoisome:style=Regular:size=8
 URxvt.boldFont: xft:Monoisome:style=Bold:size=8
 URxvt.italicFont: xft:Monoisome:style=Italic:size=8
 URxvt.boldItalicfont: xft:Monoisome:style=Bold Italic:size=8
+
+! Reference
+! ! /home/rene/.fonts/Coder Nerd Font Complete.otf: Coder Nerd Font:style=Medium
+! ! /home/rene/.fonts/Coder Medium Italic Nerd Font Complete.otf: CoderItalic Nerd Font:style=Medium Italic,Italic
+
+! ! Hasklug Nerd Font
+! URxvt.font: xft:Hasklug Nerd Font Mono:style=Regular:size=10
+! URxvt.boldFont: xft:Hasklug Nerd Font Mono:style=Bold:size=10
+! URxvt.italicFont: xft:Hasklug Nerd Font Mono:style:Italic:size=10
+! URxvt.boldItalicfont: xft:Hasklug Nerd Font Mono:style=Bold Italic:size=10
+
+! ! Monoid Nerd Font
+! URxvt.font: xft:Monoid Nerd Font Mono:style=Regular:size=8
+! URxvt.boldFont: xft:Monoid Nerd Font Mono:style=Bold:size=8
+! URxvt.italicFont: xft:Monoid Nerd Font Mono:style:Italic:size=8
+! URxvt.boldItalicfont: xft:Monoid Nerd Font Mono:style=Bold Italic:size=8
+
+
+! ! Iosevka Nerd Font [not working]
+! URxvt.font: xft:Iosevka,Iosevka Nerd Font Mono:style=Thin,Regular
+! URxvt.boldFont: xft:Iosevka,Iosevka Nerd Font Mono:style=Thin,Bold
+! URxvt.italicFont: xft:Iosevka,Iosevka Nerd Font Mono:style=Thin,Italic
+! URxvt.boldItalicfont: xft:Iosevka,Iosevka Nerd Font Mono:style=Bold Italic
+
+! URxvt.font: xft:Iosevka Term:style=Light:pixelsize=12:antialias=true:hinting=true
+
+
 URxvt.letterSpace: 0
 URxvt.lineSpace: 0
 URxvt.geometry: 92x24
@@ -85,7 +113,6 @@ URxvt.urgentOnBell: true
 URxvt.depth: 24
 URxvt.iso14755: false
 
-
 !! copy & paste in rxvt
 ! https://unix.stackexchange.com/a/329556
 ! https://wiki.archlinux.org/index.php/rxvt-unicode#Cut_and_paste (not so helpful link)
@@ -93,6 +120,12 @@ URxvt.perl-ext-common: default,clipboard,font-size
 URxvt.clipboard.autocopy: true
 URxvt.keysym.Shift-Control-V: eval:paste_clipboard
 URxvt.iso14755: false
+
+! https://ctkarch.org/documentation/tutorials/tuto.php?page=urxvt-transpa.xml&en
+! https://bbs.archlinux.org/viewtopic.php?id=117543
+! rxvt real transparency
+URxvt.transparent: true
+URxvt.shading: 30
 
 ! Local Variables:
 ! mode: conf-xdefaults
