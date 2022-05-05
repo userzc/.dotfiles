@@ -425,19 +425,31 @@ bindsym $mod+n exec "nmcli dev wifi rescan 2>/dev/null || ( sleep 1 && nmcli -t 
 # Start i3bar to display a workspace bar (plus the system information i3status
 # finds out, if available)
 
+# # original configuration
+# bar {
+#     i3bar_command i3bgbar
+#     status_command python ~/powerline/powerline/bindings/i3/powerline-i3.py
+#     font pango:DejaVu Sans Mono 9
+# }
+
+# working configuration
 bar {
-
-# font pango:DejaVu Sans Mono 9
-# font xft:DejaVu Sans Mono 9, Font Awesome 9
-font xft:Font Awesome 8
-status_command i3status --config ~/.config/i3/i3status.conf
-position top
-
-# i3bar_command i3bgbar
-# status_command python ~/powerline/powerline/bindings/i3/powerline-i3.py
-# font pango:DejaVu Sans Mono 9
-
+    # font pango:DejaVu Sans Mono 9
+    # font xft:DejaVu Sans Mono 9, Font Awesome 9
+    font xft:Font Awesome 8
+    status_command i3status --config ~/.config/i3/i3status.conf
+    position top
 }
+
+# # bumblebee-status
+# bar {
+#     font xft:Font Awesome 8
+#     position top
+#     status_command ~/.local/bin/bumblebee-status -m nic disk:root \
+#         cpu battery date time pasink pasource \
+#         -p root.path=/ time.format="%H:%M CW %V" date.format="%a, %b %d %Y" \
+#         -t iceberg
+# }
 
 # Local Variables:
 # eval: (rainbow-mode)
