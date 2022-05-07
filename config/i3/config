@@ -24,6 +24,7 @@ font -misc-fixed-medium-r-normal--13-120-75-75-C-70-iso10646-1
 
 # Keyboard layout
 exec --no-startup-id "setxkbmap -layout latam"
+bindsym $mod+Shift+s exec --no-startup-id "setxkbmap -layout latam"
 
 # Screen resolution
 ## 16:9 alternatives:
