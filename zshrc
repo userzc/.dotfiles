@@ -14,9 +14,6 @@ export CLOUDSDK_HOME="/usr/share/google-cloud-sdk/"
 # This alias is specific to zsh
 alias lsd="ls -d *(/)"
 
-# source the alias file
-source $HOME/.aliases
-
 # NOTA: Se esta probando la sugerencia de poner las cosas en scripts,
 # dichos scripts se encuentran en `~/bin`
 
@@ -130,6 +127,8 @@ plugins=(
     fabric
     mercurial
     personal_functions)
+
+
 
 # # suggestion from file ~/.oh-my-zsh/plugins/mvn/mvn.plugin.zsh, but
 # # doesn't seem to be working, more tests are required
@@ -301,6 +300,9 @@ fi
 
 # This sourcing must happend after all plugins have been declared
 source $ZSH/oh-my-zsh.sh
+
+# source the alias file (override some omz aliases)
+source $HOME/.aliases
 
 # Autoload a custom edit-command-line function for $ZSH_VERSION
 if [[ $ZSH_VERSION < "5.2" ]]

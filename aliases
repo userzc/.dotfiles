@@ -96,3 +96,14 @@ alias vassh='vagrant ssh'
 
 # Paste copied link and parse it with peerflix and vlc
 alias pf='peerflix "$(xclip -o)" --vlc'
+
+###############
+# exa aliases #
+###############
+
+if [ -x "$( command -v exa)" ]; then
+    alias ll='exa -l --icons'
+    alias l='exa -lFh --icons'
+else
+    echo "\033[0;31m"'exa not installed'"\033[0;31m"
+fi
