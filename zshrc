@@ -301,6 +301,9 @@ fi
 # This sourcing must happend after all plugins have been declared
 source $ZSH/oh-my-zsh.sh
 
+# Cargo (rust and parity)
+export PATH="$HOME/.cargo/bin:$PATH"
+
 # source the alias file (override some omz aliases)
 source $HOME/.aliases
 
@@ -331,9 +334,6 @@ export NODE_PATH="$NODE_PATH:/usr/lib/node_modules:/usr/local/lib/node_modules"
 
 # Cask
 export PATH="$HOME/.cask/bin:$PATH"
-
-# Cargo (rust and parity)
-export PATH="$HOME/.cargo/bin:$PATH"
 
 # GH (github cli) environment variables
 # Note: completion file was set on:

@@ -101,7 +101,7 @@ alias pf='peerflix "$(xclip -o)" --vlc'
 # exa aliases #
 ###############
 
-if [ -x "$( command -v exa)" ]; then
+if (( $+commands[exa] )); then
     alias ll='exa -l --icons'
     alias l='exa -lFh --icons'
 else
