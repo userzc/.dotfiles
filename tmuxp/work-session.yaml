@@ -8,6 +8,11 @@ windows:
       - tail -f /var/log/syslog
       - speedometer -r enp3s0 -t enp3s0 -c -r wlp0s20f3 -t wlp0s20f3
       - nvtop
+  - window_name: "btop"
+    panes:
+      - shell_command:
+          - cd "/home/rene/"
+          - btop
   - window_name: "home"
     panes:
       - shell_command:
@@ -27,7 +32,6 @@ windows:
       - shell_command:
           - cd "$HOME/personal-workspace/udacity_html/"
           - conda activate data_wrangling_project_env
-          - airflow scheduler
       - shell_command:
           - cd "/home/rene/personal-workspace/udacity/"
           - conda activate data_wrangling_project_env
@@ -35,10 +39,18 @@ windows:
     panes:
       - shell_command:
           - cd "/home/rene/personal-workspace/udacity/"
-          - cd "data_wrangling/project"
+          - cd "Data Analysis Nanodegree Program/data_wrangling/project"
           - conda activate data_wrangling_project_env
       - shell_command:
           - cd "/home/rene/personal-workspace/udacity/"
-          - cd "data_wrangling/project"
+          - cd "Data Analysis Nanodegree Program/data_wrangling/project"
           - conda activate data_wrangling_project_env
+  - window_name: "lpr"
+    panes:
+      - shell_command:
+          - cd "/home/rene/personal-workspace/gomat/plate-ocr-project"
+          - conda activate license_plate
+      - shell_command:
+          - cd "/home/rene/personal-workspace/gomat/license_plate_recognizer"
+          - conda activate license_plate
     focus: true

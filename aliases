@@ -104,6 +104,10 @@ alias pf='peerflix "$(xclip -o)" --vlc'
 if (( $+commands[exa] )); then
     alias ll='exa -l --icons'
     alias l='exa -lFh --icons'
+
+    # Configure zsh bindkey for exa
+    bindkey -rpM emacs "^[l"
+    bindkey -sM emacs "^[l" "exa --icons^J"
 else
     echo "\033[0;31m"'exa not installed'"\033[0;31m"
 fi
