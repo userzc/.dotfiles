@@ -4,15 +4,18 @@ function list-dir-repos-url() {
 	current_directory=$(pwd)
         target_directory=$1
         for elem in $(ls -bd -- $target_directory/*(/)); do
-            cd "$elem"
-            if [[ -d ".hg" ]]; then
+            if [[ -d "$elem/.hg" ]]; then
+                cd "$elem"
                 echo "[hg] $elem"
                 echo "$(hg paths)"
-            elif [[ -d ".git" ]]; then
+                cd ..
+            elif [[ -d "$elem/.git" ]]; then
+                cd "$elem"
                 echo "[git] $elem"
                 for remote in $(git remote show); do
                     echo "$remote = $(git config --get remote.$remote.url)"
                 done
+                cd ..
             fi
         done
 	cd "$current_directory"
