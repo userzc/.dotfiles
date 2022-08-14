@@ -8,14 +8,14 @@ function list-dir-repos-url() {
                 cd "$elem"
                 echo "[hg] $elem"
                 echo "$(hg paths)"
-                cd ..
+                cd $current_directory
             elif [[ -d "$elem/.git" ]]; then
                 cd "$elem"
                 echo "[git] $elem"
                 for remote in $(git remote show); do
                     echo "$remote = $(git config --get remote.$remote.url)"
                 done
-                cd ..
+                cd $current_directory
             fi
         done
 	cd "$current_directory"
