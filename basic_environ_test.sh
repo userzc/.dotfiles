@@ -42,34 +42,45 @@ then
     echo "OS is: $OS_TYPE"
 fi
 
+
 echo "==== Installing common tools ===="
-`sudo $INSTALL_COMMAND python3`
-`sudo $INSTALL_COMMAND python`
-`sudo $INSTALL_COMMAND git`
-`sudo $INSTALL_COMMAND $EMACS_VERSION`
-`sudo $INSTALL_COMMAND speedometer`
-`sudo $INSTALL_COMMAND silversearcher-ag`
-`sudo $INSTALL_COMMAND htop`
-`sudo $INSTALL_COMMAND zsh`
-`sudo $INSTALL_COMMAND zsh-syntax-highlighting`
-`sudo $INSTALL_COMMAND rxvt-unicode`
-`sudo $INSTALL_COMMAND tmux`
-`sudo $INSTALL_COMMAND xclip`
-`sudo $INSTALL_COMMAND xsel`
-`sudo $INSTALL_COMMAND aptitude`
-`sudo $INSTALL_COMMAND curl`
-`sudo $INSTALL_COMMAND fonts-monoid`
-`sudo $INSTALL_COMMAND fonts-powerline`
-`sudo $INSTALL_COMMAND fonts-inconsolata`
-`sudo $INSTALL_COMMAND fonts-hack`
-`sudo $INSTALL_COMMAND fonts-font-awesome`
-`sudo $INSTALL_COMMAND fonts-octicons`
-`sudo $INSTALL_COMMAND python3-pip`
-`sudo $INSTALL_COMMAND virtualenvwrapper`
-`sudo $INSTALL_COMMAND playerctl`
-`sudo $INSTALL_COMMAND fzf`
-`sudo $INSTALL_COMMAND figlet`
-`sudo $INSTALL_COMMAND jq`
+echo "installing python3" && `sudo $INSTALL_COMMAND python3`
+echo "installing python" && `sudo $INSTALL_COMMAND python`
+echo "installing git" && `sudo $INSTALL_COMMAND git`
+echo "installing $EMACS_VERSION" && `sudo $INSTALL_COMMAND $EMACS_VERSION`
+echo "installing speedometer" && `sudo $INSTALL_COMMAND speedometer`
+echo "installing silversearcher-ag" && `sudo $INSTALL_COMMAND silversearcher-ag`
+echo "installing htop" && `sudo $INSTALL_COMMAND htop`
+echo "installing zsh" && `sudo $INSTALL_COMMAND zsh`
+echo "installing zsh-syntax-highlighting" && `sudo $INSTALL_COMMAND zsh-syntax-highlighting`
+echo "installing rxvt-unicode" && `sudo $INSTALL_COMMAND rxvt-unicode`
+echo "installing tmux" && `sudo $INSTALL_COMMAND tmux`
+echo "installing xclip" && `sudo $INSTALL_COMMAND xclip`
+echo "installing xsel" && `sudo $INSTALL_COMMAND xsel`
+echo "installing aptitude" && `sudo $INSTALL_COMMAND aptitude`
+echo "installing curl" && `sudo $INSTALL_COMMAND curl`
+echo "installing fonts-monoid" && `sudo $INSTALL_COMMAND fonts-monoid`
+echo "installing fonts-powerline" && `sudo $INSTALL_COMMAND fonts-powerline`
+echo "installing fonts-inconsolata" && `sudo $INSTALL_COMMAND fonts-inconsolata`
+echo "installing fonts-hack" && `sudo $INSTALL_COMMAND fonts-hack`
+echo "installing fonts-font-awesome" && `sudo $INSTALL_COMMAND fonts-font-awesome`
+echo "installing fonts-octicons" && `sudo $INSTALL_COMMAND fonts-octicons`
+echo "installing python3-pip" && `sudo $INSTALL_COMMAND python3-pip`
+echo "installing virtualenvwrapper" && `sudo $INSTALL_COMMAND virtualenvwrapper`
+echo "installing playerctl" && `sudo $INSTALL_COMMAND playerctl`
+echo "installing fzf" && `sudo $INSTALL_COMMAND fzf`
+echo "installing figlet" && `sudo $INSTALL_COMMAND figlet`
+echo "installing jq" && `sudo $INSTALL_COMMAND jq`
+echo "installing cargo" && `sudo $INSTALL_COMMAND cargo`
+# alacritty ubuntu dependencies
+echo "installing cmake" && `sudo $INSTALL_COMMAND cmake`
+echo "installing pkg-config" && `sudo $INSTALL_COMMAND pkg-config`
+echo "installing libfreetype6-dev" && `sudo $INSTALL_COMMAND libfreetype6-dev`
+echo "installing libfontconfig1-dev" && `sudo $INSTALL_COMMAND libfontconfig1-dev`
+echo "installing libxcb-xfixes0-dev" && `sudo $INSTALL_COMMAND libxcb-xfixes0-dev`
+echo "installing libxkbcommon-dev" && `sudo $INSTALL_COMMAND libxkbcommon-dev`
+
+echo "==== [Done] Installing common tools ===="
 
 echo "==== Installing oh-my-zsh ===="
 if [ ! -d "$HOME/.oh-my-zsh" ]; then
@@ -84,10 +95,13 @@ if [ ! -d "$HOME/.oh-my-zsh" ]; then
 else
     echo "===== oh-my-sh already installed"
 fi
+echo "==== [Done] Installing oh-my-zsh ===="
 
-`sudo pip3 install tmuxp`        # not working [pip], perhaps with pip3
-`sudo pip3 install yamllint`     # not working [pip], perhaps with pip3
-`sudo pip3 install speedtest-cli` # not working [pip], perhaps with pip3
+echo "===== Installing pip3 utilities"
+echo "(pip3) installing tmuxp" && `sudo pip3 install tmuxp`
+echo "(pip3) installing yamllint" && `sudo pip3 install yamllint`
+echo "(pip3) installing speedtest-cli" && `sudo pip3 install speedtest-cli`
+echo "===== [Done] Installing pip3 utilities"
 
 echo "==== Installing Dotfiles ===="
 if [ ! -d "$HOME/.dotfiles" ]; then
@@ -98,6 +112,38 @@ if [ ! -d "$HOME/.dotfiles" ]; then
     ./dotfiles_sync -i
     cd $HOME
 fi
+echo "==== [Done] Installing Dotfiles ===="
+
+echo "==== Installing cargo utilities ===="
+if comand -v cargo &> /dev/null; then
+    echo "(cargo) installing exa" && `cargo install exa`
+    echo "(cargo) installing bat" && `cargo install bat`
+fi
+echo "==== [Done] Installing cargo utilities ===="
+
+echo "==== Creaing folder: instalados-localmente ===="
+[ ! -d "$HOME/instalados-localmente"] && mkdir "$HOME/instalados-localmente"
+current_directory=$(pwd)    # this may not be necessary
+cd "$HOME/instalados-localmente"
+if [ ! -d "$HOME/instalados-localmente/alacritty" ]; then
+    echo "  == Installing alacritty from source =="
+    # instructions: https://github.com/alacritty/alacritty/blob/master/INSTALL.md
+    `git clone https://github.com/alacritty/alacritty.git`
+    cd "alacritty"
+    # build alacritty
+    `cargo build --release`
+    # install terminfo
+    `sudo tic -xe alacritty,alacritty-direct extra/alacritty.info`
+    # create desktop entry
+    `sudo cp target/release/alacritty /usr/local/bin`
+    `sudo cp extra/logo/alacritty-term.svg /usr/share/pixmaps/Alacritty.svg`
+    `sudo desktop-file-install extra/linux/Alacritty.desktop`
+    `sudo update-desktop-database`
+    cd "$HOME/instalados-localmente"
+    echo "  == [Done] Installing alacritty from source =="
+fi
+
+echo "==== [Done] Creaing folder: instalados-localmente ===="
 
 echo "==== To change default shell ===="
 echo "==== type: chsh -s /bin/zsh ==="

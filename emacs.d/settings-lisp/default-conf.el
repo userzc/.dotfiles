@@ -17,6 +17,7 @@
 (setq backup-directory-alist
       `(("." . ,(expand-file-name
                  (concat user-emacs-directory "backups")))))
+(setq backup-by-copying t)
 
 ;; Make emacs recognize alias, see
 ;; http://stackoverflow.com/questions/12224909/is-there-a-way-to-get-my-emacs-to-recognize-my-bash-aliases-and-custom-functions
@@ -24,6 +25,8 @@
 ;; (setq shell-command-switch "-ic")
 (setq shell-file-name "sh")             ;this seems to be faster
 
+;; ;; números de línea
+;; (setq display-line-numbers 'relative)
 
 ;; Make backups of files, even when they're in version control
 (setq vc-make-backend-files t)
@@ -33,9 +36,6 @@
 
 ;; Para quitar el cursor del mouse cuando estorba
 (mouse-avoidance-mode 'banish)
-
-;; Para los números de columna
-(column-number-mode 1)
 
 ;; Uniquify
 (require 'uniquify )
