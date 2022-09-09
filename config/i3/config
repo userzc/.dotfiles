@@ -58,17 +58,21 @@ floating_modifier $mod
 
 
 # start applications, same order as in unity
-bindsym $mod+Shift+Return exec i3-sensible-terminal
-bindsym $mod+Return exec rxvt-unicode
+bindsym $mod+Shift+Return exec alacritty
+# bindsym $mod+Return exec rxvt-unicode
+bindsym $mod+Return exec gnome-terminal
 bindsym $mod+Shift1 exec nautilus --no-desktop
-bindsym $mod+1 exec rxvt -e ranger
+# bindsym $mod+1 exec rxvt -e ranger
+# bindsym $mod+1 exec gnome-terminal -e ranger
+bindsym $mod+1 exec alacritty -e ranger
 # bindsym $mod+2 exec "$BROWSER"
 bindsym $mod+2 exec "google-chrome"
 # # Creo que se utilizaba xmodifiers para acceder a acentos
 # bindsym $mod+3 exec XMODIFIERS="" emacs
 bindsym $mod+3 exec emacs
 bindsym $mod+4 exec rhythmbox
-bindsym $mod+5 exec rxvt -e nnn
+# bindsym $mod+5 exec rxvt -e nnn
+bindsym $mod+5 exec gnome-terminal -e nnn
 
 # Screenshot to clipboard (https://github.com/LukeSmithxyz/voidrice/blob/master/.config/i3/config)
 bindsym Print exec maim | xclip -selection clipboard -t image/png
@@ -295,6 +299,7 @@ bindsym $mod+Shift+r restart
 # Personal exit script, based on https://faq.i3wm.org/question/1262/exiting-i3-without-mouse-click/
 # bindsym $mod+Control+Delete exec "~/bin/i3_exit_dmenu.sh"
 bindsym Mod1+Control+Delete exec "~/bin/i3_exit_dmenu.sh"
+bindsym $mod+Control+Delete exec "~/bin/i3_exit_dmenu.sh"
 
 # Considerar utilizar los `assign` para poder programar en que parte
 # se inicie automáticamente skype y otros programas de comunicación en
@@ -307,6 +312,9 @@ bindsym Mod1+Control+Delete exec "~/bin/i3_exit_dmenu.sh"
 # Assign  skype
 assign [class="^Skype$" instance="^skype$"] → $ws5
 assign [class="^skypeforlinux$" instance="^skypeforlinux$"] → $ws5
+
+# Assign Discord
+assign [class="^discord" instance="^discord"] → $ws5
 
 # Assign slack
 assign [class="^Slack$" instance="^slack$"] → $ws5
@@ -389,12 +397,12 @@ bindcode $mod+35 exec --no-startup-id mpc next    # ]
 # https://faq.i3wm.org/question/125/how-to-change-the-systems-volume/
 set $current_sink `pactl list short sinks | grep RUNNING | cut -f1`
 # https://faq.i3wm.org/question/3747/enabling-multimedia-keys/
-# bindsym XF86AudioRaiseVolume exec pactl set-sink-volume $current_sink +5% # increase sound volume
+bindsym XF86AudioRaiseVolume exec pactl set-sink-volume $current_sink +5% # increase sound volume
 bindsym $mod+Mod1+Up exec pactl set-sink-volume $current_sink +5% # increase sound volume
 # bindsym XF86AudioLowerVolume exec pactl set-sink-volume 0 -- -5% # original: decrease sound volume
-# bindsym XF86AudioLowerVolume exec pactl set-sink-volume $current_sink -5% # working: decrease sound volume
+bindsym XF86AudioLowerVolume exec pactl set-sink-volume $current_sink -5% # working: decrease sound volume
 bindsym $mod+Mod1+Down exec pactl set-sink-volume $current_sink -5% # working: decrease sound volume
-# bindsym XF86AudioMute exec pactl set-sink-mute $current_sink toggle # mute sound
+bindsym XF86AudioMute exec pactl set-sink-mute $current_sink toggle # mute sound
 bindsym $mod+Mod1+t exec pactl set-sink-mute $current_sink toggle # mute sound
 
 # playerctl: https://github.com/acrisci/playerctl
@@ -412,9 +420,20 @@ bindsym XF86MonBrightnessDown exec xbacklight -dec 10 # decrease screen brightne
 bindsym Shift+XF86AudioRaiseVolume exec xbacklight -inc 10 # increase screen brightness
 bindsym Shift+XF86AudioLowerVolume exec xbacklight -dec 10 # decrease screen brightness
 
-# Pomodoro
-bindsym $mod+Shift+p exec gnome-pomodoro --pause-resume
-bindsym $mod+Shift+Control+p exec gnome-pomodoro --start-stop
+# # Sreen brightness controls
+# bindsym XF86MonBrightnessUp exec light -A 10 # increase screen brightness
+# bindsym XF86MonBrightnessDown exec light -U 10 # decrease screen brightness
+# bindsym Shift+XF86AudioRaiseVolume exec light -A 10 # increase screen brightness
+# bindsym Shift+XF86AudioLowerVolume exec light -U 10 # decrease screen brightness
+
+# # Pomodoro
+# bindsym $mod+Shift+p exec gnome-pomodoro --pause-resume
+# bindsym $mod+Shift+Control+p exec gnome-pomodoro --start-stop
+
+# Presenciador [activate]
+bindsym $mod+Shift+p exec "bash ${HOME}/.dotfiles/bin/presenciador_bash.sh"
+# Presenciador [deactivate]
+bindsym $mod+Shift+Control+p exec "kill `ps -ef | grep presenciador | grep -v grep | tr -s ' ' | cut -d ' ' -f2`"
 
 # ----------
 
@@ -436,24 +455,24 @@ bindsym $mod+n exec "nmcli dev wifi rescan 2>/dev/null || ( sleep 1 && nmcli -t 
 #     font pango:DejaVu Sans Mono 9
 # }
 
-# working configuration
-bar {
-    # font pango:DejaVu Sans Mono 9
-    # font xft:DejaVu Sans Mono 9, Font Awesome 9
-    font xft:Font Awesome 8
-    status_command i3status --config ~/.config/i3/i3status.conf
-    position top
-}
-
-# # bumblebee-status
+# # working configuration
 # bar {
+#     # font pango:DejaVu Sans Mono 9
+#     # font xft:DejaVu Sans Mono 9, Font Awesome 9
 #     font xft:Font Awesome 8
+#     status_command i3status --config ~/.config/i3/i3status.conf
 #     position top
-#     status_command ~/.local/bin/bumblebee-status -m nic disk:root \
-#         cpu battery date time pasink pasource \
-#         -p root.path=/ time.format="%H:%M CW %V" date.format="%a, %b %d %Y"  date.locale='es-MX'\
-#         -t iceberg
 # }
+
+# bumblebee-status
+bar {
+    font xft:Monoisome Regular 7
+    position top
+    status_command ~/.local/bin/bumblebee-status -m nic disk:root \
+        cpu battery date time pasink pasource \
+        -p root.path=/ time.format="%H:%M CW %V" date.format="%a, %b %d %Y"  date.locale='es-MX'\
+        -t onedark-powerline
+}
 
 # Local Variables:
 # eval: (rainbow-mode)
