@@ -78,7 +78,9 @@ echo "installing pkg-config" && `sudo $INSTALL_COMMAND pkg-config`
 echo "installing libfreetype6-dev" && `sudo $INSTALL_COMMAND libfreetype6-dev`
 echo "installing libfontconfig1-dev" && `sudo $INSTALL_COMMAND libfontconfig1-dev`
 echo "installing libxcb-xfixes0-dev" && `sudo $INSTALL_COMMAND libxcb-xfixes0-dev`
-echo "installing libxkbcommon-dev" && `sudo $INSTALL_COMMAND libxkbcommon-dev`
+# ranger video preview dependencies
+echo "installing w3m-img" && `sudo $INSTALL_COMMAND w3m-img`
+echo "installing ffmpegthumbnailer" && `sudo $INSTALL_COMMAND ffmpegthumbnailer`
 
 echo "==== [Done] Installing common tools ===="
 
@@ -117,12 +119,13 @@ echo "==== [Done] Installing Dotfiles ===="
 echo "==== Installing cargo utilities ===="
 if comand -v cargo &> /dev/null; then
     echo "(cargo) installing exa" && `cargo install exa`
-    echo "(cargo) installing bat" && `cargo install bat`
+    echo "(cargo) installing bat" && `cargo install --version 0.21.0 bat`
 fi
 echo "==== [Done] Installing cargo utilities ===="
 
 echo "==== Creaing folder: instalados-localmente ===="
-[ ! -d "$HOME/instalados-localmente"] && mkdir "$HOME/instalados-localmente"
+[ ! -d "$HOME/instalados-localmente" ] && mkdir "$HOME/instalados-localmente"
+
 current_directory=$(pwd)    # this may not be necessary
 cd "$HOME/instalados-localmente"
 if [ ! -d "$HOME/instalados-localmente/alacritty" ]; then
@@ -139,6 +142,12 @@ if [ ! -d "$HOME/instalados-localmente/alacritty" ]; then
     `sudo cp extra/logo/alacritty-term.svg /usr/share/pixmaps/Alacritty.svg`
     `sudo desktop-file-install extra/linux/Alacritty.desktop`
     `sudo update-desktop-database`
+    # install manual page
+    `sudo mkdir -p /usr/local/share/man/man1`
+    `gzip -c extra/alacritty.man | sudo tee /usr/local/share/man/man1/alacritty.1.gz > /dev/null`
+    `gzip -c extra/alacritty-msg.man | sudo tee /usr/local/share/man/man1/alacritty-msg.1.gz > /dev/null`
+    # install terminfo
+    `sudo tic -xe alacritty,alacritty-direct extra/alacritty.info`
     cd "$HOME/instalados-localmente"
     echo "  == [Done] Installing alacritty from source =="
 fi

@@ -3,6 +3,8 @@
 ;; org-mode
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+(require 'cl)
+
 (setq org-log-done t)
 ;; para utilizar google-chrome en los enlaces
 (setq browse-url-browser-function 'browse-url-generic
@@ -52,11 +54,17 @@
 
 ;; org-capture-templates
 ;; http://orgmode.org/manual/Capture-templates.html#Capture-templates
+;; Note: for some reason properties are not read correctly
+;; -- original properties where: :kill-buffer :empty-lines 1
+;; -- This can be seen in the example template that is commented out
 (setq org-capture-templates
       '(("t" "Todo" entry (file+headline "~/Dropbox/org/notes.org" "Tasks")
-         "* TODO %?\n  %i\n  %a" :kill-buffer :empty-lines 1)
-        ("i" "Computer information" entry (file+headline "~/Dropbox/org/notes.org" "Information")
-         "* [#A] %? :computer:" :kill-buffer :empty-lines 1)))
+         "* TODO %?\n  %i\n  %a")
+        ;; ("s" "Task" entry (file+headline "~/Dropbox/org/notes.org" "Task")
+        ;;  "* [#A] %? :task:" :kill-buffer :empty-lines 1)
+        (
+         "i" "Computer information" entry (file+headline "~/Dropbox/org/notes.org" "Information")
+         "* [#A] %? :computer:")))
 
 ;; active babel languages
 (org-babel-do-load-languages
