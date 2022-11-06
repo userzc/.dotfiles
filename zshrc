@@ -384,6 +384,11 @@ fi
 # AIRFLOW home variable
 export AIRFLOW_HOME="$HOME/workspace/datyra/airflow-1.10.12/airflow"
 
+# Alacritty dynamic title
+# https://github.com/alacritty/alacritty/issues/3588#issuecomment-903251346
+preexec() { print -Pn "\e]0;$1\a" }
+
+
 # zsh syntax highlighting (requires ubuntu package zsh-syntax-highlighting)
 source /usr/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 

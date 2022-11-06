@@ -64,7 +64,7 @@ bindsym $mod+Return exec gnome-terminal
 bindsym $mod+Shift1 exec nautilus --no-desktop
 # bindsym $mod+1 exec rxvt -e ranger
 # bindsym $mod+1 exec gnome-terminal -e ranger
-bindsym $mod+1 exec alacritty -e ranger
+bindsym $mod+1 exec alacritty --title ranger -e ranger
 # bindsym $mod+2 exec "$BROWSER"
 bindsym $mod+2 exec "google-chrome"
 # # Creo que se utilizaba xmodifiers para acceder a acentos
