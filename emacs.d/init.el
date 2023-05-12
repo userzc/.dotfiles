@@ -23,24 +23,21 @@
 
 (defvar lista-paquetes-instalados
   '(ac-js2 ac-math ag all-the-icons auctex auto-complete avy
-           badwolf-theme c-eldoc cedit cl-lib command-log-mode
-           company dash deferred dockerfile-mode editorconfig ein
-           elpy emmet-mode enclose exec-path-from-shell
-           expand-region f feature-mode flx-ido flycheck-yamllint
-           git-modes google-c-style google-contacts gradle-mode
-           gradle-mode groovy-mode hgignore-mode jasminejs-mode
-           java-snippets javadoc-lookup js-doc js2-mode
-           js2-refactor litable lorem-ipsum magit magit-gitflow
-           makey markdown-mode monky monokai-theme multi-term
-           multiple-cursors neotree oauth2 org-bullets
-           poly-markdown popup powerline powershell projectile
-           purty-mode python-django rainbow-delimiters
-           rainbow-mode request restclient scss-mode
-           smart-mode-line smart-tab smartparens spacegray-theme
-           sql-indent sr-speedbar sublime-themes tango-2-theme
-           tangotango-theme textile-mode tide virtualenvwrapper
-           web-mode websocket wgrep wgrep-ag windsize wrap-region
-           yaml-mode yasnippet yasnippet-snippets zenburn-theme )
+           badwolf-theme c-eldoc cedit cl-lib command-log-mode company dash
+           deferred dockerfile-mode editorconfig ein elpy emmet-mode enclose
+           exec-path-from-shell expand-region f feature-mode flx-ido
+           flycheck-yamllint git-modes google-c-style google-contacts gradle-mode
+           gradle-mode groovy-mode hgignore-mode jasminejs-mode java-snippets
+           javadoc-lookup js-doc js2-mode js2-refactor litable lorem-ipsum magit
+           magit-gitflow makey markdown-mode mermaid-mode monky monokai-theme
+           multi-term multiple-cursors neotree nvm oauth2 org-bullets
+           poly-markdown popup powerline powershell projectile purty-mode
+           python-django rainbow-delimiters rainbow-mode request restclient
+           scss-mode smart-mode-line smart-tab smartparens spacegray-theme
+           sql-indent sr-speedbar sublime-themes tango-2-theme tangotango-theme
+           textile-mode tide virtualenvwrapper web-mode websocket wgrep wgrep-ag
+           windsize wrap-region yaml-mode yasnippet yasnippet-snippets
+           zenburn-theme)
   "Lista de paquetes instalados actualmente en mi configuración.")
 
 (setq el-get-paquetes-instalados
