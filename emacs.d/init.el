@@ -162,5 +162,6 @@
 (require 'tide-conf)
 (require 'jasminejs-conf)
 (require 'sql-conf)
+(require 'nvm-conf)
 
 (require 'keybinds-conf)
