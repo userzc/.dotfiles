@@ -15,6 +15,7 @@
 ;; open load theme file
 ;; https://stackoverflow.com/a/12558095
 (global-set-key (kbd "C-S-t") (λ (find-file "~/.emacs.d/settings-lisp/load-theme-conf.el")))
+(global-set-key (kbd "C-S-b") (λ (find-file "~/.emacs.d/settings-lisp/keybinds-conf.el")))
 
 ;; change help-map to C-c h, taken from:
 ;; https://github.com/magnars/.emacs.d/blob/master/key-bindings.el
@@ -118,6 +119,9 @@
 
 ;; ;; para moverse atravez de los "windows":, e.g.: c-left  =  windmove-left
 ;; (windmove-default-keybindings 'control)
+
+;; Copy filename/directory to kill-ring
+(global-set-key (kbd "C-c f") 'copy-file-name)
 
 ;; Siguiendo la configuración de i3-wm
 (eval-after-load "windmove"

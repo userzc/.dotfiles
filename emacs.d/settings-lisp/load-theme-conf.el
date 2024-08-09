@@ -86,6 +86,7 @@
 ;; (setq selected-font "fira-mono-10")
 ;; (setq selected-font "Hack-10")
 (setq selected-font "Monoisome-8")
+;; (setq selected-font "Coder Nerd Font Medium-12")
 ;; (setq selected-font "inconsolata")
 ;; (setq selected-font "inconsolata-dz")
 ;; (setq selected-font "inconsolata-g")

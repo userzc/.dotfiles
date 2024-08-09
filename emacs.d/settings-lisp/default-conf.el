@@ -28,6 +28,9 @@
 ;; ;; números de línea
 ;; (setq display-line-numbers 'relative)
 
+;; Números de columnas
+(setq column-number-mode t)
+
 ;; Make backups of files, even when they're in version control
 (setq vc-make-backend-files t)
 

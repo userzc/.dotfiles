@@ -209,6 +209,9 @@ export PYTHONPATH=$PYTHONPATH:"$HOME/Documents/Semestre 4/PruebaGeneral2D/Python
 export PYTHONPATH=$PYTHONPATH:"$HOME/Documents/FORCE_md/"
 export PYTHONPATH=$PYTHONPATH:"$HOME/lib/python_lib/"
 
+# # reference for working with AXS
+# PYTHONPATH=$PYTHONPATH:"$HOME/workspace/datyra/repositories/reps":"$HOME/workspace/datyra/repositories/reps/reps"
+
 if [ -x "$( command -v virtualenv)" ]; then
     if [[ ! -d $HOME/.virtualenvs ]]; then
         mkdir $HOME/.virtualenvs
@@ -381,8 +384,8 @@ else
 fi
 
 
-# AIRFLOW home variable
-export AIRFLOW_HOME="$HOME/workspace/datyra/airflow-1.10.12/airflow"
+# # AIRFLOW home variable
+# export AIRFLOW_HOME="$HOME/workspace/datyra/airflow-1.10.12/airflow"
 
 # Alacritty dynamic title
 # https://github.com/alacritty/alacritty/issues/3588#issuecomment-903251346
@@ -392,6 +395,9 @@ preexec() {
     arr=("${(@s/ /)last_command}")
     print -Pn "\e]0;$arr[1]\a"
 }
+
+# Add alacritty zsh completion file _alacritty parent directory to fpath
+fpath=("~/instalados-localmente/alacritty/extra/completions/" "${fpath[@]}")
 
 
 # zsh syntax highlighting (requires ubuntu package zsh-syntax-highlighting)

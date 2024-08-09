@@ -30,13 +30,15 @@
   (cleanup-buffer))
 
 (defun goto-line-with-feedback ()
-  "Show line numbers temporarily, while prompting for the line number input"
+  "
+Show line numbers temporarily, while prompting for the line number input"
   (interactive)
+  (setq original-display display-line-numbers)
   (unwind-protect
       (progn
-        (linum-mode 1)
+        (setq display-line-numbers t)
         (goto-line (read-number "Goto line: ")))
-    (linum-mode -1)))
+    (setq display-line-numbers original-display)))
 
 ;; Borrar los espacios en blanco innecesarios al final de las lineas
 (add-hook 'before-save-hook 'cleanup-buffer-safe)
@@ -387,5 +389,20 @@ buffer is narrowed."
      (interactive)
      ,@body))
 
+;; Copy filename to get path
+(defun copy-file-name ()
+  "Put the current file name on the kill-ring/clipboard"
+  (interactive)
+  ;; Set filename depending on the prefix arg or the mode
+  (let ((filename
+         (cond
+          ;; When its a dired buffer or there is a C-u prefix arg, get directory name
+          ((or (equal major-mode 'dired-mode) (equal current-prefix-arg '(4))) default-directory)
+          ;; If there is no C-u prefix arg, get the file name
+          ((equal current-prefix-arg nil) buffer-file-name))))
+    ;; If file is defined, put it in the kill-ring
+    (when filename
+      (kill-new filename)
+      (message filename))))
 
 (provide 'defuns)
