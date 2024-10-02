@@ -45,7 +45,6 @@ fi
 
 echo "==== Installing common tools ===="
 echo "installing python3" && `sudo $INSTALL_COMMAND python3`
-echo "installing python" && `sudo $INSTALL_COMMAND python`
 echo "installing git" && `sudo $INSTALL_COMMAND git`
 echo "installing $EMACS_VERSION" && `sudo $INSTALL_COMMAND $EMACS_VERSION`
 echo "installing speedometer" && `sudo $INSTALL_COMMAND speedometer`
@@ -81,6 +80,11 @@ echo "installing libxcb-xfixes0-dev" && `sudo $INSTALL_COMMAND libxcb-xfixes0-de
 # ranger video preview dependencies
 echo "installing w3m-img" && `sudo $INSTALL_COMMAND w3m-img`
 echo "installing ffmpegthumbnailer" && `sudo $INSTALL_COMMAND ffmpegthumbnailer`
+# Installing python based utilities
+echo "installing tmuxp" && `sudo $INSTALL_COMMAND tmuxp`
+echo "installing yamllint" && `sudo $INSTALL_COMMAND yamllint`
+echo "installing speedtest-cli" && `sudo $INSTALL_COMMAND speedtest-cli`
+
 
 echo "==== [Done] Installing common tools ===="
 
@@ -99,11 +103,12 @@ else
 fi
 echo "==== [Done] Installing oh-my-zsh ===="
 
-echo "===== Installing pip3 utilities"
-echo "(pip3) installing tmuxp" && `sudo pip3 install tmuxp`
-echo "(pip3) installing yamllint" && `sudo pip3 install yamllint`
-echo "(pip3) installing speedtest-cli" && `sudo pip3 install speedtest-cli`
-echo "===== [Done] Installing pip3 utilities"
+# # This block is left as reference, no longer needed on ubuntu
+# echo "===== Installing pip3 utilities"
+# echo "(pip3) installing tmuxp" && `pip3 install --user tmuxp`
+# echo "(pip3) installing yamllint" && `pip3 install --user yamllint`
+# echo "(pip3) installing speedtest-cli" && `pip3 install --user speedtest-cli`
+# echo "===== [Done] Installing pip3 utilities"
 
 echo "==== Installing Dotfiles ===="
 if [ ! -d "$HOME/.dotfiles" ]; then
@@ -119,7 +124,7 @@ echo "==== [Done] Installing Dotfiles ===="
 echo "==== Installing cargo utilities ===="
 if comand -v cargo &> /dev/null; then
     echo "(cargo) installing exa" && `cargo install exa`
-    echo "(cargo) installing bat" && `cargo install --version 0.21.0 bat`
+    echo "(cargo) installing bat" && `cargo install bat`
 fi
 echo "==== [Done] Installing cargo utilities ===="
 
