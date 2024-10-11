@@ -31,12 +31,13 @@ echo "installing maim" && `sudo $INSTALL_COMMAND maim`
 echo "installing xdotool" && `sudo $INSTALL_COMMAND xdotool`
 echo "installing ranger" && `sudo $INSTALL_COMMAND ranger`
 echo "installing blueman" && `sudo $INSTALL_COMMAND blueman`
+echo "installing virtualenvwrapper" && `sudo $INSTALL_COMMAND virtualenvwrapper`
+echo "installing virtualenvwrapper" && `sudo $INSTALL_COMMAND bumblebee-status`
 
 echo "==== Installing pip tools ===="
 cd "$HOME"
-echo "(pip3) installing i3-py" && `sudo pip3 install i3-py`
-echo "(pip3) installing quickswitch-i3" && `sudo pip3 install quickswitch-i3`
-echo "(pip3) installing virtualenvwrapper" && `sudo pip3 install virtualenvwrapper`
+echo "(pip3) installing i3-py" && `sudo pip3 install --break-system-packages i3-py`
+echo "(pip3) installing quickswitch-i3" && `sudo pip3 install --break-system-packages quickswitch-i3`
 
 echo "==== Ready to restart  ===="
 exit 0
