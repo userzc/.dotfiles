@@ -56,7 +56,7 @@ export VISUAL="emacsclient -c"
 # $PATH para diferentes shells.
 
 # Definiendo most como pager por default
-export PAGER="most"
+export PAGER="less"
 
 # to define a browser in case non is defined
 if [[ $BROWSER == '' ]] ; then
@@ -344,9 +344,15 @@ export PATH="$HOME/.cask/bin:$PATH"
 # https://cli.github.com/manual/gh_completion
 export GH_PAGER='less -R'
 
-# Activate tmuxp source completion (tmuxp >= 1.5.1)
-if $(which tmuxp &> /dev/null) ; then
-    eval "$(_TMUXP_COMPLETE=source_zsh tmuxp)"
+
+# Activate tmuxp source completion (tmuxp >= 1.17)
+# https://tmuxp.git-pull.com/cli/completion.html#completion
+if (( $+commands[tmuxp] )); then
+    if [[ ! -f "/usr/local/share/zsh/site-functions/_TMUXP" ]]; then
+        echo "Setting tmuxp shtab completion"
+        shtab --shell=zsh -u tmuxp.cli.create_parser \
+            | sudo tee /usr/local/share/zsh/site-functions/_TMUXP
+        fi
 else
     echo "tmuxp not found"
 fi

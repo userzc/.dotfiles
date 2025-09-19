@@ -84,6 +84,7 @@ echo "installing ffmpegthumbnailer" && `sudo $INSTALL_COMMAND ffmpegthumbnailer`
 echo "installing tmuxp" && `sudo $INSTALL_COMMAND tmuxp`
 echo "installing yamllint" && `sudo $INSTALL_COMMAND yamllint`
 echo "installing speedtest-cli" && `sudo $INSTALL_COMMAND speedtest-cli`
+echo "installing python3-shtab" && `sudo $INSTALL_COMMAND python3-shtab`
 
 
 echo "==== [Done] Installing common tools ===="
